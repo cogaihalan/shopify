@@ -553,10 +553,6 @@ video {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -587,4 +583,8 @@ video {
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+#admin-bar-iframe {
+    display: none;
 }
