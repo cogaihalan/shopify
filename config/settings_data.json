@@ -382,5 +382,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".multicolumn-list {display:flex;}"
+    ]
   }
 }
