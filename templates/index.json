@@ -6,8 +6,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "THE FUTURE OF BUSINESS IS",
+            "heading_size": "h1"
           }
         },
         "button": {
@@ -29,10 +29,10 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Optigreen.png",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "small",
         "desktop_content_position": "middle-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
