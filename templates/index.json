@@ -7,7 +7,14 @@
           "type": "heading",
           "settings": {
             "heading": "THE FUTURE OF BUSINESS IS",
-            "heading_size": "h1"
+            "heading_size": "h2"
+          }
+        },
+        "5cc4a7c9-510b-43b6-9e5b-bd3c0cadcb2e": {
+          "type": "text",
+          "settings": {
+            "text": "CIRCULAR",
+            "text_style": "caption-with-letter-spacing"
           }
         },
         "button": {
@@ -24,6 +31,7 @@
       },
       "block_order": [
         "heading",
+        "5cc4a7c9-510b-43b6-9e5b-bd3c0cadcb2e",
         "button"
       ],
       "settings": {
