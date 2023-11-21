@@ -112,6 +112,9 @@
         "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-2",
         "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-3"
       ],
+      "custom_css": [
+        ".multicolumn-list {display: flex;}"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
