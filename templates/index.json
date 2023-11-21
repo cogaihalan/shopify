@@ -1,5 +1,61 @@
 {
   "sections": {
+    "715a0152-3fed-46e0-9c7b-dedb71a9e5b8": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "Free shipping & return",
+            "text": "<p>Free shipping on all orders over $99<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "Money back guarantee",
+            "text": "<p>100% money back guarantee<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "Online support 24\/7",
+            "text": "<p>Everytime you need<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-1",
+        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-2",
+        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-3"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -59,7 +115,7 @@
         "collection": "hydrogen",
         "products_to_show": 10,
         "columns_desktop": 5,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
@@ -68,74 +124,18 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "enable_quick_add": true,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "715a0152-3fed-46e0-9c7b-dedb71a9e5b8": {
-      "type": "multicolumn",
-      "blocks": {
-        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Free shipping & return",
-            "text": "<p>Free shipping on all orders over $99<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-2": {
-          "type": "column",
-          "settings": {
-            "title": "Money back guarantee",
-            "text": "<p>100% money back guarantee<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-3": {
-          "type": "column",
-          "settings": {
-            "title": "Online support 24\/7",
-            "text": "<p>Everytime you need<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-1",
-        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-2",
-        "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-3"
-      ],
-      "custom_css": [
-        ".multicolumn-list {display: flex;}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
     }
   },
   "order": [
+    "715a0152-3fed-46e0-9c7b-dedb71a9e5b8",
     "image_banner",
-    "15ead924-f507-4766-a763-f014668406bd",
-    "715a0152-3fed-46e0-9c7b-dedb71a9e5b8"
+    "15ead924-f507-4766-a763-f014668406bd"
   ]
 }
