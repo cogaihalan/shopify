@@ -82,8 +82,8 @@
         "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Free shipping & return",
+            "text": "<p>Free shipping on all orders over $99<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -91,8 +91,8 @@
         "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Money back guarantee",
+            "text": "<p>100% money back guarantee<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -100,8 +100,8 @@
         "template--21544384332050__715a0152-3fed-46e0-9c7b-dedb71a9e5b8-column-3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Online support 24\/7",
+            "text": "<p>Everytime you need<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -118,9 +118,9 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 3,
-        "column_alignment": "center",
+        "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "color_scheme": "",
         "columns_mobile": "1",
