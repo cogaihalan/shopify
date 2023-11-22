@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1655999036882eac15": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/LoyaltyLionResize_Final.jpg?v=1656488138&amp;width=2100\" alt=\"\" width=\"2100\" height=\"\">"
+      }
+    },
+    "1654588683c35e1237": {
+      "type": "section-heading",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "Oh POLLY REWARDS",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16518411234ded326c": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div data-lion-integrated-page=\"\"><\/div>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1655999036882eac15",
+    "1654588683c35e1237",
+    "16518411234ded326c"
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Top-Banner-5.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Top-Banner-6.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "49fd3c73-42d5-4074-8d1c-cdf08b0b8848": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Block-1-4.gif",
+        "mobile_image": "shopify:\/\/shop_images\/Block-1-6.gif",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "https:\/\/www.ohpolly.com\/collections\/birthday-outfits",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "199b0649-04ff-45de-833d-52eba4159b99": {
+      "type": "section-usps",
+      "blocks": {
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f": {
+          "type": "usp",
+          "settings": {
+            "title": "",
+            "text": "DOWNLOAD OUR IOS APP",
+            "link_url": "https:\/\/itunes.apple.com\/gb\/app\/oh-polly\/id1446565964?mt=8",
+            "background_colour": "#dfc9b6",
+            "text_colour": "#333333"
+          }
+        },
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896": {
+          "type": "usp",
+          "settings": {
+            "title": "",
+            "text": "DOWNLOAD OUR ANDROID APP",
+            "link_url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ohpolly.ohpolly&hl=en_GB&gl=US&pli=1",
+            "background_colour": "#fbf0eb",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f",
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "476e586a-5246-4074-aedf-53e1f8c58d09": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP THE EDIT NOW",
+        "button_link": "shopify:\/\/collections\/intimates",
+        "collection": "intimates",
+        "collection_max": "8"
+      }
+    },
+    "486de75e-9b12-44e6-be24-e8adc6f311a0": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Block-3-2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/LandingPage-Mobile_04.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "https:\/\/www.ohpolly.com\/collections\/iridescence",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "e7a0460b-aa06-4bc0-a0a1-b8efd1b3290a": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile_03_3abb1908-ca45-4557-9faf-3f91ca0f0865.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "d4bc788d-e312-419b-a606-65d5dfcc513c": {
+      "type": "section-video",
+      "disabled": true,
+      "settings": {
+        "background_colour": "#fae0df",
+        "text_colour": "dark",
+        "autoplay_video": false,
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_youtube_video": "https:\/\/www.youtube.com\/watch?v=OWJnDyH8Ey8",
+        "mobile_youtube_video": "https:\/\/www.youtube.com\/watch?v=OWJnDyH8Ey8",
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "ed4a69d2-d91e-4813-867a-5253880b2642": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "shopify:\/\/collections\/johona",
+        "collection": "johona",
+        "collection_max": "4"
+      }
+    },
+    "18e73e23-4e40-4203-9cf8-fcd42daae61d": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP FESTIVAL OUTFITS",
+        "button_text": "SHOP THE FULL COLLECTION NOW",
+        "button_link": "shopify:\/\/collections\/iridescence",
+        "collection": "iridescence",
+        "collection_max": "4"
+      }
+    },
+    "a57e8d22-3e19-4cd2-964f-f5c2322657a0": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "STYLE WITH SHEER OCCASIONWEAR",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Our feather soft underwear is ready to escort you to all elevated events and intimate gatherings. Layer under bodycon fits and sheer designs for a second skin, seamless silhouette. <\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "7c1da389-6030-4758-a9ec-74ccf613442a": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP THE FULL EDIT",
+        "button_link": "shopify:\/\/collections\/sheer-styles",
+        "collection": "sheer-styles",
+        "collection_max": "4"
+      }
+    },
+    "1676374738734d9a28": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "3689086e-6291-4e11-9cb4-ea544e432bf8": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Block-2-7.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Block-2-8.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "cb206e63-0330-4267-9bb8-779afe679152": {
+      "type": "section-ctas",
+      "blocks": {
+        "39cc343b-9866-473b-9737-834f7181da69": {
+          "type": "cta",
+          "settings": {
+            "title": "FOLLOW US ON TIKTOK FOR EXCLUSIVE COACHELLA CONTENT",
+            "text": "",
+            "link": "",
+            "link_text": "Shop the collection",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "39cc343b-9866-473b-9737-834f7181da69"
+      ],
+      "disabled": true,
+      "settings": {
+        "border_top": false,
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    },
+    "719f0b70-bfea-40be-a606-ab816b4ae8e1": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "SHOP FULLER BUST STYLES",
+        "button_text": "SHOP THE FULL EDIT",
+        "button_link": "shopify:\/\/collections\/bigger-cup-size-dresses",
+        "collection": "bigger-cup-size-dresses",
+        "collection_max": "4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29",
+    "49fd3c73-42d5-4074-8d1c-cdf08b0b8848",
+    "199b0649-04ff-45de-833d-52eba4159b99",
+    "476e586a-5246-4074-aedf-53e1f8c58d09",
+    "486de75e-9b12-44e6-be24-e8adc6f311a0",
+    "e7a0460b-aa06-4bc0-a0a1-b8efd1b3290a",
+    "d4bc788d-e312-419b-a606-65d5dfcc513c",
+    "ed4a69d2-d91e-4813-867a-5253880b2642",
+    "18e73e23-4e40-4203-9cf8-fcd42daae61d",
+    "a57e8d22-3e19-4cd2-964f-f5c2322657a0",
+    "7c1da389-6030-4758-a9ec-74ccf613442a",
+    "1676374738734d9a28",
+    "3689086e-6291-4e11-9cb4-ea544e432bf8",
+    "cb206e63-0330-4267-9bb8-779afe679152",
+    "719f0b70-bfea-40be-a606-ab816b4ae8e1"
+  ]
+}

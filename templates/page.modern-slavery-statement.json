@@ -1,0 +1,106 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "493b32da-3261-4578-b6ea-4bba37203107": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/2880x1570_1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/750x1200_1.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "18f9875f-3abe-426e-9b8d-4497aebc6bb4": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "97b15196-f545-47d3-af17-07810fb2ec88": {
+          "type": "item",
+          "settings": {
+            "title": "Modern Slavery Statement",
+            "answer": "<p>Please <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/ModernSlavery_Statment.pdf?v=1679394699\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/ModernSlavery_Statment.pdf?v=1679394699\">click here<\/a> to read our statement<\/p>",
+            "page": ""
+          }
+        },
+        "d0ae44eb-b912-437d-926f-8e5d35c5e589": {
+          "type": "item",
+          "settings": {
+            "title": "GENDER PAY GAP REPORT",
+            "answer": "<p>Please <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/GenderPayGap_Statement_2023_1.pdf?v=1681221595\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/GenderPayGap_Statement_2023_1.pdf?v=1681221595\">click here<\/a> to read our statement<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "97b15196-f545-47d3-af17-07810fb2ec88",
+        "d0ae44eb-b912-437d-926f-8e5d35c5e589"
+      ],
+      "settings": {
+        "layout_container": false,
+        "text": "<p>2021 - 2022<\/p>",
+        "title_font_size": "fz-34_37",
+        "question_font_size": "fz-18_22",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "8421e000-7246-47f2-9379-a5a4203b6859": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.primary[1].background }}",
+        "text_colour": "dark",
+        "button_style": "dark",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/homepage-800x800_2_4601ea27-2272-428b-9813-470f681529a9.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/homepage-800x800_2_4601ea27-2272-428b-9813-470f681529a9.jpg",
+        "title": "our story",
+        "text": "<p>Oh Polly is a rapidly growing pureplay fashion brand selling women's clothing internationally. But did you know that one of the sole reasons for the company existing is to support The Brannerson Foundation, our Cambodia based charity? Click the buttom below to find out more about us.<br\/><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "find out more",
+        "button_url": "https:\/\/www.ohpolly.com\/pages\/about-us"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "493b32da-3261-4578-b6ea-4bba37203107",
+    "18f9875f-3abe-426e-9b8d-4497aebc6bb4",
+    "8421e000-7246-47f2-9379-a5a4203b6859"
+  ]
+}

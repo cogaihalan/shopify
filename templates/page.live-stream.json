@@ -1,0 +1,130 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop_1_6fdbbc1c-ed69-4282-b3d2-f05e945b80a9.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile_1.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "7e02c004-6697-4ceb-9441-740927f3847d": {
+      "type": "section-video",
+      "settings": {
+        "background_colour": "#fae0df",
+        "text_colour": "dark",
+        "autoplay_video": false,
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_youtube_video": "https:\/\/www.youtube.com\/watch?v=9HnCQnILfjg",
+        "mobile_youtube_video": "https:\/\/www.youtube.com\/watch?v=9HnCQnILfjg",
+        "kicker": "",
+        "title": "Watch Now",
+        "text": "<p>Oh Polly presents Neena Swim at Miami Swim Week 2023. Take your front row seat and watch the Neena Swim runway show held at the renowned Paraiso Tent on Friday 9th June 2023<\/p>",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "199b0649-04ff-45de-833d-52eba4159b99": {
+      "type": "section-usps",
+      "blocks": {
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f": {
+          "type": "usp",
+          "settings": {
+            "title": "DOWNLOAD OUR IOS APP",
+            "text": "",
+            "link_url": "https:\/\/itunes.apple.com\/gb\/app\/oh-polly\/id1446565964?mt=8",
+            "background_colour": "#e48d89",
+            "text_colour": "#333333"
+          }
+        },
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896": {
+          "type": "usp",
+          "settings": {
+            "title": "DOWNLOAD OUR ANDROID APP",
+            "text": "",
+            "link_url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ohpolly.ohpolly&hl=en_GB&gl=US&pli=1",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f",
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "2e5fbb97-047c-4052-bc7c-dc18604053d5": {
+      "type": "section-ometria-form",
+      "settings": {
+        "section_margin": "spacingNone",
+        "section_background": "#fff",
+        "form_kicker": "",
+        "form_title": "SIGN UP BELOW TO GET EXCLUSIVE UPDATES ON OUR MIAMI SHOWROOM",
+        "form_text": "",
+        "ometria_form_id": "d6b225a700e434d2f66ceab8a29eeafd",
+        "ometria_list_id": "254",
+        "button_text": "Submit",
+        "email_placeholder": "Email address",
+        "marketing_opt_in_text": "Opt-in to Email marketing",
+        "success_message": "Form submitted"
+      }
+    },
+    "6ec79b56-0ccc-408d-b8b3-db3babfccea3": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP THE NEENA SWIM PRINTED SWIM COLLECTION NOW",
+        "button_text": "",
+        "button_link": "shopify:\/\/collections\/printed-swim",
+        "collection": "printed-swim",
+        "collection_max": "4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29",
+    "7e02c004-6697-4ceb-9441-740927f3847d",
+    "199b0649-04ff-45de-833d-52eba4159b99",
+    "2e5fbb97-047c-4052-bc7c-dc18604053d5",
+    "6ec79b56-0ccc-408d-b8b3-db3babfccea3"
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16448713515733231c": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "Shop now, pay with Klarna.",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "1644876273fce739f8": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>We’ve partnered with Klarna to give you a better shopping experience.<\/p><p>Here’s how it works:<br\/><strong>Step 1<\/strong><br\/>Add products to your cart and select “Klarna” when you check out<\/p><p><br\/><strong>Step 2<\/strong><br\/>Enter a few personal details and you’ll know instantly if you’re approved<\/p><p><br\/><strong>Step 3<\/strong><br\/>Klarna will send you an email confirmation and reminders when it’s time to pay and<br\/>you can manage your orders and payments in the Klarna app.<\/p><p><\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "164487155588f3486a": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingNone",
+        "order": "contentLeft",
+        "background_colour": "#fbeddf",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/info-page-couch.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/info-page-couch.jpg",
+        "title": "It’s smoooth and simple",
+        "text": "<p>When you choose Klarna at checkout, you’ll get the option to shop now and pay later for your purchase.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1644871662d8114312": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p><strong>Pay in 30 days<\/strong><\/p><p>Make your purchase today so you can try before you buy. Only pay for what you keep. Pay up to 30 days later. No interest. No fees. No impact to your credit score.<br\/>Paying after delivery allows you to try before you buy and is the easiest way to shop online.<br\/>- Complete the payment in full after purchase at no added cost.<br\/>- Report returns directly in our app and only pay for the items that you keep.<br\/>- Not making your payment on time could affect your ability to use Klarna in the future.<br\/>- Debt collection agencies are used as a last resort<br\/>You must be 18+ and a UK resident to be eligible for this credit offer.<\/p><p><\/p><p><strong>Pay in 3 instalments<\/strong><\/p><p>Spread the cost of your purchase into 3 interest-free instalments. The first payment is made at point of purchase, with remaining instalments scheduled automatically<br\/>every 30 days. No interest or fees. Select the Klarna option and enter your debit or credit card information. To check your eligibility, Klarna will perform a soft search with a<br\/>credit reference agency. This will not affect your credit score.<br\/>No interest. No fees. No impact to your credit score.<br\/>- A new way to pay that's an alternative to a credit card.<br\/>- 3 instalments gives you flexibility to shop without interest or hidden fees.<br\/>- Not making your payment on time could affect your ability to use Klarna in the future.<br\/>- Debt collection agencies are used as a last resort.<br\/>You must be 18+ and a UK resident to be eligible for this credit offer.<\/p><p><\/p><p><\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1644871772a89f59a9": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingNone",
+        "order": "contentRight",
+        "background_colour": "#fbeddf",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/info-page-app.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/info-page-app.jpg",
+        "title": "The best way to shop.",
+        "text": "<p>See all of your purchases in one place, pay any open balances, explore unique content and much more in the<a href=\"https:\/\/www.klarna.com\/uk\/klarna-app\/\" target=\"_blank\">Klarna app<\/a>. You can also log into your Klarna account at<a href=\"https:\/\/app.klarna.com\/login\" target=\"_blank\">https:\/\/app.klarna.com\/login<\/a>. If you need any help, our<a href=\"https:\/\/www.klarna.com\/uk\/customer-service\/\" target=\"_blank\">Customer Service<\/a>is there for you.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "164487186838de5027": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingNone",
+        "order": "contentLeft",
+        "background_colour": "#fbeddf",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/info-page-lobby.png",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/info-page-lobby.png",
+        "title": "Safe and secure.",
+        "text": "<p>Klarna has strong anti-fraud controls in place to protect our customers and prevent fraudsters from making unauthorized purchases.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1644872108a68f8cfa": {
+      "type": "ancillary-accordion-multiple-levels",
+      "blocks": {
+        "b72989da-2181-491e-9763-4cbaf3ea2b5d": {
+          "type": "item",
+          "settings": {
+            "title": "FREQUENTLY ASKED QUESTIONS",
+            "question_1": "What happens if I make a return?",
+            "answer_1": "<p>If you return some or all of your order, Klarna will issue you with a new statement as soon as the online store processes your return. Follow the retailer's return instructions and make sure to keep the tracking number of your return. Log into your Klarna account and select “Report a return” so that your statement is paused. As soon as the retailer has registered your return, we will send an adjusted invoice.<\/p>",
+            "question_2": "There's something wrong with my order. Do I still need to pay for it?",
+            "answer_2": "<p>You do not need to pay for goods that are received damage, broken or faulty. Follow the retailers dispute instructions and make sure to “Report a problem” in your Klarna account to pause your statement until you’ve resolved the dispute with the retailer. As soon as the retailer has registered your cancellation or your return, the refund will be processed within 5-7 business days.<\/p>",
+            "question_3": "I have not received my order. What happens to my statement?",
+            "answer_3": "<p>You do not need to pay the statement until you have received your order. Contact the retailer for an update on the delivery. Make sure to log into your Klarna account and “Report a problem” to pause your statement until you’ve received your order.<\/p>",
+            "question_4": "My statement is incorrect. What should I do?",
+            "answer_4": "<p>If your statement does not match your order details, please contact the retailer directly for a correction of your statement. Make sure to log into your Klarna account and “Report a problem” to pause your statement until the details have been corrected.<\/p>",
+            "question_5": "What happens if I don’t pay for my Pay in 30 days order?",
+            "answer_5": "<p>Your payment is due 30 days after the item is shipped. Klarna will alert your before payment is due to help remind you to pay on time. You will not be charged fees or interest for late and\/or missed repayment(s). Your credit score will not be impacted by using Klarna’s ‘Pay in 30 days’ product even if you have failed to pay on time. If you fail to make a payment you will be in default, and may be unable to use the service in the future. If you do not pay for your purchase, Klarna may engage with an external debt collection agency to collect on our behalf. Debt collection agencies are used as a last resort.<\/p>",
+            "question_6": "What happens if I don’t pay for my Pay in 3 instalments order?",
+            "answer_6": "<p>Klarna will automatically attempt to collect your second instalment from the debit or credit card that you entered at checkout. If the payment cannot be collected on the scheduled due date Klarna will make a further attempt to automatically collect payment 7 days later and again 7 days afterwards. Should this last payment attempt fail, Klarna will add the failed amount to your final instalment. Klarna will automatically attempt to collect your final instalment from the debit or credit card that you entered at checkout. If the payment cannot be collected on the scheduled due date Klarna will make a further attempt to automatically collect payment 7 days later and again 7 days afterwards. Should this last payment attempt fail Klarna will issue you with a statement for the full outstanding order amount which will become payable 15 days later. You will not be charged fees or interest for late and\/or missed repayment(s). Your credit score will not be impacted by using Klarna’s ‘Pay in 30 days’ or ‘Pay in 3 instalments’ product even if you have failed to pay on time. If you fail to make a payment you will be in default, and may be unable to use the service in the future. If you do not pay for your purchase, Klarna may engage with an external debt collection agency to collect on our behalf. Debt collection agencies are used as a last resort.<\/p>",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        }
+      },
+      "block_order": [
+        "b72989da-2181-491e-9763-4cbaf3ea2b5d"
+      ],
+      "settings": {
+        "text": "",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "16448722325fc5a2f3": {
+      "type": "ancillary-accordion",
+      "settings": {
+        "layout_container": false,
+        "text": "<p>Don’t see your question in the dropdown? Visit our <a href=\"https:\/\/www.ohpolly.com\/pages\/klarna-faq\" target=\"_blank\" title=\"https:\/\/www.ohpolly.com\/pages\/klarna-faq\">FAQ <\/a>page to find out more about using Klarna. You can reach Klarna at <a href=\"https:\/\/www.klarna.com\/uk\/customer-service\/\" target=\"_blank\">https:\/\/www.klarna.com\/uk\/customer-service\/<\/a> or by downloading the <a href=\"https:\/\/www.klarna.com\/uk\/klarna-app\/\" target=\"_blank\">Klarna app<\/a>.<\/p>",
+        "title_font_size": "fz-14_20",
+        "question_font_size": "fz-18_22",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "164487264980bd891f": {
+      "type": "ancillary-text",
+      "settings": {
+        "text": "<p><strong>ABOUT KLARNA<\/strong><br\/>At Klarna, we have a relentless focus on creating the best shopping experience in the world. We believe payments are so much more than just a way to<br\/>send money. That’s why our smooth checkout options give you more time and control so you can focus on the things you love.<br\/>● More than 90 million shoppers are using Klarna.<br\/>● 200,000 retailers are working with us worldwide.<br\/>● We’re one Europe’s largest banks and we’ve been powering online checkouts for over 15 years.<br\/>Please spend responsibly. Borrowing more than you can afford could seriously affect your financial status. Make sure you can afford to make your<br\/>monthly repayments on time.<br\/>[Merchant's legal entity name] is not a lender and acts only as an introducer. The credit product is provided by Klarna Bank AB (publ). Credit is only<br\/>available to permanent UK residents aged 18 and over, depending on their status. Terms and conditions apply. Please note that Pay in 30 days and Pay in 3<br\/>instalments are not regulated by the FCA.<\/p><p><\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16448713515733231c",
+    "1644876273fce739f8",
+    "164487155588f3486a",
+    "1644871662d8114312",
+    "1644871772a89f59a9",
+    "164487186838de5027",
+    "1644872108a68f8cfa",
+    "16448722325fc5a2f3",
+    "164487264980bd891f"
+  ]
+}
