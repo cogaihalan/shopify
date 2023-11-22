@@ -1,0 +1,80 @@
+/*
+|--------------------------------------------------------------------------
+| Footer Shop Now
+|--------------------------------------------------------------------------
+| @namespace ft
+|
+*/
+
+.ft-ShopNow {
+  height: 60px;
+  padding: 10px 0;
+
+  background-color: var(--Color_LightPink);
+  overflow: hidden;
+}
+@media only screen and (min-width: 901px) {
+  .ft-ShopNow {
+    height: 80px;
+    padding: 15px 0;
+  }
+}
+
+.ft-ShopNow_Text {
+  flex-flow: row nowrap;
+
+  display: flex;
+}
+
+/* stylelint-disable-next-line selector-max-type */
+.ft-ShopNow_Text p {
+  align-items: baseline;
+  flex-flow: row nowrap;
+
+  display: flex;
+}
+
+/* stylelint-disable-next-line selector-max-type */
+.ft-ShopNow_Text strong {
+  margin: 0 10px;
+
+  font-family: 'Quentin';
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -4.7px;
+  line-height: 42px;
+  text-transform: none;
+
+  color: var(--Color_WarmPink);
+}
+@media only screen and (min-width: 901px) {
+  /* stylelint-disable-next-line selector-max-type */
+  .ft-ShopNow_Text strong {
+    font-size: 34px;
+    letter-spacing: -4.7px;
+    line-height: 48px;
+  }
+}
+
+.ft-ShopNow_Logo {
+  width: auto;
+  height: 20px;
+  margin: 0 10px;
+
+  color: var(--Color_WarmPink);
+}
+
+.ft-ShopNow_Logo-klarna {
+  height: 17px;
+}
+
+.ft-ShopNow_Logo-clearpay,
+.ft-ShopNow_Logo-afterpay {
+  height: 22px;
+  padding-top: 6px;
+}
+
+.ft-ShopNow_Logo-zip {
+  height: 30px;
+  padding-top: 2px;
+}

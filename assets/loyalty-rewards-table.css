@@ -1,0 +1,225 @@
+/*
+|--------------------------------------------------------------------------
+| Loyalty Rewards Table
+|--------------------------------------------------------------------------
+| @namespace: loy-
+|
+*/
+
+.loy-RewardsTable_Header {
+  margin-bottom: 0;
+
+  text-align: left;
+}
+@media screen and (min-width: 990px) {
+  .loy-RewardsTable_Header {
+    margin-bottom: 30px;
+
+    text-align: center;
+  }
+}
+
+.loy-RewardsTable_Title {
+  margin-bottom: 10px;
+}
+
+.loy-RewardsTable_Text {
+  max-width: 440px;
+  margin: auto;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Loyalty Lion
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+/* stylelint-disable */
+.loy-RewardsTable_Table {
+  margin: 0;
+
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+}
+
+.loy-RewardsTable_Table::-webkit-scrollbar {
+  height: 2px;
+
+  background-color: var(--Color_Grey-lightest);
+  border-radius: 10px;
+}
+
+.loy-RewardsTable_Table::-webkit-scrollbar-track {
+  background-color: var(--Color_Grey-lightest);
+  border-radius: 10px;
+}
+
+.loy-RewardsTable_Table::-webkit-scrollbar-thumb {
+  background-color: var(--Color_WarmPink);
+  border-radius: 10px;
+}
+
+.loy-RewardsTable_Table #loyaltylion .lion-tier-benefits-compare table {
+  min-width: 100%;
+  width: max-content;
+  margin-bottom: 15px;
+  margin-left: -5px;
+
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+@media screen and (min-width: 990px) {
+  .loy-RewardsTable_Table #loyaltylion .lion-tier-benefits-compare table {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare
+  th:first-child {
+  width: 40%;
+
+  border-right: 0;
+}
+@media screen and (max-width: 989px) {
+  .loy-RewardsTable_Table
+    #loyaltylion
+    .lion-tier-benefits-compare
+    th:first-child {
+    writing-mode: horizontal-tb;
+
+    transform: rotate(0deg);
+    vertical-align: bottom;
+  }
+}
+
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare
+  th:first-child:before {
+  content: 'Benefits';
+}
+
+.loy-RewardsTable_Table #loyaltylion .lion-tier-benefits-compare th {
+  width: 15%;
+}
+@media screen and (max-width: 989px) {
+  .loy-RewardsTable_Table #loyaltylion .lion-tier-benefits-compare th {
+    padding-top: 10px;
+    padding-left: 10px;
+
+    transform: rotate(-180deg);
+
+    text-align: left;
+    writing-mode: tb;
+  }
+}
+
+.loy-RewardsTable_Table #loyaltylion .lion-tier-compare__header-cell {
+  padding: 13px;
+
+  font-family: var(--Font_Family-headings);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+
+  background-color: transparent;
+}
+@media screen and (min-width: 901px) {
+  .loy-RewardsTable_Table #loyaltylion .lion-tier-compare__header-cell {
+    font-size: 18px;
+
+    background-color: #f2f2f2;
+  }
+}
+
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare
+  td:nth-child(2) {
+  padding-left: 14px !important;
+}
+@media screen and (min-width: 990px) {
+  .loy-RewardsTable_Table
+    #loyaltylion
+    .lion-tier-benefits-compare
+    td:nth-child(2),
+  .loy-RewardsTable_Table
+    #loyaltylion
+    .lion-tier-benefits-compare
+    th:nth-child(2) {
+    padding-left: 13px !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .loy-RewardsTable_Table
+    #loyaltylion
+    .lion-tier-compare__header--benefits
+    th:nth-child(1) {
+    padding-left: 0 !important;
+  }
+}
+
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare
+  td:first-child {
+  border-right: 0;
+}
+
+.loy-RewardsTable_Table #loyaltylion .lion-tier-benefits-compare__benefit-text {
+  width: 100%;
+  padding-left: 0 !important;
+
+  font-family: var(--Font_Family-headings);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 990px) {
+  .loy-RewardsTable_Table
+    #loyaltylion
+    .lion-tier-benefits-compare__benefit-text {
+    width: initial;
+    padding-left: 5px !important;
+  }
+}
+
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare__row-cell--tier-0 {
+  background-color: #fdf5f580;
+}
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare__row-cell--tier-1 {
+  background-color: var(--Color_LightPink);
+}
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare__row-cell--tier-2 {
+  background-color: var(--Color_LightPink);
+}
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare__row-cell--tier-3 {
+  background-color: #fdf1ef;
+}
+
+.loy-RewardsTable_Table
+  #loyaltylion
+  .lion-tier-benefits-compare__benefit-status--enabled {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='8.5' fill='%23333'/%3E%3Cpath d='m6.385 8.52 2.047 2.441 3.838-4.577' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 17px;
+}
+/* stylelint-enable */

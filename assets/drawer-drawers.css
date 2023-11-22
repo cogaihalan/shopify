@@ -1,0 +1,43 @@
+/*
+|--------------------------------------------------------------------------
+| Drawers
+|--------------------------------------------------------------------------
+| @namespace: drw-
+|
+*/
+.drw-Drawers_Drawer {
+  position: relative;
+  z-index: 11;
+}
+
+.drw-Drawers_Backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+
+  background-color: rgba(245, 245, 243, 0.5);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.chk-Checkout .drw-Drawers-active .drw-Drawers_Backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (min-width: 768px) {
+  .drw-Drawers-active .drw-Drawers_Backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .drw-Drawers-collectionfilters [data-drawer-key='collection-filters'] .drw-Drawers_Backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+}

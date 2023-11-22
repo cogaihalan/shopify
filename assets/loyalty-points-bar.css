@@ -1,0 +1,49 @@
+/*
+|--------------------------------------------------------------------------
+| Loyalty Points Bar
+|--------------------------------------------------------------------------
+| @namespace: loy-
+|
+*/
+
+.loy-PointsBar_ContentContainer {
+  align-items: center;
+  flex-direction: column;
+
+  display: flex;
+}
+
+.loy-PointsBar_Strapline {
+  margin-bottom: 20px;
+
+  font-family: var(--Font_Family-headings);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.loy-PointsBar_Title {
+  margin-bottom: 20px;
+}
+
+.loy-PointsBar_Text {
+  max-width: 450px;
+
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Loyalty Lion
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+/* stylelint-disable */
+@media screen and (min-width: 1024px) {
+  .loy-PointsBar_Progress #loyaltylion .lion-tier-overview {
+    grid-template-columns: 20% 30% 30% 20%;
+  }
+}
+
+/* stylelint-enable */

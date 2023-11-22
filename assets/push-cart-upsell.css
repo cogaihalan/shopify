@@ -1,0 +1,57 @@
+/*
+|--------------------------------------------------------------------------
+| Cart upsell
+|--------------------------------------------------------------------------
+| @namespace: psh-
+|
+*/
+.psh-CartUpsell {
+  display: flex;
+  padding: 15px 20px 20px 8px;
+
+  background-color: rgba(224, 230, 232, 0.5);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Image
+|--------------------------------------------------------------------------
+|
+*/
+.psh-CartUpsell_ImageContainer {
+  flex: 0 0 80px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.psh-CartUpsell_Content {
+  flex: 1;
+
+  margin-left: 30px;
+
+  font-family: var(--Font_Family-body);
+}
+
+.psh-CartUpsell_Title {
+  margin-bottom: 7px;
+
+  font-family: inherit;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.psh-CartUpsell_ItemTitle {
+  font-family: inherit;
+  font-weight: 400;
+  text-transform: none;
+
+  color: var(--Color_Body);
+}
+
+.psh-CartUpsell_Form {
+  margin-top: 13px;
+}

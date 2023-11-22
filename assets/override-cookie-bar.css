@@ -1,0 +1,11 @@
+/*
+|--------------------------------------------------------------------------
+| Cookie bar override
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable declaration-no-important, selector-class-pattern, selector-max-class, selector-max-specificity */
+.cc-banner .cc-compliance .cc-deny {
+  display: none;
+}
+/* stylelint-enable */

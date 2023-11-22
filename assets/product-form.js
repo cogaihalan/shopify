@@ -1,114 +1,229 @@
-if (!customElements.get('product-form')) {
-  customElements.define(
-    'product-form',
-    class ProductForm extends HTMLElement {
-      constructor() {
-        super();
+class PushCartError {
+  static async handle (error, item, element) {
+    const instance = new this(error, element)
 
-        this.form = this.querySelector('form');
-        this.form.querySelector('[name=id]').disabled = false;
-        this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
-        this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
-        this.submitButton = this.querySelector('[type="submit"]');
+    if (instance.soldOut) {
+      return instance.render(instance.MESSAGES.SOLD_OUT())
+    } else if (instance.alreadyHaveAllInCart) {
+      return instance.render(instance.MESSAGES.ALREADY_HAVE_ALL_STOCK())
+    } else if (instance.addedMoreThanExists) {
+      const newItem = Object.assign({}, item, {
+        quantity: instance.allowedQuantity,
+      })
 
-        if (document.querySelector('cart-drawer')) this.submitButton.setAttribute('aria-haspopup', 'dialog');
+      await element.addToCart(newItem)
 
-        this.hideErrors = this.dataset.hideErrors === 'true';
-      }
+      instance.render(instance.MESSAGES.NOT_ENOUGH_IN_STOCK())
+    } else if (instance.cannotFindVariant) {
+      return instance.render(instance.MESSAGES.CANNOT_FIND_VARIANT())
+    } else {
+      const newItem = Object.assign({}, item, {
+        quantity: instance.allowedQuantity,
+      })
 
-      onSubmitHandler(evt) {
-        evt.preventDefault();
-        if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
+      await element.addToCart(newItem)
 
-        this.handleErrorMessage();
-
-        this.submitButton.setAttribute('aria-disabled', true);
-        this.submitButton.classList.add('loading');
-        this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
-
-        const config = fetchConfig('javascript');
-        config.headers['X-Requested-With'] = 'XMLHttpRequest';
-        delete config.headers['Content-Type'];
-
-        const formData = new FormData(this.form);
-        if (this.cart) {
-          formData.append(
-            'sections',
-            this.cart.getSectionsToRender().map((section) => section.id)
-          );
-          formData.append('sections_url', window.location.pathname);
-          this.cart.setActiveElement(document.activeElement);
-        }
-        config.body = formData;
-
-        fetch(`${routes.cart_add_url}`, config)
-          .then((response) => response.json())
-          .then((response) => {
-            if (response.status) {
-              publish(PUB_SUB_EVENTS.cartError, {
-                source: 'product-form',
-                productVariantId: formData.get('id'),
-                errors: response.errors || response.description,
-                message: response.message,
-              });
-              this.handleErrorMessage(response.description);
-
-              const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
-              if (!soldOutMessage) return;
-              this.submitButton.setAttribute('aria-disabled', true);
-              this.submitButton.querySelector('span').classList.add('hidden');
-              soldOutMessage.classList.remove('hidden');
-              this.error = true;
-              return;
-            } else if (!this.cart) {
-              window.location = window.routes.cart_url;
-              return;
-            }
-
-            if (!this.error)
-              publish(PUB_SUB_EVENTS.cartUpdate, { source: 'product-form', productVariantId: formData.get('id'), cartData: response });
-            this.error = false;
-            const quickAddModal = this.closest('quick-add-modal');
-            if (quickAddModal) {
-              document.body.addEventListener(
-                'modalClosed',
-                () => {
-                  setTimeout(() => {
-                    this.cart.renderContents(response);
-                  });
-                },
-                { once: true }
-              );
-              quickAddModal.hide(true);
-            } else {
-              this.cart.renderContents(response);
-            }
-          })
-          .catch((e) => {
-            console.error(e);
-          })
-          .finally(() => {
-            this.submitButton.classList.remove('loading');
-            if (this.cart && this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
-            if (!this.error) this.submitButton.removeAttribute('aria-disabled');
-            this.querySelector('.loading-overlay__spinner').classList.add('hidden');
-          });
-      }
-
-      handleErrorMessage(errorMessage = false) {
-        if (this.hideErrors) return;
-
-        this.errorMessageWrapper =
-          this.errorMessageWrapper || this.querySelector('.product-form__error-message-wrapper');
-        if (!this.errorMessageWrapper) return;
-        this.errorMessage = this.errorMessage || this.errorMessageWrapper.querySelector('.product-form__error-message');
-
-        this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
-
-        if (errorMessage) {
-          this.errorMessage.textContent = errorMessage;
-        }
-      }
+      instance.render(
+        instance.MESSAGES.ADD_TOO_MANY(item.quantity, instance.allowedQuantity),
+      )
     }
-  );
+
+    return instance
+  }
+
+  constructor (error, element) {
+    this.description = error.description
+    this.status = error.status
+
+    this.element = element
+
+    this.description = ''
+    this.status = null
+
+    this.MESSAGES = {
+      ADD_TOO_MANY: (wantedQuantity, allowedQuantity) =>
+        `Unfortunately there isn't ${wantedQuantity} ${this.productName}'s left. We've added ${allowedQuantity} to the cart instead.`,
+      ALREADY_HAVE_ALL_STOCK: () =>
+        `You already have all of the remaining "${this.productName}" in your cart`,
+      NOT_ENOUGH_IN_STOCK: () =>
+        `Unfortunately, there isn't enough of "${this.productName}" available. We've added ${this.allowedQuantity} to your cart instead.`,
+      SOLD_OUT: () => `Unfortunately, "${this.productName}" is sold out.`,
+      CANNOT_FIND_VARIANT: () =>
+        'There was an error adding this product to cart.',
+    }
+  }
+
+  render (message) {
+    alert('TODO')
+  }
+
+  get addedMoreThanExists () {
+    return this.description.slice(0, 18) === "You can't add more"
+  }
+
+  get alreadyHaveAllInCart () {
+    return this.description.slice(0, 4) === 'All '
+  }
+
+  get allowedQuantity () {
+    return 1
+  }
+
+  get soldOut () {
+    return this.description.slice(0, 13) === "The product '"
+  }
+
+  get cannotFindVariant () {
+    return this.description.toLowerCase() === 'cannot find variant'
+  }
+
+  get productName () {
+    const strSplitWithoutStart = this.soldOut
+      ? this.description.split("'")[1]
+      : this.alreadyHaveAllInCart
+        ? this.description
+          .split(' ')
+          .slice(2)
+          .join(' ')
+        : this.description
+          .split(' ')
+          .slice(4)
+          .join(' ')
+
+    return strSplitWithoutStart.replace(' to the cart.', '')
+  }
+}
+
+class ProductForm extends HTMLElement {
+  constructor () {
+    super()
+    this.form = this.querySelector('form')
+    this.form.addEventListener('submit', this.onSubmitHandler.bind(this))
+
+    this.wishlistButtonEl = this.querySelector(
+      '[data-product-form-wishlist-el]',
+    )
+    if (this.wishlistButtonEl) {
+      if (
+        this.checkIfVariantIsInWishlist(
+          Number(this.wishlistButtonEl.dataset.variantId),
+        )
+      ) {
+        this.wishlistButtonEl.setAttribute('data-wishlist-status', 'added')
+      }
+
+      this.wishlistButtonEl.addEventListener('click', e =>
+        this.handleWishlistItemSubmission(this.wishlistButtonEl),
+      )
+    }
+
+    window.BAO.eventBus.addEventListener(
+      window.BAO.EVENTS.PRODUCT.VARIANT_CHANGED,
+      e => {
+        if (!this.wishlistButtonEl) return
+        if (this.checkIfVariantIsInWishlist(e.detail.variant.id)) {
+          this.wishlistButtonEl.setAttribute('data-wishlist-status', 'added')
+        } else {
+          this.wishlistButtonEl.removeAttribute('data-wishlist-status')
+        }
+      },
+    )
+
+    if (this.querySelector('[data-product-form-el="quantity"]')) {
+      this.querySelector('[data-product-form-el="quantity"]').addEventListener(
+        'change',
+        e => {
+          this.querySelector(
+            '[data-product-form-el="quantityHiddenInput"]',
+          ).value = e.target.value
+        },
+      )
+    }
+  }
+
+  checkIfVariantIsInWishlist (variantId) {
+    const locallyStoredWishlistList = JSON.parse(
+      window.localStorage.getItem('swym-products'),
+    )
+    if (locallyStoredWishlistList.all.find(item => item.epi === variantId)) {
+      return true
+    }
+    return false
+  }
+
+  async onSubmitHandler (e) {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
+    const id = Number(formData.get('id'))
+    const quantity = Number(formData.get('quantity'))
+    const properties = buildProperties(formData)
+
+    await this.addToCart({ id, quantity, properties })
+  }
+
+  async addToCart (item) {
+    try {
+      return window.BAO.Cart.addItem(
+        {
+          id: item.id,
+          quantity: item.quantity,
+          properties: item.properties,
+        },
+        this.form,
+        {
+          sections: window.BAO.utils.sectionRenderer.pushCartSections.map(
+            s => s.section,
+          ),
+        },
+      )
+    } catch (err) {
+      return this.handleAddToCartError(err, item)
+    }
+  }
+
+  async handleAddToCartError (err, item) {
+    return PushCartError.handle(await err.json(), item, this)
+  }
+
+  handleWishlistItemSubmission (target) {
+    if (!target || !window._swat) return
+
+    const data = {
+      epi: Number(target.dataset.variantId),
+      du: `${target.dataset.productUrl}`,
+      empi: Number(target.dataset.productId),
+    }
+
+    if (this.checkIfVariantIsInWishlist(Number(target.dataset.variantId))) {
+      window._swat.removeFromWishList(data, () => {
+        target.removeAttribute('data-wishlist-status')
+        window.BAO.dispatchEvent(window.BAO.EVENTS.WISHLIST.UPDATED)
+      })
+    } else {
+      window._swat.addToWishList(data, () => {
+        target.setAttribute('data-wishlist-status', 'added')
+        window.BAO.dispatchEvent(window.BAO.EVENTS.WISHLIST.UPDATED)
+      })
+    }
+  }
+}
+
+customElements.define('product-form', ProductForm)
+
+function buildProperties (formData) {
+  const propertyKeyValues = [...formData.entries()].filter(
+    ([key, value]) => key.includes('properties[') && value !== '',
+  )
+
+  function propertyReducer (properties, [key, value]) {
+    const strippedKey = key.replace('properties[', '').slice(0, -1)
+
+    return {
+      ...properties,
+      [strippedKey]: value,
+    }
+  }
+
+  return propertyKeyValues.reduce(propertyReducer, {})
 }

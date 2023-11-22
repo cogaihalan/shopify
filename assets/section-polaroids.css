@@ -1,0 +1,165 @@
+/*
+|--------------------------------------------------------------------------
+| Polaroids
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.sec-Polaroids {
+  --NegativeMargin: calc(var(--Grid_Gutter) * -3);
+
+  display: block;
+  margin-right: var(--NegativeMargin);
+  margin-left: var(--NegativeMargin);
+}
+@media only screen and (min-width: 768px) {
+  .sec-Polaroids[data-slides-count='2'] {
+    --NegativeMargin: 0;
+  }
+  .sec-Polaroids[data-slides-count='2'] .sec-Polaroids_Items {
+    grid-gap: 70px;
+    grid-template-columns: repeat(2, 1fr);
+
+    display: grid;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-Polaroids[data-slides-count='3'] {
+    --NegativeMargin: 0;
+  }
+  .sec-Polaroids[data-slides-count='3'] .sec-Polaroids_Items {
+    grid-gap: 70px;
+    grid-template-columns: repeat(3, 1fr);
+
+    display: grid;
+  }
+}
+
+.sec-Polaroids_Item {
+  display: flex;
+
+  padding-bottom: 25px;
+}
+
+.sec-Polaroids_Card {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Polaroids_Card {
+    padding: 20px;
+
+    background-color: var(--BackingColour);
+  }
+}
+.sec-Polaroids_Card::before {
+  --Offset: calc((100vw - 60px) / 2);
+  content: '';
+
+  position: absolute;
+  top: var(--Offset);
+  left: 0;
+  z-index: -1;
+
+  display: block;
+  width: 100%;
+  height: calc(100% - var(--Offset));
+
+  background-color: var(--BackingColour);
+}
+@media only screen and (min-width: 768px) {
+  .sec-Polaroids_Card::before {
+    display: none;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Polaroids_ImageContainer {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-Polaroids_Image {
+    transition: transform 0.5s ease-in-out;
+  }
+  .sec-Polaroids_Card-hasLink .sec-Polaroids_Image {
+    transform: scale(1.025);
+  }
+  .sec-Polaroids_Card-hasLink:hover .sec-Polaroids_Image {
+    transform: none;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Polaroids_Content {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.sec-Polaroids_Text {
+  margin-top: 5px;
+}
+
+.sec-Polaroids_Button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+
+  transform: translate(-50%, 50%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Controls
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Polaroids_Arrows {
+  top: 0;
+  right: 30px;
+  bottom: auto;
+  left: 30px;
+}
+.sec-Polaroids_Arrows::before {
+  content: '';
+
+  display: block;
+  width: 0;
+  padding-top: 50%;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Polaroids_Arrows {
+    display: none;
+  }
+}
+.sec-Polaroids[data-slides-count='1'] .sec-Polaroids_Arrows {
+  display: none;
+}
+
+.sec-Polaroids_Previous {
+  bottom: -20px;
+  left: -20px;
+}
+.sec-Polaroids_Next {
+  right: -20px;
+  bottom: -20px;
+}

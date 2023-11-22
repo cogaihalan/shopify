@@ -1,0 +1,58 @@
+/*
+|--------------------------------------------------------------------------
+| Drawer footer accordion
+|--------------------------------------------------------------------------
+| @namespace: drw
+|
+*/
+.drw-Currency {
+  display: block;
+}
+
+.drw-Currency_Trigger {
+  align-items: center;
+  justify-content: space-between;
+
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  background-color: transparent;
+  border-top: 1px solid var(--Color_CoolPink);
+}
+
+.drw-Currency_Icon {
+  transition: transform 0.3s ease;
+}
+.drw-Currency[aria-expanded='true'] .drw-Currency_Icon {
+  transform: rotate(180deg);
+}
+
+.drw-Currency_Body {
+  max-height: 0;
+
+  background-color: #fff;
+  overflow-y: hidden;
+
+  transition: max-height 0.5s ease;
+}
+
+.drw-Currency[aria-expanded='true'] .drw-Currency_Body {
+  max-height: var(--Max_Height);
+}
+
+.drw-Currency_Items {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.drw-Currency_Items .drw-Nav_Link-currency {
+  height: auto;
+
+  font-weight: 400;
+}
+
+.drw-Currency_Content {
+  padding-bottom: 13px;
+}

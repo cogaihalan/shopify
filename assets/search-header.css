@@ -1,0 +1,79 @@
+/*
+|--------------------------------------------------------------------------
+| Search header
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.src-Header {
+  position: relative;
+
+  display: block;
+}
+
+.src-Header::before {
+  content: '';
+
+  position: absolute;
+  top: calc(var(--Nav_Height) * -1);
+
+  display: block;
+}
+
+.src-Header_Body {
+  grid-gap: calc(var(--Grid_Gutter) * 3);
+  grid-template-columns: repeat(12, 1fr);
+
+  display: grid;
+  height: 100%;
+}
+
+.src-Header_Content {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  grid-column: 1 / span 12;
+
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .src-Header_Content {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .src-Header_Content {
+    grid-column: 4 / span 6;
+
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+}
+
+.src-Header_Breadcrumbs {
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 901px) {
+  .src-Header_Breadcrumbs {
+    margin-bottom: 20px;
+  }
+}
+
+.src-Header_Text {
+  display: grid;
+  max-width: 677px;
+  width: 100%;
+  margin-top: 10px;
+
+  color: inherit;
+}
+@media only screen and (min-width: 901px) {
+  .src-Header_Text {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,211 @@
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+| @namespace: ft-
+|
+*/
+.wa__btn_popup{z-index:9!important;}
+
+/* class added to section via section schema */
+.ft-Footer_Container {
+  position: sticky;
+  top: 100vh;
+}
+
+.ft-Footer {
+  --FooterPadding: 20px;
+  position: relative;
+
+  display: block;
+
+  background-color: var(--Color_CoolPink);
+}
+
+.ft-Footer_Footer {
+  padding-top: var(--FooterPadding);
+  padding-bottom: var(--FooterPadding);
+}
+@media only screen and (min-width: 901px) {
+  .ft-Footer_Footer {
+    padding-top: calc(var(--FooterPadding) * 2);
+    padding-bottom: calc(var(--FooterPadding) * 2);
+  }
+}
+
+.ft-Footer_Inner {
+  max-width: calc(1265px + calc(var(--Grid_Gutter) * 6));
+}
+
+.ft-Footer_Bar .ft-Footer_Inner {
+  max-width: 100%;
+}
+
+.ft-Footer_Header {
+  margin-bottom: 20px;
+}
+
+.ft-Footer_HeaderSpan {
+  color: var(--Color_Russet);
+}
+
+.ft-Footer_Columns {
+  flex-flow: column;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+}
+@media only screen and (min-width: 901px) {
+  .ft-Footer_Columns {
+    flex-flow: row nowrap;
+  }
+}
+
+.ft-Footer_Columns-footerbar {
+  position: relative;
+
+  flex-direction: column;
+
+  padding-top: var(--FooterPadding);
+  padding-bottom: var(--FooterPadding);
+
+  text-align: center;
+
+  border-top: 1px solid var(--Color_White-light);
+}
+@media only screen and (min-width: 768px) {
+  .ft-Footer_Columns-footerbar {
+    flex-direction: row;
+
+    text-align: initial;
+  }
+}
+
+.ft-Footer_Column-reviews {
+  align-items: baseline;
+  order: 0;
+}
+.ft-Footer_Column-copyright {
+  order: 1;
+
+  margin-top: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .ft-Footer_Column-reviews {
+    order: 1;
+
+    margin-left: auto;
+  }
+  .ft-Footer_Column-copyright {
+    order: 0;
+
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .ft-Footer_Column-navigation {
+    max-width: 670px;
+    width: calc((100% / 4) * 2);
+  }
+  .ft-Footer_Column-newsletter {
+    max-width: 452px;
+    width: calc(100% / 4);
+  }
+}
+
+.ft-Footer_Column-mobile,
+.ft-Footer_Section-mobile {
+  display: block;
+}
+@media only screen and (min-width: 901px) {
+  .ft-Footer_Column-mobile,
+  .ft-Footer_Section-mobile {
+    display: none;
+  }
+}
+
+.ft-Footer_Column-desktop,
+.ft-Footer_Section-desktop {
+  display: none;
+}
+@media only screen and (min-width: 901px) {
+  .ft-Footer_Column-desktop,
+  .ft-Footer_Section-desktop {
+    display: block;
+  }
+}
+
+.ft-Footer_Section-socials {
+  justify-content: center;
+
+  display: flex;
+}
+@media only screen and (min-width: 901px) {
+  .ft-Footer_Section-socials {
+    justify-content: flex-start;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Copyright
+|--------------------------------------------------------------------------
+|
+*/
+.ft-Footer_Copyright {
+  color: var(--Color_Body);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Back to Top
+|--------------------------------------------------------------------------
+|
+*/
+.ft-Footer_BackToTop {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .ft-Footer_BackToTop {
+    top: -30px;
+    right: auto;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Newsletter
+|--------------------------------------------------------------------------
+|
+*/
+.ft-Footer_Terms {
+  margin-top: 15px;
+}
+@media only screen and (min-width: 901px) {
+  .ft-Footer_Terms {
+    margin-top: 10px;
+  }
+}
+
+.ft-Footer_Column-carbonFootprint {
+  max-width: 452px;
+  width: calc(100% / 4);
+  padding-left: 50px;
+}
+
+.ft-Footer_CarbonFootprint {
+  max-width: 150px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+@media only screen and (min-width: 901px) {
+  .ft-Footer_CarbonFootprint {
+    padding-top: 0;
+  }
+}

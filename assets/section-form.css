@@ -1,0 +1,108 @@
+/*
+|--------------------------------------------------------------------------
+| Section Form
+|--------------------------------------------------------------------------
+| @namespace sec
+|
+*/
+
+.sec-Form {
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  background-color: var(--Color_LightPink);
+}
+@media only screen and (min-width: 768px) {
+  .sec-Form {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+}
+
+.sec-Form-contact {
+  padding-bottom: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Form-contact {
+    padding-bottom: 40px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-Form_Body {
+  max-width: 100%;
+  width: 685px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.frm-Form_Header {
+  position: relative;
+
+  cursor: pointer;
+}
+
+.frm-Form_HeaderIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.frm-Form_Header:hover .frm-Form_HeaderIcon,
+.frm-Form_Header:focus .frm-Form_HeaderIcon {
+  transform: rotate(90deg);
+}
+
+.sec-Form[aria-expanded='true'] .frm-Form_HeaderIcon {
+  transform: rotate(180deg);
+}
+
+.frm-Form_Main {
+  max-height: 0;
+  padding-bottom: 0;
+
+  overflow-y: hidden;
+  will-change: max-height, padding-bottom;
+
+  transition: max-height 0.5s ease, padding-bottom 0.5s ease;
+}
+
+.sec-Form[aria-expanded='true'] .frm-Form_Main {
+  max-height: 1000px;
+  padding-bottom: 30px;
+}
+
+.frm-Form_Row-returns {
+  display: none;
+}
+
+.sec-Form[data-subject='returns'] .frm-Form_Row-returns {
+  display: block;
+}
+
+.frm-Form_Row-stockEnquiry {
+  display: none;
+}
+
+.sec-Form[data-subject='stock-enquiry'] .frm-Form_Row-stockEnquiry {
+  display: block;
+}
+/* stylelint-disable selector-max-id, selector-max-specificity, no-duplicate-selectors */
+.sec-Form[data-subject='stock-enquiry'] #contactFormOrderNumber,
+.sec-Form[data-subject='collab-enquiry'] #contactFormOrderNumber {
+  display: none;
+}
+
+.sec-Form[data-subject='stock-enquiry'] #contactFormOrderNumber,
+.sec-Form[data-subject='collab-enquiry'] #contactFormOrderNumber {
+  display: none;
+}
+/* stylelint-enable selector-max-id, selector-max-specificity, no-duplicate-selectors */

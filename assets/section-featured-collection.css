@@ -1,0 +1,30 @@
+/*
+|--------------------------------------------------------------------------
+| Featured collection
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+.sec-FeaturedCollection_Items {
+  grid-gap: 30px var(--Grid_Gutter);
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+}
+@media only screen and (min-width: 768px) {
+  .sec-FeaturedCollection_Items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 901px) {
+  .sec-FeaturedCollection_Items {
+    grid-gap: 40px var(--Grid_Gutter);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-FeaturedCollection_Item:nth-child(n + 5) {
+    display: none;
+  }
+}

@@ -1,0 +1,34 @@
+/*
+|--------------------------------------------------------------------------
+| Usp
+|--------------------------------------------------------------------------
+| @namespace: sec-
+|
+*/
+@media only screen and (min-width: 901px) {
+  .sec-Usp_Items {
+    display: flex;
+  }
+}
+
+.sec-Usp_Item {
+  flex-direction: column;
+  justify-content: center;
+
+  display: flex;
+  width: 100%;
+  padding: 12px calc(var(--Grid_Gutter) * 3) 10px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: var(--Usp_BackgroundColour);
+  color: var(--Usp_TextColour);
+}
+@media only screen and (min-width: 901px) {
+  .sec-Usp_Item {
+    flex-grow: 1;
+
+    width: 100%;
+  }
+}

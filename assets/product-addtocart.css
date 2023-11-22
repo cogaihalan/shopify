@@ -1,0 +1,43 @@
+/*
+|--------------------------------------------------------------------------
+| Quickbuy
+|--------------------------------------------------------------------------
+| @namespace: prd-
+|
+*/
+
+.prd-AddToCart {
+  position: relative;
+
+  display: block;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-AddToCart_Button {
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+}
+
+.prd-AddToCart_Button:hover,
+.prd-AddToCart_Button:focus {
+  border-color: var(--Color_White);
+}
+
+.prd-AddToCart_Icon {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+}
+
+.prd-AddToCart_Icon-bag {
+  margin-top: -4px;
+  margin-right: 17px;
+}

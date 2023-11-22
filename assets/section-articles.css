@@ -1,0 +1,60 @@
+/*
+|--------------------------------------------------------------------------
+| Articles section
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.sec-Articles {
+  --Articles_Margin: -15px;
+  --Articles_Padding: 15px;
+
+  display: block;
+  margin-right: var(--Articles_Margin);
+  margin-left: var(--Articles_Margin);
+  padding-right: var(--Articles_Padding);
+  padding-left: var(--Articles_Padding);
+
+  overflow: hidden;
+}
+@media only screen and (min-width: 901px) {
+  .sec-Articles {
+    --Articles_Margin: 0;
+    --Articles_Padding: 0;
+  }
+}
+
+.sec-Articles_Items {
+  overflow: visible;
+}
+@media only screen and (min-width: 901px) {
+  .sec-Articles_Items {
+    grid-gap: 70px;
+    grid-template-columns: repeat(3, 1fr);
+
+    display: grid;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Scroller
+|--------------------------------------------------------------------------
+|
+*/
+@media only screen and (min-width: 901px) {
+  .sec-Articles_Footer {
+    display: none;
+  }
+}
+
+.sec-Articles_Scrollbar {
+  margin-top: 10px;
+}
+
+.sec-Articles_Scroller {
+  --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 1.1);
+  --Carousel_ScrollerWidth: calc(100% / var(--Carousel_VisibleItemCount));
+}

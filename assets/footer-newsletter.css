@@ -1,0 +1,87 @@
+/*
+|--------------------------------------------------------------------------
+| Footer Newsletter Form
+|--------------------------------------------------------------------------
+| @namespace sec
+|
+*/
+.nws-Newsletter_Text {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 901px) {
+  .nws-Newsletter_Text {
+    margin-top: 30px;
+  }
+}
+
+.nws-Newsletter_Messages {
+  margin-top: 10px;
+
+  color: var(--Color_Red);
+}
+
+.nws-Newsletter_Messages-success {
+  height: 42px;
+  margin-right: 2px;
+  padding: 10px 20px;
+
+  line-height: 22px;
+
+  background: var(--Color_Brand);
+  border: 0 none;
+  border-radius: 22px;
+  color: #fff;
+}
+
+.nws-Newsletter_Fields {
+  display: flex;
+  width: 100%;
+}
+
+.nws-Newsletter_Input::placeholder {
+  color: var(--Color_Grey-50);
+  opacity: 1;
+}
+
+.nws-Newsletter_Input {
+  flex: 1 0 55%;
+
+  border: 1px solid var(--Color_Black);
+}
+
+.nws-Newsletter_Button {
+  flex: 0 0 150px;
+
+  height: 45px;
+
+  font-family: var(--Font_Family-body);
+  font-weight: 700;
+  line-height: 22px;
+  text-transform: uppercase;
+
+  background-color: var(--Color_Brand);
+  border: 1px solid var(--Color_Brand);
+  border-left: unset;
+  color: var(--Color_White);
+
+  transition: var(--Color_Brand);
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  white-space: nowrap;
+}
+
+.nws-Newsletter_Button:hover {
+  background-color: var(--Color_CoolPink);
+  color: var(--Color_Brand);
+}
+
+.nws-Newsletter_Button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.nws-Newsletter_Button.focus-visible {
+  background-color: var(--Color_Brand-60);
+}

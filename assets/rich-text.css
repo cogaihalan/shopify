@@ -1,0 +1,262 @@
+/*
+|--------------------------------------------------------------------------
+| Rich text
+|--------------------------------------------------------------------------
+| @namespace: rte
+|
+*/
+
+/* stylelint-disable declaration-no-important, selector-max-type, selector-max-universal */
+.rte-RichText > p,
+.rte-RichText > table {
+  margin-bottom: 20px;
+}
+
+.rte-RichText img {
+  width: 100%;
+}
+
+.rte-RichText > blockquote {
+  position: relative;
+
+  margin: 20px 0;
+
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .rte-RichText > blockquote {
+    width: calc((11 / 12) * 100%);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .rte-RichText > blockquote {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 29px;
+  }
+}
+
+.rte-RichText ul {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  padding-left: 0;
+
+  text-align: left;
+}
+
+.rte-RichText ul li {
+  position: relative;
+
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.rte-RichText ul li:last-child {
+  margin-bottom: 0;
+}
+.rte-RichText ul li::before {
+  content: '';
+
+  position: absolute;
+  top: 7px;
+  left: 0;
+
+  display: block;
+  width: 3px;
+  height: 3px;
+
+  background-color: var(--Color_Brand);
+}
+
+.rte-RichText ol {
+  counter-reset: item;
+
+  margin-top: 20px;
+  margin-bottom: 25px;
+  padding-left: 0;
+
+  list-style: none;
+  text-align: left;
+}
+
+.rte-RichText ol li {
+  position: relative;
+
+  margin-bottom: 10px;
+  padding-left: 35px;
+}
+.rte-RichText ol li:last-child {
+  margin-bottom: 0;
+}
+.rte-RichText ol li::before {
+  content: counter(item);
+  counter-increment: item;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  width: 22px;
+  height: 22px;
+
+  text-align: center;
+}
+
+.rte-RichText a:not([class]) {
+  text-decoration: underline;
+
+  word-break: break-word;
+  word-wrap: break-word;
+
+  color: var(--Color_Body);
+
+  transition: color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.rte-RichText a:not([class]):hover,
+.rte-RichText a:not([class]):focus {
+  color: var(--Color_Russet);
+}
+
+.rte-RichText h1:not([class]),
+.rte-RichText h2:not([class]),
+.rte-RichText h3:not([class]),
+.rte-RichText h4:not([class]),
+.rte-RichText h5:not([class]) {
+  margin-bottom: 15px;
+}
+
+.rte-RichText h2:not([class]) {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .rte-RichText h2:not([class]) {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 29px;
+  }
+}
+
+.rte-RichText h3:not([class]) {
+  /* styleName: Mobile/Menu & Small Headings; */
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .rte-RichText h3:not([class]) {
+    /* styleName: Desktop/Menu & Small Headings; */
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.rte-RichText h4:not([class]) {
+  /* styleName: Desktop/Small Title; */
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .rte-RichText h4:not([class]) {
+    /* styleName: Desktop/Body Copy; */
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    line-height: 20px;
+  }
+}
+
+.rte-RichText h5:not([class]) {
+  /* styleName: Mobile/ Hero Body Copy; */
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .rte-RichText h5:not([class]) {
+    /* styleName: Desktop/Hero Body Copy; */
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.rte-RichText th {
+  padding: 10px;
+
+  text-align: center;
+
+  background-color: var(--Color_CoolPink);
+  border: 1px solid var(--Color_CoolPink);
+  border-right: 1px solid #fff;
+  color: var(--Color_Body);
+}
+.rte-RichText th:last-child {
+  border-right: 1px solid var(--Color_CoolPink);
+}
+
+.rte-RichText tr:nth-child(odd) {
+  background-color: #fff;
+}
+.rte-RichText tr:nth-child(even) {
+  background-color: var(--Color_Grey-lightest);
+}
+
+.rte-RichText tr td:first-child {
+  text-align: center;
+}
+
+.rte-RichText td {
+  padding: 10px;
+
+  text-align: left;
+
+  border: 1px solid var(--Color_Grey-lighter);
+}
+
+/* We want every first and last item to never have their relative margin */
+.rte-RichText > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* This covers cases like images */
+.rte-RichText > *:first-child > *:first-child {
+  margin-top: 0 !important;
+}
+
+.rte-RichText > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* This covers cases like images */
+.rte-RichText > *:last-child > *:last-child {
+  margin-bottom: 0 !important;
+}
+/* stylelint-enable */

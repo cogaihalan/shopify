@@ -1,0 +1,442 @@
+/*
+|--------------------------------------------------------------------------
+| Collection Toolbar
+|--------------------------------------------------------------------------
+| @namespace clc
+|
+*/
+.clc-Toolbar {
+  position: sticky;
+  top: calc(var(--Nav_Height) + var(--Announcement_Height));
+  z-index: 6;
+
+  margin-bottom: 0;
+
+  background-color: #fff;
+  border-bottom: 0;
+}
+@media only screen and (min-width: 901px) {
+  .clc-Toolbar {
+    padding: 20px 0;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .clc-Toolbar {
+    padding: 10px 0;
+
+    border-top: 1px solid var(--Color_Border);
+  }
+}
+
+.clc-Toolbar_Columns {
+  align-items: center;
+
+  display: flex;
+  min-height: 30px;
+  padding: 0 15px;
+}
+
+@media only screen and (min-width: 901px) {
+  .clc-Toolbar_Columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    display: grid;
+    min-height: 30px;
+    height: auto;
+    padding: 0 30px;
+  }
+}
+
+.clc-Toolbar_Column {
+  align-items: center;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.clc-Toolbar_Column-two,
+.clc-Toolbar_Column-three {
+  display: flex;
+  margin-left: auto;
+}
+
+.clc-Toolbar_Column-three {
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 767px) {
+  .clc-Toolbar_Column-one {
+    flex: 138;
+  }
+
+  .clc-Toolbar_Column-two {
+    display: none;
+  }
+
+  .clc-Toolbar_Column-three {
+    flex: 207;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Labels
+|--------------------------------------------------------------------------
+|
+*/
+.clc-Toolbar_Label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 13px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 901px) {
+  .clc-Toolbar_Label {
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Triggers
+|--------------------------------------------------------------------------
+|
+*/
+.clc-Toolbar_Trigger {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.clc-Toolbar_Trigger[aria-pressed='true'] {
+  pointer-events: none;
+
+  cursor: initial;
+}
+
+.clc-Toolbar_TriggerCount[aria-hidden='true'] {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .clc-Toolbar_Trigger-grid {
+    position: relative;
+  }
+
+  .clc-Toolbar_TriggerCount {
+    display: none;
+  }
+}
+
+.clc-Toolbar_Trigger-grid,
+.clc-Toolbar_Trigger-list {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+@media only screen and (min-width: 901px) {
+  .clc-Toolbar_Trigger-list {
+    position: relative;
+  }
+  .clc-Toolbar_Trigger-list::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: -1px;
+
+    display: block;
+    height: 21px;
+
+    border-right: 1px solid var(--Color_Brand);
+
+    transform: translateY(-50%);
+  }
+}
+
+.clc-Toolbar_Trigger-filters {
+  position: relative;
+
+  justify-content: space-between;
+
+  display: flex;
+  width: 100%;
+  padding-right: 15px;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+  .clc-Toolbar_Trigger-filters {
+    border-inline-end: 1px solid #222;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .clc-Toolbar_Trigger-filters {
+    display: inline-block;
+    width: auto;
+    padding-right: 30px;
+  }
+}
+
+.clc-Toolbar_Trigger-filters::after {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  left: auto;
+
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: -7px;
+  margin-left: 10px;
+
+  font-size: 11px;
+  line-height: inherit;
+  text-transform: none;
+
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  overflow: hidden;
+
+  transform: rotate(45deg);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .clc-Toolbar_Trigger-filters::after {
+    right: 10px;
+  }
+}
+
+/* stylelint-disable selector-class-pattern, selector-max-type */
+.clc-Toolbar_Trigger-filters .clc-Toolbar_TriggerTotalProducts {
+  display: inline;
+}
+.clc-Toolbar_Trigger-filters .clc-Toolbar_TriggerTotalProducts::before {
+  content: '(';
+
+  display: inline-block;
+}
+.clc-Toolbar_Trigger-filters .clc-Toolbar_TriggerTotalProducts::after {
+  content: ')';
+
+  display: inline-block;
+}
+.clc-Toolbar_Trigger-filters .clc-Toolbar_TriggerTotalProducts span {
+  display: none;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Icons
+|--------------------------------------------------------------------------
+|
+*/
+
+.clc-Toolbar_Icon-layout {
+  height: 11px;
+}
+
+.clc-Toolbar_Trigger[aria-pressed='true'] .clc-Toolbar_Icon-layout {
+  color: var(--Color_WarmPink);
+}
+
+.clc-Toolbar_Icon-onecolumn,
+.clc-Toolbar_Icon-twocolumns {
+  display: block;
+}
+@media only screen and (min-width: 901px) {
+  .clc-Toolbar_Icon-onecolumn,
+  .clc-Toolbar_Icon-twocolumns {
+    display: none;
+  }
+}
+
+.clc-Toolbar_Icon-threecolumns,
+.clc-Toolbar_Icon-fourcolumns {
+  display: none;
+}
+@media only screen and (min-width: 901px) {
+  .clc-Toolbar_Icon-threecolumns,
+  .clc-Toolbar_Icon-fourcolumns {
+    display: block;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Layout Switcher
+|--------------------------------------------------------------------------
+|
+*/
+
+.clc-Toolbar_LayoutSwitcher {
+  display: flex;
+  margin-left: 15px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Sort menu
+|--------------------------------------------------------------------------
+|
+*/
+
+.clc-Toolbar_SortMenuWrapper {
+  justify-content: flex-end;
+
+  display: flex;
+  height: 33px;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .clc-Toolbar_SortMenuWrapper {
+    padding-inline-end: 20px;
+    border-inline-end: 1px solid #222;
+  }
+}
+
+.clc-Toolbar_SortMenuTrigger {
+  align-items: center;
+
+  display: flex;
+  gap: 50px;
+
+  text-transform: uppercase;
+}
+
+.clc-Toolbar_SortMenuTrigger svg {
+  width: 10px;
+  height: 10px;
+}
+
+.clc-Toolbar_SortMenuDropdown {
+  display: none;
+}
+
+.clc-Toolbar_SortMenuSelect {
+  text-transform: uppercase;
+
+  border: none;
+}
+
+.clc-Toolbar_SortMenu[aria-hidden='true'] {
+  display: none;
+}
+
+.clc-Toolbar_SortMenu[aria-hidden='false'] {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+
+  width: 100%;
+}
+
+@media only screen and (min-width: 767px) {
+  .clc-Toolbar_SortMenu[aria-hidden='false'] {
+    width: 250px;
+  }
+}
+
+.clc-Toolbar_SortMenuButton {
+  width: 100px;
+}
+
+.clc-Toolbar_SortMenuInner {
+  align-items: flex-start;
+  flex-direction: column;
+
+  grid-gap: 20px;
+
+  display: flex;
+  padding: 20px;
+
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.clc-Toolbar_SortMenuFacet {
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+
+  transition: border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.clc-Toolbar_SortMenuFacet:hover {
+  border-bottom: 1px solid var(--Color_Brand);
+}
+
+.clc-Toolbar_Label-sortby {
+  align-items: center;
+
+  display: flex;
+}
+
+@media only screen and (max-width: 767px) {
+  .clc-Toolbar_Label-sortby {
+    justify-content: space-between;
+  }
+}
+
+.clc-Toolbar_Label-sortby::after {
+  content: '';
+
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: -5px;
+  margin-left: 10px;
+
+  font-size: 11px;
+  line-height: inherit;
+  text-transform: none;
+
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  overflow: hidden;
+
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Collection Information
+|--------------------------------------------------------------------------
+|
+*/
+
+.clc-Toolbar_CollectionInformation {
+  margin: 0 auto;
+
+  text-align: center;
+  text-transform: uppercase;
+}

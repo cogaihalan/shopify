@@ -1,0 +1,196 @@
+/*
+|--------------------------------------------------------------------------
+| Instafgram
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.sec-Instagram {
+  grid-gap: 30px;
+
+  display: grid;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Instagram {
+    grid-gap: var(--Grid_Gutter);
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_Grid {
+    grid-column: 1 / span 8;
+    grid-row: 1;
+  }
+}
+
+.sec-Instagram_ContentContainer {
+  justify-content: center;
+
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_ContentContainer {
+    grid-column: 9 / span 4;
+    grid-row: 1;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Insta grid
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable declaration-no-important, selector-class-pattern, selector-max-class, selector-max-specificity */
+.sec-Instagram_Grid .fs-timeline {
+  grid-gap: var(--Grid_Gutter);
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_Grid .fs-timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 901px) {
+  .sec-Instagram_Grid .fs-timeline {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sec-Instagram .sec-Instagram_Grid.sec-Instagram_Grid .fs-entry-container {
+  width: 100% !important;
+  padding-top: 100% !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-Instagram_Grid .fs-entry-container:nth-child(n + 5) {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .sec-Instagram_Grid .fs-entry-container:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+.sec-Instagram_Grid .fs-service-icon .fs-icon::before {
+  display: none;
+}
+
+.sec-Instagram_Grid .fs-service-icon .fs-icon {
+  display: block;
+  width: 28px;
+  height: 24px;
+
+  background-image: url("data:image/svg+xml;utf8,<svg id='baoIconBag' viewBox='0 0 18 20' fill='none' xmlns=' http://www.w3.org/2000/svg ' aria-hidden='true'><path fill-rule='evenodd' clip-rule='evenodd' d='M1 19H16.75L15.711 6.53157C15.6624 5.9485 15.175 5.5 14.5899 5.5H3.16015C2.57505 5.5 2.08763 5.9485 2.03904 6.53157L1 19Z' stroke='white'></path><path fill='transparent' d='M12 7C12 6.24543 12 4.43578 12 2.99988C12 1.89531 11.1046 1 10 1H8.00002C6.89545 1 6.00002 1.89543 6.00002 3V7' stroke='white' stroke-linecap='square'></path></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Instagram_Content {
+  width: calc((5 / 6) * 100%);
+
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_Content {
+    flex-direction: column;
+
+    grid-column: 9 / span 4;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .sec-Instagram_Content {
+    width: calc((4 / 5) * 100%);
+  }
+}
+
+.sec-Instagram_Icon {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: 60px;
+  height: 60px;
+  margin-right: auto;
+  margin-bottom: 15px;
+  margin-left: auto;
+
+  background-color: var(--Color_CoolPink);
+  border-radius: 50%;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_Icon {
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .sec-Instagram_Icon {
+    margin-bottom: 25px;
+  }
+}
+
+.sec-Instagram_Icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sec-Instagram_Text {
+  margin-top: 15px;
+}
+@media only screen and (min-width: 901px) {
+  .sec-Instagram_Text {
+    margin-top: 20px;
+  }
+}
+
+.sec-Instagram_Buttons {
+  display: none;
+  margin-top: auto;
+
+  line-height: 0;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_Buttons {
+    display: block;
+  }
+}
+
+.sec-Instagram_Button {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_Button {
+    width: auto;
+    margin-top: 10px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+|
+*/
+@media only screen and (min-width: 768px) {
+  .sec-Instagram_Footer {
+    display: none;
+  }
+}

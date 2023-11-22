@@ -1,0 +1,143 @@
+/*
+|--------------------------------------------------------------------------
+| Recommendations
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+.sec-RecommendationsCarousel {
+  display: block;
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-RecommendationsCarousel[data-item-count='1'] .sec-RecommendationsCarousel_Items,
+  .sec-RecommendationsCarousel[data-item-count='2'] .sec-RecommendationsCarousel_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+
+    display: grid;
+    pointer-events: none;
+  }
+
+  /* stylelint-disable declaration-no-important */
+  .sec-RecommendationsCarousel[data-item-count='1'] .sec-RecommendationsCarousel_Item,
+  .sec-RecommendationsCarousel[data-item-count='2'] .sec-RecommendationsCarousel_Item {
+    transform: none !important;
+  }
+  /* stylelint-enable */
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-RecommendationsCarousel[data-item-count='1'] .sec-RecommendationsCarousel_Items,
+  .sec-RecommendationsCarousel[data-item-count='2'] .sec-RecommendationsCarousel_Items,
+  .sec-RecommendationsCarousel[data-item-count='3'] .sec-RecommendationsCarousel_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+
+    display: grid;
+    pointer-events: none;
+  }
+
+  /* stylelint-disable declaration-no-important */
+  .sec-RecommendationsCarousel[data-item-count='1'] .sec-RecommendationsCarousel_Item,
+  .sec-RecommendationsCarousel[data-item-count='2'] .sec-RecommendationsCarousel_Item,
+  .sec-RecommendationsCarousel[data-item-count='3'] .sec-RecommendationsCarousel_Item {
+    transform: none !important;
+  }
+  /* stylelint-enable */
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-RecommendationsCarousel[data-item-count='4'] .sec-RecommendationsCarousel_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+
+    display: grid;
+    pointer-events: none;
+  }
+
+  /* stylelint-disable selector-max-specificity */
+  .crt-Nosto .sec-RecommendationsCarousel[data-item-count='5'] .sec-RecommendationsCarousel_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+
+    display: grid;
+  }
+  /* stylelint-enable */
+}
+
+.sec-RecommendationsCarousel[data-item-count='1'] .sec-RecommendationsCarousel_Footer,
+.sec-RecommendationsCarousel[data-item-count='2'] .sec-RecommendationsCarousel_Footer {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Items
+|--------------------------------------------------------------------------
+|
+*/
+.car-Carousel .sec-RecommendationsCarousel_Items {
+  overflow: visible;
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-RecommendationsCarousel_Footer {
+    display: none;
+  }
+}
+
+.sec-RecommendationsCarousel_Scroller {
+  --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 2.5);
+  --Carousel_ScrollerWidth: calc(100% / var(--Carousel_VisibleItemCount));
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-RecommendationsCarousel_Scroller {
+    --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 4);
+    --Carousel_ScrollerWidth: calc(100% / var(--Carousel_VisibleItemCount));
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-RecommendationsCarousel[data-item-count='1'] .sec-RecommendationsCarousel_Arrows,
+  .sec-RecommendationsCarousel[data-item-count='2'] .sec-RecommendationsCarousel_Arrows,
+  .sec-RecommendationsCarousel[data-item-count='3'] .sec-RecommendationsCarousel_Arrows {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .sec-RecommendationsCarousel_Arrows {
+    display: none;
+  }
+}
+
+.sec-RecommendationsCarousel_Arrow {
+  bottom: 160px;
+}
+
+.sec-RecommendationsCarousel_Arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sec-RecommendationsCarousel_Arrow-previous svg {
+  margin-right: 2px;
+}
+.sec-RecommendationsCarousel_Arrow-next svg {
+  margin-left: 2px;
+}
+
+.sec-Nosto_Button {
+  display: flex;
+  max-width: fit-content;
+  margin: 30px auto 0;
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-Nosto_Button {
+    margin-top: 0;
+  }
+}

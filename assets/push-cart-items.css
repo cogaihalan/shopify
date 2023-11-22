@@ -1,0 +1,24 @@
+/*
+|--------------------------------------------------------------------------
+| Cart items
+|--------------------------------------------------------------------------
+| @namespace: psh-
+|
+*/
+
+.psh-CartItems {
+  flex-direction: column;
+
+  display: flex;
+}
+
+.psh-CartItems_Item {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  border-bottom: 1px solid var(--Color_Grey-10);
+}
+
+.psh-CartItems_Item-last {
+  border-bottom: none;
+}

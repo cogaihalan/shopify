@@ -1,0 +1,257 @@
+/*
+|--------------------------------------------------------------------------
+| Font sizes
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.fz-10_12 {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 12px;
+}
+
+.fz-12_12 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 12px;
+}
+
+.fz-12_12-navigation {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 12px;
+}
+
+.fz-12_17 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+}
+
+.fz-12_22 {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 18px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-12_22 {
+    font-size: 12px;
+    line-height: 22px;
+  }
+}
+
+.fz-13_13 {
+  /* styleName: Mobile/Links & Titles; */
+  font-family: var(--Font_Family-headings);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-13_13 {
+    /* styleName: Desktop/Link & Titles; */
+    font-size: 13px;
+    line-height: 13px;
+  }
+}
+
+.fz-13_18 {
+  /* styleName: Desktop/Button Link; */
+  font-family: var(--Font_Family-headings);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.fz-14_15 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 13px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-14_15 {
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+.fz-14_20 {
+  /* styleName: Mobile/Body Copy; */
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-14_20 {
+    /* styleName: Desktop/Body Copy; */
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.fz-14_20-headings {
+  /* styleName: Desktop/Small Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-14_20-headings {
+    /* styleName: Desktop/Body Copy; */
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    line-height: 20px;
+  }
+}
+
+.fz-16_18 {
+  /* styleName: Desktop/Sub Heading; */
+  font-family: var(--Font_Family-headings);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.fz-16_22 {
+  font-family: var(--Font_Family-headings);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.fz-18_22 {
+  /* styleName: Mobile/Menu & Small Headings; */
+  font-family: var(--Font_Family-headings);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .fz-18_22 {
+    /* styleName: Desktop/Menu & Small Headings; */
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.fz-18_25 {
+  /* styleName: Mobile/ Hero Body Copy; */
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-18_25 {
+    /* styleName: Desktop/Hero Body Copy; */
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.fz-24_26 {
+  font-size: 24px;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+}
+
+.fz-24_29 {
+  /* styleName: Mobile/Headings; */
+  font-family: var(--Font_Family-headings);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-24_29 {
+    /* styleName: Desktop/Headings; */
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 29px;
+  }
+}
+
+.fz-34_37 {
+  /* styleName: Mobile/Main Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-34_37 {
+    /* styleName: Desktop/Main Title; */
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 37px;
+  }
+}
+
+.fz-58_64 {
+  /* styleName: Mobile/Hero Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 37px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-58_64 {
+    /* styleName: Desktop/Hero Title; */
+    font-size: 42px;
+    line-height: 48px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .fz-58_64 {
+    /* styleName: Desktop/Hero Title; */
+    font-size: 58px;
+    line-height: 64px;
+  }
+}
+
+.fz-76_84 {
+  /* styleName: Mobile/Hero Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 37px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-76_84 {
+    /* styleName: Desktop/Display; */
+    font-size: 76px;
+    line-height: 84px;
+  }
+}
+/* stylelint-enable */

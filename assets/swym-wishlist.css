@@ -1,0 +1,157 @@
+/*
+|--------------------------------------------------------------------------
+| Swym Wishlist
+|--------------------------------------------------------------------------
+| @namespace swym
+|
+*/
+
+.swym-Wishlist_Items {
+  grid-gap: 30px var(--Grid_Gutter);
+  grid-template-columns: repeat(4, 1fr);
+
+  display: grid;
+  width: 100%;
+}
+@media only screen and (min-width: 901px) {
+  .swym-Wishlist_Items {
+    grid-gap: 40px var(--Grid_Gutter);
+  }
+}
+
+.swym-Wishlist_Item {
+  grid-column: span 2;
+
+  width: 100%;
+
+  opacity: 1;
+
+  transition: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+@media only screen and (min-width: 901px) {
+  .swym-Wishlist_Item {
+    grid-column: span 1;
+  }
+}
+
+.swym-Wishlist_Item[aria-busy='true'] {
+  cursor: wait;
+  opacity: 0.5;
+}
+
+/*
+|--------------------------------------------------------------------------
+| States
+|--------------------------------------------------------------------------
+|
+*/
+
+.swym-Wishlist_State {
+  text-align: center;
+}
+.swym-Wishlist_State[aria-hidden='true'] {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+|
+*/
+
+.swym-Wishlist_Buttons {
+  grid-gap: var(--Grid_Gutter);
+
+  display: grid;
+  margin: 30px 0;
+}
+@media only screen and (min-width: 768px) {
+  .swym-Wishlist_Buttons {
+    margin-top: -10px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .swym-Wishlist_Buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .swym-Wishlist_Buttons {
+    margin-top: -30px;
+  }
+}
+
+.swym-Wishlist_ButtonItem {
+  align-items: center;
+
+  display: flex;
+}
+
+.swym-Wishlist_ButtonItem-left {
+  justify-content: flex-start;
+}
+
+.swym-Wishlist_ButtonItem-right {
+  justify-content: flex-end;
+}
+
+.swym-Wishlist_Button {
+  width: 100%;
+
+  opacity: 1;
+}
+@media only screen and (min-width: 901px) {
+  .swym-Wishlist_Button {
+    max-width: 100%;
+    width: 250px;
+  }
+}
+
+.swym-Wishlist_Button-continue {
+  width: auto;
+  margin: 0 auto 20px;
+}
+@media only screen and (min-width: 901px) {
+  .swym-Wishlist_Button-continue {
+    margin: 0;
+  }
+}
+
+.swym-Wishlist_Button[aria-hidden='true'] {
+  cursor: not-allowed;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Pagination
+|--------------------------------------------------------------------------
+|
+*/
+
+.swym-Wishlist_Pagination {
+  grid-gap: var(--Grid_Gutter);
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+  margin: 30px 0;
+}
+
+.swym-Wishlist_PaginationItem {
+  align-items: center;
+
+  display: flex;
+  width: 150px;
+}
+
+.swym-Wishlist_PaginationItem-left {
+  margin-left: auto;
+}
+
+.swym-Wishlist_PaginationItem-right {
+  margin-right: auto;
+}

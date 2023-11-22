@@ -1,0 +1,66 @@
+/* sectionuspsmarquee
+|--------------------------------------------------------------------------
+| Usp-Marquee
+|--------------------------------------------------------------------------
+| @namespace: sec-
+|
+*/
+
+.sec-UspMarquee {
+  background-color: var(--Color_CoolPink);
+}
+
+@media only screen and (min-width: 1300px) {
+  .sec-UspMarquee {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .sec-UspMarquee_Items {
+    display: flex;
+
+    animation: none;
+  }
+
+  .sec-UspMarquee_Items:not(:first-of-type) {
+    display: none;
+  }
+}
+
+.sec-UspMarquee_Item {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: 100%;
+  padding: 12px 0 10px;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sec-UspMarquee_Item::after {
+  content: '|';
+
+  display: block;
+  padding-right: calc(var(--Grid_Gutter) * 3);
+  padding-left: calc(var(--Grid_Gutter) * 3);
+}
+
+@media only screen and (min-width: 1300px) {
+  .sec-UspMarquee_Item {
+    flex-grow: 1;
+
+    width: 100%;
+  }
+
+  .sec-UspMarquee_Items .sec-UspMarquee_Item:last-of-type::after {
+    display: none;
+  }
+}
+
+/* stylelint-disable-next-line selector-max-type */
+.sec-UspMarquee_Item a {
+  text-decoration: underline;
+}

@@ -1,0 +1,131 @@
+/*
+|--------------------------------------------------------------------------
+| Fixed Bar
+|--------------------------------------------------------------------------
+| @namespace: prd-
+|
+*/
+
+.prd-FixedBar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+
+  display: none;
+
+  transform: translateY(0%);
+
+  transition: transform 0.4s ease;
+}
+.prd-FixedBar[aria-hidden='true'] {
+  transform: translateY(100%);
+}
+@media only screen and (max-width: 767px) {
+  .prd-FixedBar {
+    display: block;
+  }
+}
+
+.prd-FixedBar_Button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  padding: 15px;
+
+  color: var(--Color_Brand);
+}
+
+.prd-FixedBar_Button-close::before {
+  content: '';
+
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+.prd-FixedBar_Icon-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  color: inherit;
+
+  transform: translate(-50%, -50%);
+}
+
+.prd-FixedBar_Icon svg {
+  color: inherit;
+}
+
+.prd-FixedBar_Trigger {
+  z-index: 0;
+
+  display: block;
+  width: 100%;
+}
+
+.prd-FixedBar_Form {
+  position: relative;
+  z-index: 1;
+
+  background-color: var(--Color_White);
+}
+
+.prd-FixedBar_Options {
+  padding: 12px 16px 15px;
+
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+|
+*/
+.prd-FixedBar_Buttons {
+  flex-flow: row nowrap;
+
+  display: flex;
+  padding-top: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .prd-FixedBar_Buttons {
+    margin-right: -16px;
+    margin-bottom: -16px;
+    margin-left: -16px;
+  }
+}
+
+.prd-FixedBar_Button-addtocart {
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 18px;
+}
+
+.prd-FixedBar_Icon {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+}
+
+.prd-FixedBar_Icon-addtocart {
+  margin-top: -3px;
+  margin-right: 17px;
+}

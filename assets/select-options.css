@@ -1,0 +1,49 @@
+/*
+|--------------------------------------------------------------------------
+| Product option selects
+|--------------------------------------------------------------------------
+| @namespace: sel
+|
+*/
+
+.sel-Options {
+  display: block;
+  margin-top: 5px;
+}
+
+.sel-Options_Label {
+  display: block;
+}
+
+.sel-Options_LabelText {
+  display: inline-block;
+}
+
+.sel-Options_LabelValue {
+  display: block;
+  margin-top: 5px;
+
+  color: var(--Color_Body-light);
+}
+
+.sel-Options_Option {
+  display: flex;
+  margin-bottom: 5px;
+  padding: 5px;
+
+  background-color: var(--Color_White);
+  border: 1px solid var(--Color_Grey-lighter);
+}
+
+.sel-Options_Select {
+  flex-grow: 1;
+
+  border: none;
+}
+
+.sel-Options_Value {
+  position: relative;
+  z-index: 1;
+
+  font-weight: 700;
+}

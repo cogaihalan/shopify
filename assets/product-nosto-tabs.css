@@ -1,0 +1,128 @@
+/*
+|--------------------------------------------------------------------------
+| Product Nosto Tabs
+|--------------------------------------------------------------------------
+| @namespace prd
+|
+*/
+
+.prd-NostoTabs .sec-Section_Header {
+  display: none;
+}
+
+/* stylelint-disable selector-class-pattern */
+@media only screen and (max-width: 900px) {
+  .prd-NostoTabs .nosto_element {
+    margin-right: -15px;
+  }
+}
+/* stylint-enable */
+
+.prd-NostoTabs .sec-Section-spacingStandard {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.prd-NostoTabs .sec-RecommendationsCarousel_Items {
+  display: flex;
+
+  overflow: visible;
+}
+
+.prd-NostoTabs_Header {
+  margin-bottom: 20px;
+}
+
+.prd-NostoTabs_Title {
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Product Nosto Tabs Nav
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+.prd-NostoTabs_NavInner {
+  display: flex;
+  margin: 0 auto;
+  padding-bottom: 10px;
+
+  overflow: auto;
+  white-space: nowrap;
+}
+.prd-NostoTabs_NavInner .prd-NostoTabs_NavItem:first-child {
+  margin-left: auto;
+}
+.prd-NostoTabs_NavInner .prd-NostoTabs_NavItem:last-child {
+  margin-right: auto;
+}
+.prd-NostoTabs_NavInner::-webkit-scrollbar {
+  height: 1px;
+}
+.prd-NostoTabs_NavInner::-webkit-scrollbar-track {
+  background-color: var(--Color_CoolPink);
+}
+.prd-NostoTabs_NavInner::-webkit-scrollbar-thumb {
+  background-color: var(--Color_Brand);
+}
+
+.prd-NostoTabs_Tab[aria-current='false'] {
+  height: 0;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.prd-NostoTabs_NavItem {
+  margin-right: 20px;
+
+  cursor: pointer;
+}
+.prd-NostoTabs_NavItem:last-child {
+  margin-right: 0;
+}
+.prd-NostoTabs_NavItem[aria-current='false'] {
+  opacity: 0.3;
+}
+@media only screen and (min-width: 901px) {
+  .prd-NostoTabs_NavItem {
+    margin-right: 60px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Product Nosto Tabs Slider/Arrows
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+.car-Carousel[data-initialized='false'] .sec-RecommendationsCarousel_Scroller {
+  display: none;
+}
+.prd-NostoTabs .sec-RecommendationsCarousel_Scroller {
+  --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 2.5);
+  --Carousel_ScrollerWidth:
+    calc(
+      100% - 15px / var(--Carousel_VisibleItemCount)
+    );
+}
+@media only screen and (min-width: 901px) {
+  .prd-NostoTabs .sec-RecommendationsCarousel_Scroller {
+    --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 4);
+    --Carousel_ScrollerWidth: calc(100% / var(--Carousel_VisibleItemCount));
+  }
+}
+
+.car-Carousel[data-initialized='false'] .sec-RecommendationsCarousel_Arrows {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  .prd-NostoTabs .sec-RecommendationsCarousel_Arrows {
+    display: none;
+  }
+}

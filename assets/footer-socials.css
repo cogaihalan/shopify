@@ -1,0 +1,74 @@
+/*
+|--------------------------------------------------------------------------
+| Footer Socials
+|--------------------------------------------------------------------------
+| @namespace: ft-
+|
+*/
+
+.ft-Socials {
+  flex-flow: row nowrap;
+
+  display: flex;
+  margin-top: 60px;
+
+  text-align: center;
+}
+@media only screen and (min-width: 901px) {
+  .ft-Socials {
+    text-align: left;
+  }
+}
+
+.ft-Socials_Item {
+  margin-right: calc(var(--Grid_Gutter) * 3);
+}
+.ft-Socials_Item:last-child {
+  margin-right: 0;
+}
+
+.ft-Socials_Link {
+  position: relative;
+
+  display: block;
+
+  outline: none;
+}
+
+.ft-Socials_Link svg {
+  position: relative;
+  z-index: 1;
+
+  width: 20px;
+  height: 20px;
+}
+
+.ft-Socials_Link::after {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+
+  display: block;
+  width: 34px;
+  height: 34px;
+
+  background-color: var(--Color_CoolPink);
+  border-radius: 50%;
+  opacity: 0;
+
+  transform: translate(-50%, -50%) scale(0.6);
+  transition: opacity, transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  pointer-events: none;
+}
+
+.ft-Socials_Link:hover::after,
+.ft-Socials_Link:focus::after {
+  opacity: 1;
+
+  transform: translate(-50%, -50%) scale(1);
+}

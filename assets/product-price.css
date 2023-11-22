@@ -1,0 +1,41 @@
+/*
+|--------------------------------------------------------------------------
+| Product price
+|--------------------------------------------------------------------------
+| @namespace: prd
+|
+*/
+
+.prd-Price_Price {
+  white-space: nowrap;
+}
+
+.prd-Price_Previous {
+  position: relative;
+
+  display: inline-block;
+  margin-left: 5px;
+
+  color: var(--Color_Body);
+  opacity: 0.5;
+}
+.prd-Price_Previous::after {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+
+  display: block;
+  width: 100%;
+  height: 1px;
+
+  background-color: currentColor;
+}
+
+.prd-Price_SoldOut {
+  margin-left: 5px;
+
+  color: var(--Color_Red);
+}

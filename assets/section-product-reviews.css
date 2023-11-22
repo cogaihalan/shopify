@@ -1,0 +1,694 @@
+/*
+|--------------------------------------------------------------------------
+| Ancillary accordion
+|--------------------------------------------------------------------------
+| @namespace: sec-ProductReviews
+|
+*/
+
+.sec-ProductReviews_Inner {
+  max-width: calc(1350px + calc(var(--Grid_Gutter) * 6));
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+|--------------------------------------------------------------------------
+| General
+|--------------------------------------------------------------------------
+|
+*/
+
+/* stylelint-disable */
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container].oke-w {
+  max-width: unset;
+}
+
+.sec-ProductReviews_Inner .oke-stars-foreground svg {
+  width: auto;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews {
+  position: relative;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header-content-block {
+  width: 100%;
+  margin: auto;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviewsTab {
+  padding-bottom: 140px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviewsTab {
+    padding-bottom: 120px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-ratingAverageModule-rating {
+  align-items: center;
+  flex-direction: column;
+
+  grid-gap: 5px;
+
+  display: flex;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-ratingAverageModule-rating-average {
+  margin-right: 0;
+
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-recommendsModule {
+  display: none;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-ratingAverageModule-count {
+  display: none;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-mediaCarouselModule {
+  display: none;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-breakdownModule {
+  display: none;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-header-content {
+  width: 100%;
+  margin: 0;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-header-content-module {
+  justify-content: center;
+
+  margin-bottom: 0;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-header .oke-w-ratingAverageModule--oneLine {
+  flex-direction: column;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-controls .oke-w-controls-nav {
+  justify-content: center;
+
+  margin: 5px 0 20px;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-controls .oke-w-navBar {
+  justify-content: center;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-controls .oke-w-navBar-item {
+  flex-direction: row-reverse;
+
+  display: flex;
+
+  margin: 0;
+  padding-bottom: 0;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+
+  border-bottom: 0;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-controls .oke-w-navBar-item:first-of-type::before {
+  content: '/';
+
+  padding: 0 3px;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-controls .oke-w-navBar-item .oke-w-navBar-item-count {
+  margin-right: 3px;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-controls .oke-w-navBar-item .oke-w-navBar-item-count::before,
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-controls .oke-w-navBar-item .oke-w-navBar-item-count::after {
+  content: '';
+}
+
+/*
+|--------------------------------------------------------------------------
+| Controls
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-head .oke-w-reviews-filterToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  align-items: center;
+  flex-direction: row-reverse;
+
+  grid-gap: 10px;
+
+  display: flex;
+
+  padding: 0;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
+
+  background-color: transparent !important;
+  border: 0;
+  color: #333 !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-head .oke-icon {
+  line-height: unset;
+}
+
+.okeReviews[data-oke-container] .oke-w-reviews-filterToggle .oke-icon::before,
+div.okeReviews .oke-w-reviews-filterToggle .oke-icon::before {
+  content: '' !important;
+
+  width: 13px !important;
+  height: 11px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  background-image: url('bao-icon-filters.svg') !important;
+  background-repeat: no-repeat;
+  background-size: 13px 11px !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-head .oke-w-filter-title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-controls {
+  padding-bottom: 0;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-controls .oke-w-reviews-count {
+  display: none !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-controls .oke-w-reviews-sort {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-controls .oke-sortSelect {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-controls .oke-sortSelect-label {
+  margin-right: 0;
+
+  font-weight: 500;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-controls .oke-sortSelect-label::after {
+  content: ':';
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-controls .oke-select {
+  padding-left: 5px;
+
+  text-transform: uppercase;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='9.19238' width='1' height='7' transform='rotate(45 9.19238 0)' fill='%23333333'/%3E%3Crect x='0.707031' width='7' height='1' transform='rotate(45 0.707031 0)' fill='%23333333'/%3E%3C/svg%3E%0A");
+}
+
+/*
+|--------------------------------------------------------------------------
+| Filters
+|--------------------------------------------------------------------------
+|
+*/
+
+.okeReviews[data-oke-container] .oke-w-filters,
+div.okeReviews .oke-w-filters {
+  gap: 10px;
+
+  flex-direction: column;
+
+  display: flex;
+  padding-top: 40px;
+}
+@media only screen and (min-width: 901px) {
+  .okeReviews[data-oke-container] .oke-w-filters,
+  div.okeReviews .oke-w-filters {
+    flex-direction: row;
+  }
+}
+
+.okeReviews[data-oke-container] .oke-w-filter:first-child,
+div.okeReviews .oke-w-filter:first-child {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Items
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-listMasonry {
+  margin: 0;
+  padding: 0 !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid {
+  grid-auto-rows: unset;
+  grid-gap: 10px;
+
+  grid-template-columns: repeat(1, 1fr) !important;
+
+  display: grid;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid {
+    grid-gap: 20px;
+
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item {
+  grid-row-end: unset !important;
+
+  padding: 20px 20px 25px;
+
+  background-color: #fdf5f5;
+  opacity: 1 !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewCard {
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+
+  padding: 0;
+
+  border: unset;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewCard-content {
+  margin: 0;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewContent {
+  margin-bottom: 10px;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewContent-date {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewContent-title {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 140%;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewContent-body {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+
+  color: #333;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewContent-readMore-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+
+  color: #333;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewCard-head {
+  align-items: flex-start;
+
+  height: 100%;
+  margin: 0 0 15px;
+  padding: 0;
+
+  border-top: unset;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-w-reviewer-avatar {
+  display: none;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-helpful {
+  align-items: center;
+
+  display: flex;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-w-reviewer-name {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-helpful-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+
+  color: #333;
+
+  opacity: 0.6;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-helpful-vote-button--positive::before {
+  font-size: 16px;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.3765 8.62978C15.7815 8.38065 16.0424 7.92022 15.9941 7.39913C15.9315 6.715 15.3054 6.21739 14.618 6.21739H10.1304C10.1304 6.21739 10.7826 4.50543 10.7826 3.28261C10.7826 2.05978 9.72283 1 9.15217 1C8.58152 1 8.17391 1.32609 8.17391 1.32609V3.6087L6.21739 7.84783L5.56522 8.17391V7.52174H2.30435C1.58435 7.52174 1 8.10609 1 8.82609V14.0435C1 14.7641 1.58435 15.3478 2.30435 15.3478H4.26087C4.98152 15.3478 5.56522 14.7641 5.56522 14.0435C5.95913 14.4374 6.95109 14.6957 7.52174 14.6957H13.3913H13.508C14.0487 14.6957 14.5502 14.3402 14.667 13.8126C14.7622 13.3835 14.6128 12.9876 14.3357 12.7261C14.9043 12.6615 15.3478 12.1841 15.3478 11.5978C15.3478 11.2711 15.2083 10.9776 14.9878 10.7696C15.5565 10.705 16 10.2276 16 9.6413C16 9.19848 15.745 8.81891 15.3765 8.62978Z' stroke='%23E2A9A9' stroke-width='0.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 10%;
+  color: transparent;
+  opacity: 0.6;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-helpful-vote-button--negative::before {
+  font-size: 16px;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.62348 7.37022C1.21848 7.61935 0.957609 8.07978 1.00587 8.60087C1.06848 9.285 1.69456 9.78261 2.38196 9.78261L6.86957 9.78261C6.86957 9.78261 6.21739 11.4946 6.21739 12.7174C6.21739 13.9402 7.27717 15 7.84783 15C8.41848 15 8.82609 14.6739 8.82609 14.6739L8.82609 12.3913L10.7826 8.15217L11.4348 7.82609L11.4348 8.47826L14.6957 8.47826C15.4157 8.47826 16 7.89391 16 7.17391L16 1.95652C16 1.23587 15.4157 0.652176 14.6957 0.652176L12.7391 0.652176C12.0185 0.652176 11.4348 1.23587 11.4348 1.95652C11.0409 1.56261 10.0489 1.30435 9.47826 1.30435L3.6087 1.30435L3.49196 1.30435C2.9513 1.30435 2.44978 1.65978 2.33304 2.18739C2.23783 2.61652 2.38717 3.01239 2.66435 3.27391C2.09565 3.33848 1.65217 3.81587 1.65217 4.40217C1.65217 4.72891 1.79174 5.02239 2.01217 5.23044C1.44348 5.295 1 5.77239 1 6.3587C1 6.80152 1.255 7.18109 1.62348 7.37022Z' stroke='%23E2A9A9' stroke-width='0.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 10%;
+  color: transparent;
+  opacity: 0.6;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-reviewCard-container {
+  order: 4;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-w-review-media {
+  margin: 20px 0 10px;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item.oke-w-review-media-featured {
+  display: block !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-mediaCollage {
+  grid-gap: 10px !important;
+
+  display: flex !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews .oke-w-reviews-masonryGrid-item .oke-media {
+  width: 50px;
+  height: 50px;
+}
+
+.okeReviews[data-oke-container] .oke-w-reviewer-identity,
+div.okeReviews .oke-w-reviewer-identity,
+.okeReviews[data-oke-container] .oke-w-reviewer-verified,
+div.okeReviews .oke-w-reviewer-verified {
+  display: inline-block;
+}
+
+.okeReviews[data-oke-container] .oke-w-reviewer-identity,
+div.okeReviews .oke-w-reviewer-identity {
+  margin-right: 5px;
+}
+
+.okeReviews[data-oke-container] .oke-w-filter,
+div.okeReviews .oke-w-filter {
+  margin-top: 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Attribute bar styles
+|--------------------------------------------------------------------------
+|
+*/
+
+.okeReviews[data-oke-container] .oke-w-barAttributes,
+div.okeReviews .oke-w-barAttributes {
+  row-gap: 10px !important;
+}
+
+.okeReviews[data-oke-container] .oke-reviewCardFeaturedMedia--below .oke-reviewCardFeaturedMedia-attributes,
+div.okeReviews .oke-reviewCardFeaturedMedia--below .oke-reviewCardFeaturedMedia-attributes {
+  width: 100%;
+}
+
+.okeReviews[data-oke-container] .oke-w-barAttributes-item,
+div.okeReviews .oke-w-barAttributes-item {
+  max-width: 100% !important;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Footer Buttons
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews-writeReview {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+
+  justify-content: flex-end;
+
+  display: flex;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews-writeReview {
+    bottom: -80px;
+
+    width: calc(50% - 10px);
+  }
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews-writeReview .oke-w-writeReview {
+  min-width: 215px;
+  width: 100%;
+  padding: 12px 30px;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  line-height: 22px;
+  text-transform: uppercase;
+
+  background-color: #333;
+  box-shadow: unset !important;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews-writeReview .oke-w-writeReview {
+    width: auto;
+  }
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews-writeReview .oke-w-writeReview:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-w-reviews-writeReview .oke-w-writeReview::before {
+  display: none;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-showMore {
+  position: absolute;
+  right: 0;
+  bottom: -120px;
+
+  display: flex;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-showMore {
+    bottom: -80px;
+
+    width: calc(50% - 10px);
+  }
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-showMore .oke-showMore-button {
+  min-width: 215px;
+  width: 100%;
+  padding: 12px 30px;
+
+  background-color: #fff;
+  box-shadow: unset !important;
+  color: #333;
+
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-showMore .oke-showMore-button {
+    width: auto;
+  }
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-showMore .oke-showMore-button:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-showMore .oke-showMore-button .oke-showMore-button-text {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Questions
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-questions .oke-qw-header {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-qw-header-sort {
+  margin: 0;
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-qw-header-askQuestion {
+  margin-bottom: 0;
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-qw-askQuestion {
+  width: max-content;
+  padding: 12px 30px;
+
+  background-color: #333;
+  box-shadow: unset !important;
+  color: #fff;
+
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-qw-askQuestion:hover {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-sortSelect {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-sortSelect-label {
+  margin-right: 0;
+
+  font-weight: 500;
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-sortSelect-label::after {
+  content: ':';
+}
+
+.sec-ProductReviews_Inner .oke-questions .oke-select {
+  padding-left: 5px;
+
+  text-transform: uppercase;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='9.19238' width='1' height='7' transform='rotate(45 9.19238 0)' fill='%23333333'/%3E%3Crect x='0.707031' width='7' height='1' transform='rotate(45 0.707031 0)' fill='%23333333'/%3E%3C/svg%3E%0A");
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-state-empty-button .oke-w-writeReview {
+  align-items: center;
+  justify-content: center;
+
+  grid-gap: 5px;
+
+  display: flex;
+
+  min-width: 215px;
+  width: 100%;
+  padding: 12px 30px;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  line-height: 22px;
+  text-transform: uppercase;
+
+  background-color: #333;
+  box-shadow: unset !important;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-state-empty-button .oke-w-writeReview {
+    width: max-content;
+    margin: auto;
+  }
+}
+
+.sec-ProductReviews_Inner .okeReviews[data-oke-container] .oke-state-empty-button .oke-w-writeReview:hover {
+  background-color: #fff;
+  color: #333;
+}
+/* stylelint-enable */

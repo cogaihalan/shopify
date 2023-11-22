@@ -1,0 +1,206 @@
+/*
+|--------------------------------------------------------------------------
+| Product options
+|--------------------------------------------------------------------------
+| @namespace: qb
+|
+*/
+
+.qb-Options {
+  display: block;
+  margin-bottom: -15px;
+}
+
+.qb-Options_Label {
+  display: block;
+}
+
+.qb-Options_LabelText {
+  display: inline-block;
+
+  font-weight: 700;
+}
+
+.prd-Card_QuickBuy[aria-busy='true'] .qb-Options_LabelText {
+  opacity: 0;
+}
+
+.qb-Options_ModelInformation {
+  margin: 0 5px;
+}
+
+.qb-Options_ModelInformation,
+.qb-Options_SizeGuide {
+  display: inline-block;
+}
+
+.qb-Options_LabelValue {
+  display: block;
+  margin-top: 5px;
+
+  color: var(--Color_Body-light);
+}
+
+.qb-Options_Buttons {
+  margin-top: 6px;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+
+.qb-Options_Button {
+  --Swatch_Size: 32px;
+  position: relative;
+  z-index: 1;
+
+  display: inline-block;
+  min-width: var(--Swatch_Size);
+  min-height: var(--Swatch_Size);
+  width: auto;
+  margin: 2px 4px;
+  padding: 0 15px;
+
+  line-height: calc(var(--Swatch_Size) - 4px);
+
+  background-color: var(--Color_White);
+
+  border: 1px solid var(--Color_Grey-20);
+  border-radius: calc(var(--Swatch_Size) / 2);
+  color: var(--Color_Body);
+
+  cursor: pointer;
+
+  transition: color, background-color, border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  white-space: nowrap;
+}
+
+.qb-Options_Button[data-available='false'] {
+  color: var(--Color_Grey-light);
+}
+
+.prd-Card_QuickBuy[aria-busy='true'] .qb-Options_Button {
+  border-color: var(--Color_Grey-20);
+
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.qb-Options_Button[aria-pressed='true'] {
+  border-color: var(--Color_Brand);
+}
+
+.qb-Options_Background {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 0;
+
+  display: block;
+
+  width: 100%;
+
+  background-color: var(--Color_CoolPink);
+
+  border: 3px solid var(--Color_White);
+  border-radius: calc(var(--Swatch_Size) / 2);
+  color: inherit;
+
+  opacity: 0;
+
+  transition: opacity, border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.prd-Card_QuickBuy[aria-busy='true'] .qb-Options_Background {
+  background-color: var(--Color_Grey-20);
+  pointer-events: none;
+
+  opacity: 1;
+}
+
+.prd-QuickBuy-skeleton .qb-Options_Background {
+  background-color: var(--Color_Grey-20);
+  opacity: 1;
+}
+
+.qb-Options_Button[aria-pressed='true']:hover .qb-Options_Background,
+.qb-Options_Button[aria-pressed='true']:focus .qb-Options_Background {
+  border-color: var(--Color_CoolPink);
+}
+
+.qb-Options_Button:hover .qb-Options_Background,
+.qb-Options_Button:focus .qb-Options_Background,
+.qb-Options_Button[aria-pressed='true'] .qb-Options_Background,
+.qb-Options_Button-current .qb-Options_Background {
+  opacity: 1;
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+.qb-Options_Button[data-available='false']:hover .qb-Options_Background,
+.qb-Options_Button[data-available='false']:focus .qb-Options_Background,
+.qb-Options_Button[data-available='false'][aria-pressed='true'] .qb-Options_Background,
+.qb-Options_Button-current[data-available='false'] .qb-Options_Background {
+  opacity: 0;
+}
+
+.qb-Options_Option {
+  flex-flow: column;
+
+  display: flex;
+  margin-top: 8px;
+}
+
+.qb-Options_Option:first-child {
+  margin-top: 0;
+}
+
+.qb-Options_Option-small .qb-Options_Button {
+  width: var(--Swatch_Size);
+  height: var(--Swatch_Size);
+  padding: 0;
+}
+
+.qb-Options_Value {
+  position: relative;
+  z-index: 1;
+
+  font-weight: 700;
+}
+
+.prd-Card_QuickBuy[aria-busy='true'] .qb-Options_Value {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Icon
+|--------------------------------------------------------------------------
+|
+*/
+
+.qb-Options_Icon {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  z-index: 2;
+
+  display: none;
+  width: 16px;
+  height: 12px;
+
+  color: var(--Color_Body);
+}
+
+.qb-Options_Icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.qb-Options_Button[data-available='false'] .qb-Options_Icon {
+  display: block;
+}

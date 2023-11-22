@@ -1,0 +1,59 @@
+/*
+|--------------------------------------------------------------------------
+| Accessibility Widget Override
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable */
+html body .acsb-trigger {
+  bottom: 24px;
+  left: 24px;
+  z-index: 10 !important;
+
+  width: 44px !important;
+  height: 44px !important;
+
+  background-color: var(--Color_CoolPink) !important;
+  box-shadow: 0 4px 20px 4px rgb(0 0 0 / 12%);
+  inset: auto auto 24px 24px !important;
+}
+
+html body .acsb-trigger:hover {
+  transform: none;
+}
+
+html body .acsb-trigger .acsb-trigger-icon svg {
+  max-width: 24px !important;
+  max-height: 24px !important;
+}
+
+html body .acsb-trigger .acsb-trigger-icon svg path {
+  fill: var(--Color_Brand) !important;
+}
+
+#ada-button-frame {
+  z-index: 8 !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .product-fixed-bar-active #ada-button-frame {
+    bottom: 52px !important;
+  }
+}
+
+
+access-widget-ui::part(acsb-trigger) {
+  bottom: 24px;
+  left: 24px;
+  width: 44px !important;
+  height: 44px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .product-fixed-bar-active access-widget-ui::part(acsb-trigger) {
+    bottom: 76px;
+}
+}
+
+/* stylelint-enable */

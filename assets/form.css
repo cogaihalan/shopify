@@ -1,0 +1,279 @@
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+| @namespace: frm-
+|
+*/
+
+.frm-Form_Row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.frm-Form_Row-first {
+  margin-bottom: 15px;
+}
+
+.frm-Form_Row-first,
+.frm-Form_Row-last,
+.frm-Form_Row-marginTop {
+  margin-top: 20px;
+}
+
+.frm-Form_Row-marginTop {
+  margin-bottom: 0;
+}
+
+.frm-Form_Row-validation {
+  margin-top: 0;
+}
+
+.frm-Form_Columns {
+  flex-flow: row wrap;
+
+  display: flex;
+  min-width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .frm-Form_Columns {
+    flex-flow: row nowrap;
+
+    margin-right: -5px;
+    margin-left: -5px;
+  }
+}
+
+.frm-Form_Column {
+  flex: 1;
+
+  min-width: 100%;
+  margin-bottom: 10px;
+}
+.frm-Form_Column:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) {
+  .frm-Form_Column {
+    min-width: 0;
+    margin-right: 5px;
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+}
+
+.frm-Form_Header {
+  margin-bottom: 40px;
+}
+
+.frm-Form_Subject {
+  margin-bottom: 30px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.frm-Form_Text {
+  text-align: center;
+}
+
+.frm-Form_Text-title {
+  margin-bottom: 10px;
+}
+
+.frm-Form_Text-footer {
+  margin-top: 15px;
+}
+
+.frm-Form_Text-terms {
+  margin-top: 10px;
+
+  text-align: left;
+}
+
+.frm-Form_Text-error {
+  color: var(--Color_Red);
+}
+
+.frm-Form_Text-success {
+  color: var(--Color_Success);
+}
+
+.frm-Form_Fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.frm-Form_Legend {
+  display: none;
+}
+
+.frm-Form_Fields {
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  display: flex;
+}
+
+.frm-Form_Field {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.frm-Form_Label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.frm-Form_Checkbox .frm-Form_Label {
+  position: relative;
+
+  margin-top: 2px;
+  margin-bottom: 0;
+  padding-left: 30px;
+}
+
+.frm-Form_Checkbox .frm-Form_Label::before {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  background-color: var(--Color_White);
+  border: 1px solid var(--Color_Border);
+  border-radius: 50%;
+
+  transform: translateY(-50%);
+}
+.frm-Form_Checkbox .frm-Form_Label::after {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 5px;
+
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--Color_Brand);
+  border-radius: 50%;
+  opacity: 0;
+
+  transform: translateY(-50%);
+  transition: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+/* stylelint-disable-next-line selector-max-type */
+.frm-Form_Checkbox input:checked + .frm-Form_Label::after {
+  opacity: 1;
+}
+
+.frm-Form_Input,
+.frm-Form_Textarea,
+.frm-Form_Select {
+  width: 100%;
+  height: 45px;
+  padding: 13px 15px;
+
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+
+  appearance: none;
+  background-color: var(--Color_MainBackground);
+  /* stylelint-disable-next-line declaration-no-important */
+  background-image: none !important;
+  border: 1px solid var(--Color_Border);
+  color: var(--Color_Body);
+  outline: 0;
+
+  transition: border 0.5s ease;
+}
+.frm-Form_Input::placeholder,
+.frm-Form_Textarea::placeholder,
+.frm-Form_Select::placeholder {
+  color: var(--Color_Grey-medium);
+  opacity: 1;
+}
+.frm-Form_Input:hover,
+.frm-Form_Input:focus,
+.frm-Form_Textarea:hover,
+.frm-Form_Textarea:focus,
+.frm-Form_Select:hover,
+.frm-Form_Select:forcus {
+  border: 1px solid var(--Color_Brand);
+}
+
+.frm-Form_Input-error {
+  border-color: var(--Color_Error);
+}
+
+.frm-Form_SelectField {
+  position: relative;
+}
+
+.frm-Form_Select {
+  padding-right: 35px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.frm-Form_SelectIcon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  z-index: 1;
+
+  width: 9px;
+  height: 12px;
+
+  pointer-events: none;
+
+  transform: translateY(-50%);
+}
+
+.frm-Form_Textarea {
+  display: block;
+  height: auto;
+}
+
+.frm-Form_Checkbox {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+/* stylelint-disable-next-line selector-max-type */
+.frm-Form_Checkbox input {
+  display: none;
+}
+
+.frm-Form_Actions {
+  margin-top: 20px;
+}
+
+.frm-Form_Buttons {
+  display: flex;
+  margin-top: 10px;
+}
+
+.frm-Form_Submit {
+  width: 100%;
+}
+
+.frm-Form_Validation {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

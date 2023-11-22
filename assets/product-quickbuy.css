@@ -1,0 +1,324 @@
+/*
+|--------------------------------------------------------------------------
+| Quickbuy
+|--------------------------------------------------------------------------
+| @namespace: prd-
+|
+*/
+
+.prd-QuickBuy {
+  position: relative;
+
+  box-shadow: 0 6px 15px 5px rgba(51, 51, 51, 0.8);
+
+  transition: box-shadow 0.3s ease;
+}
+.prd-QuickBuy[aria-hidden='true'] {
+  box-shadow: none;
+}
+.prd-QuickBuy-skeleton {
+  pointer-events: none;
+}
+
+.prd-Card .prd-QuickBuy {
+  box-shadow: none;
+}
+
+.prd-QuickBuy_Close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  padding: 15px;
+
+  color: var(--Color_Brand);
+}
+
+.prd-QuickBuy_Close::after {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+
+  display: block;
+  width: 26px;
+  height: 26px;
+
+  background-color: var(--Color_CoolPink);
+  border-radius: 50%;
+  opacity: 0;
+
+  transform: translate(-50%, -50%);
+  transition: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  pointer-events: none;
+}
+
+.prd-QuickBuy_Close:hover::after,
+.prd-QuickBuy_Close:focus::after {
+  opacity: 1;
+}
+
+.prd-QuickBuy_Close::before {
+  content: '';
+
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+.prd-QuickBuy_Icon-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+
+  width: 10px;
+  height: 10px;
+
+  color: inherit;
+
+  transform: translate(-50%, -50%);
+}
+
+.prd-QuickBuy_Icon svg {
+  color: inherit;
+}
+
+.prd-QuickBuy_Trigger {
+  z-index: 0;
+
+  display: block;
+  width: 100%;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: color, border-color, background-color, opacity, visibility;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  pointer-events: initial;
+}
+
+[data-quick-buy-active='true'] .prd-QuickBuy_Trigger {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.prd-QuickBuy_Trigger-mobile {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  padding: 8px 0;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 17px;
+}
+
+.prd-QuickBuy_Trigger-pink {
+  background-color: var(--Color_CoolPink);
+  color: var(--Color_Brand);
+}
+
+.prd-QuickBuy_Trigger-disabled {
+  background-color: var(--Color_Grey-lightest);
+  color: var(--Color_Brand);
+}
+
+.prd-QuickBuy_Form {
+  position: relative;
+  z-index: 1;
+
+  background-color: var(--Color_White);
+}
+
+.prd-QuickBuy_Options {
+  padding: 12px 16px 15px;
+
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+|
+*/
+.prd-QuickBuy_Buttons {
+  flex-flow: row nowrap;
+
+  display: flex;
+  padding-top: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .prd-QuickBuy_Buttons {
+    margin-right: -16px;
+    margin-bottom: -16px;
+    margin-left: -16px;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .prd-Card_QuickBuy[data-mode='wishlist'] .prd-QuickBuy_Buttons {
+    display: none;
+  }
+}
+
+.prd-QuickBuy_Button-addtocart {
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 18px;
+}
+
+.prd-QuickBuy_Button-addtocart[aria-hidden='true'] {
+  display: none;
+}
+
+.prd-QuickBuy_Button-addtocart[data-back-in-stock-enabled='false'] + .prd-QuickBuy_Button-backInStock,
+.prd-QuickBuy_Button-backInStock[aria-hidden='true'] {
+  display: none;
+}
+
+.prd-QuickBuy_Button-backInStock {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  line-height: 18px;
+}
+
+.prd-Card_QuickBuy[aria-busy='true'] .prd-QuickBuy_Button-addtocart,
+.prd-QuickBuy-skeleton .prd-QuickBuy_Button-addtocart {
+  background-color: var(--Color_Grey-light);
+  border-color: var(--Color_Grey-light);
+  pointer-events: none;
+}
+
+.prd-QuickBuy_ButtonIcon {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+}
+
+.prd-QuickBuy_ButtonIcon-addtocart {
+  margin-top: -3px;
+  margin-right: 17px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Secondary links
+|--------------------------------------------------------------------------
+|
+*/
+.prd-QuickBuy_Links {
+  display: flex;
+
+  border-top: 1px solid var(--Color_Grey-lighter);
+}
+
+@media only screen and (min-width: 901px) {
+  .prd-QuickBuy_Links {
+    display: none;
+    padding-top: 14px;
+
+    border: none;
+  }
+
+  .prd-Card_QuickBuy[data-mode='wishlist'] .prd-QuickBuy_Links {
+    display: block;
+  }
+}
+
+.prd-QuickBuy_Link {
+  padding-right: 5px;
+  padding-left: 5px;
+
+  font-size: 11px;
+
+  border: 0;
+}
+@media only screen and (min-width: 901px) {
+  .prd-QuickBuy_Link {
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    display: flex;
+    padding: 15px 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 18px;
+
+    background-color: var(--Color_Brand);
+    border: 1px solid var(--Color_Brand);
+    color: var(--Color_White);
+  }
+
+  .prd-QuickBuy_Link:hover,
+  .prd-QuickBuy_Link:focus {
+    background-color: var(--Color_CoolPink);
+    border: 1px solid var(--Color_CoolPink);
+    color: var(--Color_Brand);
+  }
+}
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .prd-QuickBuy_Link {
+    align-items: center;
+
+    min-height: 50px;
+    padding: 0 10px;
+    white-space: initial;
+  }
+}
+.prd-QuickBuy_Link:nth-of-type(2n) {
+  border-left: 1px solid var(--Color_Grey-lighter);
+}
+
+.prd-QuickBuy_LinkText-wishlistAdded {
+  display: none;
+}
+.prd-QuickBuy_Link[data-wishlist-status='added'] .prd-QuickBuy_LinkText-wishlistAdded {
+  display: inline;
+}
+
+.prd-QuickBuy_Link[data-wishlist-status='added'] .prd-QuickBuy_LinkText-wishlistAdd {
+  display: none;
+}
+
+.prd-QuickBuy_LinkIcon {
+  display: none;
+}
+@media only screen and (min-width: 901px) {
+  .prd-QuickBuy_LinkIcon {
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+  }
+}
+
+.prd-QuickBuy_LinkIcon-wishlist {
+  margin-top: -3px;
+  margin-right: 17px;
+}
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .prd-QuickBuy_LinkIcon-wishlist {
+    display: none;
+  }
+}

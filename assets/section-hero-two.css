@@ -1,0 +1,146 @@
+/*
+|--------------------------------------------------------------------------
+| Hero Two
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+.sec-Hero {
+  position: relative;
+
+  display: block;
+}
+
+.sec-Hero-headerOverlay {
+  margin-top: calc(var(--Nav_Height) * -1);
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-Hero-mobileFullScreen {
+    height:
+      calc(
+        100vh - var(--Announcement_Height, 0) - var(--Nav_HeightWhenFixed, 0) -
+        var(--Usp_Height, 0)
+      );
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-Hero-dektopFullScreen {
+    height:
+      calc(
+        100vh - var(--Announcement_Height, 0) - var(--Nav_HeightWhenFixed, 0) -
+        var(--Usp_Height, 0)
+      );
+  }
+}
+
+.sec-Hero_Inner {
+  position: relative;
+  z-index: 1;
+
+  flex-direction: column;
+  flex-shrink: 0;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Hero_Inner {
+    flex-direction: row;
+  }
+}
+
+.sec-Hero_Body {
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+}
+
+.sec-Hero_Container {
+  height: 100%;
+}
+
+.sec-Hero_Carousel {
+  position: relative;
+
+  height: 100%;
+}
+
+.sec-Hero_Slides {
+  position: relative;
+
+  display: grid;
+  height: 100%;
+}
+
+.sec-Hero_Slide {
+  z-index: 1;
+
+  grid-column: 1;
+  grid-row: 1;
+
+  max-height: 100%;
+  height: 100%;
+
+  opacity: 1;
+
+  transition: opacity 1s ease;
+}
+.sec-Hero_Slide[aria-hidden='true'] {
+  z-index: 0;
+
+  opacity: 0;
+}
+
+.sec-Hero_Footer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  z-index: 4;
+
+  justify-content: center;
+
+  display: flex;
+  width: 100%;
+  height: 10px;
+
+  pointer-events: none;
+}
+@media only screen and (min-width: 901px) {
+  .sec-Hero_Footer {
+    bottom: 30px;
+
+    height: 20px;
+  }
+}
+
+.sec-Hero_Line {
+  flex: none;
+
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  pointer-events: auto;
+}
+.sec-Hero_Line::after {
+  content: '';
+
+  display: block;
+  width: 20px;
+  height: 2px;
+
+  background-color: var(--Color_Grey-light);
+
+  transition: background-color 0.3s ease;
+}
+.sec-Hero_Line:hover.sec-Hero_Line::after,
+.sec-Hero_Line[aria-current='true']::after {
+  background-color: var(--Color_White);
+}

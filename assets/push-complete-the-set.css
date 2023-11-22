@@ -1,0 +1,56 @@
+/*
+|--------------------------------------------------------------------------
+| Complete the Set
+|--------------------------------------------------------------------------
+| @namespace psh
+|
+*/
+
+.psh-CompleteTheSet {
+  margin-top: 30px;
+}
+
+.psh-CompleteTheSet_Item {
+  flex-flow: row nowrap;
+
+  display: flex;
+  margin-top: 10px;
+
+  background-color: var(--Color_LightPink);
+}
+
+.psh-CompleteTheSet_ImageContainer {
+  width: 100px;
+}
+
+.psh-CompleteTheSet_Body {
+  padding: 20px;
+}
+
+.psh-CompleteTheSet_Strapline {
+  margin-bottom: 2px;
+}
+
+.psh-CompleteTheSet_Price {
+  margin-top: 5px;
+
+  font-weight: 700;
+}
+
+.psh-CompleteTheSet_Button {
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.psh-CompleteTheSet_ButtonIcon {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  margin-top: -3px;
+  margin-right: 17px;
+}

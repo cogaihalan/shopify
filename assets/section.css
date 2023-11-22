@@ -1,0 +1,96 @@
+/*
+|--------------------------------------------------------------------------
+| Section
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.sec-Section {
+  --Spacing: calc(var(--Grid_Gutter) * 3);
+  overflow: hidden;
+}
+
+.sec-Section-flush {
+  --Spacing: 0;
+}
+
+.sec-Section-flush .sec-Section_Inner {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.sec-Section_Grid {
+  grid-gap: var(--Spacing);
+  grid-template-columns: minmax(0, 1fr);
+
+  display: grid;
+  padding-top: var(--Spacing);
+  padding-bottom: var(--Spacing);
+}
+
+.sec-Section-spacingNone {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sec-Section-spacingSmall {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.sec-Section-spacingStandard {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.sec-Section-spacingLarge {
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.sec-Section-withBorderTop {
+  position: relative;
+}
+.sec-Section-withBorderTop::before {
+  content: '';
+
+  position: absolute;
+  right: calc(var(--Grid_Gutter) * 3);
+  left: calc(var(--Grid_Gutter) * 3);
+
+  height: 1px;
+
+  background-color: var(--Color_Border);
+}
+
+.sec-Section-withBorderTop .sec-Section_Inner {
+  margin-block-start: var(--Spacing);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-Section_Header,
+.sec-Section_Footer {
+  align-items: center;
+  flex-flow: column;
+
+  display: flex;
+}
+
+.sec-Section_Header-textcentre {
+  text-align: center;
+}
+
+.sec-Section_Kicker {
+  margin-bottom: 10px;
+}
+
+.sec-Section_Link {
+  margin-top: 10px;
+}
+
+.sec-Section_Text {
+  margin-block-start: 10px;
+}

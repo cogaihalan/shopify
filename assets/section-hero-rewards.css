@@ -1,0 +1,533 @@
+/*
+|--------------------------------------------------------------------------
+| Rewards Hero
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+.sec-RewardsHero {
+  position: relative;
+  z-index: 1;
+}
+
+.sec-RewardsHero-headerOverlay {
+  margin-top: calc(var(--Nav_Height) * -1);
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-RewardsHero-mobileFullScreen {
+    height:
+      calc(
+        100vh - var(--Announcement_Height, 0) - var(--Nav_HeightWhenFixed, 0) -
+        var(--Usp_Height, 0)
+      );
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero-dektopFullScreen {
+    height:
+      calc(
+        100vh - var(--Announcement_Height, 0) - var(--Nav_HeightWhenFixed, 0) -
+        var(--Usp_Height, 0)
+      );
+  }
+}
+
+.sec-RewardsHero_Inner {
+  position: relative;
+  z-index: 1;
+
+  flex-direction: column;
+  flex-shrink: 0;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Inner {
+    flex-direction: row;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Media
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-RewardsHero_Media {
+  position: relative;
+  z-index: 0;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.sec-RewardsHero_Media-desktop {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Media-desktop {
+    display: flex;
+  }
+}
+
+.sec-RewardsHero_Media-mobile {
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Media-mobile {
+    display: none;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Videos
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-RewardsHero_Video {
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.sec-RewardsHero_Video-desktop {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Video-desktop {
+    display: flex;
+  }
+}
+
+.sec-RewardsHero_Video-mobile {
+  display: flex;
+  min-height: 100vw;
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Video-mobile {
+    display: none;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-RewardsHero_Image {
+  width: 100%;
+  height: 100%;
+}
+
+.sec-RewardsHero_Image-desktop {
+  display: flex;
+}
+@media only screen and (max-width: 767px) {
+  .sec-RewardsHero_Image-desktop {
+    display: none;
+  }
+}
+
+.sec-RewardsHero_Image-mobile {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .sec-RewardsHero_Image-mobile {
+    display: flex;
+  }
+}
+
+.sec-RewardsHero_HeaderIcon {
+  display: inline-block;
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_HeaderIcon {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+
+    width: 180px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Overlay
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-RewardsHero_Overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  display: flex;
+  padding-right: 30px;
+  padding-left: 30px;
+
+  background: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Overlay {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Overlay {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .sec-RewardsHero_Overlay {
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+}
+.sec-RewardsHero_Overlay::before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: block;
+  width: 100vw;
+  height: 100%;
+}
+
+.sec-RewardsHero_Overlay-darkBackgroundMobile::before {
+  background-color: var(--Color_Grey-overlay);
+}
+.sec-RewardsHero_Overlay-lightBackgroundMobile::before {
+  background-color: var(--Color_White-overlay);
+}
+.sec-RewardsHero_Overlay-darkTextMobile {
+  color: var(--Color_Body);
+}
+.sec-RewardsHero_Overlay-lightTextMobile {
+  color: var(--Color_White);
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Overlay-darkBackgroundDesktop::before {
+    background-color: var(--Color_Grey-overlay);
+  }
+  .sec-RewardsHero_Overlay-lightBackgroundDesktop::before {
+    background-color: var(--Color_White-overlay);
+  }
+  .sec-RewardsHero_Overlay-darkTextDesktop {
+    color: var(--Color_Body);
+  }
+  .sec-RewardsHero_Overlay-lightTextDesktop {
+    color: var(--Color_White);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+|
+*/
+.sec-RewardsHero_Body {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Body-left .sec-RewardsHero_Overlay {
+    justify-content: flex-start;
+
+    text-align: left;
+  }
+  .sec-RewardsHero_Body-center .sec-RewardsHero_Overlay {
+    justify-content: center;
+
+    text-align: center;
+  }
+  .sec-RewardsHero_Body-right .sec-RewardsHero_Overlay {
+    justify-content: flex-end;
+
+    text-align: right;
+  }
+  .sec-RewardsHero_Body-top .sec-RewardsHero_Overlay {
+    align-items: flex-start;
+  }
+  .sec-RewardsHero_Body-middle .sec-RewardsHero_Overlay {
+    align-items: center;
+  }
+  .sec-RewardsHero_Body-bottom .sec-RewardsHero_Overlay {
+    align-items: flex-end;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .sec-RewardsHero_Body-mobileLeft .sec-RewardsHero_Overlay {
+    justify-content: flex-start;
+
+    text-align: left;
+  }
+  .sec-RewardsHero_Body-mobileCenter .sec-RewardsHero_Overlay {
+    justify-content: center;
+
+    text-align: center;
+  }
+  .sec-RewardsHero_Body-mobileRight .sec-RewardsHero_Overlay {
+    justify-content: flex-end;
+
+    text-align: right;
+  }
+  .sec-RewardsHero_Body-mobileTop .sec-RewardsHero_Overlay {
+    align-items: flex-start;
+  }
+  .sec-RewardsHero_Body-mobileMiddle .sec-RewardsHero_Overlay {
+    align-items: center;
+  }
+  .sec-RewardsHero_Body-mobileBottom .sec-RewardsHero_Overlay {
+    align-items: flex-end;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-RewardsHero_Content {
+  z-index: 2;
+
+  max-width: 440px;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Content {
+    position: relative;
+
+    width: calc((8 / 12) * 100%);
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .sec-RewardsHero_Content {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.sec-RewardsHero_Title {
+  margin-left: -5px;
+}
+@media only screen and (max-width: 767px) {
+  .sec-RewardsHero_Body-mobileTextLeft .sec-RewardsHero_TOverlay {
+    text-align: left;
+  }
+  .sec-RewardsHero_Body-mobileTextCenter .sec-RewardsHero_TOverlay {
+    text-align: center;
+  }
+  .sec-RewardsHero_Body-mobileTextRight .sec-RewardsHero_TOverlay {
+    text-align: right;
+  }
+  .sec-RewardsHero_Body-mobileCenter .sec-RewardsHero_TOverlay {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Body-desktopTextLeft .sec-RewardsHero_TOverlay {
+    text-align: left;
+  }
+  .sec-RewardsHero_Body-desktopTextCenter .sec-RewardsHero_TOverlay {
+    margin: 0 auto;
+
+    text-align: center;
+  }
+  .sec-RewardsHero_Body-desktopTextRight .sec-RewardsHero_TOverlay {
+    text-align: right;
+  }
+  .sec-RewardsHero_Body-center .sec-RewardsHero_TOverlay {
+    margin: 0 auto;
+  }
+  .sec-RewardsHero_Body-right .sec-RewardsHero_TOverlay {
+    margin-left: auto;
+  }
+}
+
+.sec-RewardsHero_Text {
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-RewardsHero_Body-mobileTextLeft .sec-RewardsHero_Overlay {
+    text-align: left;
+  }
+  .sec-RewardsHero_Body-mobileTextCenter .sec-RewardsHero_Overlay {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+  .sec-RewardsHero_Body-mobileTextRight .sec-RewardsHero_Overlay {
+    text-align: right;
+  }
+  .sec-RewardsHero_Body-mobileCenter .sec-RewardsHero_Overlay {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Body-desktopTextLeft .sec-RewardsHero_Overlay {
+    text-align: left;
+  }
+  .sec-RewardsHero_Body-desktopTextCenter .sec-RewardsHero_Overlay {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+  .sec-RewardsHero_Body-desktopTextRight .sec-RewardsHero_Overlay {
+    text-align: right;
+  }
+  .sec-RewardsHero_Body-center .sec-RewardsHero_Overlay {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .sec-RewardsHero_Body-right .sec-RewardsHero_Overlay {
+    margin-left: auto;
+  }
+}
+
+.sec-RewardsHero_Cta {
+  display: flex;
+  margin-top: 30px;
+}
+
+.sec-RewardsHero_ButtonWrapper {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-RewardsHero_Body-mobileTextLeft .sec-RewardsHero_Overlay {
+    margin-right: auto;
+  }
+  .sec-RewardsHero_Body-mobileTextCenter .sec-RewardsHero_Overlay {
+    margin: 0 auto;
+  }
+  .sec-RewardsHero_Body-mobileTextRight .sec-RewardsHero_Overlay {
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sec-RewardsHero_Body-desktopTextLeft .sec-RewardsHero_Overlay {
+    margin-right: auto;
+  }
+  .sec-RewardsHero_Body-desktopTextCenter .sec-RewardsHero_Overlay {
+    margin: 0 auto;
+  }
+  .sec-RewardsHero_Body-desktopTextRight .sec-RewardsHero_Overlay {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .sec-RewardsHero_Button-mobileDark {
+    background-color: var(--Color_Brand);
+    border: 1px solid var(--Color_Brand);
+    color: var(--Color_White);
+  }
+  .sec-RewardsHero_Button-mobileDark:hover {
+    background-color: var(--Color_White);
+    color: var(--Color_Body);
+  }
+  .sec-RewardsHero_Button-mobileLight {
+    background-color: var(--Color_White);
+    border: 1px solid var(--Color_Brand);
+    color: var(--Color_Body);
+  }
+  .sec-RewardsHero_Button-mobileLight:hover {
+    background-color: var(--Color_Brand);
+    color: var(--Color_White);
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-RewardsHero_Button-dark {
+    background-color: var(--Color_Brand);
+    border: 1px solid var(--Color_Brand);
+    color: var(--Color_White);
+  }
+  .sec-RewardsHero_Button-dark:hover {
+    background-color: var(--Color_White);
+    color: var(--Color_Body);
+  }
+  .sec-RewardsHero_Button-light {
+    background-color: var(--Color_White);
+    border: 1px solid var(--Color_Brand);
+    color: var(--Color_Body);
+  }
+  .sec-RewardsHero_Button-light:hover {
+    background-color: var(--Color_Brand);
+    color: var(--Color_White);
+  }
+}
+
+.sec-RewardsHero_Footer {
+  display: none;
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-RewardsHero_Footer {
+    position: absolute;
+    bottom: 0;
+
+    justify-content: space-around;
+
+    grid-gap: 20px;
+
+    display: flex;
+    width: 100%;
+    padding: 0 30px 30px;
+  }
+}
+
+.sec-RewardsHero_FooterText {
+  flex-basis: 33%;
+
+  color: #fff;
+}

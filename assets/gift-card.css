@@ -1,0 +1,128 @@
+/*
+|--------------------------------------------------------------------------
+| Gift Card
+|--------------------------------------------------------------------------
+| @namespace gc
+|
+*/
+
+.gc-GiftCard {
+  --Gutter: 15px;
+}
+@media only screen and (min-width: 901px) {
+  .gc-GiftCard {
+    --Gutter: 30px;
+  }
+}
+
+.gc-GiftCard_Header {
+  justify-content: center;
+
+  display: flex;
+  margin-bottom: 40px;
+  padding: var(--Gutter);
+
+  border-bottom: 1px solid var(--Color_Border);
+}
+@media only screen and (min-width: 901px) {
+  .gc-GiftCard_Header {
+    margin-bottom: 70px;
+  }
+}
+
+.gc-GiftCard_Title,
+.gc-GiftCard_Price {
+  margin: 10px auto;
+
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Main
+|--------------------------------------------------------------------------
+|
+*/
+.gc-GiftCard_Main {
+  margin-top: var(--Gutter);
+
+  text-align: center;
+}
+
+.gc-GiftCard_Image {
+  max-width: 100%;
+  width: 500px;
+  margin: calc(var(--Gutter) * 2) auto;
+
+  border: 1px solid var(--Color_Border);
+}
+.gc-GiftCard_Template {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Code
+|--------------------------------------------------------------------------
+|
+*/
+.gc-GiftCard_Code {
+  justify-content: center;
+
+  display: flex;
+  margin: var(--Gutter) auto;
+}
+
+.gc-GiftCard_Number {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-align: center;
+
+  background: none;
+  border: 2px dashed var(--Color_Russet);
+  color: var(--Color_Russet);
+  outline: none;
+}
+
+@media only screen and (min-width: 901px) {
+  .gc-GiftCard_Number {
+    width: 440px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Copy
+|--------------------------------------------------------------------------
+|
+*/
+.gc-GiftCard_Copy {
+  flex-direction: column;
+
+  display: flex;
+  margin-top: var(--Gutter);
+}
+
+.gc-GiftCard_Link {
+  margin: 0 auto 10px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+|
+*/
+.gc-GiftCard_Buttons {
+  flex-flow: row wrap;
+  justify-content: center;
+
+  display: flex;
+  margin-top: var(--Gutter);
+  padding: var(--Gutter);
+}
+
+.gc-GiftCard_Button {
+  margin: 0 10px 10px;
+}

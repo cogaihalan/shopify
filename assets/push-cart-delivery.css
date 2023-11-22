@@ -1,0 +1,41 @@
+/*
+|--------------------------------------------------------------------------
+| Cart delivery
+|--------------------------------------------------------------------------
+| @namespace: psh-
+|
+*/
+.psh-CartDelivery_Text {
+  color: var(--Color_Brand);
+}
+
+.psh-CartDelivery_Progress {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  margin-top: 18px;
+
+  background-color: var(--Color_Grey-10);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.psh-CartDelivery_Bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--Color_Green);
+
+  transform: translateX(var(--Progress_Amount, -100%));
+  transition: transform 0.3s ease;
+}

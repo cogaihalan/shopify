@@ -1,0 +1,92 @@
+/*
+|--------------------------------------------------------------------------
+| Product accordions
+|--------------------------------------------------------------------------
+| @namespace: prd-
+|
+*/
+
+.prd-Accordion {
+  display: block;
+  margin-top: 20px;
+}
+
+.prd-Accordion_Items {
+  padding-top: 20px;
+
+  border-top: 1px solid var(--Color_Border);
+}
+
+.prd-Accordion_Item {
+  border-bottom: 1px solid var(--Color_CoolPink);
+}
+
+.prd-Accordion_Item-description::before {
+  content: attr(data-short-description);
+
+  display: block;
+}
+
+.prd-Accordion_Header {
+  align-items: center;
+  justify-content: space-between;
+
+  display: flex;
+  width: 100%;
+  padding-top: 21px;
+  padding-bottom: 21px;
+
+  cursor: pointer;
+}
+.prd-Accordion_Item:first-child .prd-Accordion_Header {
+  border-top: 1px solid var(--Color_CoolPink);
+}
+
+.prd-Accordion_Title {
+  text-transform: uppercase;
+}
+
+.prd-Accordion_Icon {
+  align-items: center;
+  justify-content: flex-end;
+
+  display: flex;
+  margin-right: 10px;
+
+  transition: transform 0.2s ease;
+}
+
+.prd-Accordion_Header:hover .prd-Accordion_Icon {
+  transform: rotate(90deg);
+}
+
+.prd-Accordion_Item[aria-expanded='true'] .prd-Accordion_Icon {
+  transform: rotate(180deg);
+}
+
+.prd-Accordion_Body {
+  max-height: 0;
+  padding-bottom: 0;
+
+  color: var(--Color_Grey);
+  overflow-y: hidden;
+  will-change: max-height, padding-bottom;
+
+  transition: max-height 0.5s ease, padding-bottom 0.5s ease, opacity 0.5s ease;
+}
+.prd-Accordion_Body-short {
+  max-height: 500px;
+  padding-bottom: 21px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.prd-Accordion_Item[aria-expanded='true'] .prd-Accordion_Body {
+  max-height: 1000px;
+  padding-bottom: 21px;
+}
+.prd-Accordion_Item[aria-expanded='true'] .prd-Accordion_Body-short {
+  opacity: 0.25;
+}

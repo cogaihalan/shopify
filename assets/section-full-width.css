@@ -1,0 +1,149 @@
+/*
+|--------------------------------------------------------------------------
+| Full Width Media
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+.sec-FullWidth {
+  position: relative;
+
+  display: block;
+}
+
+.sec-FullWidth-headerOverlay {
+  margin-top: calc(var(--Nav_Height) * -1);
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-FullWidth-mobileFullScreen {
+    height:
+      calc(
+        100vh - var(--Announcement_Height, 0) - var(--Nav_HeightWhenFixed, 0) -
+        var(--Usp_Height, 0)
+      );
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-FullWidth-dektopFullScreen {
+    height:
+      calc(
+        100vh - var(--Announcement_Height, 0) - var(--Nav_HeightWhenFixed, 0) -
+        var(--Usp_Height, 0)
+      );
+  }
+}
+
+.sec-FullWidth_Inner {
+  position: relative;
+  z-index: 1;
+
+  flex-direction: column;
+
+  flex-shrink: 0;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .sec-FullWidth_Inner {
+    flex-direction: row;
+  }
+}
+
+.sec-FullWidth_Body {
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+}
+
+.sec-FullWidth_Item {
+  width: 100%;
+  height: 100%;
+}
+
+.sec-FullWidth_Container {
+  height: 100%;
+}
+
+.sec-FullWidth_Carousel {
+  position: relative;
+
+  height: 100%;
+}
+
+.sec-FullWidth_Slides {
+  position: relative;
+
+  display: block;
+  height: 100%;
+}
+
+.sec-FullWidth_Slide {
+  z-index: 1;
+
+  grid-column: 1;
+  grid-row: 1;
+
+  max-height: 100%;
+  height: 100%;
+
+  opacity: 1;
+
+  transition: opacity 1s ease;
+}
+.sec-FullWidth_Slide[aria-hidden='true'] {
+  z-index: 0;
+
+  opacity: 0;
+}
+
+.sec-FullWidth_Footer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  z-index: 4;
+
+  justify-content: center;
+
+  display: flex;
+  width: 100%;
+  height: 10px;
+
+  pointer-events: none;
+}
+@media only screen and (min-width: 901px) {
+  .sec-FullWidth_Footer {
+    bottom: 30px;
+
+    height: 20px;
+  }
+}
+
+.sec-FullWidth_Line {
+  flex: none;
+
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  pointer-events: auto;
+}
+.sec-FullWidth_Line::after {
+  content: '';
+
+  display: block;
+  width: 20px;
+  height: 2px;
+
+  background: var(--Color_White-transparent);
+}
+.sec-FullWidth_Line[aria-current='true']::after {
+  background: var(--Color_White);
+}

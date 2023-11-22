@@ -1,0 +1,36 @@
+/*
+|--------------------------------------------------------------------------
+| Track Order Form
+|--------------------------------------------------------------------------
+| @namespace: trk-
+|
+*/
+
+.trk-Form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  max-width: 400px;
+  width: 80%;
+  padding: 1rem;
+
+  background-color: #fff;
+
+  transform: translate(-50%, -50%);
+}
+
+.trk-Form_Input {
+  font-size: 16px;
+
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .trk-Form_Input {
+    font-size: 14px;
+  }
+}
+
+.trk-Form_Button {
+  width: 100%;
+}

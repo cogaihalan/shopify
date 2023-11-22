@@ -1,0 +1,156 @@
+/*
+|--------------------------------------------------------------------------
+| Nosto push cart carousel
+|--------------------------------------------------------------------------
+| @namespace: psh
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Container div
+|--------------------------------------------------------------------------
+|
+*/
+.psh-Nosto[aria-hidden='true'] {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Nosto related
+|--------------------------------------------------------------------------
+|
+*/
+.psh-NostoCarousel {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.psh-NostoCarousel_Header {
+  margin-bottom: 20px;
+}
+
+.psh-NostoCarousel .prd-Card_Footer {
+  margin-top: auto;
+}
+
+/* stylelint-disable selector-max-specificity */
+.psh-NostoCarousel .prd-Card:not(:hover) .prd-Card_QuickBuy[aria-hidden='false'] {
+  transform: translateY(-101px);
+}
+
+.psh-NostoCarousel .prd-Card_QuickBuy-desktop {
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.psh-NostoCarousel .prd-QuickBuy_Options {
+  padding: 12px 8px 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .psh-NostoCarousel .prd-QuickBuy_Buttons {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+}
+
+.psh-NostoCarousel .qb-Options {
+  margin-bottom: -18px;
+}
+
+.psh-NostoCarousel .qb-Options_Option {
+  margin-top: 6px;
+}
+
+.psh-NostoCarousel .qb-Options_Button {
+  min-height: 30px;
+  height: 30px;
+  margin: 3px;
+}
+
+.psh-NostoCarousel .qb-Options_Option-small .qb-Options_Button {
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+}
+
+.psh-NostoCarousel .prd-QuickBuy_Button-addtocart {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  font-size: 11px;
+}
+
+.psh-NostoCarousel .prd-QuickBuy_ButtonIcon-addtocart {
+  margin-top: -2px;
+  margin-right: 10px;
+}
+
+.psh-NostoCarousel .prd-QuickBuy_Button-backInStock {
+  white-space: inherit;
+
+  font-size: 12px;
+}
+
+.psh-NostoCarousel .prd-QuickBuy_ButtonIcon {
+  width: 14px;
+  height: 20px;
+}
+
+.psh-NostoCarousel .prd-QuickBuy_Trigger {
+  width: 120px;
+  padding: 12px;
+
+  font-size: 10px;
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Carousel
+|--------------------------------------------------------------------------
+|
+*/
+@media only screen and (min-width: 901px) {
+  .psh-NostoCarousel_Items {
+    grid-gap: 10px;
+
+    display: flex;
+    padding-bottom: 30px;
+
+    overflow-x: auto;
+  }
+
+  .psh-NostoCarousel_Items::-webkit-scrollbar {
+    height: 2px;
+
+    background-color: var(--Color_Grey-lightest);
+  }
+
+  .psh-NostoCarousel_Items::-webkit-scrollbar-track {
+    background-color: var(--Color_Grey-lightest);
+  }
+
+  .psh-NostoCarousel_Items::-webkit-scrollbar-thumb {
+    background-color: var(--Color_WarmPink);
+  }
+
+  .psh-NostoCarousel_Item {
+    min-width: 38%;
+  }
+}
+
+.psh-NostoCarousel_Scroller {
+  --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 2.5);
+  --Carousel_ScrollerWidth: calc(100% / var(--Carousel_VisibleItemCount));
+}
+
+@media only screen and (min-width: 901px) {
+  .psh-NostoCarousel_Footer {
+    display: none;
+  }
+}

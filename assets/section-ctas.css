@@ -1,0 +1,167 @@
+/*
+|--------------------------------------------------------------------------
+| Two cta
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.sec-Cta {
+  display: block;
+}
+
+.sec-Cta_Items {
+  grid-gap: 20px 5px;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+}
+.car-Carousel .sec-Cta_Items {
+  grid-gap: 0;
+
+  display: flex;
+
+  overflow: visible;
+}
+@media only screen and (max-width: 767px) {
+  .sec-Cta_Items-oneColumnMobile {
+    grid-template-columns: 1fr;
+  }
+  .sec-Cta_Items-twoColumnMobile.sec-Cta_Items-3 .sec-Cta_Item:last-of-type {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sec-Cta_Items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sec-Cta_Items-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 901px) {
+  .sec-Cta_Items-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sec-Cta_Items-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sec-Cta_Item {
+  position: relative;
+
+  flex-direction: column;
+
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Cta_Item-split {
+    grid-template-rows: auto minmax(140px, 1fr);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Cta_ImageContainer {
+  overflow: hidden;
+}
+
+.sec-Cta_Image {
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.5s ease-in-out;
+}
+.sec-Cta_Item-hasLink .sec-Cta_Image {
+  transform: scale(1.025);
+}
+.sec-Cta_Item-hasLink:hover .sec-Cta_Image {
+  transform: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-Cta_Content {
+  z-index: 1;
+
+  flex: 1;
+  flex-direction: column;
+
+  display: flex;
+  padding-top: 10px;
+
+  text-align: center;
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-Cta_Content {
+    padding-top: 20px;
+  }
+}
+
+.sec-Cta_Text {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 901px) {
+  .sec-Cta_Text {
+    margin-bottom: 20px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Link
+|--------------------------------------------------------------------------
+|
+*/
+
+.sec-Cta_Button {
+  z-index: 1;
+
+  display: block;
+
+  margin-top: auto;
+  padding: 13px 15px;
+
+  text-align: center;
+
+  background-color: var(--Color_CoolPink);
+  border: 1px solid var(--Color_CoolPink);
+  outline: none;
+
+  transition: color, background-color, border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+.sec-Cta_Item:hover .sec-Cta_Button,
+.sec-Cta_Item:focus-within .sec-Cta_Button,
+.sec-Cta_Button:hover,
+.sec-Cta_Button:focus {
+  background-color: var(--Color_White);
+  border: 1px solid var(--Color_CoolPink);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Carousel Arrows
+|--------------------------------------------------------------------------
+|
+*/
+@media only screen and (max-width: 767px) {
+  .sec-Cta_Arrows {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+/*
+|--------------------------------------------------------------------------
+| Social Sharing
+|--------------------------------------------------------------------------
+| @namespace: soc--Sharing
+|
+*/
+
+.soc-Sharing {
+  align-items: center;
+
+  display: flex;
+}
+
+.art-Article_Sharing .soc-Sharing {
+  flex-direction: column;
+}
+
+.soc-Sharing_Items {
+  align-items: center;
+
+  display: flex;
+  margin-top: 20px;
+}
+
+.soc-Sharing_Item:not(:last-of-type) {
+  margin-right: 30px;
+}
+
+.soc-Sharing_Icon {
+  width: 20px;
+  height: 20px;
+}

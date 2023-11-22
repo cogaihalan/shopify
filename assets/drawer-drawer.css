@@ -1,0 +1,250 @@
+/*
+|--------------------------------------------------------------------------
+| Drawer
+|--------------------------------------------------------------------------
+| @namespace: drw-
+|
+*/
+.drw-Drawer[key='store-appointment'] {
+  top: 0;
+}
+.drw-Drawer-narrow {
+  max-width: 490px;
+}
+
+:is(.drw-Drawer-fromRight, .drw-Drawer-fromLeft).drw-Drawer-active {
+  opacity: 1;
+  visibility: visible;
+
+  transform: none;
+}
+
+.drw-Drawer_Inner {
+  flex: 1;
+  flex-direction: column;
+
+  display: flex;
+  width: 100%;
+  padding: 0 15px;
+}
+@media only screen and (min-width: 901px) {
+  .drw-Drawer_Inner {
+    padding: 0 30px;
+  }
+}
+
+.drw-Drawers-collectionfilters .drw-Drawer-collectionfilters {
+  opacity: 1;
+  visibility: visible;
+
+  transform: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Search
+|--------------------------------------------------------------------------
+|
+*/
+
+.drw-Drawer_SearchButton {
+  align-items: center;
+
+  display: flex;
+  width: 100%;
+  padding: 15px;
+}
+
+.drw-Drawer_Icon-search {
+  --Size: 16px;
+
+  width: var(--Size);
+  height: var(--Size);
+  margin-right: 10px;
+}
+
+.drw-Drawer_SearchInput {
+  width: 100%;
+
+  border: 0;
+}
+.drw-Drawer_SearchInput::placeholder {
+  font-size: 12px;
+  line-height: 17px;
+
+  color: var(--Color_Brand);
+  opacity: 1;
+}
+
+.drw-Drawer_Search .hd-Search {
+  background-color: #fff;
+}
+.drw-Drawer_Search .hd-Search[aria-hidden='true'] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+|
+*/
+.drw-Drawer_Header {
+  position: relative;
+
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+
+  display: flex;
+  width: 100%;
+  padding: 10px 15px;
+
+  background-color: var(--Color_CoolPink);
+}
+@media only screen and (min-width: 901px) {
+  .drw-Drawer_Header {
+    padding: 20px 30px;
+  }
+}
+
+.drw-Drawer_Header-large {
+  flex-direction: column;
+
+  margin-top: 20px;
+  padding: 0;
+
+  background-color: transparent;
+}
+
+.drw-Drawer_Header-large .drw-Drawer_Close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.drw-Drawer-collectiondescription .drw-Drawer_Content,
+.drw-Drawer-sizeguide .drw-Drawer_Content {
+  flex-direction: column;
+
+  display: flex;
+  max-width: 274px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px 0 30px;
+
+  text-align: center;
+}
+
+.drw-Drawer_Block {
+  --Minimum_Height: 80px;
+  --Top_Spacing: 13px;
+
+  flex-shrink: 0;
+
+  min-height: calc(var(--Minimum_Height) - var(--Top_Spacing));
+  margin-bottom: 13px;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid var(--Color_Border);
+}
+
+.drw-Drawer_Text {
+  width: calc((3 / 4) * 100%);
+
+  text-align: left;
+}
+.drw-Drawer-collectiondescription .drw-Drawer_Text,
+.drw-Drawer-sizeguide .drw-Drawer_Text {
+  width: 100%;
+  margin-top: 10px;
+
+  text-align: center;
+}
+
+.drw-Drawer_ReturningCustomer {
+  margin-bottom: 20px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+|
+*/
+.drw-Drawer_Body {
+  flex: 1;
+
+  display: flex;
+  padding: 15px 0;
+
+  overflow-y: auto;
+}
+@media only screen and (min-width: 901px) {
+  .drw-Drawer_Body {
+    padding: 30px 0;
+  }
+}
+
+.drw-Drawer[key='cart'] .drw-Drawer_Body {
+  overflow: visible;
+}
+
+.drw-Drawer-sizeguide .drw-Drawer_Body {
+  flex-direction: column;
+
+  display: flex;
+  margin-bottom: auto;
+
+  border-bottom: 1px solid var(--Color_CoolPink);
+}
+/* stylelint-disable selector-max-universal */
+.drw-Drawer_Body > * {
+  width: 100%;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+|
+*/
+.drw-Drawer_Footer {
+  flex-shrink: 0;
+
+  margin-top: auto;
+  padding: 15px 0;
+}
+
+.drw-Drawer-collectionfilters .drw-Drawer_Footer {
+  position: sticky;
+  bottom: 0;
+
+  background: #fff;
+}
+
+@media only screen and (min-width: 901px) {
+  .drw-Drawer_Footer {
+    padding: 30px 0;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Icons
+|--------------------------------------------------------------------------
+|
+*/
+.drw-Drawer_Icon-close {
+  width: 20px;
+  height: 20px;
+}

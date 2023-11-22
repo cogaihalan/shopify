@@ -1,0 +1,71 @@
+/*
+|--------------------------------------------------------------------------
+| Live Chat
+|--------------------------------------------------------------------------
+| @namespace sec
+|
+*/
+
+.sec-LiveChat {
+  max-width: 685px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+@media only screen and (min-width: 768px) {
+  .sec-LiveChat {
+    padding-bottom: 60px;
+  }
+}
+
+.sec-LiveChat_Intro {
+  max-width: 450px;
+  width: 100%;
+}
+
+.sec-LiveChat_Icon {
+  position: relative;
+
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 25px auto 15px;
+
+  background-color: var(--Color_CoolPink);
+  border-radius: 50%;
+}
+@media only screen and (min-width: 768px) {
+  .sec-LiveChat_Icon {
+    margin: 30px auto 20px;
+  }
+}
+
+.sec-LiveChat_Icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  transform: translate(-50%, -50%);
+}
+
+.sec-LiveChat_Intro,
+.sec-LiveChat_Heading,
+.sec-LiveChat_Text {
+  margin-right: auto;
+  margin-left: auto;
+
+  text-align: center;
+}
+
+.sec-LiveChat_Text {
+  margin-top: 10px;
+}
+
+.sec-LiveChat_Button {
+  margin-top: 30px;
+}

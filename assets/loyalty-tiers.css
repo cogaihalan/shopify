@@ -1,0 +1,158 @@
+/*
+|--------------------------------------------------------------------------
+| Loyalty Tiers
+|--------------------------------------------------------------------------
+| @namespace: loy-
+|
+*/
+
+/* stylelint-disable selector-max-id, selector-max-specificity, selector-class-pattern, selector-max-combinators */
+.loy-Tiers #loyaltylion .lion-tier-overview {
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 345px);
+
+  padding: 0;
+  padding: 20px 0;
+
+  background-color: unset;
+  cursor: grab;
+  overflow: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .loy-Tiers #loyaltylion .lion-tier-overview {
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 30%);
+
+    padding: 20px 0 30px;
+  }
+}
+
+.loy-Tiers #loyaltylion .lion-tier-overview::-webkit-scrollbar {
+  height: 2px;
+
+  background-color: var(--Color_Grey-lightest);
+  border-radius: 10px;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-overview::-webkit-scrollbar-track {
+  background-color: var(--Color_Grey-lightest);
+  border-radius: 10px;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-overview::-webkit-scrollbar-thumb {
+  background-color: var(--Color_WarmPink);
+  border-radius: 10px;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box {
+  position: relative;
+
+  border: 1px solid var(--Color_Grey-lighter);
+  border-radius: 5px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+|
+|
+*/
+.loy-Tiers #loyaltylion .lion-tier-box__footer {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box__you-are-here {
+  font-family: var(--Font_Family-headings);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  background: var(--Color_Brand);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box__header {
+  padding: 90px 0 70px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box--0 .lion-tier-box__header {
+  background-image: var(--BgImg_TierOne);
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box--1 .lion-tier-box__header {
+  background-image: var(--BgImg_TierTwo);
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box--2 .lion-tier-box__header {
+  background-image: var(--BgImg_TierThree);
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box--3 .lion-tier-box__header {
+  background-image: var(--BgImg_TierFour);
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box__title {
+  font-family: var(--Font_Family-headings);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Benefits
+|--------------------------------------------------------------------------
+|
+|
+*/
+.loy-Tiers #loyaltylion .lion-tier-box__benefit {
+  justify-content: space-between;
+
+  display: flex;
+  margin: 0 0 20px;
+
+  text-align: left;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box__benefit::after {
+  content: '';
+
+  width: 20px;
+  height: 20px;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='8.5' fill='none'/%3E%3Cpath d='m6.385 8.52 2.047 2.441 3.838-4.577' stroke='%23333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 17px;
+  border: 1px solid var(--Color_Brand);
+  border-radius: 100%;
+}
+
+.loy-Tiers #loyaltylion #loyaltylion .lion-tier-box__benefits-list {
+  text-align: left;
+}
+
+.loy-Tiers #loyaltylion .lion-tier-box__position,
+.loy-Tiers #loyaltylion .lion-tier-box__sub-title,
+.loy-Tiers #loyaltylion .lion-tier-box__purchase-rule,
+.loy-Tiers #loyaltylion .lion-tier-box__value-to-next,
+.loy-Tiers #loyaltylion .lion-tier-box__expiry {
+  display: none;
+}
+/* stylelint-enable selector-max-id, selector-max-specificity, selector-class-pattern */

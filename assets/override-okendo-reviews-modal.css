@@ -1,0 +1,90 @@
+/*
+|--------------------------------------------------------------------------
+| Okendo Reviews Modal
+|--------------------------------------------------------------------------
+| @namespace oke-
+|
+*/
+
+/* stylelint-disable */
+.okeReviews[data-oke-container] .oke-modal .oke-mediaGallery-nav {
+  position: absolute;
+
+  width: 100%;
+  height: 300px;
+
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 1023px) {
+  .okeReviews[data-oke-container] .oke-modal .oke-mediaGallery-nav {
+    width: 600px;
+    height: 100%;
+  }
+}
+
+.okeReviews[data-oke-container] .oke-modal .oke-mediaGallery-nav-slider {
+  display: none;
+}
+
+/* .okeReviews[data-oke-container] .oke-modal .oke-mediaGallery-nav-next {
+  right: calc(50% - 10px);
+} */
+
+.okeReviews[data-oke-container] .oke-modal .oke-w-reviewer-name {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.okeReviews[data-oke-container] .oke-modal .oke-stars-foreground svg {
+  width: auto;
+}
+
+.okeReviews[data-oke-container] .oke-modal .oke-reviewContent-title {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 140%;
+}
+
+.okeReviews[data-oke-container] .oke-modal .oke-helpful {
+  display: flex;
+}
+
+.okeReviews[data-oke-container] .oke-modal .oke-helpful-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+
+  color: #333;
+
+  opacity: 0.6;
+}
+
+.okeReviews[data-oke-container]
+  .oke-modal
+  .oke-helpful-vote-button--positive::before {
+  font-size: 16px;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.3765 8.62978C15.7815 8.38065 16.0424 7.92022 15.9941 7.39913C15.9315 6.715 15.3054 6.21739 14.618 6.21739H10.1304C10.1304 6.21739 10.7826 4.50543 10.7826 3.28261C10.7826 2.05978 9.72283 1 9.15217 1C8.58152 1 8.17391 1.32609 8.17391 1.32609V3.6087L6.21739 7.84783L5.56522 8.17391V7.52174H2.30435C1.58435 7.52174 1 8.10609 1 8.82609V14.0435C1 14.7641 1.58435 15.3478 2.30435 15.3478H4.26087C4.98152 15.3478 5.56522 14.7641 5.56522 14.0435C5.95913 14.4374 6.95109 14.6957 7.52174 14.6957H13.3913H13.508C14.0487 14.6957 14.5502 14.3402 14.667 13.8126C14.7622 13.3835 14.6128 12.9876 14.3357 12.7261C14.9043 12.6615 15.3478 12.1841 15.3478 11.5978C15.3478 11.2711 15.2083 10.9776 14.9878 10.7696C15.5565 10.705 16 10.2276 16 9.6413C16 9.19848 15.745 8.81891 15.3765 8.62978Z' stroke='%23E2A9A9' stroke-width='0.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 10%;
+  color: transparent;
+  opacity: 0.6;
+}
+
+.okeReviews[data-oke-container]
+  .oke-modal
+  .oke-helpful-vote-button--negative::before {
+  font-size: 16px;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.62348 7.37022C1.21848 7.61935 0.957609 8.07978 1.00587 8.60087C1.06848 9.285 1.69456 9.78261 2.38196 9.78261L6.86957 9.78261C6.86957 9.78261 6.21739 11.4946 6.21739 12.7174C6.21739 13.9402 7.27717 15 7.84783 15C8.41848 15 8.82609 14.6739 8.82609 14.6739L8.82609 12.3913L10.7826 8.15217L11.4348 7.82609L11.4348 8.47826L14.6957 8.47826C15.4157 8.47826 16 7.89391 16 7.17391L16 1.95652C16 1.23587 15.4157 0.652176 14.6957 0.652176L12.7391 0.652176C12.0185 0.652176 11.4348 1.23587 11.4348 1.95652C11.0409 1.56261 10.0489 1.30435 9.47826 1.30435L3.6087 1.30435L3.49196 1.30435C2.9513 1.30435 2.44978 1.65978 2.33304 2.18739C2.23783 2.61652 2.38717 3.01239 2.66435 3.27391C2.09565 3.33848 1.65217 3.81587 1.65217 4.40217C1.65217 4.72891 1.79174 5.02239 2.01217 5.23044C1.44348 5.295 1 5.77239 1 6.3587C1 6.80152 1.255 7.18109 1.62348 7.37022Z' stroke='%23E2A9A9' stroke-width='0.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 10%;
+  color: transparent;
+  opacity: 0.6;
+}
+/* stylelint-enable */

@@ -1,0 +1,381 @@
+.chk-ClickAndCollect {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.chk-ClickAndCollect_Inner {
+  flex-direction: column;
+
+  display: flex;
+  margin: 10px 0 20px;
+  gap: 15px;
+}
+
+.chk-ClickAndCollect_Title {
+  align-items: flex-end;
+  justify-content: center;
+
+  display: flex;
+
+  font-size: 14px;
+  text-align: center;
+
+  background: #fff;
+
+  transform: translateY(-2px);
+}
+
+.chk-ClickAndCollect_Title::before,
+.chk-ClickAndCollect_Title::after {
+  content: '';
+
+  flex: 1 0 20%;
+
+  height: 10px;
+
+  border: 1px #e6e6e6 solid;
+  border-bottom: 0;
+
+  transform: translateY(2px);
+}
+
+.chk-ClickAndCollect_Title::before {
+  margin-right: 15px;
+
+  border-right: 0;
+  border-top-left-radius: 5px;
+}
+
+.chk-ClickAndCollect_Title::after {
+  margin-left: 15px;
+
+  border-left: 0;
+  border-top-right-radius: 5px;
+}
+
+.chk-ClickAndCollect_Button {
+  display: inline-block;
+  width: 49.8%;
+  margin: 0;
+  /* stylelint-disable-next-line declaration-no-important */
+  margin-right: -2px !important;
+  padding: 15px;
+
+  font-family: sans-serif;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px 0 0 5px;
+  border-image: initial;
+
+  color: #000;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chk-ClickAndCollect_Button:not(:first-of-type) {
+  margin-left: -2px;
+
+  border-radius: 0 5px 5px 0;
+}
+
+.chk-ClickAndCollect_Button[aria-pressed='true'] {
+  background-color: #d49595;
+  color: #fff;
+}
+
+.chk-ClickAndCollect_Button[aria-pressed='false']:hover {
+  background-color: #d3d3d3;
+  color: #000;
+}
+
+@media (max-width: 750px) {
+  .chk-ClickAndCollect_Button {
+    width: 100%;
+    /* stylelint-disable-next-line declaration-no-important */
+    margin: 0 0 4px !important;
+
+    /* stylelint-disable-next-line declaration-no-important */
+    border-radius: 5px !important;
+  }
+
+  .chk-ClickAndCollect_Button:not(:first-of-type) {
+    /* stylelint-disable-next-line declaration-no-important */
+    margin-left: 0 !important;
+
+    /* stylelint-disable-next-line declaration-no-important */
+    border-radius: 5px !important;
+  }
+}
+
+.chk-ClickAndCollect_Intro {
+  width: 100%;
+  padding: 10px;
+
+  text-align: center;
+}
+
+.chk-ClickAndCollect_IntroImage {
+  max-height: 15px;
+}
+
+.chk-ClickAndCollect_Modal[aria-hidden='true'] {
+  display: none;
+}
+
+.chk-ClickAndCollect_Modal[aria-hidden='false'] {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: block;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(100, 100, 100, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.chk-ClickAndCollect_Modal[aria-hidden='false']::before {
+  content: 'X';
+
+  position: absolute;
+  top: 15vh;
+  right: 10vw;
+
+  display: block;
+  padding: 5px;
+
+  font-size: 20px;
+
+  background-color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.chk-ClickAndCollect_ModalContainer {
+  max-width: 80vw;
+  height: 70vh;
+  margin: 15vh auto;
+
+  background-color: #fff;
+}
+
+/* Format Address Fields */
+/* stylelint-disable selector-class-pattern */
+.address-fields {
+  grid-template-areas:
+    'firstname lastname'
+    'search search'
+    'searchResult searchResult'
+    'country country'
+    'postcode postcode'
+    'address1 address1'
+    'address2 address2'
+    'city blank'
+    'province province'
+    'phone phone';
+
+  display: grid;
+}
+
+.address-fields .field--half {
+  width: 100%;
+}
+
+[data-address-field='first_name'] {
+  grid-area: firstname;
+}
+
+[data-address-field='last_name'] {
+  grid-area: lastname;
+}
+
+.cc_address_search {
+  grid-area: search;
+}
+
+[data-address-field='country'] {
+  grid-area: country;
+}
+
+[data-address-field='zip'] {
+  grid-area: postcode;
+}
+
+[data-address-field='address1'] {
+  grid-area: address1;
+}
+
+[data-address-field='address2'] {
+  grid-area: address2;
+}
+
+[data-address-field='city'] {
+  grid-area: city;
+}
+
+[data-address-field='province'] {
+  grid-area: province;
+}
+
+[data-address-field='phone'] {
+  grid-area: phone;
+}
+
+.address-fields-collect {
+  grid-template-areas:
+    'firstname lastname'
+    'address1 address1'
+    'address2 address2'
+    'city postcode'
+    'country country'
+    'province province'
+    'phone phone';
+}
+
+/* stylelint-disable-next-line selector-max-type */
+.address-fields-collect input:read-only {
+  background-color: #fafafa;
+  border-color: #ccc;
+  cursor: default;
+}
+
+.address-fields-collect .cc_address_search {
+  display: none;
+}
+
+/* stylelint-disable-next-line selector-max-specificity, selector-max-id */
+.address-fields-collect .btn {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: none !important;
+}
+
+/* stylelint-disable-next-line selector-max-specificity, selector-max-id */
+.address-fields-collect #checkout_shipping_address_zip {
+  /* stylelint-disable-next-line declaration-no-important */
+  width: 100% !important;
+}
+/* stylelint-enable selector-class-pattern */
+
+/*
+|--------------------------------------------------------------------------
+| Click and collect additional styling
+|--------------------------------------------------------------------------
+|
+*/
+.chk-ClickAndCollect_Container {
+  display: flex;
+  padding: 14px;
+
+  background: #fdf5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  gap: 14px;
+}
+@media (max-width: 750px) {
+  .chk-ClickAndCollect_Container {
+    padding: 20px;
+  }
+}
+
+.chk-ClickAndCollect_Container:hover {
+  cursor: pointer;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.chk-ClickAndCollect_Container.active {
+  border-top: 8px solid #d49595;
+}
+
+.chk-ClickAndCollect_RadioContainer {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: 24px;
+  height: 24px;
+
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 100%;
+}
+
+.chk-ClickAndCollect_RadioActive {
+  width: 10px;
+  height: 10px;
+
+  background: #333;
+  border-radius: 100%;
+}
+
+.chk-ClickAndCollect_InfoContainer {
+  flex-direction: column;
+
+  display: flex;
+}
+
+.chk-ClickAndCollect_InfoTitle {
+  font-family: var(--Font_Family-headings);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 22px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.chk-ClickAndCollect_InfoPrices {
+  flex-direction: column;
+
+  display: flex;
+  margin-block-start: 10px;
+}
+
+.chk-ClickAndCollect_InfoPrice {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+}
+
+.chk-ClickAndCollect_InfoUSPs {
+  flex-direction: column;
+
+  display: flex;
+  margin-block-start: 14px;
+  gap: 14px;
+}
+
+.chk-ClickAndCollect_InfoUSP {
+  align-items: center;
+
+  display: flex;
+
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: left;
+  gap: 14px;
+}
+
+.chk-ClickAndCollect_InfoFooter {
+  margin-block-start: 20px;
+
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: left;
+
+  color: #3333337f;
+}

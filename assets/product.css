@@ -1,0 +1,121 @@
+/*
+|--------------------------------------------------------------------------
+| Product details
+|--------------------------------------------------------------------------
+| @namespace: prd
+|
+*/
+.prd-Product_Body {
+  max-width: calc(1265px + calc(var(--Grid_Gutter) * 6));
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.prd-Product_Breadcrumb {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+@media only screen and (min-width: 901px) {
+  .prd-Product_Breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.prd-Product_Columns {
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 901px) {
+  .prd-Product_Columns {
+    flex-flow: row nowrap;
+
+    display: flex;
+    margin-bottom: 100px;
+  }
+}
+
+.prd-Product_Column-media {
+  --ProductMedia_MaxWidth: 710px;
+
+  position: relative;
+
+  width: 100%;
+}
+@media only screen and (min-width: 901px) {
+  .prd-Product_Column-media {
+    flex-direction: column;
+
+    display: flex;
+    max-width: 50%;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .prd-Product_Column-media {
+    max-width:
+      calc(
+        var(--ProductMedia_MaxWidth) + calc(var(--Grid_Gutter) * 3)
+      );
+  }
+}
+
+.prd-Product_Column-detail {
+  --ProductDetail_MaxWidth: 450px;
+
+  z-index: 1;
+
+  margin-left: auto;
+}
+/* stylelint-disable-next-line selector-max-type, selector-no-qualifying-type, selector-class-pattern */
+body.overflow-hidden .prd-Product_Column-detail {
+  z-index: 9;
+}
+@media only screen and (max-width: 900px) {
+  .prd-Product_Column-detail {
+    margin-top: 35px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .prd-Product_Column-detail {
+    flex-direction: column;
+
+    display: flex;
+    max-width: 50%;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .prd-Product_Column-detail {
+    max-width:
+      calc(
+        var(--ProductDetail_MaxWidth) + calc(var(--Grid_Gutter) * 6)
+      );
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .prd-Product_Detail {
+    position: sticky;
+    top: calc(var(--Nav_Height) + var(--TopBar_Height) + 30px);
+
+    transition: top 0.5s ease;
+  }
+  .lyt-Site-condensedHeader .prd-Product_Detail {
+    top: calc(var(--Nav_Height-condensed) + 30px);
+  }
+  .lyt-Site-hiddenHeader .prd-Product_Detail {
+    top: 30px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Short description
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Product_ShortDesc {
+  margin-top: 30px;
+
+  color: var(--Color_Grey);
+}

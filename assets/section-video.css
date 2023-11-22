@@ -1,0 +1,227 @@
+/*
+|--------------------------------------------------------------------------
+| Video section
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.sec-Video {
+  --TopGap: 40px;
+
+  background-color: var(--Video_Background);
+}
+@media only screen and (min-width: 768px) {
+  .sec-Video {
+    --TopGap: 60px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .sec-Video {
+    --TopGap: 100px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .sec-Video {
+    --TopGap: 140px;
+  }
+}
+
+.sec-Video_Body {
+  grid-gap: 0 var(--Grid_Gutter);
+  grid-template-columns: repeat(12, 1fr);
+
+  display: grid;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Media
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Video_MediaContainer {
+  position: relative;
+  z-index: 0;
+
+  align-items: center;
+
+  grid-column: 1 / span 12;
+
+  display: flex;
+  width: 100%;
+  margin-top: var(--TopGap);
+
+  overflow: hidden;
+}
+@media only screen and (min-width: 901px) {
+  .sec-Video_MediaContainer {
+    grid-column: 2 / span 10;
+  }
+}
+.sec-Video_MediaContainer::after {
+  content: '';
+
+  display: block;
+  width: 0;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Video_MediaContainer::after {
+    padding-top: 56.25%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .sec-Video_MediaContainer::after {
+    padding-top: 190%;
+  }
+}
+
+.sec-Video_DesktopYoutubeContainer {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+@media only screen and (max-width: 767px) {
+  .sec-Video_DesktopYoutubeContainer {
+    display: none;
+  }
+}
+
+.sec-Video_MobileYoutubeContainer {
+  position: relative;
+
+  width: 100%;
+  height: 0;
+  padding-bottom: 177.78%;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Video_MobileYoutubeContainer {
+    display: none;
+  }
+}
+
+.sec-Video_Iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-Video_MediaContainerYoutube-desktop .sec-Video_DesktopYoutubeContainer {
+    display: block;
+    padding-bottom: 190%;
+  }
+}
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Video_Image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Video_Image-desktop {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .sec-Video_Image-mobile {
+    display: flex;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Videos
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Video_VideoPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Video_VideoPlayer-desktop {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .sec-Video_VideoPlayer-mobile {
+    display: flex;
+  }
+}
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Video_Content {
+  flex-direction: column;
+  justify-content: center;
+
+  grid-column: 2 / span 10;
+
+  display: flex;
+  min-height: var(--TopGap);
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  text-align: center;
+}
+@media only screen and (min-width: 901px) {
+  .sec-Video_Content {
+    grid-column: 3 / span 8;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .sec-Video_Content {
+    grid-column: 4 / span 6;
+  }
+}
+
+.sec-Video-light .sec-Video_Content {
+  color: #fff;
+}
+
+.sec-Video_Kicker {
+  margin-bottom: 10px;
+}
+
+.sec-Video_Title ~ .sec-Video_Text {
+  margin-top: 20px;
+}
+
+.sec-Video_Buttons {
+  margin-top: 20px;
+}
+
+.sec-Video-light .sec-Video_Button {
+  background-color: var(--Color_White);
+  border: 1px solid var(--Color_Brand);
+  color: var(--Color_Body);
+}
+.sec-Video-light .sec-Video_Button:hover {
+  background-color: var(--Color_Brand);
+  color: var(--Color_White);
+}

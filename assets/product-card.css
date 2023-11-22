@@ -1,0 +1,802 @@
+/*
+|--------------------------------------------------------------------------
+| Card
+|--------------------------------------------------------------------------
+| @namespace: prd-
+|
+*/
+.prd-Card {
+  scroll-margin-top: var(--offset);
+
+  position: relative;
+
+  flex-direction: column;
+
+  display: flex;
+  height: 100%;
+  pointer-events: initial;
+}
+
+.prd-Card[aria-busy='true'] {
+  cursor: wait;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Overlay
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card_Overlay {
+  position: relative;
+  z-index: 3;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card_Images {
+  position: relative;
+  z-index: 0;
+
+  display: flex;
+
+  overflow: hidden;
+}
+.prd-Card_Images::after {
+  content: '';
+
+  display: block;
+  width: 0;
+  padding-top: 150%;
+}
+.prd-Card-unavailable .prd-Card_Images {
+  opacity: 0.7;
+}
+
+.prd-Card_Image {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+}
+
+.prd-Card_Player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.prd-Card_HoverImage {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .prd-Card_HoverImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+  }
+  .prd-Card:hover .prd-Card_HoverImage {
+    opacity: 1;
+  }
+}
+
+.prd-Card_ImageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  width: 100%;
+  padding: 10px;
+
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+.prd-Card:hover .prd-Card_ImageOverlay,
+.prd-Card[data-quick-buy-active='true'] .prd-Card_ImageOverlay {
+  transform: translateY(100%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Card_Content {
+  z-index: 2;
+
+  margin-top: 10px;
+}
+@media only screen and (max-width: 900px) {
+  .clc-Items .prd-Card_Content,
+  .ais-InfiniteHits-list .prd-Card_Content {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  /* stylelint-disable-next-line selector-class-pattern */
+  .template-page-wishlist .prd-Card_Content {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .prd-Card_Content {
+    margin-top: 20px;
+  }
+  .crt-Nosto .prd-Card_Content {
+    margin-top: 15px;
+  }
+}
+
+.prd-Card_Kicker {
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+
+  color: var(--Color_WarmPink);
+}
+
+.prd-Card_Strapline {
+  margin-bottom: 5px;
+}
+
+.prd-Card_TitleMark {
+  font-weight: 700;
+
+  background-color: initial;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Card_Footer {
+  flex-flow: row nowrap;
+
+  display: flex;
+  margin-top: 17px;
+}
+@media only screen and (max-width: 900px) {
+  .clc-Items .prd-Card_Footer,
+  .ais-InfiniteHits-list .prd-Card_Footer {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  /* stylelint-disable-next-line selector-class-pattern */
+  .template-page-wishlist .prd-Card_Footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.prd-Card-wishlist .prd-Card_Footer {
+  margin-bottom: 15px;
+}
+@media only screen and (min-width: 901px) {
+  .prd-Card-wishlist .prd-Card_Footer {
+    margin-bottom: 20px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Pricing
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Card_Price {
+  font-weight: 700;
+}
+
+.prd-Card-wishlist .prd-Card_Price {
+  flex-flow: row nowrap;
+
+  display: flex;
+}
+
+.prd-Card_Variant {
+  font-weight: 400;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Colors
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Card_Colors {
+  align-items: center;
+  flex-flow: row nowrap;
+
+  display: flex;
+  margin-right: 20px;
+  margin-left: auto;
+}
+
+.prd-Card_Color {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: -5px;
+
+  background-color: currentColor;
+  border: 1px solid var(--Color_White);
+  border-radius: 50%;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Icons
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Card_Actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+
+  flex-direction: column;
+
+  display: flex;
+
+  color: var(--Color_White);
+}
+
+@media only screen and (min-width: 768px) {
+  .prd-Card_Actions {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.prd-Card-wishlist .prd-Card_Actions {
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+}
+
+.prd-Card_Action {
+  position: relative;
+
+  width: 18px;
+  height: 18px;
+  margin-bottom: 6px;
+
+  color: inherit;
+
+  transition: all 0.4s ease;
+}
+@media only screen and (max-width: 767px) {
+  .prd-Card_Action {
+    width: 44px;
+    height: 44px;
+  }
+  .prd-Card_Action svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.prd-Card_QuickBuyTrigger {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-top: -5px;
+}
+.clc-Items .prd-Card_QuickBuyTrigger {
+  margin-right: -12px;
+}
+@media only screen and (min-width: 901px) {
+  .prd-Card_QuickBuyTrigger {
+    display: none;
+  }
+}
+.prd-Card_QuickBuyTrigger svg {
+  width: 18px;
+  height: 18px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Add to Wishlist
+|--------------------------------------------------------------------------
+|
+*/
+
+/* Importants override swym styles */
+.prd-Card_Action-wishlist {
+  /* stylelint-disable declaration-no-important */
+  display: block !important;
+
+  color: var(--Color_White) !important;
+  cursor: pointer;
+  filter: grayscale(0);
+  opacity: 1 !important;
+  will-change: filter;
+
+  transition: filter;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.prd-Card_Action-wishlist[disabled] {
+  pointer-events: none;
+
+  filter: grayscale(1);
+}
+
+.prd-Card_Action-wishlist svg {
+  fill: transparent;
+  opacity: 1;
+  will-change: fill;
+
+  transition: color, fill, opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+/* stylelint-disable selector-class-pattern, no-duplicate-selectors */
+.prd-Card_Action-wishlist.swym-added svg,
+.prd-Card_Action-wishlist[data-wishlist-status='added'] svg {
+  color: var(--Color_Red);
+  fill: var(--Color_Red);
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .prd-Card_Action-wishlist:hover svg {
+    color: var(--Color_Red);
+    fill: var(--Color_Red);
+    opacity: 0.5;
+  }
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Remove from Wishlist
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card_Action-wishlistremove {
+  position: relative;
+
+  display: block;
+  width: 25px;
+  height: 25px;
+
+  background-color: var(--Color_White);
+  border-radius: 50%;
+  color: var(--Color_Brand);
+
+  transition: color, background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+.prd-Card_Action-wishlistremove:hover,
+.prd-Card_Action-wishlistremove:focus {
+  background-color: var(--Color_Brand);
+  color: var(--Color_White);
+}
+@media only screen and (min-width: 1201px) {
+  .prd-Card_Action-wishlistremove {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.prd-Card_Action-wishlistremove svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  color: inherit;
+  fill: currentColor;
+
+  transform: translate(-50%, -50%);
+}
+@media only screen and (min-width: 1201px) {
+  .prd-Card_Action-wishlistremove svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| States
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card_States {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  text-align: center;
+
+  transition: transform 0.4s ease;
+}
+
+@media only screen and (min-width: 901px) {
+  .prd-Card:focus-within .prd-Card_States,
+  .prd-Card:hover .prd-Card_States,
+  .prd-Card:focus .prd-Card_States {
+    transform: translateY(100%);
+  }
+}
+
+.prd-Card_State {
+  padding: 12px 15px;
+
+  background-color: var(--Color_Black-70);
+  color: var(--Color_White);
+}
+.prd-Card_State-tag {
+  color: var(--Color_CoolPink);
+}
+.prd-Card_State-saving {
+  background-color: var(--Color_Red-70);
+  color: var(--Color_White);
+}
+.prd-Card_State-preorder {
+  background-color: var(--Color_CoolPink-70);
+  color: var(--Color_White);
+}
+
+.prd-Card_StateText {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: inherit;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Quick Buy
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Card_QuickBuyOverlay {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+
+  display: none;
+  pointer-events: initial;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+}
+
+.prd-Card_QuickBuyOverlay-mobile {
+  position: fixed;
+  z-index: 6;
+}
+
+.prd-Card[data-quick-buy-active='true'] .prd-Card_QuickBuyOverlay {
+  display: block;
+}
+
+@media only screen and (max-width: 900px) {
+  .prd-Card[data-quick-buy-active='true'] .prd-Card_QuickBuyOverlay-desktop {
+    display: none;
+  }
+}
+
+.prd-Card_QuickBuy-mobile[aria-hidden='false'] ~ .prd-Card_QuickBuyOverlay-mobile {
+  display: block;
+}
+
+.prd-Card_QuickBuy-mobile[data-push-cart-quick-buy='true'] {
+  --PushCart_Zindex: 11;
+  z-index: calc(var(--PushCart_Zindex) + 1);
+}
+
+.prd-Card_QuickBuyContainer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+  display: none;
+  padding: 20px;
+
+  will-change: transform;
+
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  pointer-events: initial;
+}
+@media only screen and (min-width: 901px) {
+  .prd-Card_QuickBuyContainer {
+    z-index: 5;
+
+    display: block;
+  }
+}
+
+.prd-Card_QuickBuy {
+  position: relative;
+  z-index: 5;
+
+  background-color: var(--Color_White);
+
+  transform: initial;
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: initial;
+}
+
+.prd-Card_QuickBuy::before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  display: block;
+
+  background-color: var(--Color_White);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Add to Cart
+|--------------------------------------------------------------------------
+|
+*/
+
+.prd-Card_AddToCart-wishlist {
+  margin-top: auto;
+}
+
+.prd-Card_AddToCart-wishlist .prd-AddToCart_Icon {
+  display: none;
+}
+
+.prd-Card_AddToCart-wishlist .prd-AddToCart_Button:hover,
+.prd-Card_AddToCart-wishlist .prd-AddToCart_Button:focus {
+  border: 1px solid var(--Color_Brand);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Quick Buy - Mobile
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card_QuickBuy-mobile {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 7;
+
+  transform: translateY(0);
+}
+.prd-Card_QuickBuy-mobile[aria-hidden='true'] {
+  transform: translateY(100%);
+}
+@media only screen and (min-width: 768px) {
+  .prd-Card_QuickBuy-mobile {
+    display: none;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Quick Buy - Desktop
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card_QuickBuy-desktop {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+.prd-Card_QuickBuy-desktop[aria-busy='true'] {
+  opacity: 0.9;
+}
+.prd-Card_QuickBuy-desktop[aria-hidden='true'] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.prd-Card[data-quick-buy-active='true'] .prd-Card_QuickBuyContainer,
+.prd-Card:hover .prd-Card_QuickBuyContainer,
+.prd-Card:focus-within .prd-Card_QuickBuyContainer,
+.prd-Card_FauxLink:hover + .prd-Card_Overlay .prd-Card_QuickBuyContainer,
+.prd-Card_FauxLink:focus + .prd-Card_Overlay .prd-Card_QuickBuyContainer {
+  transform: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Skeleton
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card-skeleton .crd-Images_Image,
+.prd-Card-skeleton .prd-Card_Kicker,
+.prd-Card-skeleton .prd-Card_Strapline,
+.prd-Card-skeleton .prd-Card_Title,
+.prd-Card-skeleton .prd-Card_Price {
+  display: block;
+  width: 100%;
+
+  background:
+    linear-gradient(
+      270deg,
+      var(--Color_Grey-10),
+      var(--Color_Grey-15)
+    );
+  background-size: 400% 400%;
+  border-radius: 3px;
+
+  animation: SkeletonBackground 0.8s linear infinite;
+}
+
+.prd-Card-skeleton .crd-Images_Image::before,
+.prd-Card-skeleton .prd-Card_Kicker::before,
+.prd-Card-skeleton .prd-Card_Strapline::before,
+.prd-Card-skeleton .prd-Card_Title::before,
+.prd-Card-skeleton .prd-Card_Price::before {
+  content: '\00a0\00a0';
+
+  display: block;
+}
+
+.prd-Card-skeleton .crd-Images_Image {
+  padding-top: 149%;
+}
+
+.prd-Card-skeleton .prd-Card_Kicker {
+  width: 33%;
+}
+.prd-Card-skeleton .prd-Card_Strapline {
+  width: 55%;
+}
+.prd-Card-skeleton .prd-Card_Title {
+  width: 75%;
+}
+.prd-Card-skeleton .prd-Card_Price {
+  width: 20%;
+}
+
+.prd-Card-skeleton .prd-Card_Colors {
+  opacity: 0.1;
+}
+
+.prd-Card-skeleton .prd-Card_Color {
+  background-color: var(--Color_Grey);
+}
+
+@keyframes SkeletonBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Algolia
+|--------------------------------------------------------------------------
+|
+*/
+.prd-Card-async {
+  display: grid;
+}
+
+.prd-Card-async .prd-Card-liquid {
+  grid-column: 1;
+  grid-row: 1;
+
+  opacity: 1;
+
+  transition: opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.prd-Card-async .prd-Card-liquid[aria-busy='true'] {
+  opacity: 0;
+}
+
+.prd-Card-async .prd-Card-algolia {
+  z-index: -1;
+
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+.prd-Card-liquid[aria-busy='false'] + .prd-Card-algolia .prd-Card_Content,
+.prd-Card-liquid[aria-busy='false'] + .prd-Card-algolia .prd-Card_Footer {
+  opacity: 0;
+}
+
+.prd-Card-algolia .prd-Card_OverlayContainer {
+  transition: 0.1s opacity 0.3s ease;
+}
+/* stylelint-disable-next-line selector-max-specificity */
+.prd-Card-liquid[aria-busy='false'] + .prd-Card-algolia .prd-Card_OverlayContainer {
+  opacity: 0;
+}

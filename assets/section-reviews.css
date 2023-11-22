@@ -1,0 +1,21 @@
+/*
+|--------------------------------------------------------------------------
+| Reviews
+|--------------------------------------------------------------------------
+| @namespace sec
+|
+*/
+
+.sec-Reviews {
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  background-color: var(--Color_LightPink);
+}
+@media only screen and (min-width: 901px) {
+  .sec-Reviews {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

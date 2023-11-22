@@ -1,0 +1,155 @@
+/*
+|--------------------------------------------------------------------------
+| Collection Items
+|--------------------------------------------------------------------------
+| @namespace clc
+|
+*/
+.clc-Items {
+  transition: opacity, visibility;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.clc-Items[aria-busy='true'] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.clc-Items[aria-busy='false'] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.clc-Items-search {
+  margin-block-end: 40px;
+}
+@media only screen and (min-width: 901px) {
+  .clc-Items-search {
+    margin-block-start: 60px;
+    margin-block-end: 60px;
+  }
+}
+
+.clc-Items_Items[data-view='grid'],
+.clc-Items_Items {
+  grid-gap: 30px var(--Grid_Gutter);
+  grid-template-columns: repeat(4, 1fr);
+
+  display: grid;
+  width: 100%;
+}
+
+.util-HasJS .clc-Items_Items[aria-busy='true'] {
+  min-height: 100vh;
+
+  cursor: wait;
+  opacity: 0;
+}
+
+@media only screen and (min-width: 901px) {
+  .clc-Items_Items[data-view='grid'],
+  .clc-Items_Items {
+    grid-gap: 40px var(--Grid_Gutter);
+  }
+}
+
+.clc-Items_Items[data-view='list'] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* stylelint-disable declaration-no-important */
+.clc-Items_Item {
+  scroll-margin-top: 105px;
+
+  grid-column: span 2;
+
+  width: 100% !important;
+  padding-bottom: 0;
+}
+
+@media only screen and (min-width: 901px) {
+  .clc-Items_Item {
+    grid-column: span 1;
+  }
+}
+/* stylelint-enable */
+
+.clc-Items_Items[data-view='list'] .clc-Items_Item {
+  grid-column: span 3;
+}
+@media only screen and (min-width: 901px) {
+  .clc-Items_Items[data-view='list'] .clc-Items_Item {
+    grid-column: span 1;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Promo Card
+|--------------------------------------------------------------------------
+|
+*/
+.clc-Items_Item-promoted {
+  grid-column: var(--PromoColumn);
+  grid-row: var(--PromoRow);
+}
+
+@media only screen and (min-width: 901px) {
+  .clc-Items_Items[data-view='list'] .clc-Items_Item-promoted {
+    grid-column: var(--PromoColumn);
+    grid-row: var(--PromoRow);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Back to Top
+|--------------------------------------------------------------------------
+|
+*/
+
+.clc-Items_BackToTop {
+  position: sticky;
+  bottom: 23px;
+  z-index: 5;
+
+  display: block;
+  padding-top: 20px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: all 0.4s ease;
+}
+
+.clc-Items_BackToTop-show {
+  opacity: 1;
+
+  pointer-events: auto;
+}
+
+.clc-Items_BackToTop .btn-Button_Arrow-backtotop {
+  position: sticky;
+  top: 200px;
+
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 20px auto 0;
+
+  background-color: var(--Color_Russet);
+}
+@media only screen and (min-width: 768px) {
+  .clc-Items_BackToTop .btn-Button_Arrow-backtotop {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.clc-Items_BackToTop .btn-Button_Arrow-backtotop:hover {
+  background-color: var(--Color_Brand);
+}

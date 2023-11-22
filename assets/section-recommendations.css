@@ -1,0 +1,88 @@
+/*
+|--------------------------------------------------------------------------
+| Recommendations
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+@media only screen and (max-width: 767px) {
+  .sec-Recommendations[data-item-count='1'] .sec-Recommendations_Items,
+  .sec-Recommendations[data-item-count='2'] .sec-Recommendations_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+
+    display: grid;
+    pointer-events: none;
+  }
+
+  /* stylelint-disable declaration-no-important */
+  .sec-Recommendations[data-item-count='1'] .sec-Recommendations_Item,
+  .sec-Recommendations[data-item-count='2'] .sec-Recommendations_Item {
+    transform: none !important;
+  }
+  /* stylelint-enable */
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-Recommendations[data-item-count='1'] .sec-Recommendations_Items,
+  .sec-Recommendations[data-item-count='2'] .sec-Recommendations_Items,
+  .sec-Recommendations[data-item-count='3'] .sec-Recommendations_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+
+    display: grid;
+    pointer-events: none;
+  }
+
+  /* stylelint-disable declaration-no-important */
+  .sec-Recommendations[data-item-count='1'] .sec-Recommendations_Item,
+  .sec-Recommendations[data-item-count='2'] .sec-Recommendations_Item,
+  .sec-Recommendations[data-item-count='3'] .sec-Recommendations_Item {
+    transform: none !important;
+  }
+  /* stylelint-enable */
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-Recommendations {
+    pointer-events: none;
+  }
+
+  .sec-Recommendations_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+
+    display: grid;
+  }
+
+  /* stylelint-disable declaration-no-important */
+  .sec-Recommendations_Item {
+    max-width: 100% !important;
+    min-width: 100% !important;
+
+    transform: none !important;
+  }
+  /* stylelint-enable */
+
+  .sec-Recommendations_Footer {
+    display: none;
+  }
+}
+
+.sec-Recommendations[data-item-count='1'] .sec-Recommendations_Footer,
+.sec-Recommendations[data-item-count='2'] .sec-Recommendations_Footer {
+  display: none;
+}
+
+.sec-Recommendations_Scroller {
+  --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 2.5);
+  --Carousel_ScrollerWidth: calc(100% / var(--Carousel_VisibleItemCount));
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-Recommendations_Scroller {
+    --Carousel_VisibleItemCount: calc(var(--Carousel_ItemCount) / 4);
+    --Carousel_ScrollerWidth: calc(100% / var(--Carousel_VisibleItemCount));
+  }
+}

@@ -1,0 +1,151 @@
+/*
+|--------------------------------------------------------------------------
+| Modal media
+|--------------------------------------------------------------------------
+| @namespace: mod
+|
+*/
+
+.mod-Media,
+.mod-Media_Gallery,
+.mod-Media_Slides {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+.mod-Media_Slide {
+  position: absolute;
+  left: 50%;
+
+  width: calc(100% - calc(var(--Grid_Gutter)) * 15);
+  height: 100%;
+
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+
+  transform: translateX(-50%);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.mod-Media_Slide[aria-current='true'] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mod-Media_SlideImage {
+  position: relative;
+
+  justify-content: center;
+
+  display: flex;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.mod-Media_SlideImage .rsp-Image {
+  display: block;
+  width: auto;
+  height: 100%;
+
+  cursor: zoom-in;
+  opacity: 1;
+}
+
+.mod-Media_SlideImage .rsp-Image .rsp-Image_Image {
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 1;
+
+  display: block;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+
+  transition: opacity 0.5s;
+}
+
+.mod-Media_SlideImage .rsp-Image:hover .rsp-Image_Image {
+  opacity: 0;
+}
+
+.mod-Media_SlideVideo {
+  position: relative;
+  top: 50%;
+
+  display: block;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  transform: translateY(-50%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Arrows
+|--------------------------------------------------------------------------
+|
+*/
+.mod-Media_Arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mod-Media_Arrow {
+  position: absolute;
+  top: 50%;
+
+  display: flex;
+  width: 40px;
+  height: 40px;
+
+  background-color: var(--Color_White);
+  border-radius: 50%;
+  color: #e1a9a9;
+
+  transform: translateY(-50%);
+  transition: transform 0.4s ease;
+  pointer-events: initial;
+}
+.mod-Media_Arrow:hover,
+.mod-Media_Arrow:focus {
+  transform: translateY(-50%) scale(1.1);
+}
+.mod-Media_Arrow-prev {
+  left: 0;
+}
+.mod-Media_Arrow-next {
+  right: 0;
+}
+
+.mod-Media_ArrowIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 17px;
+  height: 17px;
+
+  color: inherit;
+
+  transform: translate(-50%, -50%);
+}
+
+.mod-Media_ArrowIcon svg {
+  width: 17px;
+  height: 17px;
+}

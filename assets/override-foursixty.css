@@ -1,0 +1,71 @@
+/*
+|--------------------------------------------------------------------------
+| Foursixty override
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable declaration-no-important, selector-class-pattern, selector-max-class, selector-max-specificity */
+.fs-detail-title,
+.fs-post-info {
+  font-family: var(--Font_Family-body) !important;
+
+  color: var(--Color_Body);
+}
+
+.fs-detail-nav-button svg {
+  transform: scale(0.6);
+}
+
+.fs-detail-nav-button .fs-arrow {
+  transition: stroke 0.4s ease;
+}
+.fs-detail-nav-button:hover .fs-arrow {
+  stroke: var(--Color_CoolPink);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Product
+|--------------------------------------------------------------------------
+|
+*/
+.fs-detail-product-image {
+  margin-bottom: 0;
+}
+
+.fs-product-name,
+.fs-product-price {
+  font-family: var(--Font_Family-headings) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.3px !important;
+  line-height: 17px !important;
+  text-transform: none !important;
+
+  color: var(--Color_Body) !important;
+}
+@media only screen and (min-width: 768px) {
+  .fs-product-name,
+  .fs-product-price {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+}
+
+.fs-product-price {
+  font-weight: 700 !important;
+}
+
+.fs-shopify-add-cart {
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+
+  text-align: center !important;
+
+  text-transform: uppercase !important;
+
+  background-color: var(--Color_Brand) !important;
+  border: 1px solid var(--Color_Brand) !important;
+  color: #fff !important;
+}
+/* stylelint-enable */

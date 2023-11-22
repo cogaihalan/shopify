@@ -1,0 +1,274 @@
+/*
+|--------------------------------------------------------------------------
+| Loyalty Rules List
+|--------------------------------------------------------------------------
+| @namespace: loy-
+|
+*/
+
+.loy-RulesList_Header {
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+@media screen and (min-width: 901px) {
+  .loy-RulesList_Header {
+    margin-bottom: 40px;
+  }
+}
+
+.loy-RulesList_Title {
+  margin-bottom: 10px;
+}
+
+.loy-RulesList_Text {
+  max-width: 440px;
+  margin: auto;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Loyalty Lion
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+/* stylelint-disable */
+.loy-RulesList #loyaltylion .lion-rules-list {
+  grid-row-gap: 30px;
+  grid-column-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+}
+@media screen and (min-width: 750px) {
+  .loy-RulesList #loyaltylion .lion-rules-list {
+    grid-row-gap: 35px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 990px) {
+  .loy-RulesList #loyaltylion .lion-rules-list {
+    grid-row-gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-rule-item__title {
+  margin-bottom: 2px;
+
+  font-family: var(--Font_Family-headings);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  color: #333;
+}
+@media screen and (min-width: 990px) {
+  .loy-RulesList #loyaltylion .lion-rule-item .lion-rule-item__title {
+    font-size: 18px;
+  }
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-rule-item__points {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+
+  color: #333;
+}
+@media screen and (min-width: 990px) {
+  .loy-RulesList #loyaltylion .lion-rule-item .lion-rule-item__points {
+    font-size: 14px;
+  }
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  -webkit-mask-image: unset !important;
+  mask-image: unset !important;
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-rule-item__content {
+  justify-content: flex-start;
+
+  min-height: 150px;
+  padding: 0;
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule--facebook-like {
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='25' viewBox='0 0 13 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.5 24.2024V13.2024H0.5V10.2024H4.5V6.20239C4.5 3.44139 6.739 1.20239 9.5 1.20239H12.5V4.20239H9.5C8.395 4.20239 7.5 5.09739 7.5 6.20239V10.2024H12.5L11.5 13.2024H7.5V24.2024H4.5Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule--instagram-follow {
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.9995 18.0873C20.9995 19.5304 19.8298 20.7001 18.3866 20.7001H3.57976C2.13654 20.7001 0.966797 19.5304 0.966797 18.0873V3.2817C0.966797 1.83859 2.13654 0.668945 3.57976 0.668945H18.3866C19.8298 0.668945 20.9995 1.83859 20.9995 3.2817V18.0873Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.966797 6.76538H7.93471H0.966797Z' fill='white'/%3E%3Cpath d='M0.966797 6.76538H7.93471' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.0312 6.76538H20.9992H14.0312Z' fill='white'/%3E%3Cpath d='M14.0312 6.76538H20.9992' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.7715 5.02364H18.3845V2.41089H15.7715V5.02364Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.70898 1.10449V4.15271V1.10449Z' fill='white'/%3E%3Cpath d='M2.70898 1.10449V4.15271' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.45117 0.668945V4.15262V0.668945Z' fill='white'/%3E%3Cpath d='M4.45117 0.668945V4.15262' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.19141 0.668945V4.15262V0.668945Z' fill='white'/%3E%3Cpath d='M6.19141 0.668945V4.15262' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.7723 10.6846C15.7723 13.3304 13.6279 15.4746 10.9818 15.4746C8.33578 15.4746 6.19141 13.3304 6.19141 10.6846C6.19141 8.03873 8.33578 5.89453 10.9818 5.89453C13.6279 5.89453 15.7723 8.03873 15.7723 10.6846Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.1596 10.6844C13.1596 11.8871 12.185 12.8617 10.9822 12.8617C9.77932 12.8617 8.80469 11.8871 8.80469 10.6844C8.80469 9.48164 9.77932 8.50708 10.9822 8.50708C12.185 8.50708 13.1596 9.48164 13.1596 10.6844Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule--signup {
+  background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.8989 0.688263L25.4257 7.30446L32.999 8.24423L27.449 13.439L28.9626 20.5227L21.8989 17.2169L14.8352 20.5227L16.3489 13.439L10.7988 8.24423L18.3721 7.30446L21.8989 0.688263Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.87611 14.3615L7.44089 17.297L10.801 17.7139L8.33858 20.0188L9.01016 23.1617L5.87611 21.695L2.74206 23.1617L3.41364 20.0188L0.951172 17.7139L4.31132 17.297L5.87611 14.3615Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.2665 25.6278L20.5806 28.093L23.4024 28.4431L21.3344 30.3787L21.8984 33.0181L19.2665 31.7863L16.6346 33.0181L17.1985 30.3787L15.1306 28.4431L17.9524 28.093L19.2665 25.6278Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule--referral {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='31' viewBox='0 0 30 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 27.3989H4.67795C4.67795 27.3989 6.85407 20.4985 7.12992 17.2288C6.15894 16.2753 1 15.9575 1 15.9575V27.3989Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.6158 24.2206L25.3126 23.0028C26.8659 22.601 28.4817 23.3702 29.1977 24.8563L22.4548 28.0344C17.3461 30.2057 16.9182 30.2591 14.4859 29.3057L5.29102 26.1275' fill='white'/%3E%3Cpath d='M20.6158 24.2206L25.3126 23.0028C26.8659 22.601 28.4817 23.3702 29.1977 24.8563L22.4548 28.0344C17.3461 30.2057 16.9182 30.2591 14.4859 29.3057L5.29102 26.1275' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.12866 18.5L18.1625 21.0425C19.7992 21.4671 20.6145 22.2706 20.6145 24.0198V24.2207L18.9643 24.6478C18.4359 24.7851 17.8854 24.7991 17.3509 24.6885L12.0326 23.5851' fill='white'/%3E%3Cpath d='M7.12866 18.5L18.1625 21.0425C19.7992 21.4671 20.6145 22.2706 20.6145 24.0198V24.2207L18.9643 24.6478C18.4359 24.7851 17.8854 24.7991 17.3509 24.6885L12.0326 23.5851' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.4039 0.702393L21.0835 6.06332H26.5208L22.122 9.37751L23.8015 14.7384L19.4039 11.4255L15.0063 14.7384L16.6859 9.37751L12.2871 6.06332H17.7243L19.4039 0.702393Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+.loy-RulesList
+  #loyaltylion
+  .lion-rule-item
+  .lion-icon__rule--newsletter-signup {
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.53271 14.5539H2.76635C1.79044 14.5539 1 13.7274 1 12.707V2.54926C1 1.52886 1.79044 0.702393 2.76635 0.702393H18.6635C19.6395 0.702393 20.4299 1.52886 20.4299 2.54926V12.707C20.4299 13.7274 19.6395 14.5539 18.6635 14.5539H16.8972' fill='white'/%3E%3Cpath d='M4.53271 14.5539H2.76635C1.79044 14.5539 1 13.7274 1 12.707V2.54926C1 1.52886 1.79044 0.702393 2.76635 0.702393H18.6635C19.6395 0.702393 20.4299 1.52886 20.4299 2.54926V12.707C20.4299 13.7274 19.6395 14.5539 18.6635 14.5539H16.8972' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.76758 2.54932L9.62986 7.7307C10.2843 8.22566 11.148 8.22566 11.8025 7.7307L18.6648 2.54932' fill='white'/%3E%3Cpath d='M2.76758 2.54932L9.62986 7.7307C10.2843 8.22566 11.148 8.22566 11.8025 7.7307L18.6648 2.54932' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.76758 12.707L7.18346 8.08984L2.76758 12.707Z' fill='white'/%3E%3Cpath d='M2.76758 12.707L7.18346 8.08984' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.6639 12.707L14.248 8.08984L18.6639 12.707Z' fill='white'/%3E%3Cpath d='M18.6639 12.707L14.248 8.08984' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.7147 9.93677L11.9247 13.8309H15.8416L12.6727 16.2383L13.8827 20.1324L10.7147 17.725L7.54678 20.1324L8.75673 16.2383L5.58789 13.8309H9.50478L10.7147 9.93677Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule--twitter-follow {
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='27' viewBox='0 0 17 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.43478 0.702393H10.7826V7.22413H15.1304V11.572H10.7826V19.1807C10.7826 22.0676 13.6359 22.4078 15.1304 21.3546C15.6402 22.6448 16.2174 24.6154 16.2174 24.6154C16.2174 24.6154 14.3152 25.7024 11.3261 25.7024C8.33696 25.7024 5.34783 24.4796 5.34783 20.2676V11.572H1V8.31109C3.67174 8.31109 6.43478 5.01652 6.43478 0.702393Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule--purchase {
+  background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.8989 0.688263L25.4257 7.30446L32.999 8.24423L27.449 13.439L28.9626 20.5227L21.8989 17.2169L14.8352 20.5227L16.3489 13.439L10.7988 8.24423L18.3721 7.30446L21.8989 0.688263Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.87611 14.3615L7.44089 17.297L10.801 17.7139L8.33858 20.0188L9.01016 23.1617L5.87611 21.695L2.74206 23.1617L3.41364 20.0188L0.951172 17.7139L4.31132 17.297L5.87611 14.3615Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.2665 25.6278L20.5806 28.093L23.4024 28.4431L21.3344 30.3787L21.8984 33.0181L19.2665 31.7863L16.6346 33.0181L17.1985 30.3787L15.1306 28.4431L17.9524 28.093L19.2665 25.6278Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-icon__rule--birthday {
+  background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.8989 0.688263L25.4257 7.30446L32.999 8.24423L27.449 13.439L28.9626 20.5227L21.8989 17.2169L14.8352 20.5227L16.3489 13.439L10.7988 8.24423L18.3721 7.30446L21.8989 0.688263Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.87611 14.3615L7.44089 17.297L10.801 17.7139L8.33858 20.0188L9.01016 23.1617L5.87611 21.695L2.74206 23.1617L3.41364 20.0188L0.951172 17.7139L4.31132 17.297L5.87611 14.3615Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.2665 25.6278L20.5806 28.093L23.4024 28.4431L21.3344 30.3787L21.8984 33.0181L19.2665 31.7863L16.6346 33.0181L17.1985 30.3787L15.1306 28.4431L17.9524 28.093L19.2665 25.6278Z' fill='white' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item .lion-rule-item__actions,
+.loy-RulesList #loyaltylion .lion-rule-item .lion-newsletter-signup-action {
+  width: 100%;
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item__actions:not(:empty),
+.loy-RulesList #loyaltylion .lion-reward-item__actions:not(:empty) {
+  margin-top: 40px;
+}
+
+.loy-RulesList
+  #loyaltylion
+  .lion-rule-item__actions
+  .lion-instagram-follow__link,
+.loy-RulesList #loyaltylion .lion-rule-item__actions .lion-twitter-follow__link,
+.loy-RulesList
+  #loyaltylion
+  .lion-rule-item__actions
+  .lion-facebook-follow__link {
+  width: 100%;
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item__actions .lion-action-button {
+  width: 100%;
+  padding: 7px 0;
+
+  font-family: var(--Font_Family-headings);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 22px;
+  text-transform: uppercase;
+
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #333;
+
+  transition: background-color, border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+@media screen and (min-width: 990px) {
+  .loy-RulesList #loyaltylion .lion-rule-item__actions .lion-action-button {
+    font-size: 13px;
+  }
+}
+
+.loy-RulesList #loyaltylion .lion-rule-item__actions .lion-action-button:hover {
+  background-color: var(--Color_CoolPink);
+  border: 1px solid var(--Color_CoolPink);
+}
+
+.loy-RulesList
+  #loyaltylion
+  .lion-rule-item__actions
+  .lion-facebook-like__wrapper {
+  position: inherit;
+  min-height: unset;
+  width: 100%;
+}
+
+.loy-RulesList #loyaltylion .lion-action-button .lion-rule-item__completed,
+.loy-RulesList #loyaltylion .lion-action-button .lion-rule-item__limit-reached {
+  justify-content: center;
+}
+
+.loy-RulesList
+  #loyaltylion
+  .lion-action-button
+  .lion-rule-item__completed::before,
+.loy-RulesList
+  #loyaltylion
+  .lion-action-button
+  .lion-rule-item__limit-reached::before {
+  width: 0;
+  height: 0;
+
+  font-size: 0;
+
+  visibility: hidden;
+}
+
+.loy-RulesList #loyaltylion .lion-action-button--disabled {
+  background-color: var(--Color_CoolPink) !important;
+  border: 1px solid var(--Color_CoolPink) !important;
+}
+
+.loy-RulesList
+  #loyaltylion
+  .lion-rule-item__actions
+  .lion-action-button::before {
+  content: '';
+
+  position: absolute;
+  top: 70%;
+  left: 50%;
+
+  display: block;
+  width: 100%;
+  height: 3px;
+
+  background-color: var(--Color_Grey-lightest);
+
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 750px) {
+  .loy-RulesList
+    #loyaltylion
+    .lion-rule-item__actions
+    .lion-action-button::before {
+    top: 70%;
+
+    width: 80%;
+  }
+}
+@media screen and (min-width: 990px) {
+  .loy-RulesList
+    #loyaltylion
+    .lion-rule-item__actions
+    .lion-action-button::before {
+    top: 73%;
+
+    width: 60%;
+  }
+}
+
+.loy-RulesList #loyaltylion .lion-action-button--disabled::before {
+  background-color: var(--Color_CoolPink) !important;
+}
+/* stylelint-enable */

@@ -1,0 +1,49 @@
+/*
+|--------------------------------------------------------------------------
+| Collection list intro
+|--------------------------------------------------------------------------
+| @namespace: clc
+|
+*/
+.clc-ListIntro_Inner {
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .clc-ListIntro_Inner {
+    margin-top: 45px;
+    margin-bottom: 35px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .clc-ListIntro_Inner {
+    margin-top: 90px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .clc-ListIntro_Body {
+    max-width: 295px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .clc-ListIntro_Body {
+    max-width: 385px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable-next-line selector-max-type */
+.clc-ListIntro_Title strong {
+  color: var(--Color_WarmPink);
+}
+
+.clc-ListIntro_Text {
+  --Margin: 20px;
+  margin-top: var(--Margin);
+}

@@ -1,0 +1,71 @@
+/*
+|--------------------------------------------------------------------------
+| Footer navigation
+|--------------------------------------------------------------------------
+| @namespace: ft
+|
+*/
+
+.ft-Accordion {
+  display: block;
+  margin-top: 20px;
+
+  border-top: 1px solid var(--Color_White-light);
+}
+
+.ft-Accordion_Item {
+  border-bottom: 1px solid var(--Color_White-light);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Header item
+|--------------------------------------------------------------------------
+|
+*/
+
+.ft-Accordion_Header {
+  --Header_Padding: 20px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  display: flex;
+  width: 100%;
+  padding-top: var(--Header_Padding);
+  padding-bottom: var(--Header_Padding);
+
+  background-color: transparent;
+  border: 0;
+}
+
+.ft-Accordion_Icon {
+  transition: transform 0.5s ease;
+}
+.ft-Accordion_Item[aria-expanded='true'] .ft-Accordion_Icon {
+  transform: rotate(180deg);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body item
+|--------------------------------------------------------------------------
+|
+*/
+.ft-Accordion_Body {
+  max-height: 0;
+
+  overflow-y: hidden;
+
+  transition: max-height 0.5s ease;
+}
+.ft-Accordion_Item[aria-expanded='true'] .ft-Accordion_Body {
+  max-height: var(--Max_Height);
+}
+
+.ft-Accordion_Links {
+  grid-gap: 20px;
+
+  display: grid;
+  padding-bottom: 20px;
+}

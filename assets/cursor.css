@@ -1,0 +1,255 @@
+/*
+|--------------------------------------------------------------------------
+| Cursor
+|--------------------------------------------------------------------------
+| @namespace: cur
+|
+*/
+
+.cur-Cursor {
+  --cursorSize: 40px;
+  display: none;
+}
+.cur-Cursor::before {
+  content: '';
+
+  position: absolute;
+  top: calc(var(--cursorSize) / -2);
+  left: calc(var(--cursorSize) / -2);
+
+  display: block;
+  width: var(--cursorSize);
+  height: @width;
+
+  border-radius: 50%;
+
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+@media only screen and (min-width: 901px) {
+  .cur-Cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 150;
+
+    display: block;
+
+    pointer-events: none;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Right arrow cursor
+|--------------------------------------------------------------------------
+|
+*/
+
+.cur-Cursor_Right {
+  --blobWidth: 40px;
+  --blobHeight: 40px;
+
+  position: absolute;
+  top: calc(var(--blobHeight) / -2);
+  left: calc(var(--blobWidth) / -2);
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: var(--blobWidth);
+  height: var(--blobHeight);
+
+  background-color: var(--Color_White);
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  justift-content: center;
+}
+
+.cur-Cursor_Right svg {
+  display: block;
+  width: 10px;
+  height: 15px;
+
+  transform: rotate(-90deg);
+}
+
+.cur-Cursor-right .cur-Cursor_Right {
+  transform: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Left arrow cursor
+|--------------------------------------------------------------------------
+|
+*/
+
+.cur-Cursor_Left {
+  --blobWidth: 40px;
+  --blobHeight: 40px;
+
+  position: absolute;
+  top: calc(var(--blobHeight) / -2);
+  left: calc(var(--blobWidth) / -2);
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: var(--blobWidth);
+  height: var(--blobHeight);
+
+  background-color: var(--Color_White);
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  justift-content: center;
+}
+
+.cur-Cursor_Left svg {
+  display: block;
+  width: 10px;
+  height: 15px;
+}
+
+.cur-Cursor-left .cur-Cursor_Left {
+  transform: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Zoom cursor
+|--------------------------------------------------------------------------
+|
+*/
+
+.cur-Cursor_Zoom {
+  --blobWidth: 40px;
+  --blobHeight: 40px;
+
+  position: absolute;
+  top: calc(var(--blobHeight) / -2);
+  left: calc(var(--blobWidth) / -2);
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: var(--blobWidth);
+  height: var(--blobHeight);
+
+  background-color: var(--Color_White);
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  justift-content: center;
+}
+
+.cur-Cursor_Zoom svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.cur-Cursor-zoom .cur-Cursor_Zoom {
+  transform: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Video cursor
+|--------------------------------------------------------------------------
+|
+*/
+
+.cur-Cursor-video {
+  --cursorSize: 139px;
+}
+.cur-Cursor-video::before {
+  background-color: transparent;
+
+  transform: scale(1);
+}
+
+.cur-Cursor_Video {
+  --blobWidth: 105px;
+  --blobHeight: 105px;
+
+  position: absolute;
+  top: calc(var(--blobHeight) / -2);
+  left: calc(var(--blobWidth) / -2);
+
+  align-items: center;
+  justify-content: space-between;
+
+  display: grid;
+  width: var(--blobWidth);
+  height: var(--blobHeight);
+
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+.cur-Cursor-video .cur-Cursor_Video {
+  transform: none;
+}
+
+.cur-Cursor_Spinner {
+  grid-column: 1;
+  grid-row: 1;
+
+  width: 100%;
+  height: 100%;
+
+  color: var(--Color_White);
+
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-name: spin;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cur-Cursor_Play {
+  grid-column: 1;
+  grid-row: 1;
+
+  margin: 0 auto;
+
+  color: var(--Color_White);
+}
+
+.cur-Cursor_Play svg {
+  width: 14px;
+  height: 17px;
+  margin-left: 2px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Hidden Cursor
+|--------------------------------------------------------------------------
+|
+*/
+.cur-Cursor-hidden .cur-Cursor_Cursor {
+  transform: scale(0);
+}

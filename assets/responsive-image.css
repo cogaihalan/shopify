@@ -1,0 +1,47 @@
+/*
+|--------------------------------------------------------------------------
+| Responsive image
+|--------------------------------------------------------------------------
+| @namespace: rsp
+|
+*/
+.rsp-Image {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+}
+.rsp-Image::after {
+  content: '';
+
+  display: block;
+  width: 100%;
+  padding-top: var(--Image_AspectRatio);
+}
+
+.rsp-Image_Image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.rsp-Image_Zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.4s ease;
+}

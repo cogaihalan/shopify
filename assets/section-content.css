@@ -1,0 +1,69 @@
+/*
+|--------------------------------------------------------------------------
+| Section content
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+@media only screen and (min-width: 768px) {
+  .sec-Content {
+    grid-gap: calc(var(--Grid_Gutter) * 3);
+    grid-template-columns: repeat(12, 1fr);
+
+    display: grid;
+  }
+}
+
+.sec-Content_Content {
+  --Content_Padding: calc(var(--Grid_Gutter) * 3);
+
+  padding-right: var(--Content_Padding);
+  padding-left: var(--Content_Padding);
+
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .sec-Content_Content {
+    --Content_Padding: 0;
+
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .sec-Content_Content {
+    grid-column: 3 / span 8;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .sec-Content_Content {
+    grid-column: 4 / span 6;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.sec-Content_Title {
+  margin-bottom: 30px;
+}
+.sec-Content_Title-left {
+  text-align: left;
+}
+.sec-Content_Title-center {
+  text-align: center;
+}
+.sec-Content_Title-right {
+  text-align: right;
+}
+
+.sec-Content_Text {
+  margin-top: 30px;
+}
+
+.sec-Content_Buttons {
+  margin-top: 30px;
+}

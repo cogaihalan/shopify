@@ -1,0 +1,180 @@
+/*
+|--------------------------------------------------------------------------
+| Product options
+|--------------------------------------------------------------------------
+| @namespace: fb
+|
+*/
+
+.fb-Options {
+  display: block;
+  margin-bottom: -15px;
+}
+
+.fb-Options_Label {
+  display: block;
+}
+
+.fb-Options_LabelText {
+  display: inline-block;
+
+  font-weight: 700;
+}
+
+.fb-Options_ModelInformation {
+  margin: 0 5px;
+}
+
+.fb-Options_ModelInformation,
+.fb-Options_SizeGuide {
+  display: inline-block;
+}
+
+.fb-Options_LabelValue {
+  display: block;
+  margin-top: 5px;
+
+  color: var(--Color_Body-light);
+}
+
+.fb-Options_Buttons {
+  margin-top: 6px;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+
+.fb-Options_Button {
+  --Swatch_Size: 32px;
+  position: relative;
+  z-index: 1;
+
+  display: inline-block;
+  min-width: var(--Swatch_Size);
+  min-height: var(--Swatch_Size);
+  width: auto;
+  margin: 2px 4px;
+  padding: 0 15px;
+
+  line-height: calc(var(--Swatch_Size) - 4px);
+
+  background-color: var(--Color_White);
+
+  border: 1px solid var(--Color_Grey-20);
+  border-radius: calc(var(--Swatch_Size) / 2);
+  color: var(--Color_Body);
+
+  cursor: pointer;
+
+  transition: color, background-color, border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  white-space: nowrap;
+}
+
+.fb-Options_Button[data-available='false'] {
+  color: var(--Color_Grey-light);
+}
+
+.fb-Options_Button[aria-pressed='true'] {
+  border-color: var(--Color_Brand);
+}
+
+.fb-Options_Background {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 0;
+
+  display: block;
+
+  width: 100%;
+
+  background-color: var(--Color_CoolPink);
+
+  border: 3px solid var(--Color_White);
+  border-radius: calc(var(--Swatch_Size) / 2);
+  color: inherit;
+
+  opacity: 0;
+
+  transition: opacity, border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.fb-Options_Button[aria-pressed='true']:hover .fb-Options_Background,
+.fb-Options_Button[aria-pressed='true']:focus .fb-Options_Background {
+  border-color: var(--Color_CoolPink);
+}
+
+.fb-Options_Button:hover .fb-Options_Background,
+.fb-Options_Button:focus .fb-Options_Background,
+.fb-Options_Button[aria-pressed='true'] .fb-Options_Background,
+.fb-Options_Button-current .fb-Options_Background {
+  opacity: 1;
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+.fb-Options_Button[data-available='false']:hover .fb-Options_Background,
+.fb-Options_Button[data-available='false']:focus .fb-Options_Background,
+.fb-Options_Button[data-available='false'][aria-pressed='true'] .qb-Options_Background,
+.fb-Options_Button-current[data-available='false'] .fb-Options_Background {
+  opacity: 0;
+}
+
+.fb-Options_Option {
+  flex-flow: column;
+
+  display: flex;
+  margin-top: 8px;
+}
+
+.fb-Options_Option:first-child {
+  margin-top: 0;
+}
+
+.fb-Options_Option-small .fb-Options_Button {
+  width: var(--Swatch_Size);
+  height: var(--Swatch_Size);
+  padding: 0;
+}
+
+.fb-Options_Value {
+  position: relative;
+  z-index: 1;
+
+  font-weight: 700;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Icon
+|--------------------------------------------------------------------------
+|
+*/
+
+.fb-Options_Icon {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  z-index: 2;
+
+  display: none;
+  width: 16px;
+  height: 12px;
+
+  color: var(--Color_Body);
+}
+
+.fb-Options_Icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.fb-Options_Button[data-available='false'] .fb-Options_Icon {
+  display: block;
+}

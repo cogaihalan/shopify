@@ -1,0 +1,221 @@
+/*
+|--------------------------------------------------------------------------
+| Modal
+|--------------------------------------------------------------------------
+| @namespace: mod
+|
+*/
+
+.mod-UpsellModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  background-color: rgba(64, 64, 64, 0.8);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: none;
+}
+
+.mod-UpsellModal[aria-hidden='false'] {
+  z-index: 12;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.mod-UpsellModal-mediagallery {
+  display: none;
+}
+@media only screen and (min-width: 901px) {
+  .mod-UpsellModal-mediagallery {
+    display: block;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal Outer
+|--------------------------------------------------------------------------
+|
+*/
+.mod-UpsellModal_Outer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  justify-content: center;
+
+  display: flex;
+  place-items: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal head bar
+|--------------------------------------------------------------------------
+|
+*/
+.mod-UpsellModal_Head {
+  position: relative;
+
+  padding: 10px 15px;
+
+  background-color: var(--Color_CoolPink);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal Inner
+|--------------------------------------------------------------------------
+|
+*/
+.mod-UpsellModal_Inner {
+  position: relative;
+
+  width: calc(100% - 30px);
+  height: max-content;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+@media only screen and (min-width: 901px) {
+  .mod-UpsellModal_Inner {
+    width: 500px;
+  }
+}
+
+.mod-UpsellModal_Inner::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 20%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 0, 36, 0) 73%,
+      rgba(255, 255, 255, 1) 100%
+    );
+
+  pointer-events: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal body
+|--------------------------------------------------------------------------
+|
+*/
+.mod-UpsellModal_Body {
+  position: relative;
+
+  max-height: 65vh;
+  padding: 15px;
+
+  background-color: var(--Color_White);
+  overflow-y: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .mod-UpsellModal_Body {
+    max-height: 50vh;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal Close
+|--------------------------------------------------------------------------
+|
+*/
+.mod-UpsellModal_Close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  z-index: 11;
+
+  width: 32px;
+  height: 32px;
+
+  transition: transform 0.4s ease;
+}
+.mod-UpsellModal_Close:hover,
+.mod-UpsellModal_Close:focus {
+  transform: scale(1.1);
+}
+
+.mod-UpsellModal_Icon-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 14px;
+  height: 14px;
+
+  transform: translate(-50%, -50%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-max-type, selector-max-specificity, selector-class-pattern, selector-no-qualifying-type */
+.mod-UpsellModal_Body button[type='submit'].loading {
+  color: transparent;
+
+  pointer-events: none;
+}
+
+.mod-UpsellModal_Body button[type='submit'].loading::after {
+  content: '';
+
+  position: absolute;
+
+  box-sizing: content-box;
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid rgba(var(--Color_White), 0.4);
+  border-left: 1px solid var(--Color_White);
+  border-radius: 100%;
+
+  animation: loading 500ms infinite linear;
+}
+/* stylelint-enable */
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mod-UpsellModal_Body .mod-Hide {
+  /* stylelint-disable declaration-no-important */
+  display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .mod-UpsellModal_Body .bup-Item {
+    padding: 0;
+  }
+}

@@ -1,0 +1,50 @@
+/*
+|--------------------------------------------------------------------------
+| Gift wrapping form
+|--------------------------------------------------------------------------
+| @namespace: psh-
+|
+*/
+
+.psh-GiftWrapping_Inner {
+  align-items: center;
+  border-bottom: 1px solid var(--Color_Border);
+  display: flex;
+  min-height: 50px;
+  width: 100%;
+}
+
+.psh-GiftWrapping_Form {
+  width: 100%;
+}
+
+.psh-PushGiftWrap_Button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.psh-GiftWrapping_Form .psh-PushGiftWrap_ButtonCheckBox {
+  content: '';
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--Color_White);
+  border: 1px solid var(--Color_Border);
+  border-radius: 50%;
+}
+.psh-GiftWrapping_Form .psh-PushGiftWrap_Button-added .psh-PushGiftWrap_ButtonCheckBox::after {
+  content: '';
+
+  display: block;
+  width: 4px;
+  height: 4px;
+
+  background-color: var(--Color_Brand);
+  border-radius: 50%;
+  opacity: 1;
+}

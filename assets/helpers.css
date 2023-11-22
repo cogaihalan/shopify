@@ -1,0 +1,110 @@
+/*
+|--------------------------------------------------------------------------
+| Utils
+|--------------------------------------------------------------------------
+| @namespace: util-
+|
+*/
+.util-ScreenReaderOnly {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Lazy videos
+|--------------------------------------------------------------------------
+|
+*/
+.util-LazyVideo {
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+.util-LazyVideo-loaded {
+  opacity: 1;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Faux link
+|--------------------------------------------------------------------------
+|
+*/
+.util-FauxLink {
+  position: relative;
+}
+
+.util-FauxLink_Link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@media print {
+  .util-NoPrint {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Hide until loaded
+|--------------------------------------------------------------------------
+|
+*/
+.util-HideUntilLoaded {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Site overflowed
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.util-SiteOverflowed {
+  overflow: hidden;
+}
+.util-SiteOverflowed.is-iOS {
+  position: fixed;
+
+  width: 100%;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Overflow hidden
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.overflow-hidden {
+  /* stylelint-disable-next-line declaration-no-important */
+  overflow: hidden !important;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Hidden
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.hidden {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: none !important;
+}
+/* stylelint-enable */

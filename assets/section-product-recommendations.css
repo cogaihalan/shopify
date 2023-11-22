@@ -1,0 +1,87 @@
+/*
+|--------------------------------------------------------------------------
+| Products three column
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+.sec-ProductRecommendations_Columns {
+  grid-gap: calc(var(--Grid_Gutter) * 3);
+
+  display: grid;
+}
+@media only screen and (min-width: 901px) {
+  .sec-ProductRecommendations_Columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-ProductRecommendations_Column {
+    grid-row: 1;
+  }
+  .sec-ProductRecommendations_Columns-contentLeft .sec-ProductRecommendations_Column-items {
+    grid-column: 2 / span 2;
+  }
+  .sec-ProductRecommendations_Columns-contentRight .sec-ProductRecommendations_Column-items {
+    grid-column: 1 / span 2;
+  }
+}
+
+.sec-ProductRecommendations_Column-content {
+  padding-bottom: 30px;
+}
+@media only screen and (min-width: 901px) {
+  .sec-ProductRecommendations_Column-content {
+    padding-bottom: 0;
+  }
+  .sec-ProductRecommendations_Columns-contentLeft .sec-ProductRecommendations_Column-content {
+    grid-column: 1;
+  }
+  .sec-ProductRecommendations_Columns-contentRight .sec-ProductRecommendations_Column-content {
+    grid-column: 3;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.sec-ProductRecommendations_Content {
+  grid-gap: calc(var(--Grid_Gutter) * 9);
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+}
+@media only screen and (min-width: 901px) {
+  .sec-ProductRecommendations_Content {
+    position: sticky;
+    top: calc(var(--Nav_Height) + var(--Grid_Gutter));
+
+    display: block;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Product grid
+|--------------------------------------------------------------------------
+|
+*/
+.sec-ProductRecommendations_Items {
+  grid-gap: calc(var(--Grid_Gutter) * 6) calc(var(--Grid_Gutter) * 3);
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+  padding-bottom: 60px;
+}
+@media only screen and (min-width: 901px) {
+  .sec-ProductRecommendations_Columns-contentLeft .sec-ProductRecommendations_Items,
+  .sec-ProductRecommendations_Columns-contentRight .sec-ProductRecommendations_Items {
+    grid-template-columns: repeat(2, 1fr);
+
+    padding-bottom: 90px;
+  }
+}
