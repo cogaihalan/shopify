@@ -1,0 +1,8 @@
+{
+  "parent": "page.student-beans.json",
+  "context": {
+    "market": "f53fee43-9d64-4a0a-8009-0d267faa1192"
+  },
+  "sections": {
+  }
+}
