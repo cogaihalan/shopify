@@ -1,0 +1,344 @@
+/*
+|--------------------------------------------------------------------------
+| Bundle upsells
+|--------------------------------------------------------------------------
+| @namespace: bup
+|
+*/
+.bup-Bundle {
+  display: block;
+  margin-top: 30px;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 20px;
+
+  background-color: var(--Color_LightPink);
+}
+@media only screen and (min-width: 768px) {
+  .bup-Bundle {
+    margin-top: 20px;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+
+    background-color: var(--Color_White);
+  }
+}
+
+.bup-Title {
+  margin-bottom: 15px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Items
+|--------------------------------------------------------------------------
+|
+*/
+.bup-Items {
+  background-color: var(--Color_LightPink);
+}
+@media only screen and (min-width: 768px) {
+  .bup-Items {
+    background-color: var(--Color_White);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Item
+|--------------------------------------------------------------------------
+|
+*/
+.bup-Item {
+  align-content: flex-start;
+
+  display: flex;
+
+  background-color: var(--Color_White);
+
+  gap: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .bup-Item {
+    padding: 5px 0;
+  }
+}
+
+.bup-Item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .bup-Item {
+    padding: 20px;
+
+    background-color: var(--Color_LightPink);
+
+    gap: 20px;
+  }
+
+  [data-bundle-upsell-el='items'] .bup-Item[data-index='3'],
+  [data-bundle-upsell-el='items'] .bup-Item[data-index='4'],
+  [data-bundle-upsell-el='items'] .bup-Item[data-index='5'] {
+    display: none;
+  }
+}
+
+.bup-Item_Image {
+  min-width: 120px;
+  height: 100%;
+  padding-right: 15px;
+}
+
+.bup-Item_Image .rsp-Image {
+  height: 100%;
+}
+
+.bup-Item_Image .rsp-Image_Image {
+  object-position: top;
+}
+
+@media only screen and (min-width: 768px) {
+  .bup-Item_Image {
+    min-width: 130px;
+    padding-right: 0;
+  }
+}
+
+.bup-Item_Info {
+  position: relative;
+
+  flex-grow: 1;
+}
+
+.bup-Item_Strapline {
+  padding-bottom: 5px;
+}
+
+.bup-Item_Price {
+  padding-bottom: 5px;
+
+  font-weight: 700;
+}
+
+.bup-Item_Title {
+  padding-bottom: 5px;
+}
+
+.bup-MobileDrawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+
+  width: 100%;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease-out;
+}
+
+.bup-MobileDrawer[aria-expanded='true'] {
+  opacity: 1;
+}
+
+.bup-MobileDrawer::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+
+  display: block;
+  width: 100%;
+  height: 0;
+
+  background: #000;
+  opacity: 0;
+}
+
+.bup-MobileDrawer[aria-expanded='true']::after {
+  height: 100vh;
+
+  opacity: 0.5;
+}
+
+.bup-MobileDrawer_Inner {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.bup-MobileDrawer[aria-expanded='true'] .bup-MobileDrawer_Inner {
+  transform: translateY(0%);
+}
+
+.bup-MobileDrawer_Close {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  z-index: 1;
+
+  width: 15px;
+  height: 15px;
+
+  cursor: pointer;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Add to Wishlist
+|--------------------------------------------------------------------------
+|
+*/
+.bup-Actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bup-MobileDrawer .bup-Actions {
+  display: none;
+}
+
+/* Importants override swym styles */
+.bup-Action-wishlist {
+  /* stylelint-disable declaration-no-important */
+  display: block !important;
+
+  color: var(--Color_Black) !important;
+  cursor: pointer;
+  filter: grayscale(0);
+  opacity: 1 !important;
+  will-change: filter;
+
+  transition: filter;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.bup-Action-wishlist[disabled] {
+  pointer-events: none;
+
+  filter: grayscale(1);
+}
+
+.bup-Action-wishlist svg {
+  width: 20px;
+  height: 20px;
+
+  fill: transparent;
+  opacity: 1;
+  will-change: fill;
+
+  transition: color, fill, opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+/* stylelint-disable selector-class-pattern */
+.bup-Action-wishlist:active svg,
+.bup-Action-wishlist.swym-added svg,
+.bup-Action-wishlist[data-wishlist-status='added'] svg,
+.bup-Action-wishlist:hover svg {
+  color: var(--Color_Red);
+  fill: var(--Color_Red);
+}
+/* stylelint-enable */
+
+.bup-Action-wishlist:hover svg {
+  opacity: 0.5;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.bup-Action-wishlist.swym-added svg,
+.bup-Action-wishlist[data-wishlist-status='added'] svg {
+  opacity: 1;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+|
+*/
+.bup-Buttons {
+  flex-flow: wrap;
+
+  display: flex;
+}
+
+@media only screen and (max-width: 767px) {
+  .bup-Buttons {
+    margin-top: 10px;
+  }
+}
+
+.bup-Button-addtocart {
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 18px;
+
+  background-color: var(--Color_Russet);
+  border-color: var(--Color_Russet);
+  color: var(--Color_White);
+}
+
+.bup-Button-addtocart[aria-hidden='true'] {
+  display: none;
+}
+
+.bup-Button-addtocart[data-back-in-stock-enabled='false'] + .bup-Button-backInStock,
+.bup-Button-backInStock[aria-hidden='true'] {
+  display: none;
+}
+
+.bup-Button-backInStock {
+  padding-inline: 10px;
+
+  line-height: 18px;
+
+  background-color: var(--Color_Russet);
+  border-color: var(--Color_Russet);
+  color: var(--Color_White);
+}
+
+.prd-Card_QuickBuy[aria-busy='true'] .bup-Button-addtocart {
+  background-color: var(--Color_Grey-light);
+  border-color: var(--Color_Grey-light);
+  pointer-events: none;
+}
+
+.bup-ButtonIcon {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+}
+
+.bup-ButtonIcon-addtocart {
+  margin-top: -3px;
+  margin-right: 17px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal
+|--------------------------------------------------------------------------
+|
+*/
+.bup-Modal[aria-hidden='false'] {
+  display: block;
+}
+
+.bup-Modal[aria-hidden='true'] {
+  display: none;
+}

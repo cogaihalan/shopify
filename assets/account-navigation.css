@@ -1,0 +1,49 @@
+/*
+|--------------------------------------------------------------------------
+| Account Navigation
+|--------------------------------------------------------------------------
+| @namespace acc
+|
+*/
+
+.acc-Navigation {
+  text-align: center;
+
+  background-color: var(--Color_LightPink);
+  overflow-x: auto;
+}
+
+.acc-Navigation_Inner {
+  max-width: calc(1265px + calc(var(--Grid_Gutter) * 6));
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.acc-Navigation_Items {
+  display: inline-block;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.acc-Navigation_Item {
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.acc-Navigation_Item:first-child {
+  padding-left: 0;
+}
+
+.acc-Navigation_Item:last-child {
+  padding-right: 0;
+}
+
+.acc-Navigation_Link {
+  color: var(--Color_Grey-medium);
+}
+
+.acc-Navigation_Link[aria-current='page'] {
+  color: var(--Color_Grey);
+}

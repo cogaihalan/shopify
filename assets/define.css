@@ -1,0 +1,471 @@
+/* stylelint-disable */
+:root {
+  /*
+  |--------------------------------------------------------------------------
+  | Colours
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Color_Brand: #333;
+
+  --Color_LightPink: #fdf5f5;
+  --Color_CoolCream: #fbf0eb;
+  --Color_Coffee: #dfc9b6;
+  --Color_WarmPink: #e2a9a9;
+  --Color_Russet: #d49595;
+
+  --Color_CoolPink: #fae0df;
+  --Color_CoolPink-r: 250;
+  --Color_CoolPink-g: 224;
+  --Color_CoolPink-b: 223;
+  --Color_CoolPink:
+    rgb(
+      var(--Color_CoolPink-r),
+      var(--Color_CoolPink-g),
+      var(--Color_CoolPink-b)
+    );
+
+  --Color_CoolPink-70:
+    rgba(
+      var(--Color_CoolPink-r),
+      var(--Color_CoolPink-g),
+      var(--Color_CoolPink-b),
+      0.7
+    );
+
+  --Color_Black-r: 0;
+  --Color_Black-g: 0;
+  --Color_Black-b: 0;
+  --Color_Black:
+    rgb(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b)
+    );
+  --Color_Black-10:
+    rgba(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b),
+      0.1
+    );
+  --Color_Black-50:
+    rgba(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b),
+      0.5
+    );
+  --Color_Black-70:
+    rgba(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b),
+      0.7
+    );
+
+  --Color_Grey-r: 51;
+  --Color_Grey-g: 51;
+  --Color_Grey-b: 51;
+  --Color_Grey:
+    rgb(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b)
+    );
+  --Color_Grey-10:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.1
+    );
+  --Color_Grey-15:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.15
+    );
+  --Color_Grey-20:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.2
+    );
+  --Color_Grey-30:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.3
+    );
+  --Color_Grey-50:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.5
+    );
+  --Color_Grey-overlay: var(--Color_Grey-20);
+
+  --Color_Grey-lightest: #f4f4f4;
+  --Color_Grey-lighter: #e0e0e0;
+  --Color_Grey-light: #bdbdbd;
+  --Color_Grey-medium: #828282;
+
+  --Color_White-r: 255;
+  --Color_White-g: 255;
+  --Color_White-b: 255;
+  --Color_White:
+    rgb(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b)
+    );
+  --Color_White-light:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.5
+    );
+  --Color_White-overlay:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.2
+    );
+  --Color_White-10:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.1
+    );
+  --Color_White-20:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.2
+    );
+  --Color_White-70:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.7
+    );
+
+  --Color_Red-r: 235;
+  --Color_Red-g: 87;
+  --Color_Red-b: 87;
+
+  --Color_Red: rgb(var(--Color_Red-r), var(--Color_Red-g), var(--Color_Red-b));
+  --Color_Red-70:
+    rgb(
+      var(--Color_Red-r),
+      var(--Color_Red-g),
+      var(--Color_Red-b),
+      0.7
+    );
+
+  --Color_Green: #12d60e;
+  --Color_Yellow: #ffc700;
+
+  --Color_Anchor: #373737;
+  --Color_Body: var(--Color_Brand);
+  --Color_Border: var(--Color_Grey-lighter);
+  --Color_Error: var(--Color_Red);
+  --Color_Success: var(--Color_Green);
+
+  /*
+  |--------------------------------------------------------------------------
+  | Families
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Font_Family:
+    -apple-system,
+ BlinkMacSystemFont,
+ 'Segoe UI',
+ Roboto,
+    Helvetica,
+ Arial,
+ sans-serif,
+ 'Apple Color Emoji',
+ 'Segoe UI Emoji',
+    'Segoe UI Symbol',
+ sans-serif;
+
+  --Font_Family-body: 'Work Sans', var(--Font_Family);
+  --Font_Family-headings: 'europa', var(--Font_Family);
+
+  /*
+  |--------------------------------------------------------------------------
+  | Grid
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Grid_Gutter: 5px;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Navigation
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Nav_Height: 60px;
+  --Nav_HeightWhenFixed: var(--Nav_Height);
+  --Announcement_Height: 0px;
+  --Usp_Height: 0px;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Styles
+  |--------------------------------------------------------------------------
+  |
+  */
+  font: 14px / 1.5 var(--Font_Family-body);
+
+  cursor: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --Grid_Gutter: 10px;
+
+    --Nav_Height: 80px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Define
+|--------------------------------------------------------------------------
+| Global resets to make life easier
+|
+*/
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a,
+area,
+button,
+[role='button'],
+input:not([type='range']),
+label,
+select,
+summary,
+textarea {
+  /* Enable panning and pinch zoom gestures, but disable additional
+  non-standard gestures such as double-tap to zoom. Disabling double-tap to
+  zoom removes the need for browsers to delay the generation of click events
+  when the user taps the screen. This is an alias for "pan-x pan-y pinch-zoom"
+  (which, for compatibility, is itself still valid). */
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+input,
+select,
+textarea {
+  /* Older iOS puts a border radius on inputs by default. */
+  border-radius: 0;
+}
+
+button {
+  padding: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: var(--Color_Body);
+}
+
+body:not(.util-IsTabbing) :is(button, input, select, textarea):focus {
+  outline: none;
+}
+main {
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+|--------------------------------------------------------------------------
+| HTML / Body Resets
+|--------------------------------------------------------------------------
+|
+*/
+html {
+  height: 100%;
+  /* Sets a specific default `font-size` for user with `rem` type scales. */
+  font-size: 16px;
+  /* Changes the default tap highlight to be completely transparent in iOS. */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+
+  text-rendering: optimizeLegibility;
+
+  /* By default, `<body>` has no `background-color` so we set one as a best practice. */
+  background-color: var(--Color_White);
+  color: var(--Color_Body);
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Headings
+|--------------------------------------------------------------------------
+|
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-family: var(--Font_Family-headings);
+  font-weight: 400;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Keyline
+|--------------------------------------------------------------------------
+|
+*/
+hr {
+  border: 0;
+  border-top: 1px solid var(--Color_Border);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Lists
+|--------------------------------------------------------------------------
+|
+*/
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+li::before,
+li::marker {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Paragraph
+|--------------------------------------------------------------------------
+|
+*/
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Anchors
+|--------------------------------------------------------------------------
+| It is more comment that we *don't* want any kind of default styling on
+| <a> elements. We'll unset any browser styling on <a>, then give some
+| defaults for unclassed <a> elements.
+|
+*/
+a {
+  font-weight: inherit;
+  text-decoration: none;
+
+  color: currentColor;
+}
+
+a:not([class]) {
+  font-weight: 500;
+
+  color: var(--Color_Anchor);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+|
+*/
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+input[type='search' i]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+img {
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Tables
+|--------------------------------------------------------------------------
+|
+*/
+table {
+  width: 100%;
+
+  table-layout: fixed;
+}
+/* stylelint-enable */

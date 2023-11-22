@@ -1,0 +1,29 @@
+/*
+|--------------------------------------------------------------------------
+| Product delivery
+|--------------------------------------------------------------------------
+| @namespace: prd
+|
+*/
+.prd-Delivery_Select {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  background-color: var(--Color_Grey-lightest);
+  border-color: var(--Color_Grey-lightest);
+}
+
+.prd-Delivery_SelectIcon {
+  right: 17px;
+}
+
+.prd-Delivery_Content {
+  display: none;
+  margin-top: 20px;
+}
+.prd-Delivery_Content[aria-expanded='true'] {
+  display: block;
+}

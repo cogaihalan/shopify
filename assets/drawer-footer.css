@@ -1,0 +1,63 @@
+/*
+|--------------------------------------------------------------------------
+| Drawer footer
+|--------------------------------------------------------------------------
+| @namespace: drw
+|
+*/
+
+.drw-Footer_Row {
+  justify-content: space-between;
+
+  display: flex;
+  padding-bottom: 15px;
+}
+
+.drw-Footer_Row-first {
+  padding-top: 15px;
+}
+
+.drw-Footer_Value-strong {
+  font-weight: 700;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Accordion
+|--------------------------------------------------------------------------
+|
+*/
+.drw-Footer_Icon {
+  display: flex;
+  width: 10px;
+  height: 10px;
+
+  transition: transform 0.5s ease;
+}
+.drw-Footer_Block[aria-expanded='true'] .drw-Footer_Icon {
+  transform: rotate(180deg);
+}
+
+.drw-Footer_Body {
+  max-height: 0;
+
+  overflow-y: hidden;
+
+  transition: max-height 0.5s ease;
+}
+.drw-Footer_Block[aria-expanded='true'] .drw-Footer_Body {
+  max-height: var(--Max_Height);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Order Protection
+|--------------------------------------------------------------------------
+|
+*/
+
+/* stylelint-disable declaration-no-important */
+.drw-Footer [data-widget-host='awesome-op-widget'][aria-hidden='true'] {
+  display: none !important;
+}
+/* stylelint-enable */

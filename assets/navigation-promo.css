@@ -1,0 +1,78 @@
+/*
+|--------------------------------------------------------------------------
+| Navigation Promo
+|--------------------------------------------------------------------------
+| @namespace nav
+|
+*/
+.nav-Promo {
+  position: relative;
+
+  display: block;
+  height: 100%;
+}
+
+.nav-Promo_Inner {
+  height: 100%;
+}
+
+.nav-Promo_Content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  display: flex;
+  padding-bottom: calc(var(--Grid_Gutter) * 3);
+
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-Promo_Content {
+    justify-content: flex-end;
+  }
+}
+
+.nav-Promo_Title {
+  max-width: 250px;
+}
+
+.nav-Promo_Link {
+  margin-top: 10px;
+}
+
+.nav-Promo_Title,
+.nav-Promo_Link {
+  color: inherit;
+}
+
+.nav-Promo_ImageContainer {
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.nav-Promo_Image {
+  display: flex;
+  height: 100%;
+
+  transition: transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.nav-Promo_FauxLink {
+  z-index: 2;
+}
+
+.nav-Promo_FauxLink:hover + .nav-Promo_ImageContainer .nav-Promo_Image,
+.nav-Promo_FauxLink:focus + .nav-Promo_ImageContainer .nav-Promo_Image {
+  transform: scale(1.025);
+}

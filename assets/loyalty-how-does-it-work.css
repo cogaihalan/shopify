@@ -1,0 +1,126 @@
+/*
+|--------------------------------------------------------------------------
+| Loyalty How Does It Work
+|--------------------------------------------------------------------------
+| @namespace: loy-
+|
+*/
+
+.loy-HowDoes_Inner {
+  overflow: auto;
+}
+
+.loy-HowDoes_Header {
+  margin-bottom: 30px;
+
+  font-weight: 700;
+  text-align: center;
+}
+
+.loy-HowDoes_Strapline {
+  margin-bottom: 5px;
+
+  font-family: var(--Font_Family-headings);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 990px) {
+  .loy-HowDoes_Strapline {
+    margin-bottom: 15px;
+  }
+}
+
+.loy-HowDoes_Columns {
+  grid-gap: 10px;
+  grid-template-columns: repeat(var(--Grid_Size), 1fr);
+
+  display: grid;
+}
+
+@media only screen and (max-width: 989px) {
+  .loy-HowDoes_Columns {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    overflow: auto;
+    scroll-snap-type: x proximity;
+  }
+}
+
+.loy-HowDoes_Columns::-webkit-scrollbar {
+  height: 2px;
+
+  background-color: var(--Color_Grey-lightest);
+  border-radius: 10px;
+}
+
+.loy-HowDoes_Columns::-webkit-scrollbar-track {
+  background-color: var(--Color_Grey-lightest);
+  border-radius: 10px;
+}
+
+.loy-HowDoes_Columns::-webkit-scrollbar-thumb {
+  background-color: var(--Color_WarmPink);
+  border-radius: 10px;
+}
+
+.loy-HowDoes_Column {
+  flex-direction: column;
+
+  display: flex;
+}
+
+@media only screen and (max-width: 989px) {
+  .loy-HowDoes_Column {
+    width: 350px;
+  }
+}
+
+.loy-HowDoes_BlockContent {
+  flex: 1;
+
+  padding: 40px 30px;
+
+  text-align: center;
+
+  background: var(--Color_LightPink);
+  color: var(--Color_Brand);
+}
+
+@media only screen and (max-width: 989px) {
+  .loy-HowDoes_BlockContent {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .loy-HowDoes_BlockNumber {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+.loy-HowDoes_BlockNumber {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 989px) {
+  .loy-HowDoes_BlockTitle {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+.loy-HowDoes_BlockTitle {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 989px) {
+  .loy-HowDoes_BlockText {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.loy-HowDoes_BlockButton {
+  width: 100%;
+  margin-top: 20px;
+}

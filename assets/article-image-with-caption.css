@@ -1,0 +1,15 @@
+/*
+|--------------------------------------------------------------------------
+| Article image with caption
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+
+.art-ImageWithCaption {
+  margin: 0;
+}
+
+.art-ImageWithCaption_Caption {
+  margin-top: 10px;
+}

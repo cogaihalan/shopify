@@ -1,0 +1,40 @@
+/*
+|--------------------------------------------------------------------------
+| Article product carousel
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+
+@media only screen and (min-width: 768px) {
+  .art-Article_ProductCarousel[data-slides-count='2'] {
+    --NegativeMargin: 0;
+  }
+  .art-Article_ProductCarousel[data-slides-count='2'] .art-ProductCarousel_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+
+    display: grid;
+  }
+  .art-Article_ProductCarousel[data-slides-count='3'] .art-ProductCarousel_Items {
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+
+    display: grid;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .art-Article_ProductCarousel[data-slides-count='4'] .art-ProductCarousel_Items {
+    grid-gap: 70px;
+    grid-template-columns: repeat(4, 1fr);
+
+    display: grid;
+  }
+}
+
+.art-ProductCarousel_Title {
+  margin-bottom: 20px;
+
+  text-align: center;
+}

@@ -1,0 +1,79 @@
+/*
+|--------------------------------------------------------------------------
+| Account Overview
+|--------------------------------------------------------------------------
+| @namespace acc
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Inner
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Overview_Inner {
+  --Grid_Gap: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .acc-Overview_Inner {
+    --Grid_Gap: 30px;
+  }
+  .acc-Overview_Inner-tight {
+    --Grid_Gap: 20px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .acc-Overview_Inner {
+    --Grid_Gap: 60px;
+  }
+  .acc-Overview_Inner-tight {
+    --Grid_Gap: 20px;
+  }
+}
+.acc-Overview_Inner-grid {
+  grid-gap: var(--Grid_Gap);
+  grid-template-columns: 1fr;
+
+  display: grid;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Columns
+|--------------------------------------------------------------------------
+|
+*/
+
+.acc-Overview_Columns {
+  grid-gap: var(--Grid_Gap);
+  grid-template-columns: 1fr;
+
+  display: grid;
+
+  max-width: 1150px;
+
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .acc-Overview_Columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.acc-Overview_Columns-single {
+  grid-template-columns: 1fr;
+}
+
+.acc-Overview_Column {
+  flex: 1;
+  flex-direction: column;
+
+  display: flex;
+  width: 100%;
+}
+
+.acc-Overview_Item {
+  height: 100%;
+}

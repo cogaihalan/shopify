@@ -1,0 +1,48 @@
+/*
+|--------------------------------------------------------------------------
+| Checkout Footer
+|--------------------------------------------------------------------------
+| @namespace chk
+|
+*/
+
+.chk-Footer {
+  margin: 0 auto;
+}
+
+.chk-Footer_Nav {
+  padding: 15px 0;
+}
+
+.chk-Footer_Item {
+  padding: 0 10px;
+}
+@media only screen and (min-width: 1000px) {
+  .chk-Footer_Item {
+    padding: 0 15px;
+  }
+}
+
+.chk-Footer_Link {
+  transition: color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.chk-Footer_Link:hover,
+.chk-Footer_Link:focus {
+  color: var(--Color_Russet);
+}
+
+/*
+|--------------------------------------------------------------------------
+| List
+|--------------------------------------------------------------------------
+|
+*/
+.chk-Footer_List {
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+}

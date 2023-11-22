@@ -1,0 +1,90 @@
+/*
+|--------------------------------------------------------------------------
+| Account orders
+|--------------------------------------------------------------------------
+| @namespace: acc-Orders
+|
+*/
+
+.acc-Orders {
+  display: block;
+}
+
+.acc-Orders_Orders {
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+
+  display: grid;
+
+  opacity: 1;
+
+  transition: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Orders_Orders {
+    grid-gap: 20px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .acc-Orders-all .acc-Orders_Orders {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.acc-Orders[aria-busy='true'] .acc-Orders_Orders {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.acc-Orders_Order {
+  position: relative;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid var(--Color_Border);
+}
+@media only screen and (min-width: 901px) {
+  .acc-Orders_Order {
+    padding-bottom: 20px;
+  }
+}
+.acc-Orders_Order:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  border-bottom: 0;
+}
+.acc-Orders-all[aria-busy='true'] .acc-Orders_Order:last-child::after {
+  content: '';
+
+  position: relative;
+
+  display: block;
+  height: 150px;
+  margin-top: 15px;
+
+  background-color: var(--Color_Grey-lighter);
+}
+
+@media only screen and (min-width: 901px) {
+  .acc-Orders-all [data-last-row='true'] {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    border-bottom: 0;
+  }
+  .acc-Orders-all[aria-busy='true'] .acc-Orders_Order:last-child::after,
+  .acc-Orders-all[aria-busy='true'] [data-last-row='true']::after {
+    content: '';
+
+    position: relative;
+
+    display: block;
+    height: 150px;
+    margin-top: 20px;
+
+    background-color: var(--Color_Grey-lighter);
+  }
+}

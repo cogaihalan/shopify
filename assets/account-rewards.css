@@ -1,0 +1,250 @@
+/*
+|--------------------------------------------------------------------------
+| Account Rewards
+|--------------------------------------------------------------------------
+| @namespace acc
+|
+*/
+
+.acc-Rewards_Columns {
+  flex-direction: column;
+
+  display: flex;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Rewards_Columns {
+    grid-template-columns: repeat(2, 1fr);
+
+    display: grid;
+  }
+}
+
+.acc-Rewards_Column-black {
+  background-color: var(--Color_Brand);
+}
+
+.acc-Rewards_ImageContainer {
+  height: 100%;
+}
+
+.acc-Rewards_Image {
+  height: 100%;
+}
+
+.acc-Rewards_Image .rsp-Image {
+  height: 100%;
+}
+
+@media only screen and (min-width: 901px) {
+  .acc-Rewards_Image-mobile {
+    display: none;
+  }
+}
+.acc-Rewards_Image-desktop {
+  display: none;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Rewards_Image-desktop {
+    display: block;
+  }
+}
+
+.acc-Rewards_Content {
+  flex-direction: column;
+  justify-content: center;
+
+  display: flex;
+  max-width: 720px;
+  height: 100%;
+  padding: 40px 15px;
+
+  color: #fff;
+}
+
+@media only screen and (min-width: 901px) {
+  .acc-Rewards_Content {
+    padding: 80px;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .acc-Rewards_Content {
+    padding: 125px;
+  }
+}
+
+.acc-Rewards_Strapline {
+  margin-bottom: 20px;
+
+  font-family: var(--Font_Family-headings);
+  font-weight: 700;
+}
+
+.acc-Rewards_Title {
+  margin-bottom: 20px;
+}
+
+.acc-Rewards_PointsContainer {
+  margin-bottom: 20px;
+}
+
+.acc-Rewards_Points-pink {
+  color: var(--Color_CoolPink);
+}
+
+.acc-Rewards_Link {
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* stylelint-disable */
+/*
+|--------------------------------------------------------------------------
+| Loyalty Tier Progress
+|--------------------------------------------------------------------------
+|
+*/
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-overview {
+  grid-gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding: 30px 0 0;
+
+  background: transparent;
+}
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__value-to-next {
+  padding-left: 0;
+
+  color: var(--Color_CoolPink);
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.3px;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Rewards_Bar #loyaltylion .lion-tier-box__value-to-next {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__value-to-next strong {
+  font-weight: 400;
+}
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__expiry,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__position,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__sub-title,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__you-are-here,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__title::after,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__purchase-rule,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__benefits-list,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__header::before,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__purchase-rule-points {
+  display: none;
+}
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-box {
+  position: relative;
+
+  display: none;
+
+  font-size: 20px;
+  line-height: 32px;
+
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-box__header {
+  padding: 0;
+
+  background-color: transparent;
+}
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-box .lion-tier-box__title {
+  position: relative;
+
+  width: 100%;
+  padding: 5px 0 0;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+
+  background: none;
+  border-top: 1px solid #4f4f4f;
+  color: #fff;
+}
+
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--previous
+  .lion-tier-box__title,
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--current
+  .lion-tier-box__title {
+  border-top: 1px solid #fff;
+}
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-box.lion-tier-box--previous,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box.lion-tier-box--current,
+.acc-Rewards_Bar #loyaltylion .lion-tier-box.lion-tier-box--next {
+  border-left: unset;
+}
+
+.acc-Rewards_Bar #loyaltylion .lion-tier-box.lion-tier-box--current {
+  display: block !important;
+}
+
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--current
+  + .lion-tier-box--next {
+  display: block !important;
+}
+
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--2.lion-tier-box--previous {
+  display: block !important;
+}
+
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--0.lion-tier-box--previous
+  .lion-tier-box__title,
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--1.lion-tier-box--preivous
+  .lion-tier-box__title,
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--2.lion-tier-box--previous
+  .lion-tier-box__title {
+  text-align: left !important;
+}
+
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--1.lion-tier-box--next
+  .lion-tier-box__title,
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--2.lion-tier-box--next
+  .lion-tier-box__title,
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--3.lion-tier-box--next
+  .lion-tier-box__title,
+.acc-Rewards_Bar
+  #loyaltylion
+  .lion-tier-box.lion-tier-box--3.lion-tier-box--current
+  .lion-tier-box__title {
+  text-align: right !important;
+}
+/* stylelint-enable */

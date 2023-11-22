@@ -1,0 +1,231 @@
+/*
+|--------------------------------------------------------------------------
+| Promoted Card
+|--------------------------------------------------------------------------
+| @namespace: clc-
+|
+*/
+
+.clc-PromotedCard {
+  --clc-Items_GridGap: var(--Grid_Gutter);
+  --clc-Width_Modifier: 100%;
+  position: relative;
+
+  flex-direction: column;
+
+  display: flex;
+  height: 100%;
+}
+
+.clc-PromotedCard_Grid {
+  position: relative;
+
+  grid-gap: var(--clc-Items_GridGap);
+
+  display: grid;
+  height: 100%;
+}
+
+.clc-Items_Item-doublecard .clc-PromotedCard_Grid,
+.clc-Items_Item-fullwidthcard .clc-PromotedCard_Grid {
+  --clc-Width_Modifier: calc(200% + var(--clc-Items_GridGap));
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media only screen and (min-width: 901px) {
+  /* stylelint-disable selector-max-specificity */
+  .clc-Items_Items[data-view='list'] .clc-Items_Item-fullwidthcard .clc-PromotedCard_Grid {
+    --clc-Width_Modifier: calc(300% + calc(var(--clc-Items_GridGap) * 2));
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .clc-Items_Items[data-view='grid'] .clc-Items_Item-fullwidthcard .clc-PromotedCard_Grid {
+    --clc-Width_Modifier: calc(400% + calc(var(--clc-Items_GridGap) * 3));
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* stylelint-enable selector-max-specificity */
+}
+
+.clc-Items_Item-doubleheightsinglecard .clc-PromotedCard_Media {
+  height: 100%;
+}
+
+.clc-Items_Item-doubleheightdoublecard .clc-PromotedCard_Media {
+  height: 100%;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Fauxlink
+|--------------------------------------------------------------------------
+|
+*/
+
+.clc-PromotedCard_Fauxlink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Filler (Ensures images are equal height)
+|--------------------------------------------------------------------------
+|
+*/
+.clc-PromotedCard_Filler {
+  position: relative;
+
+  grid-column: 1 / 1;
+  grid-row: 1;
+
+  display: block;
+  height: 0;
+  padding-top: calc(149% + 50px);
+}
+
+@media only screen and (min-width: 901px) {
+  .clc-PromotedCard_Filler {
+    height: 100%;
+    padding-top: 0;
+  }
+
+  .clc-Items_Item-doubleheightfullwidthcard .clc-PromotedCard_Filler,
+  .clc-Items_Item-fullwidthcard .clc-PromotedCard_Filler {
+    height: 0;
+    padding-top: 149%;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Media
+|--------------------------------------------------------------------------
+*/
+
+.clc-PromotedCard_Media {
+  position: relative;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.clc-PromotedCard_Media-fullHeight {
+  height: 100%;
+}
+
+.clc-PromotedCard_ImageContainer {
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.clc-PromotedCard_Image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.clc-PromotedCard_Fauxlink:hover + .clc-PromotedCard_Filler .clc-PromotedCard_Image,
+.clc-PromotedCard_Fauxlink:focus + .clc-PromotedCard_Filler .clc-PromotedCard_Image {
+  transform: scale(1.02);
+}
+.clc-PromotedCard_Image .rsp-Image,
+.clc-PromotedCard_Image .rsp-Video {
+  height: 100%;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Overlay
+|--------------------------------------------------------------------------
+*/
+
+.clc-PromotedCard_Overlay {
+  display: flex;
+  margin-top: 10px;
+
+  color: var(--Color_Brand);
+}
+@media only screen and (min-width: 901px) {
+  .clc-PromotedCard_Overlay {
+    margin-top: 20px;
+  }
+}
+
+.clc-PromotedCard_Overlay-verticaltop {
+  align-items: flex-start;
+}
+
+.clc-PromotedCard_Overlay-verticalmiddle {
+  align-items: center;
+}
+
+.clc-PromotedCard_Overlay-verticalbottom {
+  align-items: flex-end;
+}
+
+.clc-PromotedCard_Overlay-horizontalleft {
+  justify-content: flex-start;
+}
+
+.clc-PromotedCard_Overlay-horizontalmiddle {
+  justify-content: center;
+}
+
+.clc-PromotedCard_Overlay-horizontalright {
+  justify-content: flex-end;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+
+.clc-PromotedCard_Title {
+  margin-bottom: 5px;
+}
+
+.clc-PromotedCard_Price {
+  margin-top: 17px;
+
+  font-weight: 700;
+}
+
+.clc-PromotedCard_Link {
+  margin-top: 30px;
+
+  text-align: center;
+}
+@media only screen and (max-width: 900px) {
+  .clc-PromotedCard_Link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: var(--Color_CoolPink);
+    border-color: var(--Color_CoolPink);
+  }
+  .clc-PromotedCard_Fauxlink:hover + .clc-PromotedCard_Filler .clc-PromotedCard_Link,
+  .clc-PromotedCard_Fauxlink:focus + .clc-PromotedCard_Filler .clc-PromotedCard_Link,
+  .clc-PromotedCard_Link:hover,
+  .clc-PromotedCard_Link:focus {
+    background-color: var(--Color_Brand);
+    border-color: var(--Color_Brand);
+    color: var(--Color_White);
+  }
+}

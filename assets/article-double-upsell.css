@@ -1,0 +1,20 @@
+/*
+|--------------------------------------------------------------------------
+| Double upsell
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+
+.art-DoubleUpsell_Title {
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.art-DoubleUpsell_Items {
+  grid-gap: var(--Grid_Gutter);
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+}

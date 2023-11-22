@@ -1,0 +1,72 @@
+/*
+|--------------------------------------------------------------------------
+| Drawer footer accordion
+|--------------------------------------------------------------------------
+| @namespace: drw
+|
+*/
+.drw-FooterAccordion {
+  display: block;
+}
+
+.drw-FooterAccordion_Trigger {
+  align-items: center;
+  justify-content: space-between;
+
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  background-color: transparent;
+  border-top: 1px solid var(--Color_CoolPink);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Accordion
+|--------------------------------------------------------------------------
+|
+*/
+.drw-FooterAccordion_Icon {
+  display: flex;
+  width: 10px;
+  height: 10px;
+
+  transition: transform 0.4s ease;
+}
+.drw-FooterAccordion_Trigger:hover .drw-FooterAccordion_Icon {
+  transform: rotate(90deg);
+}
+.drw-FooterAccordion[aria-expanded='true'] .drw-FooterAccordion_Icon {
+  transform: rotate(180deg);
+}
+
+.drw-FooterAccordion_Body {
+  max-height: 0;
+
+  overflow-y: hidden;
+
+  transition: max-height 0.5s ease;
+}
+
+.drw-FooterAccordion[aria-expanded='true'] .drw-FooterAccordion_Body {
+  max-height: var(--Max_Height);
+}
+
+.drw-FooterAccordion_Content {
+  padding-bottom: 13px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Carousel
+|--------------------------------------------------------------------------
+|
+*/
+.drw-FooterAccordion_Slides {
+  grid-gap: calc(var(--Grid_Gutter) * 3);
+  grid-template-columns: repeat(3, 1fr);
+
+  display: grid;
+}

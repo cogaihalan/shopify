@@ -1,0 +1,30 @@
+/*
+|--------------------------------------------------------------------------
+| Pagination - Load More
+|--------------------------------------------------------------------------
+| @namespace pgn
+|
+*/
+
+.pgn-LoadMoreContainer {
+  width: 100%;
+}
+
+.pgn-LoadMore {
+  align-items: center;
+  flex-direction: column;
+
+  display: flex;
+  margin: 10px 0;
+
+  text-align: center;
+}
+@media only screen and (min-width: 901px) {
+  .pgn-LoadMore {
+    margin: 20px 0;
+  }
+}
+
+.pgn-LoadMore_Button {
+  margin-top: 15px;
+}

@@ -1,0 +1,21 @@
+/*
+|--------------------------------------------------------------------------
+| Product accordions
+|--------------------------------------------------------------------------
+| @namespace: clc-
+|
+*/
+
+.sec-Section_CollectionAccordion .sec-Section_Title {
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sec-Section_CollectionAccordion .sec-Section_Title {
+    font-size: 28px;
+  }
+}
+
+.clc-Accordion .prd-Accordion_Items {
+  border-top: 0;
+}

@@ -1,0 +1,85 @@
+/*
+|--------------------------------------------------------------------------
+| Footer navigation
+|--------------------------------------------------------------------------
+| @namespace: ft
+|
+*/
+
+.ft-Navigation_Columns {
+  flex-wrap: wrap;
+
+  grid-gap: 30px 20px;
+
+  display: flex;
+}
+
+
+.ft-Navigation_Column {
+  flex: 1 0 30%;
+}
+
+.ft-Navigation_OrderTracking {
+  flex: 1 0 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .ft-Navigation_OrderTracking {
+    margin-top: 40px;
+  }
+}
+
+.ft-Navigation_OrderTracking .ft-Navigation_Title {
+  align-items: center;
+
+  grid-gap: 10px;
+
+  display: flex;
+  width: 100%;
+}
+
+.ft-Navigation_TitleIcon {
+  width: 12px;
+}
+
+@media only screen and (min-width: 901px) {
+  .ft-Navigation_TitleIcon {
+    width: 10px;
+  }
+}
+
+.ft-Navigation_Links {
+  grid-gap: 20px;
+
+  display: grid;
+  margin-top: 30px;
+}
+
+.ft-Navigation_Link {
+  display: block;
+
+  box-shadow: none;
+
+  outline: none;
+  overflow: hidden;
+}
+
+.ft-Navigation_LinkText {
+  display: block;
+  float: left;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+
+  transition: border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.ft-Navigation_Link:hover .ft-Navigation_LinkText,
+.ft-Navigation_Link:focus .ft-Navigation_LinkText {
+  border-color: currentColor;
+  box-shadow: none;
+
+  outline: none;
+  overflow: hidden;
+}

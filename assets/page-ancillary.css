@@ -1,0 +1,48 @@
+/*
+|--------------------------------------------------------------------------
+| Ancillary page layout
+|--------------------------------------------------------------------------
+| @namespace: pg
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+|
+*/
+
+.pg-Ancillary_Header {
+  text-align: center;
+
+  border-bottom: 1px solid var(--Color_CoolPink);
+}
+
+.pg-Ancillary_Title {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .pg-Ancillary_Title {
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+|
+*/
+
+.pg-Ancillary_Body {
+  margin-bottom: 40px;
+  padding-top: 0;
+}
+@media only screen and (min-width: 768px) {
+  .pg-Ancillary_Body {
+    padding-top: 20px;
+  }
+}

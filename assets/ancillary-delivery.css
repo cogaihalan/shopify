@@ -1,0 +1,29 @@
+/*
+|--------------------------------------------------------------------------
+| Ancillary delivery
+|--------------------------------------------------------------------------
+| @namespace: anc
+|
+*/
+.anc-Delivery_Select {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 18px;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 1px solid var(--Color_Grey-lighter);
+    
+}
+
+.anc-Delivery_SelectIcon {
+  right: 17px;
+}
+
+.anc-Delivery_Content {
+  display: none;
+  margin-top: 20px;
+}
+.anc-Delivery_Content[aria-expanded='true'] {
+  display: block;
+}

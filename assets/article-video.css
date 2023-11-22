@@ -1,0 +1,169 @@
+/*
+|--------------------------------------------------------------------------
+| Video section
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+.art-Video {
+  --TopGap: 40px;
+
+  background-color: var(--Color_LightPink);
+}
+@media only screen and (min-width: 768px) {
+  .art-Video {
+    --TopGap: 60px;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .art-Video {
+    --TopGap: 100px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .art-Video {
+    --TopGap: 140px;
+  }
+}
+
+.art-Video_Body {
+  grid-gap: 0 var(--Grid_Gutter);
+  grid-template-columns: repeat(12, 1fr);
+
+  display: grid;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Media
+|--------------------------------------------------------------------------
+|
+*/
+.art-Video_MediaContainer {
+  position: relative;
+  z-index: 0;
+
+  grid-column: 1 / span 12;
+
+  display: flex;
+  width: 100%;
+  margin-top: var(--TopGap);
+
+  overflow: hidden;
+}
+@media only screen and (min-width: 901px) {
+  .art-Video_MediaContainer {
+    grid-column: 2 / span 10;
+  }
+}
+.art-Video_MediaContainer::after {
+  content: '';
+
+  display: block;
+  width: 0;
+}
+@media only screen and (min-width: 768px) {
+  .art-Video_MediaContainer::after {
+    padding-top: 56.25%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .art-Video_MediaContainer::after {
+    padding-top: 190%;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.art-Video_Image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .art-Video_Image-desktop {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .art-Video_Image-mobile {
+    display: flex;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Videos
+|--------------------------------------------------------------------------
+|
+*/
+.art-Video_VideoPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+@media only screen and (min-width: 768px) {
+  .art-Video_VideoPlayer-desktop {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .art-Video_VideoPlayer-mobile {
+    display: flex;
+  }
+}
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.art-Video_Content {
+  flex-direction: column;
+  justify-content: center;
+
+  grid-column: 2 / span 10;
+
+  display: flex;
+  min-height: var(--TopGap);
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  text-align: center;
+}
+@media only screen and (min-width: 901px) {
+  .art-Video_Content {
+    grid-column: 3 / span 8;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .art-Video_Content {
+    grid-column: 4 / span 6;
+  }
+}
+
+.art-Video_Kicker {
+  margin-bottom: 10px;
+}
+
+.art-Video_Title ~ .art-Video_Text {
+  margin-top: 20px;
+}
+
+.art-Video_Buttons {
+  margin-top: 20px;
+}

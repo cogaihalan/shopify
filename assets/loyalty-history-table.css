@@ -1,0 +1,370 @@
+/*
+|--------------------------------------------------------------------------
+| Loyalty History Table
+|--------------------------------------------------------------------------
+| @namespace: loy-
+|
+*/
+
+.loy-HistoryTable_Header {
+  margin-bottom: 20px;
+
+  text-align: left;
+}
+@media screen and (min-width: 990px) {
+  .loy-HistoryTable_Header {
+    margin-bottom: 40px;
+
+    text-align: center;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Loyalty Lion
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+/* stylelint-disable */
+.loy-HistoryTable_Table {
+  margin: 0;
+
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table::-webkit-scrollbar {
+    height: 2px;
+
+    background-color: var(--Color_Grey-lightest);
+    border-radius: 10px;
+  }
+
+  .loy-HistoryTable_Table::-webkit-scrollbar-track {
+    background-color: var(--Color_Grey-lightest);
+    border-radius: 10px;
+  }
+
+  .loy-HistoryTable_Table::-webkit-scrollbar-thumb {
+    background-color: var(--Color_WarmPink);
+    border-radius: 10px;
+  }
+}
+
+.loy-HistoryTable_Table #loyaltylion .lion-history-table {
+  min-width: 100%;
+  width: max-content;
+  margin-bottom: 20px;
+
+  background-color: transparent;
+  border: 0;
+}
+@media screen and (min-width: 990px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.loy-HistoryTable_Table #loyaltylion .lion-history-table__header-cell {
+  display: table-cell;
+  padding: 10px 0 10px 15px;
+
+  font-family: var(--Font_Family-headings);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  line-height: 20px;
+  text-align: left;
+
+  background-color: var(--Color_LightPink);
+  color: var(--Color_Brand);
+}
+@media screen and (min-width: 990px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__header-cell {
+    padding: 20px 0 20px 20px;
+  }
+}
+
+.loy-HistoryTable_Table
+  #loyaltylion
+  .lion-history-table__header-cell:nth-child(5) {
+  padding-right: 15px;
+}
+@media screen and (min-width: 990px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__header-cell:nth-child(5) {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__header-cell:not(:nth-child(1)) {
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-cell:nth-child(2),
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__header-cell:nth-child(2) {
+    display: block !important;
+  }
+}
+
+.loy-HistoryTable_Table #loyaltylion .lion-history-table__row {
+  background-color: transparent;
+  border-bottom: 1px solid var(--Color_Grey-lightest);
+}
+
+.loy-HistoryTable_Table #loyaltylion .lion-history-table__row-cell {
+  padding: 15px 0 15px 15px;
+
+  font-family: var(--Font_Family-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+}
+@media screen and (min-width: 990px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__row-cell {
+    padding: 20px 0 20px 20px;
+  }
+}
+
+.loy-HistoryTable_Table
+  #loyaltylion
+  .lion-history-table__row-cell:nth-child(5) {
+  padding-right: 15px;
+}
+@media screen and (min-width: 990px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-cell:nth-child(5) {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-cell:not(:nth-child(1)) {
+    padding-left: 15px;
+  }
+}
+@media screen and (min-width: 990px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-state-bubble--approved {
+    padding: 0;
+
+    background-color: transparent;
+    color: var(--Color_Brand);
+    opacity: 1;
+
+    font-weight: 400;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Loyalty Lion Mobile Grid
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table thead {
+    display: none;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__row {
+    grid-template-areas:
+      'action action action date'
+      'activity activity . .'
+      'pending pending points points';
+    grid-template-columns: repeat(4, 1fr);
+
+    display: grid;
+    margin-bottom: 10px;
+
+    background-color: var(--Color_LightPink);
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__row-cell {
+    padding: 15px;
+
+    text-transform: capitalize;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__row-date {
+    grid-area: date;
+
+    padding-left: 0;
+
+    opacity: 0.6;
+
+    text-align: right;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-cell:nth-child(2) {
+    grid-area: activity;
+
+    opacity: 0.6;
+
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-cell:nth-child(3) {
+    grid-area: action;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-cell:nth-child(4) {
+    grid-area: points;
+
+    padding-left: 0;
+
+    color: var(--Color_Russet);
+
+    vertical-align: baseline;
+    text-align: right;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-cell:nth-child(4)::before {
+    font-size: 14px;
+    line-height: 22px;
+
+    content: 'Points Earned: ';
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__row-status {
+    grid-area: pending;
+  }
+}
+
+/* Make a approved checkbox */
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__row-status div {
+    visibility: hidden;
+
+    padding: 0;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    border-radius: 0;
+    color: var(--Color_Brand);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-status
+    div::before {
+    visibility: visible;
+
+    position: absolute;
+
+    content: '';
+
+    display: inline-block;
+
+    width: 15px;
+    height: 22px;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7.469' cy='8.168' r='6.969' fill='%23fff' stroke='%23000'/%3E%3Cpath d='m4.969 8.171 2.087 2.134 3.913-4' stroke='%23333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    vertical-align: middle;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-status
+    div::after {
+    visibility: visible;
+
+    content: 'Approved';
+
+    margin-left: -40px;
+  }
+}
+
+/* Make a pending checkbox */
+
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table #loyaltylion .lion-history-table__row-status span {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-status
+    span::before {
+    visibility: visible;
+
+    content: '';
+
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+
+    vertical-align: middle;
+  }
+}
+@media screen and (max-width: 989px) {
+  .loy-HistoryTable_Table
+    #loyaltylion
+    .lion-history-table__row-status
+    span::after {
+    visibility: visible;
+
+    content: 'Pending';
+
+    opacity: 0.3;
+  }
+}
+/* stylelint-enable */

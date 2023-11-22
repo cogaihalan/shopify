@@ -1,0 +1,200 @@
+/*
+|--------------------------------------------------------------------------
+| Carousel
+|--------------------------------------------------------------------------
+| @namespace: car-Carousel
+|
+*/
+
+.car-Carousel {
+  position: relative;
+}
+
+.car-Carousel_Slides {
+  position: relative;
+
+  display: flex;
+
+  overflow: hidden;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: opacity 0.5s ease;
+}
+.car-Carousel_Slides[data-keen-slider-v] {
+  flex-wrap: wrap;
+}
+/* stylelint-disable-next-line selector-max-universal */
+.car-Carousel_Slides[data-keen-slider-moves] * {
+  pointer-events: none;
+}
+
+.car-Carousel_Slides-hidden {
+  opacity: 0;
+}
+
+.car-Carousel_Slide {
+  position: relative;
+
+  min-height: 100%;
+  width: 100%;
+
+  opacity: 1;
+  overflow: hidden;
+  visibility: visible;
+
+  transition: opacity, visibility;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  pointer-events: initial;
+}
+
+.car-Carousel[data-initialized='false'] .car-Carousel_Slide {
+  display: none;
+  display: block;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.car-Carousel[data-initialized='false'] .car-Carousel_Slide-first {
+  display: block;
+}
+
+.car-Carousel_Scrollbar {
+  position: relative;
+
+  width: 100%;
+  height: 2px;
+  margin-top: 30px;
+
+  background-color: var(--Color_Grey-lightest);
+  overflow: hidden;
+}
+@media only screen and (min-width: 901px) {
+  .car-Carousel_Scrollbar {
+    margin-top: 30px;
+  }
+}
+
+.car-Carousel_Scroller {
+  position: absolute;
+  top: 0;
+  left: var(--Carousel_ScrollerMovement);
+
+  width: var(--Carousel_ScrollerWidth);
+  height: 2px;
+
+  background-color: var(--Color_WarmPink);
+
+  transition: left 100ms linear;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Progress Dots
+|--------------------------------------------------------------------------
+|
+*/
+
+.car-Carousel_Dots {
+  justify-content: center;
+
+  display: flex;
+  width: 100%;
+}
+
+.car-Carousel_Dot {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: 20px;
+  height: @width;
+
+  opacity: 0.3;
+
+  transition: opacity 0.3s ease;
+
+  &::before {
+    content: '';
+
+    display: block;
+    width: 6px;
+    height: @width;
+
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  &[aria-current='true'],
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Progress Arrows
+|--------------------------------------------------------------------------
+|
+*/
+
+.car-Carousel_Arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.car-Carousel_Arrow {
+  position: absolute;
+  bottom: 75px;
+
+  display: flex;
+  width: 40px;
+  height: 40px;
+
+  background-color: var(--Color_White);
+  border-radius: 50%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  color: var(--Color_CoolPink);
+
+  transition: color, background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  pointer-events: initial;
+}
+@media only screen and (min-width: 768px) {
+  .car-Carousel_Arrow:hover {
+    background-color: var(--Color_Brand);
+    color: var(--Color_White);
+  }
+}
+.car-Carousel_Arrow-previous {
+  left: 30px;
+}
+.car-Carousel_Arrow-next {
+  right: 30px;
+}
+
+.car-Carousel_Arrow svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 13px;
+  height: 13px;
+}
+.car-Carousel_Arrow-previous svg {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.car-Carousel_Arrow-next svg {
+  transform: translate(-50%, -50%) rotate(-90deg);
+}

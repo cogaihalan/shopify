@@ -1,0 +1,57 @@
+/*
+|--------------------------------------------------------------------------
+| Site
+|--------------------------------------------------------------------------
+| @namespace: lyt-
+|
+*/
+.lyt-Site {
+  padding-top: calc(var(--Nav_Height) + var(--Announcement_Height));
+
+  overflow-x: hidden;
+}
+
+.lyt-Container {
+  --Padding: calc(var(--Grid_Gutter) * 3);
+
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--Padding);
+  padding-left: var(--Padding);
+}
+
+.lyt-Header {
+  position: fixed;
+  top: var(--Announcement_Height);
+  right: 0;
+  left: 0;
+  z-index: 9;
+
+  display: block;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.template-collection .lyt-Main {
+  flex-flow: column;
+
+  display: flex;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.template-collection .lyt-Main .shopify-section {
+  order: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .template-collection .lyt-Main .sec-Usp_Section {
+    order: 0;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .lyt-Site-uspsAboveHero .lyt-Main .sec-Usp_Section {
+    order: 0;
+  }
+}

@@ -1,0 +1,48 @@
+/*
+|--------------------------------------------------------------------------
+| Article comments
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+.art-Comments {
+  --Section_Margin: 40px;
+
+  margin-top: var(--Section_Margin);
+  margin-bottom: var(--Section_Margin);
+}
+
+@media only screen and (min-width: 768px) {
+  .art-Comments {
+    --Section_Margin: 80px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .art-Comments_Body {
+    width: calc((1 / 2) * 100%);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.art-Comments_Title {
+  margin-bottom: 5px;
+}
+
+.art-Comments_Comment {
+  --Comments_Spacing: 15px;
+
+  padding-top: var(--Comments_Spacing);
+  padding-bottom: var(--Comments_Spacing);
+
+  border-top: 1px solid var(--Color_Border);
+}
+.art-Comments_Comment:first-child {
+  border-top: 0;
+}
+@media only screen and (min-width: 901px) {
+  .art-Comments_Comment {
+    --Comments_Spacing: 20px;
+  }
+}

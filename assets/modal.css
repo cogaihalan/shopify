@@ -1,0 +1,88 @@
+/*
+|--------------------------------------------------------------------------
+| Modal
+|--------------------------------------------------------------------------
+| @namespace: mod
+|
+*/
+
+.mod-Modal[aria-hidden='false'] {
+  pointer-events: initial;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+.mod-Modal-mediagallery {
+  display: none;
+}
+@media only screen and (min-width: 901px) {
+  .mod-Modal-mediagallery {
+    display: block;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal Outer
+|--------------------------------------------------------------------------
+|
+*/
+.mod-Modal_Outer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal Inner
+|--------------------------------------------------------------------------
+|
+*/
+.mod-Modal_Inner,
+.mod-Modal_Wrapper {
+  height: 100%;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal Close
+|--------------------------------------------------------------------------
+|
+*/
+.mod-Modal_Close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 11;
+
+  width: 32px;
+  height: 32px;
+
+  background-color: var(--Color_White);
+  border-radius: 50%;
+
+  transition: transform 0.4s ease;
+}
+.mod-Modal_Close:hover,
+.mod-Modal_Close:focus {
+  transform: scale(1.1);
+}
+.mod-Modal_Icon-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 16px;
+  height: 16px;
+
+  transform: translate(-50%, -50%);
+}
+
+.mod-Modal_Body {
+  height: 100%;
+}

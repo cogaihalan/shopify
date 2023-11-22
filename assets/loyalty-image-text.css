@@ -1,0 +1,316 @@
+/*
+|--------------------------------------------------------------------------
+| Loyalty Image text
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+.loy-ImageText {
+  background-color: var(--ImageText_Background);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Columns
+|--------------------------------------------------------------------------
+|
+*/
+.loy-ImageText_Items {
+  display: grid;
+}
+@media only screen and (max-width: 767px) {
+  .loy-ImageText_Item-splitimage {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loy-ImageText_Items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loy-ImageText-contentRight .loy-ImageText_Items-moreWidth {
+    grid-template-columns: 58fr 42fr;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .loy-ImageText-contentLeft .loy-ImageText_Items-moreWidth {
+    grid-template-columns: 42fr 58fr;
+  }
+}
+
+.loy-ImageText_Item-content {
+  --ContentPadding: calc(var(--Grid_Gutter) * 6);
+
+  padding-right: var(--ContentPadding);
+  padding-left: var(--ContentPadding);
+}
+
+@media only screen and (min-width: 768px) {
+  .loy-ImageText_Item {
+    grid-row: 1;
+  }
+  .loy-ImageText_Item-content {
+    --ContentPadding: calc(var(--Grid_Gutter) * 3);
+  }
+  .loy-ImageText-contentLeft .loy-ImageText_Item-content {
+    grid-column: 1;
+  }
+  .loy-ImageText-contentLeft .loy-ImageText_Item-image {
+    grid-column: 2;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Media
+|--------------------------------------------------------------------------
+|
+*/
+.loy-ImageText_MediaContainer {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+.loy-ImageText_MediaContainer::after {
+  content: '';
+
+  display: block;
+  width: 0;
+  padding-top: 100%;
+}
+
+.loy-ImageText_Image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .loy-ImageText_Image-desktop {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .loy-ImageText_Image-mobile {
+    display: flex;
+  }
+}
+
+.loy-ImageText_Video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+@media only screen and (min-width: 768px) {
+  .loy-ImageText_Video-desktop {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .loy-ImageText_Video-mobile {
+    display: flex;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+
+.loy-ImageText_Content {
+  --ContentPadding: 40px;
+
+  padding-top: var(--ContentPadding);
+  padding-bottom: var(--ContentPadding);
+}
+
+.loy-ImageText_ContentImage {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .loy-ImageText_Content-mobileContentLeft {
+    text-align: left;
+  }
+
+  .loy-ImageText_Content-mobileContentCenter-x {
+    text-align: center;
+  }
+
+  .loy-ImageText_Content-mobileContentRight {
+    text-align: right;
+  }
+
+  .loy-ImageText_ContentImage-desktop {
+    display: none;
+  }
+
+  .loy-ImageText_ContentImage-mobile {
+    position: relative;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    overflow: hidden;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loy-ImageText_Content {
+    flex-direction: column;
+
+    display: flex;
+    width: calc((5 / 6) * 100%);
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .loy-ImageText_Content-desktopContentLeft {
+    text-align: left;
+  }
+
+  .loy-ImageText_Content-desktopContentCenter-x {
+    text-align: center;
+  }
+
+  .loy-ImageText_Content-desktopContentRight {
+    text-align: right;
+  }
+
+  .loy-ImageText_Content-desktopContentTop {
+    justify-content: flex-start;
+  }
+
+  .loy-ImageText_Content-desktopContentCenter-y {
+    justify-content: center;
+  }
+
+  .loy-ImageText_Content-desktopContentBottom {
+    justify-content: flex-end;
+  }
+
+  .loy-ImageText_ContentImage-mobile {
+    display: none;
+  }
+
+  .loy-ImageText_ContentImage-desktop {
+    margin-right: -40px;
+    margin-left: -40px;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .loy-ImageText_Content {
+    --ContentPadding: 60px;
+
+    width: calc((4 / 6) * 100%);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .loy-ImageText_Content {
+    --ContentPadding: 100px;
+  }
+}
+
+.loy-ImageText-light .loy-ImageText_Content {
+  color: #fff;
+}
+
+.loy-ImageText_Strapline {
+  margin-bottom: 10px;
+
+  font-family: var(--Font_Family-headings);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.loy-ImageText_Text {
+  margin-top: 20px;
+}
+
+.loy-ImageText_Button {
+  width: 100%;
+  margin-top: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .loy-ImageText_Button {
+    width: auto;
+  }
+}
+
+.loy-ImageText_Button-light {
+  background-color: var(--Color_White);
+  border: 1px solid var(--Color_Brand);
+  color: var(--Color_Body);
+}
+.loy-ImageText_Button-light:hover {
+  background-color: var(--Color_Brand);
+  color: var(--Color_White);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Modal
+|--------------------------------------------------------------------------
+|
+*/
+
+/* stylelint-disable selector-class-pattern */
+.lion-referral-widget-main__heading {
+  font-family: var(--Font_Family-headings);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .lion-referral-widget-main__heading {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 37px;
+  }
+}
+
+.lion-referral-widget-main__intro {
+  font-family: var(--Font_Family-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+}
+
+@media only screen and (min-width: 768px) {
+  .lion-referral-widget-main__intro {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+/* stylelint-enable selector-class-pattern */

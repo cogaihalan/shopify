@@ -1,0 +1,116 @@
+/*
+|--------------------------------------------------------------------------
+| Product Card Images
+|--------------------------------------------------------------------------
+| @namespace: crd
+|
+*/
+
+.crd-Images {
+  display: block;
+}
+
+.crd-Images .rsp-Image_Image {
+  pointer-events: none;
+}
+
+.crd-Images_Images {
+  flex-flow: row nowrap;
+
+  display: flex;
+  width: 100%;
+
+  transition: transform 0.4s ease;
+}
+
+.crd-Images_Image {
+  min-width: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .crd-Images[data-current='1'] .crd-Images_Images {
+    transform: translateX(-100%);
+  }
+}
+
+.prd-Card_FauxLink {
+  outline: none;
+}
+@media only screen and (min-width: 901px) {
+  .prd-Card:hover .crd-Images_Images,
+  .prd-Card:focus-within .crd-Images_Images,
+  .prd-Card_FauxLink:hover + .prd-Card_Overlay .crd-Images_Images,
+  .prd-Card_FauxLink:focus + .prd-Card_Overlay .crd-Images_Images {
+    transform: translateX(-100%);
+  }
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+.prd-Card .crd-Images[data-image-count='0'] .crd-Images_Images,
+.prd-Card .crd-Images[data-image-count='1'] .crd-Images_Images {
+  transform: translateX(0);
+  /* Required to ovverride above rule */
+}
+
+/*
+|--------------------------------------------------------------------------
+| Arrows
+|--------------------------------------------------------------------------
+|
+*/
+.crd-Images_Arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  display: block;
+  pointer-events: none;
+}
+@media only screen and (min-width: 901px) {
+  .crd-Images_Arrows {
+    display: none;
+  }
+}
+
+.crd-Images[data-image-count='0'] .crd-Images_Arrows,
+.crd-Images[data-image-count='1'] .crd-Images_Arrows {
+  display: none;
+}
+
+.crd-Images_Arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: auto;
+  padding: 10px;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: initial;
+}
+
+.crd-Images_Arrow[aria-hidden='true'] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.crd-Images_Arrow-prev {
+  left: 0;
+}
+.crd-Images_Arrow-next {
+  right: 0;
+}
+.crd-Images_Icon {
+  width: 15px;
+  height: 15px;
+
+  color: var(--Color_White);
+}

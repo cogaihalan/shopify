@@ -1,0 +1,120 @@
+/*
+|--------------------------------------------------------------------------
+| Account Register CTA
+|--------------------------------------------------------------------------
+| @namespace acc
+|
+*/
+
+.acc-RegisterCta {
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Intro
+|--------------------------------------------------------------------------
+|
+*/
+.acc-RegisterCta_Intro {
+  max-width: 300px;
+  width: 100%;
+  margin: 7px auto 20px;
+}
+@media only screen and (min-width: 901px) {
+  .acc-RegisterCta_Intro {
+    max-width: 370px;
+    margin-top: 10px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Items
+|--------------------------------------------------------------------------
+|
+*/
+.acc-RegisterCta_Items {
+  flex-flow: row nowrap;
+  justify-content: space-around;
+
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 901px) {
+  .acc-RegisterCta_Items {
+    justify-content: space-between;
+
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+}
+
+.acc-RegisterCta_Item {
+  width: 70px;
+}
+@media only screen and (min-width: 361px) {
+  .acc-RegisterCta_Item {
+    width: 110px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .acc-RegisterCta_Item {
+    width: 125px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Icons
+|--------------------------------------------------------------------------
+|
+*/
+.acc-RegisterCta_Icon {
+  position: relative;
+
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+
+  background-color: var(--Color_CoolPink);
+  border-radius: 50%;
+}
+
+.acc-RegisterCta_Icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 18px;
+  height: 18px;
+
+  fill: var(--Color_White);
+
+  transform: translate(-50%, -50%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Text
+|--------------------------------------------------------------------------
+|
+*/
+.acc-RegisterCta_Text {
+  margin-top: 10px;
+
+  color: var(--Color_Russet);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Link
+|--------------------------------------------------------------------------
+|
+*/
+
+.acc-RegisterCta_Link {
+  width: 100%;
+}

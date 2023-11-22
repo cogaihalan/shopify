@@ -1,391 +1,1178 @@
 {
   "current": {
-    "logo_width": 100,
-    "favicon": "shopify:\/\/shop_images\/optirious.png",
-    "type_header_font": "assistant_n6",
-    "heading_scale": 100,
-    "type_body_font": "open_sans_n4",
-    "body_scale": 100,
-    "page_width": 1440,
-    "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
-    "spacing_grid_vertical": 8,
-    "animations_reveal_on_scroll": true,
-    "animations_hover_elements": "none",
-    "buttons_border_thickness": 1,
-    "buttons_border_opacity": 100,
-    "buttons_radius": 0,
-    "buttons_shadow_opacity": 0,
-    "buttons_shadow_horizontal_offset": 0,
-    "buttons_shadow_vertical_offset": 4,
-    "buttons_shadow_blur": 5,
-    "variant_pills_border_thickness": 1,
-    "variant_pills_border_opacity": 55,
-    "variant_pills_radius": 40,
-    "variant_pills_shadow_opacity": 0,
-    "variant_pills_shadow_horizontal_offset": 0,
-    "variant_pills_shadow_vertical_offset": 4,
-    "variant_pills_shadow_blur": 5,
-    "inputs_border_thickness": 1,
-    "inputs_border_opacity": 55,
-    "inputs_radius": 0,
-    "inputs_shadow_opacity": 0,
-    "inputs_shadow_horizontal_offset": 0,
-    "inputs_shadow_vertical_offset": 4,
-    "inputs_shadow_blur": 5,
-    "card_style": "standard",
-    "card_image_padding": 0,
-    "card_text_alignment": "left",
-    "card_color_scheme": "background-2",
-    "card_border_thickness": 0,
-    "card_border_opacity": 10,
-    "card_corner_radius": 0,
-    "card_shadow_opacity": 0,
-    "card_shadow_horizontal_offset": 0,
-    "card_shadow_vertical_offset": 4,
-    "card_shadow_blur": 5,
-    "collection_card_style": "standard",
-    "collection_card_image_padding": 0,
-    "collection_card_text_alignment": "left",
-    "collection_card_color_scheme": "background-2",
-    "collection_card_border_thickness": 0,
-    "collection_card_border_opacity": 10,
-    "collection_card_corner_radius": 0,
-    "collection_card_shadow_opacity": 0,
-    "collection_card_shadow_horizontal_offset": 0,
-    "collection_card_shadow_vertical_offset": 4,
-    "collection_card_shadow_blur": 5,
-    "blog_card_style": "standard",
-    "blog_card_image_padding": 0,
-    "blog_card_text_alignment": "left",
-    "blog_card_color_scheme": "background-2",
-    "blog_card_border_thickness": 0,
-    "blog_card_border_opacity": 10,
-    "blog_card_corner_radius": 0,
-    "blog_card_shadow_opacity": 0,
-    "blog_card_shadow_horizontal_offset": 0,
-    "blog_card_shadow_vertical_offset": 4,
-    "blog_card_shadow_blur": 5,
-    "text_boxes_border_thickness": 0,
-    "text_boxes_border_opacity": 10,
-    "text_boxes_radius": 0,
-    "text_boxes_shadow_opacity": 0,
-    "text_boxes_shadow_horizontal_offset": 0,
-    "text_boxes_shadow_vertical_offset": 4,
-    "text_boxes_shadow_blur": 5,
-    "media_border_thickness": 1,
-    "media_border_opacity": 5,
-    "media_radius": 0,
-    "media_shadow_opacity": 0,
-    "media_shadow_horizontal_offset": 0,
-    "media_shadow_vertical_offset": 4,
-    "media_shadow_blur": 5,
-    "popup_border_thickness": 1,
-    "popup_border_opacity": 10,
-    "popup_corner_radius": 0,
-    "popup_shadow_opacity": 5,
-    "popup_shadow_horizontal_offset": 0,
-    "popup_shadow_vertical_offset": 4,
-    "popup_shadow_blur": 5,
-    "drawer_border_thickness": 1,
-    "drawer_border_opacity": 10,
-    "drawer_shadow_opacity": 0,
-    "drawer_shadow_horizontal_offset": 0,
-    "drawer_shadow_vertical_offset": 4,
-    "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
-    "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "accent-2",
-    "sold_out_badge_color_scheme": "inverse",
-    "brand_headline": "",
-    "brand_description": "<p><\/p>",
-    "brand_image_width": 100,
-    "social_facebook_link": "",
-    "social_instagram_link": "",
-    "social_youtube_link": "",
-    "social_tiktok_link": "",
-    "social_twitter_link": "",
-    "social_snapchat_link": "",
-    "social_pinterest_link": "",
-    "social_tumblr_link": "",
-    "social_vimeo_link": "",
-    "predictive_search_enabled": true,
-    "predictive_search_show_vendor": false,
-    "predictive_search_show_price": false,
-    "currency_code_enabled": true,
-    "cart_type": "notification",
-    "show_vendor": false,
-    "show_cart_note": false,
-    "cart_drawer_collection": "",
+    "colour_theme": "blackFriday",
+    "reactivate_enable": false,
+    "store_name": "Oh Polly",
+    "start_url": "https:\/\/www.ohpolly.com",
+    "theme_color": "#fff",
+    "background_color": "#fff",
+    "apple_touch_icon": "shopify:\/\/shop_images\/apple-touch-icon_192x192_99ebdf18-97b1-48b9-9a38-411b3f99ac20.png",
+    "android_chrome_icon": "shopify:\/\/shop_images\/apple-touch-icon_192x192_99ebdf18-97b1-48b9-9a38-411b3f99ac20.png",
+    "ms_tile_icon": "shopify:\/\/shop_images\/apple-touch-icon_192x192_99ebdf18-97b1-48b9-9a38-411b3f99ac20.png",
+    "currency_enabled_1": false,
+    "currency_symbol_1": "$",
+    "currency_iso_1": "USD",
+    "currency_url_1": "https:\/\/us.ohpolly.com",
+    "currency_enabled_2": false,
+    "currency_symbol_2": "$",
+    "currency_iso_2": "AUD",
+    "currency_url_2": "https:\/\/au.ohpolly.com",
+    "currency_enabled_3": false,
+    "currency_symbol_3": "",
+    "currency_iso_3": "",
+    "currency_url_3": "",
+    "currency_enabled_4": false,
+    "currency_symbol_4": "",
+    "currency_iso_4": "",
+    "currency_url_4": "",
+    "favicon_small": "shopify:\/\/shop_images\/apple-touch-icon.png",
+    "favicon_medium": "shopify:\/\/shop_images\/apple-touch-icon.png",
+    "favicon_large": "shopify:\/\/shop_images\/apple-touch-icon.png",
+    "overwrite_header_buttons": true,
+    "lcp_preload_desktop_image": "shopify:\/\/shop_images\/Mobile-Updates_01.jpg",
+    "lcp_preload_mobile_image": "shopify:\/\/shop_images\/TammyHembrowxOhPolly-Banner_MOBILE.jpg",
+    "push_cart_nosto_enable": false,
+    "push_cart_nosto_id": "cartpage-nosto-1",
+    "push_cart_gift_wrapping_enable": false,
+    "push_cart_gift_wrapping_product": "gift-wrapping",
+    "push_cart_gift_card_product": "gift-card",
+    "order_tracker_modal_enable": false,
+    "order_tracker_modal_title": "Track My Order",
+    "order_tracker_modal_button_copy": "Track My Order",
+    "cancellation_reasons": "Changed my mind,Made an error,Delivery time too long",
+    "social_twitter_link": "https:\/\/twitter.com\/OhPolly",
+    "social_facebook_link": "https:\/\/www.facebook.com\/ohpollyfashion",
+    "social_pinterest_link": "https:\/\/www.pinterest.co.uk\/ohpolly\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/ohpollyae\/",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@ohpolly",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCQwf9pTxhiZdGF6m2Ugcsag\/",
+    "enable_google_tag_manager": true,
+    "google_tag_manager_id": "GTM-KWQS8XPP",
+    "enable_google_analytics": false,
+    "enable_loyalty_lion": false,
+    "enable_algolia": true,
+    "enable_ada": true,
+    "use_purpledot": false,
+    "purpledot_api_key": "18963df9-0d64-41ea-82da-4ff7c85ca7e1",
+    "checkout_logo_image": "shopify:\/\/shop_images\/ohpolly_logo-CHECKOUT-v1.png",
+    "syte_tooltip_enable": false,
+    "mlvedaACS_roundDecimal": false,
+    "mlvedaACS_autoSwitch": false,
+    "syte_tooltip_subtitle": "Snap & Shop",
+    "mlvedaACS_messageContent": "<<shop.name>> process all orders in <<shop.currency>>. While the content of your cart is currently displayed in <<shop.selected_currency>>, you will checkout using <<shop.currency>> at the most current exchange rate.",
+    "mlvedaACS_os2": false,
+    "mlvedaACS_positionTop": "10px",
+    "syte_tooltip_title": "NEW!",
+    "mlvedaACS_isCustomized": true,
+    "mlvedaACS_positionRight": "10px",
+    "mlvedaACS_borderLook": false,
+    "syte_enable": false,
+    "enable_order_deadline": false,
+    "mlvedaACS_positionLeft": "10px",
+    "mlvedaACS_defaultCurrency": "AED",
+    "mlvedaACS_textColor": "#000000",
+    "mlvedaACS_flagStyle": "circle",
+    "mlvedaACS_isMessageDisplay": true,
+    "mlvedaACS_positionBottom": "10px",
+    "mlvedaACS_messageBackgroundColor": "inherit",
+    "mlvedaACS_roundDecimalValue": 1,
+    "mlvedaACS_backgroundColor": "inherit",
+    "mlvedaACS_position": "inline",
+    "syte_tooltip_button_style": "quaternary",
+    "mlvedaACS_messageColor": "inherit",
+    "syte_tooltip_text": "Use our Image Search to find things you love.",
+    "mlvedaACS_textHoverColor": "inherit",
+    "mlvedaACS_enable": true,
+    "mlvedaACS_supportedCurrencies": "AED KWD OMR QAR SAR BHD",
+    "mlvedaACS_hideDecimal": false,
+    "mlvedaACS_hoverBackgroundColor": "inherit",
+    "mlvedaACS_currencyFormat": "money_with_currency_format",
+    "mlvedaACS_borderLineColor": "inherit",
+    "syte_tooltip_button_text": "Upload Now",
+    "mlvedaACS_displayFlag": false,
     "sections": {
-      "main-password-header": {
-        "type": "main-password-header",
+      "push-cart-usps": {
+        "type": "push-cart-usps",
+        "blocks": {
+          "7a2a1eb8-7c43-4cdd-9c54-289e11af2eb5": {
+            "type": "cart-usp",
+            "disabled": true,
+            "settings": {
+              "title": "Shopping in the U.S.?",
+              "text": "<p>Shop on our dedicated <a href=\"https:\/\/us.ohpolly.com\/?currency=USD\" title=\"https:\/\/us.ohpolly.com\/?currency=USD\">U.S. Website<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "7a2a1eb8-7c43-4cdd-9c54-289e11af2eb5"
+        ],
         "settings": {
-          "color_scheme": "background-1"
         }
       },
-      "main-password-footer": {
-        "type": "main-password-footer",
+      "header-announcement-bar": {
+        "type": "header-announcement-bar",
+        "blocks": {
+          "47cf27f8-be96-4cf4-8aaf-00ad1e17f42c": {
+            "type": "accouncement",
+            "settings": {
+              "title": "STUDENTS GET 15% OFF",
+              "link": ""
+            }
+          },
+          "cf014998-4e66-4b58-87b7-a505fa667cb9": {
+            "type": "accouncement",
+            "settings": {
+              "title": "DOWNLOAD OUR APP NOW",
+              "link": ""
+            }
+          },
+          "f257cc86-87aa-49f6-b4cb-11f37301e33c": {
+            "type": "accouncement",
+            "settings": {
+              "title": "EXPRESS DELIVERY AVAILABLE",
+              "link": ""
+            }
+          },
+          "6623642f-2380-40cf-897d-4e11a8117783": {
+            "type": "accouncement",
+            "settings": {
+              "title": "SHIPPING ACROSS GCC",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "47cf27f8-be96-4cf4-8aaf-00ad1e17f42c",
+          "cf014998-4e66-4b58-87b7-a505fa667cb9",
+          "f257cc86-87aa-49f6-b4cb-11f37301e33c",
+          "6623642f-2380-40cf-897d-4e11a8117783"
+        ],
         "settings": {
-          "color_scheme": "background-1"
+          "enable": true,
+          "speed": 25,
+          "gap": 80
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "link_list_enable": true,
+          "link_list": "footer",
+          "newsletter_enable": true,
+          "newsletter_title": "Sign up to our newsletter.",
+          "newsletter_subtitle": "Don’t miss out on our dreamy new product drops or exclusive offers.",
+          "ometria_footer_form_id": "4656e501871593c4b79ac98d15fba29d",
+          "ometria_footer_list_id": "",
+          "social_enable": true,
+          "reviews_enable": true,
+          "shop_now_enable": false,
+          "marquee_speed": 40,
+          "marquee_gap": 20
+        }
+      },
+      "main-search": {
+        "type": "main-search",
+        "settings": {
+        }
+      },
+      "section-usps": {
+        "type": "section-usps",
+        "blocks": {
+          "ae6148b1-9ef6-48f9-afc9-129ab4aaffcd": {
+            "type": "usp",
+            "settings": {
+              "title": "DOWNLOAD OUR APP FOR EXCLUSIVE OFFERS",
+              "text": "AND EARLY ACCESS TO COLLECTIONS",
+              "link_url": "https:\/\/apps.apple.com\/gb\/app\/oh-polly-clothing-fashion\/id1446565964",
+              "background_colour": "#f7d7d0",
+              "text_colour": "#333333"
+            }
+          },
+          "a8e4f7e8-a4ad-4236-b01c-2883a5d4c0df": {
+            "type": "usp",
+            "settings": {
+              "title": "STUDENTS GET 20% OFF",
+              "text": "WITH UNIDAYS AND STUDENT BEANS",
+              "link_url": "shopify:\/\/pages\/student-beans",
+              "background_colour": "#e2a9a9",
+              "text_colour": "#333333"
+            }
+          },
+          "72362730-1fca-42be-ac09-4e04d1a41327": {
+            "type": "usp",
+            "settings": {
+              "title": "FREE UK NEXT DAY DELIVERY",
+              "text": "ON ALL UK ORDERS OVER £100",
+              "link_url": "shopify:\/\/pages\/delivery-information",
+              "background_colour": "#e48d89",
+              "text_colour": "#333333"
+            }
+          }
+        },
+        "block_order": [
+          "72362730-1fca-42be-ac09-4e04d1a41327",
+          "ae6148b1-9ef6-48f9-afc9-129ab4aaffcd",
+          "a8e4f7e8-a4ad-4236-b01c-2883a5d4c0df"
+        ],
+        "settings": {
+          "section_margin": "spacingNone"
+        }
+      },
+      "size-guide-drawer": {
+        "type": "size-guide-drawer",
+        "blocks": {
+          "5ed13e89-32ec-4b5c-923f-ca3d89d41913": {
+            "type": "content",
+            "disabled": true,
+            "settings": {
+              "title": "",
+              "page": "uk-size-guide",
+              "text": ""
+            }
+          },
+          "e1c59fa4-7902-466a-bdc3-19b49a393ab5": {
+            "type": "content",
+            "settings": {
+              "title": "Sizing Chart",
+              "page": "size-guide",
+              "text": ""
+            }
+          }
+        },
+        "block_order": [
+          "e1c59fa4-7902-466a-bdc3-19b49a393ab5",
+          "5ed13e89-32ec-4b5c-923f-ca3d89d41913"
+        ],
+        "settings": {
+          "title": "Size Guide",
+          "text": "<p>Our helpful size guide is here to answer all your size queries<\/p>"
+        }
+      },
+      "account-navigation": {
+        "type": "account-navigation",
+        "settings": {
+          "navigation": "account-nevigation"
+        }
+      },
+      "drawers-nav": {
+        "type": "drawers-nav",
+        "blocks": {
+          "bbcd64eb-41a3-4f55-b696-f5787e4fe7bb": {
+            "type": "link-icon",
+            "settings": {
+              "title": "",
+              "icon": "",
+              "width": 60
+            }
+          }
+        },
+        "block_order": [
+          "bbcd64eb-41a3-4f55-b696-f5787e4fe7bb"
+        ],
+        "settings": {
+          "main_linklist": "mobile-menu",
+          "footer_linklist": "mobile-footer-menu"
+        }
+      },
+      "cart-summary": {
+        "type": "cart-summary",
+        "blocks": {
+          "464ba490-bbc4-4ddc-bffa-d811d87336cb": {
+            "type": "payment-icon",
+            "disabled": true,
+            "settings": {
+              "payment_icon": "shopify:\/\/shop_images\/PayPal-min.jpg"
+            }
+          },
+          "fa3b87ec-70a5-4015-b2be-8437f6082821": {
+            "type": "payment-icon",
+            "settings": {
+              "payment_icon": "shopify:\/\/shop_images\/Mastercard-min.jpg"
+            }
+          },
+          "cbbe4904-638e-42d0-a836-c45d37293b0d": {
+            "type": "payment-icon",
+            "settings": {
+              "payment_icon": "shopify:\/\/shop_images\/Visa-min.jpg"
+            }
+          },
+          "1d08187f-6f8f-4ec8-855d-ef7f5b8e9105": {
+            "type": "payment-icon",
+            "settings": {
+              "payment_icon": "shopify:\/\/shop_images\/Apple_Pay-min.jpg"
+            }
+          },
+          "79caa691-5be0-488a-877f-8d1de602948d": {
+            "type": "payment-icon",
+            "disabled": true,
+            "settings": {
+              "payment_icon": "shopify:\/\/shop_images\/G_Pay-min.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1d08187f-6f8f-4ec8-855d-ef7f5b8e9105",
+          "79caa691-5be0-488a-877f-8d1de602948d",
+          "fa3b87ec-70a5-4015-b2be-8437f6082821",
+          "464ba490-bbc4-4ddc-bffa-d811d87336cb",
+          "cbbe4904-638e-42d0-a836-c45d37293b0d"
+        ],
+        "settings": {
+          "title": "Order Summary",
+          "text": "<p>Shipping and taxes are calculated at checkout. Discount codes can be applied at the checkout.<\/p>",
+          "pre_order_text": "<p>ALL PRE-ORDER ITEMS GUARANTEED DISPATCH 12TH OCTOBER<\/p>",
+          "link_text": "Read our Terms & Conditions",
+          "link_url": "",
+          "payment_text": "Secure payment methods"
+        }
+      },
+      "section-instagram": {
+        "type": "section-instagram",
+        "settings": {
+          "section_margin": "spacingStandard",
+          "border_top": true,
+          "show_icon": false,
+          "title": "",
+          "text": "",
+          "button_text": "",
+          "button_link": "",
+          "foursixty": ""
+        }
+      },
+      "account-register": {
+        "type": "account-register",
+        "settings": {
+          "image_desktop": "shopify:\/\/shop_images\/Rewards-Banner.jpg",
+          "image_mobile": "shopify:\/\/shop_images\/Rewards-Banner-Mobile.jpg"
+        }
+      },
+      "push-cart-delivery": {
+        "type": "push-cart-delivery",
+        "settings": {
+          "enabled": false,
+          "incentivisation_message": "You’re Just [amount] Away From Free UK Next Day Delivery!",
+          "success_message": "Your Order Qualifies For Free UK Next Day Delivery! Automatically selected at checkout",
+          "minimum_spend": 10000,
+          "free_ndd_delivery_message": "Free next day delivery is available for your order"
+        }
+      },
+      "cart-usps": {
+        "type": "cart-usps",
+        "blocks": {
+          "e1485900-34a6-4036-829e-30445ff25280": {
+            "type": "cart-usp",
+            "settings": {
+              "icon": "chat",
+              "title": "Need Help With Your Order?",
+              "text": "<p>If you have any queries or need further assistance, please use our chat bot for an instant reply.<\/p>"
+            }
+          },
+          "b6059866-fe60-4bfe-b591-308ab71f0b47": {
+            "type": "cart-usp",
+            "settings": {
+              "icon": "returns",
+              "title": "Quick & Easy Returns",
+              "text": "<p>For more information please read our <a href=\"\/pages\/returns\" title=\"Returns\">Returns policy.<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "b6059866-fe60-4bfe-b591-308ab71f0b47",
+          "e1485900-34a6-4036-829e-30445ff25280"
+        ],
+        "settings": {
+          "title": "",
+          "text": ""
+        }
+      },
+      "page-navigation": {
+        "type": "page-navigation",
+        "settings": {
+          "navigation": ""
+        }
+      },
+      "push-cart-nosto": {
+        "type": "push-cart-nosto",
+        "settings": {
+        }
+      },
+      "account-rewards": {
+        "type": "account-rewards",
+        "settings": {
+          "image_desktop": "shopify:\/\/shop_images\/atelier-homepage-1500x1500.jpg",
+          "image_mobile": "shopify:\/\/shop_images\/atelier-homepage-1500x1500.jpg",
+          "strapline": "Oh Polly Rewards",
+          "title": "Your Rewards",
+          "points_left": "Total Points Left:",
+          "points_used": "Total Points Used:",
+          "points_earned": "Total Points Earned:",
+          "button_text": "Earn More Points",
+          "button_link": "shopify:\/\/pages\/oh-polly-rewards-overview"
+        }
+      },
+      "account-login": {
+        "type": "account-login",
+        "settings": {
+          "image_desktop": "shopify:\/\/shop_images\/Rewards-Banner.jpg",
+          "image_mobile": "shopify:\/\/shop_images\/Rewards-Banner-Mobile.jpg"
+        }
+      },
+      "cart-items": {
+        "type": "cart-items",
+        "settings": {
+        }
+      },
+      "checkout-delivery": {
+        "type": "checkout-delivery",
+        "blocks": {
+          "5de0a8b8-5dd6-4c44-9c17-55051d0403b3": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Unlimited Next Day Delivery - 12 Months",
+              "cutoff": 23,
+              "working_days": 1,
+              "include_saturday": true,
+              "include_sunday": true
+            }
+          },
+          "16d0fddb-1631-4543-8262-53eec4802a97": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "EVRi Next Day Delivery",
+              "cutoff": 23,
+              "working_days": 1,
+              "include_saturday": true,
+              "include_sunday": true
+            }
+          },
+          "b076f924-e04e-4c30-9afa-99837eb06257": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "EVRi Economy Delivery",
+              "cutoff": 23,
+              "working_days": 3,
+              "include_saturday": true,
+              "include_sunday": true
+            }
+          },
+          "ed25aa05-ebee-417e-ab8e-bc4c1546ce9b": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DPD Next Day Before 10pm Delivery - Mon-Fri",
+              "cutoff": 22,
+              "working_days": 1,
+              "include_saturday": true,
+              "include_sunday": false
+            }
+          },
+          "cab4b0c4-a8f6-471b-ac2e-8ee551f7a787": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "EVRi Next Day Click and Collect",
+              "cutoff": 23,
+              "working_days": 1,
+              "include_saturday": true,
+              "include_sunday": true
+            }
+          },
+          "ad4b4400-a85a-4131-bed9-cb04249cc852": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "EVRi Free Economy Click and Collect",
+              "cutoff": 23,
+              "working_days": 5,
+              "include_saturday": true,
+              "include_sunday": true
+            }
+          },
+          "ae5e27f3-b3ad-460f-9961-37384cf0b835": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DPD Next Day Delivery",
+              "cutoff": 21,
+              "working_days": 1,
+              "include_saturday": true,
+              "include_sunday": false
+            }
+          },
+          "0077e88b-87ab-4cf0-89b8-0e28996931d9": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Amazon Logistics Economy Delivery",
+              "cutoff": 18,
+              "working_days": 7,
+              "include_saturday": true,
+              "include_sunday": true
+            }
+          },
+          "d4547ba3-e25c-49ae-a629-f51e8083c066": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DPD Next Day Before 12pm Delivery - Mon-Fri",
+              "cutoff": 18,
+              "working_days": 1,
+              "include_saturday": true,
+              "include_sunday": false
+            }
+          },
+          "a4a8fd3d-f567-43ef-8474-093b225750a7": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DPD Next Day Delivery (Carbon Neutral)",
+              "cutoff": 18,
+              "working_days": 1,
+              "include_saturday": true,
+              "include_sunday": false
+            }
+          },
+          "a91750d1-6a9f-4890-8a59-319183076700": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DPD Express Delivery - Carbon Neutral",
+              "cutoff": 22,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "6664ea67-71d4-4147-bea8-9c106ebabd4d": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "EVRi Express Click and Collect",
+              "cutoff": 23,
+              "working_days": 2,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "5c8c9e96-0d0d-462d-9b40-452b7df7d640": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "EVRi Express Delivery",
+              "cutoff": 23,
+              "working_days": 2,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "8fc9f7b4-5088-435b-ba5b-91377b5c5d3d": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "EVRi Free Economy Click and Collect",
+              "cutoff": 23,
+              "working_days": 2,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "28a89309-e7e7-45fa-9f1f-c3e3af499429": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Unlimited Express Delivery - 12 Months",
+              "cutoff": 22,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "58e6f05b-182a-4011-bef7-a5151ccb3a10": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DHL Express: up to 3 days",
+              "cutoff": 13,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "7f6749fa-2cc5-4768-8bac-0d26322f8f19": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Evri Standard Delivery: up to 10 Days",
+              "cutoff": 23,
+              "working_days": 10,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "aa2ddf65-5b17-4bb3-8e30-cb95d0c5d602": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Skynet Sky Saver: up to 6 days",
+              "cutoff": 12,
+              "working_days": 6,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "5053a8a9-6584-49a5-9277-357c0be65a15": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Spring Standard Delivery (by Canada Post) up to 10 days",
+              "cutoff": 14,
+              "working_days": 10,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "e6b97e30-2ed3-4ffb-ae5c-64a914c527d9": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DHL Express: up to 6 days",
+              "cutoff": 13,
+              "working_days": 6,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "f0056617-4e03-4ba7-9da3-435be8540854": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Spring Standard Delivery (by AU Post): up to 8 days",
+              "cutoff": 14,
+              "working_days": 8,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "9b68c50c-59ad-48f0-b487-14d7e359dc3b": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Starlinks Standard Delivery (Parcel Right): up to 9 days",
+              "cutoff": 6,
+              "working_days": 9,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "59e243c0-a853-4660-b196-3de8433092d0": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Deutsche Post Standard (By Chrono Post): up to 6 days",
+              "cutoff": 12,
+              "working_days": 6,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "225dcdf6-737e-4942-9a94-ebd7d4b8663d": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Evri (By Colis Prive): up to 7 days",
+              "cutoff": 23,
+              "working_days": 7,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "e77843de-008b-4288-8418-dacab046cfc4": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "FedEx Express: up to 3 days",
+              "cutoff": 12,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "0eb71f16-2170-4646-97c8-f3c0f78cd2e2": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Deutsche Post Priority: up to 3 days",
+              "cutoff": 12,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "a409522c-4ec5-46fb-8222-db1c15e04284": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Evri Standard (By Hermes Germany): up to 5 days",
+              "cutoff": 23,
+              "working_days": 5,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "18c7c880-6b2f-459f-aeb6-899b6fa16e1c": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "FedEx Cross Border (by DHL): up to 6 days",
+              "cutoff": 12,
+              "working_days": 6,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "b2ab487d-b56b-449f-97cd-a6a2efea81cb": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "FedEx Cross Border Standard Delivery: up to 9 days",
+              "cutoff": 12,
+              "working_days": 9,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "c837af06-4c76-46f1-a288-79b90fe40380": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Deutsche Post Standard Delivery (By Post IT): up to 9 days",
+              "cutoff": 12,
+              "working_days": 9,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "7ceed531-8cfd-45ab-8702-c03e500fdac0": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Evri International standard delivery (by GLS IT): up to 7 days",
+              "cutoff": 23,
+              "working_days": 7,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "ae0d6f7b-c08b-491d-8900-9312576ea922": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Evri International up to 5 days (by Post NL)",
+              "cutoff": 23,
+              "working_days": 5,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "db7aeaff-3c7d-4d77-9540-70cfcc16f016": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Skynet Express: up to 3 days",
+              "cutoff": 12,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "31a553ff-f398-4783-8f48-dad9ce400844": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Evri Standard (By Fastway): up to 5 days",
+              "cutoff": 23,
+              "working_days": 5,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "154c9898-ba87-41ec-806b-aa792989555f": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Pro Carrier Express (By AN Post): up to 3 days",
+              "cutoff": 13,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "a8c2ac69-0ca0-4d50-82fb-47ac4493024d": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "DHL Express: Up to 3 days",
+              "cutoff": 13,
+              "working_days": 3,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "5fb33858-04f4-4cca-a8ba-ddd32b0d3007": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "FedEx Express EU: up to 4 days",
+              "cutoff": 12,
+              "working_days": 4,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "4ab14bb1-8134-4e95-ac0e-a6663abf5b4e": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "FedEx Cross Border",
+              "cutoff": 12,
+              "working_days": 7,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "ba6222da-5119-432e-a9cc-ae46a5ae3ff6": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Pro Carrier Standard Delivery: up to 5 days",
+              "cutoff": 13,
+              "working_days": 5,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "5f779b3e-108e-4030-8039-dc4757f6bdba": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Pro Carrier Standard Delivery (DHL eComm): Up to 7 days",
+              "cutoff": 13,
+              "working_days": 7,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "1a4ca709-5797-45fd-8ed9-abf38c2a8e03": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Starlinks Standard Delivery (By USPS) up to 6 days",
+              "cutoff": 6,
+              "working_days": 6,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          },
+          "dddb0721-bca4-4b4c-a49a-aa97887459be": {
+            "type": "shipping-rate",
+            "settings": {
+              "title": "Deutsche Post (by Posten SE): up to 9 days",
+              "cutoff": 12,
+              "working_days": 9,
+              "include_saturday": false,
+              "include_sunday": false
+            }
+          }
+        },
+        "block_order": [
+          "5de0a8b8-5dd6-4c44-9c17-55051d0403b3",
+          "16d0fddb-1631-4543-8262-53eec4802a97",
+          "b076f924-e04e-4c30-9afa-99837eb06257",
+          "ed25aa05-ebee-417e-ab8e-bc4c1546ce9b",
+          "cab4b0c4-a8f6-471b-ac2e-8ee551f7a787",
+          "ad4b4400-a85a-4131-bed9-cb04249cc852",
+          "ae5e27f3-b3ad-460f-9961-37384cf0b835",
+          "0077e88b-87ab-4cf0-89b8-0e28996931d9",
+          "d4547ba3-e25c-49ae-a629-f51e8083c066",
+          "a4a8fd3d-f567-43ef-8474-093b225750a7",
+          "a91750d1-6a9f-4890-8a59-319183076700",
+          "6664ea67-71d4-4147-bea8-9c106ebabd4d",
+          "5c8c9e96-0d0d-462d-9b40-452b7df7d640",
+          "8fc9f7b4-5088-435b-ba5b-91377b5c5d3d",
+          "28a89309-e7e7-45fa-9f1f-c3e3af499429",
+          "58e6f05b-182a-4011-bef7-a5151ccb3a10",
+          "7f6749fa-2cc5-4768-8bac-0d26322f8f19",
+          "aa2ddf65-5b17-4bb3-8e30-cb95d0c5d602",
+          "5053a8a9-6584-49a5-9277-357c0be65a15",
+          "e6b97e30-2ed3-4ffb-ae5c-64a914c527d9",
+          "f0056617-4e03-4ba7-9da3-435be8540854",
+          "9b68c50c-59ad-48f0-b487-14d7e359dc3b",
+          "59e243c0-a853-4660-b196-3de8433092d0",
+          "225dcdf6-737e-4942-9a94-ebd7d4b8663d",
+          "e77843de-008b-4288-8418-dacab046cfc4",
+          "0eb71f16-2170-4646-97c8-f3c0f78cd2e2",
+          "a409522c-4ec5-46fb-8222-db1c15e04284",
+          "18c7c880-6b2f-459f-aeb6-899b6fa16e1c",
+          "b2ab487d-b56b-449f-97cd-a6a2efea81cb",
+          "c837af06-4c76-46f1-a288-79b90fe40380",
+          "7ceed531-8cfd-45ab-8702-c03e500fdac0",
+          "ae0d6f7b-c08b-491d-8900-9312576ea922",
+          "db7aeaff-3c7d-4d77-9540-70cfcc16f016",
+          "31a553ff-f398-4783-8f48-dad9ce400844",
+          "154c9898-ba87-41ec-806b-aa792989555f",
+          "a8c2ac69-0ca0-4d50-82fb-47ac4493024d",
+          "5fb33858-04f4-4cca-a8ba-ddd32b0d3007",
+          "4ab14bb1-8134-4e95-ac0e-a6663abf5b4e",
+          "ba6222da-5119-432e-a9cc-ae46a5ae3ff6",
+          "5f779b3e-108e-4030-8039-dc4757f6bdba",
+          "1a4ca709-5797-45fd-8ed9-abf38c2a8e03",
+          "dddb0721-bca4-4b4c-a49a-aa97887459be"
+        ],
+        "settings": {
+          "enable": true,
+          "message": "Estimated delivery on or before:"
+        }
+      },
+      "push-cart-items": {
+        "type": "push-cart-items",
+        "settings": {
+        }
+      },
+      "store-selector": {
+        "type": "store-selector",
+        "settings": {
+          "store_switcher_enable": false,
+          "heading": "Welcome",
+          "text": "<p>Please select your preferred currency to continue to our online store<\/p>",
+          "confirm_button_text": "Confirm"
+        }
+      },
+      "checkout-footer": {
+        "type": "checkout-footer",
+        "settings": {
+          "footer_linklist": "footer-menu"
+        }
+      },
+      "sections-pro": {
+        "type": "sections-pro",
+        "settings": {
+        }
+      },
+      "push-cart-upsell": {
+        "type": "push-cart-upsell",
+        "settings": {
+          "title": "Why not also add..."
+        }
+      },
+      "section-ctas": {
+        "type": "section-ctas",
+        "blocks": {
+          "479ae9a3-45fc-436b-bd2a-6fcc13b5186f": {
+            "type": "cta",
+            "settings": {
+              "title": "Swimwear",
+              "text": "Stop dreaming and start packing",
+              "link": "shopify:\/\/collections\/swim",
+              "link_text": "Shop the collection",
+              "link_title": ""
+            }
+          },
+          "91bdc1f7-1c8c-4bc5-8be5-b3fea55c7cc2": {
+            "type": "cta",
+            "settings": {
+              "title": "Dresses",
+              "text": "Upgrade your going out fit",
+              "link": "shopify:\/\/collections\/dresses",
+              "link_text": "Shop the collection",
+              "link_title": ""
+            }
+          },
+          "92d3e739-a886-4638-a6d2-3619fc4c58ce": {
+            "type": "cta",
+            "settings": {
+              "title": "Bo+Tee",
+              "text": "Renew your activewear wardrobe",
+              "link": "shopify:\/\/collections\/bo-and-tee",
+              "link_text": "Shop the collection",
+              "link_title": ""
+            }
+          },
+          "84cbd9a2-e72d-4ded-befb-a0591bd80ee4": {
+            "type": "cta",
+            "settings": {
+              "title": "Tops",
+              "text": "Staples you need for the new season",
+              "link": "shopify:\/\/collections\/tops",
+              "link_text": "Shop the collection",
+              "link_title": ""
+            }
+          }
+        },
+        "block_order": [
+          "479ae9a3-45fc-436b-bd2a-6fcc13b5186f",
+          "91bdc1f7-1c8c-4bc5-8be5-b3fea55c7cc2",
+          "84cbd9a2-e72d-4ded-befb-a0591bd80ee4",
+          "92d3e739-a886-4638-a6d2-3619fc4c58ce"
+        ],
+        "settings": {
+          "border_top": true,
+          "kicker": "",
+          "title": "Still looking?",
+          "text": "Take a look through some of our collections to find what you’re looking for.",
+          "button_text": "",
+          "button_link": "",
+          "overlay_mobile": false,
+          "background_colour_mobile": "dark",
+          "text_colour_mobile": "light",
+          "column_count_mobile": "two"
+        }
+      },
+      "gift-card": {
+        "type": "gift-card",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Screenshot_2023-02-01_112350_1.png"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "f3a2facb-9346-43ac-befc-7a8bcdb50334": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: newin]",
+              "image": "shopify:\/\/shop_images\/Mega_Menu_SigStaples4.jpg",
+              "title": "New In",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/new-in",
+              "text_color": "#ffffff"
+            }
+          },
+          "a96cf384-1f94-478f-90f7-7f328019c8da": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: shopby]",
+              "image": "shopify:\/\/shop_images\/Outerwear-Mega-Menu-GoingOut.webp",
+              "title": "Going Out Dresses",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/birthday-dresses-outfits",
+              "text_color": "#ffffff"
+            }
+          },
+          "cd2f12dc-8078-469d-ab03-5c3b106c10a7": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: dresses]",
+              "image": "shopify:\/\/shop_images\/Outerwear-Mega-Menu-Dresses.webp",
+              "title": "Dresses",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/dresses",
+              "text_color": "#ffffff"
+            }
+          },
+          "68eb0f42-b0bf-4436-9fa8-4ee4c642de1f": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: tops]",
+              "image": "shopify:\/\/shop_images\/Outerwear-Mega-Menu-Tops.webp",
+              "title": "Tops",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/tops",
+              "text_color": "#ffffff"
+            }
+          },
+          "ac1896c7-c7b0-4f88-824c-416f11ca4b8a": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: clothing]",
+              "image": "shopify:\/\/shop_images\/MegaMenu-Tops_3f673782-f37c-42ee-83e9-f5e7e41a492e.webp",
+              "title": "Co-ords",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/view-all-clothing-co-ords",
+              "text_color": "#ffffff"
+            }
+          },
+          "f7e7168f-0cb5-469e-9502-79195559f051": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: swimwear]",
+              "image": "shopify:\/\/shop_images\/OP-MegaMenu.jpg",
+              "title": "Swimwear",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/swim",
+              "text_color": "#ffffff"
+            }
+          },
+          "6138bb6e-0f3e-42fa-ac80-71b1ef3e0cf3": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: bo+tee]",
+              "image": "shopify:\/\/shop_images\/MegaMenu.jpg",
+              "title": "Bo+Tee",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/bo-tee",
+              "text_color": "#ffffff"
+            }
+          },
+          "08d0f70e-9f76-4bdc-8259-8df60e7a8a9f": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: halloween]",
+              "image": "shopify:\/\/shop_images\/MegaMenu-Halloween.webp",
+              "title": "Halloween",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/halloween",
+              "text_color": "#ffffff"
+            }
+          },
+          "eb713655-f4e7-4d38-bc0a-b696ea9b0d10": {
+            "type": "menu-cta",
+            "settings": {
+              "promo_tag": "[promo: sale]",
+              "image": "shopify:\/\/shop_images\/MegaMenu-BF-OP_0d6f7aed-5030-4ae9-ac17-f6174338d620.webp",
+              "title": "Black Friday",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/black-friday",
+              "text_color": "#ffffff"
+            }
+          },
+          "8bce2e19-1865-4398-a0ca-d8b4be19af26": {
+            "type": "menu-cta",
+            "disabled": true,
+            "settings": {
+              "promo_tag": "[promo: birthday]",
+              "title": "Going Out Dresses",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/dresses-going-out-dresses",
+              "text_color": "#ffffff"
+            }
+          },
+          "04dea05c-ef4b-428f-b710-51f02663a350": {
+            "type": "link-icon",
+            "disabled": true,
+            "settings": {
+              "title": "BO+TEE",
+              "icon": "PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyMTIuNzEgMzYuNDcnPjxwYXRoIGQ9J000NyAzLjM5QTMuODEgMy44MSAwIDAgMCA0My42LjMzSDE1LjczYS42MS42MSAwIDAgMC0uNjYuNDNRNy42MyAxOC4zNi4xOCAzNS45NGwtLjIuNTNIMjYuNWE0OC42NCA0OC42NCAwIDAgMCA1LjQtLjA1YzEuODYtLjIxIDIuNTYtMS4zNiAzLjMtMy4xNmw1LjE3LTEyLjE5Yy4zNi0xLjUyLjI5LTIuNzYtMS4xMy0zLjY1IDAgMCAwLS4wNS0uMDUtLjEybC40MS0uMDhhNC4zNyA0LjM3IDAgMCAwIDMuMzMtMi41MWMxLjI2LTIuODMgMi41LTUuNjcgMy43NS04LjVBNC42MiA0LjYyIDAgMCAwIDQ3IDMuMzl6TTI5LjY2IDIzLjdhNC41NiA0LjU2IDAgMCAxLTIuMyAzLjE4IDYuNzMgNi43MyAwIDAgMS0yLjU2LjY5Yy0zLjU0LjA4LTcuMDkgMC0xMC42MyAwaC0uNDVhMy45IDMuOSAwIDAgMSAuMTQtLjU5Yy42OS0xLjY0IDEuMzktMy4yNyAyLjA3LTQuOWEuNDkuNDkgMCAwIDEgLjUzLS4zNGgxMS43NmMxLjI3LS4wNCAxLjc4LjY3IDEuNDQgMS45NnptMy43LTEyLjY2YTQuNzIgNC43MiAwIDAgMS00Ljg2IDMuN2MtMyAuMTEtNS45NCAwLTguOTIgMGgtLjQ3YTQuMzkgNC4zOSAwIDAgMSAuMTUtLjZjLjY3LTEuNjEgMS4zNi0zLjIxIDItNC44M2EuNTEuNTEgMCAwIDEgLjU1LS4zN2gxMGExLjQ0IDEuNDQgMCAwIDEgMS42NSAxLjE5IDEuNDEgMS40MSAwIDAgMS0uMTMuODh6TTQ1LjQyIDM2LjE5Yy0yLjQ0IDAtNC4xOC0uODctNS4xNy0yLjU4cy0xLTMuNzYuMS02LjE2bDguMDktMTkuMWExNS4wOCAxNS4wOCAwIDAgMSA0LjM5LTUuODhBMTAuMTUgMTAuMTUgMCAwIDEgNTkuMzYuMDNoMThjMi40MyAwIDQuMTYuODcgNS4xNCAyLjU5cy45NCAzLjc1LS4wNyA2LjE0bC04LjA5IDE5LjExYTE1LjYxIDE1LjYxIDAgMCAxLTQuNDIgNS44OCAxMCAxMCAwIDAgMS02LjUgMi40NHptMTguNDItOS41NWMuMTcgMCAuMjggMCAuMzgtLjI5bDcuMTItMTYuNzZINTguOTJhLjQ0LjQ0IDAgMCAwLS40NC4zMmwtNy4xMSAxNi43M3pNMTE2LjA4IDExLjk5bC0xMS42Ni4wOEwxMDkuMy4xN2gtOS42bC01IDExLjgyLTEwLjkyLS4wOHMtMy41MyA4LjQtMy40NyA4LjQ1SDkxLjJsLTQuNTcgMTAuOTJoOS42bDQuNTctMTAuOTIgMTEuNzguMDh6Jy8+PHBhdGggZD0nTTEwOC42NiAzNi4xNiAxMjAgOS41NWgtMTEuOEwxMTIuMjcgMGgzNC4zbC00LjA2IDkuNTVoLTExLjhsLTExLjMgMjYuNjF6TTEzNCAzNi4yMSAxNDkuMzcuMDVoMzAuNGwtNC4wNiA5LjU1SDE1NmwtMS44OCA0LjQzaDE3LjVsLTMuNDcgOC4xOWgtMTcuNWwtMS45MiA0LjQ4aDE5LjY5bC00LjA2IDkuNTZ6TTE2NyAzNi40NSAxODIuMzYuMjloMzAuNGwtNC4wNSA5LjU2SDE4OWwtMS44OCA0LjQzaDE3LjVsLTMuNDggOC4xOWgtMTcuNWwtMS44OSA0LjQ0aDE5LjdsLTQuMDcgOS41NHonLz48L3N2Zz4=",
+              "width": 62
+            }
+          },
+          "aee9174f-a4ad-47c2-a767-162c162dadc4": {
+            "type": "link-icon",
+            "disabled": true,
+            "settings": {
+              "title": "EKIN-SU",
+              "icon": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjQuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1NDMuNDEgMTg3LjE1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1NDMuNDEgMTg3LjE1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTE2My44NCw5NC4zNmMtMi4xNCwxLjM0LTQuNjUsMi44NC03LjUyLDQuNTFjLTIuODgsMS42Ny01LjYxLDMuMjgtOC4yMiw0LjgxYy0yLjYxLDEuNTQtNC44NSwyLjg0LTYuNzIsMy45MQoJCWMtMS44NywxLjA3LTIuODgsMS42LTMuMDEsMS42Yy0wLjEzLDAtMC43LDAuMzQtMS43LDFjLTEsMC42Ny0yLjE3LDEuNC0zLjUxLDIuMmMtMS40NywwLjk0LTMuNDQsMi4wNy01LjkxLDMuNDEKCQljLTIuNDcsMS4zNC00Ljg1LDIuNTQtNy4xMiwzLjYxYy0yLjI3LDEuMDctNC4yMSwyLjA0LTUuODEsMi45MWMtMS42LDAuODctMi41NCwxLjQ0LTIuODEsMS43Yy0wLjEzLDAuMTMtMS4xNywwLjctMy4xMSwxLjcKCQljLTEuOTQsMS00LjIxLDIuMTQtNi44MiwzLjQxYy0yLjYxLDEuMjctNS4yNSwyLjU0LTcuOTIsMy44MWMtMi42NywxLjI3LTQuNzUsMi4yNC02LjIxLDIuOTFjLTEuMDcsMC40LTIuNjgsMS4wNy00LjgxLDIuMDEKCQljLTIuMTQsMC45NC00LjIxLDEuOC02LjIxLDIuNjFjLTEwLjI5LDQuNDEtMTkuOTUsNy44Mi0yOC45NywxMC4yMmMtOS4wMiwyLjQxLTE2LjI3LDMuNDEtMjEuNzUsMy4wMQoJCWMtNC4yOC0wLjI3LTYuOTktMC44NC04LjEyLTEuN2MtMS4xNC0wLjg3LTEuNTctMi43MS0xLjMtNS41MWMwLTIuMTIsMC4xNC0zLjQ5LDAuNDItNC4xMmMwLjM1LTIuNywxLjItNS4zMiwyLjY3LTcuNjYKCQljMC40My0wLjY4LDAuOS0xLjMyLDEuNC0xLjkzYy0wLjEtMC4wMS0wLjExLTAuMTQsMC4wMi0wLjQzYzAuMi0wLjQ3LDAuNTctMS4wMywxLjEtMS43YzAuNTMtMC42NywxLjEtMS40MywxLjctMi4zCgkJYzAuNi0wLjg3LDEuMjMtMS41NywxLjktMi4xMWMwLjUzLTAuNTMsMS4xLTEuMTcsMS43LTEuOTFjMC42LTAuNzMsMS4xLTEuMywxLjUtMS43YzAuNTMtMC42NywxLjczLTEuOTQsMy42MS0zLjgxCgkJYzEuODctMS44NywzLjkxLTMuODQsNi4xMS01LjkxYzIuMjEtMi4wNyw0LjM0LTQuMDEsNi40Mi01LjgxYzIuMDctMS44LDMuNTEtMi45Nyw0LjMxLTMuNTFjNC40MS0zLjA3LDguMjktNS42OCwxMS42My03LjgyCgkJYzMuMzQtMi4xNCw1LjM0LTMuMzQsNi4wMS0zLjYxYzAuNC0wLjEzLDEuMDctMC41LDItMS4xYzAuOTMtMC42LDEuODctMS4yMywyLjgxLTEuOWMxLjA3LTAuOCwyLjcxLTEuODQsNC45MS0zLjExCgkJYzIuMjEtMS4yNyw0LjU0LTIuNDcsNy4wMi0zLjYxYzIuNDctMS4xNCw0LjgxLTIuMTQsNy4wMi0zLjAxYzIuMjEtMC44NywzLjg0LTEuNDMsNC45MS0xLjdjMC44LTAuMTMsMS43Ny0wLjI3LDIuOTEtMC40CgkJYzEuMTMtMC4xMywyLjEtMC4zMywyLjkxLTAuNmMxLjYtMC4yNywyLjg3LTAuOCwzLjgxLTEuNmMwLjkzLTAuOCwxLjEzLTEuNTQsMC42LTIuMjFjLTAuNjctMS4wNy0yLjIxLTEuODctNC42MS0yLjQxCgkJYy0yLjQxLTAuNTMtNi42OC0xLjEzLTEyLjgzLTEuOGMtMS43NC0wLjI2LTMuNzgtMC42LTYuMTEtMWMtMi4zNC0wLjQtNC4zMS0wLjg3LTUuOTEtMS40Yy0yLjQxLTAuOC0zLjk0LTEuNDMtNC42MS0xLjkKCQljLTAuNjctMC40Ny0xLTEuMTctMS0yLjExYzAtMC42NywwLjUtMS43NCwxLjUtMy4yMWMxLTEuNDcsMi4zMS0zLjA0LDMuOTEtNC43MWMxLjYtMS42NywzLjM3LTMuNDEsNS4zMS01LjIxCgkJYzEuOTQtMS44LDMuOTEtMy4zNyw1LjkxLTQuNzFjMS40Ny0xLjA3LDIuOTEtMi4xNCw0LjMxLTMuMjFjMS40LTEuMDcsMi4zNy0xLjg3LDIuOTEtMi40MWMxLjQ3LTEuMiwzLjUxLTIuNTEsNi4xMi0zLjkxCgkJYzIuNjEtMS40LDUuMzEtMi42Nyw4LjEyLTMuODFjMi44MS0xLjEzLDUuNDQtMi4wNyw3LjkyLTIuODFjMi40Ny0wLjczLDQuMzEtMS4wMyw1LjUxLTAuOWMxLjA3LDAuMjcsMS44LDAuNTQsMi4yLDAuOAoJCWMwLjM3LDAuMjUsMC41NywwLjgsMC41OSwxLjYzYzAuMDMsMC4xNiwwLjA2LDAuMzIsMC4wOCwwLjQ4YzAuMDQsMC4zOCwwLjAyLDAuNzYsMCwxLjE0Yy0wLjAyLDAuNDEtMC4xMiwwLjgtMC4yNCwxLjE5CgkJYy0wLjA0LDEuNTUtMC41NywzLjEtMS4xNCw0LjVjLTAuNjUsMS41OS0xLjQ5LDMuMDktMi4zMiw0LjZjLTEuNjEsMi45LTMuNjQsNS40Ny01Ljk1LDcuNzljLTAuNjksMS4wNC0xLjQsMi4xLTIuMTQsMy4yMwoJCWMtMS4yNywxLjk0LTIuMzcsMy44MS0zLjMxLDUuNjFjLTAuOTQsMS44LTEuNDcsMi45OC0xLjYsMy41MWMtMC4zLDEuMy0wLjAzLDIuNDUsMC43OSwzLjQ1YzEuMjcsMC41NiwyLjU1LDEuMTgsMy44OSwxLjQ5CgkJYzAuMjUsMCwwLjQ5LTAuMDEsMC43NC0wLjAyYzAuNDMtMC4wMywwLjg1LTAuMDksMS4yOC0wLjE1YzAuMDEsMCwwLjAyLTAuMDEsMC4wMy0wLjAxYzAuMTctMC4wNSwwLjM1LTAuMSwwLjUyLTAuMTYKCQljMC4wMSwwLDAuMDEtMC4wMSwwLjAyLTAuMDFjMC4yOC0wLjIyLDAuNTctMC40MywwLjg2LTAuNjhjMC44Ny0wLjczLDEuNjQtMS40NywyLjMtMi4yMWMwLjE4LTAuMiwwLjMzLTAuMzgsMC40OC0wLjU1CgkJYzAuMzQtMC42NywwLjY4LTEuMzMsMS4wNS0xLjk5Yy0wLjIzLTAuMDksMC4wMy0wLjUxLDAuODItMS4zMWMwLjQ0LTAuODcsMC44Ny0xLjc1LDEuMzMtMi42MmMwLjA3LTAuMiwwLjE0LTAuNCwwLjIzLTAuNjUKCQljMC40Ny0xLjIsMS4xNy0yLjY3LDIuMS00LjQxYzAuOTMtMS42LDItMy44NCwzLjIxLTYuNzJjMS4yLTIuODcsMi4yNy01LjQ0LDMuMjEtNy43MmwwLjYzLTEuNjFjMC4xLTAuMzYsMC4yLTAuNzIsMC4yOS0xLjA4CgkJYzAuNDMtMS42NiwxLjAzLTMuNDIsMC45NC01LjE1Yy0wLjA3LTEuNDUtMC4zNy0yLjg3LTAuNTMtNC4zYy0xLjA2LTEuOTQtMi40NC0zLjM0LTQuMTQtNC4xOWMtMS43NC0wLjg3LTQuMzQtMS4zLTcuODItMS4zCgkJYy0xLjc0LDAtMy45NCwwLjM3LTYuNjIsMS4xYy0yLjY4LDAuNzQtNS41NSwxLjc3LTguNjIsMy4xMWMtMy4wOCwxLjM0LTYuMjUsMi44OC05LjUyLDQuNjFjLTMuMjgsMS43NC02LjM4LDMuNjEtOS4zMiw1LjYxCgkJYy0yLDEuMzQtNC4yMSwyLjk0LTYuNjIsNC44MWMtMi40MSwxLjg3LTQuNzUsMy44NC03LjAyLDUuOTFjLTIuMjcsMi4wNy00LjMxLDQuMDQtNi4xMSw1LjkxYy0xLjgsMS44Ny0zLjE4LDMuNDgtNC4xMSw0LjgxCgkJYy0xLjIsMS43NC0xLjk3LDMuNjEtMi4zMSw1LjYxYy0wLjMzLDItMC4xNywzLjU0LDAuNSw0LjYxYzAuMjcsMC4yNywwLjYzLDAuNywxLjEsMS4zYzAuNDcsMC42LDAuOSwxLjI0LDEuMywxLjkxCgkJYzEuMiwxLjQ3LDMuMzQsMi42MSw2LjQyLDMuNDFjMS4zMywwLjQsMi40NywwLjc3LDMuNDEsMS4xYzAuMTcsMC4wNiwwLjMyLDAuMTIsMC40NywwLjE4YzAuNTIsMC4xNiwxLjAzLDAuMzQsMS41MywwLjUyCgkJYzAuMDQsMC4wMSwwLjA4LDAuMDMsMC4xMiwwLjA0YzEuMTUsMC4xOCwyLjI5LDAuMzIsMy40NSwwLjM1YzAuODgtMC4wOSwxLjcsMC4wNCwyLjQ1LDAuNDFjMC42NywwLjQsMC43LDAuOCwwLjEsMS4yCgkJYy0wLjYsMC40LTIuMDQsMS4xNC00LjMxLDIuMmMtMS42LDAuNjctMy4xOCwxLjI3LTQuNzEsMS44Yy0xLjU0LDAuNTQtMi42NCwwLjk0LTMuMzEsMS4yYy0wLjY3LDAuMTMtMS44NCwwLjYtMy41MSwxLjQKCQljLTEuNjcsMC44LTMuMzgsMS43NC01LjExLDIuODFjLTEuODcsMS4wNy0zLjY4LDIuMTEtNS40MSwzLjExYy0xLjc0LDEtMy4wMSwxLjctMy44MSwyLjFjLTAuNjcsMC4yNy0xLjg0LDAuOTQtMy41MSwyLjAxCgkJYy0xLjY3LDEuMDctMy4yNCwyLjE0LTQuNzEsMy4yMWMtMC40OCwwLjM1LTAuOTUsMC42Ny0xLjQxLDAuOThjLTMuNjIsMi45NS03LjM1LDUuNzgtMTEsOC43YzAuMDUsMC4xNS0wLjE0LDAuNDMtMC42MiwwLjg0CgkJYy0wLjUxLDAuNDUtMS4xNiwwLjg2LTEuOTEsMS4yNWMtMC43NCwwLjYxLTEuNDgsMS4yLTIuMjEsMS44M2MtNC4wNSwzLjUxLTcuNzksNy40Ni0xMS4yNCwxMS42M2MtMC4xNywwLjU4LTAuNDQsMS4yMS0wLjg4LDEuOTMKCQljLTAuNTQsMC44Ny0xLjA3LDEuNjQtMS42LDIuM2MtMS42LDIuMDEtMy4wMSw0LjM4LTQuMjEsNy4xMmMtMS4yLDIuNzQtMi4xLDUuNTEtMi43MSw4LjMyYy0wLjYsMi44MS0wLjg3LDUuNDgtMC44LDguMDIKCQljMC4wNSwxLjg1LDAuMzMsMy40OSwwLjg1LDQuOTFjMi40NCwzLjExLDUuMzgsNS44NCw4LjgyLDcuODFjMS4wOCwwLjYyLDIuMjEsMS4xNSwzLjM0LDEuNjRjMC43LDAuMTksMS42MywwLjMyLDIuODMsMC4zNwoJCWMxLjgsMC4wNywzLjkxLDAsNi4zMS0wLjJjMi40MS0wLjIsNC45OC0wLjUzLDcuNzItMWMyLjc0LTAuNDcsNS40NC0xLjA0LDguMTItMS43YzAuODktMC4yMiwxLjczLTAuNDIsMi41NC0wLjU5CgkJYzIuNTItMC42OSw0Ljk1LTEuNjMsNy40MS0yLjUyYzIuNTMtMC45MSw1LjExLTEuNzEsNy42Mi0yLjY2YzIuNDMtMC45Miw0Ljk0LTEuNjQsNy40Mi0yLjQ1YzAuMTYtMC4wNiwwLjMyLTAuMTQsMC40Ny0wLjIKCQljNS44OC0yLjI3LDEyLjc2LTUuMzEsMjAuNjUtOS4xMmM3Ljg4LTMuODEsMTUuODQtNy44NSwyMy44Ni0xMi4xM2MyLjU0LTEuMzMsNS4wOC0yLjY3LDcuNjItNC4wMWMyLjU0LTEuMzMsNC45NC0yLjYxLDcuMjItMy44MQoJCWMyLjI3LTEuMiw0LjMxLTIuMjcsNi4xMS0zLjIxYzEuOC0wLjkzLDMuMTctMS42Nyw0LjExLTIuMmMxLjg3LTEuMDcsMy43MS0yLjA3LDUuNTEtMy4wMWMxLjgtMC45MywzLjA0LTEuNiwzLjcxLTIuMDEKCQljNC4xNC0yLjY3LDguMTgtNS4xNCwxMi4xMy03LjQyYzEuOTQtMS4xMiwzLjYyLTIuMDUsNS4wNS0yLjgxYzAuNDktMS40MSwxLjI3LTIuNzYsMS45Mi00LjA2YzAuNTEtMS4wMywxLjAzLTIuMDUsMS41MS0zLjEKCQljMC40Ni0xLjI4LDAuOTMtMi41NiwxLjM5LTMuODVDMTY3LjEzLDkyLjUxLDE2NS42Miw5My4yOSwxNjMuODQsOTQuMzZ6Ii8+Cgk8cGF0aCBkPSJNMjA3Ljc1LDYuMTVjLTEuNzQtMC4xMy0zLjAxLDAuNDctMy44MSwxLjhjLTEuMzQsMi4yNy0zLjI4LDUuNjEtNS44MSwxMC4wMmMtMi41NCw0LjQxLTUuMTUsOS4wNi03LjgyLDEzLjkzCgkJYy0yLjY4LDQuODgtNS4yMSw5LjQ5LTcuNjIsMTMuODNjLTIuNDEsNC4zNC00LjA4LDcuNTItNS4wMSw5LjUyYy0xLjM0LDIuNjgtMi43OCw1LjUxLTQuMzEsOC41MmMtMS41NCwzLjAxLTIuODQsNS4zOC0zLjkxLDcuMTIKCQljLTEuMDcsMS43NC0xLjk3LDMuMzEtMi43MSw0LjcxYy0wLjc0LDEuNC0xLjEsMi4zMS0xLjEsMi43MWMtMC4xMywwLjI3LTAuNCwwLjk3LTAuOCwyLjFjLTAuNCwxLjE0LTAuOTQsMi4zLTEuNiwzLjUxCgkJYy0wLjY3LDEuMzQtMS41NywzLjI4LTIuNzEsNS44MWMtMS4xNCwyLjU0LTIuMjQsNS4wMS0zLjMxLDcuNDJjLTEuMiwyLjQxLTIuMzQsNC43NS0zLjQxLDcuMDJjLTEuMDcsMi4yNy0xLjc0LDMuNzQtMiw0LjQxCgkJYy0wLjY3LDEuNDctMS43LDMuNzgtMy4xMSw2LjkyYy0xLjQsMy4xNC0yLjc4LDYuMzgtNC4xMSw5LjcyYy0xLjMzLDMuMzQtMi41MSw2LjI4LTMuNTEsOC44MmMtMSwyLjU0LTEuNSwzLjk1LTEuNSw0LjIxCgkJYzAsMC40MS0wLjIsMC42NS0wLjU4LDAuNzVjLTAuMDEsMC4wMy0wLjAyLDAuMDUtMC4wMywwLjA4Yy0wLjI5LDEuMDUtMC42NywyLjA2LTEuMTMsMy4wNGMtMC4xNSwwLjQtMC4zNCwwLjg0LTAuNTcsMS4zNAoJCWMtMC40MSwwLjg4LTAuODQsMS42Ni0xLjI5LDIuMzZjLTAuNDEsMC44LTAuODEsMS42MS0xLjE3LDIuNDRjLTEuMDgsMi41Mi0yLjI0LDUuMTMtMy4wNiw3LjgxYy0wLjE1LDAuNjYtMC4zMiwxLjI3LTAuNDksMS44MwoJCWMtMC4wMSwwLjAyLTAuMDEsMC4wNC0wLjAyLDAuMDZjLTAuMTUsMC42NS0wLjI5LDEuMy0wLjM4LDEuOTZjLTAuNDQsMy4wNi0wLjIyLDYuMDcsMS4xLDguNzVjMC4xNCwwLjIxLDAuMjEsMC4zNSwwLjIxLDAuNDEKCQljMC4zLDAuNTYsMC42NCwxLjExLDEuMDUsMS42M2MwLjI1LDAuMzIsMC41MSwwLjYxLDAuNzksMC44N2MwLjA5LDAuMDgsMC4xNywwLjE1LDAuMjYsMC4yNGMwLjU0LDAuNDcsMS4xNiwwLjgxLDEuODMsMS4wNAoJCWMwLjA4LTAuMDEsMC4xNS0wLjAzLDAuMjItMC4wM2MwLjEzLDAsMC4yNiwwLjAyLDAuNCwwLjAzYzAuMzktMC4xNSwwLjc4LTAuMywxLjE4LTAuNDRjMC43LTAuNywxLjUyLTEuNTIsMi41LTIuNQoJCWMyLjU0LTIuNTQsNC4wOC01LjIxLDQuNjEtOC4wMmMwLjI3LTEuMDcsMC45LTIuNzEsMS45LTQuOTFjMS0yLjIsMi4yMS00LjY4LDMuNjEtNy40MmMxLjQtMi43NCwyLjg3LTUuNTEsNC40MS04LjMyCgkJYzEuNTMtMi44MSwzLjAxLTUuMzgsNC40MS03LjcyYzEuNC0yLjM0LDIuNjEtNC4yOCwzLjYxLTUuODFjMS0xLjUzLDEuNy0yLjMsMi4xLTIuM2MwLjEzLDAsMC4zMywwLjIzLDAuNiwwLjcKCQljMC4yNywwLjQ3LDAuNTMsMS4wNCwwLjgsMS43YzAuNCwxLjA3LDEuMDMsMi4yNywxLjksMy42MWMwLjg3LDEuMzQsMS44NCwyLjY4LDIuOTEsNC4wMWMxLjA3LDEuMzQsMi4xNCwyLjU0LDMuMjEsMy42MQoJCWMxLjA3LDEuMDcsMiwxLjg3LDIuODEsMi40MWMwLjgsMC41NCwxLjc0LDEuMDcsMi44MSwxLjZjMS4wNywwLjU0LDIuMSwwLjk0LDMuMTEsMS4yYzAuMzgsMC4xLDAuNzMsMC4xOCwxLjA3LDAuMjUKCQljMC40NC0wLjAxLDAuODctMC4wMywxLjMxLTAuMDdjMC4yOS0wLjAzLDAuNTktMC4wOSwwLjg4LTAuMTJjMC4xLTAuMDIsMC4xOC0wLjAzLDAuMjMtMC4wNGMwLjExLTAuMDMsMC4yMi0wLjA2LDAuMzMtMC4wOQoJCWMwLjMyLTAuMDksMC42My0wLjEzLDAuOTMtMC4xNGMwLjEyLTAuMDMsMC4yMi0wLjA1LDAuMzUtMC4wOGMwLjkzLTAuMiwyLjE0LTAuMzcsMy42MS0wLjVjMy4wNy0wLjI3LDUuNDEtMC45Nyw3LjAyLTIuMTEKCQljMS42LTEuMTMsMS45NC0yLjQ0LDEtMy45MWMtMC41NC0wLjkzLTEuMzQtMS40Ny0yLjQxLTEuNmMtMS4wNy0wLjEzLTMuMzQsMC4xMy02LjgyLDAuOGMtMS4yLDAuMTMtMi4xNywwLjIzLTIuOTEsMC4zCgkJYy0wLjc0LDAuMDctMS40LDAtMi0wLjJjLTAuNi0wLjItMS4yNC0wLjQ3LTEuOS0wLjhjLTAuNjctMC4zMy0xLjU0LTAuODMtMi42MS0xLjVjLTIuMjctMS40Ny00LjI4LTMuNDQtNi4wMS01LjkxCgkJYy0xLjc0LTIuNDctMy4wMS01LjA0LTMuODEtNy43MmMtMC4yNy0wLjkzLTAuMzctMS44NC0wLjMtMi43MWMwLjA3LTAuODcsMC41LTEuOCwxLjMtMi44MWMwLjgtMSwyLjA0LTIuMTcsMy43MS0zLjUxCgkJYzEuNjctMS4zMywzLjkxLTMuMDcsNi43Mi01LjIxYzUuNDgtNC4wMSw5LjY1LTcuNjIsMTIuNTMtMTAuODNjMi44Ny0zLjIxLDQuMzEtNS44MSw0LjMxLTcuODJjMC0xLjYtMC41Ny0yLjc3LTEuNy0zLjUxCgkJYy0xLjE0LTAuNzMtMi41MS0wLjc3LTQuMTEtMC4xYy0wLjU0LDAuMjctMS41NCwxLjA3LTMuMDEsMi40MWMtMS40NywxLjM0LTMuMTQsMy4wMS01LjAxLDUuMDFjLTEuODcsMi0zLjkxLDQuMzEtNi4xMSw2LjkyCgkJYy0yLjIxLDIuNjEtNC4zOCw1LjE4LTYuNTIsNy43MmMtMS40NywyLjAxLTIuODQsMy43NC00LjExLDUuMjFjLTEuMjcsMS40Ny0yLjA0LDIuMjctMi4zMSwyLjQxYy0wLjY3LDAuNTMtMS40LDEuNTQtMi4yMSwzLjAxCgkJYy0wLjI3LDAuNjctMS4yNCwyLjMtMi45MSw0LjkxYy0xLjY3LDIuNjEtMy40NCw1LjMxLTUuMzEsOC4xMmMtMS44NywyLjgxLTMuNTgsNS4yOC01LjExLDcuNDJjLTEuNTQsMi4xNC0yLjM3LDMuMTQtMi41MSwzLjAxCgkJYzAuNC0xLjQ3LDAuNzMtMi43MSwxLTMuNzFjMC4yNy0xLDAuNi0yLjA0LDEtMy4xMWMwLjA2LTAuMTcsMC4xMy0wLjMyLDAuMTktMC40OWMwLjI5LTEuMDMsMC44Mi0xLjk5LDEuMDktMy4wNAoJCWMwLjM2LTEuMzYsMC41Ni0yLjc2LDEtNC4xYzAuODUtMi42MywyLjM3LTQuODcsMy42MS03LjMxYzAuNzMtMS45MywxLjQ2LTMuODUsMi41My01LjZjMC4xNS0wLjM4LDAuMzItMC43NywwLjUtMS4yMgoJCWMwLjg3LTIuMDcsMS44LTQuMjgsMi44MS02LjYyYzAuNDItMC45OCwwLjgzLTEuOTEsMS4yMi0yLjgxYzAuMTctMC40MiwwLjM2LTAuODQsMC41Ni0xLjI1YzAuMzUtMC43OCwwLjY5LTEuNTQsMS4wMi0yLjI1CgkJYzAuODYtMS44NiwxLjM2LTIuNzksMS41LTIuOGMwLjA1LTAuMTIsMC4xMS0wLjIzLDAuMTYtMC4zNWMwLjE1LTAuNDMsMC4zMS0wLjg2LDAuNDctMS4yOGMwLjEtMC44LDAuNzMtMi41NiwxLjg4LTUuMjkKCQljMS4yNy0zLjAxLDIuODQtNi41NSw0LjcxLTEwLjYzYzEuODctNC4wOCwzLjkxLTguNDIsNi4xMS0xMy4wM2MyLjIxLTQuNjEsNC4zMS04Ljc5LDYuMzEtMTIuNTNjMi41NC00Ljk0LDQuNjQtOS4wNSw2LjMxLTEyLjMzCgkJYzEuNjctMy4yNywzLjIxLTYuMTIsNC42MS04LjUyYzEuNC0yLjQxLDIuNzEtNC41NCwzLjkxLTYuNDJjMS4yLTEuODcsMi41NC0zLjk0LDQuMDEtNi4yMWMzLjA3LTQuNjgsNC43OC04LjAyLDUuMTEtMTAuMDIKCQlDMjEwLjc5LDcuNTUsMjA5Ljg4LDYuNDIsMjA3Ljc1LDYuMTV6Ii8+Cgk8cGF0aCBkPSJNMjM5LjAyLDEyNy45NGMtMC4yOSwwLjExLTAuNjEsMC4yNi0wLjkyLDAuNDFjLTEuNzEsMS4zNS0zLjU4LDIuNTUtNS42MiwzLjUzYy02LjE1LDQuNTEtMTEuNTgsNi41OC0xNi4zMSw2LjE4CgkJYy0xLjA3LTAuMTMtMS43Ny0wLjM3LTIuMS0wLjdjLTAuMzMtMC4zMy0wLjQ0LTEuMS0wLjMtMi4zYzAuMTMtMC45MywwLjQtMi4yMSwwLjgtMy44MWMwLjQtMS42LDAuODctMy4xNywxLjQtNC43MQoJCWMwLjA1LTAuMTQsMC4xLTAuMjcsMC4xNS0wLjQxYzAuODktNC40NiwzLjE3LTguNTYsNS42OC0xMi40NGMwLjgtMS44LDItMy44MiwzLjYtNi4wOWMxLjQ3LTEuODcsMi4xNy0zLjE3LDIuMS0zLjkxCgkJYy0wLjA3LTAuNzMtMC44NC0xLjIzLTIuMzEtMS41Yy0wLjY3LTAuMjYtMS4zNy0wLjQ3LTIuMS0wLjZjLTAuNzQtMC4xMy0xLjMtMC4yNy0xLjctMC40Yy0wLjI3LTAuMTMtMS4wNCwwLjMtMi4zMSwxLjMKCQljLTEuMjcsMS0yLjcxLDIuMzctNC4zMSw0LjExYy0xLjA3LDEuMi0xLjk3LDIuMjQtMi43MSwzLjExYy0wLjc0LDAuODctMS40LDEuNzctMiwyLjcxYy0wLjYsMC45NC0xLjEsMS45Ny0xLjUsMy4xMQoJCWMtMC40LDEuMTQtMC44NywyLjQ0LTEuNCwzLjkxYy0xLjQ3LDQuNTUtMi4yLDguMjktMi4yLDExLjIzYzAsMi45NCwwLjczLDUuNzUsMi4yLDguNDJjMS4zNCwyLjgxLDMuMDcsNC41NSw1LjIxLDUuMjEKCQljMy4wNywxLjA3LDYuNDgsMC45LDEwLjIyLTAuNWMzLjc0LTEuNCw4LjIyLTQuMTgsMTMuNDMtOC4zMmMyLjQxLTIsNC4wOC0zLjY3LDUuMDEtNS4wMWMwLjkzLTEuMzMsMS4yMy0yLjI0LDAuOS0yLjcxCgkJQzI0MS41OSwxMjcuMjcsMjQwLjYyLDEyNy4zMywyMzkuMDIsMTI3Ljk0eiIvPgoJPHBhdGggZD0iTTIzOS4zMSw4Mi41NmMxLjAzLTEuMzQsMi4xOS0yLjU2LDMuNDMtMy43MmMwLjMzLTAuNDMsMC42OC0wLjg2LDEuMDktMS4zM2MxLjItMS42LDItMi44NCwyLjQxLTMuNzEKCQljMC40LTAuODcsMC40Ny0xLjcsMC4yLTIuNTFjLTAuMjctMS42LTAuNzQtMi40MS0xLjQtMi40MWMtMC41NCwwLTEuMjctMC40Ny0yLjIxLTEuNGMtMC45NC0wLjkzLTEuOTctMS4xNy0zLjExLTAuNwoJCWMtMS4xNCwwLjQ3LTMuMjQsMi4wNC02LjMxLDQuNzFjLTEuNzQsMS40Ny0yLjg0LDIuNjEtMy4zMSwzLjQxYy0wLjQ3LDAuOC0wLjcsMS45NC0wLjcsMy40MWMwLDAuOTQsMC4xMywxLjk0LDAuNCwzLjAxCgkJYzAuMjcsMS4wNywwLjYsMS45NCwxLDIuNjFjMC45MywxLjQ3LDIuMSwyLjE3LDMuNTEsMi4xMWMxLjQtMC4wNywyLjY0LTAuODMsMy43MS0yLjNDMjM4LjQ5LDgzLjIxLDIzOC45Miw4Mi44MiwyMzkuMzEsODIuNTZ6Ii8+Cgk8cGF0aCBkPSJNMzAwLjc2LDEyMy42M2MtMS4zNCwwLTIuMDcsMC4yLTIuMjEsMC42Yy0wLjEzLDAuMjctMC44LDAuNjctMiwxLjJjLTEuMiwwLjUzLTIuNTQsMS4wNy00LjAxLDEuNgoJCWMtMS40NywwLjUzLTIuOTgsMS00LjUxLDEuNGMtMS41NCwwLjQtMi42NCwwLjYtMy4zMSwwLjZjLTQuMDEsMC02LjAxLTIuODEtNi4wMS04LjQyYzAtNC41NC0xLTYuODgtMy4wMS03LjAyCgkJYy0yLTAuMTMtNS40OCwxLjgtMTAuNDIsNS44MWMtMy4yMSwyLjY4LTUuNDgsNC40MS02LjgyLDUuMjFjLTAuMDYsMC4wNC0wLjExLDAuMDYtMC4xNywwLjA5Yy0wLjAxLDAuMDItMC4wMiwwLjA0LTAuMDMsMC4wNgoJCWMtMC4xNywwLjM0LTAuNTYsMC40Ny0wLjksMC4zMmMtMC4zMy0wLjE0LTAuNDgtMC41OC0wLjMyLTAuOWMwLjY3LTEuMzQsMS41My0yLjYsMi4wMS00LjAzYzAuMDItMC4wNiwwLjA2LTAuMTEsMC4xLTAuMTUKCQljMC4yLTAuNTcsMC42Ny0xLjUsMS40MS0yLjgxYzEuMTMtMi4wMSwyLjY0LTQuMjEsNC41MS02LjYyYzIuNDEtMy40Nyw0LjA4LTYuMDEsNS4wMS03LjYyYzAuOTMtMS42LDEuMjctMi44NywxLTMuODEKCQljLTAuNC00LjI4LTMuNjEtMy40Ny05LjYyLDIuNDFjLTEuNDcsMS40Ny0yLjg4LDIuNzgtNC4yMSwzLjkxYy0wLjI5LDAuMjUtMC41NSwwLjQ3LTAuNzksMC42OGMtMC4wNiwwLjA3LTAuMTIsMC4xMy0wLjE3LDAuMTkKCQljLTEuNDEsMS43LTIuNzEsMy40OC00LDUuMjdjLTEuNDksMi4wNC0zLDQuMDUtNC42Miw1Ljk1Yy0yLjgxLDQuMTQtNS45NCw3Ljk3LTkuODIsMTAuOThjLTAuMDgsMC4yNS0wLjE5LDAuNTQtMC4zNCwwLjg5CgkJYy0wLjMzLDAuOC0wLjcsMS42LTEuMSwyLjQxYy0wLjQsMC44LTAuNzcsMS44Ny0xLjEsMy4yMWMtMC4zMywxLjM0LTAuNjMsMi41NC0wLjksMy42MWMtMC4yNywxLjYtMC4zLDIuODEtMC4xLDMuNjEKCQljMC4yLDAuOCwwLjcsMS42LDEuNSwyLjQxYzAuMjEsMC4yNSwwLjM3LDAuNDcsMC41NSwwLjY5YzAuMSwwLjA3LDAuMiwwLjE1LDAuMywwLjIyYzAuMTUsMC4xMSwxLjAzLDAuNzcsMC4yOCwwLjIKCQljMC40NiwwLjM1LDEuMDEsMC42MiwxLjUyLDAuODljMC41NywwLjA4LDEuMTMsMC4xNywxLjY5LDAuM2MwLjE4LDAuMDQsMC4zNywwLjA3LDAuNTUsMC4xMWMwLjA2LTAuMDEsMC4xMi0wLjAzLDAuMTgtMC4wMwoJCWMwLjY1LDAsMS4zMS0wLjAyLDEuOTYtMC4wN2MyLjIyLTEuMiw0LjY4LTMuNDEsNy4zOS02LjcyYzEuNDctMS42LDMuNDctMy42Nyw2LjAxLTYuMjJjMi41NC0yLjU0LDQuOTQtNC44MSw3LjIyLTYuODJsOC40Mi03LjQyCgkJbDAuNiw0LjgxYzAuNTMsMy4wOCwxLjI3LDUuMzUsMi4yMSw2LjgyYzAuOTMsMS40NywyLjQxLDIuNTQsNC40MSwzLjIxYzIuMTQsMC42Nyw0LjM4LDAuNzcsNi43MiwwLjMKCQljMi4zNC0wLjQ3LDUuMjQtMS41Nyw4LjcyLTMuMzFjMS42LTAuOCwyLjg0LTEuNDMsMy43MS0xLjljMC44Ny0wLjQ3LDEuNTQtMC45LDItMS4zYzAuNDctMC40LDAuNzctMC44LDAuOS0xLjIKCQljMC4xMy0wLjQsMC4zMy0wLjkzLDAuNi0xLjZDMzAyLjMsMTI0LjMsMzAxLjk3LDEyMy42MywzMDAuNzYsMTIzLjYzeiIvPgoJPHBhdGggZD0iTTM0Ny40NywxMTMuOGMtMC40LTAuMTMtMS42LTAuMTctMy42MS0wLjFjLTIsMC4wNy00LjE0LDAuMjQtNi40MiwwLjVjLTIuNjgsMC4yNy01Ljc1LDAuNS05LjIyLDAuNwoJCWMtMy40OCwwLjItNi44MiwwLjM0LTEwLjAyLDAuNGMtMy4yMSwwLjA3LTYuMDUsMC4xLTguNTIsMC4xYy0yLjQ3LDAtMy45OC0wLjEzLTQuNTEtMC40Yy0xLjItMC40LTItMS4xMy0yLjQxLTIuMgoJCWMtMC40LTEuMDctMC4yNy0yLjE0LDAuNC0zLjIxYzAuMTMtMC40LDAuNTMtMC43MywxLjItMWMwLjY3LTAuMjcsMS43My0wLjUzLDMuMjEtMC44YzEuNDctMC4yNiwzLjUxLTAuNSw2LjExLTAuNwoJCWMyLjYxLTAuMiw1LjkxLTAuNDMsOS45Mi0wLjdjMS43NC0wLjEzLDQuMDQtMC4xNyw2LjkyLTAuMWMyLjg3LDAuMDcsNS43OCwwLjI0LDguNzIsMC41YzIuOTQsMC4yNyw1LjU4LDAuNTcsNy45MiwwLjkKCQljMi4zNCwwLjM0LDMuODQsMC43LDQuNTEsMS4xYzEuMDcsMC44LDEuNiwxLjU0LDEuNiwyLjJjMCwwLjk0LTAuNjcsMS43LTIsMi4zQzM0OS45NCwxMTMuOSwzNDguNjcsMTE0LjA3LDM0Ny40NywxMTMuOHoiLz4KCTxwYXRoIGQ9Ik00NjcuNCw5NC41NmMtMy4zNC0zLjQ3LTguMDItNi4yOC0xNC4wMy04LjQyYy0wLjk0LTAuNC0yLjIxLTAuODMtMy44MS0xLjNjLTEuNi0wLjQ3LTMuMzgtMC45My01LjMxLTEuNAoJCWMtMS45NC0wLjQ3LTQuMDEtMC45Ny02LjIxLTEuNWMtMi4yMS0wLjUzLTQuMzEtMS02LjMxLTEuNGMtNi45NS0xLjYtMTIuODMtMy4wMS0xNy42NC00LjIxYy00LjgxLTEuMi04Ljc2LTIuMzctMTEuODMtMy41MQoJCWMtMy4wOC0xLjEzLTUuMzUtMi4xNy02LjgyLTMuMTFjLTEuNDctMC45My0yLjM0LTEuOTQtMi42MS0zLjAxYy0wLjEzLTAuNTMtMC4xNy0wLjkzLTAuMS0xLjJjMC4wNC0wLjE1LDAuMTEtMC4yLDAuMi0wLjE5CgkJYzAuMDktMC40NywwLjI5LTAuOTUsMC42NC0xLjQxYzUuMDctNi44MSwxMS40Mi0xMi42MiwxOC4yNC0xNy42NGMzLjU1LTIuNjEsNy4yNC01LjE0LDExLjEtNy4zMWMwLjE4LTAuMTQsMC40Mi0wLjI3LDAuNzEtMC4zOAoJCWMyLjMtMS4yNiw0LjY3LTIuMzgsNy4xMS0zLjMxYzAuOTgtMC41MywyLjA1LTEuMDQsMy4yOS0xLjUzYzEuNTQtMC42LDMuMDctMS4xNCw0LjYxLTEuNmMxLjUzLTAuNDcsMi45MS0wLjgzLDQuMTEtMS4xbDMuODEtMC42CgkJbC0wLjYsNC4wMWMtMC4yNywxLjQ3LTAuNzQsMy4yNC0xLjQsNS4zMWMtMC42NywyLjA3LTEuNSw0LjI4LTIuNTEsNi42MmMtMSwyLjM0LTIuMTQsNC43MS0zLjQxLDcuMTIKCQljLTEuMjcsMi40MS0yLjU3LDQuNjgtMy45MSw2LjgyYy0yLjU0LDMuNzQtNC4wMSw2LjIyLTQuNDEsNy40MmMtMC40LDEuMi0wLjA3LDIuMDcsMSwyLjYxYzAuOTMsMC40LDIuMDQtMC4xLDMuMzEtMS41CgkJYzEuMjctMS40LDMuNDQtNC43OCw2LjUyLTEwLjEyYzYuNDItMTEuNDksMTAuMDktMjAuMzEsMTEuMDMtMjYuNDZjMC4yNy0xLjg3LDAuMy0zLjIxLDAuMS00LjAxYy0wLjItMC44LTAuOTctMS44LTIuMzEtMy4wMQoJCWMtMy45MS0zLjgtMTAuODYtMy45OC0yMC44Ni0wLjU1Yy0zLjM4LDEuNi02LjkxLDIuOTctMTAuMjcsNC40MmMtMi45MywxLjI3LTUuOSwyLjQ5LTguNzMsMy45OGMtMi40MSwxLjI3LTQuNjUsMi44OS03LDQuMjcKCQljLTIuNjcsMS41Ny01LjM0LDMuMTMtOC4wMSw0LjdjLTEuMzYsMS4xMi0yLjY3LDIuMjgtMy45MSwzLjVjLTMuMjMsMy4xNi02LjE0LDYuNy04LjA1LDEwLjgyYy0xLjA3LDIuMzEtMS43LDQuNzktMS45OCw3LjMyCgkJYzAuMDIsMC4zMiwwLjA0LDAuNjYsMC4wNCwxLjAzYy0wLjEzLDEuMiwwLjAzLDIuNTcsMC41LDQuMTFjMC40NywxLjU0LDEuMDcsMi45NCwxLjgsNC4yMWMwLjMyLDAuNTUsMC42NSwxLjA1LDAuOTksMS41NAoJCWMxLjQyLDEuMzIsMi42NCwyLjEzLDQuNTgsMi44N2MxLjE2LDAuNDQsMi4zOCwwLjc5LDMuNjEsMS4xM2MxLjMzLDAuMjUsMi43LDAuNTYsNC4xNSwwLjk4YzEuODcsMC41Myw0LjQxLDEuMTQsNy42MiwxLjgKCQljMy4yMSwwLjY3LDYuMjIsMS4yLDkuMDIsMS42YzEwLjE2LDEuNzQsMTguMzQsMy4yMSwyNC41Niw0LjQxYzYuMjEsMS4yLDExLjEzLDIuNDEsMTQuNzMsMy42MWMzLjYxLDEuMiw2LjI4LDIuNTEsOC4wMiwzLjkxCgkJYzEuNzMsMS40LDMuMjcsMy4xMSw0LjYxLDUuMTFjMC44LDEuMzQsMS4yLDIuMzQsMS4yLDMuMDFjMCwwLjY3LTAuMzMsMS45NC0xLDMuODFjLTAuOTQsMi41NC0yLjEsNC43MS0zLjUxLDYuNTEKCQljLTEuMjksMS42Ni0zLjUzLDMuNzYtNi43LDYuMjdjLTAuMjIsMC4zNC0wLjUsMC42Ny0wLjg4LDAuOTZjLTIuNzMsMi4wMy01LjUzLDMuOTUtOC4zNyw1Ljg0Yy0wLjMsMC4yNC0wLjYyLDAuNDktMC45OSwwLjc3CgkJYy0xLjg3LDEuNC0zLjk4LDIuODQtNi4zMiw0LjMxYy0yLjM0LDEuNDctNC41MSwyLjc4LTYuNTIsMy45MWMtMS40NywwLjgzLTIuNDYsMS4yOC0zLDEuMzZjLTEuODgsMS4wOS0zLjc2LDIuMTgtNS42NSwzLjI2CgkJYy0wLjA1LDAuMTktMC4xNywwLjI1LTAuMzQsMC4yYy0zLjU2LDIuMDItNy4xMyw0LjAzLTEwLjY5LDYuMDVjLTYuNzMsMy44Mi0xMy41LDcuMzMtMjAuNjcsMTAuMjdjLTcuMDIsMi44Ny0xNC4yLDUuMy0yMS4zLDcuOTYKCQljLTQuOCwxLjgtOS40NCw0Ljc4LTE0LjYzLDUuMDJjLTAuNTksMC4xMy0xLjE4LDAuMjUtMS43NywwLjM1Yy0xLjI5LDAuMzItMi41NCwwLjUzLTMuNzQsMC42MmMtMi44MSwwLjItNC42OC0wLjE3LTUuNjEtMS4xCgkJYy0wLjY3LTAuOC0wLjY0LTIuNjQsMC4xLTUuNTFjMC43My0yLjg4LDIuMTEtNi40NSw0LjExLTEwLjcyYzEuNzQtMy43NCwzLjQ3LTcuMjIsNS4yMS0xMC40M2MxLjc0LTMuMjEsMy42Ny02LjQxLDUuODEtOS42MgoJCWMyLjE0LTMuMjEsNC42MS02LjY1LDcuNDItMTAuMzJjMi44MS0zLjY4LDYuMjItNy45OSwxMC4yMi0xMi45M2MyLjgxLTMuNDcsNS4wMS02LjI1LDYuNjItOC4zMmMxLjYtMi4wNywyLjc3LTMuNzEsMy41MS00LjkxCgkJYzAuNzMtMS4yLDEuMS0yLjA3LDEuMS0yLjYxYzAtMC41My0wLjItMC45My0wLjYtMS4yYy0wLjU0LTAuNC0xLjItMC40My0yLTAuMWMtMC44LDAuMzQtMS45LDEuMTctMy4zMSwyLjUxCgkJYy0xLjQsMS4zNC0zLjIxLDMuMzEtNS40MSw1LjkxYy0yLjIxLDIuNjEtNC45OCw1LjkxLTguMzIsOS45MmMtMy40OCw0LjI4LTYuNDIsNy45Mi04LjgyLDEwLjkzYy0yLjQxLDMuMDEtNC40NSw1LjU4LTYuMTIsNy43MgoJCWMtMS42NywyLjE0LTMuMDgsNC4wMS00LjIxLDUuNjFjLTEuMTQsMS42LTIuMTEsMy4xNC0yLjkxLDQuNjFjLTAuMiwwLjMyLTAuMzgsMC42MS0wLjU3LDAuOTFjLTAuODEsMS45OC0xLjg3LDMuODMtMy4wMiw1LjY0CgkJYy0wLjAxLDAuMDItMC4wMSwwLjA0LTAuMDIsMC4wN2MwLDAuMjYtMC4yLDAuODMtMC42LDEuN2MtMC40LDAuODctMC44NywxLjctMS40LDIuNTFjLTEuMDcsMS43My0yLjA0LDMuODQtMi45MSw2LjMxCgkJYy0wLjg3LDIuNDctMS42LDQuODgtMi4yMSw3LjIyYy0wLjUsMS45NC0wLjgsMy42OC0wLjkzLDUuMjVjMC4wNSwxLjUyLDAuMjksMy4wMiwwLjc4LDQuNDVjMC4yNiwwLjMyLDAuMzksMC42MywwLjM3LDAuOTUKCQljMC4xOCwwLjQxLDAuMzYsMC44MywwLjU5LDEuMjJjMi4xLDMuNjEsNS44Niw1Ljc0LDkuOTIsNi4zN2MyLjMyLDAuMzYsNC41NywwLjE1LDYuODgtMC4xNWMwLjgyLTAuMTEsMS42OC0wLjIxLDIuNTMtMC4yNwoJCWMwLjM3LTAuMTksMC43OC0wLjMzLDEuMi0wLjQxYzIuMTMtMC4zOSw0LjI1LTAuNzksNi4zNi0xLjIyYzAuMjEtMC4wNiwwLjQzLTAuMTIsMC42NC0wLjE4YzAuMDktMC4wNiwwLjItMC4wOSwwLjMzLTAuMDkKCQljMy4wOS0wLjg5LDYuMTUtMS45MSw5LjIyLTIuODVjMS42NC0wLjUsMy4yOS0wLjk4LDQuOTMtMS41YzMuODktMS41OSw3Ljc2LTMuMjksMTEuNTUtNS4xM2MwLjE5LTAuMjIsMC41LTAuMzcsMC45MS0wLjQ2CgkJYzAuNDktMC4yNCwwLjk3LTAuNDgsMS40NS0wLjcyYzAuMTEtMC4wNiwwLjIxLTAuMTIsMC4zMi0wLjE4YzEuNTEtMC44NCwzLjA0LTEuNjQsNC41OC0yLjQzYzEuNzgtMS4wMiwzLjU0LTIuMDcsNS4zOC0zCgkJYzEuNjUtMC44MywzLjMxLTEuOTUsNS4xLTIuNjRjMS4yLTAuNywyLjM5LTEuNDEsMy42LTIuMDljNS44Ny0zLjMsMTIuMTUtNS43NCwxNy45MS05LjIyYzMuOTktMi40MSw3Ljg2LTUuMDIsMTEuODItNy40NgoJCWMxLjMtMS4wNiwyLjYtMi4xLDMuOS0zLjFjMS40Ny0xLjE0LDIuODEtMi4xMSw0LjAxLTIuOTFjMS4yLTAuOCwxLjgtMS4xMywxLjgtMWMwLDAuMDEsMC4wMSwwLjAxLDAuMDEsMC4wMgoJCWMwLjQ2LTAuMzQsMC45Mi0wLjY3LDEuMzgtMS4wMWMwLjQ0LTAuNDQsMC44Ni0wLjg5LDEuMzEtMS4zMWMwLjY3LTAuNjMsMS4zOC0xLjIsMi4xLTEuNzZjMS4wNC0xLjA0LDIuMjItMi4yNCwzLjU2LTMuNjEKCQljMC4wMy0wLjAyLDAuMDUtMC4wNSwwLjA4LTAuMDhjMC43LTAuNzIsMS40My0xLjQ3LDIuMi0yLjI4YzIuOTQtMy4zNCw1LjM0LTYuNzgsNy4yMi0xMC4zM2MxLjg3LTMuNTQsMi44MS02LjU4LDIuODEtOS4xMgoJCUM0NzIuNDEsMTAxLjg0LDQ3MC43NCw5OC4wMyw0NjcuNCw5NC41NnoiLz4KCTxwYXRoIGQ9Ik01MzkuMDIsMTI4LjI0Yy0wLjEzLDAtMC43NCwwLjI3LTEuODEsMC44Yy0xLjA3LDAuNTQtMi4zNCwxLjI3LTMuODEsMi4yMWMtNS42MSwzLjQ4LTEwLjUzLDUuNDUtMTQuNzQsNS45MQoJCWMtNC4yMSwwLjQ3LTYuMzEtMC42My02LjMxLTMuMzFjMC0wLjM1LDAuMDItMC42NSwwLjA2LTAuOWMwLTAuMDktMC4wMS0wLjE5LDAtMC4yOGMwLjE2LTIuNTUsMS4wNC01LDEuODQtNy40CgkJYzAuMTgtMC41MywwLjM2LTEuMDcsMC41NC0xLjZjMC4wMi0wLjA3LDAuMDUtMC4xNSwwLjA3LTAuMjJjLTAuMDEsMC4wMywwLTAuMDEsMC4wNS0wLjE1YzAuMDgtMC4yOCwwLjE3LTAuNTUsMC4yNS0wLjgzCgkJYzAuMzItMS4xNCwwLjYzLTIuMjcsMS4wNC0zLjM4YzAuOTEtMi40OSwyLjIzLTQuODksMy44Ni03LjA1YzAuMjctMC41NCwwLjU4LTEuMDksMC45My0xLjY0YzIuOTQtNS4yMSwyLjc0LTguMDItMC42LTguNDIKCQljLTIuMTQtMC40LTYuMjEsMy40OC0xMi4yMywxMS42M2MtMC45NCwxLjM0LTIuNDEsMy4wNC00LjQxLDUuMTFjLTIsMi4wNy00LjA4LDQuMDgtNi4yMSw2LjAxYy0yLjE0LDEuOTQtNC4xNSwzLjY4LTYuMDEsNS4yMQoJCWMtMS44OCwxLjU0LTMuMjEsMi40NC00LjAxLDIuNzFjLTEuMDcsMC40LTEuOCwwLjU3LTIuMiwwLjVjLTAuNC0wLjA3LTAuNzQtMC40My0xLTEuMWMtMC40LTEuMDcsMC4wMy0zLjQxLDEuMy03LjAyCgkJYzEuMjctMy42MSwyLjkxLTcuMzUsNC45MS0xMS4yM2MxLjA3LTEuODcsMS45My0zLjY0LDIuNjEtNS4zMWMwLjY3LTEuNjcsMS0yLjg0LDEtMy41MWMwLTEuNDctMC41LTIuNTctMS41LTMuMzEKCQljLTEtMC43My0yLjI0LTAuOS0zLjcxLTAuNWMtMC41NCwwLjExLTEuMTgsMC40My0xLjg5LDAuOTNjLTEuODQsMi45Ni00LjQ1LDUuNDEtNi4wNiw4LjU1Yy0yLjAyLDMuOTQtMy42OCw4LjA2LTUuMjIsMTIuMjEKCQljLTEuNDMsMy44NC0yLjk1LDguMDktMi45MSwxMi4yNGMwLjAxLDAuNjMsMC4wNiwxLjI1LDAuMTQsMS44NmMwLjE1LDAuMzIsMC4zMSwwLjY1LDAuNTEsMS4wMWMxLjAzLDEuODcsMi4yNSwzLjMzLDMuNjYsNC4zOQoJCWMwLjA2LDAuMDIsMC4xLDAuMDMsMC4xMiwwLjAzYzAuNDIsMC4xLDAuODQsMC4xNywxLjI2LDAuMjNjMC4xMiwwLjAyLDAuOTUsMC4wNiwwLjg2LDAuMDdjMC4yMiwwLDAuNDQsMCwwLjY3LTAuMDEKCQljMC42OS0wLjAzLDEuMzctMC4xMywyLjA1LTAuMjVjMC4wOC0wLjAyLDAuNDktMC4xMSwwLjU1LTAuMTNjMC4zOC0wLjExLDAuNzYtMC4yMiwxLjEzLTAuMzVsMC4xMy0wLjA4CgkJYzEuMi0wLjY3LDIuOTQtMS45NCw1LjIyLTMuODFjMi4yNy0xLjg3LDQuNDctMy43NCw2LjYxLTUuNjFjMi4xNC0yLjAxLDMuOTQtMy42NCw1LjQxLTQuOTFjMS40Ny0xLjI3LDIuMi0xLjc3LDIuMi0xLjV2MS42CgkJYzAsMC44LTAuMDcsMS42Ny0wLjIsMi42MWMtMC4xMywyLjU0LDAuMzcsNC45NSwxLjUsNy4yMmMxLjE0LDIuMjcsMi42NCwzLjg4LDQuNTEsNC44MWMxLjg3LDEuMDcsNC40NCwxLjQ3LDcuNzIsMS4yCgkJYzMuMjctMC4yNyw2LjI1LTEuMDcsOC45Mi0yLjQxYzEuNjEtMC44LDMuMzQtMS45LDUuMjItMy4zMWMxLjg3LTEuNCwzLjUxLTIuODEsNC45MS00LjIxYzEuNC0xLjQsMi40Ny0yLjY0LDMuMjEtMy43MQoJCUM1MzkuODUsMTI4Ljc3LDUzOS44MiwxMjguMjQsNTM5LjAyLDEyOC4yNHoiLz4KPC9nPgo8L3N2Zz4K",
+              "width": 62
+            }
+          },
+          "3bfdeff8-c866-4cfb-84dc-a6d78a99caae": {
+            "type": "menu-cta",
+            "disabled": true,
+            "settings": {
+              "promo_tag": "[promo: festival]",
+              "title": "FESTIVAL",
+              "url_text": "Shop Now",
+              "url": "shopify:\/\/collections\/festival-outfits",
+              "text_color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "f3a2facb-9346-43ac-befc-7a8bcdb50334",
+          "a96cf384-1f94-478f-90f7-7f328019c8da",
+          "cd2f12dc-8078-469d-ab03-5c3b106c10a7",
+          "68eb0f42-b0bf-4436-9fa8-4ee4c642de1f",
+          "ac1896c7-c7b0-4f88-824c-416f11ca4b8a",
+          "f7e7168f-0cb5-469e-9502-79195559f051",
+          "6138bb6e-0f3e-42fa-ac80-71b1ef3e0cf3",
+          "08d0f70e-9f76-4bdc-8259-8df60e7a8a9f",
+          "eb713655-f4e7-4d38-bc0a-b696ea9b0d10",
+          "8bce2e19-1865-4398-a0ca-d8b4be19af26",
+          "04dea05c-ef4b-428f-b710-51f02663a350",
+          "aee9174f-a4ad-47c2-a767-162c162dadc4",
+          "3bfdeff8-c866-4cfb-84dc-a6d78a99caae"
+        ],
+        "settings": {
+          "wishlist_link": "shopify:\/\/pages\/wishlist",
+          "navigation_linklist": "main-menu",
+          "footer_linklist": ""
+        }
+      },
+      "push-cart-footer": {
+        "type": "push-cart-footer",
+        "settings": {
+        }
+      },
+      "cart-upsells": {
+        "type": "cart-upsells",
+        "settings": {
+          "nosto_id": "cartpage-nosto-3"
         }
       }
     },
     "content_for_index": [
 
-    ],
-    "color_schemes": {
-      "background-1": {
-        "settings": {
-          "background": "#ffffff",
-          "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
-        }
-      },
-      "background-2": {
-        "settings": {
-          "background": "#f3f3f3",
-          "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
-          "button_label": "#f3f3f3",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
-        }
-      },
-      "inverse": {
-        "settings": {
-          "background": "#242833",
-          "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#000000",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
-        }
-      },
-      "accent-1": {
-        "settings": {
-          "background": "#121212",
-          "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#121212",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
-        }
-      },
-      "accent-2": {
-        "settings": {
-          "background": "#334fb4",
-          "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#334fb4",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
-        }
-      }
-    }
-  },
-  "presets": {
-    "Default": {
-      "logo_width": 90,
-      "color_schemes": {
-        "background-1": {
-          "settings": {
-            "background": "#FFFFFF",
-            "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
-            "button_label": "#FFFFFF",
-            "secondary_button_label": "#121212",
-            "shadow": "#121212"
-          }
-        },
-        "background-2": {
-          "settings": {
-            "background": "#F3F3F3",
-            "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
-            "button_label": "#F3F3F3",
-            "secondary_button_label": "#121212",
-            "shadow": "#121212"
-          }
-        },
-        "inverse": {
-          "settings": {
-            "background": "#242833",
-            "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#000000",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
-          }
-        },
-        "accent-1": {
-          "settings": {
-            "background": "#121212",
-            "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#121212",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
-          }
-        },
-        "accent-2": {
-          "settings": {
-            "background": "#334FB4",
-            "background_gradient": "",
-            "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#334FB4",
-            "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
-          }
-        }
-      },
-      "type_header_font": "assistant_n4",
-      "heading_scale": 100,
-      "type_body_font": "assistant_n4",
-      "body_scale": 100,
-      "page_width": 1440,
-      "spacing_sections": 0,
-      "spacing_grid_horizontal": 8,
-      "spacing_grid_vertical": 8,
-      "animations_reveal_on_scroll": true,
-      "animations_hover_elements": "none",
-      "buttons_border_thickness": 1,
-      "buttons_border_opacity": 100,
-      "buttons_radius": 0,
-      "buttons_shadow_opacity": 0,
-      "buttons_shadow_horizontal_offset": 0,
-      "buttons_shadow_vertical_offset": 4,
-      "buttons_shadow_blur": 5,
-      "variant_pills_border_thickness": 1,
-      "variant_pills_border_opacity": 55,
-      "variant_pills_radius": 40,
-      "variant_pills_shadow_opacity": 0,
-      "variant_pills_shadow_horizontal_offset": 0,
-      "variant_pills_shadow_vertical_offset": 4,
-      "variant_pills_shadow_blur": 5,
-      "inputs_border_thickness": 1,
-      "inputs_border_opacity": 55,
-      "inputs_radius": 0,
-      "inputs_shadow_opacity": 0,
-      "inputs_shadow_horizontal_offset": 0,
-      "inputs_shadow_vertical_offset": 4,
-      "inputs_shadow_blur": 5,
-      "card_style": "standard",
-      "card_image_padding": 0,
-      "card_text_alignment": "left",
-      "card_color_scheme": "background-2",
-      "card_border_thickness": 0,
-      "card_border_opacity": 10,
-      "card_corner_radius": 0,
-      "card_shadow_opacity": 0,
-      "card_shadow_horizontal_offset": 0,
-      "card_shadow_vertical_offset": 4,
-      "card_shadow_blur": 5,
-      "collection_card_style": "standard",
-      "collection_card_image_padding": 0,
-      "collection_card_text_alignment": "left",
-      "collection_card_color_scheme": "background-2",
-      "collection_card_border_thickness": 0,
-      "collection_card_border_opacity": 10,
-      "collection_card_corner_radius": 0,
-      "collection_card_shadow_opacity": 0,
-      "collection_card_shadow_horizontal_offset": 0,
-      "collection_card_shadow_vertical_offset": 4,
-      "collection_card_shadow_blur": 5,
-      "blog_card_style": "standard",
-      "blog_card_image_padding": 0,
-      "blog_card_text_alignment": "left",
-      "blog_card_color_scheme": "background-2",
-      "blog_card_border_thickness": 0,
-      "blog_card_border_opacity": 10,
-      "blog_card_corner_radius": 0,
-      "blog_card_shadow_opacity": 0,
-      "blog_card_shadow_horizontal_offset": 0,
-      "blog_card_shadow_vertical_offset": 4,
-      "blog_card_shadow_blur": 5,
-      "text_boxes_border_thickness": 0,
-      "text_boxes_border_opacity": 10,
-      "text_boxes_radius": 0,
-      "text_boxes_shadow_opacity": 0,
-      "text_boxes_shadow_horizontal_offset": 0,
-      "text_boxes_shadow_vertical_offset": 4,
-      "text_boxes_shadow_blur": 5,
-      "media_border_thickness": 1,
-      "media_border_opacity": 5,
-      "media_radius": 0,
-      "media_shadow_opacity": 0,
-      "media_shadow_horizontal_offset": 0,
-      "media_shadow_vertical_offset": 4,
-      "media_shadow_blur": 5,
-      "popup_border_thickness": 1,
-      "popup_border_opacity": 10,
-      "popup_corner_radius": 0,
-      "popup_shadow_opacity": 5,
-      "popup_shadow_horizontal_offset": 0,
-      "popup_shadow_vertical_offset": 4,
-      "popup_shadow_blur": 5,
-      "drawer_border_thickness": 1,
-      "drawer_border_opacity": 10,
-      "drawer_shadow_opacity": 0,
-      "drawer_shadow_horizontal_offset": 0,
-      "drawer_shadow_vertical_offset": 4,
-      "drawer_shadow_blur": 5,
-      "badge_position": "bottom left",
-      "badge_corner_radius": 40,
-      "sale_badge_color_scheme": "accent-2",
-      "sold_out_badge_color_scheme": "inverse",
-      "brand_headline": "",
-      "brand_description": "<p><\/p>",
-      "brand_image_width": 100,
-      "social_twitter_link": "",
-      "social_facebook_link": "",
-      "social_pinterest_link": "",
-      "social_instagram_link": "",
-      "social_tiktok_link": "",
-      "social_tumblr_link": "",
-      "social_snapchat_link": "",
-      "social_youtube_link": "",
-      "social_vimeo_link": "",
-      "predictive_search_enabled": true,
-      "predictive_search_show_vendor": false,
-      "predictive_search_show_price": false,
-      "currency_code_enabled": true,
-      "cart_type": "notification",
-      "show_vendor": false,
-      "show_cart_note": false,
-      "cart_drawer_collection": "",
-      "sections": {
-        "main-password-header": {
-          "type": "main-password-header",
-          "settings": {
-            "color_scheme": "background-1"
-          }
-        },
-        "main-password-footer": {
-          "type": "main-password-footer",
-          "settings": {
-            "color_scheme": "background-1"
-          }
-        }
-      }
-    }
-  },
-  "platform_customizations": {
-    "custom_css": [
-      ".multicolumn-list {display: flex;}"
     ]
   }
 }

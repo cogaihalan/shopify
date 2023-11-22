@@ -1,0 +1,50 @@
+/*
+|--------------------------------------------------------------------------
+| Account Addresses
+|--------------------------------------------------------------------------
+| @namespace acc
+|
+*/
+
+.acc-Addresses {
+  display: block;
+}
+
+.acc-Addresses_Addresses {
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+
+  display: grid;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Addresses_Addresses {
+    grid-gap: 20px;
+  }
+}
+
+.acc-Addresses_Address {
+  position: relative;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid var(--Color_Border);
+}
+@media only screen and (min-width: 901px) {
+  .acc-Addresses_Address {
+    padding-bottom: 20px;
+  }
+}
+.acc-Addresses_Address:last-child,
+.acc-Addresses_Address-last {
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  border-bottom: 0;
+}
+
+.acc-Addresses_Detail {
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  opacity: 0.5;
+}

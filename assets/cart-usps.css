@@ -1,0 +1,108 @@
+/*
+|--------------------------------------------------------------------------
+| Info
+|--------------------------------------------------------------------------
+| @namespace: crt-
+|
+*/
+
+.crt-Usps {
+  position: relative;
+
+  padding: 0 15px;
+}
+@media only screen and (min-width: 901px) {
+  .crt-Usps {
+    padding: 0 30px;
+  }
+}
+
+.crt-Usps_Inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  border-top: 1px solid var(--Color_Border);
+}
+@media only screen and (min-width: 901px) {
+  .crt-Usps_Inner {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| USP Items
+|--------------------------------------------------------------------------
+|
+*/
+
+.crt-Usps_Usp {
+  flex-flow: row nowrap;
+
+  display: flex;
+  margin-bottom: 25px;
+}
+@media only screen and (min-width: 901px) {
+  .crt-Usps_Usp {
+    margin-bottom: 35px;
+  }
+}
+
+.crt-Usps_Usp:last-child {
+  margin-bottom: 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Icons
+|--------------------------------------------------------------------------
+|
+*/
+
+.crt-Usps_Icon {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  display: flex;
+  width: 60px;
+  height: 60px;
+
+  background-color: var(--Color_CoolPink);
+  border-radius: 50%;
+}
+
+.crt-Usps_Icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.crt-Usps_Icon-returns svg {
+  width: 42px;
+  height: 42px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+
+.crt-Usps_Content {
+  margin-left: 10px;
+}
+@media only screen and (min-width: 901px) {
+  .crt-Usps_Content {
+    margin-left: 20px;
+  }
+}
+
+.crt-Usps_Text {
+  margin-top: 5px;
+
+  letter-spacing: 0.3px;
+
+  color: var(--Color_Grey-50);
+}

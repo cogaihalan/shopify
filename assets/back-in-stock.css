@@ -1,0 +1,68 @@
+/*
+|--------------------------------------------------------------------------
+| Back in Stock
+|--------------------------------------------------------------------------
+| @namespace bis
+|
+*/
+
+.bis-BackInStock {
+  display: block;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+|
+*/
+
+.bis-BackInStock_Form {
+  background-color: var(--Color_White);
+}
+
+.bis-BackInStock_Button {
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+}
+
+.bis-BackInStock_ButtonIcon {
+  display: inline-block;
+  width: 25px;
+  height: 24px;
+  margin-top: -4px;
+  margin-right: 12px;
+
+  color: var(--Color_Body);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Response
+|--------------------------------------------------------------------------
+|
+*/
+
+.bis-BackInStock_Response {
+  display: none;
+
+  text-align: center;
+}
+
+.bis-BackInStock_Response[aria-hidden='false'] {
+  display: block;
+}
+
+.bis-BackInStock_Response[data-status='error'] {
+  color: var(--Color_Red);
+}
+
+/* stylelint-disable selector-max-id, selector-max-specificity, selector-class-pattern */
+#BIS_frame,
+.bis-reset,
+.bis-button {
+  display: none;
+}
+/* stylelint-enable */

@@ -1,0 +1,117 @@
+/*
+|--------------------------------------------------------------------------
+| Video section
+|--------------------------------------------------------------------------
+| @namespace: sec
+|
+*/
+
+.blg-FeaturedArticle {
+  position: relative;
+}
+
+.blg-FeaturedArticle_Body {
+  align-items: flex-end;
+  justify-content: center;
+
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  .blg-FeaturedArticle_Body {
+    align-items: center;
+  }
+}
+.blg-FeaturedArticle_Body::after {
+  content: '';
+
+  display: block;
+  width: 0;
+  padding-top: 175%;
+}
+@media only screen and (min-width: 768px) {
+  .blg-FeaturedArticle_Body::after {
+    padding-top: 46.5%;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.blg-FeaturedArticle_ImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+}
+.blg-FeaturedArticle_Image {
+  display: none;
+
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .blg-FeaturedArticle_Image-desktop {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .blg-FeaturedArticle_Image-mobile {
+    display: flex;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.blg-FeaturedArticle_Content {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .blg-FeaturedArticle_Content {
+    width: calc((8 / 12) * 100%);
+  }
+}
+@media only screen and (min-width: 901px) {
+  .blg-FeaturedArticle_Content {
+    width: calc((4 / 12) * 100%);
+  }
+}
+
+.blg-FeaturedArticle-light .blg-FeaturedArticle_Content {
+  color: #fff;
+}
+
+.blg-FeaturedArticle_Kicker {
+  margin-bottom: 10px;
+}
+
+.blg-FeaturedArticle_Text {
+  margin-top: 15px;
+}
+
+.blg-FeaturedArticle_Buttons {
+  margin-top: 30px;
+}
+
+.blg-FeaturedArticle-light .blg-FeaturedArticle_Button {
+  background-color: var(--Color_White);
+  border: 1px solid var(--Color_Brand);
+  color: var(--Color_Body);
+}
+.blg-FeaturedArticle-light .blg-FeaturedArticle_Button:hover {
+  background-color: var(--Color_Brand);
+  color: var(--Color_White);
+}

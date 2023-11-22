@@ -1,0 +1,30 @@
+/*
+|--------------------------------------------------------------------------
+| Ada Button
+|--------------------------------------------------------------------------
+| @namespace: ada
+|
+*/
+
+.ada-Button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 20;
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: 44px;
+  height: 44px;
+
+  background-color: #ffdfe9;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px 4px #0000001f;
+}
+
+.ada-Button svg {
+  width: 28px;
+  height: 28px;
+}

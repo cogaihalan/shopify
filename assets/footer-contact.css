@@ -1,0 +1,32 @@
+/*
+|--------------------------------------------------------------------------
+| Footer contact links
+|--------------------------------------------------------------------------
+| @namespace: ft
+|
+*/
+
+.ft-Contact_Items {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 901px) {
+  .ft-Contact_Items {
+    margin-top: 30px;
+  }
+}
+
+.ft-Contact_Item {
+  margin-top: 7px;
+}
+
+.ft-Contact_Link {
+  align-items: center;
+
+  display: flex;
+}
+
+.ft-Contact_Icon {
+  width: 20px;
+  height: 20px;
+  margin-right: calc(var(--Grid_Gutter) * 3);
+}

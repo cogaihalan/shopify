@@ -1,0 +1,31 @@
+/*
+|--------------------------------------------------------------------------
+| Drawer USPs
+|--------------------------------------------------------------------------
+| @namespace drw
+|
+*/
+
+.drw-Usps_Item {
+  align-items: center;
+  flex-flow: row nowrap;
+
+  display: flex;
+  padding: calc(var(--Grid_Gutter) * 3) 0;
+}
+
+.drw-Usps_ImageContainer {
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.drw-Usp_Title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.drw-Usp_Text {
+  margin-top: 5px;
+}

@@ -1,0 +1,45 @@
+/*
+|--------------------------------------------------------------------------
+| Article card
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.art-Card_ImageContainer {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 901px) {
+  .art-Card_Image {
+    transition: transform 0.3s ease;
+  }
+  .art-Card:hover .art-Card_Image {
+    transform: scale(1.02);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.art-Card_Content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.art-Card_Category {
+  margin-top: 10px;
+
+  color: var(--Color_Russet);
+}

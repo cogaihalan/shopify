@@ -1,0 +1,178 @@
+/*
+|--------------------------------------------------------------------------
+| Sub Collections
+|--------------------------------------------------------------------------
+| @namespace clc
+|
+*/
+
+.clc-SubCollections {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+  margin-bottom: 20px;
+}
+
+.clc-SubCollections::before,
+.clc-SubCollections::after {
+  content: '';
+
+  position: absolute;
+  bottom: -6px;
+  z-index: 1;
+
+  display: block;
+  width: calc(var(--Grid_Gutter) * 3);
+  height: 10px;
+
+  background-color: var(--Color_White);
+}
+
+.clc-SubCollections::before {
+  left: 0;
+}
+
+.clc-SubCollections::after {
+  right: 0;
+}
+
+.clc-SubCollections_Inner {
+  position: relative;
+  z-index: 0;
+
+  display: block;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.clc-SubCollections_Items {
+  flex-flow: row nowrap;
+
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+@media only screen and (min-width: 901px) {
+  .clc-SubCollections_Items {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+}
+.clc-SubCollections_Items .clc-SubCollections_Item:first-child {
+  margin-left: auto;
+}
+.clc-SubCollections_Items .clc-SubCollections_Item:last-child {
+  margin-right: auto;
+}
+
+.clc-SubCollections_Item {
+  max-width: 150px;
+  margin-right: 20px;
+
+  text-align: center;
+}
+.clc-SubCollections_Item:last-child {
+  margin-right: 0;
+}
+
+.clc-SubCollections_Link {
+  z-index: 1;
+
+  display: block;
+}
+
+.clc-SubCollections_Link:hover + .clc-SubCollections_Content .clc-SubCollections_ImageContainer,
+.clc-SubCollections_Link:focus + .clc-SubCollections_Content .clc-SubCollections_ImageContainer {
+  border-color: var(--Color_WarmPink);
+
+  transform: scale(1.05);
+}
+
+.clc-SubCollections_ImageContainer {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 50px;
+  overflow: hidden;
+
+  transition: border-color, transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  pointer-events: none;
+}
+@media only screen and (min-width: 901px) {
+  .clc-SubCollections_ImageContainer {
+    border-width: 5px;
+
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.clc-SubCollections_Image .rsp-Image_Image {
+  object-fit: fill;
+}
+
+.clc-SubCollections_Image-desktop {
+  display: none;
+}
+@media only screen and (min-width: 901px) {
+  .clc-SubCollections_Image-desktop {
+    display: block;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .clc-SubCollections_Image-mobile {
+    display: none;
+  }
+}
+
+.clc-SubCollections_Title {
+  position: relative;
+
+  margin-top: 15px;
+
+  color: var(--Color_Grey-medium);
+
+  transition: color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+.clc-SubCollections_Link:hover + .clc-SubCollections_Content .clc-SubCollections_Title,
+.clc-SubCollections_Link:focus + .clc-SubCollections_Content .clc-SubCollections_Title {
+  color: rgba(255, 255, 255, 0);
+}
+
+.clc-SubCollections_Title::before {
+  content: attr(data-content);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  display: block;
+
+  font-weight: 700;
+  text-align: center;
+
+  color: var(--Color_Brand);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity, visibility;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.clc-SubCollections_Link:hover + .clc-SubCollections_Content .clc-SubCollections_Title::before,
+.clc-SubCollections_Link:focus + .clc-SubCollections_Content .clc-SubCollections_Title::before {
+  color: var(--Color_Brand);
+  opacity: 1;
+  visibility: visible;
+}

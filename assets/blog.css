@@ -1,0 +1,19 @@
+/*
+|--------------------------------------------------------------------------
+| Blog
+|--------------------------------------------------------------------------
+| @namespace: blg
+|
+*/
+
+.blg-Blog_Inner {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 901px) {
+  .blg-Blog_Inner {
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+}

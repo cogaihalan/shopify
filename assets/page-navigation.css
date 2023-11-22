@@ -1,0 +1,47 @@
+/*
+|--------------------------------------------------------------------------
+| Page Navigation
+|--------------------------------------------------------------------------
+| @namespace pg
+|
+*/
+
+.pg-Navigation {
+  text-align: center;
+
+  background-color: var(--Color_LightPink);
+  overflow-x: auto;
+}
+
+.pg-Navigation_Inner {
+  max-width: calc(1265px + calc(var(--Grid_Gutter) * 6));
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pg-Navigation_Items {
+  display: inline-block;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.pg-Navigation_Item {
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.pg-Navigation_Link {
+  color: var(--Color_Grey-medium);
+
+  transition: color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.pg-Navigation_Link:hover,
+.pg-Navigation_Link:focus,
+.pg-Navigation_Link[aria-current='page'] {
+  color: var(--Color_Grey);
+}

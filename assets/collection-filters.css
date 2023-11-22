@@ -1,0 +1,344 @@
+/*
+|--------------------------------------------------------------------------
+| Collection Filters
+|--------------------------------------------------------------------------
+| @namespace clc
+|
+*/
+
+.clc-Filters_Inner {
+  flex-flow: column;
+
+  display: flex;
+}
+
+.clc-Filters_Reset {
+  margin: 0 auto;
+}
+
+.clc-Filters_Apply {
+  margin-top: 20px;
+}
+
+.clc-Filters_Footer {
+  flex-direction: column;
+
+  display: flex;
+  padding: 30px;
+
+  text-align: center;
+}
+
+.clc-ProductGrid_Body {
+  margin-block-end: 20px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Facets
+|--------------------------------------------------------------------------
+|
+*/
+.clc-ProductGridFacets_Active {
+  margin-top: 10px;
+}
+
+.clc-ProductGridFacets_ActiveFacets {
+  flex-wrap: wrap;
+
+  grid-gap: 20px 15px;
+
+  display: flex;
+}
+
+.clc-ProductGridFacets_ActiveFacets:not(:empty) {
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--Color_Border);
+}
+
+.clc-ProductGridFacets_ActiveFacetsTitle {
+  width: 100%;
+
+  font-family: var(--Font_Family-body);
+}
+
+.clc-ProductGridFacets_ActiveFacet {
+  position: relative;
+
+  align-items: flex-end;
+
+  display: flex;
+  height: 30px;
+  padding: 8px 12px;
+
+  line-height: 12px;
+
+  background-color: var(--Color_CoolPink);
+  border-radius: 15px;
+  color: var(--Color_Brand);
+
+  transition: background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.clc-ProductGridFacets_ActiveFacet:hover {
+  background: var(--Color_Grey-lightest);
+}
+
+.clc-ProductGridFacets_ActiveLink {
+  align-items: center;
+
+  grid-gap: 7px;
+
+  display: flex;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.clc-ProductGridFacets_ActiveLinkIcon {
+  width: 14px;
+  height: 14px;
+
+  background: #fff;
+  border-radius: 100%;
+}
+
+.clc-ProductGridFacet_List {
+  grid-gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.clc-ProductGridFacets_Item {
+  position: relative;
+
+  border-bottom: 1px solid var(--Color_Border);
+  cursor: pointer;
+}
+
+.clc-ProductGridFacets_Item[aria-hidden='true'] {
+  display: none;
+}
+
+.clc-ProductGridFacet_Display {
+  padding-bottom: 30px;
+}
+
+.clc-ProductGridFacet_Summary {
+  position: relative;
+
+  padding: 20px 0;
+}
+
+.clc-ProductGridFacet_Summary:focus {
+  outline: none;
+}
+
+.clc-ProductGridFacet_Summary::before {
+  content: '';
+
+  position: absolute;
+  top: calc(50% - 7px / 2);
+  right: 0;
+  left: auto;
+
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: -2px;
+
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+
+  transform: rotate(45deg);
+  transition: all 0.1s ease-in-out;
+}
+
+.clc-ProductGridFacet[open] .clc-ProductGridFacet_Summary::before {
+  transform: rotate(-135deg);
+}
+
+.clc-ProductGridFacet_Summary::marker {
+  content: none;
+}
+
+.clc-ProductGridFacet_Item[aria-hidden='true'] {
+  display: none;
+}
+
+.clc-ProductGridFacet_Checkbox {
+  display: none;
+}
+
+.clc-ProductGridFacet_Label {
+  position: relative;
+
+  align-items: center;
+
+  grid-gap: 10px;
+
+  display: flex;
+
+  cursor: pointer;
+}
+
+.clc-ProductGridFacet_CheckboxIcon {
+  position: relative;
+
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+
+  transition: border-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.clc-ProductGridFacet_CheckboxIcon::before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--ColourSwatch_BackgroundColour);
+  border: 2px solid var(--Color_White);
+  border-radius: 50%;
+
+  transition: background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.clc-ProductGridFacet_Label:hover .clc-ProductGridFacet_CheckboxIcon,
+.clc-ProductGridFacet_Checkbox:checked ~ .clc-ProductGridFacet_Label .clc-ProductGridFacet_CheckboxIcon {
+  border: 1px solid var(--Color_Brand);
+}
+
+.clc-ProductGridFacet_Checkbox:checked ~ .clc-ProductGridFacet_Label .clc-ProductGridFacet_CheckboxIcon::before {
+  background-color: var(--Color_Brand);
+}
+
+.clc-ProductGridFacet_Count {
+  opacity: 0.5;
+}
+
+.clc-ProductGridFacet_Swatch {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+
+  background-color: currentColor;
+  border: 1px solid var(--Color_White);
+  border-radius: 50%;
+}
+/*
+|--------------------------------------------------------------------------
+| Range
+|--------------------------------------------------------------------------
+| @namespace: prc-
+|
+*/
+.prc-Range {
+  grid-column-gap: var(--Grid_Column);
+  grid-template-columns: repeat(2, 1fr);
+
+  display: none;
+  padding-block-start: 15px;
+  padding-block-end: 30px;
+}
+
+.prc-Range_Column {
+  align-items: center;
+
+  display: flex;
+}
+
+.prc-Range_Field {
+  --Horizontal_Padding: 15px;
+
+  position: relative;
+
+  align-items: center;
+
+  display: flex;
+  width: 100%;
+}
+
+.prc-Range_Input {
+  width: 100%;
+  padding: 10px var(--Horizontal_Padding);
+  padding-inline-start: calc(var(--Horizontal_Padding) + 8px);
+
+  font-family: var(--Font_Family-whyte);
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 20px;
+
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid var(--Color_Brand);
+  border-radius: 0;
+}
+.prc-Range_Input::placeholder {
+  opacity: 0;
+}
+
+.prc-Range_Label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: var(--Horizontal_Padding);
+
+  font-family: var(--Font_Family-whyte);
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 20px;
+
+  pointer-events: none;
+}
+
+.prc-Range_Label::before,
+.prc-Range_Label::after {
+  position: absolute;
+  top: 11px;
+
+  display: block;
+
+  transition: transform 0.2s ease;
+}
+
+.prc-Range_Label::before {
+  content: attr(data-text);
+
+  transform: scale(1);
+}
+
+.prc-Range_Label::after {
+  content: attr(data-currency-symbol);
+
+  transform: scale(0) translateX(-1px);
+}
+
+:where(.prc-Range_Input:focus, .prc-Range_Input:not(:placeholder-shown), .prc-Range_Input:-webkit-autofill) ~ .prc-Range_Label::before {
+  transform: scale(0);
+}
+:where(.prc-Range_Input:focus, .prc-Range_Input:not(:placeholder-shown), .prc-Range_Input:-webkit-autofill) ~ .prc-Range_Label::after {
+  transform: scale(1) translateX(-1px);
+}

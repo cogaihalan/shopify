@@ -1,0 +1,13 @@
+/*
+|--------------------------------------------------------------------------
+| Wishlist overrides
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-max-id, selector-max-specificity, selector-class-pattern, declaration-no-important */
+#swym-plugin,
+.swym-inject,
+.swym-button::after {
+  display: none !important;
+}
+/* stylelint-enable */

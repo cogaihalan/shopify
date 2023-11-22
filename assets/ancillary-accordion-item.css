@@ -1,0 +1,200 @@
+/*
+|--------------------------------------------------------------------------
+| Ancillary accordion item
+|--------------------------------------------------------------------------
+| @namespace: anc
+|
+*/
+.anc-AccordionItem {
+  max-height: 400px;
+
+  border-top: 1px solid var(--Color_CoolPink);
+  opacity: 1;
+  overflow-y: hidden;
+  will-change: max-height;
+
+  transition: border-color, max-height, opacity;
+  transition-duration: 0.8s;
+  transition-timing-function: ease;
+}
+.anc-AccordionItem[aria-expanded='true'] {
+  max-height: initial;
+
+  border-top: 1px solid var(--Color_WarmPink);
+}
+
+.anc-AccordionItem[aria-hidden='true'] {
+  max-height: 0;
+
+  opacity: 0;
+}
+
+.anc-Accordion_Item:first-child .anc-AccordionItem {
+  border-top: 0;
+}
+
+.anc-AccordionItem_Header {
+  --Header_Padding: 20px;
+  position: relative;
+
+  align-items: center;
+  justify-content: space-between;
+
+  display: flex;
+  width: 100%;
+  padding-top: var(--Header_Padding);
+  padding-bottom: var(--Header_Padding);
+
+  text-align: left;
+
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  overflow: hidden;
+
+  transition: color 0.3s ease;
+  border-style: solid;
+}
+.anc-AccordionItem[aria-expanded='true'] > .anc-AccordionItem_Header {
+  color: var(--Color_Body);
+}
+@media only screen and (min-width: 768px) {
+  .anc-AccordionItem_Header {
+    color: var(--Color_Body);
+  }
+}
+.anc-AccordionItem_Header-child {
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+.anc-AccordionItem_Title-europa {
+  font-family: var(--Font_Family-headings);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.anc-AccordionItem_Icon {
+  position: relative;
+
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  transition: transform 0.5s ease;
+}
+@media only screen and (min-width: 768px) {
+  .anc-AccordionItem_Header:focus .anc-AccordionItem_Icon,
+  .anc-AccordionItem_Header:hover .anc-AccordionItem_Icon {
+    transform: rotate(90deg);
+  }
+}
+
+.anc-AccordionItem[aria-expanded='true'] > .anc-AccordionItem_Icon {
+  transform: rotate(180deg);
+}
+.anc-AccordionItem_Icon svg {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  display: block;
+
+  transform: translateY(-50%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Multilevel Icons
+|--------------------------------------------------------------------------
+|
+*/
+.anc-AccordionItem_Icons {
+  position: relative;
+
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+.anc-AccordionItem_Icon-plus,
+.anc-AccordionItem_Icon-minus {
+  position: absolute;
+  top: 0;
+
+  transition: opacity, visibility;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.anc-AccordionItem_Icon-plus {
+  opacity: 1;
+  visibility: visible;
+}
+
+.anc-AccordionItem_Icon-minus {
+  opacity: 0;
+  visibility: hidden;
+
+  transform: rotate(0deg);
+}
+@media only screen and (min-width: 768px) {
+  .anc-AccordionItem_Header:focus .anc-AccordionItem_Icon-minus,
+  .anc-AccordionItem_Header:hover .anc-AccordionItem_Icon-minus {
+    transform: rotate(0deg);
+  }
+}
+
+.anc-Accordion-child [aria-expanded='true'] .anc-AccordionItem_Icon-plus {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.anc-Accordion-child [aria-expanded='true'] .anc-AccordionItem_Icon-minus {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body item
+|--------------------------------------------------------------------------
+|
+*/
+.anc-AccordionItem_Body {
+  max-height: 0;
+
+  overflow-y: hidden;
+
+  transition: max-height 0.5s ease;
+}
+.anc-AccordionItem[aria-expanded='true'] > .anc-AccordionItem_Body {
+  max-height: var(--Max_Height);
+}
+
+.anc-AccordionItem_Content {
+  padding-bottom: 40px;
+}
+@media only screen and (min-width: 901px) {
+  .anc-AccordionItem_Content {
+    padding-bottom: 30px;
+  }
+}
+/* stylelint-disable-next-line selector-max-universal */
+.anc-AccordionItem_Content * {
+  color: var(--Color_Grey);
+}
+/* stylelint-disable-next-line selector-max-type */
+.anc-AccordionItem_Content p {
+  color: var(--Color_Grey-medium);
+}
+
+.anc-AccordionItem_Order {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+@media only screen and (min-width: 901px) {
+  .anc-AccordionItem_Order {
+    padding-bottom: 10px;
+  }
+}

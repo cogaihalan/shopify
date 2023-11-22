@@ -1,0 +1,67 @@
+/*
+|--------------------------------------------------------------------------
+| Upsell item
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+.art-UpsellItem_ImageContainer {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.art-UpsellItem_Image {
+  display: flex;
+}
+@media only screen and (min-width: 901px) {
+  .art-UpsellItem_Image {
+    transition: transform 0.3s ease;
+  }
+  .art-UpsellItem:hover .art-UpsellItem_Image {
+    transform: scale(1.02);
+  }
+}
+
+.art-UpsellItem_Link {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  z-index: 1;
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  width: 40px;
+  height: 40px;
+
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.art-UpsellItem_Icon {
+  width: 20px;
+  height: 20px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+.art-UpsellItem_Content {
+  margin-top: 10px;
+}
+
+.art-UpsellItem_Text {
+  margin-top: 5px;
+}

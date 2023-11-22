@@ -1,0 +1,49 @@
+/*
+|--------------------------------------------------------------------------
+| Breadcrumb styles
+|--------------------------------------------------------------------------
+| @namespace: bdc
+|
+*/
+
+.bdc-Breadcrumb_Items {
+  flex-wrap: wrap;
+
+  display: flex;
+  margin-bottom: -3px;
+
+  color: var(--Color_WarmPink);
+}
+
+.bdc-Breadcrumb_Item {
+  position: relative;
+
+  margin-bottom: 3px;
+
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.bdc-Breadcrumb_Item:last-of-type {
+  color: var(--Color_Body);
+}
+.clc-Hero-hasImage.clc-Hero-light .bdc-Breadcrumb_Item:last-of-type {
+  color: var(--Color_White);
+}
+.bdc-Breadcrumb_Item:not(:last-of-type) {
+  margin-right: 20px;
+}
+.bdc-Breadcrumb_Item:not(:last-of-type)::after {
+  content: '/';
+
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  width: 20px;
+
+  text-align: center;
+}
+
+.bdc-Breadcrumb_Link {
+  transition: color 0.5s ease;
+}

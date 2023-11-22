@@ -1,0 +1,48 @@
+/*
+|--------------------------------------------------------------------------
+| Product Detail Messaging
+|--------------------------------------------------------------------------
+| @namespace prd-
+|
+*/
+
+.prd-Messaging_Body {
+  margin: 0 -15px;
+}
+
+@media only screen and (min-width: 767px) {
+  .prd-Messaging_Body {
+    margin: 0 -30px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .prd-Messaging_Body {
+    margin: 0;
+  }
+}
+
+.prd-Messaging {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.prd-Messaging_Items {
+  display: flex;
+  width: 100%;
+}
+
+.prd-Messaging_Item {
+  align-items: center;
+
+  display: flex;
+  padding: 10px 30px;
+}
+
+.prd-Messaging_Icon {
+  display: flex;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 20px;
+}

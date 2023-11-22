@@ -1,0 +1,111 @@
+/*
+|--------------------------------------------------------------------------
+| Color
+|--------------------------------------------------------------------------
+| @namespace: prd-
+|
+*/
+.prd-Colors {
+  margin-top: 10px;
+}
+
+.prd-Colors_Header {
+  margin-top: 10px;
+}
+
+.prd-Colors_Name {
+  font-weight: 700;
+}
+
+.prd-Colors_Colors {
+  flex-flow: row nowrap;
+
+  display: flex;
+  margin-top: 10px;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+
+.prd-Colors_Color {
+  --Swatch_Size: 40px;
+
+  position: relative;
+
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  order: 1;
+
+  display: flex;
+  width: var(--Swatch_Size);
+  height: var(--Swatch_Size);
+  margin-right: 4px;
+  margin-left: 4px;
+
+  border: 1px solid var(--Color_Grey-20);
+  border-radius: 50%;
+  overflow: hidden;
+
+  transition: border-color 0.4s ease;
+}
+.prd-Colors_Color:hover,
+.prd-Colors_Color:focus,
+.prd-Colors_Color-current {
+  border-color: var(--Color_Brand);
+}
+
+.prd-Colors_Color-current {
+  order: 0;
+}
+
+.prd-Colors_Color-unavailable::after {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+
+  display: block;
+  width: 120%;
+  height: 1px;
+
+  background-color: #e0e0e0;
+
+  transform: rotate(-45deg);
+  transition: background-color 0.4s ease;
+}
+
+.prd-Colors_Color-unavailable:hover::after,
+.prd-Colors_Color-unavailable:focus::after,
+.prd-Colors_Color-unavailable.prd-Colors_Color-current::after {
+  background-color: var(--Color_Brand);
+}
+
+.prd-Colors_Background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: calc(var(--Swatch_Size) - 2px);
+  height: calc(var(--Swatch_Size) - 2px);
+
+  background-color: currentColor;
+  border: 2px solid var(--Color_White);
+  border-radius: 50%;
+  color: inherit;
+
+  transform: translate(-50%, -50%);
+}
+
+.prd-Colors_Color-unavailable .prd-Colors_Background {
+  filter: saturate(1);
+  will-change: filter;
+
+  transition: filter 0.4s ease;
+}
+
+.prd-Colors_Color-unavailable:hover .prd-Colors_Background,
+.prd-Colors_Color-unavailable:focus .prd-Colors_Background,
+.prd-Colors_Color-unavailable.prd-Colors_Color-current .prd-Colors_Background {
+  filter: saturate(0);
+}

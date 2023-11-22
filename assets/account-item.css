@@ -1,0 +1,69 @@
+/*
+|--------------------------------------------------------------------------
+| Account Item
+|--------------------------------------------------------------------------
+| @namespace acc
+|
+*/
+.acc-Item {
+  flex-direction: column;
+
+  display: flex;
+  height: 100%;
+  padding: 20px;
+
+  background-color: var(--Color_LightPink);
+}
+@media only screen and (min-width: 901px) {
+  .acc-Item {
+    padding: 30px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .acc-Item {
+    padding: 40px 60px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Item_Header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid var(--Color_Grey-10);
+}
+@media only screen and (min-width: 901px) {
+  .acc-Item_Header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Item_Body {
+  flex-direction: column;
+
+  display: flex;
+  height: 100%;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Button
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Item_Button {
+  width: 100%;
+  margin-top: auto;
+}

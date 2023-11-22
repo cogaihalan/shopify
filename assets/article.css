@@ -1,0 +1,196 @@
+/*
+|--------------------------------------------------------------------------
+| Article
+|--------------------------------------------------------------------------
+| @namespace: art
+|
+*/
+.art-Article_Image {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .art-Article_Image-mobile {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .art-Article_Image-desktop {
+    display: flex;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Main content
+|--------------------------------------------------------------------------
+|
+*/
+.art-Article_Main {
+  --Article_Spacing: 40px;
+
+  grid-gap: var(--Article_Spacing) var(--Grid_Gutter);
+  grid-template-columns: repeat(12, 1fr);
+
+  display: grid;
+  margin-top: var(--Article_Spacing);
+  margin-bottom: var(--Article_Spacing);
+}
+@media only screen and (min-width: 901px) {
+  .art-Article_Main {
+    --Article_Spacing: 80px;
+  }
+}
+
+.art-Article_Header {
+  grid-column: 2 / span 10;
+}
+@media only screen and (min-width: 901px) {
+  .art-Article_Header {
+    grid-column: 4 / span 6;
+  }
+}
+
+.art-Article_Body {
+  --Article_SectionsGap: 40px;
+
+  grid-column: 1 / span 12;
+
+  grid-gap: var(--Article_SectionsGap) var(--Grid_Gutter);
+
+  display: grid;
+}
+@media only screen and (min-width: 768px) {
+  .art-Article_Body {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media only screen and (min-width: 901px) {
+  .art-Article_Body {
+    --Article_SectionsGap: 80px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+|
+*/
+@media only screen and (min-width: 768px) {
+  .art-Article_Content {
+    grid-column: 4 / span 6;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Image with caption
+|--------------------------------------------------------------------------
+|
+*/
+.art-Article_ImageWithCaption {
+  margin-top: var(--Article_SectionsGap);
+  margin-bottom: var(--Article_SectionsGap);
+}
+@media only screen and (min-width: 768px) {
+  .art-Article_ImageWithCaption {
+    --Negative_Margin: calc(((2 / 6) * -100%) - (var(--Grid_Gutter) * 1.3));
+
+    margin-right: var(--Negative_Margin);
+    margin-left: var(--Negative_Margin);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Product Carousel
+|--------------------------------------------------------------------------
+|
+*/
+.art-Article_ProductCarousel {
+  --Negative_Margin: 0;
+
+  margin: var(--Article_SectionsGap) var(--Negative_Margin);
+}
+@media only screen and (min-width: 768px) {
+  .art-Article_ProductCarousel:not([data-slides-count='2']) {
+    --Negative_Margin: calc(((3 / 6) * -100%) - (var(--Grid_Gutter) * 3.5));
+  }
+  .art-Article_ProductCarousel[data-slides-count='2'],
+  .art-Article_ProductCarousel[data-slides-count='3'] {
+    --Negative_Margin: 0;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .art-Article_ProductCarousel[data-slides-count='4'] {
+    --Negative_Margin: 0;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Single upsell
+|--------------------------------------------------------------------------
+|
+*/
+.art-Article_SingleUpsell {
+  margin-top: var(--Article_SectionsGap);
+  margin-bottom: var(--Article_SectionsGap);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Double upsell
+|--------------------------------------------------------------------------
+|
+*/
+.art-Article_DoubleUpsell {
+  margin-top: var(--Article_SectionsGap);
+  margin-bottom: var(--Article_SectionsGap);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Double image
+|--------------------------------------------------------------------------
+|
+*/
+.art-Article_DoubleImage {
+  --Negative_Margin: calc(var(--Grid_Gutter) * -3.5);
+
+  margin: var(--Article_SectionsGap) var(--Negative_Margin);
+}
+@media only screen and (min-width: 768px) {
+  .art-Article_DoubleImage {
+    --Negative_Margin: calc(((3 / 6) * -100%) - (var(--Grid_Gutter) * 3.5));
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Video
+|--------------------------------------------------------------------------
+|
+*/
+.art-Article_Video {
+  --Negative_Margin: calc(var(--Grid_Gutter) * -3.5);
+
+  margin: var(--Article_SectionsGap) var(--Negative_Margin);
+}
+@media only screen and (min-width: 768px) {
+  .art-Article_Video {
+    --Negative_Margin: calc(((3 / 6) * -100%) - (var(--Grid_Gutter) * 3.5));
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Sharing
+|--------------------------------------------------------------------------
+|
+*/
+@media only screen and (min-width: 768px) {
+  .art-Article_Sharing {
+    grid-column: 4 / span 6;
+  }
+}

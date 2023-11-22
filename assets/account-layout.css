@@ -1,0 +1,61 @@
+/*
+|--------------------------------------------------------------------------
+| Account Layout
+|--------------------------------------------------------------------------
+| @namespace: acc
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+|
+*/
+
+.acc-Layout_Header {
+  text-align: center;
+
+  border-bottom: 1px solid var(--Color_CoolPink);
+}
+
+.acc-Layout_Title {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .acc-Layout_Title {
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+}
+
+.acc-Layout_Welcome {
+  display: block;
+  margin-top: -25px;
+  margin-bottom: 30px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+|
+*/
+
+.acc-Layout_Body {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 768px) {
+  .acc-Layout_Body {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .acc-Layout_Body {
+    margin-top: 60px;
+    margin-bottom: 110px;
+  }
+}

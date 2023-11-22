@@ -1,0 +1,111 @@
+/*
+|--------------------------------------------------------------------------
+| Ometria Form
+|--------------------------------------------------------------------------
+| @namespace sec
+|
+*/
+
+.sec-OmetriaForm {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sec-OmetriaForm_Text {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 901px) {
+  .sec-OmetriaForm_Text {
+    margin-top: 30px;
+  }
+}
+
+.sec-OmetriaForm_Messages {
+  margin-top: 10px;
+
+  text-align: center;
+
+  color: var(--Color_Red);
+}
+
+.sec-OmetriaForm_Messages-success {
+  height: 42px;
+  margin-right: 2px;
+  padding: 10px 20px;
+
+  line-height: 22px;
+
+  background: var(--Color_Brand);
+  border: 0 none;
+  border-radius: 22px;
+  color: #fff;
+}
+
+.sec-OmetriaForm_Fields {
+  grid-gap: var(--Grid_Gutter);
+  grid-template-areas:
+    'first-name last-name'
+    'email email'
+    'phone phone'
+    'opt-in opt-in'
+    'submit submit';
+
+  display: grid;
+  width: 100%;
+}
+
+.sec-OmetriaForm_Input-firstname {
+  grid-area: first-name;
+}
+
+.sec-OmetriaForm_Input-lastname {
+  grid-area: last-name;
+}
+
+.sec-OmetriaForm_Input-email {
+  grid-area: email;
+}
+
+.sec-OmetriaForm_Input-telephone {
+  grid-area: phone;
+}
+
+.sec-OmetriaForm_Input[name='sms_optin'] {
+  grid-area: opt-in;
+}
+
+.sec-OmetriaForm_Input::placeholder {
+  color: var(--Color_Grey-50);
+  opacity: 1;
+}
+
+.sec-OmetriaForm_Button {
+  grid-area: submit;
+
+  min-width: 120px;
+  height: 42px;
+  padding-right: 35px;
+  padding-left: 30px;
+
+  line-height: 22px;
+  text-transform: uppercase;
+
+  background-color: var(--Color_Brand);
+  color: var(--Color_White);
+
+  transition: background-color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  white-space: nowrap;
+}
+
+.sec-OmetriaForm_Button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.sec-OmetriaForm_Button.focus-visible {
+  background-color: var(--Color_Brand-60);
+}

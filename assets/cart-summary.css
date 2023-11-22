@@ -1,0 +1,118 @@
+/*
+|--------------------------------------------------------------------------
+| Summary
+|--------------------------------------------------------------------------
+| @namespace: crt-
+|
+*/
+.crt-Summary {
+  padding: 20px 15px;
+}
+@media only screen and (min-width: 901px) {
+  .crt-Summary {
+    padding: 25px 30px;
+  }
+}
+
+.crt-Summary_Title {
+  text-transform: uppercase;
+}
+
+.crt-Summary_Text {
+  margin-top: 15px;
+
+  color: var(--Color_Grey-50);
+}
+
+.crt-Summary_PreOrderText {
+  margin-top: 15px;
+
+  color: var(--Color_Grey-50);
+}
+
+.crt-Summary_Rows {
+  margin-top: 14px;
+  padding-top: 22px;
+
+  line-height: 20px;
+
+  border-top: 1px solid var(--Color_Border);
+}
+@media only screen and (min-width: 1201px) {
+  .crt-Summary_Rows {
+    margin-top: 28px;
+    padding-top: 21px;
+  }
+}
+
+.crt-Summary_Row {
+  justify-content: space-between;
+
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.crt-Summary_Value {
+  display: flex;
+}
+
+.crt-Summary_Form {
+  margin-top: 15px;
+}
+
+.crt-Summary_Button {
+  width: 100%;
+
+  text-transform: uppercase;
+}
+
+.crt-Summary_Footer {
+  margin-top: 20px;
+}
+
+.crt-Summary_Link {
+  text-decoration: underline;
+}
+
+.crt-Summary_Link,
+.crt-Summary_Payment {
+  display: block;
+
+  text-align: center;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Payment Icons
+|--------------------------------------------------------------------------
+|
+*/
+.crt-Summary_Icons {
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  display: flex;
+  margin-top: 20px;
+}
+
+.crt-Summary_Icon {
+  max-width: 50px;
+  width: 100%;
+  margin: 0 5px;
+}
+@media only screen and (min-width: 768px) {
+  .crt-Summary_Icon {
+    margin: 0 10px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Order Protection
+|--------------------------------------------------------------------------
+|
+*/
+
+.crt-Summary_Rows [data-widget-host='awesome-op-widget'] {
+  margin-top: 20px;
+}

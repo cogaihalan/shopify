@@ -1,0 +1,229 @@
+/*
+|--------------------------------------------------------------------------
+| Account
+|--------------------------------------------------------------------------
+| @namespace acc
+|
+*/
+
+.acc-Account_Columns {
+  grid-template-columns: 1fr;
+
+  display: grid;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Account_Columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .acc-Account_Columns-single {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Image column
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Account_Column-image {
+  position: relative;
+
+  background-position: center;
+  background-size: cover;
+}
+
+.acc-Account_Image,
+.acc-Account_Image .rsp-Image {
+  height: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .acc-Account_Image-desktop {
+    display: none;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .acc-Account_Image-mobile {
+    display: none;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Reactivate accoiunt
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Account_Reactivate {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+
+  width: calc(100% - 40px);
+
+  transform: translateX(-50%);
+}
+@media only screen and (min-width: 901px) {
+  .acc-Account_Reactivate {
+    bottom: 80px;
+
+    width: calc((4 / 6) * 100%);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Login Column
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Account_Column-login {
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  display: flex;
+  max-height: 900px;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Account_Column-login {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 901px) and (min-height: 950px) {
+  .acc-Account_Column-login {
+    justify-content: center;
+  }
+}
+
+.acc-Account_Logo {
+  max-width: 170px;
+  margin: 30px auto 0;
+}
+
+.acc-Account_Title-form {
+  margin-top: 30px;
+
+  text-align: center;
+}
+
+.acc-Account_Title-logincta {
+  text-align: center;
+}
+
+.acc-Account_Text {
+  margin-top: 15px;
+
+  text-align: center;
+}
+
+.acc-Account_ContentContainer {
+  position: relative;
+
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.acc-Account_Content {
+  width: 100%;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+.acc-Account[aria-busy='true'] .acc-Account_Content,
+.acc-Account_Content[aria-hidden='false'] {
+  transition: opacity, visibility;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.acc-Account_Content[aria-hidden='true'] {
+  position: absolute;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.acc-Account_Content-registercta,
+.acc-Account_Content-logincta {
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  border-top: 1px solid var(--Color_CoolPink);
+}
+@media only screen and (min-width: 768px) {
+  .acc-Account_Content-registercta,
+  .acc-Account_Content-logincta {
+    margin-top: 30px;
+  }
+}
+
+.acc-Account[aria-busy='true'] [aria-hidden] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+|
+*/
+
+.acc-Account_Form-login,
+.acc-Account_Form-recover,
+.acc-Account_Form-register,
+.acc-Account_Form-reset {
+  margin-bottom: 30px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Link
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Account_Link {
+  margin-top: 15px;
+}
+@media only screen and (min-width: 901px) {
+  .acc-Account_Link {
+    margin-top: 25px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Pagination
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Account_Pagination {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Loyalty
+|--------------------------------------------------------------------------
+|
+*/
+.acc-Account_Loyalty {
+  margin-top: 20px;
+  padding: 10px 15px;
+
+  text-align: center;
+
+  background-color: #fdf5f5;
+}

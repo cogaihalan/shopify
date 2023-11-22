@@ -1,0 +1,28 @@
+/*
+|--------------------------------------------------------------------------
+| Cart nosto
+|--------------------------------------------------------------------------
+| @namespace: crt
+|
+*/
+
+.crt-Nosto {
+  --Nosto_Margin: 20px;
+
+  margin-top: var(--Nosto_Margin);
+  margin-bottom: var(--Nosto_Margin);
+}
+@media only screen and (min-width: 901px) {
+  .crt-Nosto {
+    --Nosto_Margin: 40px;
+  }
+}
+
+.crt-Nosto_Header {
+  margin-bottom: 15px;
+}
+@media only screen and (min-width: 901px) {
+  .crt-Nosto_Header {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+/*
+|--------------------------------------------------------------------------
+| Ancillary section
+|--------------------------------------------------------------------------
+| @namespace: anc
+|
+*/
+.anc-Section {
+  max-width: 100%;
+  width: 915px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.anc-Section_Inner {
+  --Spacing: 20px;
+
+  margin-top: var(--Spacing);
+  margin-bottom: var(--Spacing);
+}
+@media only screen and (min-width: 901px) {
+  .anc-Section_Inner {
+    --Spacing: 40px;
+  }
+}
