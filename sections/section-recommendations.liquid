@@ -1,0 +1,126 @@
+{%- if product and product.metafields.recommendations.products != blank -%}
+  {{ 'section.css' | asset_url | stylesheet_tag }}
+  {{ 'section-recommendations.css' | asset_url | stylesheet_tag }}
+
+  {%- capture body -%}
+  
+    <carousel-element class="sec-Recommendations car-Carousel"
+      data-initialized="false"
+      data-loop="true"
+      data-centered="false"
+      data-slides-per-view-xs="2.5"
+      data-slides-per-view-md="4"
+      data-spacing-xs="10"
+      data-controls-md="false"
+    >
+      <div class="sec-Recommendations_Items car-Carousel_Slides" data-carousel-element-el="slides">
+
+        {%- liquid 
+          assign item_count = 0
+          assign recommended_product_handles = product.metafields.recommendations.products | split: "|"
+        -%}
+        {%- for product_handle in recommended_product_handles limit: 4 -%}
+          {%- assign product_item = all_products[product_handle] -%}
+          {%- if product_item and product_item.handle != blank -%}
+          <div class="sec-Recommendations_Item car-Carousel_Slide" data-carousel-element-el="slide">
+            {%- render 'product-card', product: product_item -%}
+          </div>
+          {%- assign item_count = item_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+      </div>
+
+      <div class="sec-Recommendations_Footer">
+        <div class="sec-Recommendations_Scrollbar car-Carousel_Scrollbar">
+          <div 
+            class="sec-Recommendations_Scroller car-Carousel_Scroller"
+            data-carousel-element-el="scroller"
+            style="--Carousel_ItemCount: {{ item_count }};"
+          ></div>
+        </div>
+      </div>
+
+    </carousel-element>
+
+  {%- endcapture -%}
+
+  {%- render 'section',
+    margin: section.settings.section_margin,
+
+    kicker: section.settings.kicker,
+    title: section.settings.title,
+    button_text: section.settings.button_text,
+    button_link: section.settings.button_link,
+
+    body: body
+  -%}
+
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Recommendations",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title",
+        "default": "Shop the Look"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Recommendations"
+      }
+    ],
+    "templates": ["product"]
+  }
+{% endschema %}

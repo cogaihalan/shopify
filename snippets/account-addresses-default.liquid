@@ -1,0 +1,67 @@
+<link
+  rel="stylesheet"
+  href="{{ 'account-addresses.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- capture item_body -%}
+{%- if customer.addresses.size > 0 -%}
+{%- if customer.default_address -%}
+<div class="acc-Addresses_Address acc-Addresses_Address-last">
+<p class="acc-Addresses_Title">{{ 'customer.account.default_address' | t }}</p>
+<div class="acc-Addresses_Detail">
+  {% if settings.switch_name_order %}
+    {{ customer.default_address.last_name | capitalize }} {{ customer.default_address.first_name | capitalize }}<br />
+  {% else %}
+    {{ customer.default_address.first_name | capitalize }} {{ customer.default_address.last_name | capitalize }}<br />
+  {% endif %}
+  {%- if customer.default_address.company != blank -%}
+    {{ customer.default_address.company }}<br />
+  {%- endif -%}
+
+  {%- if customer.default_address.street != blank -%}
+    {{ customer.default_address.street }}<br />
+  {%- endif -%}
+
+  {%- if customer.default_address.city != blank -%}
+    {{ customer.default_address.city }}<br />
+  {%- endif -%}
+
+  {%- if customer.default_address.province_code != blank -%}
+    {{ customer.default_address.province_code | upcase }}<br />
+  {%- endif -%}
+
+  {%- if customer.default_address.zip != blank -%}
+    {{ customer.default_address.zip | upcase }}<br />
+  {%- endif -%}
+
+  {%- if customer.default_address.country != blank -%}
+    {{ customer.default_address.country }}<br />
+  {%- endif -%}
+
+  {%- if customer.default_address.phone != blank -%}
+    {{ customer.default_address.phone }}<br />
+  {%- endif -%}
+</div>
+</div>
+{%- endif -%}
+
+<a class="acc-Item_Button btn-Button btn-Button-primary btn-Button-border" href="/account/addresses">
+  {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses.size }})
+</a>
+{%- else -%}
+<p class="acc-Item_Text">{{ 'customer.account.no_addresses' | t }}</p>
+
+<a class="acc-Item_Button btn-Button btn-Button-primary btn-Button-border" href="/account/addresses">
+  {{ 'customer.account.add_address' | t }}
+</a>
+{%- endif -%}
+{%- endcapture -%}
+
+{%- assign item_title = 'customer.account.your_addresses' | t -%}
+{%- render 'account-item',
+  item_title: item_title,
+  item_body: item_body,
+  is_richtext: false
+-%}

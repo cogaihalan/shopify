@@ -1,0 +1,83 @@
+<link
+  rel="stylesheet"
+  href="{{ 'back-in-stock.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<script src="{{ 'back-in-stock.js' | asset_url }}" defer></script>
+
+{%- capture body -%}
+<back-in-stock class="bis-BackInStock">
+
+  <form class="bis-BackInStock_Form" data-back-in-stock-el="form">
+
+    <button class="bis-BackInStock_Close" data-back-in-stock-el="close">
+      {%- render 'bao-icon-close' -%}
+    </button>
+
+    <div class="frm-Form_Row frm-Form_Row-first">
+      <p class="bis-BackInStock_Message fz-14_20">
+        {{- 'products.back_in_stock.message' | t -}}
+      </p>
+    </div>
+
+    <div class="frm-Form_Row">
+      <input
+        class="bis-BackInStock_Input frm-Form_Input"
+        data-back-in-stock-el="email"
+        type="email"
+        name="email"
+        placeholder="{{- 'products.back_in_stock.email_address' | t -}}"
+        value=""
+        required
+      >
+    </div>
+
+    <div class="frm-Form_Row">
+      <button class="bis-BackInStock_Button btn-Button btn-Button-primary btn-Button-fullWidth btn-Button-square" 
+        type="submit"
+        data-back-in-stock-el="trigger"
+        data-variant-id="{{ current_variant.id }}"
+        data-product-id="{{ product.id }}"
+      >
+        <span class="bis-BackInStock_ButtonIcon">
+          {%- render 'bao-icon-email' -%}
+        </span>
+        <span class="bis-BackInStock_ButtonText">
+          {{- 'products.back_in_stock.notify_me' | t -}}
+        </span>
+      </button>
+    </div>
+
+  </form>
+
+  <div class="frm-Form_Row frm-Form_Row-last">
+    <div class="bis-BackInStock_Response rte-RichText"
+      aria-hidden="true"
+      data-back-in-stock-el="response"
+      data-error="{{- 'products.back_in_stock.error_message' | t -}}"
+      data-success="{{- 'products.back_in_stock.success_message' | t -}}">
+    </div>
+  </div>
+
+</back-in-stock>
+{%- endcapture -%}
+
+{%- capture footer -%}
+<div class="drw-Drawer_Inner">
+
+  <button class="btn-Button btn-Button-primary btn-Button-wide" data-drawers-close>
+    {{ 'accessibility.close_and_browse' | t }}      
+  </button>
+
+</div>
+{%- endcapture -%}    
+
+{%- assign title = 'products.back_in_stock.notify_me' | t -%}
+{%- render 'drawer',
+  key: "back-in-stock",
+  title: title,
+  body: body,
+  footer: footer
+-%}

@@ -1,0 +1,22 @@
+<script>
+  (function(algolia) {
+    'use strict';
+
+    algolia.instantSearchStatsTemplate = function instantSearchStatsTemplate(data, html) {
+      let total = ''
+
+      const page = data.page + 1
+      const totalPages = data.nbPages
+      const hitsPerPage = data.hitsPerPage
+      const totalItems = data.nbHits
+
+      if (page < totalPages) {
+        total = hitsPerPage * page
+      } else {
+        total = totalItems
+      }
+
+      return `Showing <span data-products-on-screen>${total}</span> of <span class="ais-InfiniteHits-total">${totalItems}</span> products`;
+    };
+  })(window.algoliaShopify);
+</script>

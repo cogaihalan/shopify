@@ -1,0 +1,21 @@
+<script>
+  (function(algolia) {
+    'use strict';
+
+    algolia.headerTemplate = function headerTemplate({ html, state }, resource) {
+      let title = algolia.translation_helpers.render_title(resource, state.query)
+      if (resource == 'Products') title = `{{- 'algolia.product_results' | t }} (${algolia.helpers.formatNumber(state.context.nbProducts)})`
+      if (resource == 'Collections') title = `{{- 'algolia.collection_results' | t }} (${algolia.helpers.formatNumber(state.context.nbCollections)})`
+
+      return html `<div class="aa-SourceHeader aa-SourceHeader--flex">
+        <span class="aa-SourceHeaderTitle">${title}</span>
+
+        ${resource == 'Products' && html `
+        <span class="aa-SourceHeaderLink">
+          <a href="/search?q=${state.query}">{{- 'algolia.view_all_results' | t }}</a>
+        </span>
+        `}
+      </div>`
+    };
+  })(window.algoliaShopify);
+</script>

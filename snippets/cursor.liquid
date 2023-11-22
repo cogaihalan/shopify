@@ -1,0 +1,37 @@
+<link
+  rel="stylesheet"
+  href="{{ 'cursor.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<script
+  src="{{ 'cursor.js' | asset_url }}"
+  type="module"
+></script>
+
+<custom-cursor class="util-HideUntilLoaded">
+  <div class="cur-Cursor">
+    <div class="cur-Cursor_Cursor cur-Cursor_Left">
+      {%- render 'bao-icon-chevron-left' -%}
+    </div>
+
+    <div class="cur-Cursor_Cursor cur-Cursor_Right">
+      {%- render 'bao-icon-chevron-right' -%}
+    </div>
+
+    <div class="cur-Cursor_Cursor cur-Cursor_Zoom">
+      {%- render 'bao-icon-zoom' -%}
+    </div>
+
+    <div class="cur-Cursor_Cursor cur-Cursor_Video">
+      <div class="cur-Cursor_Spinner">        
+        {%- render 'bao-icon-play-video' -%}
+      </div>
+
+      <div class="cur-Cursor_Cursor cur-Cursor_Play">
+        {%- render 'bao-icon-play' -%}
+      </div>
+    </div>
+  </div>
+</custom-cursor>

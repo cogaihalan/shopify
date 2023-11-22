@@ -1,0 +1,253 @@
+/* eslint-disable */
+
+(function (algolia) {
+  "use strict";
+
+  function injectBanner(data, injectedNode) {
+    const imgUrl = data.imagery_d.includes('?') ? `${data.imagery_d}&width=800` : `${data.imagery_d}?width=800`
+    const fragment = `
+      <a href="${data.link}">
+        <picture>
+          <source media="(min-width: 900px)" srcset="${imgUrl}" />
+          <img class="ais-promo-banner_image" src="${data.imagery_m}" alt="${data.title}" />
+        </picture>
+      </a>
+    `;
+
+    const el = document.createElement('li')
+    el.classList.add('ais-promo-banner', 'aa-Item')
+    if (data.promo_size === "l") {
+      el.classList.add('ais-promo-banner--large');
+    }
+    el.innerHTML = fragment
+
+    if (!injectedNode.querySelector('.ais-promo-banner')) {
+      injectedNode.insertAdjacentElement(
+        'afterbegin',
+        el
+      );
+    }
+  }
+
+  function removeBanner(injectedNode) {
+    if(injectedNode?.querySelector('.ais-promo-banner') !== null) {
+      injectedNode?.querySelector('.ais-promo-banner').remove()
+    }
+  }
+
+
+  function bannerPlugin() {
+    return {
+      getSources({ query }) {
+        return [
+          {
+            sourceId: 'banner',
+            getItems() {
+              return algolia.searchClient
+                .initIndex(algolia.config.index_prefix + 'products')
+                .search(query, {
+                  ruleContexts: [algolia.config.customRuleContext],
+                  hitsPerPage: 0,
+                })
+                .then((response) => {
+                  const userData = response.userData || [];
+
+                  if(userData.length === 0) {
+                    // Remove banner from DOM if no rules are attached to the response
+                    if(document.querySelector('[data-autocomplete-source-id="products"]')) {
+                      removeBanner(document.querySelector('[data-autocomplete-source-id="products"]').querySelector('.aa-List'));
+                    }
+                  }
+
+                  return userData;
+                })
+                .catch((error) => {
+                  console.error('Error while fetching banner data:', error);
+                  return [];
+                });
+            },
+            templates: {
+              item({ item }) {
+                const fragmentInjectedNode = document.querySelector('[data-autocomplete-source-id="products"]').querySelector('.aa-List');
+
+                if(item.link) {
+                  injectBanner(item, fragmentInjectedNode);
+                }
+              },
+            },
+          },
+        ];
+      },
+    };
+  }
+
+  if (!algolia.config.autocomplete_enabled) return;
+
+  const autocomplete = algolia.externals.autocomplete;
+
+  algolia.searchClient.addAlgoliaAgent('Shopify Integration');
+
+  // Retrieve the container from Shopify's config
+  const containers = document.querySelectorAll(algolia.config.input_selector);
+  containers.forEach((container) => {
+    container.innerHTML = '';
+    const containerClasses = container.classList;
+    containerClasses.add('aa-MainContainer');
+  });
+
+  // Set plugins
+  const {
+    productsPlugin,
+    collectionsPlugin,
+    articlesPlugin,
+    pagesPlugin,
+    querySuggestionsPlugin,
+    algoliaInsightsPlugin,
+    recentSearchesPlugin,
+  } = algolia;
+  const plugins = [
+    algolia.config.analytics_enabled && algoliaInsightsPlugin,
+    algolia.config.index_products && productsPlugin,
+    algolia.config.index_collections && collectionsPlugin,
+    algolia.config.index_articles && articlesPlugin,
+    algolia.config.index_pages && pagesPlugin,
+    algolia.config.autocomplete_query_suggestions && querySuggestionsPlugin,
+    recentSearchesPlugin,
+    bannerPlugin(),
+  ];
+
+  const cssFile = document.getElementById('template_algolia_autocomplete.css');
+
+  // Set CSS variables
+  document.documentElement.style.setProperty(
+    `--aa-text-color-rgb`,
+    `${algolia.helpers.hexToRGB(algolia.config.colors.secondary)}`
+  );
+  document.documentElement.style.setProperty(
+    `--aa-primary-color-rgb`,
+    `${algolia.helpers.hexToRGB(algolia.config.colors.main)}`
+  );
+  document.documentElement.style.setProperty(
+    `--aa-muted-color-rgb`,
+    `${algolia.helpers.hexToRGB(algolia.config.colors.muted)}`
+  );
+  document.documentElement.style.setProperty(
+    `--aa-highlight-color-rgb`,
+    `${algolia.helpers.hexToRGB(algolia.config.colors.highlight)}`
+  );
+
+  // Link CSS
+  algolia.appendStyle(cssFile.text);
+
+  const placeholder =
+    window.innerWidth > 900
+      ? `${window.theme.strings.algolia.form_placeholder}`
+      : `${window.theme.strings.algolia.form_mobile_placeholder}`;
+
+
+  /**
+  * Displays a list of recent searches stored in localStorage, up to a maximum of 5 items, in the specified DOM element.
+  */
+
+  function recentSearches() {
+    const wrapper = document.querySelector('[data-recent-search-el="wrapper"]');
+
+    if(!wrapper) return;
+
+    const node = {
+      injectedNode: wrapper.querySelector('[data-recent-search-el="list"]'),
+      heading: wrapper.querySelector('[data-recent-search-el="heading"]'),
+    }
+
+    const searchesFromLocalStorage = JSON.parse(localStorage.getItem('AUTOCOMPLETE_RECENT_SEARCHES:RECENT_SEARCH'));
+
+    try {
+
+      if(node.injectedNode.hasChildNodes()) return
+
+      if(searchesFromLocalStorage === null || searchesFromLocalStorage.length === 0) {
+        wrapper.classList.add('aa-PanelSectionRecent--hidden');
+      } else {
+        wrapper.classList.remove('aa-PanelSectionRecent--hidden')
+        for (let index = 0; index < searchesFromLocalStorage.length && index < 5; index++) {
+          const entry = searchesFromLocalStorage[index];
+          const fragment = `
+            <li class="aa-Item">
+              <a class="aa-ItemLink aa-ItemWrapper" href="/search?q=${entry.id}">${entry.label}</a>
+            </li>
+          `
+          node.injectedNode.insertAdjacentHTML('beforeend', fragment)
+
+          node.heading.innerText = ` (${index + 1})`
+        }
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+  containers.forEach((container) => {
+    autocomplete({
+      container,
+      openOnFocus: true,
+      placeholder,
+      debug: algolia.config.autocomplete_debug,
+      plugins,
+      render({ elements, render, html, state }, root) {
+        console.log('render autocomplete')
+        const sourceIdsToExclude = ['products'];
+        const hasLeftPanelResults =
+          state.collections
+            .filter(
+              ({ source }) => sourceIdsToExclude.indexOf(source.sourceId) === -1
+            )
+            .reduce((prev, curr) => prev + curr.items.length, 0) > 0;
+        const [querySuggestionsPluginResults] = state.collections.filter(
+          ({ source }) => source.sourceId === 'querySuggestionsPlugin'
+        );
+        const displaySuggestions =
+          algolia.config.autocomplete_query_suggestions &&
+          querySuggestionsPluginResults.items.length > 0;
+        render(
+          hasLeftPanelResults
+            ? algolia.mainTemplate(
+                {
+                  html,
+                  state,
+                },
+                elements,
+                displaySuggestions
+              )
+            : algolia.mainProductsTemplate(
+                {
+                  html,
+                  state,
+                },
+                elements,
+                displaySuggestions
+              ),
+          root
+        );
+        document
+          .querySelector('.hd-Search .aa-Form')
+          .addEventListener('submit', (e) => {
+            document.querySelector('.aa-Input').focus();
+          });
+
+        // Recent Search Logic
+        recentSearches()
+
+      },
+      renderNoResults({ render, html, state }, root) {
+        render(algolia.noResultsTemplate({ html, state }), root);
+      },
+      onSubmit({ state, event }) {
+        event.preventDefault();
+        event.stopPropagation();
+        document.querySelector('.aa-Input').focus();
+        window.location.href = `/search?q=${state.query}`;
+      },
+      detachedMediaQuery: 'none',
+    });
+  });
+})(window.algoliaShopify);

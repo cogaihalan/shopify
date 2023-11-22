@@ -1,0 +1,42 @@
+{{ 'account-layout.css' | asset_url | stylesheet_tag }}
+
+<section class="acc-Layout">
+
+  <div class="acc-Layout_Nav">
+    {%- section 'account-navigation' -%}
+  </div>
+
+  {%- if title != blank -%}
+  <div class="acc-Layout_Inner lyt-Container">
+
+    <div class="acc-Layout_Header">
+
+      <h1 class="acc-Layout_Title fz-34_37">
+        {{- title | escape -}}
+      </h1>
+      {%- if settings.enable_loyalty_lion -%}
+        <span class="acc-Layout_Welcome fz-12_17">
+          {{ 'customer.account.hi_html' | t: customer_first_name: customer.first_name }}
+        </span>
+      {%- endif -%}
+    </div>
+
+  </div>
+  {%- endif -%}
+
+  <div class="acc-Layout_Inner">
+
+    <div class="acc-Layout_Body">
+      <div class="acc-Layout_Content">
+        {{ body }}
+      </div>
+    </div>
+
+  </div>
+
+  {%- if settings.enable_loyalty_lion -%}
+    <div class="acc-Rewards">
+      {%- section 'account-rewards' -%}
+    </div>
+  {%- endif -%}
+</section>

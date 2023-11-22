@@ -1,0 +1,149 @@
+<div id="{{- section.id -}}" class="crt-Usps">
+
+  {%- if section.blocks.size > 0 -%}
+  <div class="crt-Usps_Inner">
+
+    {%- for block in section.blocks -%}
+    <div class="crt-Usps_Usp">
+
+      <div class="crt-Usps_Icons">
+
+        <span class="crt-Usps_Icon crt-Usps_Icon-{{ block.settings.icon }}">
+        {%- liquid                      
+          case block.settings.icon
+            when "account"
+              render 'bao-icon-account'
+            when "bag"
+              render 'bao-icon-bag'
+            when "camera"
+              render 'bao-icon-camera'
+            when "card"
+              render 'bao-icon-credit-card'
+            when "chat"
+              render 'bao-icon-chat'
+            when "currency"
+              render 'bao-icon-currency'
+            when "email"
+              render 'bao-icon-email'
+            when "info"
+              render 'bao-icon-info'
+            when "parcel"
+              render 'bao-icon-parcel'
+            when "returns"
+              render 'bao-icon-returns'
+            when "wishlist"
+              render 'bao-icon-heart'
+          endcase
+        -%}
+        </span>
+        
+      </div>
+
+      <div class="crt-Usps_Content">
+        {%- if block.settings.title != blank -%}
+        <h4 class="crt-Usps_Title fz-14_20-headings">
+          {{ block.settings.title }}
+        </h4>
+        {%- endif -%}
+        {%- if block.settings.text != blank -%}
+        <div class="crt-Usps_Text rte-RichText fz-14_20">
+          {{ block.settings.text }}
+        </div>
+        {%- endif -%}
+      </div>
+      
+    </div>
+    {%- endfor -%}
+
+  </div>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+  {
+    "name": "Cart Usps",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "cart-usp",
+        "name": "Cart USP",
+        "settings": [
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "info": "Select an icon",
+            "options": [
+              {
+                "value": "account",
+                "label": "Account"
+              },
+              {
+                "value": "bag",
+                "label": "Bag"
+              },
+              {
+                "value": "camera",
+                "label": "Camera"
+              },
+              {
+                "value": "card",
+                "label": "Card"
+              },
+              {
+                "value": "chat",
+                "label": "Chat"
+              },
+              {
+                "value": "currency",
+                "label": "Currency"
+              },
+              {
+                "value": "email",
+                "label": "Email"
+              },
+              {
+                "value": "info",
+                "label": "Info"
+              },
+              {
+                "value": "parcel",
+                "label": "Gift"
+              },
+              {
+                "value": "returns",
+                "label": "Returns"
+              },
+              {
+                "value": "wishlist",
+                "label": "Wishlist"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

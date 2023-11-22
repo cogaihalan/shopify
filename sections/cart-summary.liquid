@@ -1,0 +1,184 @@
+{%- liquid
+  assign hide_order_protection = false
+  assign has_pre_order_item = false
+  assign has_gift_card = false
+  assign has_non_gift_card = false
+
+  for line_item in cart.items
+    if line_item.product.title contains 'Order Protection'
+      assign order_protection_price = line_item.original_price
+
+      if cart.item_count == 1
+        assign hide_order_protection = true
+      endif
+    elsif line_item.product.title contains 'E-GIFT CARD'
+      assign has_gift_card = true
+    else
+      assign has_non_gift_card = true
+    endif
+
+    if line_item.properties['_preorder'] != blank
+      assign has_pre_order_item = true
+    endif
+  endfor
+
+    if has_gift_card and has_non_gift_card == false
+      assign hide_order_protection = true
+    endif
+
+  assign cart_total = cart.total_price | minus: order_protection_price
+-%}
+
+<div id="{{- section.id -}}" class="crt-Summary" data-cart-element-el="item">
+
+  {%- if section.settings.title != blank -%}
+    <h2 class="crt-Summary_Title fz-18_22">
+      {{- section.settings.title -}}
+    </h2>
+  {%- endif -%}
+
+  {%- if section.settings.text != blank -%}
+    <p class="crt-Summary_Text rte-RichText fz-14_20">
+      {{- section.settings.text | remove: '<p>' | remove: '</p>' -}}
+    </p>
+  {%- endif -%}
+
+  {%- if has_pre_order_item and section.settings.pre_order_text != blank -%}
+    <p class="crt-Summary_PreOrderText rte-RichText fz-14_20">
+      {{- section.settings.pre_order_text | remove: '<p>' | remove: '</p>' -}}
+    </p>
+  {%- endif -%}
+
+  <div class="crt-Summary_Rows fz-14_20">
+    <div class="crt-Summary_Row">
+      <p class="crt-Summary_Label">{{ 'cart.summary.subtotal' | t }}</p>
+      <p class="crt-Summary_Value">{{ cart_total | money }}</p>
+    </div>
+    {%- if cart.total_discounts > 0 -%}
+      <div class="crt-Summary_Row">
+        <p class="crt-Summary_Label">{{ 'cart.summary.discount' | t }}</p>
+        <p class="crt-Summary_Value">{{ cart.total_discounts | money }}</p>
+      </div>
+    {%- endif -%}
+
+    {%- if shop.permanent_domain == 'oh-polly-uk.myshopify.com' or shop.permanent_domain == 'oh-polly-development.myshopify.com' -%}
+      {%- assign region = 'en_GB' -%}
+    {%- elsif shop.permanent_domain == 'oh-polly-us.myshopify.com' -%}
+      {%- assign region = 'en_US' -%}
+    {%- endif -%}
+
+    <div class="crt-Summary_Row">
+      <p class="crt-Summary_Label">{{ 'cart.summary.delivery' | t }}</p>
+      <p class="crt-Summary_Value">{{ 'cart.summary.calculated_at_checkout' | t }}</p>
+    </div>
+
+  </div>
+
+  <form class="crt-Summary_Form" action="/cart" method="post" novalidate>
+    {%- unless shop.permanent_domain == 'oh-polly-uk.myshopify.com' -%}
+      {%- if settings.enable_order_protection -%}
+        {% if localization.country.iso_code != 'GB' %}
+          <div class="order-protection"></div>
+        {% endif %}
+      {%- endif -%}
+    {%- endunless -%}
+
+    <button class="crt-Summary_Button btn-Button btn-Button-checkout" type="submit" name="checkout">
+      {{ 'cart.summary.checkout_securely' | t }}
+    </button>
+  </form>
+
+  <div class="crt-Summary_Footer fz-12_17">
+
+    {%- if section.settings.link_text != blank and section.settings.link_url != blank -%}
+    <a class="crt-Summary_Link" href="{{- section.settings.link_url -}}" aria-label="{{- section.settings.link_text -}}">
+      {{ section.settings.link_text }}
+    </a>
+    {%- endif -%}
+
+    {%- if section.settings.payment_text != blank -%}
+    <p class="crt-Summary_Payment">
+      {{ section.settings.payment_text | remove: '<p>' | remove: '</p>' }}
+    </p>
+    {%- endif -%}
+
+    {%- if section.blocks.size -%}
+    <div class="crt-Summary_Icons" data-checkout-payment-icons>
+      {%- for block in section.blocks -%}
+      <div class="crt-Summary_Icon">
+        {%- render 'responsive-image',
+          image: block.settings.payment_icon,
+          width: 100,
+          height: 60
+        -%}
+      </div>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Cart Summary",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Order Summary"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est risus, condimentum non auctor mollis, dictum gravida velit. Donec efficitur ante dolor, sed ornare ligula viverra in. Nunc laoreet eros lorem, id iaculis lectus elementum eget.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "pre_order_text",
+        "label": "Pre Order Text"
+      },
+      {
+        "type": "header",
+        "content": "Terms & Conditions"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text",
+        "default": "Read our Terms & Conditions"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Payment Methods"
+      },
+      {
+        "type": "text",
+        "id": "payment_text",
+        "label": "Payment Text",
+        "default": "Secure payment methods"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "payment-icon",
+        "name": "Payment Icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "payment_icon",
+            "label": "Payment Icon"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

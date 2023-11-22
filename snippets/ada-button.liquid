@@ -1,0 +1,14 @@
+<link
+  rel="stylesheet"
+  href="{{ 'ada-button.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<script src="{{ 'ada-button.js' | asset_url }}" defer></script>
+
+<ada-button>
+  <button class="ada-Button">
+    {%- render 'bao-icon-chatbot' -%}
+  </button>
+</ada-button>

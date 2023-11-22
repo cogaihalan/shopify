@@ -1,0 +1,30 @@
+{%- if customer -%}
+  {%- if section.settings.navigation != blank -%}
+    {%- render 'page-navigation',
+      page_navigation: section.settings.navigation
+    -%}
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Loyalty Navigation",
+    "templates": ["page"],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "navigation",
+        "label": "Navigation"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Loyalty Navigation"
+      }
+    ]
+  }
+{% endschema %}

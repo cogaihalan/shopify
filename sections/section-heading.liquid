@@ -1,0 +1,43 @@
+{%- render 'section'
+  kicker: section.settings.kicker,
+  title: section.settings.title,
+  button_text: section.settings.button_text,
+  button_link: section.settings.button_link
+-%}
+
+{% schema %}
+  {
+    "name": "Heading",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Heading"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,59 @@
+{%- liquid
+  assign accordions = collection.metafields.accordion.title
+  assign content = collection.metafields.accordion.content
+-%}
+
+{%- if accordions != blank and content != blank -%}
+  {%- render 'collection-accordion',
+    accordions: accordions,
+    content: content
+  -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Collection Accordion",
+    "templates": ["collection"],
+    "class": "sec-Section_CollectionAccordion",
+    "settings": [
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingStandard"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Accordion"
+      }
+    ]
+  }
+{% endschema %}

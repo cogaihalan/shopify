@@ -1,394 +1,322 @@
-{{ 'template-collection.css' | asset_url | stylesheet_tag }}
-{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{%- comment -%} VERSION: 0.0.3 Please do not delete this line. {%- endcomment -%}
 
-{% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
+{{ 'collection-items.css' | asset_url | stylesheet_tag }}
+{{ 'collection-toolbar.css' | asset_url | stylesheet_tag }}
 
-{%- if section.settings.enable_quick_add -%}
-  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
+<link
+  rel="stylesheet"
+  href="{{ 'collection-promo.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+<script
+  src="{{ 'back-to-top.js' | asset_url }}"
+  defer="defer"
+></script>
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
+<script
+  src="{{ 'collection-layout-switcher.js' | asset_url }}"
+  defer="defer"
+></script>
 
-<div class="section-{{ section.id }}-padding">
-  {%- paginate collection.products by section.settings.products_per_page -%}
-    {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
-    {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
-      <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden">
-        <form class="facets-vertical-form" id="FacetSortForm">
-          <div class="facet-filters sorting caption">
-            <div class="facet-filters__field">
-              <h2 class="facet-filters__label caption-large text-body">
-                <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-              </h2>
-              <div class="select">
-                {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                <select
-                  name="sort_by"
-                  class="facet-filters__sort select__select caption-large"
-                  id="SortBy"
-                  aria-describedby="a11y-refresh-page-message"
+<script
+  src="{{ 'collection-sort-by.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<script
+  src="{{ 'load-more-list.js' | asset_url }}"
+  defer="defer"
+></script>
+
+{%- liquid
+  assign pagination_amount = section.settings.products_per_page
+  assign total_count = collection.all_products_count
+-%}
+
+{%- paginate collection.products by pagination_amount -%}
+  {%- assign current_count = pagination_amount | times: paginate.current_page -%}
+
+  <div class="clc-Toolbar">
+    <div class="clc-Toolbar_Columns">
+      <div class="clc-Toolbar_Column clc-Toolbar_Column-one">
+        <button type="button" class="clc-Toolbar_Trigger clc-Toolbar_Trigger-filters fz-14_15" data-drawers-trigger="collectionfilters">
+          <span class="clc-Toolbar_TriggerTitle">
+            {{ 'collections.toolbar.filters' | t }}
+          </span>
+          <span class="clc-Toolbar_TriggerCount">
+            (<span data-product-grid-count>{{- collection.products_count -}}</span>)
+          </span>
+        </button>
+      </div>
+      <div class="clc-Toolbar_Column clc-Toolbar_Column-two">
+        <div class="clc-Toolbar_CollectionInformation fz-14_15">
+            {{ collection.title }} - <span data-product-grid-count>{{ collection.products_count }}</span> {{ 'collections.toolbar.items' | t }}
+          </div>
+      </div>
+      <div class="clc-Toolbar_Column clc-Toolbar_Column-three">
+        <collection-layout-switcher class="clc-Toolbar_LayoutSwitcher">
+          <span class="util-ScreenReaderOnly">{{ 'accessibility.view_as' | t }}</span>
+          <button
+            class="clc-Toolbar_Trigger clc-Toolbar_Trigger-list"
+            data-collection-layout-switcher-el="trigger"
+            data-view="list"
+            role="button"
+            aria-pressed="false"
+          >
+            <span class="icon-fallback-text"></span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-threecolumns">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 11" aria-hidden="true"><circle cx="9" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="16" cy="2" r="2" fill="currentColor"></circle><circle cx="9" cy="9" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle><circle cx="16" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-onecolumn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 4 11" aria-hidden="true"><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+          </button>
+          <button
+            class="clc-Toolbar_Trigger clc-Toolbar_Trigger-grid"
+            data-collection-layout-switcher-el="trigger"
+            data-view="grid"
+            role="button"
+            aria-pressed="true"
+          >
+            <span class="icon-fallback-text"></span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-fourcolumns">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 11" aria-hidden="true"><circle cx="9" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="16" cy="2" r="2" fill="currentColor"></circle><circle cx="23" cy="2" r="2" fill="currentColor"></circle><circle cx="9" cy="9" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle><circle cx="16" cy="9" r="2" fill="currentColor"></circle><circle cx="23" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-twocolumns">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 11 11" aria-hidden="true"><circle cx="9" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="9" cy="9" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+          </button>
+        </collection-layout-switcher>
+
+        <collection-sort-by class="clc-Toolbar_SortMenuWrapper">
+          <button
+            id="sortMenu"
+            class="clc-Toolbar_SortMenuButton"
+            aria-haspopup="true"
+            aria-controls="sortMenu"
+            data-collection-sort-by-el="trigger"
+          >
+            <span class="clc-Toolbar_Label clc-Toolbar_Label-sortby">{{ 'collections.sorting.title' | t }}</span>
+            <span class="util-ScreenReaderOnly">
+              <span>{{ 'collections.sorting.title' | t }}</span>
+            </span>
+          </button>
+
+          {%- liquid
+            assign sortByFacets = 'Best selling,best-selling|Newest To Oldest,created-descending|Oldest To Newest,created-ascending|Price High To Low,price-descending|Price Low To High,price-ascending'
+            assign sortByFacetsArr = sortByFacets | split: '|'
+          -%}
+
+          <div
+            class="clc-Toolbar_SortMenu"
+            id="sortMenu"
+            role="menu"
+            aria-labelledby="sortMenu"
+            aria-hidden="true"
+            data-collection-sort-by-el="menu"
+          >
+            <div class="clc-Toolbar_SortMenuInner">
+              {%- for facet in sortByFacetsArr -%}
+                {%- liquid
+                  assign facet_arr = facet | split: ','
+                  assign facet_title = facet_arr[0]
+                  assign facet_value = facet_arr[1]
+                -%}
+
+                <a
+                  href="#"
+                  data-sort="{{- facet_value -}}"
+                  class="clc-Toolbar_SortMenuFacet"
+                  role="menuitem"
+                  title="{{- facet_title -}}"
+                  aria-label="{{- facet_title -}}"
+                  data-collection-sort-by-el="facet"
                 >
-                  {%- for option in collection.sort_options -%}
-                    <option
-                      value="{{ option.value | escape }}"
-                      {% if option.value == sort_by %}
-                        selected="selected"
-                      {% endif %}
-                    >
-                      {{ option.name | escape }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-            </div>
-            <noscript>
-              <button type="submit" class="facets__button-no-js button button--secondary">
-                {{ 'products.facets.sort_button' | t }}
-              </button>
-            </noscript>
-          </div>
-
-          <div class="product-count-vertical light" role="status">
-            <h2 class="product-count__text text-body">
-              <span id="ProductCountDesktop">
-                {%- if collection.results_count -%}
-                  {{
-                    'templates.search.results_with_count'
-                    | t: terms: collection.terms, count: collection.results_count
-                  }}
-                {%- elsif collection.products_count == collection.all_products_count -%}
-                  {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
-                {%- else -%}
-                  {{
-                    'products.facets.product_count'
-                    | t: product_count: collection.products_count, count: collection.all_products_count
-                  }}
-                {%- endif -%}
-              </span>
-            </h2>
-            <div class="loading-overlay__spinner">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                class="spinner"
-                viewBox="0 0 66 66"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-              </svg>
-            </div>
-          </div>
-        </form>
-      </facet-filters-form>
-    {%- endif -%}
-
-    <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
-      {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-      {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-        <aside
-          aria-labelledby="verticalTitle"
-          class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
-          id="main-collection-filters"
-          data-id="{{ section.id }}"
-        >
-          {% render 'facets',
-            results: collection,
-            enable_filtering: section.settings.enable_filtering,
-            enable_sorting: section.settings.enable_sorting,
-            filter_type: section.settings.filter_type,
-            paginate: paginate
-          %}
-        </aside>
-      {%- endif -%}
-
-      <div
-        class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-        id="ProductGridContainer"
-        {% if settings.animations_reveal_on_scroll %}
-          data-cascade
-        {% endif %}
-      >
-        {%- if collection.products.size == 0 -%}
-          <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
-            <div class="loading-overlay gradient"></div>
-            <div class="title-wrapper center">
-              <h2 class="title title--primary">
-                {{ 'sections.collection_template.empty' | t -}}
-                <br>
-                {{
-                  'sections.collection_template.use_fewer_filters_html'
-                  | t: link: collection.url, class: 'underlined-link link'
-                }}
-              </h2>
-            </div>
-          </div>
-        {%- else -%}
-          <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
-            <div class="loading-overlay gradient"></div>
-
-            <ul
-              id="product-grid"
-              data-id="{{ section.id }}"
-              class="
-                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-                grid--{{ section.settings.columns_desktop }}-col-desktop
-              "
-            >
-              {%- for product in collection.products -%}
-                {% assign lazy_load = false %}
-                {%- if forloop.index > 2 -%}
-                  {%- assign lazy_load = true -%}
-                {%- endif -%}
-                <li
-                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                >
-                  {% render 'card-product',
-                    card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
-                    show_quick_add: section.settings.enable_quick_add,
-                    section_id: section.id
-                  %}
-                </li>
+                  {{- facet_title -}}
+                </a>
               {%- endfor -%}
-            </ul>
-
-            {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
-            {%- endif -%}
+            </div>
           </div>
-        {%- endif -%}
+        </collection-sort-by>
       </div>
     </div>
-  {%- endpaginate -%}
-  {% if section.settings.image_shape == 'arch' %}
-    {% render 'mask-arch' %}
-  {%- endif -%}
-</div>
+  </div>
+
+  {%- liquid
+    assign promo_indexes = nil
+    assign promo_count = 0
+
+    if collection.metafields.promoted.index != blank
+      assign promo_indexes = collection.metafields.promoted.index
+    endif
+  -%}
+
+  <load-more-list
+    class="clc-Items"
+    data-collection-filters-form-external-el="container"
+    item-class-name=".clc-Items_Item"
+    data-items-per-page="{{ pagination_amount }}"
+    data-current-page="{{ paginate.current_page }}"
+    data-total-items="{{ total_count }}"
+    data-url="{{ request.path }}"
+    data-section-id="main-collection-product-grid"
+    data-infinite-scroll="false"
+    aria-busy="false"
+  >
+    <div
+      class="clc-Items_Items lyt-Container {{ products_item_settings }}"
+      data-collection-filters-form-external-el="product-grid"
+      data-collection-layout-switcher-external-el="productGrid"
+      data-collection-sort-by-external-el="productGrid"
+      data-load-more-list-el="target"
+      data-view="grid"
+    >
+      {%- liquid
+        assign promo_items_html = ""
+
+        assign grid_row_mobile = 1
+        assign grid_column_mobile = 1
+
+        assign grid_row_desktop = 1
+        assign grid_column_desktop = 1
+      -%}
+
+      {%- for product in collection.products -%}
+        {%- assign product_loop_index = forloop.index -%}
+        {%- assign product_loop_last = forloop.last -%}
+
+        {%- capture promo_item_html -%}
+          {%- if promo_indexes != nil -%}
+            {%- assign include_promo = false -%}
+            {%- assign promo_is_last_item = false -%}
+            {%- for promo_index in promo_indexes -%}
+              {%- assign promo_index_int = promo_index | times: 1 -%}
+              {%- assign promo_index_int_minus_1 = promo_index_int | minus: 1 -%}
+
+              {%- if promo_index_int == product_loop_index -%}
+                {%- assign include_promo = true -%}
+              {%- endif -%}
+
+              {% if product_loop_last and product_loop_index == promo_index_int_minus_1 %}
+                {%- assign include_promo = true -%}
+                {%- assign promo_is_last_item = true -%}
+              {% endif %}
+            {%- endfor -%}
+            {%- if include_promo -%}
+              {%- assign promo_order = forloop.index | times: 10 | minus: 1 -%}
+              {%- if promo_is_last_item -%}
+                {%- assign promo_order = promo_order | plus: 1 -%}
+              {%- endif -%}
+
+              <div
+                class="clc-Items_Item{% if product.metafields.clc_settings.double_width_card == "true" %} clc-Items_Item-doublecard{% endif %} clc-Items_Item-promoted clc-Items_Item-{{ collection.metafields.promoted.size_card[promo_count] | remove: ' ' | downcase }}"
+                data-index-modulo="{{forloop.index | modulo: 2}}"
+                data-load-more-list-el="item"
+                style="
+                  --PromoColumnDesktop:{{- grid_column_desktop -}};
+                  --PromoRowDesktop:{{- grid_row_desktop -}};
+                  --PromoColumnMobile:{{- grid_column_mobile -}};
+                  --PromoRowMobile:{{- grid_row_mobile -}};
+                ">
+
+                {%- liquid
+                  assign promo_image = collection.metafields.promoted.image[promo_count]
+                  assign promo_title = collection.metafields.promoted.title[promo_count]
+                  assign promo_v_align = collection.metafields.promoted.align_vertically[promo_count]
+                  assign promo_h_align = collection.metafields.promoted.align_horizontally[promo_count]
+                  assign promo_text = collection.metafields.promoted.text[promo_count]
+                  assign promo_price = collection.metafields.promoted.price[promo_count]
+                  assign promo_text_color = collection.metafields.promoted.text_color[promo_count] | default: "light"
+                  assign promo_button_text = collection.metafields.promoted.button_text[promo_count]
+                  assign promo_button_link = collection.metafields.promoted.button_link[promo_count]
+                -%}
+
+                {%- render 'collection-promo',
+                  promo_image: promo_image,
+                  promo_title: promo_title,
+                  promo_text: promo_text,
+                  promo_price: promo_price,
+                  promo_v_align: promo_v_align,
+                  promo_h_align: promo_h_align,
+                  promo_text_color: promo_text_color,
+                  promo_button_text: promo_button_text,
+                  promo_button_link: promo_button_link
+                -%}
+              </div>
+
+              {%- assign promo_count = promo_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endcapture -%}
+
+        {%- assign promo_items_html = promo_items_html | append: promo_item_html -%}
+
+        <div class="clc-Items_Item" data-load-more-list-el="item">
+          {%- render 'product-card', product: product, output_id: true, pagination_current_page: paginate.current_page -%}
+        </div>
+
+        {%- liquid
+          assign modulo_mobile = forloop.index | modulo: 2
+          assign modulo_desktop = forloop.index | modulo: 3
+
+          if modulo_mobile == 0
+            assign grid_row_mobile = grid_row_mobile | plus: 1
+            assign grid_column_mobile = 1
+          else
+            assign grid_column_mobile = grid_column_mobile | plus: 1
+          endif
+
+          if modulo_desktop == 0
+            assign grid_row_desktop = grid_row_desktop | plus: 1
+            assign grid_column_desktop = 1
+          else
+            assign grid_column_desktop = grid_column_desktop | plus: 1
+          endif
+        -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <footer class="clc-Pagination">
+        {%- liquid
+          assign text = 'collections.list.showing' | t: count: current_count, total: paginate.items
+          assign text_translation = 'collections.list.showing' | t: count: "[count]", total: paginate.items
+          assign button_text = 'collections.list.load_more' | t
+        -%}
+
+        {%- render 'pagination-load-more',
+          text: text,
+          text_translation: text_translation,
+          button_text: button_text
+        -%}
+      </footer>
+    {%- endif -%}
+  </load-more-list>
+
+  {%- render 'collection-filters', paginate: paginate -%}
+{%- endpaginate -%}
+
+<back-to-top class="clc-Items_BackToTop">
+  <a href="#top" aria-label="{{ 'layout.footer.back_to_top' | t }}" class="btn-Button_Arrow-backtotop">
+    {%- render 'bao-icon-chevron-up' -%}
+  </a>
+</back-to-top>
 
 {% schema %}
-{
-  "name": "t:sections.main-collection-product-grid.name",
-  "class": "section",
-  "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "min": 8,
-      "max": 24,
-      "step": 4,
-      "default": 16,
-      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "default": 4,
-      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-collection-product-grid.settings.header__3.content"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
-    },
-    {
-      "type": "select",
-      "id": "image_shape",
-      "options": [
-        {
-          "value": "default",
-          "label": "t:sections.all.image_shape.options__1.label"
-        },
-        {
-          "value": "arch",
-          "label": "t:sections.all.image_shape.options__2.label"
-        },
-        {
-          "value": "blob",
-          "label": "t:sections.all.image_shape.options__3.label"
-        },
-        {
-          "value": "chevronleft",
-          "label": "t:sections.all.image_shape.options__4.label"
-        },
-        {
-          "value": "chevronright",
-          "label": "t:sections.all.image_shape.options__5.label"
-        },
-        {
-          "value": "diamond",
-          "label": "t:sections.all.image_shape.options__6.label"
-        },
-        {
-          "value": "parallelogram",
-          "label": "t:sections.all.image_shape.options__7.label"
-        },
-        {
-          "value": "round",
-          "label": "t:sections.all.image_shape.options__8.label"
-        }
-      ],
-      "default": "default",
-      "label": "t:sections.all.image_shape.label",
-      "info": "t:sections.all.image_shape.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_rating",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
-      "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_quick_add",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-collection-product-grid.settings.header__1.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_filtering",
-      "default": true,
-      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
-      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
-    },
-    {
-      "type": "select",
-      "id": "filter_type",
-      "options": [
-        {
-          "value": "horizontal",
-          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__1.label"
-        },
-        {
-          "value": "vertical",
-          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__2.label"
-        },
-        {
-          "value": "drawer",
-          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__3.label"
-        }
-      ],
-      "default": "horizontal",
-      "label": "t:sections.main-collection-product-grid.settings.filter_type.label",
-      "info": "t:sections.main-collection-product-grid.settings.filter_type.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_sorting",
-      "default": true,
-      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-collection-product-grid.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "default": "2",
-      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
-        }
-      ]
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ]
-}
+  {
+    "name": "Collection Pages",
+      "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "min": 2,
+        "max": 50,
+        "step": 1,
+        "default": 48
+      }
+    ]
+  }
 {% endschema %}

@@ -1,0 +1,77 @@
+<div class="acc-Order">
+
+  <div class="acc-Order_Inner">
+
+    <div class="acc-Order_Images">
+      {%- for line_item in order.line_items -%}
+        {%- assign index = forloop.index -%}
+        {%- assign image_limit = 4 -%}
+
+        {%- if line_item.image != blank -%}
+          <a class="acc-Order_Image{% if index == image_limit %} acc-Order_Image-withOverlay{% endif %}" href="{{ order.customer_url }}">
+            {%- render 'responsive-image',
+                image: line_item.image,
+                width: 1000,
+                height: 1500
+            -%}
+
+            {%- if index == image_limit -%}
+              {%- assign total_additional_images = order.line_items.size | minus: index -%}
+              <div class="acc-Order_ImageOverlay">
+                <h1 class="acc-Order_ImageOverlayText fz-24_29">+{{ total_additional_images }}</h1>
+              </div>
+            {%- endif -%}
+          </a>
+
+          {%- if index == image_limit -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="acc-Order_Body">
+
+      <div class="acc-Order_Details fz-14_20">
+        <a class="acc-Order_Header" href="{{ order.customer_url }}">
+          <h3 class="acc-Order_Title fz-14_20">{{ 'customer.order.title' | t: name: order.name }} ({{ order.created_at | date: format: 'month_day_year' }})</h3>
+        </a>
+
+        <div class="acc-Order_Status">
+          <p class="acc-Order_StatusItem">{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</p>
+          <p class="acc-Order_StatusItem">{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</p>
+          <p class="acc-Order_StatusItem">{{ 'customer.order.total' | t }}: {{ order.total_price | money_without_trailing_zeros }}</p>
+          {%- if order.cancelled -%}
+            {%- assign cancelled_at = order.cancelled_at | date: '%d/%m/%y' -%}
+            <p class="acc-Order_StatusItem acc-Order_StatusItem-cancelled">{{ 'customer.order.cancelled' | t: date: cancelled_at }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="acc-Order_Buttons acc-Order_Buttons-desktop">
+          <a class="acc-Order_Button btn-Button btn-Button-primary btn-Button-border" href="{{ order.customer_url }}">
+            {{ "customer.order.view_order" | t }}
+          </a>
+          {%- if settings.order_tracker_modal_enable -%}
+            <button class="acc-Order_Button acc-Order_Button-orderTracking btn-Button btn-Button-secondary btn-Button-border" type="button" data-modal-trigger="track-order" data-order-number="{{ order.name }}">
+              {{ 'customer.order.track_order' | t }}
+            </button>
+          {%- endif -%}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="acc-Order_Buttons acc-Order_Buttons-mobile">
+    <a class="acc-Order_Button btn-Button btn-Button-primary btn-Button-border btn-Button-fullWidth" href="{{ order.customer_url }}">
+      {{ "customer.order.view_order" | t }}
+    </a>
+    {%- if settings.order_tracker_modal_enable -%}
+      <button class="acc-Order_Button acc-Order_Button-orderTracking btn-Button btn-Button-secondary btn-Button-border btn-Button-fullWidth" type="button" data-modal-trigger="track-order" data-order-number="{{ order.name }}">
+        {{ 'customer.order.track_order' | t }}
+      </button>
+    {%- endif -%}
+  </div>
+
+</div>

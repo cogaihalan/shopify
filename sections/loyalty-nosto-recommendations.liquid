@@ -1,0 +1,57 @@
+{%- if section.settings.nosto_id != blank -%}
+  {%- render 'loyalty-nosto-element',
+    customer_state: section.settings.customer_state,
+    nosto_id: section.settings.nosto_id,
+    button_text: section.settings.button_text,
+    button_link: section.settings.button_url,
+  -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Loyalty Nosto",
+    "templates": ["page"],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Customer state"
+      },
+      {
+        "type": "select",
+        "id": "customer_state",
+        "label": "Customer state",
+        "options": [
+          {
+            "value": "logged_out",
+            "label": "Logged out"
+          },
+          {
+            "value": "logged_in",
+            "label": "Logged in"
+          }
+        ],
+        "default": "logged_out"
+      },
+      {
+        "type": "text",
+        "id": "nosto_id",
+        "label": "Nosto ID"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Loyalty Nosto"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,35 @@
+{{ 'ancillary-section.css' | asset_url | stylesheet_tag }}
+{{ 'page-ancillary.css' | asset_url | stylesheet_tag }}
+
+<section class="anc-Section">
+  <div class="anc-Section_Inner">
+    <div class="anc-Section_Body">
+      <div class="pg-Ancillary_Text rte-RichText fz-23_30">
+        {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "(Ancillary) Text",
+    "templates": ["page"],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "(Ancillary) Text"
+      }
+    ]
+  }
+{% endschema %}

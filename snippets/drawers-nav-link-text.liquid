@@ -1,0 +1,69 @@
+{% comment %}
+  /*
+  |--------------------------------------------------------------------------
+  | Navigation Link Text
+  |--------------------------------------------------------------------------
+  | Parameters:
+  |
+  | link
+  | [Type: LinkDrop]
+  |
+  */
+{% endcomment %}
+{%- liquid
+  assign link_image_html = ""
+
+  assign downcase_link_title = link.title | downcase
+  assign link_title_parts = link.title | split: "["
+  assign link_title = link_title_parts[0] | strip
+  assign link_modifier = link_title_parts[1] | handleize
+  assign link_title_compare = link_title | downcase
+  assign icon = false
+
+  for block in blocks
+    if block.type == 'link-icon'
+      assign block_text = block.settings.title | strip | downcase
+
+      if block_text == link_title_compare and link_modifier != blank
+        if block.settings.icon != blank
+          assign link_modifier = 'image'
+          assign icon_width = block.settings.width
+          assign icon = block.settings.icon
+
+          break
+        endif
+      endif
+    endif
+  endfor
+
+  if downcase_link_title contains "[image:"
+    assign link_text_parts = link.title | split: "["
+    assign link_text = link_text_parts.first
+    assign link_image_url_parts = link_text_parts.last | split: ":"
+    assign link_image_url = link_image_url_parts.last | replace: "]", "" | strip
+
+    assign file_name = link_image_url | split: '/files/' | last | split: '?' | first
+    assign file_url = file_name | file_img_url: 'small'
+
+    capture link_image_html
+      echo '<span class="drw-Nav_LinkImageContainer"><img class="drw-Nav_LinkImage" src="' | append: link_image_url | append: '" alt="' | append: link_text | strip | append:'" height="80" width="80" loading="lazy" /></span>'
+    endcapture
+  endif
+-%}
+
+{%- if icon -%}
+    {{ link_image_html }}
+
+    <span class="drw-Nav_LinkText {% if link_modifier != blank %}drw-Nav_LinkText-{{- link_modifier -}}{% endif%}" style="width: {{ icon_width }}px;">
+      <img class="drw-Nav_LinkText-icon" src="data:image/svg+xml;base64,{{- icon -}}" loading="lazy">
+    </span>
+    <span class="util-ScreenReaderOnly">
+      {{- link_title -}}
+    </span>
+{%- else -%}
+  {{ link_image_html }}
+
+  <span class="drw-Nav_LinkText{% if link_modifier != blank %} drw-Nav_LinkText-{{- link_modifier -}}{% endif%}">
+    {{- link_title -}}
+  </span>
+{%- endif -%}

@@ -1,0 +1,16 @@
+<push-cart-nosto
+  class="psh-Nosto"
+  id="{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="push-cart-nosto"
+>
+  {%- if settings.push_cart_nosto_enable != blank -%}
+    {%- render 'nosto-element', nosto_id: settings.push_cart_nosto_id -%}
+  {%- endif -%}
+</push-cart-nosto>
+
+{% schema %}
+  {
+    "name": "Nosto Upsell"
+  }
+{% endschema %}

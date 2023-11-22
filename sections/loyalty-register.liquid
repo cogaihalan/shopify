@@ -1,0 +1,66 @@
+{%- unless customer -%}
+  {{ 'account.css' | asset_url | stylesheet_tag }}
+
+  {%- capture body -%}
+  <div class="acc-Account_Inner lyt-Container">
+
+    <div class="acc-Account_ContentContainer">
+
+      <div class="acc-Account_Content acc-Account_Content-register">
+        {%- render 'account-form-register', logo: section.settings.logo, is_rewards: true -%}
+      </div>
+
+      <div class="acc-Account_Content acc-Account_Content-logincta">
+
+        <h2 class="acc-Account_Title acc-Account_Title-logincta fz-18_22">
+          {{- 'customer.login.already_have_an_account' | t -}}
+        </h2>
+
+        <a class="acc-Account_Link btn-Button btn-Button-fullWidth btn-Button-quaternary" href="{{- routes.account_login_url -}}">
+          {{- 'customer.login.sign_in' | t -}}
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+  {%- endcapture -%}
+
+  {%- render 'section-account',
+    image_desktop: section.settings.image_desktop,
+    image_mobile: section.settings.image_mobile,
+    body: body
+  -%}
+
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Loyalty Register",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image (Desktop)",
+      "info": "Recommended: 1440px x 1700px"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "Recommended: 750px x 560px"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty Register"
+    }
+  ]
+}
+{% endschema %}

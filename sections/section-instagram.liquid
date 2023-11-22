@@ -1,0 +1,145 @@
+{{ 'section-instagram.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'lazy-foursixty.js' | asset_url }}"
+  type="module"
+></script>
+
+{%- capture body -%}
+<div class="sec-Instagram">
+  <div class="sec-Instagram_ContentContainer">
+    <div class="sec-Instagram_Content">
+      {%- if section.settings.show_icon == true -%}
+        <div class="sec-Instagram_Icon">
+          {%- render 'bao-icon-instagram' -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="sec-Instagram_Title fz-58_64">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="sec-Instagram_Text rte-RichText fz-14_20">
+          {{ section.settings.text }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_link != blank and section.settings.button_text != blank -%}
+        <div class="sec-Instagram_Buttons">
+          <a href="{{ section.settings.button_link }}" class="sec-Instagram_Button btn-Button btn-Button-secondary">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="sec-Instagram_Grid">
+    <lazy-foursixty>
+      {{ section.settings.foursixty | replace: 'src', 'data-lazy-foursixty-el="script" data-src' }}
+    </lazy-foursixty>
+  </div>
+
+  {%- if section.settings.button_link != blank and section.settings.button_text != blank -%}
+    <div class="sec-Instagram_Footer">
+      <a href="{{ section.settings.button_link }}" class="sec-Instagram_Button btn-Button btn-Button-secondary">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+  {%- endif -%}
+</div>
+{%- endcapture -%}
+
+{%- render 'section',
+  margin: section.settings.section_margin,
+  border_top: section.settings.border_top,
+
+  body: body
+-%}
+
+{% schema %}
+{
+  "name": "Instagram",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "section_margin",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "spacingNone",
+          "label": "None"
+        },
+        {
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
+        }
+      ],
+      "default": "spacingStandard"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "Add border to top?"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show Instagram icon"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "FourSixty"
+    },
+    {
+      "type": "textarea",
+      "id": "foursixty",
+      "label": "FourSixty code"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram"
+    }
+  ]
+}
+{% endschema %}

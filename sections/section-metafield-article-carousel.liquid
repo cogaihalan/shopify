@@ -1,0 +1,126 @@
+{%- if article.metafields.related_articles.enable -%}
+  {{ 'section-articles.css' | asset_url | stylesheet_tag }}
+
+  {%- assign article_handles = article.metafields.related_articles.articles | split: '|' -%}
+
+  {%- capture body -%}
+    <carousel-element
+      class="sec-Articles car-Carousel"
+      data-initialized="false"
+      data-loop="false"
+      data-centered="false"
+      data-slides-per-view-xs="1.1"
+      data-slides-per-view-sm="1.1"
+      data-slides-per-view-md="3"
+      data-slides-per-view-lg="3"
+      data-spacing-xs="30"
+      data-spacing-sm="30"
+      data-spacing-md="30"
+      data-fallback-classes="true"
+    >
+      <div class="sec-Articles_Items car-Carousel_Slides" data-carousel-element-el="slides">
+        {%- for article_handle in article_handles -%}
+          <div class="sec-Articles_Item car-Carousel_Slide" data-carousel-element-el="slide">
+            {%- render 'article-card',
+              article: articles[article_handle]
+            -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="sec-Articles_Footer">
+        <div class="sec-Articles_Scrollbar car-Carousel_Scrollbar">
+          <div 
+            class="sec-Articles_Scroller car-Carousel_Scroller"
+            data-carousel-element-el="scroller"
+            style="--Carousel_ItemCount: {{ article_handles.size }};"
+          ></div>
+        </div>
+      </div>
+    </carousel-element>
+  {%- endcapture -%}
+
+  {%- render 'section',
+    kicker: section.settings.kicker,
+    title: section.settings.title,
+    button_text: section.settings.button_text,
+    button_link: section.settings.button_link,
+    button_type: "secondary",
+
+    body: body,
+    background: section.settings.background_colour
+  -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "(ACF) Articles",
+    "templates": ["article"],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "color",
+        "id": "background_colour",
+        "label": "Background Colour",
+        "default": "#FDF5F5",
+        "info": "Brand Colours"
+      },
+      {
+        "type": "paragraph",
+        "content": "Light Pink: #FDF5F5"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Pink: #FAE0DF"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Cream: #FBF0EB"
+      },
+      {
+        "type": "paragraph",
+        "content": "Coffee: #DFC9B6"
+      },
+      {
+        "type": "paragraph",
+        "content": "Warm Pink: #E2A9A9"
+      },
+      {
+        "type": "paragraph",
+        "content": "Russet: #D49595"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "(ACF) Articles"
+      }
+    ]
+  }
+{% endschema %}

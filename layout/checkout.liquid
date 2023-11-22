@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    {%- if shop.permanent_domain == 'oh-polly-uk.myshopify.com' -%}
+      {% render 'hreflang' %}
+    {%- endif -%}
+
+    <title>{{ page_title }}</title>
+
+    {%- if settings.enable_google_tag_manager -%}
+      {%- render 'theme-gtm', placement: 'head' -%}
+    {%- endif -%}
+
+    {%- if settings.enable_google_analytics -%}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ settings.google_analytics_id }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ settings.google_analytics_id }}');
+      </script>
+    {%- endif -%}
+
+    {%- render 'bao-head', is_checkout: true -%}
+    {%- render 'bao-head-scripts' -%}
+    {%- render 'critical-head-styles' -%}
+    {%- render 'typekit' -%}
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+    {{ 'sanitize-evergreen.css' | asset_url | stylesheet_tag }}
+    {{ 'define.css' | asset_url | stylesheet_tag }}
+    {{ 'helpers.css' | asset_url | stylesheet_tag }}
+    {{ 'layout.css' | asset_url | stylesheet_tag }}
+    {{ 'checkout.css' | asset_url | stylesheet_tag }}
+    {%- if shop.permanent_domain == 'oh-polly-uk.myshopify.com' or shop.permanent_domain == 'oh-polly-development.myshopify.com' -%}
+      {{ 'hermes-click-and-collect.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+
+    <link
+      rel="stylesheet"
+      href="{{ 'rich-text.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'"
+    >
+
+    <link
+      rel="stylesheet"
+      href="{{ 'font-size.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'"
+    >
+
+    <link
+      rel="stylesheet"
+      href="{{ 'responsive-image.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'"
+    >
+
+    <link
+      rel="stylesheet"
+      href="{{ 'helpers.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'"
+    >
+
+    <link
+      rel="stylesheet"
+      href="{{ 'buttons.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'"
+    >
+
+    {%- if settings.enable_loyalty_lion -%}
+      {% include "loyaltylion" %}
+    {%- endif -%}
+
+    <script>lion.configure({ checkout: true })</script>
+
+    {%- if settings.enable_ada -%}
+      {%- render 'script-ada' -%}
+    {%- endif -%}
+
+    <script src="https://portal.afterpay.com/afterpay.js" async></script>
+    <script src="https://js.afterpay.com/afterpay-1.x.js" data-analytics-enabled async></script>
+
+    <!-- PURPLEDOT CODE START -->
+    {% if settings.use_purpledot and settings.purpledot_api_key != blank %}
+      {% render 'purple-dot' %}
+    {% endif %}
+    <!-- PURPLEDOT CODE END -->
+
+    {%- render 'microsoft-clarity' -%}
+  </head>
+
+  <body>
+    {%- if settings.enable_google_tag_manager -%}
+      {%- render 'theme-gtm', placement: 'body' -%}
+    {%- endif -%}
+
+    <div class="chk-Checkout">
+
+      <div class="chk-Checkout_Header chk-Checkout_Header-mobile">
+        <header class="main__header banner" data-header role="banner">
+          {{ content_for_logo }}
+          {{ breadcrumb }}
+        </header>
+      </div>
+
+      <div class="chk-Checkout_Rewards">
+        {{ 'sections.cart.rewards' | t }}
+      </div>
+
+      <div class="chk-Checkout_Inner lyt-Container">
+        <div class="chk-Checkout_Body">
+          {{ skip_to_content_link }}
+
+          {{ order_summary_toggle }}
+
+          <div class="content" data-content>
+            <div class="wrap">
+              <div class="main">
+                <div class="chk-Checkout_Header chk-Checkout_Header-desktop">
+                  <header class="main__header" role="banner">
+                    {{ content_for_logo }}
+                    {{ breadcrumb }}
+                  </header>
+                </div>
+
+                <main class="main__content">
+                  <div class="chk-Checkout_Express">
+                    {{ alternative_payment_methods }}
+                  </div>
+                  {{ content_for_layout }}
+                </main>
+
+                <footer class="main__footer" role="contentinfo">
+                  {{ content_for_footer }}
+                </footer>
+              </div>
+
+              <aside class="sidebar" role="complementary">
+                <div class="sidebar__header">
+                  {{ content_for_logo }}
+                </div>
+
+                <div class="sidebar__content">
+                  {{ content_for_order_summary }}
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          {{ tracking_code }}
+        </div>
+      </div>
+
+      <div class="chk-Checkout_Footer">
+        <div class="chk-Checkout_Inner lyt-Container">
+          {%- section 'checkout-footer' -%}
+        </div>
+      </div>
+    </div>
+
+    {%- render 'bao-checkout-scripts' -%}
+
+    {%- section 'checkout-delivery' -%}
+
+    <script>
+      //CONFIGURATION
+      var c2a_config = {
+        active: true,
+        showLogo: false,
+        access_token: '1d486-feb93-fb278-01ac9',
+        position: 0, // 0 - new input field for search, 1 - uses address line 1 for search
+        hideFields: 0, // 0 - do not hide address fields, 1 - hide address fields
+        countrySelector: true,
+        enabledCountries: [],
+        countryLanguage: 'en',
+        design: {
+          mode: 1,
+          ambient: 'light',
+          accent: 'default'
+        },
+        texts: {
+          country_button: 'Select Country',
+          country_placeholder: 'Type here to search for a country',
+          default_placeholder: 'Start with post/zip code or street',
+          placeholder_country_overrides: {},
+          generic_error: 'An error occured. Please enter your address manually',
+          no_results: 'No results found',
+          search_label: 'Address Search'
+        },
+        _enable_phone_validation: false, // Set to true if you want to use our phone validation service
+        _enable_email_validation: false,
+        excludeAreas: [],
+        transliterate: false,
+        beforePopulate: function(c2a, elements, address) {
+              // Perform any action here with the available data.
+              // For example, you may want to alter part of the address before the address fields are filled.
+          },
+        phone: {
+          beforeCorrect: function(element, result) {
+            // Perform any action here with the available data.
+            // For example, you may want to modify part of the phone number before the field has been populated with the corrected phone number.
+          }
+        }
+      };
+    </script>
+    <script src="https://cc-cdn.com/generic/scripts/v1/cc_c2a.min.js" type="text/javascript"></script>
+    <script src="https://cc-cdn.com/shopify/scripts/v1/cc_c2a_shopify.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      //CONFIGURATION
+      var cc_config = {
+        // CONFIGURATION (REQUIRED)
+        _cp_access_token : '1d486-feb93-fb278-01ac9',
+        // CONFIGURATION (OPTIONAL)
+        _cp_hide_fields : false, // Hide address fields until result selected
+        _cp_button_below_postcode : false, // Place the 'Find Address' button below the postcode field rather than next to it - true/false
+        _cp_button_text : 'Find Address', // Text displayed on the lookup button
+        _cp_button_class : '', // Class applied to the button
+        _cp_busy_img_url : '', // The url of the image to show while waiting for lookup results, e.g. a spinning wheel
+        _enable_phone_validation: false // Set to true if you want to use our phone validation service
+      };
+    </script>
+    <script src="https://cc-cdn.com/shopify-uk/scripts/v1/shopify_crafty_clicks.js" type="text/javascript"></script>
+    <script src="https://cc-cdn.com/generic/scripts/v1/cc_c2a.min.js" type="text/javascript"></script>
+
+    {%- if shop.currency == 'GBP' -%}
+      {{ "manager.js" | asset_url | script_tag }}
+    {%- endif -%}
+
+    {%- if shop.permanent_domain == 'oh-polly-uk.myshopify.com' or shop.permanent_domain == 'oh-polly-development.myshopify.com' -%}
+      <script src="https://www.evri.com/parcelshop-finder/en/main.js"></script>
+
+      <script>
+        window.eco_leaf_image_url = '{{ 'eco_leaf.png' | asset_url }}'
+        window.van_icon_image_url = '{{ 'van_icon.png' | asset_url }}'
+        window.cost_effective_image_url = '{{ 'cost_effective_icon.png' | asset_url }}'
+      </script>
+
+      {{ "hermes-click-and-collect.js" | asset_url | script_tag }}
+    {%- endif -%}
+
+    {%- if settings.checkout_enable_additional_field == true -%}
+      {%- liquid
+        assign allowed_country_codes = settings.checkout_additional_field_country_codes | downcase
+        assign customers_country_code = checkout.shipping_address.country_code | downcase
+      -%}
+
+      {% if allowed_country_codes contains customers_country_code %}
+        <script>
+          window.theme.checkout_country_code = '{{ checkout.shipping_address.country_code }}'
+        </script>
+        {{ "additional-checkout-field.js" | asset_url | script_tag }}
+      {%- endif -%}
+    {%- endif -%}
+    {%- render 'script-ometria' -%}
+    {%- render 'script-afterpay' -%}
+  </body>
+</html>

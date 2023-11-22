@@ -1,0 +1,43 @@
+{%- if address_title -%}
+<p class="acc-Addresses_Title">
+  {{- address_title -}}
+</p>
+{%- endif -%}
+
+<div class="acc-Addresses_Detail">
+  {{ address | format_address }}
+</div>
+
+<div class="frm-Form_Row frm-Form_Row-marginTop">
+  <div class="frm-Form_Columns">
+    
+    {%- unless is_default -%}
+    <div class="frm-Form_Column">
+      {% form 'customer_address', address %}
+        <input type="hidden" value="1" name="address[default]" />
+        <button
+          class="btn-Button btn-Button-primary btn-Button-fullWidth"
+          type="submit"
+          aria-label="{{ 'customer.addresses.set_default' | t }} {{ address_title }}"
+        >
+        {{ 'customer.addresses.set_default' | t }}
+        </button>
+      {% endform %}
+    </div>
+    {%- endunless -%}  
+
+    <div class="frm-Form_Column">
+      <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}">
+        <input type="hidden" name="_method" value="delete">
+        <button
+          class="btn-Button btn-Button-secondary{% unless is_default %} btn-Button-fullWidth{%- endunless -%} "
+          type="submit"
+          aria-label="{{ 'customer.addresses.delete' | t }} {{ address_title }}"
+        >
+          {{ 'customer.addresses.delete' | t }}
+        </button>
+      </form>
+    </div>
+
+  </div>
+</div>

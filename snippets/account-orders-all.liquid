@@ -1,0 +1,68 @@
+<script src="{{ 'load-more-list.js' | asset_url }}" defer></script>
+
+{%- capture item_body -%}
+{%- assign column_count = 2 -%}
+{%- assign items_per_page = 10 -%}
+{%- paginate customer.orders by items_per_page -%}
+<load-more-list class="acc-Orders acc-Orders-all"
+  data-items-per-page="{{- items_per_page -}}"
+  data-current-page="{{- paginate.current_page -}}"
+  data-total-items="{{- customer.orders_count -}}"
+  data-url="{{- request.path -}}"
+  data-infinite-scroll="false"
+  aria-busy="false"
+  data-column-count="{{- column_count -}}"
+>
+
+  <div class="acc-Orders_Orders" data-load-more-list-el="target">
+  {%- assign item_count = 0 -%}
+  {%- for order in customer.orders -%}
+  {%- liquid
+    assign page_size_modulo = forloop.length | modulo: column_count
+    assign last_row_starts_at = forloop.length | plus: page_size_modulo | minus: column_count
+    assign is_last_row = false
+    if forloop.index0 >= last_row_starts_at
+      assign is_last_row = true
+    endif
+    assign item_count = item_count | plus: 1
+  -%}
+  <div class="acc-Orders_Order" data-load-more-list-el="item" {% if is_last_row %}data-last-row="true"{% endif %}>
+    {%- render 'account-order-item', order: order -%}
+  </div>
+  {%- else -%}
+    {%- if paginate.current_page > 1 -%}
+      <p class="acc-Item_Text">{{ 'customer.orders.no_more_orders' | t }}</p>
+    {%- else -%}
+      <p class="acc-Item_Text">{{ 'customer.orders.no_orders' | t }}</p>
+      <a class="acc-Item_Button acc-Section_Button-margin btn-Button btn-Button-primary btn-Button-border" href="/">
+        {{ 'customer.orders.shop_now' | t }}
+      </a>  
+    {%- endif -%}
+  {%- endfor -%}
+  </div>
+
+  {%- if paginate.next.is_link -%}
+  <div class="acc-Account_Pagination">
+    {%- liquid
+      assign text = 'customer.orders.showing_orders' | t: count: item_count, total: paginate.items
+      assign text_translation = 'customer.orders.showing_orders' | t: count: "[count]", total: paginate.items
+      assign button_text = 'customer.orders.load_more' | t
+    -%}
+    {%- render 'pagination-load-more',
+      text: text,
+      text_translation: text_translation,
+      button_text: button_text
+    -%}
+  </div>
+  {%- endif -%}
+
+</load-more-list>
+{%- endpaginate -%}
+{%- endcapture -%}
+
+{%- assign item_title = 'customer.account.your_orders' | t -%}
+{%- render 'account-item',
+  item_title: item_title,
+  item_body: item_body,
+  is_richtext: false
+-%}

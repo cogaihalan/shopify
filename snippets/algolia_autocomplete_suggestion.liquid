@@ -1,0 +1,20 @@
+<script>
+  (function(algolia) {
+    'use strict';
+
+    algolia.suggestionsTemplate = function suggestionsTemplate({ item, html, components }) {
+      return html`<a
+              class="aa-ItemLink aa-ItemWrapper"
+              href="/search?q=${item.query}"
+      >
+        <div class="aa-ItemContent">
+          <div class="aa-ItemContentBody">
+            <div class="aa-ItemContentTitle">
+              ${components.Highlight({ hit: item, attribute: 'query' })}
+            </div>
+          </div>
+        </div>
+      </a>`
+    };
+  })(window.algoliaShopify);
+</script>

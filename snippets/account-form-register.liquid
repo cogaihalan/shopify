@@ -1,0 +1,94 @@
+<div class="acc-Account_Form acc-Account_Form-register">
+
+  {%- if logo != blank -%}
+    <div class="acc-Account_Logo">
+      {%- render 'responsive-image',
+        image: logo,
+        width: 334,
+        height: 160,
+      -%}
+    </div>
+  {%- else -%}
+    <h1 class="acc-Account_Title acc-Account_Title-form fz-24_29">
+      {{- 'customer.register.create_account' | t -}}
+    </h1>
+  {%- endif -%}
+
+  {%- if is_rewards -%}
+    {%- assign register_cta_text = 'customer.register.rewards_intro_text' | t -%}
+  {%- else -%}
+    {%- assign register_cta_text = 'customer.register.intro_text' | t -%}
+  {%- endif -%}
+
+  {%- render 'account-cta-register',
+    text: register_cta_text,
+    show_link: false
+  -%}
+
+  <div class="frm-Form">
+    {%- form 'create_customer', novalidate: 'novalidate', class: 'frm-Form' -%}
+
+      <div class="frm-Form_Row frm-Form_Row-first">
+        {%- liquid
+          assign success_message = 'customer.login.success_message' | t | strip
+          assign error_message = 'customer.login.error_message' | t | strip
+        -%}
+        {%- render 'form-messages', form: form, success_message: success_message, error_message: error_message -%}
+        <div class="frm-Form_Columns">
+          <div class="frm-Form_Column">
+            {%- render 'form-field-customer',
+              form: form,
+              field_name: "First Name",
+              translation_key: "customer.register.first_name" -%}
+          </div>
+          <div class="frm-Form_Column">
+            {%- render 'form-field-customer',
+              form: form,
+              field_name: "Last Name",
+              translation_key: "customer.register.last_name" -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="frm-Form_Row">
+        {%- render 'form-field-customer',
+          form: form,
+          field_name: "Email",
+          translation_key: "customer.register.email_address",
+          type: "email" -%}
+      </div>
+
+      <div class="frm-Form_Row">
+        {%- render 'form-field-customer',
+          form: form,
+          field_name: "Password",
+          translation_key: "customer.register.password",
+          type: "password" -%}
+      </div>
+
+      <div class="frm-Form_Row">
+        <p class="frm-Form_Text frm-Form_Text-footer fz-12_17">
+          {{ 'customer.register.required_fields' | t }}
+        </p>
+      </div>
+
+      <div class="frm-Form_Row frm-Form_Row-last">
+        <div class="frm-Form_Actions">
+
+          <button
+            class="frm-Form_Submit frm-Form_Button-login btn-Button-primary btn-Button-border btn-Button"
+            type="submit"
+          >
+            {{ 'customer.register.sign_up' | t }}
+          </button>
+
+          <p class="frm-Form_Text frm-Form_Text-footer frm-Form_Text-terms fz-12_17">
+            {{- 'customer.register.terms_html' | t -}}
+          </p>
+
+        </div>
+      </div>
+    {%- endform -%}
+  </div>
+
+</div>

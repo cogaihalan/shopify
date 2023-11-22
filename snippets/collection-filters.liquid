@@ -1,0 +1,261 @@
+{% comment %}theme-check-disable MissingTemplate, TemplateLength{% endcomment %}
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-drawer.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-drawers.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'collection-filters.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- liquid
+  assign sort_by = collection.sort_by | default: collection.default_sort_by
+-%}
+
+<div class="drw-Drawers util-HideUntilLoaded" data-drawer-key="collection-filters">
+  <div class="drw-Drawers_Drawer">
+
+    <site-drawer class="drw-Drawer drw-Drawer-collectionfilters drw-Drawer-fromLeft" key="collection-filters">
+
+      <header class="drw-Drawer_Header">
+        <h4 class="drw-Drawer_Title fz-24_29">{{ 'collections.filters.filters' | t }}</h4>
+
+        <button
+          type="button"
+          class="drw-Drawer_Close"
+          data-drawers-close
+        >
+          <span class="drw-Drawer_Icon drw-Drawer_Icon-close">
+            {%- render 'bao-icon-close' -%}
+          </span>
+          <span class="util-ScreenReaderOnly">
+            {{ 'accessibility.close' | t }}
+          </span>
+        </button>
+      </header>
+
+      <div class="drw-Drawer_Inner">
+
+      <div class="clc-ProductGridFacets_Section">
+        <form
+          class="clc-ProductGridFacets"
+          id="CollectionFiltersForm"
+          is="collection-filters-form"
+          data-id="{{ section.id }}"
+          data-product-count="{{ paginate.items }}"
+        >
+          <!--
+          - The sort-by input
+          - This has a "collection-filters-form" module hook as an internal element
+          -->
+          <input name="sort_by" value="{{ sort_by }}" type="hidden" data-collection-filters-form-el="sort-by">
+
+          <div class="clc-ProductGridFacets_Row">
+            <div
+              class="clc-ProductGridFacets_Active"
+              data-collection-filters-form-el="active-facets"
+            >
+              <div class="clc-ProductGridFacets_ActiveFacets">
+                {%- assign total_active_filters = 0 -%}
+
+                {%- capture active_filters_title -%}
+                  <h3 class="clc-ProductGridFacets_ActiveFacetsTitle fz-16_22">
+                    {{ 'collections.filters.active_filters' | t }}
+                  </h3>
+                {%- endcapture -%}
+
+                {%- for filter in collection.filters -%}
+                  {%- if filter.type == "price_range" -%}
+                    {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                      {%- assign total_active_filters = total_active_filters | plus: 1 -%}
+
+                      {%- if total_active_filters == 1 -%}
+                        {{ active_filters_title }}
+                      {%- endif -%}
+
+                      <facet-remove
+                        class="clc-ProductGridFacets_ActiveFacet"
+                        data-collection-filters-form-el="active-facet"
+                        data-facet-type="price"
+                      >
+                        <a class="clc-ProductGridFacets_ActiveLink" href="{{ filter.url_to_remove }}">
+                          {%- if filter.min_value.value -%}
+                            {{- filter.min_value.value | money -}}
+                          {%- else -%}
+                            {{- 0 | money -}}
+                          {%- endif -%}
+                          -
+                          {%- if filter.max_value.value -%}
+                            {{- filter.max_value.value | money -}}
+                          {%- else -%}
+                            {{- filter.range_max | money -}}
+                          {%- endif -%}
+
+                          <svg
+                            class="clc-ProductGridFacets_ActiveLinkIcon"
+                            aria-hidden="true"
+                            focusable="false"
+                            width="12"
+                            height="13"
+                            viewBox="0 0 12 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.48627 9.32917L2.82849 3.67098"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <path
+                              d="M2.88539 9.38504L8.42932 3.61524"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </a>
+                      </facet-remove>
+                    {%- endif -%}
+                  {%- endif -%}
+
+                  {%- for value in filter.active_values -%}
+                    {%- assign total_active_filters = total_active_filters | plus: 1 -%}
+
+                    {%- if total_active_filters == 1 -%}
+                      {{ active_filters_title }}
+                    {%- endif -%}
+
+                    <facet-remove
+                      class="clc-ProductGridFacets_ActiveFacet"
+                      data-collection-filters-form-el="active-facet"
+                    >
+                      <a class="clc-ProductGridFacets_ActiveLink" href="{{ value.url_to_remove }}">
+                        {{ value.label | escape | split: '|' | first }}
+
+                          <svg
+                            class="clc-ProductGridFacets_ActiveLinkIcon"
+                            aria-hidden="true"
+                            focusable="false"
+                            width="12"
+                            height="13"
+                            viewBox="0 0 12 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.48627 9.32917L2.82849 3.67098"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <path
+                              d="M2.88539 9.38504L8.42932 3.61524"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                      </a>
+                    </facet-remove>
+                  {%- endfor -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="clc-ProductGridFacets_Items"
+            data-collection-filters-form-el="facets"
+          >
+            {%- for filter in collection.filters -%}
+              {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+
+              <div
+                class="clc-ProductGridFacets_Item"
+                data-collection-filters-el="facetsItem"
+                aria-hidden="false"
+                {%- if filter.type == 'price_range' -%}
+                data-range-slider-external-el="trigger"
+                {%- endif -%}
+              >
+                <details class="clc-ProductGridFacet">
+                  <summary
+                    class="clc-ProductGridFacet_Summary"
+                    data-collection-filters-form-el="facet-label"
+                    data-index="{{ forloop.index0 }}"
+                  >
+                    <span class="clc-ProductGridFacet_FilterLabel fz-16_18">
+                      {{ filter.label | escape }}
+                      {%- if filter.param_name contains 'price' -%}
+                        ({{ cart.currency.symbol }})
+                      {%- endif -%}
+                    </span>
+                  </summary>
+                  <div
+                  class="clc-ProductGridFacet_Display">
+                    <div class="clc-ProductGridFacet_Body">
+                      {%- if filter.type == 'price_range' -%}
+                        {%- render 'collection-filter-price-range-type',
+                          filter: filter,
+                          id_prefix: 'Filter',
+                          index: forloop.index
+                        -%}
+                      {%- else -%}
+                        {%- render 'collection-filter-list-type',
+                          filter: filter,
+                          id_prefix: 'Filter',
+                          index: forloop.index
+                        -%}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </details>
+              </div>
+            {%- endfor -%}
+          </div>
+
+        </form>
+      </div>
+
+      </div>
+
+      <footer class="drw-Drawer_Footer">
+
+        <div class="clc-Filters_Footer">
+
+          <a
+            class="clc-Filters_Reset btn-Button btn-Button-basic"
+            href="{{ collection.url }}?sort_by={{ sort_by }}"
+          >
+            {{ 'collections.filters.reset' | t }}
+        </a>
+
+          <button
+            type="button"
+            class="clc-Filters_Apply btn-Button btn-Button-primary"
+            data-drawers-close
+          >
+            {{ 'collections.filters.apply' | t }}
+          </button>
+
+        </div>
+
+      </footer>
+    </site-drawer>
+
+  </div>
+  <div class="drw-Drawers_Backdrop" data-site-drawers-el="backdrop"></div>
+</div>

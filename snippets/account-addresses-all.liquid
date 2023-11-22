@@ -1,0 +1,37 @@
+<link
+  rel="stylesheet"
+  href="{{ 'account-addresses.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- assign item_title = 'customer.addresses.title' | t -%}
+{%- capture item_body -%}
+<div class="acc-Addresses fz-14_20">
+  <div class="acc-Addresses_Addresses">
+    <div class="acc-Addresses_Address acc-Addresses_Address-default">
+    {%- liquid
+    if customer.default_address
+      assign address_title = 'customer.addresses.default' | t
+      render 'account-addresses-address', address_title: address_title, address: customer.default_address, is_default: true
+    endif
+    -%}
+    </div>
+    {%- for address in customer.addresses -%}
+      {%- unless address.id == customer.default_address.id -%}
+        {%- assign address_title = address.first_name | slice: 0 | append: " " | append: address.last_name | append: " - " | append: address.zip -%}
+        <div class="acc-Addresses_Address">
+          {%- render 'account-addresses-address', address_title: address_title, address: address -%}
+        </div>
+      {%- endunless -%}
+    {%- else -%}
+      <p class="acc-Item_Text">{{ 'customer.addresses.no_addresses' | t }}</p>
+    {%- endfor -%}
+  </div>
+</div>
+{%- endcapture -%}
+
+{%- render 'account-item',
+  item_title: item_title,
+  item_body: item_body
+-%}

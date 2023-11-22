@@ -1,0 +1,326 @@
+{{ 'collection-items.css' | asset_url | stylesheet_tag }}
+{{ 'collection-toolbar.css' | asset_url | stylesheet_tag }}
+{{ 'product-card.css' | asset_url | stylesheet_tag }}
+
+<link
+  rel="stylesheet"
+  href="{{ 'collection-promo.css' | asset_url }}"
+>
+
+<script
+  src="{{ 'back-to-top.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<script
+  src="{{ 'collection-header-info.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<script
+  src="{{ 'collection-layout-switcher.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<script
+  src="{{ 'collection-sort-by.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<script
+  src="{{ 'collection-filters.js' | asset_url }}"
+  defer="defer"
+></script>
+
+{%- liquid
+  assign sort_by = collection.sort_by | default: collection.default_sort_by
+
+  assign total_active_values = 0
+  assign hide_count = 'true'
+  for filter in collection.filters
+    if filter.active_values.size > 0
+      assign total_active_values = total_active_values | plus: 1
+      assign hide_count = 'false'
+    endif
+  endfor
+-%}
+
+<div class="clc-ProductGrid" data-collection-filters-form-external-el="container" aria-busy="false">
+  <header class="clc-Toolbar" data-scroll-revealer-external-el="mask">
+    <div class="clc-Toolbar_Columns">
+      <div class="clc-Toolbar_Column clc-Toolbar_Column-one">
+        <button type="button" class="clc-Toolbar_Trigger clc-Toolbar_Trigger-filters fz-14_15"
+        data-drawers-trigger="collectionfilters">
+          <span class="clc-Toolbar_TriggerTitle">
+            {{ 'collections.toolbar.filters' | t }}
+          </span>
+          <span class="clc-Toolbar_TriggerCount" aria-hidden="{{ hide_count }}">
+            (<span data-active-filter-count>{{ total_active_values }}</span>)
+          </span>
+        </button>
+      </div>
+
+      <div class="clc-Toolbar_Column clc-Toolbar_Column-two">
+        <collection-header-info class="clc-Toolbar_CollectionInformation fz-14_15">
+          {%- liquid
+            assign products_per_page = section.settings.products_per_page
+
+            if products_per_page > collection.products_count
+              assign products_per_page = collection.products_count
+            endif
+          -%}
+          {{ collection.title }} - <span data-collection-filters-external-el="collection-header-info" data-collection-header-info-text="{{ 'collections.list.header_showing' | t }}" data-current-page="{{ current_page }}" data-products-per-page="{{ products_per_page }}"></span> <span data-product-grid-count>{{ collection.products_count }}</span> {{ 'collections.toolbar.items' | t }}
+        </collection-header-info>
+      </div>
+
+      <div class="clc-Toolbar_Column clc-Toolbar_Column-three">
+        <collection-layout-switcher class="clc-Toolbar_LayoutSwitcher">
+          <span class="util-ScreenReaderOnly">{{ 'accessibility.view_as' | t }}</span>
+          <button
+            class="clc-Toolbar_Trigger clc-Toolbar_Trigger-list"
+            data-collection-layout-switcher-el="trigger"
+            data-view="list"
+            role="button"
+            aria-pressed="false"
+          >
+            <span class="icon-fallback-text"></span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-threecolumns">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 11" aria-hidden="true"><circle cx="9" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="16" cy="2" r="2" fill="currentColor"></circle><circle cx="9" cy="9" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle><circle cx="16" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-onecolumn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 4 11" aria-hidden="true"><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+          </button>
+          <button
+            class="clc-Toolbar_Trigger clc-Toolbar_Trigger-grid"
+            data-collection-layout-switcher-el="trigger"
+            data-view="grid"
+            role="button"
+            aria-pressed="true"
+          >
+            <span class="icon-fallback-text"></span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-fourcolumns">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 11" aria-hidden="true"><circle cx="9" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="16" cy="2" r="2" fill="currentColor"></circle><circle cx="23" cy="2" r="2" fill="currentColor"></circle><circle cx="9" cy="9" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle><circle cx="16" cy="9" r="2" fill="currentColor"></circle><circle cx="23" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+            <span class="clc-Toolbar_Icon clc-Toolbar_Icon-layout clc-Toolbar_Icon-twocolumns">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 11 11" aria-hidden="true"><circle cx="9" cy="2" r="2" fill="currentColor"></circle><circle cx="2" cy="2" r="2" fill="currentColor"></circle><circle cx="9" cy="9" r="2" fill="currentColor"></circle><circle cx="2" cy="9" r="2" fill="currentColor"></circle></svg>
+            </span>
+          </button>
+        </collection-layout-switcher>
+
+        <collection-sort-by class="clc-Toolbar_SortMenuWrapper">
+          <button
+            id="sortMenu"
+            class="clc-Toolbar_SortMenuButton"
+            aria-haspopup="true"
+            aria-controls="sortMenu"
+            data-collection-sort-by-el="trigger"
+          >
+            <span class="clc-Toolbar_Label clc-Toolbar_Label-sortby">{{ 'collections.sorting.title' | t }}</span>
+            <span class="util-ScreenReaderOnly">
+              <span>{{ 'collections.sorting.title' | t }}</span>
+            </span>
+          </button>
+
+          <div
+            class="clc-Toolbar_SortMenu"
+            id="sortMenu"
+            role="menu"
+            aria-labelledby="sortMenu"
+            aria-hidden="true"
+            data-collection-sort-by-el="menu"
+          >
+            <div class="clc-Toolbar_SortMenuInner">
+
+              {%- for option in collection.sort_options -%}
+                {% unless option.value contains 'title-ascending' or option.value contains 'title-descending' %}
+                  <button class="clc-Toolbar_SortMenuFacet" data-collection-filters-form-external-el="sort-by" data-value="{{ option.value | escape }}">
+                    {{- option.name | escape -}}
+                  </button>
+                {% endunless %}
+              {%- endfor -%}
+            </div>
+          </div>
+        </collection-sort-by>
+      </div>
+    </div>
+  </header>
+
+  <div class="clc-ProductGrid_Body">
+
+    {%- paginate collection.products by section.settings.products_per_page -%}
+      {%- liquid
+        assign products_per_page = section.settings.products_per_page
+        if collection.products_count < products_per_page
+          assign products_per_page = collection.products_count
+        endif
+        assign initial_product = current_page | times: products_per_page | minus: products_per_page | plus: 1
+        assign current_products = products_per_page | times: current_page
+        if collection.products_count < current_products
+          assign current_products = collection.products_count
+        endif
+      -%}
+
+      <div class="clc-ProductGrid_FacetsTarget"
+        data-collection-filters-form-external-el="product-grid"
+        data-collection-header-info-external-el="product-grid"
+        data-current-page="{{ paginate.current_page }}"
+        data-initial-product="{{ initial_product }}"
+        data-current-products="{{ current_products }}"
+        data-last-page="{{ paginate.pages }}"
+        data-products-per-page="{{ products_per_page }}"
+        data-total-products="{{ collection.products_count }}"
+      >
+        {%- if paginate.pages > 1 and paginate.previous.is_link -%}
+          <div class="clc-ProductGrid_Pagination lyt-Container" data-collection-filters-form-external-el="pagination">
+            <div class="clc-ProductGrid_Pagination-loadPrevious" data-collection-filters-form-external-el="load-previous">
+                {%- render 'pagination-load-previous', paginate: paginate -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+
+        {%- if collection.products.size == 0 -%}
+          <div class="clc-ProductGrid_Products">
+            <div class="clc-Items" data-id="{{ section.id }}">
+              <ul
+                class="clc-Items_Items lyt-Container {{ products_item_settings }}" data-collection-filters-form-external-el="item-container"
+                data-collection-layout-switcher-external-el="productGrid"
+                data-view="grid"
+              >
+                <li class="prd-List_Item prd-List_Item-empty">
+                  <p class="clc-ProductGrid_Text" data-product-grid-empty>
+                    {{- 'sections.collection_template.empty' | t }}<br />
+                    {{- 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: 'clc-ProductGrid_ClearFilters' -}}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+        {%- else -%}
+          <div class="clc-ProductGrid_Products">
+            <div class="clc-Items" data-id="{{ section.id }}">
+              <ul
+                class="clc-Items_Items lyt-Container {{ products_item_settings }}" data-collection-filters-form-external-el="item-container"
+                data-collection-layout-switcher-external-el="productGrid"
+                data-view="grid"
+                aria-busy="true"
+              >
+                {%- for product in collection.products -%}
+                  <li
+                    class="clc-Items_Item"
+                    id="product-{{ product.id }}"
+                    data-collection-filters-form-external-el="item"
+                    data-collection-track-position-el="card"
+                    data-page="{{ paginate.current_page }}"
+                  >
+                    {%- liquid
+                      assign preload_image = false
+                      if forloop.index0 == 0
+                        assign preload_image = true
+                      endif
+                    -%}
+
+                    {%-
+                      render 'product-card',
+                      product: product,
+                      preload_image: preload_image,
+                      output_id: true,
+                      pagination_current_page: paginate.current_page
+                    -%}
+                  </li>
+                {%- endfor %}
+
+                {% if collection.metafields.promoted.index != blank and paginate.current_page == 1 %}
+                  {% for promo_index in collection.metafields.promoted.index %}
+                    <li
+                      class="clc-Items_Item clc-Items_Item-promoted"
+                      data-load-more-list-el="item"
+                      data-collection-filters-form-external-el="promoItem"
+                      data-mobile-index="{{- collection.metafields.promoted.index_mobile[forloop.index0] -}}"
+                      data-desktop-index="{{- collection.metafields.promoted.index[forloop.index0] -}}"
+                    >
+                      {%- render 'collection-promo',
+                        promo_image: collection.metafields.promoted.image[forloop.index0],
+                        promo_title: collection.metafields.promoted.title[forloop.index0],
+                        promo_text: collection.metafields.promoted.text[forloop.index0],
+                        promo_price: collection.metafields.promoted.price[forloop.index0],
+                        promo_v_align: collection.metafields.promoted.align_vertically[forloop.index0],
+                        promo_h_align: collection.metafields.promoted.align_horizontally[forloop.index0],
+                        promo_text_color: collection.metafields.promoted.text_color[forloop.index0] | default: "light",
+                        promo_button_text: collection.metafields.promoted.button_text[forloop.index0],
+                        promo_button_link: collection.metafields.promoted.button_link[forloop.index0]
+                      -%}
+                      </li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if paginate.pages > 1 and paginate.next.is_link -%}
+          {%- render 'pagination-load-more', paginate: paginate -%}
+        {%- endif -%}
+
+        {%- render 'collection-filters', paginate: paginate -%}
+      </div>
+    {%- endpaginate -%}
+  </div>
+</div>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type":"ItemList",
+    "itemListElement": [
+      {% for product in collection.products %}
+        {
+          "@context": "https://schema.org",
+          "@type": "ListItem",
+          "url": "{{ shop.secure_url }}{{ product.url }}",
+          "position": {{ forloop.index }}
+          {% if product.metafields.okendo.summaryData.reviewCount > 0 or product.metafields.okendo.ReviewCount > 0 %},{% endif %}
+          {% if product.metafields.okendo.summaryData.reviewCount > 0 %}
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "{{ product.metafields.okendo.summaryData.reviewAverageValue }}",
+              "ratingCount": "{{ product.metafields.okendo.summaryData.reviewCount }}"
+            }
+          {% elsif product.metafields.okendo.ReviewCount > 0 %}
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "{{ product.metafields.okendo.ReviewAverageValue }}",
+              "ratingCount": "{{ product.metafields.okendo.ReviewCount }}"
+            }
+          {% endif %}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    "numberOfItems": {{ collection.all_products_count }}
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Product grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 48,
+      "label": "Products per page"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}

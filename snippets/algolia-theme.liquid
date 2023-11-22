@@ -1,0 +1,63 @@
+{{- 'algolia_config.js' | asset_url | script_tag -}}
+
+<script type="text/template" id="template_algolia_money_format">
+  {%- render 'algolia_money_format' -%}
+</script>
+<script type="text/template" id="template_algolia_current_collection_id">
+  {%- render 'algolia_current_collection_id' -%}
+</script>
+<script type="text/template" id="template_algolia_autocomplete.css">
+  {%- render 'algolia_autocomplete.css' -%}
+</script>
+<script type="text/template" id="template_algolia_instant_search.css">
+  {%- render 'algolia_instant_search.css' -%}
+</script>
+
+<script src="{{ 'algolia_externals.js' | asset_url }}" defer></script>
+{{- 'algolia_init.js' | asset_url | script_tag -}}
+<script src="{{ 'algolia_analytics.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_translations.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_helpers.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_autocomplete_suggestions_plugin.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_autocomplete_recent_searches_plugin.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_autocomplete_product_plugin.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_autocomplete_collections_plugin.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_autocomplete_articles_plugin.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_autocomplete_pages_plugin.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_autocomplete.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_facets.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_sort_orders.js' | asset_url }}" defer></script>
+<script src="{{ 'algolia_instant_search.js' | asset_url }}" defer></script>
+
+{%- render 'algolia_autocomplete' -%}
+{%- render 'algolia_autocomplete_main_products_only' -%}
+{%- render 'algolia_autocomplete_page'-%}
+{%- render 'algolia_autocomplete_collection' -%}
+{%- render 'algolia_autocomplete_article' -%}
+{%- render 'algolia_autocomplete_product' -%}
+{%- render 'algolia_autocomplete_suggestion' -%}
+{%- render 'algolia_autocomplete_header' -%}
+{%- render 'algolia_autocomplete_footer' -%}
+{%- render 'algolia_autocomplete_no_results' -%}
+{%- render 'algolia_instant_search' -%}
+{%- render 'algolia_instant_search_stats' -%}
+{%- render 'algolia_instant_search_facet_show_more' -%}
+{%- render 'algolia_instant_search_facet_item' -%}
+{%- render 'algolia_instant_search_product' -%}
+{%- render 'algolia_instant_search_no_result' -%}
+
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.2/dist/algoliasearch-lite.umd.js" integrity="sha256-dImjLPUsG/6p3+i7gVKBiDM8EemJAhQ0VvkRK2pVsQY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.1/dist/instantsearch.production.min.js" integrity="sha256-3s8yn/IU/hV+UjoqczP+9xDS1VXIpMf3QYRUi9XoG0Y=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-query-suggestions"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-recent-searches"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-algolia-insights"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/preact/standalone.umd.js"></script>
+
+<script>
+  var ALGOLIA_INSIGHTS_SRC = "https://cdn.jsdelivr.net/npm/search-insights@2.0.3";
+  !function(e,a,t,n,s,i,c){e.AlgoliaAnalyticsObject=s,e[s]=e[s]||function(){
+  (e[s].queue=e[s].queue||[]).push(arguments)},i=a.createElement(t),c=a.getElementsByTagName(t)[0],
+  i.async=1,i.src=n,c.parentNode.insertBefore(i,c)
+  }(window,document,"script",ALGOLIA_INSIGHTS_SRC,"aa");
+</script>

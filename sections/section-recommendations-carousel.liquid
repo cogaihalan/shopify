@@ -1,0 +1,194 @@
+{%- if product -%}
+  {{ 'section.css' | asset_url | stylesheet_tag }}
+  {{ 'product-recommendations.css' | asset_url | stylesheet_tag }}
+  {{ 'section-recommendations-carousel.css' | asset_url | stylesheet_tag }}
+
+  {%- if product.metafields.recommend_carousel.use_shopify_recommendations != blank -%}
+    <script
+      src="{{ 'product-recommendations.js' | asset_url }}"
+      type="module"
+    ></script>
+  {%- endif -%}
+
+  {%- assign item_count = 0 -%}
+  {%- capture recommendation_items -%}
+
+    {%- if recommendations.performed and recommendations.products_count > 0 -%}
+
+      {%- for recommendation in recommendations.products limit: 12 -%}              
+        <div class="sec-RecommendationsCarousel_Item car-Carousel_Slide" data-carousel-element-el="slide">
+          {%- render 'product-card', product: recommendation, small_image: true -%}
+        </div>
+        {%- assign item_count = item_count | plus: 1 -%}
+      {%- endfor -%}
+
+    {%- else -%}
+
+      {%- liquid
+        assign collection_handle = product.metafields.recommend_carousel.collection
+        assign collection = collections[collection_handle]
+      -%}
+      {%- if collection and collection.handle != blank and collection.products.size -%}
+        {%- for collection_product in collection.products limit: 12 -%}
+          <div class="sec-RecommendationsCarousel_Item car-Carousel_Slide" data-carousel-element-el="slide">
+            {%- render 'product-card', product: collection_product, small_image: true -%}
+          </div>
+          {%- assign item_count = item_count | plus: 1 -%}
+        {%- endfor -%}
+      {%- else -%}
+        <div class="nosto_element" id="pdp-you-might-also-like"></div>
+      {%- endif -%}
+
+    {%- endif -%}
+
+  {%- endcapture -%}
+
+  {%- capture body -%}
+
+    <product-recommendations 
+      class="prd-Recommendations"
+      data-use-recommendations="{%- if product.metafields.recommend_carousel.use_shopify_recommendations and recommendations.performed == false -%}true{%- else -%}false{%- endif -%}" 
+      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=12"
+      data-section-id="shopify-section-{{ section.id }}"
+      aria-busy="{%- if product.metafields.recommend_carousel.use_shopify_recommendations and recommendations.performed == false -%}true{%- else -%}false{%- endif -%}"
+    >
+
+      <carousel-element class="sec-RecommendationsCarousel car-Carousel"
+        data-initialized="false"
+        data-loop="true"
+        data-centered-md="true"
+        data-slides-per-view-xs="2.5"
+        data-slides-per-view-md="4"
+        data-spacing-xs="10"
+        data-item-count="{{- item_count -}}"
+      >
+        <div class="sec-RecommendationsCarousel_Items car-Carousel_Slides" data-carousel-element-el="slides">
+          {{ recommendation_items }}
+        </div>
+
+        <div class="sec-RecommendationsCarousel_Footer">
+          <div class="sec-RecommendationsCarousel_Scrollbar car-Carousel_Scrollbar">
+            <div 
+              class="sec-RecommendationsCarousel_Scroller car-Carousel_Scroller"
+              data-carousel-element-el="scroller"
+              style="--Carousel_ItemCount: {{ item_count }};"
+            ></div>
+          </div>
+        </div>
+
+        <div class="sec-RecommendationsCarousel_Arrows car-Carousel_Arrows">
+          <button
+            type="button"
+            class="sec-RecommendationsCarousel_Arrow sec-RecommendationsCarousel_Arrow-previous car-Carousel_Arrow car-Carousel_Arrow-previous"
+            data-carousel-element-el="previous"
+            aria-label="{{ 'accessibility.previous' | t }}"
+          >
+            {% render 'bao-icon-chevron-down' %}
+            <span class="util-ScreenReaderOnly">
+              {{ 'accessibility.previous' | t }}
+            </span>
+          </button>
+      
+          <button
+            type="button"
+            class="sec-RecommendationsCarousel_Arrow sec-RecommendationsCarousel_Arrow-next car-Carousel_Arrow car-Carousel_Arrow-next"
+            data-carousel-element-el="next"
+            aria-label="{{ 'accessibility.next' | t }}"
+          >
+            {% render 'bao-icon-chevron-down' %}
+            <span class="util-ScreenReaderOnly">
+              {{ 'accessibility.next' | t }}
+            </span>
+          </button>
+        </div>
+
+      </carousel-element>
+
+  </product-recommendations>
+
+  {%- endcapture -%}
+
+  {%- liquid
+    assign button_link = product.metafields.recommend_carousel.button_link | default: section.settings.button_link
+    assign button_text = product.metafields.recommend_carousel.button_text | default: section.settings.button_text
+  -%}
+
+  {%- render 'section',
+    margin: section.settings.section_margin,
+
+    kicker: section.settings.kicker,
+    title: section.settings.title,
+    button_text: button_text,
+    button_link: button_link,
+
+    body: body
+  -%}
+
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Recommendations Carousel",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title",
+        "default": "You might also like"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Recommendations Carousel"
+      }
+    ],
+    "templates": ["product"]
+  }
+{% endschema %}

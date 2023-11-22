@@ -1,0 +1,208 @@
+{{ 'section-cta-grid.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <div class="sec-CtaGrid sec-CtaGrid-{{ section.settings.text_colour }}Text {% if section.settings.overlay %} sec-CtaGrid-{{ section.settings.background_colour }}Background{% endif %}">
+    <div class="sec-CtaGrid_Items{% if section.blocks.size == 3 or section.blocks.size == 6 %} sec-CtaGrid_Items-3{% elsif section.blocks.size > 2 %} sec-CtaGrid_Items-4{% endif %}{% if section.settings.grid_gap_increase %} sec-CtaGrid_Item-gridGapIncrease{% endif %}">
+      {%- for block in section.blocks -%}
+        <div class="sec-CtaGrid_Item {% if block.settings.link != blank %} sec-CtaGrid_Item-hasLink util-FauxLink{% endif %}"
+          {{ block.shopify_attributes }}>
+          <div class="sec-CtaGrid_ImageContainer{% if section.settings.mobile_text_underneath %} sec-CtaGrid_ImageContainer-noOverlap{% endif %}">
+            <div class="sec-CtaGrid_Image">
+              {%- render 'responsive-image',
+                image: block.settings.image,
+                width: 640,
+                height: 1000
+              -%}
+            </div>
+
+            <div class="sec-CtaGrid_Content">
+              {%- if block.settings.title != blank -%}
+                <h2 class="sec-CtaGrid_Title fz-24_29">
+                  {{ block.settings.title | newline_to_br }}
+                </h2>
+              {%- endif -%}
+
+              {%- if block.settings.text != blank -%}
+                <p class="sec-CtaGrid_Text fz-14_20">
+                  {{ block.settings.text }}
+                </p>
+              {%- endif -%}
+            </div>
+          </div>
+
+          {%- if block.settings.link != blank and block.settings.link_text != blank -%}
+            <a href="{{- block.settings.link -}}"
+              class="sec-CtaGrid_Button fz-13_18"
+            >
+              {{- block.settings.link_text -}}
+            </a>
+          {%- endif -%}
+
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="sec-CtaGrid_FauxLink util-FauxLink_Link">
+              <span class="util-ScreenReaderOnly">
+                {%- if block.settings.link_title != blank -%}
+                  {{ block.settings.link_title }}
+                {%- else -%}
+                  {{ block.settings.title }}
+                {%- endif -%}
+              </span>
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- render 'section'
+  kicker: section.settings.kicker,
+  title: section.settings.title,
+  button_text: section.settings.button_text,
+  button_link: section.settings.button_link,
+  button_type: "basic",
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "CTA Grid",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "header",
+        "content": "Blocks"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay",
+        "label": "Background overlay?",
+        "default": false,
+        "info": "Add a semi-transparent background to the content overlay"
+      },
+      {
+        "type": "select",
+        "id": "background_colour",
+        "label": "Background colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      },
+      {
+        "type": "select",
+        "id": "text_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "checkbox",
+        "id": "grid_gap_increase",
+        "label": "Increase grid gap?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_text_underneath",
+        "label": "Make mobile text underneath image?",
+        "default": false
+      }
+    ],
+    "max_blocks": 8,
+    "blocks": [
+      {
+        "type": "cta",
+        "name": "CTA",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Recommended size: 680px x 1000px"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link text",
+            "default": "Shop the collection"
+          },
+          {
+            "type": "text",
+            "id": "link_title",
+            "label": "Link title",
+            "info": "Title of the link for SEO - If blank will use the block Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "CTA Grid"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,16 @@
+{%- if section.settings.nosto_id != blank -%}
+  {%- render 'nosto-element', nosto_id: section.settings.nosto_id -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Cart Upsells",
+    "settings": [
+      {
+        "type": "text",
+        "id": "nosto_id",
+        "label": "Nosto ID"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,14 @@
+{%- liquid
+case logo
+  when "klarna"
+    render 'bao-icon-klarna'
+  when 'afterpay'
+    render 'bao-icon-afterpay'
+  when "clearpay"
+    render 'bao-icon-clearpay'
+  when "zip"
+    render 'bao-icon-zip',
+  when "laybuy"
+    render 'bao-icon-laybuy',
+endcase
+-%}

@@ -1,0 +1,47 @@
+<link
+  rel="stylesheet"
+  href="{{ 'product-accordions.css' | asset_url }}"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'collection-accordions.css' | asset_url }}"
+>
+
+{%- capture body -%}
+  <div class="clc-Accordion">
+    <div class="clc-Accordion_Inner lyt-Container">
+      <product-accordions class="prd-Accordion">
+        <div class="prd-Accordion_Items">
+          {%- for accordion in accordions -%}
+            <div class="prd-Accordion_Item" aria-expanded="false" data-el="product-accordions.item">
+              <button class="prd-Accordion_Header" data-el="product-accordions.trigger" type="button">
+                <div class="prd-Accordion_Heading">
+                  <h3 class="prd-Accordion_Title fz-16_18">
+                    {{- accordion -}}
+                  </h3>
+                </div>
+
+                <div class="prd-Accordion_Icon">
+                  <span class="prd-Accordion_Arrow btn-Button_Arrow-pink">
+                    {%- render 'bao-icon-chevron-down' -%}
+                  </span>
+                </div>
+              </button>
+
+              <div class="prd-Accordion_Body rte-RichText fz-14_20">
+                {{- content[forloop.index0] -}}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </product-accordions>
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- render 'section',
+  margin: section.settings.section_margin,
+  body: body,
+  title: section.settings.title
+-%}

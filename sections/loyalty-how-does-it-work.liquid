@@ -1,0 +1,242 @@
+{% if section.settings.customer_state == 'logged_out' %}
+  {%- unless customer -%}
+    {{ 'loyalty-how-does-it-work.css' | asset_url | stylesheet_tag }}
+
+    {%- capture body -%}
+      <div class="loy-HowDoes_Inner">
+
+        <header class="loy-HowDoes_Header">
+
+          <div class="loy-HowDoes_Strapline fz-14_20">
+            {{- section.settings.strapline -}}
+          </div>
+
+          <div class="loy-HowDoes_Title fz-34_37">
+            {{- section.settings.title -}}
+          </div>
+        </header>
+
+        <div class="loy-HowDoes_Columns" style="--Grid_Size: {{ section.blocks.size }};">
+          {%- for block in section.blocks -%}
+            <div class="loy-HowDoes_Column">
+              <div class="loy-HowDoes_ImageContainer">
+                <div class="loyHowDoes_Image">
+                  {%- render 'responsive-image',
+                    image: block.settings.image,
+                    width: 900,
+                    height: 880
+                  -%}
+                </div>
+              </div>
+
+              <div class="loy-HowDoes_BlockContent">
+                <div class="loy-HowDoes_BlockTitle fz-24_29">
+                  {{- block.settings.title -}}
+                </div>
+
+                <div class="loy-HowDoes_BlockText fz-14_20">
+                  {{- block.settings.text -}}
+                </div>
+
+                {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
+                  <a class="loy-HowDoes_BlockButton btn-Button btn-Button-secondary" href="{{ block.settings.button_link }}">
+                    {{ block.settings.button_text }}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+      </div>
+    {%- endcapture -%}
+
+    {%- render 'section',
+      body: body,
+      margin: section.settings.section_margin
+    -%}
+
+  {%- endunless -%}
+{% endif %}
+
+{%- if section.settings.customer_state == 'logged_in' -%}
+  {%- if customer -%}
+
+    {{ 'loyalty-how-does-it-work.css' | asset_url | stylesheet_tag }}
+
+    {%- capture body -%}
+    <div class="loy-HowDoes_Inner">
+
+      <header class="loy-HowDoes_Header">
+
+        <div class="loy-HowDoes_Strapline fz-14_20">
+          {{- section.settings.strapline -}}
+        </div>
+
+        <div class="loy-HowDoes_Title fz-34_37">
+          {{- section.settings.title -}}
+        </div>
+      </header>
+
+      <div class="loy-HowDoes_Columns" style="--Grid_Size: {{ section.blocks.size }};">
+        {%- for block in section.blocks -%}
+          <div class="loy-HowDoes_Column">
+            <div class="loy-HowDoes_ImageContainer">
+              <div class="loyHowDoes_Image">
+                {%- render 'responsive-image',
+                  image: block.settings.image,
+                  width: 900,
+                  height: 880
+                -%}
+              </div>
+            </div>
+
+            <div class="loy-HowDoes_BlockContent">
+              <div class="loy-HowDoes_BlockTitle fz-24_29">
+                {{- block.settings.title -}}
+              </div>
+
+              <div class="loy-HowDoes_BlockText fz-14_20">
+                {{- block.settings.text -}}
+              </div>
+
+              {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
+                <a class="loy-HowDoes_BlockButton btn-Button btn-Button-secondary" href="{{ block.settings.button_link }}">
+                  {{ block.settings.button_text }}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+    </div>
+    {%- endcapture -%}
+
+    {%- render 'section',
+      body: body,
+
+      margin: section.settings.section_margin
+    -%}
+
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Loyalty How Does it Work?",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "section_margin",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "spacingNone",
+          "label": "None"
+        },
+        {
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
+        }
+      ],
+      "default": "spacingNone"
+    },
+    {
+      "type": "header",
+      "content": "Customer state"
+    },
+    {
+      "type": "select",
+      "id": "customer_state",
+      "label": "Customer state",
+      "options": [
+        {
+          "value": "logged_out",
+          "label": "Logged out"
+        },
+        {
+          "value": "logged_in",
+          "label": "Logged in"
+        }
+      ],
+      "default": "logged_out"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "strapline",
+      "label": "Strapline"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Recommended size: 900 x 880"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty How Does it Work?"
+    }
+  ]
+}
+{% endschema %}

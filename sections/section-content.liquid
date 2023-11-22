@@ -1,0 +1,139 @@
+{{ 'section-content.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <div class="sec-Content">
+    <div class="sec-Content_Content">
+      {%- if section.settings.title != blank -%}
+        <h2 class="sec-Content_Title {{ section.settings.title_size }} sec-Content_Title-{{ section.settings.title_alignment }}">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.subtitle != blank -%}
+        <h3 class="sec-Content_Subtitle fz-18_25">{{ section.settings.subtitle }}</h3>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="sec-Content_Text fz-14_20 rte-RichText">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.button_url != blank -%}
+        <div class="sec-Content_Buttons">
+          <a href="{{ section.settings.button_url }}" class="sec-Content_Button btn-Button btn-Button-primary">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+
+  body: body
+-%}
+
+{% schema %}
+{
+  "name": "General Content",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "section_margin",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "spacingNone",
+          "label": "None"
+        },
+        {
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
+        }
+      ],
+      "default": "spacingStandard"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        {
+          "value": "fz-24_29",
+          "label": "Regular"
+        },
+        {
+          "value": "fz-58_64",
+          "label": "Large"
+        }
+      ],
+      "default": "fz-24_29"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "General Content"
+    }
+  ]
+}
+{% endschema %}

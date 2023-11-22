@@ -1,0 +1,23 @@
+{%- liquid 
+  assign promo_link_handle = link.title | handleize
+  assign link_promo_location = promo_location | append: promo_link_handle
+-%}
+
+{%- for block in section.blocks -%}
+  {%- if block.type == 'promo' -%}
+    {%- assign block_title_as_handle = block.settings.title | handleize -%}
+    {%- if block_title_as_handle == link_promo_location -%}
+      <li class="drw-Nav_Item drw-Nav_Item-promo">
+        {%- render 'navigation-promo',
+          image: block.settings.promo_image,
+          title: block.settings.promo_title,
+          url: block.settings.promo_url,
+          url_text: block.settings.promo_link_text,
+          text_color: block.settings.promo_text_color
+        -%}
+      </li>
+
+      {%- break -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

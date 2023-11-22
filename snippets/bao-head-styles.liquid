@@ -1,0 +1,158 @@
+
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+<link
+  rel="stylesheet"
+  href="{{ 'exposed-search-tests.css' | asset_url }}"
+>
+
+{%- liquid
+  render 'critical-head-styles'
+  render 'critical-header-styles'
+
+  if settings.colour_theme == 'blackFriday'
+    render 'critical-theme-styles-black-friday'
+  endif
+-%}
+
+<link
+  rel="stylesheet"
+  href="{{ 'buttons.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'form.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'rich-text.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'modal.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'carousel-element.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'product-card.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'product-quickbuy.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'product-price.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'product-addtocart.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'override-swym.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'override-foursixty.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'override-accessibility.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'override-cookie-bar.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
+
+<style>
+@font-face {
+  font-family: 'Quentin';
+  src: url('{{ "Quentin.woff2" | asset_url }}') format('woff2'),
+      url('{{ "Quentin.woff" | asset_url }}') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Artisan';
+  src: url('{{ "Artisan.otf" | asset_url }}') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+
+<style>
+body {
+  --Currency_Symbol: '{{ cart.currency.symbol }}';
+}
+</style>
+
+{%- capture color_styles -%}
+{%- liquid
+  assign color_value_array = shop.metafields.globals.color_label
+  assign color_hex_array = shop.metafields.globals.color_hex
+  assign color_image_array = shop.metafields.globals.color_image
+
+  for color_value in color_value_array
+    assign handleized_color_value = color_value | strip | handleize
+    assign color_hex = color_hex_array[forloop.index0]
+    assign color_image = color_image_array[forloop.index0].first.src
+
+    if color_hex != blank
+      echo ".col-Color-" | append: handleized_color_value | append: "{" | append: "color:" | append: color_hex | append: ";}"
+    elsif color_image != blank
+      assign background_image_rule = "background-image: url(" | append: color_image | append: ");"
+      echo ".col-Color-" | append: handleized_color_value | append: "{" | append: background_image_rule | append: "background-size: cover;" | append: "color: transparent;" | append: "}"
+    endif
+  endfor
+-%}
+{%- endcapture -%}
+<style>{{- color_styles -}}</style>

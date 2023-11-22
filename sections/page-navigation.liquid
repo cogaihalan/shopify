@@ -1,0 +1,23 @@
+{%- if section.settings.navigation != blank -%}
+  {%- render 'page-navigation',
+    page_navigation: section.settings.navigation
+  -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Page Navigation",
+    "class": "pg-Navigation",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      { 
+        "type": "link_list",
+        "id": "navigation",
+        "label": "Navigation"
+      }
+    ]
+  }
+{% endschema %}

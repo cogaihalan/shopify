@@ -1,0 +1,126 @@
+{% comment %}theme-check-disable TemplateLength{% endcomment %}
+
+{{ 'collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign collection_description_parts = collection.description | strip_html | split: "."
+  assign collection_description_intro = collection_description_parts[0]
+  assign text_color = collection.metafields.hero.text_color | default: "light"
+
+  assign desktop_image = collection.metafields.hero.desktop_image
+  assign mobile_image = collection.metafields.hero.mobile_image
+-%}
+
+{%- if collection.description != blank and collection_description_parts.size > 1 -%}
+  <script
+    src="{{ 'collection-description.js' | asset_url }}"
+    defer="defer"
+  ></script>
+{%- endif -%}
+
+<header class="clc-Hero clc-Hero-{{ text_color }}{% if desktop_image != blank %} clc-Hero-hasImage{% endif %}"{% if desktop_image != blank %} data-header-is-transparent-when-over-me="{{- text_color -}}"{% endif%}>
+  {%- if desktop_image != blank -%}
+  <div class="clc-Hero_ImageContainer">
+    <div class="clc-Hero_Image clc-Hero_Image-desktop">
+      {%- render 'responsive-image-metafield',
+        image: desktop_image.first,
+        width: 2880,
+        height: 850
+      -%}
+    </div>
+
+    {%- liquid
+      if mobile_image != blank
+        assign image_to_use = mobile_image.first
+      else
+        assign image_to_use = desktop_image.first
+      endif
+    -%}
+
+    <div class="clc-Hero_Image clc-Hero_Image-mobile">
+      {%- render 'responsive-image-metafield',
+        image: image_to_use,
+        width: 750,
+        height: 440
+      -%}
+    </div>
+  </div>
+  {%- endif -%}
+  <div class="clc-Hero_Inner lyt-Container">
+    <div class="clc-Hero_Body">
+
+      <div class="clc-Hero_Content">
+        <div class="clc-Hero_Breadcrumbs">
+          {%- render 'breadcrumb',
+            use_metafield: collection.metafields.breadcrumbs.enable,
+            metafield: collection.metafields.breadcrumb_item.text,
+            metafield_link: collection.metafields.breadcrumb_item.link
+          -%}
+        </div>
+
+        <h1 class="clc-Hero_Title fz-34_37">
+          {{ collection.title }}
+        </h1>
+
+        {%- if collection.description != blank and collection_description_parts.size > 1 -%}
+
+          <collection-description class="clc-Hero_Text">
+            <button
+              type="button"
+              class="clc-Hero_DescriptionTrigger clc-Hero_DescriptionTrigger-more rte-RichText"
+              data-collection-description-el="trigger"
+              aria-controls="clc-Hero_Description"
+              aria-expanded="false"
+            >
+              <span class="clc-Hero_FirstLine">
+                {{ collection_description_intro }}.
+              </span>
+              <span class="clc-Hero_ReadMore">
+                {{ 'accessibility.more' | t }}
+              </span>
+            </button>
+
+            <div
+              class="clc-Hero_Description rte-RichText"
+              id="clc-Hero_Description"
+              data-collection-description-el="body"
+              aria-visible="false"
+            >
+              {{ collection.description }}
+
+              <button
+                type="button"
+                class="clc-Hero_DescriptionTrigger clc-Hero_DescriptionTrigger-less"
+                data-collection-description-el="trigger"
+                aria-controls="clc-Hero_Description"
+                aria-expanded="false"
+              >
+                <span class="clc-Hero_ReadMore">
+                  {{ 'accessibility.less' | t }}
+                </span>
+              </button>
+            </div>
+          </collection-description>
+
+        {%- elsif collection.description != blank and collection_description_parts.size == 1 -%}
+
+          <div class="clc-Hero_FirstLine">
+            {{ collection.description }}
+          </div>
+
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Collection Hero",
+  "class": "clc-Hero_Section",
+  "settings": [
+
+  ]
+}
+{% endschema %}
+{% comment %}theme-check-enable TemplateLength{% endcomment %}

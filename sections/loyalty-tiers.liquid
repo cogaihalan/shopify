@@ -1,0 +1,140 @@
+{{ 'loyalty-tiers.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'drag-overflow.js' | asset_url }}" defer="defer"></script>
+
+{%- if section.settings.customer_state == 'logged_out' -%}
+  {%- unless customer -%}
+    {%- capture body -%}
+      <div
+        class="loy-Tiers"
+        style="
+          --BgImg_TierOne: url('{{- section.settings.bg_img_tier_1 | img_url: '900x390' -}}');
+          --BgImg_TierTwo: url('{{- section.settings.bg_img_tier_2 | img_url: '900x390' -}}');
+          --BgImg_TierThree: url('{{- section.settings.bg_img_tier_3 | img_url: '900x390' -}}');
+          --BgImg_TierFour: url('{{- section.settings.bg_img_tier_4 | img_url: '900x390' -}}');
+        ">
+        <div data-lion-tier-overview data-overflow-element=".lion-tier-overview"></div>
+      </div>
+    {%- endcapture -%}
+
+    {%- render 'section',
+      body: body,
+
+      margin: section.settings.section_margin
+    -%}
+
+  {%- endunless -%}
+{% endif %}
+
+{%- if section.settings.customer_state == 'logged_in' -%}
+  {%- if customer -%}
+    {%- capture body -%}
+      <div
+        class="loy-Tiers"
+        style="
+          --BgImg_TierOne: url('{{- section.settings.bg_img_tier_1 | img_url: '900x390' -}}');
+          --BgImg_TierTwo: url('{{- section.settings.bg_img_tier_2 | img_url: '900x390' -}}');
+          --BgImg_TierThree: url('{{- section.settings.bg_img_tier_3 | img_url: '900x390' -}}');
+          --BgImg_TierFour: url('{{- section.settings.bg_img_tier_4 | img_url: '900x390' -}}');
+          ">
+        <div data-lion-tier-overview data-overflow-element=".lion-tier-overview"></div>
+      </div>
+    {%- endcapture -%}
+
+    {%- render 'section',
+      body: body,
+
+      margin: section.settings.section_margin
+    -%}
+
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Loyalty Tiers",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "section_margin",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "spacingNone",
+          "label": "None"
+        },
+        {
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
+        }
+      ],
+      "default": "spacingNone"
+    },
+    {
+      "type": "header",
+      "content": "Customer state"
+    },
+    {
+      "type": "select",
+      "id": "customer_state",
+      "label": "Customer state",
+      "options": [
+        {
+          "value": "logged_out",
+          "label": "Logged out"
+        },
+        {
+          "value": "logged_in",
+          "label": "Logged in"
+        }
+      ],
+      "default": "logged_out"
+    },
+    {
+      "type": "header",
+      "content": "Tier Header Backgrounds"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img_tier_1",
+      "label": "First Tier Background Image",
+      "info": "Recommended 900px x 400px"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img_tier_2",
+      "label": "Second Tier Background Image",
+      "info": "Recommended 900p xx 400px"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img_tier_3",
+      "label": "Third Tier Background Image",
+      "info": "Recommended 900px x 400px"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img_tier_4",
+      "label": "Fourth Tier Background Image",
+      "info": "Recommended 900px x 400px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty Tiers"
+    }
+  ]
+}
+{% endschema %}

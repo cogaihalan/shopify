@@ -1,0 +1,10 @@
+{% comment %}
+  Only render this section if the section is retrieved from the locale matching the store's base locale.
+  This is so that we can ensure that the retrieved price currency will match the value used by LL in backend
+  points calculation.
+{% endcomment %}
+
+{%- if localization.country.currency.iso_code == shop.currency -%}
+  {%- render 'loyalty-lion-points' -%}
+{%- endif -%}
+

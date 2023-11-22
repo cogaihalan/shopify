@@ -1,0 +1,44 @@
+<div class="acc-Account_Form acc-Account_Form-reset">
+
+  <h1 class="acc-Account_Title acc-Account_Title-form fz-24_29">
+    {{- 'customer.reset_password.reset_password' | t -}}
+  </h1>
+
+  <div class="frm-Form">
+    {%- form 'reset_customer_password', class: 'frm-Form' -%}
+  
+      <div class="frm-Form_Row frm-Form_Row-first">
+        {%- liquid
+          assign success_message = 'customer.reset_password.success_message' | t | strip
+          assign error_message = 'customer.reset_password.error_message' | t | strip
+        -%}
+        {%- render 'form-messages', form: form, success_message: success_message, error_message: error_message -%}
+        {%- render 'form-field-customer', form: form, field_name: "Password", translation_key: "customer.reset_password.password", type: "password" -%}
+      </div>
+  
+      <div class="frm-Form_Row">
+        {%- render 'form-field-customer', form: form, field_name: "Password Confirmation", translation_key: "customer.reset_password.confirm_password", type: "password" -%}
+      </div>
+  
+      <div class="frm-Form_Row">
+        <p class="frm-Form_Text frm-Form_Text-footer fz-12_17">
+          {{ 'customer.reset_password.required_fields' | t }}
+        </p>
+      </div>
+  
+      <div class="frm-Form_Row frm-Form_Row-last">
+        <div class="frm-Form_Actions">
+  
+          <button
+            class="frm-Form_Submit frm-Form_Button-login btn-Button-primary btn-Button-border btn-Button"
+            type="submit"
+          >
+            {{ 'customer.reset_password.reset' | t }}
+          </button>       
+  
+        </div>
+      </div>
+    {%- endform -%}
+  </div>
+
+</div>

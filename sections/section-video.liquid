@@ -1,0 +1,233 @@
+{{ 'section-video.css' | asset_url | stylesheet_tag }}
+
+<section class="sec-Video sec-Video-{{ section.settings.text_colour }}" style="--Video_Background: {{- section.settings.background_colour -}};">
+  <div class="sec-Video_Inner lyt-Container">
+    <div class="sec-Video_Body">
+      <div class="sec-Video_MediaContainer{% if section.settings.desktop_youtube_video != blank and section.settings.mobile_youtube_video == blank %} sec-Video_MediaContainerYoutube-desktop{% endif %}">
+        {%- if section.settings.desktop_youtube_video != blank -%}
+          <div class="sec-Video_DesktopYoutubeContainer">
+            <iframe class="sec-Video_Iframe" type="text/html"
+            src="https://www.youtube.com/embed/{{ section.settings.desktop_youtube_video | remove: 'https://www.youtube.com/watch?v=' }}?{% if section.settings.autoplay_video == true %}autoplay=1&mute=1&{% endif %}origin=http://{{ shop.domain }}"
+            frameborder="0"></iframe>
+          </div>
+
+          {%- if section.settings.mobile_youtube_video != blank -%}
+            <div class="sec-Video_MobileYoutubeContainer">
+              <iframe class="sec-Video_Iframe" type="text/html"
+              src="https://www.youtube.com/embed/{{ section.settings.mobile_youtube_video | remove: 'https://www.youtube.com/watch?v=' }}?{% if section.settings.autoplay_video == true %}autoplay=1&mute=1&{% endif %}origin=http://{{ shop.domain }}"
+              frameborder="0"></iframe>
+            </div>
+          {%- endif -%}
+        {%- else -%}
+          {%- if section.settings.desktop_video != blank -%}
+            <video class="sec-Video_VideoPlayer sec-Video_VideoPlayer-desktop"{% if section.settings.autoplay_video == true %} autoplay muted{% endif %} controls loop playsinline>
+              <source src="{{ section.settings.desktop_video }}" type="video/mp4">
+            </video>
+          {%- endif -%}
+
+          {%- if section.settings.desktop_image != blank -%}
+            <div class="sec-Video_Image sec-Video_Image-desktop">
+              {%- render 'responsive-image',
+                image: section.settings.desktop_image,
+                width: 2800,
+                height: 1580
+              -%}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.mobile_video != blank -%}
+            <video class="sec-Video_VideoPlayer sec-Video_VideoPlayer-mobile"{% if section.settings.autoplay_video == true %} autoplay muted{% endif %} controls loop playsinline>
+              <source src="{{ section.settings.mobile_video }}" type="video/mp4">
+            </video>
+          {%- endif -%}
+
+          {%- if section.settings.mobile_image != blank -%}
+            <div class="sec-Video_Image sec-Video_Image-mobile">
+              {%- liquid
+                if section.settings.mobile_image != blank
+                  assign image_to_use = section.settings.mobile_image
+                else
+                  assign image_to_use = section.settings.desktop_image
+                endif
+              -%}
+
+              {%- render 'responsive-image',
+                image: image_to_use,
+                width: 800,
+                height: 1530
+              -%}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+
+      <div class="sec-Video_Content">
+        {%- if section.settings.kicker != blank -%}
+          <p class="sec-Video_Kicker fz-14_20">{{ section.settings.kicker }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="sec-Video_Title fz-34_37">{{ section.settings.title }}</h2>
+        {%- endif -%}
+    
+        {%- if section.settings.text != blank -%}
+          <div class="sec-Video_Text fz-14_20 rte-RichText">{{ section.settings.text }}</div>
+        {%- endif -%}
+    
+        {%- if section.settings.button_link != blank and section.settings.button_text != blank -%}
+          <div class="sec-Video_Buttons">
+            <a href="{{ section.settings.button_link }}" class="sec-Video_Button btn-Button btn-Button-primary">
+              {{ section.settings.button_text }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "color",
+        "id": "background_colour",
+        "label": "Background Colour",
+        "default": "#FAE0DF",
+        "info": "Brand Colours"
+      },
+      {
+        "type": "paragraph",
+        "content": "Light Pink: #FDF5F5"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Pink: #FAE0DF"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Cream: #FBF0EB"
+      },
+      {
+        "type": "paragraph",
+        "content": "Coffee: #DFC9B6"
+      },
+      {
+        "type": "paragraph",
+        "content": "Warm Pink: #E2A9A9"
+      },
+      {
+        "type": "paragraph",
+        "content": "Russet: #D49595"
+      },
+      {
+        "type": "select",
+        "id": "text_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      },
+      {
+        "type": "header",
+        "content": "Video"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay_video",
+        "label": "Enable",
+        "default": false,
+        "info": "Once enabled, the video will autoplay on page load."
+      },
+      {
+        "type": "text",
+        "id": "desktop_video",
+        "label": "Desktop video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "text",
+        "id": "mobile_video",
+        "label": "Mobile video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "video_url",
+        "id": "desktop_youtube_video",
+        "label": "Desktop Youtube video",
+        "info": "Include the whole Youtube URL",
+        "accept": ["youtube"]
+      },
+      {
+        "type": "video_url",
+        "id": "mobile_youtube_video",
+        "label": "Mobile Youtube video",
+        "info": "Include the whole Youtube URL",
+        "accept": ["youtube"]
+      },
+      {
+        "type": "header",
+        "content": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop image",
+        "info": "Recommended size: 2800px x 1580px"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile image",
+        "info": "Recommended size: 800px x 1530px"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video"
+      }
+    ]
+  }
+{% endschema %}

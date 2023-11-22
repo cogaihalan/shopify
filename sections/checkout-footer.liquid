@@ -1,0 +1,62 @@
+{%- liquid assign linklist = linklists[section.settings.footer_linklist] -%}
+
+<link
+  rel="stylesheet"
+  href="{{ 'checkout-footer.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- if linklist and linklist.links.size > 0 -%}
+<div class="chk-Footer">
+  <nav class="chk-Footer_Nav">            
+    <ul class="chk-Footer_List">      
+      {%- for link in linklist.links -%}
+        <li class="chk-Footer_Item">
+          <button type="button" class="chk-Footer_Link fz-12_22" data-drawers-trigger="{{- link.url | handleize -}}">
+            {{ link.title }}
+          </button>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</div>
+{%- endif -%}
+
+{%- capture footer -%}
+<div class="drw-Drawer_Inner">
+  <button class="btn-Button btn-Button-primary btn-Button-wide" data-drawers-close>
+    {{ 'accessibility.close' | t }}      
+  </button>
+</div>
+{%- endcapture -%}
+{%- capture drawers_html -%}
+{%- assign drawer_keys = "" -%}
+{%- for link in linklist.links -%}
+{%- liquid
+unless drawer_keys contains drawer_key
+  assign drawer_key = link.url | handleize
+  assign drawer_keys = drawer_keys | append: "|" | append: drawer_key
+  assign body = '<div class="rte-RichText">' | append: link.object.content | append: '</div>'
+  render 'drawer', key: drawer_key, title: link.object.title, body: body, footer: footer
+endunless
+-%}
+{%- endfor -%}
+{%- endcapture -%}
+
+<div class="chk-Footer_Drawers">
+{%- render 'drawers', drawers_html: drawers_html -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Checkout Footer",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "Footer Navigation"
+      } 
+    ]
+  }
+{% endschema %}

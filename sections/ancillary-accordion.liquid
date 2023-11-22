@@ -1,0 +1,175 @@
+{{ 'ancillary-section.css' | asset_url | stylesheet_tag }}
+{{ 'ancillary-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'ancillary-accordion-item.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'ancillary-accordions.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<section class="anc-Section">
+  <div class="anc-Section_Inner{% if section.settings.layout_container %} lyt-Container{% endif %}">
+    <div class="anc-Section_Body">
+      <ancillary-accordions class="anc-Accordion">
+
+        {%- if section.settings.text != blank -%}
+          <header class="anc-Accordion_Header">
+            {%- if section.settings.text != blank -%}
+            <div class="anc-Accordion_Text {{ section.settings.title_font_size}} rte-RichText">
+              {{ section.settings.text }}
+            </div>
+            {%- endif -%}
+          </header>
+        {%- endif -%}
+
+        {%- if section.settings.enable_search -%}
+          <div class="anc-Accordion_Search">
+            <input class="anc-Accordion_Input frm-Form_Input" type="text" name="search" placeholder="{{- section.settings.search_placeholder -}}" data-ancillary-accordions-el="search" />
+            <span class="anc-Accordion_Icon anc-Accordion_Icon-search">
+              {%- render 'bao-icon-search' -%}
+            </span>
+          </div>
+        {%- endif -%}
+
+        <div
+          class="anc-Accordion_Items"
+          data-ancillary-accordions-el="items"
+          role="tablist"
+        >
+          {%- for block in section.blocks -%}
+            <div class="anc-Accordion_Item">
+              <div
+                class="anc-AccordionItem"
+                data-ancillary-accordions-el="item"
+                aria-expanded="false"
+                role="tab"
+              >
+                <button
+                  class="anc-AccordionItem_Header"
+                  data-ancillary-accordions-el="trigger"
+                  data-index="{{ forloop.index0 }}"
+                  type="button"
+                >
+                  <span class="anc-AccordionItem_Title {{ section.settings.question_font_size }}">
+                    {{ block.settings.title }}
+                  </span>
+
+                  <span class="anc-AccordionItem_Icon">
+                    {%- render 'bao-icon-chevron-down' -%}
+                  </span>
+                </button>
+
+                <div class="anc-AccordionItem_Body">
+                  <div
+                    class="anc-AccordionItem_Content rte-RichText fz-14_20"
+                    data-ancillary-accordions-el="content"
+                  >
+                    {{ block.settings.answer }}
+                    {{ block.settings.page.content }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </ancillary-accordions>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "(Ancillary) Accordion",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "layout_container",
+        "label": "Enable layout container",
+        "default": false,
+        "info": "Makes it not touch the edge on mobile"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "select",
+        "id": "title_font_size",
+        "label": "Title Font Size",
+        "options": [
+          {
+            "value": "fz-14_20",
+            "label": "Regular"
+          },
+          {
+            "value": "fz-34_37",
+            "label": "Large"
+          }
+        ],
+        "default": "fz-14_20"
+      },
+      {
+        "type": "select",
+        "id": "question_font_size",
+        "label": "Question Font Size",
+        "options": [
+          {
+            "value": "fz-18_22",
+            "label": "Regular"
+          },
+          {
+            "value": "fz-14_20 anc-AccordionItem_Title-europa",
+            "label": "Small"
+          }
+        ],
+        "default": "fz-18_22"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_search",
+        "label": "Enable Search",
+        "default": false,
+        "info": "Show a search box above the FAQs"
+      },
+      {
+        "type": "text",
+        "id": "search_placeholder",
+        "label": "Search Box Placeholder"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          },
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Page Reference",
+            "info": "Select a page containting the text content for this item if it requires more complex tools than those available in the \"Answer\" field above"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "(Ancillary) Accordion A"
+      }
+    ]
+  }
+{% endschema %}

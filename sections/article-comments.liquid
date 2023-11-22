@@ -1,0 +1,130 @@
+{%- if blog.comments_enabled? -%}
+  {{ 'article-comments.css' | asset_url | stylesheet_tag }}
+  {{ 'article-comment.css' | asset_url | stylesheet_tag }}
+
+  <div class="art-Comments">
+    <div class="art-Comments_Inner lyt-Container">
+      <div class="art-Comments_Body">
+        {%- if article.comments_count > 0 -%}
+          {%- assign anchorId = '#Comments-' | append: article.id -%}
+
+          <h2 id="Comments-{{ article.id }}" class="art-Comments_Title fz-18_22">
+            {{ 'blogs.article.comments' | t: count: article.comments_count }}
+          </h2>
+
+          {%- paginate article.comments by 10 -%}
+            <div class="art-Comments_Comments">
+              {%- for comment in article.comments -%}
+                <div class="art-Comments_Comment">
+                  <article id="{{ comment.id }}" class="art-Comment">
+                    <div class="art-Comment_Text rte-RichText fz-14_20">
+                      {{ comment.content }}
+                    </div>
+
+                    <footer class="art-Comment_Footer fz-14_20">
+                      <span class="art-Comment_Author">{{ comment.author }}</span><span class="art-Comment_Date">{{ comment.created_at | time_tag: format: 'month_year' }}</span>
+                    </footer>
+                  </article>
+                </div>
+              {%- endfor -%}
+            </div>
+          {%- endpaginate -%}
+        {%- endif -%}
+
+        {%- form 'new_comment', article -%}
+          {%- liquid
+            assign post_message = 'blogs.article.success'
+            if blog.moderated? and comment.status == 'unapproved'
+              assign post_message = 'blogs.article.success_moderated'
+            endif
+          -%}
+
+          <h2 class="art-Comments_Title fz-18_22">
+            {{ 'blogs.article.comment_form_title' | t }}
+          </h2>
+
+          <div class="frm-Form_Fields">
+            <div class="frm-Form_Field">
+              <input
+                autocomplete="name"
+                class="frm-Form_Input"
+                id="CommentForm-author"
+                name="comment[author]"
+                placeholder="{{ 'blogs.article.name' | t }}"
+                required
+                type="text"
+                value="{{ form.author }}"
+              >
+
+              <label class="frm-Form_Label util-ScreenReaderOnly" for="CommentForm-author">
+                {{ 'blogs.article.name' | t }}
+              </label>
+            </div>
+
+            <div class="frm-Form_Field">
+              <input
+                autocapitalize="off"
+                autocomplete="email"
+                autocorrect="off"
+                class="frm-Form_Input"
+                id="CommentForm-email"
+                name="comment[email]"
+                placeholder="{{ 'blogs.article.email' | t }}"
+                required
+                type="email"
+                value="{{ form.email }}"
+              >
+
+              <label class="frm-Form_Label util-ScreenReaderOnly" for="CommentForm-email">
+                {{ 'blogs.article.email' | t }}
+              </label>
+            </div>
+
+            <div class="frm-Form_Field">
+              <textarea
+                class="frm-Form_Textarea"
+                id="CommentForm-body"
+                name="comment[body]"
+                placeholder="{{ 'blogs.article.message' | t }}"
+                required
+                rows="5"
+              >{{ form.body }}</textarea>
+
+              <label class="frm-Form_Label util-ScreenReaderOnly" for="CommentForm-body">
+                {{ 'blogs.article.message' | t }}
+              </label>
+            </div>
+          </div>
+
+          {%- if form.posted_successfully? -%}
+            <div class="frm-Form_Validation" tabindex="-1" autofocus>
+              <p class="frm-Form_ValidationText frm-Form_ValidationText-success fz-13_19">{{ post_message | t }}</p>
+            </div>
+          {%- elsif form.errors -%}
+            <div class="frm-Form_Validation" role="alert">
+              {%- for field in form.errors -%}
+                <p class="frm-Form_ValidationText frm-Form_ValidationText-error fz-13_19" autofocus>
+                  {{ field | capitalize }} {{ form.errors.messages[field] }}
+                </p>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          <div class="frm-Form_Buttons">
+            <button
+              type="submit"
+              class="frm-Form_Submit btn-Button btn-Button-primary"
+            >
+              {{ 'blogs.article.post' | t }}
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Article comments"
+  }
+{% endschema %}

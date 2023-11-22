@@ -1,0 +1,574 @@
+{{ 'loyalty-image-text.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.customer_state == 'logged_out' -%}
+  {%- unless customer -%}
+
+
+    {%- capture body -%}
+    <div class="loy-ImageText loy-ImageText-{{ section.settings.text_colour }} loy-ImageText-{{ section.settings.order }}" style="--ImageText_Background: {{- section.settings.background_colour -}};">
+    <div class="loy-ImageText_Items">
+      <div class="
+        loy-ImageText_Item
+        loy-ImageText_Item-image
+        {% if section.settings.mobile_content_image != blank %} loy-ImageText_Item-splitimage{% endif %}
+      ">
+        <div class="loy-ImageText_MediaContainer">
+          {%- if section.settings.desktop_video != blank -%}
+            <div class="loy-ImageText_Video loy-ImageText_Video-desktop">
+              <video class="loy-ImageText_VideoPlayer" autoplay loop muted playsinline>
+                <source src="{{ section.settings.desktop_video }}" type="video/mp4">
+              </video>
+            </div>
+          {%- endif -%}
+
+          <div class="loy-ImageText_Image loy-ImageText_Image-desktop">
+            {%- render 'responsive-image',
+              image: section.settings.desktop_image,
+              width: 1500,
+              height: 1500
+            -%}
+          </div>
+
+          {%- if section.settings.mobile_video != blank -%}
+            <div class="loy-ImageText_Video loy-ImageText_Video-mobile">
+              <video class="loy-ImageText_VideoPlayer" autoplay loop muted playsinline>
+                <source src="{{ section.settings.mobile_video }}" type="video/mp4">
+              </video>
+            </div>
+          {%- endif -%}
+
+          <div class="loy-ImageText_Image loy-ImageText_Image-mobile">
+            {%- liquid
+              if section.settings.mobile_image != blank
+                assign image_to_use = section.settings.mobile_image
+              else
+                assign image_to_use = section.settings.desktop_image
+              endif
+            -%}
+
+            {%- render 'responsive-image',
+              image: image_to_use,
+              width: 800,
+              height: 800
+            -%}
+          </div>
+        </div>
+
+        {%- if section.settings.mobile_content_image != blank -%}
+          <div class="loy-ImageText_ContentImage loy-ImageText_ContentImage-mobile">
+            {%- render 'responsive-image',
+              image: section.settings.mobile_content_image,
+              width: 400,
+              height: 400
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="loy-ImageText_Item loy-ImageText_Item-content">
+        <div class="
+          loy-ImageText_Content
+          loy-ImageText_Content-{{ section.settings.desktop_horizontal_align }}
+          loy-ImageText_Content-{{ section.settings.mobile_horizontal_align }}
+          loy-ImageText_Content-{{ section.settings.desktop_vertical_align }}
+        ">
+
+          {%- if section.settings.desktop_content_image != blank -%}
+            <div class="loy-ImageText_ContentImage loy-ImageText_ContentImage-desktop">
+              {%- render 'responsive-image',
+                image: section.settings.desktop_content_image,
+                width: 1200,
+                height: 750
+              -%}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.strapline != blank -%}
+            <div class="loy-ImageText_Strapline fz-14_20">
+              {{- section.settings.strapline -}}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.title != blank -%}
+            <h2 class="loy-ImageText_Title fz-58_64">{{ section.settings.title }}</h2>
+          {%- endif -%}
+
+          {%- if section.settings.text != blank -%}
+            <div class="loy-ImageText_Text fz-14_20 rte-RichText">{{ section.settings.text }}</div>
+          {%- endif -%}
+
+          {%- liquid
+            assign enable_button = false
+            if section.settings.button_text != blank and section.settings.enable_refer_button == true
+              assign button_is_refer_a_friend = true
+              assign enable_button = true
+            elsif section.settings.button_text != blank and section.settings.button_url != blank and section.settings.enable_refer_button == false
+              assign button_is_refer_a_friend = false
+              assign enable_button = true
+            endif
+          -%}
+
+          {%- if enable_button == true and button_is_refer_a_friend == false -%}
+            <div class="loy-ImageText_Buttons">
+              <a href="{{ section.settings.button_url }}" class="loy-ImageText_Button loy-ImageText_Button-{{ section.settings.button_style }} btn-Button btn-Button-primary">
+                {{ section.settings.button_text }}
+              </a>
+            </div>
+          {%- elsif enable_button == true and button_is_refer_a_friend == true -%}
+            <div class="loy-ImageText_Buttons">
+              <a href="#" data-lion-refer class="loy-ImageText_Button loy-ImageText_Button-{{ section.settings.button_style }} btn-Button btn-Button-primary">
+                {{ section.settings.button_text }}
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    </div>
+    {%- endcapture -%}
+
+    {%- render 'section',
+    flush: true,
+    margin: section.settings.section_margin,
+
+    body: body
+    -%}
+
+  {%- endunless -%}
+{%- endif -%}
+
+{%- if section.settings.customer_state == 'logged_in' -%}
+  {%- if customer -%}
+    {%- capture body -%}
+      <div class="loy-ImageText loy-ImageText-{{ section.settings.text_colour }} loy-ImageText-{{ section.settings.order }}" style="--ImageText_Background: {{- section.settings.background_colour -}};">
+        <div class="loy-ImageText_Items loy-ImageText_Items-{{ section.settings.image_size }}">
+          <div class="
+        loy-ImageText_Item
+        loy-ImageText_Item-image
+        {% if section.settings.mobile_content_image != blank %} loy-ImageText_Item-splitimage{% endif %}
+      ">
+            <div class="loy-ImageText_MediaContainer">
+              {%- if section.settings.desktop_video != blank -%}
+                <div class="loy-ImageText_Video loy-ImageText_Video-desktop">
+                  <video class="loy-ImageText_VideoPlayer" autoplay loop muted playsinline>
+                    <source src="{{ section.settings.desktop_video }}" type="video/mp4">
+                  </video>
+                </div>
+              {%- endif -%}
+
+              <div class="loy-ImageText_Image loy-ImageText_Image-desktop">
+                {%- render 'responsive-image',
+                  image: section.settings.desktop_image,
+                  width: 1500,
+                  height: 1500
+                -%}
+              </div>
+
+              {%- if section.settings.mobile_video != blank -%}
+                <div class="loy-ImageText_Video loy-ImageText_Video-mobile">
+                  <video class="loy-ImageText_VideoPlayer" autoplay loop muted playsinline>
+                    <source src="{{ section.settings.mobile_video }}" type="video/mp4">
+                  </video>
+                </div>
+              {%- endif -%}
+
+              <div class="loy-ImageText_Image loy-ImageText_Image-mobile">
+                {%- liquid
+                  if section.settings.mobile_image != blank
+                  assign image_to_use = section.settings.mobile_image
+                  else
+                  assign image_to_use = section.settings.desktop_image
+                  endif
+                -%}
+
+                {%- render 'responsive-image',
+                  image: image_to_use,
+                  width: 800,
+                  height: 800
+                -%}
+              </div>
+            </div>
+
+            {%- if section.settings.mobile_content_image != blank -%}
+              <div class="loy-ImageText_ContentImage loy-ImageText_ContentImage-mobile">
+                {%- render 'responsive-image',
+                  image: section.settings.mobile_content_image,
+                  width: 400,
+                  height: 400
+                -%}
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="loy-ImageText_Item loy-ImageText_Item-content">
+            <div class="
+          loy-ImageText_Content
+          loy-ImageText_Content-{{ section.settings.desktop_horizontal_align }}
+          loy-ImageText_Content-{{ section.settings.mobile_horizontal_align }}
+          loy-ImageText_Content-{{ section.settings.desktop_vertical_align }}
+        ">
+
+              {%- if section.settings.desktop_content_image != blank -%}
+                <div class="loy-ImageText_ContentImage loy-ImageText_ContentImage-desktop">
+                  {%- render 'responsive-image',
+                    image: section.settings.desktop_content_image,
+                    width: 1200,
+                    height: 750
+                  -%}
+                </div>
+              {%- endif -%}
+
+              {%- if section.settings.strapline != blank -%}
+                <div class="loy-ImageText_Strapline fz-14_20">
+                  {{- section.settings.strapline -}}
+                </div>
+              {%- endif -%}
+
+              {%- if section.settings.title != blank -%}
+                <h2 class="loy-ImageText_Title fz-58_64">{{ section.settings.title }}</h2>
+              {%- endif -%}
+
+              {%- if section.settings.text != blank -%}
+                <div class="loy-ImageText_Text fz-14_20 rte-RichText">{{ section.settings.text }}</div>
+              {%- endif -%}
+
+              {%- liquid
+                assign enable_button = false
+                if section.settings.button_text != blank and section.settings.enable_refer_button == true
+                assign button_is_refer_a_friend = true
+                assign enable_button = true
+                elsif section.settings.button_text != blank and section.settings.button_url != blank and section.settings.enable_refer_button == false
+                assign button_is_refer_a_friend = false
+                assign enable_button = true
+                endif
+              -%}
+
+              {%- if enable_button == true and button_is_refer_a_friend == false -%}
+                <div class="loy-ImageText_Buttons">
+                  <a href="{{ section.settings.button_url }}" class="loy-ImageText_Button loy-ImageText_Button-{{ section.settings.button_style }} btn-Button btn-Button-primary">
+                    {{ section.settings.button_text }}
+                  </a>
+                </div>
+                {%- elsif enable_button == true and button_is_refer_a_friend == true -%}
+                <div class="loy-ImageText_Buttons">
+                  <a href="#" data-lion-refer class="loy-ImageText_Button loy-ImageText_Button-{{ section.settings.button_style }} btn-Button btn-Button-primary">
+                    {{ section.settings.button_text }}
+                  </a>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endcapture -%}
+
+    {%- render 'section',
+      flush: true,
+      margin: section.settings.section_margin,
+
+      body: body
+    -%}
+
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Loyalty Image Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "section_margin",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "spacingNone",
+          "label": "None"
+        },
+        {
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
+        }
+      ],
+      "default": "spacingStandard"
+    },
+    {
+      "type": "header",
+      "content": "Customer state"
+    },
+    {
+      "type": "select",
+      "id": "customer_state",
+      "label": "Customer state",
+      "options": [
+        {
+          "value": "logged_out",
+          "label": "Logged out"
+        },
+        {
+          "value": "logged_in",
+          "label": "Logged in"
+        }
+      ],
+      "default": "logged_out"
+    },
+    {
+      "type": "select",
+      "id": "order",
+      "label": "Desktop order",
+      "options": [
+        {
+          "value": "contentLeft",
+          "label": "Content - Image"
+        },
+        {
+          "value": "contentRight",
+          "label": "Image - Content"
+        }
+      ],
+      "default": "contentLeft"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image Width",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "moreWidth",
+          "label": "More Width on Image"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "color",
+      "id": "background_colour",
+      "label": "Background Colour",
+      "default": "#FBEDDF",
+      "info": "Brand Colours"
+    },
+    {
+      "type": "paragraph",
+      "content": "Light Pink: #FDF5F5"
+    },
+    {
+      "type": "paragraph",
+      "content": "Cool Pink: #FAE0DF"
+    },
+    {
+      "type": "paragraph",
+      "content": "Cool Cream: #FBF0EB"
+    },
+    {
+      "type": "paragraph",
+      "content": "Coffee: #DFC9B6"
+    },
+    {
+      "type": "paragraph",
+      "content": "Warm Pink: #E2A9A9"
+    },
+    {
+      "type": "paragraph",
+      "content": "Russet: #D49595"
+    },
+    {
+      "type": "select",
+      "id": "text_colour",
+      "label": "Text colour",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Media"
+    },
+    {
+      "type": "text",
+      "id": "desktop_video",
+      "label": "Video",
+      "info": "Upload the video file to Shopify and then paste the URL here"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Image",
+      "info": "Recommended size: 1500px x 1500px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Media"
+    },
+    {
+      "type": "text",
+      "id": "mobile_video",
+      "label": "Video",
+      "info": "Upload the video file to Shopify and then paste the URL here"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image",
+      "info": "Recommended size: 800px x 800px"
+    },
+    {
+      "type": "paragraph",
+      "content": "If empty mobile will use the desktop image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "desktop_content_image",
+      "label": "Image Desktop",
+      "info": "Recommended size: 1200px x 750px"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_content_image",
+      "label": "Image Mobile",
+      "info": "Recommended size: 600px x 600px"
+    },
+    {
+      "type": "text",
+      "id": "strapline",
+      "label": "Strapline"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "desktop_horizontal_align",
+      "label": "Desktop horizontal alignment",
+      "options": [
+        {
+          "value": "desktopContentLeft",
+          "label": "Left"
+        },
+        {
+          "value": "desktopContentCenter-x",
+          "label": "Center"
+        },
+        {
+          "value": "desktopContentRight",
+          "label": "Right"
+        }
+      ],
+      "default": "desktopContentLeft"
+    },
+    {
+      "type": "select",
+      "id": "mobile_horizontal_align",
+      "label": "Mobile horizontal alignment",
+      "options": [
+        {
+          "value": "mobileContentLeft",
+          "label": "Left"
+        },
+        {
+          "value": "mobileContentCenter-x",
+          "label": "Center"
+        },
+        {
+          "value": "mobileContentRight",
+          "label": "Right"
+        }
+      ],
+      "default": "mobileContentLeft"
+    },
+    {
+      "type": "select",
+      "id": "desktop_vertical_align",
+      "label": "Desktop vertical alignment",
+      "options": [
+        {
+          "value": "desktopContentTop",
+          "label": "Top"
+        },
+        {
+          "value": "desktopContentCenter-y",
+          "label": "Center"
+        },
+        {
+          "value": "desktopContentBottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "desktopContentCenter-y"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_refer_button",
+      "label": "Make Button 'Refer A Friend'",
+      "info": "If the above option is checked then there is no need to enter a URL below",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty Image Text"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+<div class="acc-Order">
+
+  <ul class="acc-Order_Items">
+    {%- for line_item in order.line_items -%}
+      <li class="acc-Order_Item">
+
+        <div class="acc-Order_Inner">
+
+          {% if line_item.image != blank %}
+            <a class="acc-Order_Image" href="{{ line_item.product.url }}">
+              {%- render 'responsive-image',
+                  image: line_item.image,
+                  width: 1000,
+                  height: 1500
+              -%}
+            </a>
+          {% endif %}
+
+          <div class="acc-Order_Body">
+
+            <div class="acc-Order_Details fz-14_20">
+
+              <a class="acc-Order_Header" href="{{ line_item.product.url }}">
+                <h3 class="acc-Order_Title fz-14_20">{{ line_item.title }}</h3>
+              </a>
+
+              <div class="acc-Order_Detail">
+                {%- if line_item.sku != blank -%}
+                  <p class="acc-Order_DetailItem">{{ 'customer.order.sku' | t }}: {{ line_item.sku }}</p>
+                {%- endif -%}
+
+                <p class="acc-Order_DetailItem">{{ 'customer.order.quantity' | t }}: {{ line_item.quantity }}</p>
+                <p class="acc-Order_DetailItem">{{ line_item.quantity | times: line_item.price | money_without_trailing_zeros }}</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </li>
+    {%- endfor -%}
+  </ul>
+
+</div>

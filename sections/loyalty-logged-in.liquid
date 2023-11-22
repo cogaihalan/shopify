@@ -1,0 +1,78 @@
+{%- if customer -%}
+  {{ 'loyalty-logged-in.css' | asset_url | stylesheet_tag }}
+
+  {%- capture body -%}
+  <div class="loy-LoggedIn">
+    {%- if section.settings.logo != blank -%}
+      <div class="loy-LoggedIn_Logo">
+        {%- render 'responsive-image',
+          image: section.settings.logo,
+          width: 334,
+          height: 160,
+        -%}
+      </div>
+    {%- endif -%}
+
+    <div class="loy-LoggedIn_PointsContainer">
+      {%- if section.settings.points_left != blank -%}
+        <p class="loy-LoggedIn_Points fz-14_20">
+          {{- section.settings.points_left | append: ' ' -}} <span class="loy-LoggedIn_Points-pink" data-lion-points></span>
+        </p>
+      {%- endif -%}
+      {%- if section.settings.points_used != blank -%}
+        <p class="loy-LoggedIn_Points fz-14_20">
+          {{- section.settings.points_used | append: ' ' -}} <span class="loy-LoggedIn_Points-pink" data-lion-points="spent"></span>
+        </p>
+      {%- endif -%}
+      {%- if section.settings.points_earned != blank -%}
+        <p class="loy-LoggedIn_Points fz-14_20">
+          {{- section.settings.points_earned | append: ' ' -}} <span class="loy-LoggedIn_Points-pink" data-lion-points="lifetime"></span>
+        </p>
+      {%- endif -%}
+    </div>
+
+  {%- endcapture -%}
+
+  {%- render 'section',
+    body: body
+  -%}
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Loyalty Logged In",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "334px x 160px"
+    },
+    {
+      "type": "text",
+      "id": "points_left",
+      "label": "Total Points Left",
+      "default": "Total Points Left:"
+    },
+    {
+      "type": "text",
+      "id": "points_used",
+      "label": "Total Points Used",
+      "default": "Total Points Used:"
+    },
+    {
+      "type": "text",
+      "id": "points_earned",
+      "label": "Total Points Earned",
+      "default": "Total Points Earned:"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty Logged In"
+    }
+  ]
+}
+{% endschema %}

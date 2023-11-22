@@ -1,0 +1,78 @@
+{%- if section.blocks.size -%}
+  <link
+    rel="stylesheet"
+    href="{{ 'drawer-usps.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'"
+  >
+
+  <div
+    class="drw-Usps"
+    id="{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="push-cart-usps"
+  >
+    <div class="drw-Usps_Items">
+      {%- for block in section.blocks -%}
+        <div class="drw-Usps_Item">
+
+          {%- if block.settings.image != blank -%}
+          <div class="drw-Usps_ImageContainer">
+            {%- render 'responsive-image', image: block.settings.image, width: 120, height: 120 -%}
+          </div>
+          {%- endif -%}
+
+          <div class="drw-Usp_Content">
+            {%- if block.settings.title != blank -%}
+            <h4 class="drw-Usp_Title fz-14_20">
+              {{ block.settings.title }}
+            </h4>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+            <p class="drw-Usp_Text rte-RichText">
+              {{ block.settings.text | remove: "<p>" | remove: "</p>" }}
+            </p>
+            {%- endif -%}
+          </div>
+          
+        </div>
+      {%- endfor -%} 
+    </div>
+  </div>
+
+{%- endif -%}
+
+{% schema %}
+{
+	"name": "Push Cart - USPs",
+	"settings": [],
+  "blocks": [
+  {
+    "type": "cart-usp",
+    "name": "USP",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Recommended size: 120px x 120px"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

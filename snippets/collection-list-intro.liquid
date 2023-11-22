@@ -1,0 +1,15 @@
+{{ 'collection-list-intro.css' | asset_url | stylesheet_tag }}
+
+<div class="clc-ListIntro">
+  <div class="clc-ListIntro_Inner">
+    <div class="clc-ListIntro_Body">
+      {%- if title != blank -%}
+        <h2 class="clc-ListIntro_Title fz-34_37">{{- title -}}</h2>
+      {%- endif -%}
+
+      {%- if text != blank -%}
+        <p class="clc-ListIntro_Text fz-14_20">{{- text | newline_to_br -}}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

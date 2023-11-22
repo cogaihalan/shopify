@@ -1,0 +1,43 @@
+{%- liquid
+  assign currencies_using_comma_decimals = 'ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND' | split: ','
+
+  assign filters_closed_by_default = settings.filters_closed_by_default | downcase | split: ","
+  assign filter_label_downcase = filter.label | downcase
+  assign details_state = "open"
+    if filters_closed_by_default contains filter_label_downcase
+      assign details_state = ""
+    endif
+-%}
+
+<div class="clc-ProductGridFacet_Body" data-range-slider-external-el="container">
+  {%- liquid
+    assign range_max = filter.range_max | divided_by: 100
+
+    assign min_value = 0
+    if filter.min_value.value
+      assign min_value = filter.min_value.value | divided_by: 100
+    endif
+
+    assign max_value = filter.range_max | divided_by: 100
+    if filter.max_value.value
+      assign max_value = filter.max_value.value | divided_by: 100
+    endif
+  -%}
+
+  {%- render 'price-range',
+    filter: filter,
+    id_prefix: id_prefix,
+    min_value: min_value,
+    max_value: max_value,
+    range_max: range_max
+  -%}
+
+  <div class="clc-ProductGridFacet_RangeSlider">
+    {%- render 'range-slider',
+      min: 0,
+      max: range_max,
+      min_value: min_value,
+      max_value: max_value
+    -%}
+  </div>
+</div>

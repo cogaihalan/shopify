@@ -1,0 +1,86 @@
+<link
+  rel="stylesheet"
+  href="{{ 'section-live-chat.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<section class="sec-LiveChat">
+  <div class="sec-LiveChat_Inner lyt-Container">
+    <div class="sec-LiveChat_Body">
+
+      {%- if section.settings.intro_text != blank -%}
+      <div class="sec-LiveChat_Intro rte-RichText fz-14_20">
+        {{ section.settings.intro_text }}
+      </div>
+      {%- endif -%}
+
+      <span class="sec-LiveChat_Icon">
+        {%- render 'bao-icon-chat' -%}
+      </span>
+
+      {%- if section.settings.title != blank -%}
+      <h3 class="sec-LiveChat_Heading fz-24_29">
+        {{ section.settings.title }}
+      </h3>  
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+      <div class="sec-LiveChat_Text rte-RichText fz-14_20">
+        {{ section.settings.text }}
+      </div>  
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+      <a class="sec-LiveChat_Button btn-Button btn-Button-secondary btn-Button-fullWidth" href="{{- section.settings.button_link -}}">
+        {{ section.settings.button_text }}
+      </a>  
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Live Chat",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "<p>We always love to hear from you. You can talk to us or leave us a message using our contact form.</p>"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Live Chat"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Need help or want to talk to us directly?</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Open Live Chat"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "#"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Live Chat"
+    }
+  ],
+  "templates": ["page"]
+}
+{% endschema %}

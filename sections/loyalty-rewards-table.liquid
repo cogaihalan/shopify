@@ -1,0 +1,47 @@
+{{ 'loyalty-rewards-table.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <div class="loy-RewardsTable">
+
+    <header class="loy-RewardsTable_Header">
+      <div class="loy-RewardsTable_Title fz-34_37">
+        {{- section.settings.title -}}
+      </div>
+
+      <div class="loy-RewardsTable_Text fz-14_20">
+        {{- section.settings.text -}}
+      </div>
+    </header>
+
+    <div class="loy-RewardsTable_Table" data-lion-tier-benefits-compare></div>
+
+  </div>
+{%- endcapture -%}
+
+{%- render 'section',
+  body: body
+-%}
+
+{% schema %}
+{
+  "name": "Loyalty Rewards Table",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty Rewards Table"
+    }
+  ]
+}
+{% endschema %}

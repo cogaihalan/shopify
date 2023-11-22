@@ -1,0 +1,88 @@
+<link
+  rel="stylesheet"
+  href="{{ 'collection-sub-collections.css' | asset_url }}"
+>
+
+<script src="{{ 'horizontal-scroll.js' | asset_url }}" type="module"></script>
+
+{%- liquid
+  assign item_count = 0
+  assign sub_collection_handles = collection.metafields.sub_collection_nav.sub_collections | split: "|"
+-%}
+{%- capture collection_item_html -%}
+<div class="clc-SubCollections_Items">
+{%- for collection_handle in sub_collection_handles limit: 20 -%}
+  {%- assign metafield_collection = collections[collection_handle] -%}
+  {%- if metafield_collection.handle != blank and metafield_collection.featured_image != blank -%}
+  <div class="clc-SubCollections_Item util-FauxLink">
+
+    <a class="clc-SubCollections_Link util-FauxLink_Link" href="{{- metafield_collection.url -}}">
+      <span class="util-ScreenReaderOnly">
+        {{- metafield_collection.title -}}
+      </span>
+    </a>
+
+    <div class="clc-SubCollections_Content">
+
+      <div class="clc-SubCollections_ImageContainer">
+        <div class="clc-SubCollections_Image clc-SubCollections_Image-desktop">
+          {%- if metafield_collection.metafields.sub_collections.featured_image != blank -%}
+            {%- render 'responsive-image-metafield',
+              image: metafield_collection.metafields.sub_collections.featured_image.first,
+              height: 180,
+              width: 180
+            -%}
+          {%- else -%}
+            {%- render 'responsive-image',
+              image: metafield_collection.featured_image,
+              height: 180,
+              width: 180
+            -%}
+          {%- endif -%}
+        </div>
+
+        <div class="clc-SubCollections_Image clc-SubCollections_Image-mobile">
+          {%- if metafield_collection.metafields.sub_collections.featured_image != blank -%}
+            {%- render 'responsive-image-metafield',
+              image: metafield_collection.metafields.sub_collections.featured_image.first,
+              height: 148,
+              width: 148
+            -%}
+          {%- else -%}
+            {%- render 'responsive-image',
+              image: metafield_collection.featured_image,
+              height: 148,
+              width: 148
+            -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      <p class="clc-SubCollections_Title fz-13_13" data-content="{{- metafield_collection.title -}}">
+        {{ metafield_collection.title }}
+      </p>
+
+    </div>
+  </div>
+  {%- assign item_count = item_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+</div>
+{%- endcapture -%}
+
+{%- if item_count > 0 -%}
+<section class="clc-SubCollections">
+
+  <horizontal-scroll class="clc-SubCollections_Inner lyt-Container">
+    {{- collection_item_html -}}
+  </horizontal-scroll>
+
+</section>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Sub Collections",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,717 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+{{ 'section-hero-slide.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 1 -%}
+  <script
+    src="{{ 'section-hero.js' | asset_url }}"
+    type="module"
+  ></script>
+{%- endif -%}
+
+{%- if section.settings.header_overlay -%}
+<style> .lyt-Site { --Nav_HeightWhenFixed: 0px; padding-top: var(--Announcement_Height); }</style>
+{%- endif -%}
+
+{%- capture body -%}
+  <section-hero
+    class="sec-Hero{% if section.settings.desktop_full_screen %} sec-Hero-dektopFullScreen{% endif %}{% if section.settings.mobile_full_screen %} sec-Hero-mobileFullScreen{% endif %}{% if section.settings.header_overlay %} sec-Hero-headerOverlay{% endif %}"
+    data-autoplay="{{ section.settings.autoplay_enable }}"
+    data-autoplay-duration="{{ section.settings.autoplay_duration }}"
+    {% if section.settings.header_transparent %} data-header-is-transparent-when-over-me="{{- section.settings.header_colour -}}"{% endif %}>
+    <div class="sec-Hero_Inner">
+      <div class="sec-Hero_Body">
+        <div class="sec-Hero_Carousel">
+          <div class="sec-Hero_Slides" data-el="section-hero.slides">
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign preload = false
+                if forloop.first and section.settings.lazy_media == false
+                  assign preload = true
+                endif
+              -%}
+              <div class="sec-Hero_Slide" data-el="section-hero.slide" data-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+                <div class="
+                  sec-HeroSlide
+                  sec-HeroSlide-{{ block.settings.desktop_text_align }}
+                  sec-HeroSlide-{{ block.settings.desktop_horizontal }}
+                  sec-HeroSlide-{{ block.settings.desktop_vertical }}
+                  sec-HeroSlide-{{ block.settings.mobile_text_align }}
+                  sec-HeroSlide-{{ block.settings.mobile_horizontal }}
+                  sec-HeroSlide-{{ block.settings.mobile_vertical }}
+                  ">
+                  <div class="sec-HeroSlide_Media">
+                    {%- if block.settings.desktop_video != blank -%}
+                      <video class="en_mode sec-HeroSlide_Video sec-HeroSlide_Video-desktop{% unless preload %} util-lazyVideo{% endunless %}" autoplay loop muted playsinline {% unless preload %}data-lazy-video{% endunless %}>
+                        <source {% unless preload %}data-{%endunless%}src="{{ block.settings.desktop_video }}" type="video/mp4">
+                      </video>
+                    {%- endif -%}
+
+              {%- if block.settings.desktop_video_ar != blank -%}
+                      <video class="ar_mode sec-HeroSlide_Video sec-HeroSlide_Video-desktop{% unless preload %} util-lazyVideo{% endunless %}" autoplay loop muted playsinline {% unless preload %}data-lazy-video{% endunless %}>
+                        <source {% unless preload %}data-{%endunless%}src="{{ block.settings.desktop_video_ar }}" type="video/mp4">
+                      </video>
+                    {%- endif -%}
+
+                    {%- if block.settings.mobile_video != blank -%}
+                      <video class="sec-HeroSlide_Video sec-HeroSlide_Video-mobile{% unless preload %} util-lazyVideo{% endunless %}" autoplay loop muted playsinline {% unless preload %}data-lazy-video{% endunless %}>
+                        <source {% unless preload %}data-{%endunless%}src="{{ block.settings.mobile_video }}" type="video/mp4">
+                      </video>
+                    {%- endif -%}
+
+              {%- if block.settings.mobile_video_ar != blank -%}
+                      <video class="sec-HeroSlide_Video sec-HeroSlide_Video-mobile{% unless preload %} util-lazyVideo{% endunless %}" autoplay loop muted playsinline {% unless preload %}data-lazy-video{% endunless %}>
+                        <source {% unless preload %}data-{%endunless%}src="{{ block.settings.mobile_video_ar }}" type="video/mp4">
+                      </video>
+                    {%- endif -%}
+
+                    {%- if block.settings.desktop_image != blank and block.settings.desktop_video == blank -%}
+                    <div class="sec-HeroSlide_Image sec-HeroSlide_Image-desktop en_mode">
+                      {%- render 'responsive-image' with
+                        image: block.settings.desktop_image,
+                        width: 4470,
+                        height: 2705,
+                        preload: preload
+                      -%}
+                    </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.mobile_image != blank and block.settings.mobile_video == blank -%}
+                    <div class="sec-HeroSlide_Image sec-HeroSlide_Image-mobile en_mode">
+                      {%- render 'responsive-image' with
+                        image: block.settings.mobile_image,
+                        width: 750,
+                        height: 1170,
+                        preload: preload
+                      -%}
+                    </div>
+                    {%- endif -%}
+
+
+                  {%- if block.settings.desktop_image_ar != blank and block.settings.desktop_video_ar == blank -%}
+                    <div class="sec-HeroSlide_Image sec-HeroSlide_Image-desktop ar_mode">
+                      {%- render 'responsive-image' with
+                        image: block.settings.desktop_image_ar,
+                        width: 4470,
+                        height: 2705,
+                        preload: preload
+                      -%}
+                    </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.mobile_image_ar != blank and block.settings.mobile_video_ar == blank -%}
+                    <div class="sec-HeroSlide_Image sec-HeroSlide_Image-mobile ar_mode">
+                      {%- render 'responsive-image' with
+                        image: block.settings.mobile_image_ar,
+                        width: 750,
+                        height: 1170,
+                        preload: preload
+                      -%}
+                    </div>
+                    {%- endif -%}
+                  </div>
+
+                  <div class="sec-HeroSlide_Overlay
+                    sec-HeroSlide_Overlay-{{ block.settings.text_colour_desktop }}TextDesktop
+                    sec-HeroSlide_Overlay-{{ block.settings.text_colour_mobile }}TextMobile
+                    {% if block.settings.overlay_desktop %} sec-HeroSlide_Overlay-{{ block.settings.background_colour_desktop }}BackgroundDesktop{% endif %}
+                    {% if block.settings.overlay_mobile %} sec-HeroSlide_Overlay-{{ block.settings.background_colour_mobile }}BackgroundMobile{% endif %}
+                    lyt-Container">
+                    {%- if block.settings.text != blank or block.settings.title != blank -%}
+                      <div class="sec-HeroSlide_Body">
+                        <div class="sec-HeroSlide_Content">
+                          <h1 class="sec-HeroSlide_Title fz-76_84">{{ block.settings.title }}</h1>
+
+                          {%- if block.settings.text != blank -%}
+                            <div class="sec-HeroSlide_Text fz-18_25">{{ block.settings.text }}</div>
+                          {%- endif -%}
+
+                          {%- if block.settings.button_url != blank and block.settings.button_text != blank -%}
+                            <div class="sec-HeroSlide_Cta">
+                              <a href="{{ block.settings.button_url }}" class="sec-HeroSlide_Button sec-HeroSlide_Button-{{ block.settings.button_style }} sec-HeroSlide_Button-{{ block.settings.button_style_mobile }} btn-Button {% if block.settings.mobile_button_url %} sec-HeroSlide_Button-desktopOnly{% endif %}">
+                                {{ block.settings.button_text }}
+                              </a>
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.mobile_button_url != blank and block.settings.button_text != blank -%}
+                            <div class="sec-HeroSlide_Cta">
+                              <a href="{{ block.settings.mobile_button_url }}" class="sec-HeroSlide_Button sec-HeroSlide_Button-{{ block.settings.button_style }} sec-HeroSlide_Button-{{ block.settings.button_style_mobile }} btn-Button sec-HeroSlide_Button-mobileOnly">
+                                {{ block.settings.button_text }}
+                              </a>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.countdown_date != blank -%}
+                      <div class="sec-HeroSlide_Countdown sec-HeroSlide_Countdown-mobile fz-24_29" style="--mobile-row: {{ block.settings.countdown_mobile_row }}; --mobile-col: 1;">
+                        {%- render 'countdown-timer',
+                          title: block.settings.countdown_text_mobile,
+                          end_date: block.settings.countdown_date
+                        -%}
+                      </div>
+
+                      <div class="sec-HeroSlide_Countdown sec-HeroSlide_Countdown-desktop" style="--desktop-row: {{ block.settings.countdown_desktop_row }}; --desktop-col: {{ block.settings.countdown_desktop_column }}; --tablet-row: {{ block.settings.countdown_tablet_row }}; --tablet-col: {{ block.settings.countdown_tablet_column }};">
+                        {%- render 'countdown-timer',
+                          title: block.settings.countdown_text,
+                          expired_text: block.settings.countdown_text_expired,
+                          end_date: block.settings.countdown_date
+                        -%}
+                      </div>
+                    {%- endif -%}
+                  </div>
+
+                  {%- if block.settings.button_url != blank -%}
+                    <a href="{{ block.settings.button_url }}" class="sec-HeroSlide_FauxLink sec-HeroSlide_FauxLink-desktopOnly">
+                      <span class="util-ScreenReaderOnly">
+                        {{ block.settings.button_text }}
+                      </span>
+                    </a>
+                  {%- endif -%}
+                  {%- if block.settings.mobile_button_url != blank -%}
+                    <a href="{{ block.settings.mobile_button_url }}" class="sec-HeroSlide_FauxLink sec-HeroSlide_FauxLink-mobileOnly">
+                      <span class="util-ScreenReaderOnly">
+                        {{ block.settings.button_text }}
+                      </span>
+                    </a>
+                  {%- endif -%}
+
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+          {%- if section.blocks.size > 1 -%}
+            <div class="sec-Hero_Footer">
+              {%- for block in section.blocks -%}
+                <button class="sec-Hero_Line" data-slide="{{ forloop.index0 }}" data-el="section-hero.dot"></button>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section-hero>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+  flush: true,
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "lazy_media",
+        "label": "Lazy media",
+        "default": true,
+        "info": "If this section is above the \"fold\" then this should be unchecked for best Lighthouse scores"
+      },
+      {
+        "type": "header",
+        "content": "Autoplay"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay_enable",
+        "label": "Enable autoplay",
+        "default": false,
+        "info": "If you have more than one slide, you can enable autoplay."
+      },
+      {
+        "type": "text",
+        "id": "autoplay_duration",
+        "label": "Autoplay duration",
+        "default": "2000",
+        "info": "1000 = 1 second"
+      },
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "checkbox",
+        "id": "desktop_full_screen",
+        "label": "Desktop Full screen?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_full_screen",
+        "label": "Mobile Full screen?",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Header Styles"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_transparent",
+        "label": "Transparent when over me?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "header_overlay",
+        "label": "Overlay the hero?",
+        "default": false,
+        "info": "Select this checkbox when this is the first section on the page to ensure the header overlays it on page load."
+      },
+      {
+        "type": "select",
+        "id": "header_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "hero_item",
+        "name": "Hero item",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Videos"
+          },
+          {
+            "type": "text",
+            "id": "desktop_video",
+            "label": "Desktop video",
+            "info": "Upload the video file to Shopify and then paste the URL here"
+          },
+           {
+            "type": "text",
+            "id": "desktop_video_ar",
+            "label": "Desktop video AR",
+            "info": "Upload the video file to Shopify and then paste the URL here"
+          },
+          {
+            "type": "text",
+            "id": "mobile_video",
+            "label": "Mobile video",
+            "info": "Upload the video file to Shopify and then paste the URL here"
+          },
+          {
+            "type": "text",
+            "id": "mobile_video_ar",
+            "label": "Mobile video AR",
+            "info": "Upload the video file to Shopify and then paste the URL here"
+          },
+          {
+            "type": "header",
+            "content": "Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image",
+            "info": "Recommended size: 2880px x 1740px"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image_ar",
+            "label": "Desktop Image AR",
+            "info": "Recommended size: 2880px x 1740px"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image",
+            "info": "Recommended size: 750px x 1170px"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image_ar",
+            "label": "Mobile Image AR",
+            "info": "Recommended size: 750px x 1170px"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url (desktop)"
+          },
+          {
+            "type": "url",
+            "id": "mobile_button_url",
+            "label": "Button url (mobile)",
+            "info": "If blank, the desktop url will be used on mobile."
+          },
+          {
+            "type": "header",
+            "content": "Desktop Styles"
+          },
+          {
+            "type": "checkbox",
+            "id": "overlay_desktop",
+            "label": "Background overlay?",
+            "default": false,
+            "info": "Add a semi-transparent background to the text overlay"
+          },
+          {
+            "type": "select",
+            "id": "background_colour_desktop",
+            "label": "Background colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "select",
+            "id": "text_colour_desktop",
+            "label": "Text colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "select",
+            "id": "button_style",
+            "label": "Button style",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "select",
+            "id": "desktop_text_align",
+            "label": "Desktop text alignment",
+            "options": [
+              {
+                "value": "desktopTextLeft",
+                "label": "Left"
+              },
+              {
+                "value": "desktopTextCenter",
+                "label": "Center"
+              },
+              {
+                "value": "desktopTextRight",
+                "label": "Right"
+              }
+            ],
+            "default": "desktopTextLeft"
+          },
+          {
+            "type": "select",
+            "id": "desktop_horizontal",
+            "label": "Desktop horizontal position",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "left"
+          },
+          {
+            "type": "select",
+            "id": "desktop_vertical",
+            "label": "Desktop vertical position",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "middle",
+                "label": "Middle"
+              },
+              {
+                "value": "bottom",
+                "label": "Bottom"
+              }
+            ],
+            "default": "bottom"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Style"
+          },
+          {
+            "type": "checkbox",
+            "id": "overlay_mobile",
+            "label": "Background overlay?",
+            "default": false,
+            "info": "Add a semi-transparent background to the text overlay"
+          },
+          {
+            "type": "select",
+            "id": "background_colour_mobile",
+            "label": "Background colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "select",
+            "id": "text_colour_mobile",
+            "label": "Text colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "select",
+            "id": "button_style_mobile",
+            "label": "Mobile Button style",
+            "options": [
+              {
+                "value": "mobileLight",
+                "label": "Light"
+              },
+              {
+                "value": "mobileDark",
+                "label": "Dark"
+              }
+            ],
+            "default": "mobileLight"
+          },
+          {
+            "type": "select",
+            "id": "mobile_text_align",
+            "label": "Mobile text alignment",
+            "options": [
+              {
+                "value": "mobileTextLeft",
+                "label": "Left"
+              },
+              {
+                "value": "mobileTextCenter",
+                "label": "Center"
+              },
+              {
+                "value": "mobileTextRight",
+                "label": "Right"
+              }
+            ],
+            "default": "mobileTextLeft"
+          },
+          {
+            "type": "select",
+            "id": "mobile_horizontal",
+            "label": "Mobile horizontal position",
+            "options": [
+              {
+                "value": "mobileLeft",
+                "label": "Left"
+              },
+              {
+                "value": "mobileCenter",
+                "label": "Center"
+              },
+              {
+                "value": "mobileRight",
+                "label": "Right"
+              }
+            ],
+            "default": "mobileLeft"
+          },
+          {
+            "type": "select",
+            "id": "mobile_vertical",
+            "label": "Mobile vertical position",
+            "options": [
+              {
+                "value": "mobileTop",
+                "label": "Top"
+              },
+              {
+                "value": "mobileMiddle",
+                "label": "Middle"
+              },
+              {
+                "value": "mobileBottom",
+                "label": "Bottom"
+              }
+            ],
+            "default": "mobileBottom"
+          },
+          {
+            "type": "header",
+            "content": "Countdown Timer"
+          },
+          {
+            "type": "richtext",
+            "id": "countdown_text",
+            "label": "Countdown Text",
+            "default": "<p>New styles coming soon</p>"
+          },
+          {
+            "type": "richtext",
+            "id": "countdown_text_mobile",
+            "label": "Countdown Text Mobile",
+            "default": "<p>Coming soon</p>"
+          },
+          {
+            "type": "text",
+            "id": "countdown_date",
+            "label": "Countdown Timer End Date",
+            "info": "Date Format: Jan 01, 2022"
+          },
+          {
+            "type": "richtext",
+            "id": "countdown_text_expired",
+            "label": "Countdown Time Up Text",
+            "default": "<p>Available Now!</p>"
+          },
+          {
+            "type": "range",
+            "id": "countdown_desktop_column",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Desktop Column",
+            "default": 1
+          },
+          {
+            "type": "range",
+            "id": "countdown_desktop_row",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Desktop Row",
+            "default": 1
+          },
+          {
+            "type": "range",
+            "id": "countdown_tablet_column",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Tablet Column",
+            "default": 4
+          },
+          {
+            "type": "range",
+            "id": "countdown_tablet_row",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Tablet Row",
+            "default": 4
+          },
+          {
+            "type": "range",
+            "id": "countdown_mobile_row",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Mobile Row",
+            "default": 4
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}

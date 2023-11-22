@@ -1,0 +1,52 @@
+{{ 'account.css' | asset_url | stylesheet_tag }}
+{{ 'account-overview.css' | asset_url | stylesheet_tag }}
+{{ 'account-orders.css' | asset_url | stylesheet_tag }}
+
+
+{%- capture body -%}
+  <section class="acc-Account_Inner lyt-Container">
+
+    <div class="acc-Account_ContentContainer">
+      <div class="acc-Account_Content acc-Account_Content-login" aria-hidden="false" style="opacity:0; pointer-events: none;" data-toggle-content-el="toggle" data-section-account-el="loginForm">
+        {%- render 'account-form-login' -%}
+      </div>
+
+      <div class="acc-Account_Content acc-Account_Content-recover" aria-hidden="true" style="opacity:0; pointer-events: none; position: absolute;" data-toggle-content-el="toggle" data-section-account-el="recoverForm">
+        {%- render 'account-form-recover' -%}
+      </div>
+
+      <div class="acc-Account_Content acc-Account_Content-registercta">
+        {%- liquid
+          assign register_cta_title = 'customer.register.cta.not_signed_up_yet' | t
+          assign register_cta_text = 'customer.register.cta.cta_text' | t
+          render 'account-cta-register', title: register_cta_title, text: register_cta_text, show_link: true 
+        -%}
+      </div>
+    </div>
+
+  </section>
+{%- endcapture -%}
+
+{%- render 'section-account',
+  image_desktop: section.settings.image_desktop,
+  image_mobile: section.settings.image_mobile,
+  body: body
+-%}
+
+{% schema %}
+{
+  "name": "Account Login",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)"
+    }
+  ]
+}
+{% endschema %}

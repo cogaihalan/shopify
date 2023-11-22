@@ -1,0 +1,185 @@
+{%- capture content %}
+
+{% style %}
+  /*
+  |--------------------------------------------------------------------------
+  | Colour Variables
+  |--------------------------------------------------------------------------
+  |
+  */
+  :root {
+    --Color_Body-BlackFriday: #fff;
+    --Color_Black-BlackFriday: #141414;
+  }
+
+  /*
+  |--------------------------------------------------------------------------
+  | Header
+  |--------------------------------------------------------------------------
+  |
+  */
+  .lyt-Site-blackFriday .lyt-Header {
+    --Color_MainBackground: var(--Color_Black-BlackFriday);
+    --Color_Body: var(--Color_Nav);
+
+    background: var(--Color_MainBackground);
+    color: var(--Color_Body);
+  }
+
+  .lyt-Site-blackFriday .drp-Menu {
+    color: var(--Color_Brand);
+  }
+
+  /*
+  |--------------------------------------------------------------------------
+  | Footer
+  |--------------------------------------------------------------------------
+  |
+  */
+  .lyt-Site-blackFriday .ft-Footer {
+    --Color_MainBackground: var(--Color_Black-BlackFriday);
+    --Color_LightPink: var(--Color_Black-BlackFriday);
+    --Color_Body: var(--Color_Body-BlackFriday);
+
+    background: var(--Color_MainBackground);
+    color: var(--Color_Body-BlackFriday);
+  }
+
+  .lyt-Site-blackFriday .nws-Newsletter_Button {
+    background-color: var(--Color_CoolPink);
+    border: 1px solid var(--Color_CoolPink);
+    color: var(--Color_Brand);
+  }
+
+  .lyt-Site-blackFriday .nws-Newsletter_Button:hover {
+    background-color: var(--Color_MainBackground);
+    color: var(--Color_White);
+  }
+
+  .lyt-Site-blackFriday .nws-Newsletter_Input {
+    border: 1px solid var(--Color_CoolPink);
+    border-right: unset;
+  }
+
+  .lyt-Site-blackFriday .nws-Newsletter_Input::placeholder {
+    color: var(--Color_Body);
+  }
+
+  .lyt-Site-blackFriday .ft-Accordion_Icon {
+    background-color: var(--Color_CoolPink);
+    color: var(--Color_Black-BlackFriday);
+  }
+
+  .lyt-Site-blackFriday .btn-Button_Arrow-backtotop {
+    background-color: var(--Color_CoolPink);
+    color: var(--Color_MainBackground);
+  }
+  /*
+  |--------------------------------------------------------------------------
+  | Drawer
+  |--------------------------------------------------------------------------
+  |
+  */
+  .lyt-Site-blackFriday .drw-Drawer[key='cart'],
+  .lyt-Site-blackFriday .drw-Drawer_Header {
+    --Color_MainBackground: var(--Color_Black-BlackFriday);
+    --Color_Body: var(--Color_White);
+
+    background: var(--Color_MainBackground);
+    color: var(--Color_Body);
+  }
+
+  .lyt-Site-blackFriday .drw-Drawer .btn-Button-primary {
+    background-color: var(--Color_CoolPink);
+    border: 1px solid var(--Color_CoolPink);
+    color: var(--Color_Brand);
+  }
+  
+  /*
+  |--------------------------------------------------------------------------
+  | Drawer
+  |--------------------------------------------------------------------------
+  |
+  */
+  .lyt-Site-blackFriday .psh-CartItem_Remove {
+    color: var(--Color_White-70);
+  }
+
+  .lyt-Site-blackFriday .psh-CartItem_Remove:is(:hover, :focus) {
+    color: var(--Color_Body);
+  }
+    
+  /*
+  |--------------------------------------------------------------------------
+  | Home
+  |--------------------------------------------------------------------------
+  |
+  */
+  .lyt-Site-blackFriday .sec-Cta_Content {
+    background-color: var(--Color_CoolPink);
+  }
+
+  .lyt-Site-blackFriday .sec-ImageText_Button {
+    background-color: var(--Color_CoolPink);
+    border: 1px solid var(--Color_CoolPink);
+    color: var(--Color_Body);
+  }
+
+  /*
+  |--------------------------------------------------------------------------
+  | PDP
+  |--------------------------------------------------------------------------
+  |
+  */
+  .lyt-Site-blackFriday .prd-Details_Button {
+    background-color: var(--Color_CoolPink);
+    border: 1px solid var(--Color_CoolPink);
+    color: var(--Color_Body);
+  }
+
+  .lyt-Site-blackFriday .btn-Button_Wishlist {
+    background-color: var(--Color_White);
+    border: 1px solid var(--Color_White);
+  }
+
+  .lyt-Site-blackFriday .bup-Bundle {
+    background-color: var(--Color_White);
+    padding-top: 0;
+  }
+
+  .lyt-Site-blackFriday .bup-Item {
+    padding: 0 0 20px;
+    background-color: var(--Color_White);
+  }
+
+  .lyt-Site-blackFriday .bup-Button-addtocart {
+    background-color: var(--Color_CoolPink);
+    border: 1px solid var(--Color_CoolPink);
+    color: var(--Color_Body);
+  }
+
+  .lyt-Site-blackFriday .bup-Button-addtocart:hover {
+    background-color: var(--Color_White);
+  }
+
+  .lyt-Site-blackFriday .prd-Note_Icon svg {
+    stroke: var(--Color_Russet);
+  }
+
+  .lyt-Site-blackFriday .prd-Loyalty_Icon svg {
+    stroke: var(--Color_Russet);
+  }
+
+{% endstyle %}
+{%- endcapture -%}
+
+{%- liquid
+  assign content =  content | strip_newlines | split: " " | join: " " | split: "*/"
+  assign new_content = ""
+  for word in content
+    assign new_word = word | split: "/*" | first | strip | replace: "; ", ";" | replace: "} ", "}" | replace: "{ ", "{" | replace: " {", "{"
+    assign new_content = new_content | append: new_word
+  endfor
+-%}
+
+{{- new_content }}

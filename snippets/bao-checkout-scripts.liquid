@@ -1,0 +1,109 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initialize()
+  });
+  document.addEventListener('page:change', () => {
+    initialize()
+  })
+
+  function initialize () {
+    appendTermsText()
+    appendPaymentMethods()
+    updateItemData()
+    preventEmojis()
+  }
+
+  function preventEmojis () {
+    const formInputs = document.querySelectorAll('.field__input')
+    if (!formInputs) return
+    formInputs.forEach(formInput => {
+      formInput.addEventListener('input', e => {
+        const inputValue = e.target.value
+        if (!inputValue.length) return
+        const cleanValue = inputValue.replace(new RegExp('[\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]', 'g'), '')
+        e.target.value = cleanValue
+      })
+    })
+  }
+
+  function appendTermsText () {
+    const orderTermsSelector = `data-order-terms`
+    const orderTermsSectionEl = document.querySelector(`[${orderTermsSelector}]`)
+    const orderSummarySectionEl = document.querySelector('.order-summary__sections')
+
+    if(orderTermsSectionEl || !orderSummarySectionEl) return
+
+    orderSummarySectionEl.innerHTML = `${orderSummarySectionEl.innerHTML}<div class="order-summary__section chk-Checkout_Terms fz-12_17" ${orderTermsSelector}>{{- 'checkout.terms_html' | t -}}</div>`
+  }
+
+  async function appendPaymentMethods () {
+    const paymentMethodsSelector = `data-order-payments`
+    const paymentMethodsSectionEl = document.querySelector(`[${paymentMethodsSelector}]`)
+    const orderSummarySectionsEl = document.querySelector('.order-summary__sections')
+    const cartSummaryEl = document.querySelector(`[data-checkout-cart-summary]`)
+    const checkoutBillingSelect = document.querySelector('#checkout_billing_address_country')
+    const countryIsoCode =  checkoutBillingSelect.options[checkoutBillingSelect.selectedIndex].dataset.code;
+
+    if (paymentMethodsSectionEl || !orderSummarySectionsEl || !cartSummaryEl) {
+      let newAmount = document.querySelector('[data-checkout-payment-due-target]').getAttribute('data-checkout-payment-due-target') / 100
+      document.querySelector('afterpay-placement').setAttribute('data-amount', newAmount)
+    } else {
+      const clearPayPlacementHTML = '<afterpay-placement class="chk-Checkout_PaymentsAfterPay" data-locale="{{- request.locale.iso_code -}}" data-currency="{{- checkout.currency -}}" data-amount="{{- checkout.total_price | money_without_currency -}}"></afterpay-placement>'
+
+      const DOM = window.BAO.utils.sectionRenderer.convertToDOM(cartSummaryEl.innerHTML)
+      const summaryIconEl = DOM.querySelector('[data-checkout-payment-icons]')
+      orderSummarySectionsEl.innerHTML = summaryIconEl ? `${orderSummarySectionsEl.innerHTML}<div class="order-summary__section chk-Checkout_Payments" ${paymentMethodsSelector}>${clearPayPlacementHTML} <div class="chk-Checkout_PaymentIcons">${summaryIconEl.innerHTML}</div></div>` : orderSummarySectionsEl.innerHTML
+    }
+  }
+
+  function updateItemData () {
+    const lineItemsEl = document.querySelector(`[data-order-summary-section="line-items"]`)
+    const lineItemEls = lineItemsEl ? lineItemsEl.querySelectorAll(`.product`) : []
+    const lineItemContentEl = document.querySelector(`[data-checkout-line-item-content]`)
+
+    if(!lineItemsEl || !lineItemEls.length || !lineItemContentEl) return
+
+    lineItemEls.forEach(lineItemEl => {
+      if(!lineItemEl.dataset || !lineItemEl.dataset.variantId) return
+      const variantId = lineItemEl.dataset.variantId
+
+      const lineItemDescriptionEl = lineItemEl.querySelector(`.product__description`)
+      const lineItemImageEl = lineItemEl.querySelector(`.product-thumbnail__wrapper`)
+
+      const imageSelector = `[data-line-item-varant-id="${variantId}"][data-line-item-image]`
+      const straplineSelector = `[data-line-item-varant-id="${variantId}"][data-line-item-strapline]`
+
+      const lineItemSectionImageEl = lineItemEl.querySelector(imageSelector)
+      const lineItemSectionStraplineEl = lineItemEl.querySelector(straplineSelector)
+
+      const DOM = window.BAO.utils.sectionRenderer.convertToDOM(lineItemContentEl.innerHTML)
+      const sectionImageEl = DOM.querySelector(imageSelector)
+      const sectionStraplineEl = DOM.querySelector(straplineSelector)
+
+      lineItemImageEl.innerHTML = !lineItemSectionImageEl && sectionImageEl && lineItemImageEl ? sectionImageEl.outerHTML : lineItemImageEl.innerHTML
+      lineItemDescriptionEl.innerHTML = !lineItemSectionStraplineEl && sectionStraplineEl && lineItemDescriptionEl ? sectionStraplineEl.outerHTML + lineItemDescriptionEl.innerHTML : lineItemDescriptionEl.innerHTML
+    })
+  }
+
+  function getShippingAddressContainer () {
+    return document.querySelector('[data-shipping-address]')
+  }
+
+  </script>
+
+  <script type="text/html" data-checkout-cart-summary>
+  {%- section 'cart-summary' -%}
+  </script>
+
+  <script type="text/html" data-checkout-line-item-content>
+  {%- for line_item in checkout.line_items -%}
+  <div class="chk-LineItem_Image" data-line-item-varant-id="{{- line_item.variant_id -}}" data-line-item-image>
+    {%- render 'responsive-image', image: line_item.image, width: 200, height: 300 -%}
+  </div>
+  {%- if line_item.product.metafields.product_details.strapline != blank -%}
+  <span class="chk-LineItem_Strapline fz-18_22" data-line-item-varant-id="{{- line_item.variant_id -}}" data-line-item-strapline>
+    {{- line_item.product.metafields.product_details.strapline -}}
+  </span>
+  {%- endif -%}
+  {%- endfor -%}
+  </script>

@@ -1,0 +1,45 @@
+{{ 'blog-navigation.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign has_categories = false
+
+  for tag in blog.all_tags
+    assign lower_tag = tag | downcase
+
+    if lower_tag contains 'category:'
+      assign has_categories = true
+
+      break
+    endif
+  endfor
+-%}
+
+{%- if has_categories == true -%}
+  <section class="blg-Navigation">
+    <ul class="blg-Navigation_Items">
+      <li class="blg-Navigation_Item">
+        <a
+          href="{{ blog.url }}"
+          class="blg-Navigation_Link fz-12_12-navigation"
+          {% if current_tags == blank %}aria-current="true"{% endif %}
+        >
+          {{ 'blogs.list.all_articles' | t }}
+        </a>
+      </li>
+
+      {%- for tag in blog.all_tags -%}
+        {%- if tag contains 'category:' or tag contains 'Category:' -%}
+          <li class="blg-Navigation_Item">
+            <a
+              href="{{ blog.url }}/tagged/{{ tag | handle }}"
+              class="blg-Navigation_Link fz-12_12-navigation"
+              {% for current_tag in current_tags %}{% if current_tag == tag %}aria-current="true"{% endif %}{% break %}{% endfor %}
+            >
+              {{ tag | remove: 'category:' | remove: 'Category:' | strip }}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </section>
+{%- endif -%}

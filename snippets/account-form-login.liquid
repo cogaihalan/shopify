@@ -1,0 +1,60 @@
+<div class="acc-Account_Form acc-Account_Form-login">
+
+  <h1 class="acc-Account_Title acc-Account_Title-form fz-24_29">
+    {{- 'customer.login.already_have_an_account' | t -}}
+  </h1>
+
+  {%- if settings.enable_loyalty_lion -%}
+    <div class="acc-Account_Loyalty fz-14_20">
+      {{- 'customer.loyalty.sign_up' | t -}}
+    </div>
+  {%- endif -%}
+
+  <div class="frm-Form">
+    {%- form 'customer_login', class: 'frm-Form' -%}
+  
+      <div class="frm-Form_Row frm-Form_Row-first">
+        {%- liquid
+          assign success_message = 'customer.login.success_message' | t | strip
+          assign error_message = 'customer.login.error_message' | t | strip
+        -%}
+        {%- render 'form-messages', form: form, success_message: success_message, error_message: error_message -%}
+        {%- render 'form-field-customer', form: form, field_name: "Email", translation_key: "customer.login.email_address", type: "email" -%}
+      </div>
+  
+      <div class="frm-Form_Row">
+        {%- render 'form-field-customer', form: form, field_name: "Password", translation_key: "customer.login.password", type: "password" -%}
+      </div>
+  
+      <div class="frm-Form_Row">
+        <p class="frm-Form_Text frm-Form_Text-footer fz-12_17">
+          {{ 'customer.login.required_fields' | t }}
+        </p>
+      </div>
+  
+      <div class="frm-Form_Row frm-Form_Row-last">
+        <div class="frm-Form_Actions">
+  
+          <button
+            class="frm-Form_Submit frm-Form_Button-login btn-Button-primary btn-Button-border btn-Button"
+            type="submit"
+          >
+            {{ 'customer.login.sign_in' | t }}
+          </button>
+  
+          <div class="frm-Form_Text frm-Form_Text-footer">
+            <a
+              class="frm-Form_Link"
+              href="#recover"
+              data-toggle-content-el="trigger"
+            >
+              {{ 'customer.login.forgot_password' | t }}
+            </a>
+          </div>        
+  
+        </div>
+      </div>
+    {%- endform -%}
+  </div>
+
+</div>

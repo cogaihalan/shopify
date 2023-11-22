@@ -1,0 +1,75 @@
+{%- comment -%}
+  This can be removed once this is fixed: https://bugs.webkit.org/show_bug.cgi?id=182671
+{%- endcomment -%}
+{% comment %}theme-check-disable ParserBlockingJavaScript{% endcomment %}
+<script src="//unpkg.com/@ungap/custom-elements" defer="defer"></script>
+{% comment %}theme-check-enable ParserBlockingJavaScript{% endcomment %}
+<script src="{{ 'bao-utils.js' | asset_url }}"></script>
+<script src="{{ 'bao-events.js' | asset_url }}"></script>
+<script src="{{ 'bao-listeners.js' | asset_url }}"></script>
+<script src="{{ 'bao-cart.js' | asset_url }}"></script>
+<script src="{{ 'bao-custom-element.js' | asset_url }}"></script>
+<script src="{{ 'bao-section-rendering.js' | asset_url }}"></script>
+<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'lazy-video.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'section-async.js' | asset_url }}" defer="defer"></script>
+
+<script src="{{ 'product-form.js' | asset_url }}" type="module"></script>
+
+{%- if template.name == 'product' or template.name contains 'collection' -%}
+  <script src="{{ 'product-accordions.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<script src="{{ 'drawer-accordion.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'currency-select.js' | asset_url }}" type="module"></script>
+<script src="{{ 'click-and-collect.js' | asset_url }}" defer="defer"></script>
+
+<script src="https://portal.afterpay.com/afterpay.js" async></script>
+<script src="https://js.afterpay.com/afterpay-1.x.js" data-analytics-enabled async></script>
+
+<script>
+  window.routes = {
+    cart_add_url: '{{ routes.cart_add_url }}',
+    cart_change_url: '{{ routes.cart_change_url }}',
+    cart_update_url: '{{ routes.cart_update_url }}',
+    cartAddUrl: '{{ routes.cart_add_url }}',
+    cartChangeUrl: '{{ routes.cart_change_url }}',
+    cartUpdateUrl: '{{ routes.cart_update_url }}',
+    shopUrl: '{{ shop.url }}',
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hiddenUntilLoaded = Array.from(document.querySelectorAll('.util-HideUntilLoaded'))
+    hiddenUntilLoaded.forEach(el => el.classList.remove('util-HideUntilLoaded'))
+
+    // If the device is iOS add a class to the body so we can do specific CSS for it
+    if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
+      const body = document.body || document.documentElement
+      body.classList.add('is-iOS')
+    }
+  })
+
+  // Add .util-TouchEvents on demand (on first touch event)
+  function addTouchClass() {
+    document.documentElement.classList.remove('util-NoTouchEvents')
+    document.documentElement.classList.add('util-TouchEvents')
+    document.removeEventListener('touchstart', addTouchClass)
+
+    if (window && window.theme) {
+      window.theme.touch = true
+    }
+  }
+
+  function pageInit() {
+    document.documentElement.classList.add('util-HasJS', 'util-NoTouchEvents')
+    document.addEventListener('touchstart', addTouchClass)
+
+    if (window && window.theme) {
+      window.theme.touch = false
+    }
+  }
+
+  pageInit()
+</script>

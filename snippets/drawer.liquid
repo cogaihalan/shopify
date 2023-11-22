@@ -1,0 +1,42 @@
+<site-drawer class="drw-Drawer drw-Drawer-fromRight" key="{{- key -}}">
+
+  <header class="drw-Drawer_Header">
+
+    {%- if title -%}
+    <div class="drw-Drawer_Content">
+      <h4 class="drw-Drawer_Title fz-24_29">{{- title -}}</h4>
+    </div>
+    {%- endif -%}
+
+    <button
+      type="button"
+      class="drw-Drawer_Close"
+      data-drawers-close
+    >
+      <span class="drw-Drawer_Icon drw-Drawer_Icon-close">
+        {%- render 'bao-icon-close' -%}
+      </span>
+      <span class="util-ScreenReaderOnly">
+        {{ 'accessibility.close' | t }}
+      </span>        
+    </button>
+
+  </header>
+
+  {%- if body -%}
+  <div class="drw-Drawer_Inner">
+
+    <div class="drw-Drawer_Body">
+      {{- body -}}
+    </div>
+
+  </div>
+  {%- endif -%}
+
+  {%- if footer -%}
+  <footer class="drw-Drawer_Footer">
+    {{- footer -}}
+  </footer>
+  {%- endif -%}
+
+</site-drawer>

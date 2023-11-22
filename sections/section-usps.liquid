@@ -1,0 +1,150 @@
+<link
+  rel="stylesheet"
+  href="{{ 'section-usps.css' | asset_url }}"
+>
+
+<style> .lyt-Site { --Usp_Height: 60px; } </style>
+
+{%- capture body -%}
+  <carousel-element
+    class="sec-Usp car-Carousel"
+    data-initialized="false"
+    data-loop="true"
+    data-autoplay="true"
+    data-slides-per-view-xs="1"
+    data-slides-per-view-sm="1"
+    data-slides-per-view-md="3"
+    data-slides-per-view-lg="3"
+    data-fallback-classes="true"
+  >
+    <div class="sec-Usp_Items car-Carousel_Slides" data-count="{{ section.blocks.size }}" data-carousel-element-el="slides">
+      {%- for block in section.blocks -%}
+        <div class="sec-Usp_Item{% if forloop.last %} sec-Usp_Item-last{% endif %} util-FauxLink car-Carousel_Slide" style="--Usp_BackgroundColour:{{- block.settings.background_colour -}}; --Usp_TextColour: {{- block.settings.text_colour -}};" data-carousel-element-el="slide">
+          {%- if block.settings.title != blank -%}
+          <div class="sec-Usp_Title fz-16_18">
+            {{- block.settings.title -}}
+          </div>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+          <div class="sec-Usp_Text fz-12_17">
+            {{- block.settings.text -}}
+          </div>
+          {%- endif -%}
+          {%- if block.settings.link_url != blank -%}
+          <a class="util-FauxLink_Link" href="{{- block.settings.link_url -}}" aria-label="{{- block.settings.title -}}"></a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </carousel-element>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+  flush: true,
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "USPs",
+    "class": "sec-Usp_Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "usp",
+        "name": "USP",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          },
+          {
+            "type": "color",
+            "id": "background_colour",
+            "label": "Background Colour",
+            "default": "#FBEDDF",
+            "info": "Brand Colours"
+          },
+          {
+            "type": "paragraph",
+            "content": "Light Pink: #FDF5F5"
+          },
+          {
+            "type": "paragraph",
+            "content": "Cool Pink: #FAE0DF"
+          },
+          {
+            "type": "paragraph",
+            "content": "Cool Cream: #FBF0EB"
+          },
+          {
+            "type": "paragraph",
+            "content": "Coffee: #DFC9B6"
+          },
+          {
+            "type": "paragraph",
+            "content": "Warm Pink: #E2A9A9"
+          },
+          {
+            "type": "paragraph",
+            "content": "Russet: #D49595"
+          },
+          {
+            "type": "color",
+            "id": "text_colour",
+            "label": "Text Colour",
+            "default": "#333"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "USPs"
+      }
+    ]
+  }
+{% endschema %}

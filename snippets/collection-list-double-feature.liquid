@@ -1,0 +1,57 @@
+{{ 'collection-list-feature.css' | asset_url | stylesheet_tag }}
+
+<div class="clc-ListFeature clc-ListFeature-double">
+  <div class="clc-ListFeature_Body util-FauxLink">
+    <div class="clc-ListFeature_ImageContainer">
+      <div class="clc-ListFeature_Image clc-ListFeature_Image-desktop">
+        {%- if image != blank -%}
+          {%- render 'responsive-image',
+            image: image,
+            width: 1810,
+            height: 1350
+          -%}
+        {%- else -%}
+          {%- render 'responsive-image',
+            image: collection.image,
+            width: 1810,
+            height: 1350
+          -%}
+        {%- endif -%}
+      </div>
+
+      <div class="clc-ListFeature_Image clc-ListFeature_Image-mobile">
+        {%- render 'responsive-image',
+          image: collection.image,
+          width: 900,
+          height: 1350
+        -%}
+      </div>
+
+      <div class="clc-ListFeature_Content clc-ListFeature_Content-{{ content_style }} clc-ListFeature_Content-{{ content_alignment }}">
+        {%- if title != blank -%}
+          <h3 class="clc-ListFeature_Title fz-34_37">{{- title -}}</h3>
+        {%- else -%}
+          <h3 class="clc-ListFeature_Title fz-34_37">{{- collection.title -}}</h3>
+        {%- endif -%}
+
+        {%- if subtitle != blank -%}
+          <h4 class="clc-ListFeature_Subtitle fz-14_20">{{- subtitle -}}</h4>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="clc-ListFeature_Buttons">
+      <button class="clc-ListFeature_Button btn-Button btn-Button-{{ button_style }}">
+        <span class="clc-ListFeature_ButtonText">
+          {%- if button_text != blank -%}
+            {{- button_text -}}
+          {%- else -%}
+            {{ 'collections.collection.shop_collection' | t }}
+          {%- endif -%}
+        </span>
+      </button>
+    </div>
+
+    <a href="{{ collection.url }}" class="util-FauxLink_Link"></a>
+  </div>
+</div>

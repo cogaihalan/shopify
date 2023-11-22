@@ -1,207 +1,135 @@
-{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+<link
+  rel="stylesheet"
+  href="{{ 'section-form.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+<script
+  src="{{ 'contact-form.js' | asset_url }}"
+  type="module"
+></script>
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
+<contact-form>
+  <section class="sec-Form sec-Form-contact" data-subject="" aria-expanded="false">
+    <div class="sec-Form_Inner lyt-Container">
+      <div class="sec-Form_Body">
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
-      </h2>
-    {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
-    {%- endif -%}
-    {%- liquid
-      assign contact_form_class = 'isolate'
-      if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
-      endif
-    -%}
-    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
-      {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {% render 'icon-success' %}
-          {{ 'templates.contact.form.post_success' | t }}
-        </h2>
-      {%- elsif form.errors -%}
-        <div class="form__message">
-          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
-            {% render 'icon-error' %}
-            {{ 'templates.contact.form.error_heading' | t }}
-          </h2>
+        <div class="sec-Form_Form fz-14_20">
+          {%- form 'contact', class: 'frm-Form' -%}
+
+            <header class="frm-Form_Header">
+              <div class="frm-Form_Row">
+                <h3 class="frm-Form_Text frm-Form_Text-title fz-24_29">
+                  {{ 'templates.contact.form.form_title' | t }}
+                </h3>
+                <p class="frm-Form_Text fz-14_20">
+                  {{ 'templates.contact.form.form_text' | t }}
+                </p>
+
+                <div class="frm-Form_HeaderIcon btn-Button_Arrow-pinkLarge">
+                  {%- render 'bao-icon-chevron-down' -%}
+                </div>
+              </div>
+            </header>
+
+            <div class="frm-Form_Main">
+              <div class="frm-Form_Row">
+                {%- liquid
+                  assign success_message = 'templates.contact.form.success_message' | t | strip
+                  assign error_message = 'templates.contact.form.error_message' | t | strip
+                -%}
+                {%- render 'form-messages', form: form, success_message: success_message, error_message: error_message -%}
+
+                <div class="frm-Form_Subject fz-13_18">
+                  {%- assign subject_options = 'templates.contact.form.subject_options' | t -%}
+                  {%- render 'form-field-contact', form: form, field_name: "Subject", translation_key: "templates.contact.form.subject", type: "select", options: subject_options -%}
+                </div>
+              </div>
+
+              <div class="frm-Form_Row frm-Form_Row-first">
+                <p class="frm-Form_Text fz-14_20-headings">
+                  {{ 'templates.contact.form.contact_details' | t }}
+                </p>
+              </div>
+
+              <div class="frm-Form_Row">
+                {%- render 'form-field-contact', form: form, field_name: "Order Number", translation_key: "templates.contact.form.order_number" -%}
+              </div>
+
+              <div class="frm-Form_Row">
+                {%- render 'form-field-contact', form: form, field_name: "Email", type="email" translation_key: "templates.contact.form.email_address", required: true -%}
+              </div>
+
+              <div class="frm-Form_Row">
+                <div class="frm-Form_Columns">
+                  <div class="frm-Form_Column">
+                    {%- render 'form-field-contact', form: form, field_name: "Post Code", translation_key: "templates.contact.form.post_code", required: true -%}
+                  </div>
+                  <div class="frm-Form_Column">
+                    {%- render 'form-field-contact', form: form, field_name: "Full Name", translation_key: "templates.contact.form.full_name", required: true -%}
+                  </div>
+                </div>
+              </div>
+
+              <div class="frm-Form_Row frm-Form_Row-returns">
+                {%- render 'form-field-contact', form: form, field_name: "Returns Tracking Number", translation_key: "templates.contact.form.returns_tracking_number" -%}
+              </div>
+
+              <div class="frm-Form_Row frm-Form_Row-returns">
+                {%- render 'form-field-contact', form: form, field_name: "Product(s) Returned", translation_key: "templates.contact.form.returns_products" type: "textarea" -%}
+              </div>
+
+              <div class="frm-Form_Row frm-Form_Row-stockEnquiry">
+                <div class="frm-Form_Columns">
+                  <div class="frm-Form_Column">
+                    {%- render 'form-field-contact', form: form, field_name: "SKU", translation_key: "templates.contact.form.stock_enquiry_sku" -%}
+                  </div>
+                  <div class="frm-Form_Column">
+                    {%- render 'form-field-contact', form: form, field_name: "Colour", translation_key: "templates.contact.form.stock_enquiry_colour" -%}
+                  </div>
+                  <div class="frm-Form_Column">
+                    {%- render 'form-field-contact', form: form, field_name: "Size", translation_key: "templates.contact.form.stock_enquiry_size" -%}
+                  </div>
+                </div>
+              </div>
+
+              <div class="frm-Form_Row">
+                {%- render 'form-field-contact', form: form, field_name: "Message", translation_key: "templates.contact.form.message", type: "textarea" -%}
+              </div>
+
+              <div class="frm-Form_Row">
+                <p class="frm-Form_Text frm-Form_Text-footer fz-12_17">
+                  {{ 'templates.contact.form.required_fields' | t }}
+                </p>
+              </div>
+
+              <div class="frm-Form_Row frm-Form_Row-last">
+                <button
+                  class="btn-Button btn-Button-primary btn-Button-border btn-Button-fullWidth"
+                  type="submit"
+                >
+                  {{ 'templates.contact.form.send' | t }}
+                </button>
+              </div>
+            </div>
+
+          {% endform %}
         </div>
-        <ul class="form-status-list caption-large" role="list">
-          <li>
-            <a href="#ContactForm-email" class="link">
-              {{ form.errors.translated_fields.email | capitalize }}
-              {{ form.errors.messages.email }}
-            </a>
-          </li>
-        </ul>
-      {%- endif -%}
-      <div class="contact__fields">
-        <div class="field">
-          <input
-            class="field__input"
-            autocomplete="name"
-            type="text"
-            id="ContactForm-name"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
-            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
-          >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-        </div>
-        <div class="field field--with-error">
-          <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
-            class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
-          >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                {%- render 'icon-error' -%}
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
-        </div>
       </div>
-      <div class="field">
-        <input
-          type="tel"
-          id="ContactForm-phone"
-          class="field__input"
-          autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
-        >
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
-      </div>
-      <div class="field">
-        <textarea
-          rows="10"
-          id="ContactForm-body"
-          class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-        >
-          {{- form.body -}}
-        </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
-        </label>
-      </div>
-      <div class="contact__button">
-        <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
-        </button>
-      </div>
-    {%- endform -%}
-  </div>
-</div>
+    </div>
+  </section>
+</contact-form>
 
 {% schema %}
 {
-  "name": "t:sections.contact-form.name",
-  "tag": "section",
-  "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
+  "name": "Contact Form",
+  "templates": ["page"],
   "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "default": "Contact form",
-      "label": "Heading"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
   ],
   "presets": [
     {
-      "name": "t:sections.contact-form.presets.name"
+      "name": "Contact Form"
     }
   ]
 }

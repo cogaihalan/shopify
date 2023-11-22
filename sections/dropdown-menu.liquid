@@ -1,0 +1,169 @@
+{%- render 'stylesheets',
+  stylesheets: 'dropdown-menu',
+  async: false
+-%}
+
+<section class="drp-Menu">
+
+  <div class="drp-Menu_Inner">
+
+    <div class="drp-Menu_Columns">
+    {%- liquid
+      assign menu_count = 0
+      assign column_limit = 6
+    -%}
+    {%- for child_link in link.links -%}
+
+      {%- liquid
+        assign empty_item = false
+        assign is_promo_block = false
+        assign link_title_downcase = child_link.title | downcase | replace: " ", ""
+        assign link_title_as_handle = child_link.title | handleize
+        assign link_title_blank_value_array = "[empty],[blank],[],&nbsp;" | split: ","
+        if link_title_blank_value_array contains link_title_downcase
+          assign empty_item = true
+        endif
+      -%}
+
+      {% comment %}theme-check-disable LiquidTag{% endcomment %}
+      {%- capture promo_block_column_html -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'menu-cta' -%}
+          {%- assign promo_tag_as_handle = block.settings.promo_tag | handleize -%}
+          {%- if promo_tag_as_handle == link_title_as_handle -%}
+            {%- assign is_promo_block = true -%}
+            <div class="drp-Menu_Column drp-Menu_Column-cta">
+              <div class="drp-Menu_CtaContainer">
+                <div class="drp-Menu_Cta">
+                  {%- render 'navigation-promo' with
+                    image: block.settings.image,
+                    title: block.settings.title,
+                    url: block.settings.url,
+                    url_text: block.settings.url_text,
+                    text_color: block.settings.text_color
+                  -%}
+                </div>
+              </div>
+              {%- assign menu_count = menu_count | plus: 1 -%}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- endcapture -%}
+      {% comment %}theme-check-enable LiquidTag{% endcomment %}
+
+      {%- if menu_count < column_limit -%}
+
+        {%- if is_promo_block -%}
+          {{- promo_block_column_html -}}
+        {%- else -%}
+
+          <div class="drp-Menu_Column">
+
+            <div class="drp-Menu_Header fz-18_22">
+              {%- if empty_item or link_title_downcase contains "[" -%}
+                &nbsp;
+              {%- elsif child_link.url == "#" -%}
+                <p class="drp-Menu_Title">{{ child_link.title }}</p>
+              {%- else -%}
+                <a
+                  class="drp-Menu_Link drp-Menu_Link-header{% if child_link.active %} drp-Menu_Link-active{% endif %}"
+                  aria-current="{{- child_link.active -}}"
+                  href="{{ child_link.url }}"
+                  aria-label="{{- child_link.title | strip_html -}}"
+                >
+                  <span class="drp-Menu_LinkText">
+                    {{- child_link.title | strip -}}
+                  </span>
+                </a>
+              {%- endif -%}
+            </div>
+
+            {%- assign has_images = false -%}
+            {%- capture grand_child_link_items_html -%}
+            {%- for grand_child_link in child_link.links -%}
+              {%- liquid
+                assign downcase_link_title = grand_child_link.title | downcase
+                if downcase_link_title contains "[image:"
+                  assign has_images = true
+                endif
+                -%}
+              <li class="drp-Menu_Item fz-13_13">
+                {%- capture link_title -%}{%- render 'dropdown-link-title', link: grand_child_link -%}{%- endcapture -%}
+                {%- capture link_text -%}{%- render 'dropdown-link-text', link: grand_child_link -%}{%- endcapture -%}
+                <a
+                  class="drp-Menu_Link drp-Menu_Link-child{% if grand_child_link.active %} drp-Menu_Link-active{% endif %}"
+                  aria-current="{{- grand_child_link.active -}}"
+                  href="{{ grand_child_link.url }}"
+                  aria-label="{{- link_title | strip -}}"
+                >
+                  {{- link_text | strip -}}
+                </a>
+              </li>
+            {%- endfor -%}
+            {%- endcapture -%}
+
+            <ul class="drp-Menu_Menu drp-Menu_Menu-main{% if has_images %} drp-Menu_Menu-images{% endif%}">
+              {{- grand_child_link_items_html -}}
+            </ul>
+
+            {%- assign menu_count = menu_count | plus: 1 -%}
+
+          </div>
+
+        {%- endif -%}
+
+      {%- endif -%}
+
+    {%- endfor -%}
+
+    </div>
+
+  </div>
+
+  <div class="drp-Menu_Footer">
+
+    <div class="drp-Menu_Inner">
+
+      {% liquid
+        assign button_translation = 'layout.navigation.navigation_button_'
+        assign button_text = button_translation | append: forloop
+      %}
+
+      {%- if settings.overwrite_header_buttons -%}
+        <a href="{{- link.url -}}" class="drp-Menu_Button drp-Menu_Button-all btn-Button btn-Button-quaternary">
+          {{ button_text | t }}
+        </a>
+      {%- else -%}
+        {%- liquid
+          assign link_title = link.title | split: "[" | first | strip
+        -%}
+        <a href="{{- link.url -}}" class="drp-Menu_Button drp-Menu_Button-all btn-Button btn-Button-quaternary">
+          {{ 'accessibility.shop_all' | t }} {{ link_title }}
+        </a>
+      {%- endif -%}
+
+      {%- assign footer_linklist = section.settings.footer_linklist -%}
+      {%- if footer_linklist.links.size -%}
+      <ul class="drp-Menu_Menu drp-Menu_Menu-footer">
+      {%- for footer_link in footer_linklist.links -%}
+        <li class="drp-Menu_Item fz-13_13">
+          <a
+            class="drp-Menu_Link drp-Menu_Link-footer{% if footer_link.active %} drp-Menu_Link-active{% endif %}"
+            aria-current="{{- footer_link.active -}}"
+            href="{{ footer_link.url }}"
+          >
+            <span class="drp-Menu_LinkText">
+              {{- footer_link.title | strip -}}
+            </span>
+          </a>
+        </li>
+      {%- endfor -%}
+      </ul>
+      {%- endif -%}
+
+    </div>
+
+  </div>
+
+</section>

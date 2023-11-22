@@ -1,0 +1,319 @@
+{{ 'ancillary-section.css' | asset_url | stylesheet_tag }}
+{{ 'ancillary-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'ancillary-accordion-item.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'ancillary-accordions-multilevel.js' | asset_url }}"
+  defer="defer"
+></script>
+<script
+  src="{{ 'ancillary-accordions.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<section class="anc-Section">
+  <div class="anc-Section_Inner">
+    <div class="anc-Section_Body">
+      <ancillary-accordions-multilevel class="anc-Accordion">
+
+        {%- if section.settings.text != blank -%}
+          <header class="anc-Accordion_Header">
+            {%- if section.settings.text != blank -%}
+            <div class="anc-Accordion_Text fz-14_20 rte-RichText">
+              {{ section.settings.text }}
+            </div>
+            {%- endif -%}
+          </header>
+        {%- endif -%}
+
+        {%- if section.settings.enable_search -%}
+          <div class="anc-Accordion_Search">
+            <input class="anc-Accordion_Input frm-Form_Input" type="text" name="search" placeholder="{{- section.settings.search_placeholder -}}" data-ancillary-accordions-multilevel-el="search" />
+            <span class="anc-Accordion_Icon anc-Accordion_Icon-search">
+              {%- render 'bao-icon-search' -%}
+            </span>
+          </div>
+        {%- endif -%}
+
+        <div
+          class="anc-Accordion_Items"
+          data-ancillary-accordions-multilevel-el="items"
+        >
+          {%- for block in section.blocks -%}
+            <div class="anc-Accordion_Item">
+              <div
+                class="anc-AccordionItem"
+                data-ancillary-accordions-multilevel-el="item"
+                aria-expanded="false"
+              >
+                <button
+                  class="anc-AccordionItem_Header"
+                  data-ancillary-accordions-multilevel-el="trigger"
+                  data-index="{{ forloop.index0 }}"
+                  type="button"
+                >
+                  <h3 class="anc-AccordionItem_Title fz-18_22">
+                    {{ block.settings.title }}
+                  </h3>
+
+                  <span class="anc-AccordionItem_Icon">
+                    {%- render 'bao-icon-chevron-down' -%}
+                  </span>
+                </button>
+
+                <div class="anc-AccordionItem_Body">
+
+                  <div class="anc-AccordionItem_Content" data-ancillary-accordions-multilevel-el="content">
+                    <ancillary-accordions class="anc-Accordion anc-Accordion-child">
+              
+                      <div
+                        class="anc-Accordion_Items anc-Accordion_Items-child"
+                        data-ancillary-accordions-el="items"
+                        role="tablist"
+                      >
+                        {%- for index in (1..10) -%}
+                          {%- liquid
+                            assign question_key = "question_" | append: index
+                            assign answer_key = "answer_" | append: index
+                          -%}
+                          {%- if block.settings[question_key] != blank and block.settings[answer_key] != blank -%}
+                          <div class="anc-Accordion_Item">
+                            <div
+                              class="anc-AccordionItem"
+                              data-ancillary-accordions-el="item"
+                              aria-expanded="false"
+                              role="tab"
+                            >
+                              <button
+                                class="anc-AccordionItem_Header anc-AccordionItem_Header-child"
+                                data-ancillary-accordions-el="trigger"
+                                data-ancillary-accordions-multilevel-el="childTrigger"
+                                data-index="{{ forloop.index0 }}"
+                                type="button"
+                              >
+                                <span class="anc-AccordionItem_Title fz-18_25">
+                                  {{ block.settings[question_key] }}
+                                </span>
+              
+                                <span class="anc-AccordionItem_Icons">
+                                  <span class="anc-AccordionItem_Icon anc-AccordionItem_Icon-plus">
+                                    {%- render 'bao-icon-plus' -%}
+                                  </span>
+                                  <span class="anc-AccordionItem_Icon anc-AccordionItem_Icon-minus">
+                                    {%- render 'bao-icon-minus' -%}
+                                  </span>
+                                </span>
+                              </button>
+              
+                              <div class="anc-AccordionItem_Body" data-ancillary-accordions-multilevel-el="childBody">
+                                <div
+                                  class="anc-AccordionItem_Content rte-RichText fz-14_20"
+                                  data-ancillary-accordions-el="content"
+                                >
+                                  {{ block.settings[answer_key] }}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </ancillary-accordions>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </ancillary-accordions-multilevel>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "(Ancillary) Accordion B",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_search",
+        "label": "Enable Search",
+        "default": false,
+        "info": "Show a search box above the FAQs"
+      },
+      {
+        "type": "text",
+        "id": "search_placeholder",
+        "label": "Search Box Placeholder"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "header",
+            "content": "Question 1"
+          },
+          {
+            "type": "text",
+            "id": "question_1",
+            "label": "Question 1"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_1",
+            "label": "Answer 1"
+          },
+          {
+            "type": "header",
+            "content": "Question 2"
+          },
+          {
+            "type": "text",
+            "id": "question_2",
+            "label": "Question 2"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_2",
+            "label": "Answer 2"
+          },
+          {
+            "type": "header",
+            "content": "Question 3"
+          },
+          {
+            "type": "text",
+            "id": "question_3",
+            "label": "Question 3"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_3",
+            "label": "Answer 3"
+          },
+          {
+            "type": "header",
+            "content": "Question 4"
+          },
+          {
+            "type": "text",
+            "id": "question_4",
+            "label": "Question 4"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_4",
+            "label": "Answer 4"
+          },
+          {
+            "type": "header",
+            "content": "Question 5"
+          },
+          {
+            "type": "text",
+            "id": "question_5",
+            "label": "Question 5"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_5",
+            "label": "Answer 5"
+          },
+          {
+            "type": "header",
+            "content": "Question 6"
+          },
+          {
+            "type": "text",
+            "id": "question_6",
+            "label": "Question 6"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_6",
+            "label": "Answer 6"
+          },
+          {
+            "type": "header",
+            "content": "Question 7"
+          },
+          {
+            "type": "text",
+            "id": "question_7",
+            "label": "Question 7"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_7",
+            "label": "Answer 7"
+          },
+          {
+            "type": "header",
+            "content": "Question 8"
+          },
+          {
+            "type": "text",
+            "id": "question_8",
+            "label": "Question 8"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_8",
+            "label": "Answer 8"
+          },
+          {
+            "type": "header",
+            "content": "Question 9"
+          },
+          {
+            "type": "text",
+            "id": "question_9",
+            "label": "Question 9"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_9",
+            "label": "Answer 9"
+          },
+          {
+            "type": "header",
+            "content": "Question 10"
+          },
+          {
+            "type": "text",
+            "id": "question_10",
+            "label": "Question 10"
+          },
+          {
+            "type": "richtext",
+            "id": "answer_10",
+            "label": "Answer 10"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "(Ancillary) Accordion B"
+      }
+    ]
+  }
+{% endschema %}

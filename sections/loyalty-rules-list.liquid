@@ -1,0 +1,78 @@
+{{ 'loyalty-rules-list.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <div class="loy-RulesList">
+
+    <header class="loy-RulesList_Header">
+      <div class="loy-RulesList_Title fz-34_37">
+        {{- section.settings.title -}}
+      </div>
+
+      <div class="loy-RulesList_Text fz-14_20">
+        {{- section.settings.text -}}
+      </div>
+    </header>
+
+    <div class="loy-RulesList_Table" data-lion-rules-list></div>
+
+  </div>
+{%- endcapture -%}
+
+{%- render 'section',
+  body: body,
+
+  margin: section.settings.section_margin
+-%}
+
+{% schema %}
+{
+  "name": "Loyalty Rules List",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "section_margin",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "spacingNone",
+          "label": "None"
+        },
+        {
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
+        }
+      ],
+      "default": "spacingNone"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Ways to earn points"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty Rules List"
+    }
+  ]
+}
+{% endschema %}

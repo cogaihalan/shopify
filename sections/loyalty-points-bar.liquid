@@ -1,0 +1,72 @@
+{{ 'loyalty-points-bar.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+<div class="loy-PointsBar_Inner">
+
+  <div class="loy-PointsBar_ContentContainer">
+
+    <div class="loy-PointsBar_Strapline fz-14_20">
+      {{- section.settings.strapline -}}
+    </div>
+
+    <div class="loy-PointsBar_Title fz-34_37">
+      {{- section.settings.title -}}
+    </div>
+
+    <div class="loy-PointsBar_Text fz-14_20">
+      {{- section.settings.text -}}
+    </div>
+  </div>
+
+  <div class="loy-PointsBar_Progress" data-lion-tier-overview></div>
+
+  <button class="loy-PointsBar_Button">
+    {{- section.settings.link_text -}}
+  </button>
+
+</div>
+{%- endcapture -%}
+
+{%- render 'section',
+  body: body,
+  margin: 'spacingLarge'
+-%}
+
+{% schema %}
+{
+  "name": "Loyalty Points Bar",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "text",
+      "id": "strapline",
+      "label": "Strapline"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty Points Bar"
+    }
+  ]
+}
+{% endschema %}

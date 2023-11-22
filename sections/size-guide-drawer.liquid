@@ -1,0 +1,47 @@
+{%- render 'product-drawer-size-guide', section: section -%}
+
+{% schema %}
+  {
+    "name": "Size Guide",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Size Guide",
+        "placeholder": "Size Guide"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Our helpful size guide is here to answer all your size queries</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "content",
+        "name": "Content",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Page",
+            "info": "Select the page that holds the content to show below the above title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "info": "Content entered here will be shown instead of the selected page's content"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

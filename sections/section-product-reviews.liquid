@@ -1,0 +1,31 @@
+<link
+  rel="stylesheet"
+  href="{{ 'section-product-reviews.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- capture body -%}
+  <section class="sec-ProductReviews">
+    <div class="sec-ProductReviews_Inner">
+      {% render 'okendo-reviews-widget', product: product %}
+    </div>
+  </section>
+{%- endcapture -%}
+
+{%- render 'section',
+  flush: false,
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Product Reviews",
+    "templates": ["product"],
+    "presets": [
+      {
+        "name": "Product Reviews"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,15 @@
+{{ 'account-item.css' | asset_url | stylesheet_tag }}
+
+<div class="acc-Item">
+  {%- if item_title != blank -%}
+  <div class="acc-Item_Header">
+    <h2 class="acc-Item_Title fz-18_22">
+      {{- item_title -}}
+    </h2>
+  </div>
+  {%- endif -%}
+
+  <div class="acc-Item_Body{% if is_richtext %} rte-RichText{% endif %} fz-14_20">
+    {{- item_body -}}
+  </div>
+</div>

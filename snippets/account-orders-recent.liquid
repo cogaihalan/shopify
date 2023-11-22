@@ -1,0 +1,23 @@
+{%- capture item_body -%}
+  <div class="acc-Orders acc-Orders-recent">
+    <div class="acc-Orders_Orders">
+    {%- for order in customer.orders limit: 2 -%}
+    <div class="acc-Orders_Order">
+      {%- render 'account-order-item', order: order -%}
+    </div>  
+    {%- else -%}
+      <p class="acc-Item_Text">{{ 'customer.orders.no_orders' | t }}</p>
+      <a class="acc-Item_Button acc-Section_Button-margin btn-Button btn-Button-primary btn-Button-border" href="/">
+        {{ 'customer.orders.shop_now' | t }}
+      </a>
+    {%- endfor -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- assign item_title = 'customer.account.recent_orders' | t -%}
+{%- render 'account-item',
+  item_title: item_title,
+  item_body: item_body,
+  is_richtext: false
+-%}

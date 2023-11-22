@@ -1,399 +1,377 @@
-{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'article.css' | asset_url | stylesheet_tag }}
+{{ 'article-header.css' | asset_url | stylesheet_tag }}
+{{ 'article-image-with-caption.css' | asset_url | stylesheet_tag }}
+{{ 'article-product-carousel.css' | asset_url | stylesheet_tag }}
+{{ 'article-double-upsell.css' | asset_url | stylesheet_tag }}
+{{ 'article-double-image.css' | asset_url | stylesheet_tag }}
+{{ 'article-upsell-item.css' | asset_url | stylesheet_tag }}
+{{ 'article-video.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {%- when '@app' -%}
-        <div class="page-width page-width--narrow">
-          {% render block %}
-        </div>
-      {%- when 'featured_image' -%}
-        {%- if article.image -%}
-          <div
-            class="article-template__hero-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-            {{ block.shopify_attributes }}
+{%- liquid
+  assign article_category = blog.title
+
+  for tag in article.tags
+    assign lower_tag = tag | downcase
+    
+    if lower_tag contains 'category:'
+      assign article_category = tag | remove: 'category: ' | remove: 'Category: '
+
+      break
+    endif
+  endfor
+
+  assign article_content = article.content
+-%}
+
+{%- for acf_code_tag in article.metafields.image_with_caption.code_tag -%}
+  {%- if acf_code_tag != blank and article.metafields.image_with_caption.enable[forloop.index0] == 'true' -%}
+    {%- assign acf_code_tag_para = '<p>' | append: acf_code_tag | append: '</p>' -%}
+
+    {%- capture acf_snippet -%}
+      <div class="art-Article_ImageWithCaption">
+        <figure class="art-ImageWithCaption">
+          <div class="art-ImageWithCaption_Image">
+            {%- render 'responsive-image-metafield',
+              image: article.metafields.image_with_caption.image[forloop.index0].first,
+              width: article.metafields.image_with_caption.image[forloop.index0].first.width,
+              height: article.metafields.image_with_caption.image[forloop.index0].first.height
+            -%}
+          </div>
+
+          {%- if article.metafields.image_with_caption.caption != blank -%}
+            <figcaption class="art-ImageWithCaption_Caption fz-12_17">
+              {{ article.metafields.image_with_caption.caption[forloop.index0] }}
+            </figcaption>
+          {%- endif -%}
+        </figure>
+      </div>
+    {%- endcapture -%}
+
+    {%- liquid
+      assign article_content = article_content | replace: acf_code_tag_para, acf_snippet
+      assign article_content = article_content | replace: acf_code_tag, acf_snippet
+    -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- for acf_code_tag in article.metafields.product_carousel.code_tag -%}
+  {%- if acf_code_tag != blank and article.metafields.product_carousel.enable[forloop.index0] == 'true' -%}
+    {%- assign acf_code_tag_para = '<p>' | append: acf_code_tag | append: '</p>' -%}
+
+    {%- capture acf_snippet -%}
+      {%- assign article_product_handles = article.metafields.product_carousel.products[forloop.index0] | split: '|' -%}
+
+      <div class="art-Article_ProductCarousel" data-slides-count="{{ article_product_handles.size }}">
+        <div class="art-ProductCarousel">
+          {%- if article.metafields.product_carousel.title[forloop.index0] != blank -%}
+            <h2 class="art-ProductCarousel_Title fz-24_29">
+              {{ article.metafields.product_carousel.title[forloop.index0] }}
+            </h2>
+          {%- endif -%}
+          
+          <carousel-element
+            class="art-ProductCarousel_Carousel car-Carousel"
+            data-initialized="false"
+            data-loop="true"
+            data-centered="false"
+            data-centered-sm="true"
+            data-centered-md="true"
+            data-centered-lg="true"
+            data-slides-per-view-xs="2"
+            data-slides-per-view-sm="3"
+            data-slides-per-view-md="4"
+            data-slides-per-view-lg="4"
+            data-spacing-xs="10"
+            data-spacing-sm="10"
+            data-spacing-md="10"
+            data-spacing-lg="10"
+            data-slides-count="{{ article_product_handles.size }}"
+            data-fallback-classes="true"
           >
             <div
-              class="article-template__hero-{{ block.settings.image_height }} media"
-              itemprop="image"
-              {% if block.settings.image_height == 'adapt' and article.image %}
-                style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
-              {% endif %}
+              class="art-ProductCarousel_Items car-Carousel_Slides"
+              data-carousel-element-el="slides"
             >
-              <img
-                srcset="
-                  {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
-                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
-                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
-                  {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
-                  {% if article.image.width >= 2200 %}{{ article.image | image_url: width: 2200 }} 2200w,{% endif %}
-                  {% if article.image.width >= 3000 %}{{ article.image | image_url: width: 3000 }} 3000w,{% endif %}
-                  {{ article.image | image_url }} {{ article.image.width }}w
-                "
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
-                src="{{ article.image | image_url: width: 1100 }}"
-                loading="eager"
-                fetchpriority="high"
-                width="{{ article.image.width }}"
-                height="{{ article.image.height }}"
-                alt="{{ article.image.alt | escape }}"
-              >
+              {%- for article_product_handle in article_product_handles -%}
+                {%- assign article_product = all_products[article_product_handle] -%}
+
+                {%- if article_product != blank -%}
+                  <div
+                    class="art-ProductCarousel_Item car-Carousel_Slide"
+                    data-carousel-element-el="slide"
+                  >
+                    {%- render 'product-card',
+                      product: article_product
+                    -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </carousel-element>
+        </div>
+      </div>
+    {%- endcapture -%}
+
+    {%- liquid
+      assign article_content = article_content | replace: acf_code_tag_para, acf_snippet
+      assign article_content = article_content | replace: acf_code_tag, acf_snippet
+    -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- for acf_code_tag in article.metafields.single_upsell.code_tag -%}
+  {%- if acf_code_tag != blank and article.metafields.single_upsell.enable[forloop.index0] == 'true' -%}
+    {%- liquid assign acf_code_tag_para = '<p>' | append: acf_code_tag | append: '</p>' -%}
+
+    {%- capture acf_snippet -%}
+      <div class="art-Article_SingleUpsell">
+        <div class="art-SingleUpsell">
+          <div class="art-SingleUpsell_Items">
+            <div class="art-SingleUpsell_Item">
+              {%- render 'article-upsell-item',
+                image: article.metafields.single_upsell.image[forloop.index0],
+                title: article.metafields.single_upsell.title[forloop.index0],
+                text: article.metafields.single_upsell.text[forloop.index0],
+                link: article.metafields.single_upsell.link[forloop.index0]
+              -%}
             </div>
           </div>
-        {%- endif -%}
-
-      {%- when 'title' -%}
-        <header
-          class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-          {{ block.shopify_attributes }}
-        >
-          <h1
-            class="article-template__title"
-            itemprop="headline"
-          >
-            {{ article.title | escape }}
-          </h1>
-          {%- if block.settings.blog_show_date -%}
-            <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
-              {{- article.published_at | time_tag: format: 'date' -}}
-            </span>
-          {%- endif -%}
-          {%- if block.settings.blog_show_author -%}
-            <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
-              <span itemprop="name">{{ article.author }}</span>
-            </span>
-          {%- endif -%}
-        </header>
-
-      {%- when 'content' -%}
-        <div
-          class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          itemprop="articleBody"
-          {{ block.shopify_attributes }}
-        >
-          {{ article.content }}
         </div>
+      </div>
+    {%- endcapture -%}
 
-      {%- when 'share' -%}
-        <div
-          class="article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {{ block.shopify_attributes }}
-        >
-          {% assign share_url = request.origin | append: article.url %}
-          {% render 'share-button', block: block, share_link: share_url %}
-        </div>
-    {%- endcase -%}
-  {%- endfor -%}
+    {%- liquid
+      assign article_content = article_content | replace: acf_code_tag_para, acf_snippet
+      assign article_content = article_content | replace: acf_code_tag, acf_snippet
+    -%}
+  {%- endif -%}
+{%- endfor -%}
 
-  <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
-      <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
-    </a>
-  </div>
-  {%- if blog.comments_enabled? -%}
-    <div class="article-template__comment-wrapper background-secondary">
-      <div
-        id="comments"
-        class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-      >
-        {%- if article.comments_count > 0 -%}
-          {%- assign anchorId = '#Comments-' | append: article.id -%}
+{%- for acf_code_tag in article.metafields.double_upsell.code_tag -%}
+  {%- if acf_code_tag != blank and article.metafields.double_upsell.enable[forloop.index0] == 'true' -%}
+    {%- liquid assign acf_code_tag_para = '<p>' | append: acf_code_tag | append: '</p>' -%}
 
-          <h2 id="Comments-{{ article.id }}" tabindex="-1">
-            {{ 'blogs.article.comments' | t: count: article.comments_count }}
-          </h2>
-          {% paginate article.comments by 5 %}
-            <div class="article-template__comments">
-              {%- if comment.status == 'pending' and comment.content -%}
-                <article id="{{ comment.id }}" class="article-template__comments-comment">
-                  {{ comment.content }}
-                  <footer class="right">
-                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
-                  </footer>
-                </article>
-              {%- endif -%}
+    {%- capture acf_snippet -%}
+      <div class="art-Article_DoubleUpsell">
+        <div class="art-DoubleUpsell">
+          {%- if article.metafields.double_upsell.title[forloop.index0] != blank -%}
+            <h2 class="art-DoubleUpsell_Title fz-24_29">
+              {{ article.metafields.double_upsell.title[forloop.index0] }}
+            </h2>
+          {%- endif -%}
 
-              {%- for comment in article.comments -%}
-                <article id="{{ comment.id }}" class="article-template__comments-comment">
-                  {{ comment.content }}
-                  <footer class="right">
-                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span
-                    ><span class="caption-with-letter-spacing">
-                      {{- comment.created_at | time_tag: format: 'date' -}}
-                    </span>
-                  </footer>
-                </article>
-              {%- endfor -%}
-              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+          <div class="art-DoubleUpsell_Items">
+            <div class="art-DoubleUpsell_Item">
+              {%- render 'article-upsell-item',
+                image: article.metafields.double_upsell.item_1_image[forloop.index0],
+                title: article.metafields.double_upsell.item_1_title[forloop.index0],
+                text: article.metafields.double_upsell.item_1_text[forloop.index0],
+                link: article.metafields.double_upsell.item_1_link[forloop.index0]
+              -%}
             </div>
-          {% endpaginate %}
-        {%- endif -%}
-        {% form 'new_comment', article %}
-          {%- liquid
-            assign post_message = 'blogs.article.success'
-            if blog.moderated? and comment.status == 'unapproved'
-              assign post_message = 'blogs.article.success_moderated'
-            endif
+
+            <div class="art-DoubleUpsell_Item">
+              {%- render 'article-upsell-item',
+                image: article.metafields.double_upsell.item_2_image[forloop.index0],
+                title: article.metafields.double_upsell.item_2_title[forloop.index0],
+                text: article.metafields.double_upsell.item_2_text[forloop.index0],
+                link: article.metafields.double_upsell.item_2_link[forloop.index0]
+              -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endcapture -%}
+
+    {%- liquid
+      assign article_content = article_content | replace: acf_code_tag_para, acf_snippet
+      assign article_content = article_content | replace: acf_code_tag, acf_snippet
+    -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- for acf_code_tag in article.metafields.video.code_tag -%}
+  {%- if acf_code_tag != blank and article.metafields.video.enable[forloop.index0] == 'true' -%}
+    {%- liquid assign acf_code_tag_para = '<p>' | append: acf_code_tag | append: '</p>' -%}
+
+    {%- capture acf_snippet -%}
+      <div class="art-Article_Video">
+        <section class="art-Video" style="--Video_Background: #FAE0DF;">
+          <div class="art-Video_Inner lyt-Container">
+            <div class="art-Video_Body">
+              <div class="art-Video_MediaContainer">
+                {%- if article.metafields.video.desktop_video[forloop.index0] != blank -%}
+                  <video class="art-Video_VideoPlayer art-Video_VideoPlayer-desktop" autoplay loop muted playsinline>
+                    <source src="{{ article.metafields.video.desktop_video[forloop.index0] }}" type="video/mp4">
+                  </video>
+                {%- endif -%}
+        
+                <div class="art-Video_Image art-Video_Image-desktop">
+                  {%- render 'responsive-image-metafield',
+                    image: article.metafields.video.desktop_image[forloop.index0].first,
+                    width: 2800,
+                    height: 1580
+                  -%}
+                </div>
+        
+                {%- if article.metafields.video.mobile_image[forloop.index0] != blank -%}
+                  <video class="art-Video_VideoPlayer art-Video_VideoPlayer-mobile" autoplay loop muted playsinline>
+                    <source src="{{ article.metafields.video.mobile_image[forloop.index0] }}" type="video/mp4">
+                  </video>
+                {%- endif -%}
+        
+                <div class="art-Video_Image art-Video_Image-mobile">
+                  {%- liquid
+                    if article.metafields.video.mobile_image[forloop.index0] != blank
+                      assign image_to_use = article.metafields.video.mobile_image[forloop.index0].first
+                    else
+                      assign image_to_use = article.metafields.video.desktop_image[forloop.index0].first
+                    endif
+                  -%}
+        
+                  {%- render 'responsive-image-metafield',
+                    image: image_to_use,
+                    width: 800,
+                    height: 1530
+                  -%}
+                </div>
+              </div>
+        
+              <div class="art-Video_Content">
+                {%- if article.metafields.video.kicker[forloop.index0] != blank -%}
+                  <p class="art-Video_Kicker fz-14_20">{{ article.metafields.video.kicker[forloop.index0] }}</p>
+                {%- endif -%}
+        
+                {%- if article.metafields.video.title[forloop.index0] != blank -%}
+                  <h2 class="art-Video_Title fz-34_37">{{ article.metafields.video.title[forloop.index0] }}</h2>
+                {%- endif -%}
+            
+                {%- if article.metafields.video.text[forloop.index0] != blank -%}
+                  <div class="art-Video_Text fz-14_20 rte-RichText">{{ article.metafields.video.text[forloop.index0] }}</div>
+                {%- endif -%}
+            
+                {%- if article.metafields.video.button_link[forloop.index0] != blank and article.metafields.video.button_text[forloop.index0] != blank -%}
+                  <div class="art-Video_Buttons">
+                    <a href="{{ article.metafields.video.button_link[forloop.index0] }}" class="art-Video_Button btn-Button btn-Button-primary">
+                      {{ article.metafields.video.button_text[forloop.index0] }}
+                    </a>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    {%- endcapture -%}
+
+    {%- liquid
+      assign article_content = article_content | replace: acf_code_tag_para, acf_snippet
+      assign article_content = article_content | replace: acf_code_tag, acf_snippet
+    -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- for acf_code_tag in article.metafields.double_image.code_tag -%}
+  {%- if acf_code_tag != blank and article.metafields.double_image.enable[forloop.index0] == 'true' -%}
+    {%- liquid assign acf_code_tag_para = '<p>' | append: acf_code_tag | append: '</p>' -%}
+
+    {%- capture acf_snippet -%}
+      <div class="art-Article_DoubleImage">
+        <div class="art-DoubleImage">
+          <div class="art-DoubleImage_Items">
+            <div class="art-DoubleImage_Item">
+              {%- render 'responsive-image-metafield',
+                image: article.metafields.double_image.item_1_image[forloop.index0].first,
+                width: 1600,
+                height: 1600
+              -%}
+            </div>
+
+            <div class="art-DoubleImage_Item">
+              {%- render 'responsive-image-metafield',
+                image: article.metafields.double_image.item_2_image[forloop.index0].first,
+                width: 1600,
+                height: 1600
+              -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endcapture -%}
+
+    {%- liquid
+      assign article_content = article_content | replace: acf_code_tag_para, acf_snippet
+      assign article_content = article_content | replace: acf_code_tag, acf_snippet
+    -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<article class="art-Article" itemscope itemtype="http://schema.org/BlogPosting">
+  {%- if article.metafields.images.desktop.first or article.image != blank -%}
+    <div class="art-Article_ImageContainer">
+      <div class="art-Article_Image art-Article_Image-desktop">
+        {%- if article.metafields.images.desktop.first != blank -%}
+          {%- render 'responsive-image-metafield',
+            image: article.metafields.images.desktop.first,
+            width: 2880,
+            height: 1300
           -%}
-          <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
-          {%- if form.errors -%}
-            <div class="form__message" role="alert">
-              <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
-                {% render 'icon-error' %}
-                {{ 'templates.contact.form.error_heading' | t }}
-              </h3>
-            </div>
-            <ul class="form-status-list caption-large">
-              {%- for field in form.errors -%}
-                <li>
-                  <a href="#CommentForm-{{ field }}" class="link">
-                    {%- if form.errors.translated_fields[field] contains 'author' -%}
-                      {{ 'blogs.article.name' | t }}
-                    {%- elsif form.errors.translated_fields[field] contains 'body' -%}
-                      {{ 'blogs.article.message' | t }}
-                    {%- else -%}
-                      {{ form.errors.translated_fields[field] }}
-                    {%- endif -%}
-                    {{ form.errors.messages[field] }}
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ul>
-          {%- elsif form.posted_successfully? -%}
-            <div class="form-status-list form__message" role="status">
-              <h3 class="form-status" tabindex="-1" autofocus>
-                {% render 'icon-success' %}
-                {{ post_message | t }}
-              </h3>
-            </div>
-          {%- endif -%}
+        {%- elsif article.image != blank -%}
+          {%- render 'responsive-image',
+            image: article.image,
+            width: 2880,
+            height: 1300
+          -%}
+        {%- endif -%}
+      </div>
 
-          <div
-            {% if blog.moderated? == false %}
-              class="article-template__comments-fields"
-            {% endif %}
-          >
-            <div class="article-template__comment-fields">
-              <div class="field field--with-error">
-                <input
-                  type="text"
-                  name="comment[author]"
-                  id="CommentForm-author"
-                  class="field__input"
-                  autocomplete="name"
-                  value="{{ form.author }}"
-                  aria-required="true"
-                  required
-                  {% if form.errors contains 'author' %}
-                    aria-invalid="true"
-                    aria-describedby="CommentForm-author-error"
-                  {% endif %}
-                  placeholder="{{ 'blogs.article.name' | t }}"
-                >
-                <label class="field__label" for="CommentForm-author">
-                  {{- 'blogs.article.name' | t }}
-                  <span aria-hidden="true">*</span></label
-                >
-                {%- if form.errors contains 'author' -%}
-                  <small id="CommentForm-author-error">
-                    <span class="form__message">
-                      {%- render 'icon-error' -%}
-                      {{- 'blogs.article.name' | t }}
-                      {{ form.errors.messages.author }}.</span
-                    >
-                  </small>
-                {%- endif -%}
-              </div>
-              <div class="field field--with-error">
-                <input
-                  type="email"
-                  name="comment[email]"
-                  id="CommentForm-email"
-                  autocomplete="email"
-                  class="field__input"
-                  value="{{ form.email }}"
-                  autocorrect="off"
-                  autocapitalize="off"
-                  aria-required="true"
-                  required
-                  {% if form.errors contains 'email' %}
-                    aria-invalid="true"
-                    aria-describedby="CommentForm-email-error"
-                  {% endif %}
-                  placeholder="{{ 'blogs.article.email' | t }}"
-                >
-                <label class="field__label" for="CommentForm-email">
-                  {{- 'blogs.article.email' | t }}
-                  <span aria-hidden="true">*</span></label
-                >
-                {%- if form.errors contains 'email' -%}
-                  <small id="CommentForm-email-error">
-                    <span class="form__message">
-                      {%- render 'icon-error' -%}
-                      {{- 'blogs.article.email' | t }}
-                      {{ form.errors.messages.email }}.</span
-                    >
-                  </small>
-                {%- endif -%}
-              </div>
-            </div>
-            <div class="field field--with-error">
-              <textarea
-                rows="5"
-                name="comment[body]"
-                id="CommentForm-body"
-                class="text-area field__input"
-                aria-required="true"
-                required
-                {% if form.errors contains 'body' %}
-                  aria-invalid="true"
-                  aria-describedby="CommentForm-body-error"
-                {% endif %}
-                placeholder="{{ 'blogs.article.message' | t }}"
-              >{{ form.body }}</textarea>
-              <label class="form__label field__label" for="CommentForm-body">
-                {{- 'blogs.article.message' | t }}
-                <span aria-hidden="true">*</span></label
-              >
-            </div>
-            {%- if form.errors contains 'body' -%}
-              <small id="CommentForm-body-error">
-                <span class="form__message">
-                  {%- render 'icon-error' -%}
-                  {{- 'blogs.article.message' | t }}
-                  {{ form.errors.messages.body }}.</span
-                >
-              </small>
-            {%- endif -%}
-          </div>
-          {%- if blog.moderated? -%}
-            <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
-          {%- endif -%}
-          <input type="submit" class="button" value="{{ 'blogs.article.post' | t }}">
-        {% endform %}
+      <div class="art-Article_Image art-Article_Image-mobile">
+        {%- if article.metafields.images.mobile.first != blank -%}
+          {%- render 'responsive-image-metafield',
+            image: article.metafields.images.mobile.first,
+            width: 750,
+            height: 1170
+          -%}
+        {%- elsif article.image != blank -%}
+          {%- render 'responsive-image',
+            image: article.image,
+            width: 750,
+            height: 1170
+          -%}
+        {%- endif -%}
       </div>
     </div>
   {%- endif -%}
+
+  <div class="art-Article_Inner lyt-Container">
+    <div class="art-Article_Main">
+      <header class="art-Article_Header">
+        <div class="art-Header">
+          <h1 class="art-Header_Title fz-58_64" itemprop="headline">{{ article.title }}</h1>
+
+          <p class="util-ScreenReaderOnly" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'month_year' }}</p>
+
+          <p class="art-Header_Author fz-14_20" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">{{ 'blogs.article.written_by' | t: author: article.author }}</span>
+          </p>
+        </div>
+      </header>
+
+      <div class="art-Article_Body" itemprop="articleBody">
+        <div class="art-Article_Content rte-RichText fz-14_20">
+          {{ article_content }}
+        </div>
+
+        <div class="art-Article_Sharing">
+          {%- render 'social-sharing' -%}
+        </div>
+      </div>
+    </div>
+  </div>
 </article>
 
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "articleBody": {{ article.content | strip_html | json }},
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": {{ request.origin | append: page.url | json }}
-    },
-    "headline": {{ article.title | json }},
-    {% if article.excerpt != blank %}
-      "description": {{ article.excerpt | strip_html | json }},
-    {% endif %}
-    {% if article.image %}
-      "image": [
-        {{ article | image_url: width: 1920 | prepend: "https:" | json }}
-      ],
-    {% endif %}
-    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
-    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
-    "author": {
-      "@type": "Person",
-      "name": {{ article.author | json }}
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": {{ shop.name | json }}
-    }
-  }
-</script>
-
 {% schema %}
-{
-  "name": "t:sections.main-article.name",
-  "tag": "section",
-  "class": "section",
-  "blocks": [
-    {
-      "type": "@app"
-    },
-    {
-      "type": "featured_image",
-      "name": "t:sections.main-article.blocks.featured_image.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "select",
-          "id": "image_height",
-          "options": [
-            {
-              "value": "adapt",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label"
-            },
-            {
-              "value": "small",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label"
-            },
-            {
-              "value": "medium",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label"
-            },
-            {
-              "value": "large",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label"
-            }
-          ],
-          "default": "adapt",
-          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label",
-          "info": "t:sections.main-article.blocks.featured_image.settings.image_height.info"
-        }
-      ]
-    },
-    {
-      "type": "title",
-      "name": "t:sections.main-article.blocks.title.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "blog_show_date",
-          "default": true,
-          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "blog_show_author",
-          "default": false,
-          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "name": "t:sections.main-article.blocks.content.name",
-      "limit": 1
-    },
-    {
-      "type": "share",
-      "name": "t:sections.main-article.blocks.share.name",
-      "limit": 2,
-      "settings": [
-        {
-          "type": "text",
-          "id": "share_label",
-          "label": "t:sections.main-article.blocks.share.settings.text.label",
-          "default": "Share"
-        },
-        {
-          "type": "paragraph",
-          "content": "t:sections.main-article.blocks.share.settings.featured_image_info.content"
-        },
-        {
-          "type": "paragraph",
-          "content": "t:sections.main-article.blocks.share.settings.title_info.content"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "Article"
+  }
 {% endschema %}

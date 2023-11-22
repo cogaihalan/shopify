@@ -1,0 +1,20 @@
+{%- capture body -%}
+<div class="drw-Drawer_Text rte-RichText">
+  {{ collection.description }}
+</div>
+{%- endcapture -%}
+
+{%- capture footer -%}
+<div class="drw-Drawer_Inner">
+  <button class="btn-Button btn-Button-primary btn-Button-wide" data-drawers-close>
+    {{ 'accessibility.close_and_browse' | t }}      
+  </button>
+</div>
+{%- endcapture -%}  
+
+{%- render 'drawer',
+  key: "collection-description",
+  title: collection.title,
+  body: body,
+  footer: footer
+-%}

@@ -1,144 +1,338 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'collection-list.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
-  <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ section.settings.title }}
-  </h1>
-  {%- liquid
-    case section.settings.sort
-      when 'products_high', 'products_low'
-        assign collections = collections | sort: 'all_products_count'
-      when 'date', 'date_reversed'
-        assign collections = collections | sort: 'published_at'
-    endcase
+{%- capture body -%}
+  <div class="clc-List">
+    <div class="clc-List_Inner">
+      <div class="clc-List_Body">
+        {% comment %}theme-check-disable LiquidTag{% endcomment %}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'intro' -%}
+            {%- render 'collection-list-intro',
+              title: block.settings.title,
+              text: block.settings.text
+            -%}
+          {%- elsif block.type == 'single-feature' -%}
+            {%- render 'collection-list-single-feature',
+              collection: block.settings.collection,
+              title: block.settings.title,
+              subtitle: block.settings.subtitle,
+              content_style: block.settings.content_style,
+              content_alignment: block.settings.content_alignment,
+              button_text: block.settings.button_text,
+              button_style: block.settings.button_style,
+              image: block.settings.image
+            -%}
+          {%- elsif block.type == 'double-feature' -%}
+            {%- render 'collection-list-double-feature',
+              collection: block.settings.collection,
+              title: block.settings.title,
+              subtitle: block.settings.subtitle,
+              content_style: block.settings.content_style,
+              content_alignment: block.settings.content_alignment,
+              button_text: block.settings.button_text,
+              button_style: block.settings.button_style,
+              image: block.settings.image
+            -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {% comment %}theme-check-enable LiquidTag{% endcomment %}
+      </div>
+    </div>
+  </div>
+{%- endcapture -%}
 
-    if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
-      assign collections = collections | reverse
-    endif
+{%- render 'section',
+  margin: section.settings.section_margin,
+  body: body
+-%}
 
-    assign moduloResult = 28 | modulo: section.settings.columns_desktop
-    assign paginate_by = 30
-    if moduloResult == 0
-      assign paginate_by = 28
-    endif
-  -%}
-  {%- paginate collections by paginate_by -%}
-    <ul
-      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-      role="list"
-    >
-      {%- for collection in collections -%}
-        <li
-          class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {% render 'card-collection',
-            card_collection: collection,
-            media_aspect_ratio: section.settings.image_ratio,
-            columns: 3
-          %}
-        </li>
-      {%- endfor -%}
-    </ul>
-    {% render 'pagination', paginate: paginate %}
-  {%- endpaginate -%}
-</div>
 {% schema %}
 {
-  "name": "t:sections.main-list-collections.name",
-  "class": "section",
+  "name": "Collection List",
+  "templates": ["list-collections"],
   "settings": [
     {
-      "type": "inline_richtext",
-      "id": "title",
-      "label": "t:sections.main-list-collections.settings.title.label",
-      "default": "Collections"
-    },
-    {
-      "type": "select",
-      "id": "sort",
-      "options": [
-        {
-          "value": "alphabetical",
-          "label": "t:sections.main-list-collections.settings.sort.options__1.label"
-        },
-        {
-          "value": "alphabetical_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__2.label"
-        },
-        {
-          "value": "date_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__3.label"
-        },
-        {
-          "value": "date",
-          "label": "t:sections.main-list-collections.settings.sort.options__4.label"
-        },
-        {
-          "value": "products_high",
-          "label": "t:sections.main-list-collections.settings.sort.options__5.label"
-        },
-        {
-          "value": "products_low",
-          "label": "t:sections.main-list-collections.settings.sort.options__6.label"
-        }
-      ],
-      "default": "alphabetical",
-      "label": "t:sections.main-list-collections.settings.sort.label"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.main-list-collections.settings.image_ratio.label",
-      "info": "t:sections.main-list-collections.settings.image_ratio.info"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
-    },
-    {
       "type": "header",
-      "content": "t:sections.main-list-collections.settings.header_mobile.content"
+      "content": "Section style"
     },
     {
       "type": "select",
-      "id": "columns_mobile",
+      "id": "section_margin",
+      "label": "Section spacing",
       "options": [
         {
-          "value": "1",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
+          "value": "spacingNone",
+          "label": "None"
         },
         {
-          "value": "2",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
         }
       ],
-      "default": "2",
-      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+      "default": "spacingNone"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "intro",
+      "name": "Intro",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "info": "Use enter to create a newline. Bold the part of text you want to be pink. Link is not supported."
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "info": "Use enter to create a newline."
+        }
+      ]
+    },
+    {
+      "type": "single-feature",
+      "name": "Single feature",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Collection"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Select the collection to feature"
+        },
+        {
+          "type": "paragraph",
+          "content": "Below you can override what by default is pulled from selecting the collection."
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "select",
+          "id": "content_style",
+          "label": "Content style",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            }
+          ],
+          "default": "light"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Content alignment",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text override"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "quaternary",
+              "label": "Quaternary"
+            }
+          ],
+          "default": "quaternary"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "paragraph",
+          "content": "All images should be run through https://squoosh.app/"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image override",
+          "info": "Recommended size: 900px x 1350px"
+        }
+      ]
+    },
+    {
+      "type": "double-feature",
+      "name": "Double feature",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Collection"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Select the collection to feature"
+        },
+        {
+          "type": "paragraph",
+          "content": "Below you can override what by default is pulled from selecting the collection."
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "select",
+          "id": "content_style",
+          "label": "Content style",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            }
+          ],
+          "default": "light"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Content alignment",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text override"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "quaternary",
+              "label": "Quaternary"
+            }
+          ],
+          "default": "quaternary"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "paragraph",
+          "content": "All images should be run through https://squoosh.app/"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image override",
+          "info": "Recommended size: 1820px x 1350px"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List"
     }
   ]
 }

@@ -1,0 +1,493 @@
+{{ 'section-hero-rewards.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <section
+    class="sec-RewardsHero{% if section.settings.desktop_full_screen %} sec-RewardsHero-dektopFullScreen{% endif %}{% if section.settings.mobile_full_screen %} sec-RewardsHero-mobileFullScreen{% endif %}">
+    <div class="sec-RewardsHero_Inner">
+      <div class="
+        sec-RewardsHero_Body
+        sec-RewardsHero_Body-{{ section.settings.desktop_text_align }}
+        sec-RewardsHero_Body-{{ section.settings.desktop_horizontal }}
+        sec-RewardsHero_Body-{{ section.settings.desktop_vertical }}
+        sec-RewardsHero_Body-{{ section.settings.mobile_text_align }}
+        sec-RewardsHero_Body-{{ section.settings.mobile_horizontal }}
+        sec-RewardsHero_Body-{{ section.settings.mobile_vertical }}
+      ">
+        <div class="sec-RewardsHero_Media">
+          {%- if section.settings.desktop_video != blank -%}
+            <video class="sec-RewardsHero_Video sec-RewardsHero_Video-desktop" autoplay loop muted playsinline>
+              <source src="{{ section.settings.desktop_video }}" type="video/mp4">
+            </video>
+          {%- endif -%}
+
+          {%- if section.settings.mobile_video != blank -%}
+            <video class="sec-RewardsHero_Video sec-RewardsHero_Video-mobile" autoplay loop muted playsinline>
+              <source src="{{ section.settings.mobile_video }}" type="video/mp4">
+            </video>
+          {%- endif -%}
+
+          {%- if section.settings.desktop_image != blank and section.settings.desktop_video == blank -%}
+            <div class="sec-RewardsHero_Image sec-RewardsHero_Image-desktop">
+              {%- render 'responsive-image' with
+                image: section.settings.desktop_image,
+                width: 2880,
+                height: 1952
+              -%}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.mobile_image != blank and section.settings.mobile_video == blank -%}
+          <div class="sec-RewardsHero_Image sec-RewardsHero_Image-mobile">
+            {%- render 'responsive-image' with
+              image: section.settings.mobile_image,
+              width: 750,
+              height: 1020
+            -%}
+          </div>
+          {%- endif -%}
+        </div>
+
+        <div class="
+          sec-RewardsHero_Overlay
+          lyt-Container
+          sec-RewardsHero_Overlay-{{ section.settings.text_colour_desktop }}TextDesktop
+          sec-RewardsHero_Overlay-{{ section.settings.text_colour_mobile }}TextMobile
+          {%- if section.settings.overlay_desktop -%} sec-RewardsHero_Overlay-{{ section.settings.background_colour_desktop }}BackgroundDesktop{%- endif -%}
+          {%- if section.settings.overlay_mobile -%} sec-RewardsHero_Overlay-{{ section.settings.background_colour_mobile }}BackgroundMobile{%- endif -%}
+        ">
+
+          {%- liquid
+            assign has_button = false
+            if section.settings.link_url != blank and section.settings.link_text != blank
+              assign has_button = true
+            endif
+          -%}
+
+          {%- if section.settings.text != blank or section.settings.title != blank or has_button == true -%}
+            <div class="sec-RewardsHero_Content">
+              {%- if section.settings.header_icon != blank -%}
+                <div class="sec-RewardsHero_HeaderIcon">
+                  {%- render 'responsive-image' with
+                    image: section.settings.header_icon,
+                    width: 450,
+                    height: 215
+                  -%}
+                </div>
+              {%- endif -%}
+
+              <h1 class="sec-RewardsHero_Title fz-34_37">{{- section.settings.title -}}</h1>
+
+              {%- if section.settings.text != blank -%}
+                <div class="sec-RewardsHero_Text fz-14_20">{{- section.settings.text -}}</div>
+              {%- endif -%}
+
+              {%- if has_button == true -%}
+                <div class="sec-RewardsHero_ButtonWrapper">
+                  <a href="/collections/emily-faye-miller-x-oh-polly" class="sec-RewardsHero_Button sec-RewardsHero_Button-{{ section.settings.button_style }} sec-RewardsHero_Button-{{ section.settings.button_style_mobile }} btn-Button btn-Button-secondary">
+                    {{- section.settings.link_text -}}
+                  </a>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.footer_text_1 != blank -%}
+          <div class="sec-RewardsHero_Footer">
+            {%- for i in (1..3) -%}
+              {%- assign text_setting = 'footer_text_' | append: i -%}
+              {%- assign text = section.settings[text_setting] -%}
+
+              <p class="sec-RewardsHero_FooterText fz-24_29">
+                {{- text -}}
+              </p>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+  flush: true,
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Rewards Hero",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "checkbox",
+        "id": "desktop_full_screen",
+        "label": "Desktop Full screen?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_full_screen",
+        "label": "Mobile Full screen?",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Videos"
+      },
+      {
+        "type": "text",
+        "id": "desktop_video",
+        "label": "Desktop video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "text",
+        "id": "mobile_video",
+        "label": "Mobile video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "header",
+        "content": "Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image",
+        "info": "Recommended size: 2880px x 1952px"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image",
+        "info": "Recommended size: 750px x 1020px"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_icon",
+        "label": "Header Icon"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "strapline",
+        "label": "Strapline"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link URL"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text"
+      },
+      {
+        "type": "text",
+        "id": "footer_text_1",
+        "label": "Footer Text 1"
+      },
+      {
+        "type": "text",
+        "id": "footer_text_2",
+        "label": "Footer Text 2"
+      },
+      {
+        "type": "text",
+        "id": "footer_text_3",
+        "label": "Footer Text 3"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Styles"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay_desktop",
+        "label": "Background overlay?",
+        "default": false,
+        "info": "Add a semi-transparent background to the text overlay"
+      },
+      {
+        "type": "select",
+        "id": "background_colour_desktop",
+        "label": "Background colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "select",
+        "id": "text_colour_desktop",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "select",
+        "id": "desktop_text_align",
+        "label": "Desktop text alignment",
+        "options": [
+          {
+            "value": "desktopTextLeft",
+            "label": "Left"
+          },
+          {
+            "value": "desktopTextCenter",
+            "label": "Center"
+          },
+          {
+            "value": "desktopTextRight",
+            "label": "Right"
+          }
+        ],
+        "default": "desktopTextLeft"
+      },
+      {
+        "type": "select",
+        "id": "desktop_horizontal",
+        "label": "Desktop horizontal position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "select",
+        "id": "desktop_vertical",
+        "label": "Desktop vertical position",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "middle",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "bottom"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Style"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay_mobile",
+        "label": "Background overlay?",
+        "default": false,
+        "info": "Add a semi-transparent background to the text overlay"
+      },
+      {
+        "type": "select",
+        "id": "background_colour_mobile",
+        "label": "Background colour",
+        "options": [
+          {
+            "value": "mobileLight",
+            "label": "Light"
+          },
+          {
+            "value": "mobileDark",
+            "label": "Dark"
+          }
+        ],
+        "default": "mobileLight"
+      },
+      {
+        "type": "select",
+        "id": "text_colour_mobile",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "select",
+        "id": "button_style_mobile",
+        "label": "Button style",
+        "options": [
+          {
+            "value": "mobileLight",
+            "label": "Light"
+          },
+          {
+            "value": "mobileDark",
+            "label": "Dark"
+          }
+        ],
+        "default": "mobileLight"
+      },
+      {
+        "type": "select",
+        "id": "mobile_text_align",
+        "label": "Mobile text alignment",
+        "options": [
+          {
+            "value": "mobileTextLeft",
+            "label": "Left"
+          },
+          {
+            "value": "mobileTextCenter",
+            "label": "Center"
+          },
+          {
+            "value": "mobileTextRight",
+            "label": "Right"
+          }
+        ],
+        "default": "mobileTextLeft"
+      },
+      {
+        "type": "select",
+        "id": "mobile_horizontal",
+        "label": "Mobile horizontal position",
+        "options": [
+          {
+            "value": "mobileLeft",
+            "label": "Left"
+          },
+          {
+            "value": "mobileCenter",
+            "label": "Center"
+          },
+          {
+            "value": "mobileRight",
+            "label": "Right"
+          }
+        ],
+        "default": "mobileLeft"
+      },
+      {
+        "type": "select",
+        "id": "mobile_vertical",
+        "label": "Mobile vertical position",
+        "options": [
+          {
+            "value": "mobileTop",
+            "label": "Top"
+          },
+          {
+            "value": "mobileMiddle",
+            "label": "Middle"
+          },
+          {
+            "value": "mobileBottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "mobileBottom"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Rewards Hero"
+      }
+    ]
+  }
+{% endschema %}

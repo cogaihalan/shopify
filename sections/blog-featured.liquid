@@ -1,0 +1,136 @@
+{{ 'blog-featured.css' | asset_url | stylesheet_tag }}
+
+<section class="blg-FeaturedArticle blg-FeaturedArticle-{{ section.settings.section_style }}">
+  <div class="blg-FeaturedArticle_Inner lyt-Container">
+    <div class="blg-FeaturedArticle_ImageContainer">
+      <div class="blg-FeaturedArticle_Image blg-FeaturedArticle_Image-desktop">
+        {%- render 'responsive-image',
+          image: section.settings.desktop_image,
+          width: 2880,
+          height: 1300
+        -%}
+      </div>
+      
+      <div class="blg-FeaturedArticle_Image blg-FeaturedArticle_Image-mobile">
+        {%- liquid
+          if section.settings.mobile_image != blank
+            assign image_to_use = section.settings.mobile_image
+          else
+            assign image_to_use = section.settings.desktop_image
+          endif
+        -%}
+
+        {%- render 'responsive-image',
+          image: image_to_use,
+          width: 750,
+          height: 1170
+        -%}
+      </div>
+    </div>
+
+    <div class="blg-FeaturedArticle_Body">
+      <div class="blg-FeaturedArticle_Content">
+        {%- if section.settings.kicker != blank -%}
+          <p class="blg-FeaturedArticle_Kicker fz-13_13">
+            {{ section.settings.kicker }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="blg-FeaturedArticle_Title fz-58_64">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <p class="blg-FeaturedArticle_Text fz-14_24">
+            {{ section.settings.text | newline_to_br }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+          <div class="blg-FeaturedArticle_Buttons">
+            <a class="blg-FeaturedArticle_Button btn-Button btn-Button-primary" href="{{ section.settings.button_link }}">
+              {{- section.settings.button_text -}}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Featured",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image",
+        "info": "Recommended size: 2880px x 1300px"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image",
+        "info": "Recommended size: 750px x 1170px"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "select",
+        "id": "section_style",
+        "label": "Text Style",
+        "options": [
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "light",
+            "label": "Light"
+          }
+        ],
+        "default": "dark"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "templates": ["blog"],
+    "presets": [
+      {
+        "name": "Featured"
+      }
+    ]
+  }
+{% endschema %}

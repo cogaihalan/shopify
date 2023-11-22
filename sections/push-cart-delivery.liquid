@@ -1,0 +1,121 @@
+{%- if section.settings.enabled -%}
+  {{ 'push-cart-delivery.css' | asset_url | stylesheet_tag }}
+
+  {%- liquid
+    assign gift_card_product = all_products[settings.push_cart_gift_card_product]
+    assign other_products_in_the_cart = false
+
+    for line_item in cart.items
+      if line_item.product.title contains 'Order Protection'
+        assign order_protection_price = line_item.original_price
+      endif
+
+      if line_item.product_id  == gift_card_product.id
+        assign only_gift_cards_in_the_cart = true
+      else
+        assign other_products_in_the_cart = true
+        assign only_gift_cards_in_the_cart = false
+      endif
+    endfor
+
+    assign cart_total = cart.total_price | minus: order_protection_price
+    assign has_crossed_threshold = false
+    assign threshold_amount = section.settings.minimum_spend | minus: cart_total
+    assign amount_percentage = 0
+
+    if cart.total_price > 0
+      assign amount_percentage = cart.total_price | times: 1.0 | divided_by: section.settings.minimum_spend | round: 2
+    endif
+
+    if cart.total_price >= section.settings.minimum_spend
+      assign has_crossed_threshold = true
+    endif
+
+    assign customer_has_free_ndd_delivery = false
+    if customer.tags contains 'tier: Gold'
+      assign customer_has_free_ndd_delivery = true
+    elsif customer.tags contains 'tier: Plantinum'
+      assign customer_has_free_ndd_delivery = true
+    elsif customer.tags contains 'Free Next Day Delivery'
+      assign customer_has_free_ndd_delivery = true
+    endif
+
+    if only_gift_cards_in_the_cart == true and other_products_in_the_cart == false
+      assign show_delivery = false
+    else
+      assign show_delivery = true
+    endif
+  -%}
+
+  {%- capture threshold_difference -%}
+    <strong>{{ threshold_amount | money }}</strong>
+  {%- endcapture -%}
+
+  <div class="psh-CartDelivery" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="push-cart-delivery">
+    {%- if show_delivery -%}
+      <p class="psh-CartDelivery_Text fz-14_20">
+        {%- if has_crossed_threshold -%}
+          {{- section.settings.success_message -}}
+        {%- elsif customer_has_free_ndd_delivery -%}
+          {{- section.settings.free_ndd_delivery_message -}}
+        {%- else -%}
+          {{- section.settings.incentivisation_message | replace: '[amount]', threshold_difference -}}
+        {%- endif -%}
+      </p>
+
+      {%- unless customer_has_free_ndd_delivery -%}
+        <div class="psh-CartDelivery_Progress">
+          {%- assign progress_amount = amount_percentage | times: 100.0 -%}
+          {%- assign progress_amount = 100 | minus: progress_amount -%}
+          <div class="psh-CartDelivery_Bar" style="--Progress_Amount: -{{ progress_amount }}%;"></div>
+        </div>
+      {%- endunless -%}
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Push Cart - Delivery",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Enabled?",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "incentivisation_message",
+      "label": "Incentivisation message",
+      "info": "This is the message that will appear in the push cart to incentivize the customer",
+      "default": "You’re Just [amount] Away From Free UK Next Day Delivery!"
+    },
+    {
+      "type": "paragraph",
+      "content": "The \"[amount]\" will be replaced with the amount needed to cross the threshold"
+    },
+    {
+      "type": "textarea",
+      "id": "success_message",
+      "label": "Success message",
+      "info": "This is the message that will appear in the push cart once the customer has crossed the threshold",
+      "default": "Your Order Qualifies For Free Next Day Delivery"
+    },
+    {
+      "type": "number",
+      "id": "minimum_spend",
+      "label": "Minimum spend",
+      "info": "Please provide the amount in pence e.g. £35 would be \"3500\"",
+      "default": 8000
+    },
+    {
+      "type": "textarea",
+      "id": "free_ndd_delivery_message",
+      "label": "Free Next Day Delivery message",
+      "info": "This is the message that will appear in the push cart if the customer has a tag enabling free next day delivery",
+      "default": "Free next day delivery is available for your order"
+    }
+  ]
+}
+{% endschema %}

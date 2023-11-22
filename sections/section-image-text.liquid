@@ -1,0 +1,361 @@
+{{ 'section-image-text.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+<div class="sec-ImageText sec-ImageText-{{ section.settings.text_colour }} sec-ImageText-{{ section.settings.order }}" style="--ImageText_Background: {{- section.settings.background_colour -}};">
+  <div class="sec-ImageText_Items">
+    <div class="
+      sec-ImageText_Item
+      sec-ImageText_Item-image
+      {% if section.settings.mobile_content_image != blank %} sec-ImageText_Item-splitimage{% endif %}
+    ">
+      <div class="sec-ImageText_MediaContainer">
+        {%- if section.settings.desktop_video != blank -%}
+          <div class="sec-ImageText_Video sec-ImageText_Video-desktop">
+            <video class="sec-ImageText_VideoPlayer" autoplay loop muted playsinline>
+              <source src="{{ section.settings.desktop_video }}" type="video/mp4">
+            </video>
+          </div>
+        {%- endif -%}
+
+        <div class="sec-ImageText_Image sec-ImageText_Image-desktop">
+          {%- render 'responsive-image',
+            image: section.settings.desktop_image,
+            width: 1500,
+            height: 1500
+          -%}
+        </div>
+
+        {%- if section.settings.mobile_video != blank -%}
+          <div class="sec-ImageText_Video sec-ImageText_Video-mobile">
+            <video class="sec-ImageText_VideoPlayer" autoplay loop muted playsinline>
+              <source src="{{ section.settings.mobile_video }}" type="video/mp4">
+            </video>
+          </div>
+        {%- endif -%}
+
+        <div class="sec-ImageText_Image sec-ImageText_Image-mobile">
+          {%- liquid
+            if section.settings.mobile_image != blank
+              assign image_to_use = section.settings.mobile_image
+            else
+              assign image_to_use = section.settings.desktop_image
+            endif
+          -%}
+
+          {%- render 'responsive-image',
+            image: image_to_use,
+            width: 800,
+            height: 800
+          -%}
+        </div>
+      </div>
+
+      {%- if section.settings.mobile_content_image != blank -%}
+        <div class="sec-ImageText_ContentImage sec-ImageText_ContentImage-mobile">
+          {%- render 'responsive-image',
+            image: section.settings.mobile_content_image,
+            width: 400,
+            height: 400
+          -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="sec-ImageText_Item sec-ImageText_Item-content">
+      <div class="
+        sec-ImageText_Content
+        sec-ImageText_Content-{{ section.settings.desktop_horizontal_align }}
+        sec-ImageText_Content-{{ section.settings.mobile_horizontal_align }}
+        sec-ImageText_Content-{{ section.settings.desktop_vertical_align }}
+      ">
+
+        {%- if section.settings.desktop_content_image != blank -%}
+          <div class="sec-ImageText_ContentImage sec-ImageText_ContentImage-desktop">
+            {%- render 'responsive-image',
+              image: section.settings.desktop_content_image,
+              width: 1200,
+              height: 750
+            -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="sec-ImageText_Title fz-58_64">{{ section.settings.title }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="sec-ImageText_Text fz-14_20 rte-RichText">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_url != blank and section.settings.button_text != blank -%}
+          <div class="sec-ImageText_Buttons">
+            <a href="{{ section.settings.button_url }}" class="sec-ImageText_Button sec-ImageText_Button-{{ section.settings.button_style }} btn-Button btn-Button-primary">
+              {{ section.settings.button_text }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endcapture -%}
+
+{%- render 'section',
+  flush: true,
+  margin: section.settings.section_margin,
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Image Text",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingStandard"
+      },
+      {
+        "type": "select",
+        "id": "order",
+        "label": "Desktop order",
+        "options": [
+          {
+            "value": "contentLeft",
+            "label": "Content - Image"
+          },
+          {
+            "value": "contentRight",
+            "label": "Image - Content"
+          }
+        ],
+        "default": "contentLeft"
+      },
+      {
+        "type": "color",
+        "id": "background_colour",
+        "label": "Background Colour",
+        "default": "#FBEDDF",
+        "info": "Brand Colours"
+      },
+      {
+        "type": "paragraph",
+        "content": "Light Pink: #FDF5F5"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Pink: #FAE0DF"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Cream: #FBF0EB"
+      },
+      {
+        "type": "paragraph",
+        "content": "Coffee: #DFC9B6"
+      },
+      {
+        "type": "paragraph",
+        "content": "Warm Pink: #E2A9A9"
+      },
+      {
+        "type": "paragraph",
+        "content": "Russet: #D49595"
+      },
+      {
+        "type": "select",
+        "id": "text_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Media"
+      },
+      {
+        "type": "text",
+        "id": "desktop_video",
+        "label": "Video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Image",
+        "info": "Recommended size: 1500px x 1500px"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Media"
+      },
+      {
+        "type": "text",
+        "id": "mobile_video",
+        "label": "Video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Image",
+        "info": "Recommended size: 800px x 800px"
+      },
+      {
+        "type": "paragraph",
+        "content": "If empty mobile will use the desktop image"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+
+      {
+        "type": "image_picker",
+        "id": "desktop_content_image",
+        "label": "Image Desktop",
+        "info": "Recommended size: 1200px x 750px"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_content_image",
+        "label": "Image Mobile",
+        "info": "Recommended size: 600px x 600px"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "select",
+        "id": "desktop_horizontal_align",
+        "label": "Desktop horizontal alignment",
+        "options": [
+          {
+            "value": "desktopContentLeft",
+            "label": "Left"
+          },
+          {
+            "value": "desktopContentCenter-x",
+            "label": "Center"
+          },
+          {
+            "value": "desktopContentRight",
+            "label": "Right"
+          }
+        ],
+        "default": "desktopContentLeft"
+      },
+      {
+        "type": "select",
+        "id": "mobile_horizontal_align",
+        "label": "Mobile horizontal alignment",
+        "options": [
+          {
+            "value": "mobileContentLeft",
+            "label": "Left"
+          },
+          {
+            "value": "mobileContentCenter-x",
+            "label": "Center"
+          },
+          {
+            "value": "mobileContentRight",
+            "label": "Right"
+          }
+        ],
+        "default": "mobileContentLeft"
+      },
+      {
+        "type": "select",
+        "id": "desktop_vertical_align",
+        "label": "Desktop vertical alignment",
+        "options": [
+          {
+            "value": "desktopContentTop",
+            "label": "Top"
+          },
+          {
+            "value": "desktopContentCenter-y",
+            "label": "Center"
+          },
+          {
+            "value": "desktopContentBottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "desktopContentCenter-y"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Text"
+      }
+    ]
+  }
+{% endschema %}

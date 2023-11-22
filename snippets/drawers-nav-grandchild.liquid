@@ -1,0 +1,52 @@
+<site-drawer class="drw-Drawer drw-Drawer-menu drw-Drawer-fromLeft" key="{{ drawer_handle }}">
+  <header class="drw-Drawer_Header drw-Nav_Header">
+    <button
+      class="drw-Nav_Back fz-24_29"
+      type="button"
+      data-drawers-back="{{ drawer_handle }}"
+    >
+      <span class="drw-Nav_LinkIcon drw-Nav_LinkIcon-back">
+        <span class="drw-Nav_Svg">
+          {%- render 'bao-icon-chevron-left' -%}
+        </span>
+      </span>
+
+      {{ parents_title }}
+
+      <button
+              type="button"
+              class="drw-Drawer_Close"
+              data-drawers-close
+      >
+        <span class="drw-Drawer_Icon drw-Drawer_Icon-close">
+          {%- render 'bao-icon-close' -%}
+        </span>
+        <span class="util-ScreenReaderOnly">
+          {{ 'accessibility.close' | t }}
+        </span>
+      </button>
+    </button>
+  </header>
+  <div class="drw-Drawer_Inner">
+    <div class="drw-Drawer_Nav">
+      <nav class="drw-Nav">
+        <ul class="drw-Nav_Items">
+          {%- for link in link.links -%}
+            {%- if link.title contains '[promo' -%}
+              {%- render 'drawers-nav-promo', link: link -%}
+            {%- else -%}
+              <li class="drw-Nav_Item">
+                <a
+                  class="drw-Nav_Link fz-16_18"
+                  href="{{ link.url }}"
+                  {% if link.active %}aria-current="page"{% endif %}>
+                  {{ link.title }}
+                </a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</site-drawer>

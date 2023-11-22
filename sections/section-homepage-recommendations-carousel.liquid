@@ -1,0 +1,170 @@
+{% comment %}theme-check-disable LiquidTag{% endcomment %}
+{%- if section.settings.collection != blank -%}
+  {{ 'section.css' | asset_url | stylesheet_tag }}
+  {{ 'product-recommendations.css' | asset_url | stylesheet_tag }}
+  {{ 'section-recommendations-carousel.css' | asset_url | stylesheet_tag }}
+
+  {%- assign item_count = 0 -%}
+  {%- capture recommendation_items -%}
+
+    {%- for collection_product in section.settings.collection.products limit: 12 -%}
+      <div class="sec-RecommendationsCarousel_Item car-Carousel_Slide" data-carousel-element-el="slide">
+        {%- render 'product-card', product: collection_product, small_image: true -%}
+      </div>
+      {%- assign item_count = item_count | plus: 1 -%}
+    {%- endfor -%}
+
+  {%- endcapture -%}
+
+  {%- if item_count > 0 -%}
+
+    {%- capture body -%}
+
+      <product-recommendations 
+        class="prd-Recommendations"
+        data-section-id="shopify-section-{{ section.id }}"
+      >
+
+        <carousel-element class="sec-RecommendationsCarousel car-Carousel"
+          data-initialized="false"
+          data-loop="true"
+          data-centered-md="true"
+          data-slides-per-view-xs="2.5"
+          data-slides-per-view-md="4"
+          data-spacing-xs="10"
+          data-item-count="{{- item_count -}}"
+        >
+          <div class="sec-RecommendationsCarousel_Items car-Carousel_Slides" data-carousel-element-el="slides">
+            {{ recommendation_items }}
+          </div>
+
+          <div class="sec-RecommendationsCarousel_Footer">
+            <div class="sec-RecommendationsCarousel_Scrollbar car-Carousel_Scrollbar">
+              <div 
+                class="sec-RecommendationsCarousel_Scroller car-Carousel_Scroller"
+                data-carousel-element-el="scroller"
+                style="--Carousel_ItemCount: {{ item_count }};"
+              ></div>
+            </div>
+          </div>
+
+          <div class="sec-RecommendationsCarousel_Arrows car-Carousel_Arrows">
+            <button
+              type="button"
+              class="sec-RecommendationsCarousel_Arrow sec-RecommendationsCarousel_Arrow-previous car-Carousel_Arrow car-Carousel_Arrow-previous"
+              data-carousel-element-el="previous"
+              aria-label="{{ 'accessibility.previous' | t }}"
+            >
+              {% render 'bao-icon-chevron-down' %}
+              <span class="util-ScreenReaderOnly">
+                {{ 'accessibility.previous' | t }}
+              </span>
+            </button>
+        
+            <button
+              type="button"
+              class="sec-RecommendationsCarousel_Arrow sec-RecommendationsCarousel_Arrow-next car-Carousel_Arrow car-Carousel_Arrow-next"
+              data-carousel-element-el="next"
+              aria-label="{{ 'accessibility.next' | t }}"
+            >
+              {% render 'bao-icon-chevron-down' %}
+              <span class="util-ScreenReaderOnly">
+                {{ 'accessibility.next' | t }}
+              </span>
+            </button>
+          </div>
+
+        </carousel-element>
+
+    </product-recommendations>
+
+    {%- endcapture -%}
+
+    {%- render 'section',
+      margin: section.settings.section_margin,
+
+      kicker: section.settings.kicker,
+      title: section.settings.title,
+      button_text: section.settings.button_text,
+      button_link: section.settings.button_link,
+
+      body: body
+    -%}
+
+  {%- endif -%}
+
+{%- endif -%}
+{% comment %}theme-check-enable LiquidTag{% endcomment %}
+
+{% schema %}
+  {
+    "name": "Recommendations Carousel",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "New Arrivals"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection",
+        "info": "Select a collection of products to display"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Recommendations Carousel"
+      }
+    ],
+    "templates": ["index"]
+  }
+{% endschema %}

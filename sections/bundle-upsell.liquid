@@ -1,0 +1,12 @@
+{%- render 'bundle-upsell',
+  product: product,
+  collection_name: product.metafields.buy_it_with.collection
+-%}
+
+{% schema %}
+  {
+    "name": "Bundle upsell",
+    "settings": [
+    ]
+  }
+{% endschema %}

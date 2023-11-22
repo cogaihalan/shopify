@@ -1,0 +1,110 @@
+{%- liquid
+  assign is_dev_theme = false
+
+  if theme.name contains 'Development ('
+    assign is_dev_theme = true
+  endif
+-%}
+
+<script>
+  if (!window.BAO) {
+    window.BAO = {}
+  }
+
+  document.documentElement.className = document.documentElement.className
+    .replace('util-NoJs', '')
+
+  window.theme = {
+    isDevTheme: {{ is_dev_theme }},
+    moneyFormat: {{ shop.money_format | json }},
+    shopUrl: {{ shop.secure_url | json }},
+    strings: {
+      theme: {
+        currency_iso_code: {{ cart.currency.iso_code | json }},
+        currency_symbol: {{ cart.currency.symbol | json }}
+      },
+      products: {
+        product: {
+          last_chance: {{ 'products.product.last_chance' | t | json }},
+          pre_order: {{ 'products.product.pre_order' | t | json }},
+          sale_percentage_off: {{ 'products.product.sale_percentage_off' | t | json }},
+          sold_out: {{ 'products.product.sold_out' | t | json }},
+          add_to_cart: {{ 'products.product.add_to_cart' | t | json }},
+          quick_buy: {{ 'products.product.quick_buy' | t | json }},
+          price: {
+            sale_price: {{ 'products.product.price.sale_price' | t | json }},
+            from_price_html: {{ 'products.product.price.from_price_html' | t | json }},
+            regular_price: {{ 'products.product.price.regular_price' | t | json }}
+          }
+        }
+      },
+      algolia: {
+        form_placeholder: {{ 'algolia.form_placeholder' | t | json }},
+        form_mobile_placeholder: {{ 'algolia.form_mobile_placeholder' | t | json }},
+        recent_search_heading: {{ 'algolia.recent_searches' | t | json }},
+      }
+    }
+  }
+
+  window.cartStrings = {
+    error: `{{ 'sections.cart.cart_error' | t }}`,
+    quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t }}`,
+    clickAndCollect: {
+      dynamic_checkout_title: `{{ 'sections.cart.click_and_collect.dynamic_checkout_title' | t }}`,
+      home_delivery: `{{ 'sections.cart.click_and_collect.home_delivery' | t }}`,
+      home_delivery_next_day: `{{ 'sections.cart.click_and_collect.home_delivery_next_day' | t }}`,
+      home_delivery_standard: `{{ 'sections.cart.click_and_collect.home_delivery_standard' | t }}`,
+      click_and_collect: `{{ 'sections.cart.click_and_collect.click_and_collect' | t }}`,
+      click_and_collect_next_day: `{{ 'sections.cart.click_and_collect.click_and_collect_next_day' | t }}`,
+      click_and_collect_standard: `{{ 'sections.cart.click_and_collect.click_and_collect_standard' | t }}`,
+      click_and_collect_USP1: `{{ 'sections.cart.click_and_collect.click_and_collect_USP1' | t }}`,
+      click_and_collect_USP2: `{{ 'sections.cart.click_and_collect.click_and_collect_USP2' | t }}`,
+      click_and_collect_USP3: `{{ 'sections.cart.click_and_collect.click_and_collect_USP3' | t }}`,
+      click_and_collect_footer: `{{ 'sections.cart.click_and_collect.click_and_collect_footer' | t }}`,
+      intro_html: `{{ 'sections.cart.click_and_collect.intro_html' | t }}`
+    },
+    orderStatus: {
+      cancellation_reasons: '{{ settings.cancellation_reasons }}'
+    }
+  }
+
+  window.variantStrings = {
+    addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+    preOrder: `{{ 'products.product.pre_order' | t }}`,
+    soldOut: `{{ 'products.product.sold_out' | t }}`,
+    unavailable: `{{ 'products.product.unavailable' | t }}`,
+  }
+
+  {% if template.directory == 'customers' %}
+    window.theme.allCountryOptionTags = {{ all_country_option_tags | json }}
+  {% endif %}
+
+</script>
+
+{%- unless is_checkout -%}
+{%- comment -%} Wishlist functions {%- endcomment -%}
+<script>
+
+  {% if request.page_type == "product" %}
+      window.pdpVariantChange = function(swat) {
+        window.BAO.eventBus.addEventListener(
+          window.BAO.EVENTS.PRODUCT.VARIANT_CHANGED,
+          function(event) {
+            /* Only run for the main product form */
+            if(!event.detail.triggeredBy || !event.detail.triggeredBy.target.closest('.prd-Product') || event.detail.triggeredBy.target.closest('.bup-Item_Options')) return
+
+            window.SwymPageData.epi = event.detail.variant.id
+            window.SwymViewProducts[event.detail.product.id].epi = event.detail.variant.id
+            window.SwymProductInfo.product = window.SwymProductInfo.product || {}
+            window.SwymProductInfo.product.currentVariant = event.detail.variant.id
+
+            window.triggerSwymVariantEvent(event.detail.variant.id);
+            swat.initializeActionButtons(".prd-Details_Buttons");
+
+            window.SwymCallbacks.push(window.pdpVariantChange)
+          }
+        )
+      }
+      {% endif %}
+  </script>
+{%- endunless -%}

@@ -1,0 +1,206 @@
+{% comment %}theme-check-disable TemplateLength{% endcomment %}
+{%- unless template == 'index' or template == 'cart' -%}
+  {%- capture content %}
+    {% style %}
+      .bdc-Breadcrumb_Items {
+        flex-wrap: wrap;
+
+        display: flex;
+        margin-bottom: -3px;
+
+        color: var(--Color_WarmPink);
+      }
+
+      .bdc-Breadcrumb_Item {
+        position: relative;
+
+        margin-bottom: 3px;
+
+        font-weight: 300;
+
+        text-transform: capitalize;
+      }
+      .bdc-Breadcrumb_Item:last-of-type {
+        color: var(--Color_Body);
+      }
+      .clc-Hero-hasImage.clc-Hero-light .bdc-Breadcrumb_Item:last-of-type {
+        color: var(--Color_White);
+      }
+      .bdc-Breadcrumb_Item:not(:last-of-type) {
+        margin-right: 20px;
+      }
+      .bdc-Breadcrumb_Item:not(:last-of-type)::after {
+        content: '/';
+
+        position: absolute;
+        top: 0;
+        left: 100%;
+
+        width: 20px;
+
+        text-align: center;
+      }
+
+      .bdc-Breadcrumb_Link {
+        transition: color 0.5s ease;
+      }
+    {% endstyle %}
+  {%- endcapture -%}
+
+  {%- assign before =  content.size -%}
+  {%- assign content =  content | strip_newlines | split: " " | join: " " | split: "*/" -%}
+  {%- assign new_content = "" -%}
+  {%- for word in content -%}
+    {%- assign new_word = word | split: "/*" | first | strip | replace: "; ", ";" | replace: "} ", "}" | replace: "{ ", "{" | replace: " {", "{" -%}
+    {%- assign new_content = new_content | append: new_word -%}
+  {%- endfor -%}
+
+  {{- new_content  }}
+
+  {%- assign position = 1 -%}
+  <nav class="bdc-Breadcrumb fz-12_22">
+    <div class="bdc-Breadcrumb_Inner">
+      <div class="bdc-Breadcrumb_Body">
+        <ul class="bdc-Breadcrumb_Items" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <a class="bdc-Breadcrumb_Link" href="{{ shop.url }}" itemprop="item">
+              <span itemprop="name">{{ 'layout.breadcrumbs.home' | t }}</span>
+              <meta itemprop="position" content="{{ position }}" />
+              {%- assign position = position | plus: 1 -%}
+            </a>
+          </li>
+
+          {%- if use_metafield -%}
+            {%- for breadcrumb in metafield -%}
+              <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                {%- assign metafield_url = metafield_link[forloop.index0] | remove: shop.url -%}
+                <a class="bdc-Breadcrumb_Link" href="{{ shop.url }}{{ metafield_url }}" itemprop="item">
+                  <span itemprop="name">{{ breadcrumb }}</span>
+                  <meta itemprop="position" content="{{ position }}" />
+                  {%- assign position = position | plus: 1 -%}
+                </a>
+              </li>
+            {%- endfor -%}
+          {%- endif -%}
+
+          {%- if template contains 'product' -%}
+            {%- if collection and use_metafield == false -%}
+              {%- if collection.handle -%}
+                <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                  <a class="bdc-Breadcrumb_Link" href="{{ shop.url }}{{ collection.url }}" itemprop="item">
+                    <span itemprop="name">{{ collection.title }}</span>
+                    <meta itemprop="position" content="{{ position }}" />
+                    {%- assign position = position | plus: 1 -%}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- endif -%}
+
+            <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                <span itemprop="name">{{ product.title }}</span>
+                <meta itemprop="position" content="{{ position }}" />
+                {%- assign position = position | plus: 1 -%}
+              </div>
+            </li>
+          {%- elsif template contains 'collection' and collection.handle -%}
+            {%- if current_tags -%}
+              <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a class="bdc-Breadcrumb_Link" href="{{ shop.url }}{{ collection.url }}" itemprop="item">
+                  <span itemprop="name">{{ collection.title }}</span>
+                  <meta itemprop="position" content="{{ position }}" />
+                  {%- assign position = position | plus: 1 -%}
+                </a>
+              </li>
+
+              <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                  <span itemprop="name">{{ current_tags | join: " + " }}</span>
+                  <meta itemprop="position" content="{{ position }}" />
+                  {%- assign position = position | plus: 1 -%}
+                </div>
+              </li>
+            {%- else -%}
+              <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                  <span itemprop="name">{{ collection.title }}</span>
+                  <meta itemprop="position" content="{{ position }}" />
+                  {%- assign position = position | plus: 1 -%}
+                </div>
+              </li>
+            {%- endif -%}
+          {%- elsif template == 'blog' -%}
+            {%- if current_tags -%}
+              <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a class="bdc-Breadcrumb_Link" href="{{ shop.url }}{{ blog.url }}" itemprop="item">
+                  <span itemprop="name">{{ blog.title }}</span>
+                  <meta itemprop="position" content="{{ position }}" />
+                  {%- assign position = position | plus: 1 -%}
+                </a>
+              </li>
+
+              <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                  <span itemprop="name">{{ current_tags | join: " + " }}</span>
+                  <meta itemprop="position" content="{{ position }}" />
+                  {%- assign position = position | plus: 1 -%}
+                </div>
+              </li>
+            {%- else -%}
+              <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                  <span itemprop="name">{{ blog.title }}</span>
+                  <meta itemprop="position" content="{{ position }}" />
+                  {%- assign position = position | plus: 1 -%}
+                </div>
+              </li>
+            {%- endif -%}
+          {%- elsif template == 'article' -%}
+            <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <a class="bdc-Breadcrumb_Link" href="{{ shop.url }}{{ blog.url }}" itemprop="item">
+                <span itemprop="name">{{ blog.title }}</span>
+                <meta itemprop="position" content="{{ position }}" />
+                {%- assign position = position | plus: 1 -%}
+              </a>
+            </li>
+
+            <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                <span itemprop="name">{{ article.title }}</span>
+                <meta itemprop="position" content="{{ position }}" />
+                {%- assign position = position | plus: 1 -%}
+              </div>
+            </li>
+          {%- elsif template contains 'page' -%}
+            <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                <span itemprop="name">{{ page.title }}</span>
+                <meta itemprop="position" content="{{ position }}" />
+                {%- assign position = position | plus: 1 -%}
+              </div>
+            </li>
+
+          {%- elsif template == 'search' -%}
+          <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+              <span itemprop="name">{{ 'templates.search.title' | t }}</span>
+              <meta itemprop="position" content="{{ position }}" />
+              {%- assign position = position | plus: 1 -%}
+            </div>
+          </li>
+
+          {%- else -%}
+            <li class="bdc-Breadcrumb_Item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <div class="bdc-Breadcrumb_ItemInner" itemprop="item">
+                <span itemprop="name">{{ page_title }}</span>
+                <meta itemprop="position" content="{{ position }}" />
+                {%- assign position = position | plus: 1 -%}
+              </div>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+    </div>
+  </nav>
+{%- endunless -%}
+{% comment %}theme-check-enable TemplateLength{% endcomment %}

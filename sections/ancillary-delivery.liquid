@@ -1,0 +1,48 @@
+{{ 'ancillary-section.css' | asset_url | stylesheet_tag }}
+{{ 'ancillary-delivery.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'product-delivery.js' | asset_url }}" defer="defer"></script>
+
+<section class="anc-Section">
+  <div class="anc-Section_Inner lyt-Container">
+    <div class="anc-Section_Body">
+      <product-delivery class="anc-Delivery">
+        {%- if shop.metafields.delivery_and_return.country.size > 1 -%}
+          <div class="frm-Form_SelectField">
+            <select 
+              class="anc-Delivery_Select frm-Form_Select fz-14_20-headings"
+              data-product-delivery-el="select"
+            >
+              {%- for country_name in shop.metafields.delivery_and_return.country -%}
+                <option value="{{ country_name | handleize }}">{{ country_name }}</option>
+              {%- endfor -%}
+            </select>
+
+            <span class="anc-Delivery_SelectIcon frm-Form_SelectIcon">
+              {%- render 'bao-icon-chevron-down' -%}
+            </span>
+          </div>
+        {%- endif -%}
+
+        {%- for country_name in shop.metafields.delivery_and_return.country -%}
+          <div class="anc-Delivery_Content rte-RichText fz-14_20" data-product-delivery-el="content" data-country="{{ country_name | handleize }}" aria-expanded="{{ forloop.first }}">
+            {{ shop.metafields.delivery_and_return.content[forloop.index0] }}
+          </div>
+        {%- endfor -%}
+      </product-delivery>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "(Ancillary) Delivery",
+    "templates": ["page"],
+    "settings": [],
+    "presets": [
+      {
+        "name": "(Ancillary) Delivery"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,11 @@
+<section class="prd-QuickBuy">
+  <button class="prd-QuickBuy_Close" onClick="window.quickBuy.handleClose(event)">
+    <span class="prd-QuickBuy_Icon prd-QuickBuy_Icon-close">
+      {%- render 'bao-icon-close' -%}
+    </span>
+    <span class="util-ScreenReaderOnly">
+      {{ 'accessibility.close' | t }}
+    </span>
+  </button>
+  {%- render 'quickbuy-product-form', product: product -%}  
+</section>

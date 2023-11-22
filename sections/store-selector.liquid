@@ -1,0 +1,99 @@
+{%- if section.settings.store_switcher_enable -%}
+
+  {{ 'store-selector.css' | asset_url | stylesheet_tag }}
+
+  <script
+    src="{{ 'store-selector.js' | asset_url }}"
+    type="module"
+  ></script>
+
+  <store-selector
+    class="sec-StoreSelector"
+    data-store="{{ cart.currency.iso_code }}"
+    aria-hidden="true"
+  >
+
+    <div class="sec-StoreSelector_Inner lyt-Container">
+      <div class="sec-StoreSelector_Modal">
+        <button
+          type="button"
+          class="sec-StoreSelector_Close"
+          data-store-selector-el="close"
+        >
+          <span class="sec-StoreSelector_CloseIcon">
+            {%- render 'bao-icon-close' -%}
+          </span>
+          <span class="util-ScreenReaderOnly">
+            {{- 'accessibility.close' | t -}}
+          </span>
+        </button>
+
+        <div class="sec-StoreSelector_Body">
+          <div class="sec-StoreSelector_Content">
+            <div class="sec-StoreSelector_ContentArea">
+              <h2 class="sec-StoreSelector_Title fz-24_29">
+                {{ section.settings.heading }}
+              </h2>
+
+              {%- if section.settings.text != blank -%}
+                <div class="sec-StoreSelector_Text fz-14_20">
+                  {{ section.settings.text }}
+                </div>
+              {%- endif -%}
+
+              <div class="sec-StoreSelector_Options" aria-expanded="false" role="listbox">
+                <label for="store-selector" class="sec-StoreSelector_ShippingToText fz-13_13">
+                  {{ 'general.store_selector.currency' | t }}
+                </label>
+                <div class="sec-StoreSelector_OptionsWrapper">
+                  <select id="store-selector" class="sec-StoreSelector_OptionsList fz-13_13" data-store-selector-el="options"></select>
+                  <span class="sec-StoreSelector_OptionsIndicator">
+                    {%- render 'bao-icon-chevron-down' -%}
+                  </span>
+                </div>
+              </div>
+
+              <button
+                class="sec-StoreSelector_Button btn-Button btn-Button-tertiary btn-Button-fullWidth"
+                data-code="{{ cart.currency.iso_code }}"
+                data-store-selector-el="confirm"
+              >
+                {{- section.settings.confirm_button_text -}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </store-selector>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Store Switcher",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "store_switcher_enable",
+      "label": "Enable store switcher",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Message"
+    },
+    {
+      "type": "text",
+      "id": "confirm_button_text",
+      "label": "Confirm button text",
+      "default": "Confirm"
+    }
+  ]
+}
+{% endschema %}

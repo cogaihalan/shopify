@@ -1,0 +1,529 @@
+{{ 'section-full-width.css' | asset_url | stylesheet_tag }}
+{{ 'section-full-width-item.css' | asset_url | stylesheet_tag }}
+
+
+{%- if section.settings.header_overlay -%}
+<style> .lyt-Site { --Nav_HeightWhenFixed: 0px; padding-top: var(--Announcement_Height); }</style>
+{%- endif -%}
+
+{%- capture body -%}
+  <section 
+    class="sec-FullWidth
+    {% if section.settings.desktop_full_screen %} sec-FullWidth-dektopFullScreen{% endif %}
+    {% if section.settings.mobile_full_screen %} sec-FullWidth-mobileFullScreen{% endif %}
+    {% if section.settings.header_overlay %} sec-FullWidth-headerOverlay{% endif %}
+    "
+    {% if section.settings.header_transparent %} data-header-is-transparent-when-over-me="{{- section.settings.header_colour -}}"{% endif %}>
+    <div class="sec-FullWidth_Inner">
+      <div class="sec-FullWidth_Body">
+        
+        <div class="sec-FullWidth_Item">
+          <div class="
+            sec-FullWidthItem 
+            sec-FullWidthItem-{{ section.settings.desktop_text_align }} 
+            sec-FullWidthItem-{{ section.settings.desktop_horizontal }} 
+            sec-FullWidthItem-{{ section.settings.desktop_vertical }} 
+            sec-FullWidthItem-{{ section.settings.mobile_text_align }} 
+            sec-FullWidthItem-{{ section.settings.mobile_horizontal }} 
+            sec-FullWidthItem-{{ section.settings.mobile_vertical }}
+            ">
+            <div class="sec-FullWidthItem_Media">
+              {%- if section.settings.desktop_video != blank -%}
+                <video class="sec-FullWidthItem_Video sec-FullWidthItem_Video-desktop" autoplay loop muted playsinline>
+                  <source src="{{ section.settings.desktop_video }}" type="video/mp4">
+                </video>
+              {%- endif -%}
+
+              {%- if section.settings.mobile_video != blank -%}
+                <video class="sec-FullWidthItem_Video sec-FullWidthItem_Video-mobile" autoplay loop muted playsinline>
+                  <source src="{{ section.settings.mobile_video }}" type="video/mp4">
+                </video>
+              {%- endif -%}
+
+              {%- if section.settings.desktop_image != blank and section.settings.desktop_video == blank -%}
+              <div class="sec-FullWidthItem_Image sec-FullWidthItem_Image-desktop">
+                {%- render 'responsive-image' with
+                  image: section.settings.desktop_image,
+                  width: 2880,
+                  height: 1570
+                -%}
+              </div>
+              {%- endif -%}
+
+              {%- if section.settings.mobile_image != blank and section.settings.mobile_video == blank -%}
+              <div class="sec-FullWidthItem_Image sec-FullWidthItem_Image-mobile">
+                {%- render 'responsive-image' with
+                  image: section.settings.mobile_image,
+                  width: 750,
+                  height: 1200
+                -%}
+              </div>
+              {%- endif -%}
+            </div>
+
+            <div class="sec-FullWidthItem_Overlay
+              {% if section.settings.overlay_desktop %} sec-FullWidthItem_Overlay-{{ section.settings.background_colour_desktop }}BackgroundDesktop{% endif %}
+              {% if section.settings.overlay_mobile %} sec-FullWidthItem_Overlay-{{ section.settings.background_colour_mobile }}BackgroundMobile{% endif %}
+              lyt-Container" style="--DesktopText: {{ section.settings.text_colour_desktop }}; --MobileText: {{ section.settings.text_colour_mobile }};">
+              {%- if section.settings.text != blank or section.settings.title != blank or section.settings.countdown_date != blank -%}
+                <div class="sec-FullWidthItem_Body">
+                  <div class="sec-FullWidthItem_Content">
+                    {%- if section.settings.brand_logo != blank -%}
+                      <div class="sec-FullWidthItem_Logo">
+                        {%- render 'responsive-image',
+                          image: section.settings.brand_logo,
+                          width: 900,
+                          size_by_width: true
+                        -%}
+                      </div>
+                    {%- endif -%}
+
+                    <h1 class="sec-FullWidthItem_Title fz-76_84">{{ section.settings.title }}</h1>
+
+                    {%- if section.settings.text != blank -%}
+                      <div class="sec-FullWidthItem_Text fz-18_25">{{ section.settings.text }}</div>
+                    {%- endif -%}
+
+                    {%- if section.settings.button_url != blank and section.settings.button_text != blank -%}
+                      <div class="sec-FullWidthItem_Cta">
+                        <span class="sec-FullWidthItem_Button sec-FullWidthItem_Button-{{ section.settings.button_style }} sec-FullWidthItem_Button-{{ section.settings.button_style_mobile }} btn-Button">
+                          {{ section.settings.button_text }}
+                        </span>
+                      </div>
+                    {%- endif -%}
+
+                    {%- if section.settings.countdown_date != blank -%}
+                      <div class="sec-FullWidthItem_Countdown sec-FullWidthItem_Countdown-mobile fz-24_29">
+                        {%- render 'countdown-timer',
+                          title: section.settings.countdown_text_mobile,
+                          end_date: section.settings.countdown_date
+                        -%}
+                      </div>
+                      
+                      <div class="sec-FullWidthItem_Countdown sec-FullWidthItem_Countdown-desktop">
+                        {%- render 'countdown-timer',
+                          title: section.settings.countdown_text,
+                          expired_text: section.settings.countdown_text_expired,
+                          end_date: section.settings.countdown_date
+                        -%}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- if section.settings.button_url != blank -%}
+              <a href="{{ section.settings.button_url }}" class="sec-FullWidthItem_FauxLink">
+                <span class="util-ScreenReaderOnly">
+                  {{ section.settings.button_text }}
+                </span>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+  flush: true,
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Full Width Media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "checkbox",
+        "id": "desktop_full_screen",
+        "label": "Desktop Full screen?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_full_screen",
+        "label": "Mobile Full screen?",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Header Styles"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_transparent",
+        "label": "Transparent when over me?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "header_overlay",
+        "label": "Overlay the hero?",
+        "default": false,
+        "info": "Select this checkbox when this is the first section on the page to ensure the header overlays it on page load."
+      },
+      {
+        "type": "select",
+        "id": "header_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      },
+      {
+        "type": "header",
+        "content": "Videos"
+      },
+      {
+        "type": "text",
+        "id": "desktop_video",
+        "label": "Desktop video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "text",
+        "id": "mobile_video",
+        "label": "Mobile video",
+        "info": "Upload the video file to Shopify and then paste the URL here"
+      },
+      {
+        "type": "header",
+        "content": "Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image",
+        "info": "Recommended size: 2880px x 1570px"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image",
+        "info": "Recommended size: 750px x 1200px"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_logo",
+        "label": "Logo image",
+        "info": "Recommended size: 900px x 160px"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },          
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      },
+      {
+        "type": "header",
+        "content": "Countdown Timer"
+      },
+      {
+        "type": "richtext",
+        "id": "countdown_text",
+        "label": "Countdown Text",
+        "default": "<p>New styles coming soon</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "countdown_text_mobile",
+        "label": "Countdown Text Mobile",
+        "default": "<p>Coming soon</p>"
+      },
+      {
+        "type": "text",
+        "id": "countdown_date",
+        "label": "Countdown Timer End Date",
+        "info": "Date Format: Jan 01, 2022"
+      },
+      {
+        "type": "richtext",
+        "id": "countdown_text_expired",
+        "label": "Countdown Time Up Text",
+        "default": "<p>Available Now!</p>"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Styles"
+      },  
+      {
+        "type": "checkbox",
+        "id": "overlay_desktop",
+        "label": "Background overlay?",
+        "default": false,
+        "info": "Add a semi-transparent background to the text overlay"
+      },
+      {
+        "type": "select",
+        "id": "background_colour_desktop",
+        "label": "Background colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "color",
+        "id": "text_colour_desktop",
+        "label": "Text colour",
+        "default": "#ffffff"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "select",
+        "id": "desktop_text_align",
+        "label": "Desktop text alignment",
+        "options": [
+          {
+            "value": "desktopTextLeft",
+            "label": "Left"
+          },
+          {
+            "value": "desktopTextCenter",
+            "label": "Center"
+          },
+          {
+            "value": "desktopTextRight",
+            "label": "Right"
+          }
+        ],
+        "default": "desktopTextLeft"
+      },
+      {
+        "type": "select",
+        "id": "desktop_horizontal",
+        "label": "Desktop horizontal position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "select",
+        "id": "desktop_vertical",
+        "label": "Desktop vertical position",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "middle",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "bottom"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Style"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay_mobile",
+        "label": "Background overlay?",
+        "default": false,
+        "info": "Add a semi-transparent background to the text overlay"
+      },
+      {
+        "type": "select",
+        "id": "background_colour_mobile",
+        "label": "Background colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "color",
+        "id": "text_colour_mobile",
+        "label": "Text colour",
+        "default": "#ffffff"
+      },
+      {
+        "type": "select",
+        "id": "button_style_mobile",
+        "label": "Mobile Button style",
+        "options": [
+          {
+            "value": "mobileLight",
+            "label": "Light"
+          },
+          {
+            "value": "mobileDark",
+            "label": "Dark"
+          }
+        ],
+        "default": "mobileLight"
+      },
+      {
+        "type": "select",
+        "id": "mobile_text_align",
+        "label": "Mobile text alignment",
+        "options": [
+          {
+            "value": "mobileTextLeft",
+            "label": "Left"
+          },
+          {
+            "value": "mobileTextCenter",
+            "label": "Center"
+          },
+          {
+            "value": "mobileTextRight",
+            "label": "Right"
+          }
+        ],
+        "default": "mobileTextLeft"
+      },
+      {
+        "type": "select",
+        "id": "mobile_horizontal",
+        "label": "Mobile horizontal position",
+        "options": [
+          {
+            "value": "mobileLeft",
+            "label": "Left"
+          },
+          {
+            "value": "mobileCenter",
+            "label": "Center"
+          },
+          {
+            "value": "mobileRight",
+            "label": "Right"
+          }
+        ],
+        "default": "mobileLeft"
+      },
+      {
+        "type": "select",
+        "id": "mobile_vertical",
+        "label": "Mobile vertical position",
+        "options": [
+          {
+            "value": "mobileTop",
+            "label": "Top"
+          },
+          {
+            "value": "mobileMiddle",
+            "label": "Middle"
+          },
+          {
+            "value": "mobileBottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "mobileBottom"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Full Width Media"
+      }
+    ]
+  }
+{% endschema %}

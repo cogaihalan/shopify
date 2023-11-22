@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="{{ 'section-usps-marquee.css' | asset_url }}">
+
+<script src="{{ 'marquee-element.js' | asset_url }}" type="module"></script>
+
+{%- capture body -%}
+  <marquee-element class="sec-UspMarquee mq-Marquee"
+    style="--Marquee_Gap:{{ section.settings.gap }}px;--Marquee_Speed:{{ section.settings.speed | default: 10 }}s; background-color: {{ section.settings.background_colour }}">
+
+    <div class="sec-UspMarquee_Items mq-Marquee_Items">
+      {%- for block in section.blocks -%}
+        <div class="sec-UspMarquee_Item mq-Marquee_Item" {{ block.shopify_attributes }}>
+          <div class="sec-UspMarquee_Text rte-RichText fz-14_15">
+            {{ block.settings.title }}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </marquee-element>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+  flush: true,
+  body: body
+-%}
+
+{% schema %}
+  {
+  "name": "USPs Marquee",
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "#",
+      "label": "Speed",
+      "info": "Ticker Speed",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap",
+      "info": "Item Gap",
+      "default": 100
+    },
+    {
+    "type": "color",
+    "id": "background_colour",
+    "label": "Background Colour",
+    "default": "#F7D7D0",
+    "info": "Brand Colours"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "USPs Marquee"
+      }
+    ]
+  }
+{% endschema %}

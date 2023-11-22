@@ -1,0 +1,17 @@
+{% comment %}
+  /*
+  |--------------------------------------------------------------------------
+  | Navigation Link Title Attribute Text
+  |--------------------------------------------------------------------------
+  | Parameters:
+  | 
+  | link
+  | [Type: LinkDrop]
+  | 
+  */
+{% endcomment %}
+{%- liquid 
+  assign link_text_parts = link.title | split: "["
+  assign link_title = link_text_parts.first | strip_html
+-%}
+{{- link_title -}}

@@ -1,0 +1,143 @@
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-nav.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-currency.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- render 'drawers-nav',
+  drawer_handle: 'menu',
+  parents_drawer_handle: 'menu',
+  blocks: section.blocks,
+
+  main_linklist: section.settings.main_linklist,
+  footer_linklist: section.settings.footer_linklist
+-%}
+
+{% schema %}
+  {
+    "name": "Mobile Menu",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "main_linklist",
+        "label": "Navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "Footer Links"
+      }  
+    ],
+    "blocks": [
+      {
+        "type": "promo",
+        "name": "Promotion",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Promo Tag",
+            "info": "The tag entered here determines which tag in the navigation will be replaced by this promo item eg [promo: clothing]"
+          },
+          {
+            "type": "image_picker",
+            "id": "promo_image",
+            "label": "Image",
+            "info": "Recommended size: 610px x 260px"
+          },
+          {
+            "type": "text",
+            "id": "promo_title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "promo_url",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "promo_link_text",
+            "label": "Link Text"
+          },
+          {
+            "type": "color",
+            "id": "promo_text_color",
+            "label": "Text Colour",
+            "default": "#ffffff",
+            "info": "The colour of the text that will overlay the image"
+          }
+        ]
+      },
+      {
+        "type": "image-cta",
+        "name": "Image CTA",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Recommended Dimensions: 610px x 360px"
+          },
+          {
+            "type": "text",
+            "id": "url_text",
+            "label": "Link Text",
+            "default": "Shop Now"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Colour",
+            "default": "#ffffff",
+            "info": "The colour of the text that will overlay the image"
+          }
+        ]
+      },
+      {
+        "type": "link-icon",
+        "name": "Link Icon",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "icon",
+            "label": "Icon",
+            "info": "For this to work you will need to convert the SVG to Base64 using this website: https://base64.guru/converter/encode/image/svg. You will need to upload the file using the choose file button and then click on Encode SVG to Base64 button. This will then show the code underneath and this can then be copy & pasted into the text box above."
+          },
+          {
+            "type": "range",
+            "id": "width",
+            "label": "width",
+            "min": 2,
+            "max": 200,
+            "step": 2,
+            "default": 60
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

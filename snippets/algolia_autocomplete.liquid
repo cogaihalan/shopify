@@ -1,0 +1,254 @@
+<script>
+  (function(algolia) {
+    'use strict';
+
+    algolia.mainTemplate = function mainTemplate({ html, state }, elements, displaySuggestions) {
+      if (state.query === '') {
+        return html `<div class="aa-PanelLayout aa-Panel--scrollable">
+          <div class="aa-PanelSection">
+            <div class="aa-PanelSection--top">
+              <div class="aa-PanelSection--top-left aa-PanelSectionRecent--active" data-recent-search-el="wrapper">
+                <div class="aa-SourceHeader">
+                  <span class="aa-SourceHeaderTitle">
+                    {{ 'algolia.recent_searches' | t }}
+                    <span data-recent-search-el="heading"></span>
+                  </span>
+                </div>
+                <section class="aa-Source">
+                  <ul class="aa-List" data-recent-search-el="list"></ul>
+                </section>
+              </div>
+
+              {%- liquid
+                assign usefulPagesMetafield = shop.metafields.algolia.useful_pages
+                assign usefulPagesTitle = linklists[usefulPagesMetafield].title
+                assign usefulPagesLinks = linklists[usefulPagesMetafield].links
+                assign usefulPagesLinkCount = usefulPagesLinks.size
+              -%}
+
+              {%- if usefulPagesLinkCount > 0 -%}
+
+              <div class="aa-PanelSection--top-center">
+                <div>
+                  ${displaySuggestions && html`
+                    <div class="aa-SourceHeader">
+                      <span class="aa-SourceHeaderTitle">{{- 'algolia.popular_searches' | t }} (${elements.querySuggestionsPlugin.props.children[1].props.children.length})</span>
+                    </div>
+                      ${elements.querySuggestionsPlugin}`}
+                </div>
+              </div>
+              {%- endif -%}
+
+              <div class="aa-PanelSection--top-right">
+                <div class="aa-SourceHeader">
+                  <span class="aa-SourceHeaderTitle">{{- usefulPagesTitle }} ({{- usefulPagesLinkCount -}})</span>
+                </div>
+
+                <section class="aa-Source">
+                  <ul class="aa-List">
+                    {%- for link in usefulPagesLinks -%}
+                      <li class="aa-Item">
+                        <a class="aa-ItemLink aa-ItemWrapper" href="{{- link.url -}}">
+                          <div class="aa-ItemContent">
+                            <div class="aa-ItemContentBody">
+                              <div class="aa-ItemContentTitle">{{- link.title -}}</div>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </section>
+              </div>
+            </div>
+
+            {%- assign popularCollectionSize = shop.metafields.algolia_collection.title.size -%}
+            {%- if popularCollectionSize > 0 -%}
+              <div class="aa-PanelSection--bottom">
+                <div class="aa-SourceHeader">
+                  <span class="aa-SourceHeaderTitle">{{- 'algolia.popular_collections' | t }} ({{- popularCollectionSize -}})</span>
+                </div>
+                <div class="aa-Collections">
+                  {%- for imageObject in shop.metafields.algolia_collection.image -%}
+                    <div class="aa-Collection">
+                      <a class="aa-CollectionLink" href="{{- shop.metafields.algolia_collection.link[forloop.index0] -}}">
+                        <div class="aa-CollectionBody">
+                          <div class="aa-CollectionMedia">
+                            <div class="aa-CollectionImage">
+                              {%- render 'responsive-image-metafield',
+                                image: imageObject.first,
+                                width: 800,
+                                height: 1130
+                              -%}
+                            </div>
+                          </div>
+
+                          <div class="aa-CollectionContent">
+                            {%- if shop.metafields.algolia_collection.title[forloop.index0] != blank -%}
+                              <p class="aa-CollectionTitle">{{- shop.metafields.algolia_collection.title[forloop.index0] -}}</p>
+                            {%- endif -%}
+
+                            {%- if shop.metafields.algolia_collection.strapline[forloop.index0] != blank -%}
+                              <p class="aa-CollectionStrapline">{{- shop.metafields.algolia_collection.strapline[forloop.index0] -}}</p>
+                            {%- endif -%}
+
+                            <div class="aa-CollectionArrow">
+                              {%- render 'bao-icon-chevron-right' -%}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="aa-CollectionFooter">
+                          <p class="aa-CollectionButton">
+                            {%- if shop.metafields.algolia_collection.cta[forloop.index0] != blank -%}
+                              {{- shop.metafields.algolia_collection.cta[forloop.index0] -}}
+                            {%- else -%}
+                              {{- 'algolia.shop_the_collection' | t -}}
+                            {%- endif -%}
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                </div>
+                <div class="aa-UsefulPages">
+                  <div class="aa-SourceHeader">
+                    <span class="aa-SourceHeaderTitle">{{- usefulPagesTitle }} ({{- usefulPagesLinkCount -}})</span>
+                  </div>
+
+                  <section class="aa-Source">
+                    <ul class="aa-List">
+                      {%- for link in usefulPagesLinks -%}
+                        <li class="aa-Item">
+                          <a class="aa-ItemLink aa-ItemWrapper" href="{{- link.url -}}">
+                            <div class="aa-ItemContent">
+                              <div class="aa-ItemContentBody">
+                                <div class="aa-ItemContentTitle">{{- link.title -}}</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            {%- endif -%}
+
+            {%- assign mobileAdvertTitle = shop.metafields.algolia_mobile_advert.title -%}
+            {%- assign mobileAdvertCta = shop.metafields.algolia_mobile_advert.call_to_action -%}
+            {%- assign mobileAdvertImage = shop.metafields.algolia_mobile_advert.image -%}
+            {%- assign mobileAdvertLink = shop.metafields.algolia_mobile_advert.link -%}
+            {%- if mobileAdvertImage != blank and mobileAdvertLink != blank -%}
+              <div class="aa-Advert">
+                <a class="aa-AdvertLink" href="{{- mobileAdvertLink -}}">
+                  <div class="aa-AdvertBody">
+                    <div class="aa-AdvertMedia">
+                      <div class="aa-AdvertImage">
+                        {%- render 'responsive-image-metafield',
+                          image: mobileAdvertImage.first,
+                          width: 1500,
+                          height: 885
+                        -%}
+                      </div>
+                    </div>
+
+                    <div class="aa-AdvertContent">
+                      {%- if mobileAdvertTitle != blank -%}
+                        <p class="aa-AdvertTitle">{{- mobileAdvertTitle -}}</p>
+                      {%- endif -%}
+
+                      {%- if mobileAdvertCta != blank -%}
+                        <p class="aa-AdvertCta">{{- mobileAdvertCta -}}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <button class="aa-Close" type="button">
+          <span class="aa-CloseIcon">
+            {%- render 'bao-icon-close' -%}
+          </span>
+          <span class="util-ScreenReaderOnly">
+            {{ 'accessibility.close' | t }}
+          </span>
+        </button>
+
+        <div class="aa-PanelBackdrop"></div>`
+      } else {
+        return html `<div class="aa-PanelLayout aa-Panel--scrollable">
+          ${displaySuggestions && html
+          `<div class="aa-PanelSection">
+            <div class="aa-PanelSection--top">
+              <div class="aa-PanelSection--full aa-PanelSection--productSuggestions">
+                <div class="aa-SourceHeader">
+                  <span class="aa-SourceHeaderTitle">{{- 'algolia.search_suggestions' | t }} (${elements.querySuggestionsPlugin.props.children[1].props.children.length})</span>
+                </div>
+                ${elements.querySuggestionsPlugin}
+              </div>
+            </div>
+          </div>
+          `}
+
+          <div class="aa-PanelSections">
+            <div class="aa-PanelSection--left">
+              ${elements.collections}
+              ${elements.articles}
+              ${elements.pages}
+
+              {%- liquid
+                assign usefulPagesMetafield = shop.metafields.algolia.useful_pages
+                assign usefulPagesTitle = linklists[usefulPagesMetafield].title
+                assign usefulPagesLinks = linklists[usefulPagesMetafield].links
+                assign usefulPagesLinkCount = usefulPagesLinks.size
+              -%}
+
+              {%- if usefulPagesLinkCount > 0 -%}
+                <div class="aa-PanelSection--useful">
+                  <div class="aa-SourceHeader">
+                    <span class="aa-SourceHeaderTitle">{{- usefulPagesTitle }} ({{- usefulPagesLinkCount -}})</span>
+                  </div>
+
+                  <section class="aa-Source">
+                    <ul class="aa-List">
+                      {%- for link in usefulPagesLinks -%}
+                        <li class="aa-Item">
+                          <a class="aa-ItemLink aa-ItemWrapper" href="{{- link.url -}}">
+                            <div class="aa-ItemContent">
+                              <div class="aa-ItemContentBody">
+                                <div class="aa-ItemContentTitle">{{- link.title -}}</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </section>
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="aa-PanelSection--right">
+              ${elements.products}
+            </div>
+          </div>
+        </div>
+
+        <button class="aa-Close" type="button">
+          <span class="aa-CloseIcon">
+            {%- render 'bao-icon-close' -%}
+          </span>
+          <span class="util-ScreenReaderOnly">
+            {{ 'accessibility.close' | t }}
+          </span>
+        </button>
+
+        <div class="aa-PanelBackdrop"></div>`
+      }
+    };
+  })(window.algoliaShopify);
+</script>

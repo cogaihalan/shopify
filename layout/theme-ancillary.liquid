@@ -1,0 +1,82 @@
+{% comment %}ly_liquid_scripts_begin{% endcomment %}{% capture ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}<!doctype html>
+  <html class="util-NoJs" lang="{{ request.locale.iso_code }}"{% comment %}ly_dir_replace_for_[]_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%} dir="rtl" {%- endif -%}{% comment %}ly_dir_replace_end{% endcomment %}>
+
+    <head>
+
+      <link
+        rel="stylesheet"
+        href="{{ 'rtl.css' | asset_url }}"
+      >
+
+      {%- render 'theme-head' -%}
+    
+      {{ content_for_header }}
+    
+      {%- liquid
+        if settings.enable_algolia
+          render 'algolia-theme'
+        endif
+      -%}
+    </head>
+    {%- liquid
+    assign usps_above_hero = false
+    if request.page_type == "collection" and collection.metafields.settings.usps_above_hero != blank
+    assign usps_above_hero = true
+    endif
+    -%}
+    
+    <body id="{{ page_title | handle }}"
+          class="lyt-Site template-{{ template.name | handle }} template-{{ template.name | handle }}-{{ template.suffix | handle }} lyt-Site-transparentHeader{% if usps_above_hero %} lyt-Site-uspsAboveHero{% endif %}{% if settings.colour_theme != 'default' %} lyt-Site-{{ settings.colour_theme }}{% endif %}"
+          data-layout-header-external-el="body"
+    >
+    
+      {{ 'page-ancillary.css' | asset_url | stylesheet_tag }}
+    
+      {%- render 'theme-body-top' -%}
+    
+      <section class="pg-Ancillary pg-Ancillary-{{ template.suffix }}">
+    
+        <div class="pg-Ancillary_Nav">
+          {%- section 'page-navigation' -%}
+        </div>
+    
+        <div class="pg-Ancillary_Inner lyt-Container">
+    
+          <div class="pg-Ancillary_Header">
+    
+            <h1 class="pg-Ancillary_Title fz-34_37">
+              {%- if template == 'search' -%}
+                {{- 'templates.search.title' | t -}}
+              {%- else -%}
+                {{ page.title | escape }}
+              {%- endif -%}
+            </h1>
+    
+          </div>
+    
+        </div>
+    
+        <div class="pg-Ancillary_Inner{% unless template.suffix == "contact" %} lyt-Container{% endunless %}">
+    
+          <div class="pg-Ancillary_Body">
+            <div class="pg-Ancillary_Content">
+              {{ content_for_layout }}
+            </div>
+          </div>
+    
+        </div>
+      </section>
+    
+      {%- render 'theme-body-bottom' -%}
+    
+      {%- comment -%}theme-check-disable MissingTemplate{%- endcomment -%}
+      {% render 'swymSnippet' %}
+      {%- comment -%}theme-check-enable MissingTemplate{%- endcomment -%}
+      <script src="{{ 'seedgrow-whatsapp-init.js' | asset_url }}" defer="defer"></script><script src="{{ 'seedgrow-whatsapp-lib.js' | asset_url }}" defer="defer"></script>
+      <!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end -->
+    </body>
+    {% include 'mlveda-currencies-switcher' %}
+    {% include 'mlveda-currencies' %}
+    {% include 'mlveda-flag' %}
+    {% include 'mlveda-currencies-style' %}
+    </html>

@@ -1,0 +1,41 @@
+<div class="art-UpsellItem{% if link != blank %} art-UpsellItem-hasLink util-FauxLink{% endif %}">
+  <div class="art-UpsellItem_ImageContainer">
+    <div class="art-UpsellItem_Image">
+      {%- render 'responsive-image-metafield',
+        image: image.first,
+        width: 1300,
+        height: 1735
+      -%}
+    </div>
+
+    {%- if link != blank -%}
+      <div class="art-UpsellItem_Link">
+        <div class="art-UpsellItem_Icon">
+          {%- render 'bao-icon-bag' -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="art-UpsellItem_Content">
+    {%- if title != blank -%}
+      <h3 class="art-UpsellItem_Title fz-18_22">
+        {{ title }}
+      </h3>
+    {%- endif -%}
+
+    {%- if text != blank -%}
+      <p class="art-UpsellItem_Text fz-14_20">
+        {{ text }}
+      </p>
+    {%- endif -%}
+  </div>
+
+  {%- if link != blank -%}
+    <a class="art-UpsellItem_FauxLink util-FauxLink_Link" href="{{ link }}">
+      <span class="util-ScreenReaderOnly">
+        {{ title }}
+      </span>
+    </a>
+  {%- endif -%}
+</div>

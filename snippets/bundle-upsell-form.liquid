@@ -1,0 +1,123 @@
+{%- liquid
+  assign product_form_id = 'product-form-product-bundle-upsell'
+  assign current_variant = upsell_product.selected_or_first_available_variant
+
+  assign enable_preorders = false
+  if upsell_product.available == true and upsell_product.metafields.stock_management.enable_preorder != blank
+    assign enable_preorders = true
+  endif
+-%}
+
+{%- if upsell_product.featured_image != blank -%}
+  <a href="{{ upsell_product.url }}">
+    <div class="bup-Item_Image">
+      {%- render 'responsive-image', image: upsell_product.featured_image, width: 200, height: 200 -%}
+    </div>
+  </a>
+{%- endif -%}
+
+<div class="bup-Item_Info">
+  <product-form>
+    {%- form 'product',
+      upsell_product,
+      id: product_form_id,
+      class: 'bup-Form',
+      data-push-cart-form: '',
+      data-product-form: '',
+      data-product-handle: upsell_product.handle,
+      data-product-drawer-external-el: 'bundle-upsell-product-form',
+      data-bundle-upsell-form: ''
+    -%}
+
+      <div class="bup-Actions">
+        <button class="bup-Action bup-Action-wishlist"
+          data-bundle-upsell-el="wishlistButton"
+          data-wishlist-button
+          data-product-form-wishlist-el
+          data-product-id="{{- upsell_product.id -}}"
+          data-variant-id="{{- upsell_product.selected_or_first_available_variant.id -}}"
+          data-product-url="{{- shop.url -}}{{- upsell_product.url -}}"
+          type="button">
+          {%- render 'bao-icon-heart' -%}
+
+          <span class="util-ScreenReaderOnly">
+            {{ 'products.product.add_to_wishlist' | t }}
+          </span>
+        </button>
+      </div>
+
+      {%- if upsell_product.metafields.product_details.strapline != blank -%}
+        <a href="{{ upsell_product.url }}">
+          <p class="bup-Item_Strapline fz-18_22">{{ upsell_product.metafields.product_details.strapline }}</p>
+        </a>
+      {%- endif -%}
+
+      <div class="bup-Item_Price fz-14_20">
+        {%- render 'product-price', product: upsell_product -%}
+      </div>
+
+      <div class="bup-Item_Title fz-14_20">
+        {{ upsell_product.title }}
+      </div>
+
+      <div class="bup-Item_Options">
+        {%- render 'select-options', product: upsell_product, section: section -%}
+
+        <input type="hidden" name="id" value="{{ upsell_product.selected_or_first_available_variant.id }}">
+        <input type="hidden" name="quantity" value="1">
+
+        {%- if enable_preorders -%}
+          <input type="hidden" name="properties[_preorder]" value="true">
+        {%- endif -%}
+      </div>
+
+      <div class="bup-Buttons">
+        <button
+          class="bup-Button bup-Button-addtocart btn-Button btn-Button-tertiary btn-Button-fullWidth btn-Button-square"
+          type="submit"
+          name="add"
+          aria-hidden="{% if current_variant.available %}false{% else %}true{% endif %}"
+          data-back-in-stock-enabled="true"
+          {% unless current_variant.available %}disabled="disabled"{% endunless %}
+          data-product-bundle-upsell-add-to-cart
+          data-product-id="{{- upsell_product.id -}}"
+          data-bundle-upsell-el="submit"
+        >
+          <span class="bup-ButtonIcon bup-ButtonIcon-addtocart">
+            {%- render 'bao-icon-bag' -%}
+          </span>
+
+          <span
+            class="bup-ButtonText"
+            data-enable-pre-orders="{{- enable_preorders -}}"
+            data-product-bundle-upsell-add-to-cart-text
+            data-product-id="{{- upsell_product.id -}}"
+          >
+            {%- if current_variant.available -%}
+              {%- if enable_preorders -%}
+                {{ 'products.product.pre_order_upsell' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- endif -%}
+          </span>
+        </button>
+
+        <button class="bup-Button bup-Button-backInStock btn-Button btn-Button-primary btn-Button-fullWidth btn-Button-square"
+          type="button"
+          aria-hidden="{% if current_variant.available %}true{% else %}false{% endif %}"
+          data-product-bundle-upsell-back-in-stock
+          data-product-id="{{- upsell_product.id -}}"
+          data-back-in-stock-external-el="trigger"
+          data-drawers-trigger="back-in-stock"
+        >
+          {{- 'products.back_in_stock.notify_me' | t -}}
+        </button>
+      </div>
+
+    {%- endform -%}
+  </product-form>
+
+</div>

@@ -1,0 +1,128 @@
+{%- liquid 
+  assign is_collection = false
+  if link.type == "collection_link"
+    assign is_collection = true
+  endif
+
+  assign has_image = false
+  if is_collection and link.object.featured_image != blank
+    assign has_image = true
+  endif
+-%}
+
+<site-drawer class="drw-Drawer drw-Drawer-menu drw-Drawer-fromLeft" key="{{ drawer_handle }}">
+  <header class="drw-Drawer_Header drw-Nav_Header {% if has_image %} drw-Nav_Header-hasImage{% endif %}">
+    {% if has_image %}
+      <div class="drw-Nav_HeaderImage">
+        {% render 'responsive-image', 
+          image: link.object.featured_image,
+          width: 730,
+          height: 480
+        %}
+      </div>
+    {% endif %}
+    <div class="drw-Nav_Actions">
+      <button
+        class="drw-Nav_Back fz-24_29"
+        type="button"
+        data-drawers-back="{{ drawer_handle }}"
+      >
+        <span class="drw-Nav_LinkIcon drw-Nav_LinkIcon-back">
+          <span class="drw-Nav_Svg">
+            {%- render 'bao-icon-chevron-left' -%}
+          </span>
+        </span>
+
+        {{ parents_title }}
+      </button>
+
+      <button
+              type="button"
+              class="drw-Drawer_Close"
+              data-drawers-close
+      >
+        <span class="drw-Drawer_Icon drw-Drawer_Icon-close">
+          {%- render 'bao-icon-close' -%}
+        </span>
+        <span class="util-ScreenReaderOnly">
+          {{ 'accessibility.close' | t }}
+        </span>
+      </button>
+    </div>
+
+    {%- if is_collection and has_image -%}
+      <a class="drw-Nav_Link-button btn-Button btn-Button-quaternary" href="{{- link.url -}}">
+        {{ 'accessibility.shop_all' | t }} {{ link.object.title }}
+      </a>
+    {%- endif -%}
+  </header>
+
+  <div class="drw-Drawer_Inner">
+    <div class="drw-Drawer_Nav">
+      <nav class="drw-Nav">
+        <ul class="drw-Nav_Items">
+          {%- if is_collection and has_image == false -%}
+            <li class="drw-Nav_Item">
+              <a
+                class="drw-Nav_Link fz-16_18"
+                href="{{- link.url -}}">
+                {{ 'accessibility.shop_all' | t }} {{ link.object.title }}
+              </a>
+            </li>
+          {%- endif -%}
+
+          {%- for link in link.links -%}
+            {%- if link.links != blank -%}
+              <li class="drw-Nav_Item drw-Nav_Item-hasChild">
+                {%- assign child_drawer_handle = link.handle | append: '-' | append: link.levels -%}
+
+                <button
+                  type="button"
+                  class="drw-Nav_Link fz-16_18"
+                  {% if link.active %}aria-current="page"{% endif %}
+                  data-drawers-trigger="{{ child_drawer_handle }}"
+                  data-drawers-sub-nav
+                  data-drawers-parent-keys="{{ parents_drawer_handle }}"
+                >
+                  {%- render 'drawers-nav-link-text', link: link -%}
+
+                  <span class="drw-Nav_LinkIcon">
+                    {%- render 'bao-icon-chevron-right' -%}
+                  </span>
+                </button>
+
+                {%- liquid
+                  assign link_title_parts = link.title | split: "["
+                  assign parents_title = link_title_parts.first | strip
+                  assign new_parents_drawer_handle = drawer_handle | append: ',' | append: child_drawer_handle
+                -%}
+
+                {%- render 'drawers-nav-grandchild',
+                  drawer_handle: child_drawer_handle,
+                  parents_drawer_handle: new_parents_drawer_handle,
+                  parents_title: parents_title,
+
+                  link: link
+                -%}
+              </li>
+            {%- else -%}
+              {%- if link.title contains '[promo' -%}
+                {%- render 'drawers-nav-promo', link: link -%}
+              {%- else -%}
+                <li class="drw-Nav_Item">
+                  <a
+                    class="drw-Nav_Link fz-16_18"
+                    href="{{ link.url }}"
+                    {% if link.active %}aria-current="page"{% endif %}>
+                    {%- render 'drawers-nav-link-text', link: link -%}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</site-drawer>

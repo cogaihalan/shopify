@@ -1,0 +1,32 @@
+/* eslint-disable */
+(function(algolia) {
+  'use strict';
+
+  const createQuerySuggestionsPlugin = algolia.externals.createQuerySuggestionsPlugin;
+  const { config, suggestionsTemplate } = algolia;
+
+  algolia.querySuggestionsPlugin = createQuerySuggestionsPlugin({
+    searchClient: algolia.searchClient,
+    indexName: config.query_suggestions_index_name,
+    getSearchParams() {
+      return {
+        hitsPerPage: config.suggestions_autocomplete_hits_per_page,
+      };
+    },
+    transformSource({ source }) {
+      return {
+        ...source,
+        getItemUrl({ item }) {
+          return `/search?q=${item.query}`;
+        },
+        templates: {
+          ...source.templates,
+          item(params) {
+            const { item, html, components } = params;
+            return suggestionsTemplate({ item, html, components });
+          },
+        },
+      };
+    }
+  });
+})(window.algoliaShopify);

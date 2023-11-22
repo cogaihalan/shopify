@@ -1,0 +1,110 @@
+<div class="crt-Products" id="{{- section.id -}}" data-section-type="cart-items">
+  <div class="crt-Products_Items">
+  {%- for line_item in cart.items -%}
+    {%- unless line_item.product.title contains 'Order Protection' -%}
+      <cart-item class="crt-Products_Item" data-key="{{ line_item.key }}">
+        <div class="crt-Product">
+          <a class="crt-Product_ImageContainer" href="{{ line_item.url }}">
+            {%- render 'responsive-image',
+              image: line_item.image,
+              width: 270,
+              height: 400
+            -%}
+          </a>
+
+          <div class="crt-Product_Content">
+            {%- assign strapline = line_item.product.metafields.product_details.strapline -%}
+            {%- if strapline != blank -%}
+            <p class="crt-Product_Strapline fz-18_22">
+              {{ strapline }}
+            </p>
+            {%- endif -%}
+
+            <h3 class="crt-Product_Title fz-14_20">
+              <a class="crt-Product_TitleLink" href="{{ line_item.url }}">
+                {{ line_item.title }}
+              </a>
+            </h3>
+
+            <p class="crt-Product_Price fz-14_22">
+              {%- if line_item.variant.compare_at_price > line_item.variant.price -%}
+
+                <s class="crt-Product_Price crt-Product_Price-compare">
+                  {{- line_item.variant.compare_at_price | times: line_item.quantity | money -}}
+                </s><span class="crt-Product_Price crt-Product_Price-sale">
+                  {{- line_item.final_line_price | money -}}
+                </span>
+              {%- else -%}
+                <span class="crt-Product_Price">
+                  {{- line_item.final_line_price | money -}}
+                </span>
+              {%- endif -%}
+            </p>
+
+            {%- liquid
+              assign is_pre_order = false
+              if line_item.properties['_preorder'] != blank
+                assign is_pre_order = true
+              endif
+            -%}
+
+            {%- if is_pre_order -%}
+              <p class="crt-Product_PreOrder fz-14_22">
+                {{ 'cart.products.preorder' | t }}
+              </p>
+            {%- endif -%}
+
+            <div class="crt-Product_Details">
+              <div class="crt-Product_Quantity">
+                <div class="crt-Product_SelectField frm-Form_SelectField">
+                  <select class="crt-Product_Select frm-Form_Select" data-cart-item-el="quantity" name="quantity">
+                    {%- liquid
+                      assign default_maximum_quantity = line_item.quantity | plus: 15
+                      assign maximum_quantity = default_maximum_quantity
+                      if line_item.variant.inventory_policy == "deny" and line_item.variant.inventory_quantity > 0
+                        assign maximum_quantity = line_item.variant.inventory_quantity
+                      endif
+                      -%}
+                    {%- for index in (1..maximum_quantity) -%}
+                    <option
+                      value="{{- index -}}"
+                      {% if index == line_item.quantity %}selected{% endif%}
+                      >
+                      {{ index }}
+                    </option>
+                    {%- endfor -%}
+                  </select>
+                  <span class="crt-Product_SelectIcon frm-Form_SelectIcon">
+                    {%- render 'bao-icon-chevron-down' -%}
+                  </span>
+                </div>
+              </div>
+
+              {%- comment -%}
+              <button class="crt-Product_Button crt-Product_Button-update fz-13_13" type="button" data-el="cart.update">
+                <span class="crt-Product_ButtonText">
+                  {{ 'cart.products.update' | t }}
+                </span>
+              </button>
+              {%- endcomment -%}
+
+              <button class="crt-Product_Button crt-Product_Button-remove fz-13_13" type="button" data-cart-item-el="remove">
+                <span class="crt-Product_ButtonText">
+                  {{ 'cart.products.remove' | t }}
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </cart-item>
+    {%- endunless -%}
+  {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cart Items",
+    "settings": []
+  }
+{% endschema %}

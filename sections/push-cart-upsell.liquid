@@ -1,0 +1,71 @@
+{%- if cart.attributes['last_added_product_id'] != blank and cart.attributes['hide_upsell'] != 'true' -%}
+	{{ 'push-cart-upsell.css' | asset_url | stylesheet_tag }}
+
+	<push-cart-upsell
+		id="{{ section.id }}"
+		data-section-id="{{ section.id }}"
+		data-section-type="push-cart-upsell"
+		url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ cart.attributes['last_added_product_id'] }}&limit=1"
+	>
+		{%- if recommendations.performed and recommendations.products_count > 0 -%}
+			{%- assign upsell_product = recommendations.products | first -%}
+
+			<div class="psh-CartUpsell">
+				<a href="{{ upsell_product.url }}" class="psh-CartUpsell_ImageContainer">
+					{%- render 'responsive-image',
+						image: upsell_product.featured_image,
+						width: 160,
+						size_by_width: true
+          -%}
+				</a>
+
+				<div class="psh-CartUpsell_Content">
+					<h3 class="psh-CartUpsell_Title fz-14_24">{{ section.settings.title }}</h3>
+					{%- assign product_title = upsell_product.title | split: '|' -%}
+					<a href="{{ upsell_product.url }}" class="psh-CartUpsell_ItemTitle fz fz-13_22">{{ product_title.first }}</a>
+
+					<product-form>
+						{%- assign product_form_id = product.id | prepend: 'push_cart_upsell_product_form_' -%}
+
+						{%- form 'product',
+							product,
+							id: product_form_id,
+							class: 'psh-CartUpsell_Form',
+							data-push-cart-form: '',
+							data-product-form: '',
+							data-product-handle: upsell_product.handle
+            -%}
+							<input type="hidden" name="quantity" value="1">
+							<input
+								type="hidden"
+								name="id"
+								value="{{ upsell_product.selected_or_first_available_variant.id }}"
+							>
+
+							<button
+								type="submit"
+								class="psh-CartUpsell_Button btn-Button btn-Button-ghost"
+							>
+								{{ upsell_product.selected_or_first_available_variant.price | money_without_trailing_zeros }} - {{ 'products.product.add_to_cart' | t }}
+							</button>
+						{%- endform -%}
+					</product-form>
+				</div>
+			</div>
+		{%- endif -%}
+	</push-cart-upsell>
+{%- endif -%}
+
+{% schema %}
+{
+	"name": "Push Cart - Upsell",
+	"settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title",
+			"default": "Why not also add..."
+		}
+	]
+}
+{% endschema %}

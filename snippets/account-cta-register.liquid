@@ -1,0 +1,54 @@
+{{ 'account-register-cta.css' | asset_url | stylesheet_tag }}
+
+<div class="acc-RegisterCta">
+
+  {%- if title and title != blank -%}
+  <h2 class="acc-RegisterCta_Title fz-18_22">
+    {{- title-}}
+  </h2>
+  {%- endif -%}
+
+  {%- if text and text != blank -%}
+  <p class="acc-RegisterCta_Intro fz-14_20">
+    {{- text -}}
+  </p>
+  {%- endif -%}
+
+  <div class="acc-RegisterCta_Items">
+
+    <div class="acc-RegisterCta_Item">
+      <span class="acc-RegisterCta_Icon">
+        {%- render 'bao-icon-bag' -%}
+      </span>
+      <p class="acc-RegisterCta_Text fz-13_13">
+        {{- 'customer.register.cta.checkout_faster' | t -}}
+      </p>
+    </div>
+
+    <div class="acc-RegisterCta_Item">
+      <span class="acc-RegisterCta_Icon">
+        {%- render 'bao-icon-heart' -%}
+      </span>
+      <p class="acc-RegisterCta_Text fz-13_13">
+        {{- 'customer.register.cta.wishlists' | t -}}
+      </p>
+    </div>
+
+    <div class="acc-RegisterCta_Item">
+      <span class="acc-RegisterCta_Icon">
+        {%- render 'bao-icon-parcel' -%}
+      </span>
+      <p class="acc-RegisterCta_Text fz-13_13">
+        {{- 'customer.register.cta.order_tracking' | t -}}
+      </p>
+    </div>
+
+  </div>
+
+  {%- if show_link -%}
+  <a class="acc-RegisterCta_Link btn-Button btn-Button-quaternary" href="{{- routes.account_register_url -}}">
+    {{- 'customer.register.cta.create_an_account' | t -}}
+  </a>
+  {%- endif -%}
+
+</div>

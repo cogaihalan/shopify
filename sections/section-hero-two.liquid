@@ -1,0 +1,374 @@
+{{ 'section-hero-two.css' | asset_url | stylesheet_tag }}
+{{ 'section-hero-two-slide.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 1 -%}
+  <script
+    src="{{ 'section-hero-two.js' | asset_url }}"
+    type="module"
+  ></script>
+{%- endif -%}
+
+{%- if section.settings.header_overlay -%}
+<style> .lyt-Site { --Nav_HeightWhenFixed: 0px; padding-top: var(--Announcement_Height); }</style>
+{%- endif -%}
+
+{%- capture body -%}
+  <section-hero 
+    class="sec-HeroTwo{% if section.settings.desktop_full_screen %} sec-HeroTwo-dektopFullScreen{% endif %}{% if section.settings.mobile_full_screen %} sec-HeroTwo-mobileFullScreen{% endif %}{% if section.settings.header_overlay %} sec-HeroTwo-headerOverlay{% endif %}"
+    data-autoplay="{{ section.settings.autoplay_enable }}"
+    data-autoplay-duration="{{ section.settings.autoplay_duration }}"
+    {% if section.settings.header_transparent %} data-header-is-transparent-when-over-me="{{- section.settings.header_colour -}}"{% endif %}>
+    <div class="sec-HeroTwo_Inner">
+      <div class="sec-HeroTwo_Body">
+        <div class="sec-HeroTwo_Carousel">
+          <div class="sec-HeroTwo_Slides" data-el="section-hero.slides">
+            {%- for block in section.blocks -%}
+              <div class="sec-HeroTwo_Slide" data-el="section-hero.slide" data-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+                <div class="sec-HeroTwoSlide">
+                  <div class="sec-HeroTwoSlide_Media">
+                    {%- if block.settings.desktop_video != blank -%}
+                      <video class="sec-HeroTwoSlide_Video sec-HeroTwoSlide_Video-desktop" autoplay loop muted playsinline>
+                        <source src="{{ block.settings.desktop_video }}" type="video/mp4">
+                      </video>
+                    {%- endif -%}
+
+                    {%- if block.settings.mobile_video != blank -%}
+                      <video class="sec-HeroTwoSlide_Video sec-HeroTwoSlide_Video-mobile" autoplay loop muted playsinline>
+                        <source src="{{ block.settings.mobile_video }}" type="video/mp4">
+                      </video>
+                    {%- endif -%}
+
+                    {%- if block.settings.desktop_image != blank and block.settings.desktop_video == blank -%}
+                    <div class="sec-HeroTwoSlide_Image sec-HeroTwoSlide_Image-desktop">
+                      {%- render 'responsive-image' with
+                        image: block.settings.desktop_image,
+                        width: 4470,
+                        height: 2705
+                      -%}
+                    </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.mobile_image != blank and block.settings.mobile_video == blank -%}
+                    <div class="sec-HeroTwoSlide_Image sec-HeroTwoSlide_Image-mobile">
+                      {%- render 'responsive-image' with
+                        image: block.settings.mobile_image,
+                        width: 750,
+                        height: 1170
+                      -%}
+                    </div>
+                    {%- endif -%}
+                  </div>
+
+                  <div class="sec-HeroTwoSlide_Overlay
+                    sec-HeroTwoSlide_Overlay-{{ block.settings.text_colour_desktop }}TextDesktop
+                    sec-HeroTwoSlide_Overlay-{{ block.settings.text_colour_mobile }}TextMobile
+                    {% if block.settings.overlay_desktop %} sec-HeroTwoSlide_Overlay-{{ block.settings.background_colour_desktop }}BackgroundDesktop{% endif %}
+                    {% if block.settings.overlay_mobile %} sec-HeroTwoSlide_Overlay-{{ block.settings.background_colour_mobile }}BackgroundMobile{% endif %}
+                    lyt-Container">
+                    {%- if block.settings.text != blank or block.settings.title != blank -%}
+                      <div class="sec-HeroTwoSlide_Body">
+                        <div class="sec-HeroTwoSlide_Content">
+                          <h1 class="sec-HeroTwoSlide_Title fz-76_84">{{ block.settings.title }}</h1>
+
+                          {%- if block.settings.text != blank -%}
+                            <div class="sec-HeroTwoSlide_Text fz-18_25">{{ block.settings.text }}</div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+
+                  {%- if block.settings.button_url != blank -%}
+                    <a href="{{ block.settings.button_url }}" class="sec-HeroTwoSlide_FauxLink">
+                      <span class="util-ScreenReaderOnly">
+                        {{ block.settings.button_text }}
+                      </span>
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+          {%- if section.blocks.size > 1 -%}
+            <div class="sec-HeroTwo_Footer">
+              {%- for block in section.blocks -%}
+                <button class="sec-HeroTwo_Line" data-slide="{{ forloop.index0 }}" data-el="section-hero.dot"></button>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section-hero>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+  flush: true,
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Autoplay"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay_enable",
+        "label": "Enable autoplay",
+        "default": false,
+        "info": "If you have more than one slide, you can enable autoplay."
+      },
+      {
+        "type": "text",
+        "id": "autoplay_duration",
+        "label": "Autoplay duration",
+        "default": "2000",
+        "info": "1000 = 1 second"
+      },
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "checkbox",
+        "id": "desktop_full_screen",
+        "label": "Desktop Full screen?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_full_screen",
+        "label": "Mobile Full screen?",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Header Styles"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_transparent",
+        "label": "Transparent when over me?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "header_overlay",
+        "label": "Overlay the hero?",
+        "default": false,
+        "info": "Select this checkbox when this is the first section on the page to ensure the header overlays it on page load."
+      },
+      {
+        "type": "select",
+        "id": "header_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "hero_item",
+        "name": "Hero item",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Videos"
+          },
+          {
+            "type": "text",
+            "id": "desktop_video",
+            "label": "Desktop video",
+            "info": "Upload the video file to Shopify and then paste the URL here"
+          },
+          {
+            "type": "text",
+            "id": "mobile_video",
+            "label": "Mobile video",
+            "info": "Upload the video file to Shopify and then paste the URL here"
+          },
+          {
+            "type": "header",
+            "content": "Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image",
+            "info": "Recommended size: 2880px x 1740px"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image",
+            "info": "Recommended size: 750px x 1170px"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "kicker",
+            "label": "Kicker"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "strapline",
+            "label": "Strapline"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Styles"
+          },  
+          {
+            "type": "checkbox",
+            "id": "overlay_desktop",
+            "label": "Background overlay?",
+            "default": false,
+            "info": "Add a semi-transparent background to the text overlay"
+          },
+          {
+            "type": "select",
+            "id": "background_colour_desktop",
+            "label": "Background colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "select",
+            "id": "text_colour_desktop",
+            "label": "Text colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Style"
+          },
+          {
+            "type": "checkbox",
+            "id": "overlay_mobile",
+            "label": "Background overlay?",
+            "default": false,
+            "info": "Add a semi-transparent background to the text overlay"
+          },
+          {
+            "type": "select",
+            "id": "background_colour_mobile",
+            "label": "Background colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "select",
+            "id": "text_colour_mobile",
+            "label": "Text colour",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light"
+              },
+              {
+                "value": "dark",
+                "label": "Dark"
+              }
+            ],
+            "default": "light"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Two"
+      }
+    ]
+  }
+{% endschema %}

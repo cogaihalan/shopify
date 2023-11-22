@@ -1,0 +1,139 @@
+{{ 'account-rewards.css' | asset_url | stylesheet_tag }}
+
+<section class="acc-Rewards_Inner">
+  <div class="acc-Rewards_Columns">
+    <div class="acc-Rewards_Column">
+      <div class="acc-Rewards_ImageContainer">
+        {%- if section.settings.image_mobile != blank -%}
+          <div class="acc-Rewards_Image acc-Rewards_Image-mobile">
+            {%- render 'responsive-image',
+              image: section.settings.image_mobile,
+              width: 750,
+              height: 750
+            -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.image_desktop != blank -%}
+          <div class="acc-Rewards_Image acc-Rewards_Image-desktop">
+            {%- render 'responsive-image',
+              image: section.settings.image_desktop,
+              width: 1430,
+              height: 1440
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="acc-Rewards_Column acc-Rewards_Column-black">
+      <div class="acc-Rewards_Content">
+        {%- if section.settings.strapline != blank -%}
+          <h4 class="acc-Rewards_Strapline fz-16_18">
+            {{- section.settings.strapline -}}
+          </h4>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="acc-Rewards_Title fz-58_64">
+            {{- section.settings.title -}}
+          </h2>
+        {%- endif -%}
+
+        <div class="acc-Rewards_PointsContainer">
+          {%- if section.settings.points_left != blank -%}
+            <p class="acc-Rewards_Points fz-14_20">
+              {{- section.settings.points_left | append: ' ' -}} <span class="acc-Rewards_Points-pink" data-lion-points></span>
+            </p>
+          {%- endif -%}
+          {%- if section.settings.points_used != blank -%}
+            <p class="acc-Rewards_Points fz-14_20">
+              {{- section.settings.points_used | append: ' ' -}} <span class="acc-Rewards_Points-pink" data-lion-points="spent"></span>
+            </p>
+          {%- endif -%}
+          {%- if section.settings.points_earned != blank -%}
+            <p class="acc-Rewards_Points fz-14_20">
+              {{- section.settings.points_earned | append: ' ' -}} <span class="acc-Rewards_Points-pink" data-lion-points="lifetime"></span>
+            </p>
+          {%- endif -%}
+        </div>
+
+        <div class="acc-Rewards_Bar" data-lion-tier-overview></div>
+
+        {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+          <a class="acc-Rewards_Link btn-Button btn-Button-secondary" href="{{ section.settings.button_link }}">
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Account Rewards",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "strapline",
+      "label": "Strapline Text",
+      "default": "Oh Polly Rewards"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Rewards"
+    },
+    {
+      "type": "text",
+      "id": "points_left",
+      "label": "Total Points Left",
+      "default": "Total Points Left:"
+    },
+    {
+      "type": "text",
+      "id": "points_used",
+      "label": "Total Points Used",
+      "default": "Total Points Used:"
+    },
+    {
+      "type": "text",
+      "id": "points_earned",
+      "label": "Total Points Earned",
+      "default": "Total Points Earned:"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Earn More Points"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ]
+}
+{% endschema %}

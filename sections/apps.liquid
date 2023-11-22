@@ -1,4 +1,4 @@
-<div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+<div class="{% if section.settings.include_margins %}page-width{% endif %}">
   {%- for block in section.blocks -%}
     {% render block %}
   {%- endfor -%}
@@ -8,12 +8,12 @@
 {
   "name": "t:sections.apps.name",
   "tag": "section",
-  "class": "section",
+  "class": "spaced-section",
   "settings": [
     {
       "type": "checkbox",
       "id": "include_margins",
-      "default": true,
+      "default": false,
       "label": "t:sections.apps.settings.include_margins.label"
     }
   ],

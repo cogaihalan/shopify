@@ -1,0 +1,123 @@
+{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'product-recommendations.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<product-recommendations
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=12"
+  data-base-url="{{ routes.product_recommendations_url }}"
+  data-product-id="{{ product.id }}"
+  data-limit="12"
+  data-section-id="{{ section.id }}"
+>
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    {%- capture body -%}
+      <div class="sec-ProductRecommendations_Columns{% if section.settings.title != blank %} sec-ProductRecommendations_Columns-{{ section.settings.order }}{% endif %}">
+        <div class="sec-ProductRecommendations_Column sec-ProductRecommendations_Column-content">
+          <div class="sec-ProductRecommendations_Content">
+            {%- if section.settings.title != blank -%}
+              <h2 class="sec-ProductRecommendations_Title fz-38_44">
+                {{ section.settings.title | newline_to_br }}
+              </h2>
+            {%- endif -%}
+          </div>
+        </div>
+    
+        <div class="sec-ProductRecommendations_Column sec-ProductRecommendations_Column-items">
+          <div class="sec-ProductRecommendations_Items">
+            {%- assign product_counter = 0 -%}
+
+            {%- for recommendation in recommendations.products -%}
+              {%- comment %}<locksmith:0c78>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: recommendation, subject_parent: recommendations, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:0c78>{% endcomment -%}
+              {%- if recommendation.type != 'Lens' and recommendation.type != 'Lenses' and recommendation.type != 'Lense Option' and recommendation.type != 'Lens Option' and recommendation.type != 'Service' -%}
+                {%- assign product_counter = product_counter | plus: 1 -%}
+              
+                <div class="sec-ProductRecommendations_Item">
+                  {%- render 'product-card'
+                    product: recommendation
+                  -%}
+                </div>
+
+                {%- if product_counter == 4 -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    {%- endcapture -%}
+
+    {%- render 'section'
+      has_border: section.settings.has_border,
+
+      body: body
+    -%}
+  {%- endif -%}
+</product-recommendations>
+
+{% schema %}
+  {
+    "name": "Recommended products",
+    "templates": ["product"],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "checkbox",
+        "id": "has_border",
+        "label": "Show top border",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "order",
+        "label": "Desktop order",
+        "options": [
+          {
+            "value": "contentLeft",
+            "label": "Content - Products"
+          },
+          {
+            "value": "contentRight",
+            "label": "Products - Content"
+          }
+        ],
+        "default": "contentLeft"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Recommendations"
+      },
+      {
+        "type": "range",
+        "id": "limit",
+        "min": 2,
+        "max": 8,
+        "step": 1,
+        "label": "Product limit",
+        "default": 6
+      }
+    ],
+    "presets": [
+      {
+        "name": "Recommended products"
+      }
+    ]
+  }
+{% endschema %}

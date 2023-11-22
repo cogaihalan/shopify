@@ -1,0 +1,126 @@
+{{ 'product-instagram.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <div class="prd-Instagram">
+    <div class="prd-Instagram_ContentContainer">
+      <div class="prd-Instagram_Content">
+        {%- if section.settings.show_icon == true -%}
+          <div class="prd-Instagram_Icon">
+            {%- render 'bao-icon-instagram' -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="prd-Instagram_Title fz-34_37">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="prd-Instagram_Text rte-RichText fz-14_20">
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="prd-Instagram_Grid">
+      <div id="fsContainer" style="display:none"></div>
+      <script>
+      var fsElement = document.getElementById("fsContainer");
+      function foursixtyInitWithCallback(elem, attrs, callback) {
+        var fsScript = document.createElement("script");
+        elem.innerHTML = "";
+        fsScript.src = "//foursixty.com/media/scripts/fs.slider.v2.5.js";
+        for (var k in attrs) {
+          fsScript.setAttribute(k, attrs[k]);
+        }
+        fsScript.addEventListener("foursixtyPageRendered", callback);
+        elem.appendChild(fsScript);
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        foursixtyInitWithCallback(
+          fsElement,
+          {"data-theme": "slider_v2_5",
+            "data-defer-image-loading": "true",
+            "data-money-format": "£<%= amount %>",
+            "data-open-links-in-same-page": "true",
+            "data-feed-id": "oh-polly_1",
+            "data-cell-size": "33.333%",
+            "data-for-url": "true"
+          },
+          function(event) {
+            // the whole page of results is in event.detail here
+            if (event.detail.length == 0) {
+              foursixtyInitWithCallback(
+                fsElement,
+                {"data-theme": "slider_v2_5",
+                  "data-defer-image-loading": "true",
+                  "data-money-format": "£<%= amount %>",
+                  "data-open-links-in-same-page": "true",
+                  "data-feed-id": "oh-polly_1",
+                  "data-cell-size": "33.333%",
+                  "data-for-url": "false"
+                },
+                function() {
+                  fsElement.style.display = "block";
+                })
+            } else {
+              fsElement.style.display = "block";
+            }
+          })
+      })
+    </script>
+      <style>.fs-has-links::after { padding:10px 15px;background-color:#ffffff;color:rgba(0, 0, 0, 0.8);content:"SHOP THE LOOK"; }  .fs-wrapper { height:auto; } .fs-slider_v2_5  .fs-entry-container { height:0 !important;width:33.333%!important;padding-top:33.333%!important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:10px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:10px; } .fs-slider-next-button, .fs-slider-prev-button { opacity:1; } .fs-wrapper { margin:auto;width:calc(100% - 120px); } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(0, 0, 0, 0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-slider_v2_5 .fs-wrapper div.fs-timeline-entry { margin:0px; } 
+      .fs-service-icon .fs-icon:before {
+display: none;
+}
+
+.fs-service-icon .fs-icon {
+background-image: url("data:image/svg+xml;utf8,<svg id='baoIconBag' viewBox='0 0 18 20' fill='none' xmlns=' http://www.w3.org/2000/svg ' aria-hidden='true'><path fill-rule='evenodd' clip-rule='evenodd' d='M1 19H16.75L15.711 6.53157C15.6624 5.9485 15.175 5.5 14.5899 5.5H3.16015C2.57505 5.5 2.08763 5.9485 2.03904 6.53157L1 19Z' stroke='white'></path><path fill='transparent' d='M12 7C12 6.24543 12 4.43578 12 2.99988C12 1.89531 11.1046 1 10 1H8.00002C6.89545 1 6.00002 1.89543 6.00002 3V7' stroke='white' stroke-linecap='square'></path></svg>");
+height: 24px;
+width: 28px;
+display: block;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+    }      
+      </style>
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- render 'section',
+  background: '#fdf5f5',
+  margin: 'spacingNone',
+
+  body: body
+-%}
+
+{% schema %}
+{
+  "name": "Instagram",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show Instagram icon"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+}
+{% endschema %}

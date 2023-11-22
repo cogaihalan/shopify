@@ -1,0 +1,56 @@
+<div class="drw-Drawer_Nav">
+  <nav class="drw-Nav">
+    <ul class="drw-Nav_Items">
+      {%- for link in linklists['mobile-menu'].links -%}
+        {%- if link.links != blank -%}
+          <li class="drw-Nav_Item drw-Nav_Item-hasChild">
+            {%- assign child_drawer_handle = link.handle | append: '-' | append: link.levels -%}
+
+            <button
+              type="button"
+              class="drw-Nav_Link fz-16_18"
+              {% if link.active %}aria-current="page"{% endif %}
+              data-drawers-trigger="{{ child_drawer_handle }}"
+              data-drawers-sub-nav
+              data-drawers-parent-keys="menu"
+            >
+              {%- render 'drawers-nav-link-text', link: link, blocks: blocks -%}
+
+              <span class="drw-Nav_LinkIcon">
+                {%- render 'bao-icon-chevron-right' -%}
+              </span>
+            </button>
+
+            {%- liquid
+              assign link_title_parts = link.title | split: "["
+              assign parents_title = link_title_parts.first | strip
+              assign new_parents_drawer_handle = 'menu' | append: ',' | append: child_drawer_handle
+            -%}
+
+            {%- render 'drawers-nav-child',
+              drawer_handle: child_drawer_handle,
+              parents_drawer_handle: new_parents_drawer_handle,
+              parents_title: parents_title,
+
+              link: link
+            -%}
+          </li>
+        {%- else -%}
+          {%- if link.title contains '[promo' -%}
+            {%- render 'drawers-nav-promo', link: link -%}
+          {%- else -%}
+            <li class="drw-Nav_Item">
+              <a
+                class="drw-Nav_Link fz-16_18"
+                href="{{ link.url }}"
+                {% if link.active %}aria-current="page"{% endif %}>
+                {%- render 'drawers-nav-link-text', link: link, blocks: blocks -%}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+    </ul>
+  </nav>
+</div>

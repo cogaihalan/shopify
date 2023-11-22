@@ -1,0 +1,103 @@
+{{ 'section-featured-collection.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <div class="sec-FeaturedCollection">
+    <div class="sec-FeaturedCollection_Items">
+      {%- for section_product in section.settings.collection.products limit: section.settings.collection_max -%}
+        <div class="sec-FeaturedCollection_Item">
+          {%- render 'product-card',
+            product: section_product
+          -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- render 'section'
+  kicker: section.settings.kicker,
+  title: section.settings.title,
+  button_text: section.settings.button_text,
+  button_link: section.settings.button_link,
+  button_type: "basic",
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Featured Collection",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "header",
+        "content": "Collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "select",
+        "id": "collection_max",
+        "label": "Maximum products to show",
+        "options": [
+          {
+            "value": "1",
+            "label": "One"
+          },
+          {
+            "value": "2",
+            "label": "Two"
+          },
+          {
+            "value": "3",
+            "label": "Three"
+          },
+          {
+            "value": "4",
+            "label": "Four"
+          },
+          {
+            "value": "8",
+            "label": "Eight"
+          },
+          {
+            "value": "12",
+            "label": "Twelve"
+          }
+        ],
+        "default": "4"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Collection"
+      }
+    ]
+  }
+{% endschema %}

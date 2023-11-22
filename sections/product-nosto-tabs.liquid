@@ -1,0 +1,89 @@
+{{ 'product-nosto-tabs.css' | asset_url | stylesheet_tag }}
+
+<script
+    src="{{ 'product-nosto-tabs.js' | asset_url }}"
+    defer="defer"
+></script>
+
+{%- capture body -%}
+  <product-nosto-tabs class="prd-NostoTabs">
+    {%- if section.settings.title != blank -%}
+      <header class="prd-NostoTabs_Header">
+        <div class="prd-NostoTabs_Title fz-34_37">
+          {{- section.settings.title -}}
+        </div>
+      </header>
+    {%- endif -%}
+
+    <nav class="prd-NostoTabs_Nav">
+      <ul class="prd-NostoTabs_NavInner">
+        {%- for block in section.blocks -%}
+          <li
+            class="prd-NostoTabs_NavItem fz-18_22"
+            aria-current="{{ forloop.first }}"
+            data-tab-index="{{ forloop.index0 }}"
+            data-el="product-nosto-tabs.navItem"
+            >
+              {{ block.settings.title }}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <div class="prd-NostoTabs_Tabs">
+      {%- for block in section.blocks -%}
+        <div
+                class="prd-NostoTabs_Tab"
+                data-tab-index="{{ forloop.index0 }}"
+                aria-current="{{ forloop.first }}"
+                data-el="product-nosto-tabs.tab"
+        >
+          <div
+                  class="nosto_element"
+                  id="{{ block.settings.nosto_id }}"
+          >
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </product-nosto-tabs>
+{%- endcapture -%}
+
+{%- render 'section',
+  body: body
+-%}
+
+{% schema %}
+{
+  "name": "Nosto Tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Nosto Template",
+      "type": "nosto_template",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Template Title"
+        },
+        {
+          "type": "text",
+          "id": "nosto_id",
+          "label": "Nosto ID"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nosto Tabs"
+    }
+  ]
+}
+{% endschema %}

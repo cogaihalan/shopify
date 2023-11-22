@@ -1,0 +1,272 @@
+{{ 'ometria-form.css' | asset_url | stylesheet_tag }}
+{{ 'form.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'ometria-form.js' | asset_url }}" type="module"></script>
+
+{%- capture body -%}
+  <div class="sec-OmetriaForm">
+    <div class="sec-OmetriaForm_Inner">
+      <ometria-form data-success="{{ section.settings.success_message }}">
+        <form
+          class="sec-OmetriaForm_Form"
+          action="https://api.ometria.com/forms/signup/ajax"
+          method="post"
+          data-ometria-form-el="form"
+        >
+          {%- unless form.posted_successfully? -%}
+            {%- if settings.ometria_footer_form_id != blank -%}
+              <input type="hidden" name="__form_id" value="{{ section.settings.ometria_form_id }}" />
+            {%- endif -%}
+
+            <input type="hidden" name="email" value="" autocomplete="off" />
+
+            <div style="display:none !important">
+              <input name="__email" type="email" value="" autocomplete="off" />
+            </div>
+
+            {%- if settings.ometria_account_id != blank -%}
+              <input name="@account" type="hidden" value="{{ settings.ometria_account_id }}" />
+            {%- endif -%}
+
+            <input name="@return_url" type="hidden" value="" />
+            <input name="@subscription_status" type="hidden" value="UNCHANGED" data-ometria-form-el="marketingHiddenField" />
+
+            {%- if section.settings.ometria_list_id != blank -%}
+              <input name="@add_to_lists[]" id="Footer sign up" type="hidden" value="{{ section.settings.ometria_list_id }}" />
+            {%- endif -%}
+
+            <div class="sec-OmetriaForm_Fields" data-ometria-form-el="fields">
+              <div class="sec-OmetriaForm_Input sec-OmetriaForm_Input-firstname">
+                {%- assign first_name_placeholder = 'sections.form.placeholder_first_name' | t -%}
+
+                <label class="frm-Form_Label util-ScreenReaderOnly" for="firstname">
+                  {{ first_name_placeholder }}
+                </label>
+
+                <input
+                  class="sec-OmetriaForm_Input frm-Form_Input fz-14_20"
+                  id="firstname"
+                  name="firstname"
+                  type="text"
+                  placeholder="{{ first_name_placeholder }}"
+                  value=""
+                  autocorrect="off"
+                  autocapitalize="off"
+                />
+              </div>
+
+              <div class="sec-OmetriaForm_Input sec-OmetriaForm_Input-lastname">
+                {%- assign last_name_placeholder = 'sections.form.placeholder_last_name' | t -%}
+
+                <label class="frm-Form_Label util-ScreenReaderOnly" for="lastname">
+                  {{ last_name_placeholder }}
+                </label>
+
+                <input
+                  class="sec-OmetriaForm_Input frm-Form_Input fz-14_20"
+                  id="lastname"
+                  name="lastname"
+                  type="text"
+                  placeholder="{{ last_name_placeholder }}"
+                  value=""
+                  autocorrect="off"
+                  autocapitalize="off"
+                />
+              </div>
+
+              <div class="sec-OmetriaForm_Input sec-OmetriaForm_Input-email">
+                <label class="frm-Form_Label util-ScreenReaderOnly" for="email">
+                  {{ 'sections.form.placeholder_email_address' | t }}
+                </label>
+
+                <input type="email"
+                  id="email"
+                  name="ue"
+                  class="sec-OmetriaForm_Input frm-Form_Input fz-14_20"
+                  value="{% if customer %}{{ customer.email }}{% endif %}"
+                  placeholder="{{ section.settings.email_placeholder }}"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  required
+                />
+              </div>
+
+              <div class="sec-OmetriaForm_Input sec-OmetriaForm_Input-telephone">
+                {%- assign telephone_placeholder = 'sections.form.placeholder_telephone' | t -%}
+
+                <label class="frm-Form_Label util-ScreenReaderOnly" for="phone_number">
+                  {{ telephone_placeholder }}
+                </label>
+
+                <input
+                  type="text"
+                  id="phone_number"
+                  name="phone_number"
+                  class="sec-OmetriaForm_Input frm-Form_Input"
+                  value=""
+                  placeholder="{{ telephone_placeholder }}"
+                  autocorrect="off"
+                  autocapitalize="off"
+                />
+              </div>
+
+              <div class="frm-Form_Checkbox">
+                <input
+                  class="sec-OmetriaForm_Input frm-Form_Input"
+                  name="sms_optin"
+                  id="sms_optin"
+                  type="checkbox"
+                  value="true"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  data-ometria-form-el="optIn"
+                />
+
+                <label for="sms_optin" class="sec-OmetriaForm_Input frm-Form_Label fz-14_20">
+                  {{ section.settings.marketing_opt_in_text }}
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="sec-OmetriaForm_Button fz-13_22"
+                name="commit"
+                data-ometria-form-el="submit"
+              >
+                {{ section.settings.button_text }}
+              </button>
+            </div>
+          {%- endunless -%}
+
+          <div class="sec-OmetriaForm_Messages rte-RichText" data-ometria-form-el="messages"></div>
+        </form>
+      </ometria-form>
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- render 'section',
+  margin: section.settings.section_margin,
+  kicker: section.settings.form_kicker,
+  title: section.settings.form_title,
+  text: section.settings.form_text,
+  background: section.settings.section_background,
+  headerTextCentre: true,
+  body: body
+-%}
+
+{% schema %}
+{
+  "name": "Ometria Form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "select",
+      "id": "section_margin",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "spacingNone",
+          "label": "None"
+        },
+        {
+          "value": "spacingSmall",
+          "label": "Small"
+        },
+        {
+          "value": "spacingStandard",
+          "label": "Standard"
+        },
+        {
+          "value": "spacingLarge",
+          "label": "Large"
+        }
+      ],
+      "default": "spacingNone"
+    },
+    {
+      "type": "select",
+      "id": "section_background",
+      "label": "Background Colour",
+      "options": [
+        {
+          "value": "#fff",
+          "label": "White"
+        },
+        {
+          "value": "var(--Color_CoolPink)",
+          "label": "Pink"
+        }
+      ],
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "form_kicker",
+      "label": "Kicker"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "form_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Form"
+    },
+    {
+      "type": "text",
+      "id": "ometria_form_id",
+      "label": "Ometria Form ID",
+      "info": "The Ometria form ID. Defaults - UK: d6b225a700e434d2f66ceab8a29eeafd, AU: e5ccaa40ea80c9da9cab9ad48bf0c985, US: d6e7fcab21bae809cdbd38259d2a40c6"
+    },
+    {
+      "type": "text",
+      "id": "ometria_list_id",
+      "label": "Ometria List ID",
+      "info": "The List ID for the form (optional)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Submit Button Text",
+      "default": "Submit"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email placeholder",
+      "default": "Email address"
+    },
+    {
+      "type": "text",
+      "id": "marketing_opt_in_text",
+      "label": "Marketing Opt-in Text",
+      "default": "Opt-in to SMS marketing"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Form Submitted Success Message",
+      "default": "Form submitted"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ometria Form"
+    }
+  ]
+}
+{% endschema %}

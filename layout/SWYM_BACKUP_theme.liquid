@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="util-NoJs" lang="{{ request.locale.iso_code }}">
+
+<head>
+  {%- render 'theme-head' -%}
+  
+  <meta name=tapcart-banner:appIcon content=https://storage.googleapis.com/tapcart-150607.appspot.com/51d668a124e77ff67684ae08d91b1528_appiconpng.png>
+  
+  <!-- TrustBox script -->
+<script src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+  
+  {{ content_for_header }}
+  {% include "loyaltylion" %}
+</head>
+{%- liquid
+assign usps_above_hero = false
+if request.page_type == "collection" and collection.metafields.settings.usps_above_hero != blank
+assign usps_above_hero = true
+endif
+-%}
+
+<body id="{{ page_title | handle }}"
+  class="lyt-Site template-{{ template.name | handle }} template-{{ template.name | handle }}-{{ template.suffix | handle }} lyt-Site-transparentHeader{% if usps_above_hero %} lyt-Site-uspsAboveHero{% endif %}"
+  data-layout-header-external-el="body">
+
+
+  {%- render 'theme-body-top' -%}
+
+  <main class="lyt-Main" id="MainContent" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {%- render 'theme-body-bottom' -%}
+
+  {% render 'swymSnippet' %}
+
+{% render 'nosto-tagging' %}
+  
+<script src="https://t.cometlytrack.com"></script> 
+  
+<script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#e2a9a9', triggerColor : '#e2a9a9', triggerRadius : '50%', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'medium', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'left', triggerPositionY : 'center', triggerOffsetX : 10, triggerOffsetY : 0, triggerRadius : '50%' } }); }; h.appendChild(s); })(); </script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+{{ 'section-polaroids.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <carousel-element
+    class="sec-Polaroids sec-Polaroids-{{ section.settings.text_colour }}Text car-Carousel"
+    style="--BackingColour: {{ section.settings.background_colour }};"
+    data-initialized="false"
+    data-loop="true"
+    data-centered="true"
+    data-centered-sm="true"
+    data-centered-md="true"
+    data-centered-lg="true"
+    data-slides-per-view-xs="1"
+    data-slides-per-view-sm="2"
+    data-slides-per-view-md="2.8"
+    data-slides-per-view-lg="2.8"
+    data-spacing-xs="0"
+    data-spacing-sm="50"
+    data-spacing-md="70"
+    data-spacing-lg="100"
+    data-slides-count="{{ section.blocks.size }}"
+    data-fallback-classes="true"
+  >
+    <div
+      class="sec-Polaroids_Items car-Carousel_Slides"
+      data-carousel-element-el="slides"
+    >
+      {%- for block in section.blocks -%}
+        <div
+          class="sec-Polaroids_Item car-Carousel_Slide"
+          data-carousel-element-el="slide"
+          {{ block.shopify_attributes }}
+        >
+          <div class="sec-Polaroids_Card {% if block.settings.button_link != blank %} sec-Polaroids_Card-hasLink util-FauxLink{% endif %}">
+            <div class="sec-Polaroids_ImageContainer">
+              <div class="sec-Polaroids_Image">
+                {%- render 'responsive-image',
+                  image: block.settings.image,
+                  width: 1000,
+                  height: 1000
+                -%}
+              </div>
+            </div>
+
+            <div class="sec-Polaroids_Content">
+              {%- if block.settings.title != blank -%}
+                <h2 class="sec-Polaroids_Title fz-34_37">
+                  {{ block.settings.title | newline_to_br }}
+                </h2>
+              {%- endif -%}
+  
+              {%- if block.settings.text != blank -%}
+                <p class="sec-Polaroids_Text fz-14_20">
+                  {{ block.settings.text }}
+                </p>
+              {%- endif -%}
+            </div>  
+          
+            {%- if block.settings.button_link != blank and block.settings.button_text != blank -%}
+              <a href="{{- block.settings.button_link -}}" 
+                class="sec-Polaroids_Button fz-13_18 btn-Button btn-Button-primary"
+              >
+                {{- block.settings.button_text -}}
+              </a>
+            {%- endif -%}
+
+            {%- if block.settings.button_link != blank -%}
+              <a href="{{ block.settings.button_link }}" class="sec-Polaroids_FauxLink util-FauxLink_Link">
+                <span class="util-ScreenReaderOnly">
+                  {{ block.settings.title }} {{ block.settings.button_text }}
+                </span>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="sec-Polaroids_Arrows car-Carousel_Arrows">
+      <button
+        type="button"
+        class="sec-Polaroids_Previous car-Carousel_Arrow car-Carousel_Arrow-previous"
+        data-carousel-element-el="previous"
+        aria-label="{{ 'accessibility.previous' | t }}"
+      >
+        {%- render 'bao-icon-chevron-down' -%}
+      </button>
+  
+      <button
+        type="button"
+        class="sec-Polaroids_Next car-Carousel_Arrow car-Carousel_Arrow-next"
+        data-carousel-element-el="next"
+        aria-label="{{ 'accessibility.next' | t }}"
+      >
+        {%- render 'bao-icon-chevron-down' -%}
+      </button>
+    </div>
+  </carousel-element>
+{%- endcapture -%}
+
+{%- render 'section',
+  margin: section.settings.section_margin,
+
+  kicker: section.settings.kicker,
+  title: section.settings.title,
+  button_text: section.settings.button_text,
+  button_link: section.settings.button_link,
+  button_type: "basic",
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Polaroids",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingStandard"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "header",
+        "content": "Blocks"
+      },
+      {
+        "type": "color",
+        "id": "background_colour",
+        "label": "Background Colour",
+        "default": "#FAE0DF",
+        "info": "Brand Colours"
+      },
+      {
+        "type": "paragraph",
+        "content": "Light Pink: #FDF5F5"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Pink: #FAE0DF"
+      },
+      {
+        "type": "paragraph",
+        "content": "Cool Cream: #FBF0EB"
+      },
+      {
+        "type": "paragraph",
+        "content": "Coffee: #DFC9B6"
+      },
+      {
+        "type": "paragraph",
+        "content": "Warm Pink: #E2A9A9"
+      },
+      {
+        "type": "paragraph",
+        "content": "Russet: #D49595"
+      },
+      {
+        "type": "select",
+        "id": "text_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      }
+    ],
+    "max_blocks": 8,
+    "blocks": [
+      {
+        "type": "polaroid",
+        "name": "Polaroid",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Recommended size: 1000px x 1000px"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Polaroids"
+      }
+    ]
+  }
+{% endschema %}

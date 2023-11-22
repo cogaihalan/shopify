@@ -1,0 +1,41 @@
+{{ 'loyalty-history-table.css' | asset_url | stylesheet_tag }}
+
+{%- if customer -%}
+  {%- capture body -%}
+  <div class="loy-HistoryTable">
+
+    <header class="loy-HistoryTable_Header">
+      <div class="loy-HistoryTable_Title fz-34_37">
+        {{- section.settings.title -}}
+      </div>
+    </header>
+
+    <div class="loy-HistoryTable_Table" data-lion-history-table></div>
+
+  </div>
+  {%- endcapture -%}
+
+  {%- render 'section',
+    body: body
+  -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Loyalty History Table",
+  "templates": ["page"],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Recent Activity"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty History Table"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+{%- liquid
+  assign cart_count = 0
+  for line_item in cart.items
+    unless line_item.product.title contains 'Order Protection'
+      assign cart_count = cart_count | plus: line_item.quantity
+    endunless
+  endfor
+  echo cart_count
+-%}

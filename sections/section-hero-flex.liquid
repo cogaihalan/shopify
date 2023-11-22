@@ -1,0 +1,408 @@
+{{ 'section-flex-hero.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.header_overlay -%}
+<style> .lyt-Site { --Nav_HeightWhenFixed: 0px; padding-top: var(--Announcement_Height); }</style>
+{%- endif -%}
+
+{%- liquid
+
+  if section.settings.lazy_media == false
+    assign preload = true
+  endif
+
+  assign block_length = section.blocks.size
+
+  case block_length
+    when 1
+      assign desktop_aspect_w = 1880
+      assign mobile_aspect_h = 1220
+    when 2
+      assign desktop_aspect_w = 1440
+      assign mobile_aspect_h = 720
+    when 3
+      assign desktop_aspect_w = 960
+      assign mobile_aspect_h = 480
+    endcase
+-%}
+
+{%- capture body -%}
+  <section-flex-hero
+    class="sec-FlexHero"
+    {% if section.settings.header_transparent %} data-header-is-transparent-when-over-me="{{- section.settings.header_colour -}}"{% endif %}
+    {% if section.settings.header_overlay %} sec-Hero-headerOverlay{% endif %}
+    >
+    <div class="sec-FlexHero_Inner">
+      <div class="sec-FlexHero_Body">
+        <ul class="sec-FlexHero_List">
+          {%- for block in section.blocks -%}
+            <li class="sec-FlexHero_Card util-FauxLink">
+              {%- liquid
+                assign button_text = block.settings.button_text
+                assign button_url = block.settings.button_url
+                assign mobile_button_url = block.settings.mobile_button_url
+              -%}
+
+              {%- if button_url -%}
+                <a href="{{ button_url }}" class="util-FauxLink_Link util-HideOnMobile"></a>
+              {%- endif -%}
+
+              {%- if mobile_button_url -%}
+                <a href="{{ mobile_button_url }}" class="util-FauxLink_Link util-HideOnDesktop"></a>
+              {%- endif -%}
+
+              {%- if block.settings.desktop_image != blank -%}
+                <div class="sec-FlexHeroCard_Image sec-FlexHeroCard_Image-desktop">
+                  {%- render 'responsive-image' with
+                    image: block.settings.desktop_image,
+                    width: desktop_aspect_w,
+                    height: 1420,
+                    preload: preload
+                  -%}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.mobile_image != blank -%}
+                <div class="sec-FlexHeroCard_Image sec-FlexHeroCard_Image-mobile">
+                  {%- render 'responsive-image' with
+                    image: block.settings.mobile_image,
+                    width: 750,
+                    height: mobile_aspect_h,
+                    preload: preload
+                  -%}
+                </div>
+              {%- endif -%}
+
+              <div class="sec-FlexHeroCard_Content
+                  {% if block.settings.overlay %} sec-FlexHeroCard_Content-gradient {% endif %}
+                    desktopPosition-{{ block.settings.desktop_position }}
+                    mobilePosition-{{ block.settings.mobile_position }}
+                    {{ block.settings.desktop_text_align }}
+                    {{ block.settings.mobile_text_align }}
+                    sec-FlexHeroCard_ContentTheme-{{ block.settings.theme }}
+                  "
+              >
+                <div class="sec-FlexHeroCard_ContentInner">
+                  <p class="sec-FlexHeroCard_SubTitle">{{ block.settings.title }}</p>
+                  <h3 class="sec-FlexHeroCard_Title">{{ block.settings.text }}</h3>
+
+                  {%- if button_text != blank and button_url != blank -%}
+                    <a href="{{ button_url }}" class="sec-FlexHeroCard_Button sec-FlexHeroCard_Button-desktop">
+                      {{ button_text }}
+                    </a>
+                  {%- endif -%}
+
+                  {%- if button_text != blank and mobile_button_url != blank -%}
+                    <a href="{{ mobile_button_url }}" class="sec-FlexHeroCard_Button sec-FlexHeroCard_Button-mobile">
+                      {{ button_text }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </section-flex-hero>
+{%- endcapture -%}
+
+{%- render 'section'
+  margin: section.settings.section_margin,
+  flush: true,
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "Flex Hero",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "lazy_media",
+        "label": "Lazy media",
+        "default": true,
+        "info": "If this section is above the \"fold\" then this should be unchecked for best Lighthouse scores"
+      },
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "select",
+        "id": "section_margin",
+        "label": "Section spacing",
+        "options": [
+          {
+            "value": "spacingNone",
+            "label": "None"
+          },
+          {
+            "value": "spacingSmall",
+            "label": "Small"
+          },
+          {
+            "value": "spacingStandard",
+            "label": "Standard"
+          },
+          {
+            "value": "spacingLarge",
+            "label": "Large"
+          }
+        ],
+        "default": "spacingNone"
+      },
+      {
+        "type": "header",
+        "content": "Header Styles"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_transparent",
+        "label": "Transparent when over me?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "header_overlay",
+        "label": "Overlay the hero?",
+        "default": false,
+        "info": "Select this checkbox when this is the first section on the page to ensure the header overlays it on page load."
+      },
+      {
+        "type": "select",
+        "id": "header_colour",
+        "label": "Text colour",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "hero_item",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image",
+            "info": "Full: Recommended size: 4320px x 2136px | Half: 2160px x 2136px | Third: 1440px x 2136px"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image",
+            "info": "Full: Recommended size: 750px x 1214px | Half: 750px x 720px | Third: 750px x 480px"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button url (desktop)"
+          },
+          {
+            "type": "url",
+            "id": "mobile_button_url",
+            "label": "Button url (mobile)",
+            "info": "If blank, the desktop url will be used on mobile."
+          },
+          {
+            "type": "checkbox",
+            "id": "overlay",
+            "label": "Background overlay?",
+            "default": false,
+            "info": "Add a semi-transparent background to the content overlay"
+          },
+          {
+            "type": "select",
+            "id": "theme",
+            "label": "Theme",
+            "options": [
+              {
+                "value": "dark",
+                "label": "Dark"
+              },
+              {
+                "value": "light",
+                "label": "Light"
+              }
+            ],
+            "default": "light"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Styles"
+          },
+          {
+            "type": "select",
+            "id": "desktop_text_align",
+            "label": "Desktop text alignment",
+            "options": [
+              {
+                "value": "desktopTextLeft",
+                "label": "Left"
+              },
+              {
+                "value": "desktopTextCenter",
+                "label": "Center"
+              },
+              {
+                "value": "desktopTextRight",
+                "label": "Right"
+              }
+            ],
+            "default": "desktopTextLeft"
+          },
+          {
+            "type": "select",
+            "id": "desktop_position",
+            "label": "Desktop position",
+            "options": [
+              {
+                "value": "bl",
+                "label": "Bottom Left"
+              },
+              {
+                "value": "ml",
+                "label": "Middle Left"
+              },
+              {
+                "value": "tl",
+                "label": "Top Left"
+              },
+              {
+                "value": "bc",
+                "label": "Bottom Center"
+              },
+              {
+                "value": "mc",
+                "label": "Middle Center"
+              },
+              {
+                "value": "tc",
+                "label": "Top Center"
+              },
+              {
+                "value": "br",
+                "label": "Bottom Right"
+              },
+              {
+                "value": "mr",
+                "label": "Middle Left"
+              },
+              {
+                "value": "tr",
+                "label": "Top Right"
+              }
+            ],
+            "default": "bl"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Style"
+          },
+          {
+            "type": "select",
+            "id": "mobile_text_align",
+            "label": "Mobile text alignment",
+            "options": [
+              {
+                "value": "mobileTextLeft",
+                "label": "Left"
+              },
+              {
+                "value": "mobileTextCenter",
+                "label": "Center"
+              },
+              {
+                "value": "mobileTextRight",
+                "label": "Right"
+              }
+            ],
+            "default": "mobileTextLeft"
+          },
+          {
+            "type": "select",
+            "id": "mobile_position",
+            "label": "Mobile position",
+            "options": [
+              {
+                "value": "bl",
+                "label": "Bottom Left"
+              },
+              {
+                "value": "ml",
+                "label": "Middle Left"
+              },
+              {
+                "value": "tl",
+                "label": "Top Left"
+              },
+              {
+                "value": "bc",
+                "label": "Bottom Center"
+              },
+              {
+                "value": "mc",
+                "label": "Middle Center"
+              },
+              {
+                "value": "tc",
+                "label": "Top Center"
+              },
+              {
+                "value": "br",
+                "label": "Bottom Right"
+              },
+              {
+                "value": "mr",
+                "label": "Middle Left"
+              },
+              {
+                "value": "tr",
+                "label": "Top Right"
+              }
+            ],
+            "default": "bl"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Flex Hero"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,96 @@
+{%- if section.settings.enable -%}
+
+<script
+  src="{{ 'marquee-element.js' | asset_url }}"
+  type="module"
+></script>
+
+<style> .lyt-Site { --Announcement_Height: 24px; } </style>
+
+<section class="hd-AnnouncementBar">
+
+  <div class="hd-AnnouncementBar_Body">
+
+    <marquee-element
+      class="mq-Marquee"
+      style="--Marquee_Gap:{{ section.settings.gap }}px;--Marquee_Speed:{{ section.settings.speed | default: 10 }}s;"
+    >
+
+      <div class="hd-AnnouncementBar_Items mq-Marquee_Items">
+
+        {%- for block in section.blocks -%}
+          <div class="hd-AnnouncementBar_Item mq-Marquee_Item" {{ block.shopify_attributes }}>
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="hd-AnnouncementBar_Text fz-10_12">
+                {{ block.settings.title }}
+              </a>
+            {%- else -%}
+              <p class="hd-AnnouncementBar_Text fz-10_12">
+                {{ block.settings.title }}
+              </p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+
+      </div>
+
+    </marquee-element>
+
+  </div>
+
+</section>
+
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Announcement bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable",
+        "label": "Enable"
+      },
+      {
+        "type": "range",
+        "id": "speed",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "#",
+        "label": "Speed",
+        "info": "Ticker Speed",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "gap",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Gap",
+        "info": "Item Gap",
+        "default": 100
+      }
+    ],
+    "blocks": [
+      {
+        "type": "accouncement",
+        "name": "Announcement item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,106 @@
+{{ 'bundle-upsell.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'bundle-upsell.js' | asset_url }}"
+  type="module"
+></script>
+
+{%- liquid
+  assign max_shown = 3
+  assign max_products = collections[collection_name].products.size
+%}
+
+{% if max_products > 0 %}
+  {%- liquid
+    assign upsell_products = ''
+
+    # Paginate to allow more than the default first 50 products to be chosen from.
+    paginate collections[collection_name].products by 500
+
+      for product_splitted in collections[collection_name].products
+
+        assign upsell_products = upsell_products | append: product_splitted.handle | append: ','
+
+        # Check that product is not already in the cart.
+        for cart_item in cart.items
+
+          if cart_item.product_id == product_splitted.id
+
+            assign to_remove = product_splitted.handle | append: ','
+            assign upsell_products = upsell_products | remove: to_remove
+
+            assign max_products = max_products | minus: 1
+          endif
+        endfor
+
+        # Do not include the current PDP product in the upsells.
+        if product.id == product_splitted.id
+
+          assign to_remove = product_splitted.handle | append: ','
+          assign upsell_products = upsell_products | remove: to_remove
+
+          assign max_products = max_products | minus: 1
+        endif
+
+      endfor
+    endpaginate
+
+    assign upsell_products_split = upsell_products | split: ','
+    assign min = 0
+    assign max = upsell_products_split.size | minus: 1
+    assign diff = max | minus: min
+  -%}
+
+  <bundle-upsell
+    data-product-id="{{- product.id -}}"
+    data-product-handle="{{- product.handle -}}"
+    class="bup-Bundle"
+  >
+    <div
+      data-bundle-upsell-el="content"
+    >
+      {% if max_products > 0 %}
+        <div class="bup-Title mod-Hide fz-24_29">{{ 'products.product.buy_it_with' | t }}</div>
+      {% endif %}
+
+      <div
+        class="bup-Items"
+        data-bundle-upsell-el="items"
+      >
+        {% comment %} Tried to randomise this, but its impossible in liquid without potentially showing duplicate products :( {% endcomment %}
+        {%- for i in (1..max_products) limit: max_shown -%}
+          {%- liquid
+            assign product_slug = upsell_products_split[forloop.index0]
+
+            assign list_product = all_products[product_slug]
+
+            assign strapline = list_product.metafields.product_details.strapline
+          -%}
+
+          <div
+            class="bup-Item"
+            data-bundle-upsell-item
+            data-index="{{ forloop.index }}"
+          >
+            {%- render 'bundle-upsell-form', upsell_product: list_product -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div
+      class="bup-MobileDrawer"
+      data-bundle-upsell-el="mobileDrawer"
+      aria-expanded="false"
+    >
+      <div class="bup-MobileDrawer_Inner">
+        <button
+          class="bup-MobileDrawer_Close"
+          role="button"
+          data-bundle-upsell-el="close"
+        >
+          {%- render 'bao-icon-close' -%}
+        </button>
+      </div>
+    </div>
+  </bundle-upsell>
+{% endif %}

@@ -1,0 +1,35 @@
+{%- if section.settings.nosto_id != blank -%}
+  {%- render 'nosto-element',
+    nosto_id: section.settings.nosto_id
+    button_text: section.settings.button_text
+    button_link: section.settings.button_url
+  -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Nosto Recommendations",
+    "settings": [
+      {
+        "type": "text",
+        "id": "nosto_id",
+        "label": "Nosto ID"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Nosto Recommendations"
+      }
+    ]
+  }
+{% endschema %}

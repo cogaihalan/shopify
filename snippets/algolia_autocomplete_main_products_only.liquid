@@ -1,0 +1,37 @@
+<script>
+  (function(algolia) {
+    'use strict';
+
+    algolia.mainProductsTemplate = function mainProductsTemplate({ html, state }, elements, displaySuggestions) {
+      return html `<div class="aa-PanelLayout aa-Panel--scrollable">
+        ${displaySuggestions && html
+          `<div class="aa-PanelSection">
+            <div class="aa-PanelSection--top">
+              <div class="aa-PanelSection--full aa-PanelSection--productSuggestions">
+                <div class="aa-SourceHeader">
+                  <span class="aa-SourceHeaderTitle">{{- 'algolia.search_suggestions' | t }} (${elements.querySuggestionsPlugin.props.children[1].props.children.length})</span>
+                </div>
+                ${elements.querySuggestionsPlugin}
+              </div>
+            </div>
+          </div>
+          `}
+
+        <div class="aa-PanelSection">
+            ${elements.products}
+        </div>
+      </div>
+
+      <button class="aa-Close" type="button">
+        <span class="aa-CloseIcon">
+          {%- render 'bao-icon-close' -%}
+        </span>
+        <span class="util-ScreenReaderOnly">
+          {{ 'accessibility.close' | t }}
+        </span>
+      </button>
+
+      <div class="aa-PanelBackdrop"></div>`
+    };
+  })(window.algoliaShopify);
+</script>

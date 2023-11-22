@@ -1,0 +1,137 @@
+<link
+  rel="stylesheet"
+  href="{{ 'gift-card.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<section class="gc-GiftCard">
+
+  <div class="gc-GiftCard_Inner lyt-Container">
+
+    <header class="gc-GiftCard_Header">
+      {%- render 'header-logo' -%}
+    </header>
+
+    <h1 class="gc-GiftCard_Title fz-34_37">{{ 'gift_cards.issued.subtext' | t }}</h1>
+
+    <div class="gc-GiftCard_Price fz-12_14">
+      <p>{{ gift_card.initial_value | money }}</p>
+      {%- if gift_card.enabled == false or gift_card.expired -%}
+        <p class="gift-card__label badge badge--{{ settings.sold_out_badge_color_scheme }}">{{ 'gift_cards.issued.expired' | t }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- assign gift_card_balance = gift_card.balance | money -%}
+    {%- if gift_card.balance != gift_card.initial_value -%}
+      <p class="gc-GiftCard_Ballance">{{ 'gift_cards.issued.remaining_html' | t: balance: gift_card_balance }}</p>
+    {%- endif -%}
+
+    <main class="gc-GiftCard_Main">
+      <div class="gc-GiftCard_Image">
+        {%- render 'responsive-image', image: section.settings.image, width: 1000, height: 700 -%}
+      </div>
+
+      <div class="gc-GiftCard_Code" data-gift-card-qr-code data-identifier="{{ gift_card.qr_identifier }}"></div>
+
+      <div class="gc-GiftCard_Information">
+        <input
+          type="text"
+          class="gc-GiftCard_Number"
+          value="{{ gift_card.code | format_code }}"
+          aria-label="{{ 'gift_cards.issued.gift_card_code' | t }}"
+          readonly
+          data-gift-card-number
+        >
+        <div class="gc-GiftCard_Copy util-NoPrint">
+
+          <button class="gc-GiftCard_Link btn-Button btn-Button-primary" data-gift-card-copy-link>{{ 'gift_cards.issued.copy_code' | t }}</button>
+
+          <span class="gc-GiftCard_Message fz-14_20" role="status" data-gift-card-copy-success></span>
+
+          <template class="gc-GiftCard_Template">{{ 'gift_cards.issued.copy_code_success' | t }}</template>
+
+        </div>
+
+        {%- if gift_card.pass_url -%}
+          <a href="{{ gift_card.pass_url }}" class="gift_card__apple-wallet">
+            <img src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}" width="120" height="40" alt="{{ 'gift_cards.issued.add_to_apple_wallet' | t }}" loading="lazy">
+          </a>
+        {%- endif -%}
+
+        <div class="gc-GiftCard_Buttons util-NoPrint">
+          <a
+            href="{{ shop.url }}"
+            class="gc-GiftCard_Button btn-Button btn-Button-basic"
+            target="_blank"
+            rel="noopener"
+            aria-describedby="a11y-new-window-message"
+          >
+            {{ 'gift_cards.issued.shop_link' | t }}
+          </a>
+          <button
+            class="gc-GiftCard_Button gc-GiftCard_Button-print btn-Button btn-Button-basic"
+            onclick="window.print();"
+          >
+            {{ 'gift_cards.issued.print_gift_card' | t }}
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div hidden>
+      <span id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</span>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+const string = { qrImageAlt: {{ 'gift_cards.issued.qr_image_alt' | t | json }} };
+const templateEls = document.getElementsByTagName("template")
+
+document.addEventListener('DOMContentLoaded', function() {
+  const qrCodeEl = document.querySelector('[data-gift-card-qr-code]')
+  if(!qrCodeEl) return
+  new QRCode( qrCodeEl, {
+    text: qrCodeEl.dataset.identifier,
+    width: 120,
+    height: 120,
+    imageAltText: string.qrImageAlt
+  });
+});
+
+
+if(templateEls.length > 0) {
+  let isMessageDisplayed = false
+  const clonedTemplate = templateEls[0].content.cloneNode(true);
+  const copyLinkEl = document.querySelector('[data-gift-card-copy-link]')
+  const cardNumberEl = document.querySelector('[data-gift-card-number]')
+  const copySuccessEl = document.querySelector('[data-gift-card-copy-success]')
+
+  if(copyLinkEl && cardNumberEl && copySuccessEl) {
+    copyLinkEl.addEventListener('click', () => {
+      navigator.clipboard.writeText(cardNumberEl.value).then(function () {
+        if (!isMessageDisplayed) {
+          copySuccessEl.appendChild(clonedTemplate);
+          isMessageDisplayed = true
+        }
+      });
+    });
+  }
+}
+</script>
+
+{% schema %}
+{
+  "name": "Gift Card",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}

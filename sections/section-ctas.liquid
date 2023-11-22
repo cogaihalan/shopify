@@ -1,0 +1,291 @@
+{{ 'section-ctas.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign is_carousel = false
+  assign tag_name = "div"
+  if section.blocks.size > 4
+    assign is_carousel = true
+    assign tag_name = "carousel-element"
+  endif
+-%}
+
+{%- capture body -%}
+<{{ tag_name }} class="
+  sec-Cta
+  sec-Cta-{{ section.settings.text_colour_mobile }}Text
+  {% if section.settings.overlay_mobile %} sec-Cta-{{ section.settings.background_colour_mobile }}Background{% endif %}
+  {% if is_carousel %} car-Carousel{% endif %}"
+  data-initialized="false"
+  data-loop="true"
+  data-centered="true"
+  data-slides-per-view-xs="{%- if section.settings.column_count_mobile == "one" -%}1{%- else -%}2{%- endif -%}"
+  data-slides-per-view-sm="2"
+  data-slides-per-view-md="3"
+  data-slides-per-view-lg="5"
+  data-spacing-xs="5"
+  data-spacing-sm="10"
+  >
+  <div class="
+    sec-Cta_Items
+    sec-Cta_Items-{{ section.blocks.size }}
+    sec-Cta_Items-{{ section.settings.column_count_mobile }}ColumnMobile
+    {% if is_carousel %} car-Carousel_Slides{% endif %}"
+    {% if is_carousel %} data-carousel-element-el="slides"{% endif %}>
+    {%- for block in section.blocks -%}
+      <div class="
+        sec-Cta_Item
+        {% if block.settings.link != blank %} sec-Cta_Item-hasLink util-FauxLink{% endif %}
+        {% if is_carousel %} car-Carousel_Slide{% endif %}"
+        {% if is_carousel %} data-carousel-element-el="slide"{% endif %}
+        {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          <div class="sec-Cta_ImageContainer">
+            <div class="sec-Cta_Image">
+              {%- render 'responsive-image',
+                image: block.settings.image,
+                width: 640,
+                height: 1000,
+                mobile_viewport: 'calc(100vw / 2)'
+              -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        <div class="sec-Cta_Content">
+          {%- if block.settings.title != blank -%}
+            <h2 class="sec-Cta_Title fz-24_29">
+              {{ block.settings.title | newline_to_br }}
+            </h2>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="sec-Cta_Text fz-14_20">
+              {{ block.settings.text }}
+            </p>
+          {%- endif -%}
+
+          {%- if block.settings.link != blank and block.settings.link_text != blank and block.settings.image == blank -%}
+            <a href="{{- block.settings.link -}}"
+              class="sec-Cta_Button sec-Cta_Button-desktop fz-13_18"
+              aria-label="{%- if block.settings.link_title != blank -%}{{- block.settings.link_title -}}{%- else -%}{{- block.settings.title -}}{%- endif -%}">
+              {{- block.settings.link_text -}}
+            </a>
+          {%- endif -%}
+        </div>
+
+        {%- if block.settings.link != blank -%}
+          <a href="{{ block.settings.link }}" class="sec-Cta_FauxLink util-FauxLink_Link">
+            <span class="util-ScreenReaderOnly">
+              {%- if block.settings.link_title != blank -%}
+                {{ block.settings.link_title }}
+              {%- else -%}
+                {{ block.settings.title }}
+              {%- endif -%}
+            </span>
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {% if is_carousel %}
+  <div class="sec-Cta_Arrows car-Carousel_Arrows">
+    <button
+      type="button"
+      class="sec-Cta_Previous car-Carousel_Arrow car-Carousel_Arrow-previous"
+      data-carousel-element-el="previous"
+      aria-label="{{ 'accessibility.previous' | t }}"
+    >
+      {% render 'bao-icon-chevron-down' %}
+    </button>
+
+    <button
+      type="button"
+      class="sec-Cta_Next car-Carousel_Arrow car-Carousel_Arrow-next"
+      data-carousel-element-el="next"
+      aria-label="{{ 'accessibility.next' | t }}"
+    >
+      {% render 'bao-icon-chevron-down' %}
+    </button>
+  </div>
+  {% endif %}
+
+</{{ tag_name }}>
+{%- endcapture -%}
+
+{%- render 'section'
+  border_top: section.settings.border_top,
+
+  kicker: section.settings.kicker,
+  title: section.settings.title,
+  text: section.settings.text,
+  button_text: section.settings.button_text,
+  button_link: section.settings.button_link,
+  button_type: "basic",
+
+  body: body
+-%}
+
+{% schema %}
+  {
+    "name": "CTAs",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section style"
+      },
+      {
+        "type": "checkbox",
+        "id": "border_top",
+        "label": "Add border to top?"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "header",
+        "content": "Blocks"
+      },
+      {
+        "type": "paragraph",
+        "content": "Adding more than four blocks will turn this section into a carousel"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay_mobile",
+        "label": "Background overlay?",
+        "default": false,
+        "info": "Add a semi-transparent background to the content overlay on mobile devices"
+      },
+      {
+        "type": "select",
+        "id": "background_colour_mobile",
+        "label": "Background colour - Mobile",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "dark"
+      },
+      {
+        "type": "select",
+        "id": "text_colour_mobile",
+        "label": "Text colour - Mobile",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "select",
+        "id": "column_count_mobile",
+        "label": "Column Count Mobile",
+        "info": "The number of columns on mobile devices",
+        "options": [
+          {
+            "value": "one",
+            "label": "One"
+          },
+          {
+            "value": "two",
+            "label": "Two"
+          }
+        ],
+        "default": "two"
+      }
+    ],
+    "max_blocks": 8,
+    "blocks": [
+      {
+        "type": "cta",
+        "name": "CTA",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Recommended size: 680px x 1000px"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link text",
+            "default": "Shop the collection"
+          },
+          {
+            "type": "text",
+            "id": "link_title",
+            "label": "Link title",
+            "info": "Title of the link for SEO - If blank will use the block Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "CTAs"
+      }
+    ]
+  }
+{% endschema %}

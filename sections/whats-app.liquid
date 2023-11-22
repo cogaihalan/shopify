@@ -1,0 +1,23 @@
+{{ 'whats-app.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+  <div class="sec-WhatsApp">
+    <iframe width="250" height="50" style="border: 0" src="https://cdn.smooch.io/message-us/index.html?channel=whatsapp&color=white&size=standard&radius=20px&label=Contact us on WhatsApp&number=447548829617"></iframe>
+  </div>
+{%- endcapture -%}
+
+{%- render 'section',
+  body: body,
+-%}
+
+{% schema %}
+{
+  "name": "Whats App",
+  "presets": [
+    {
+      "name": "Whats App"
+    }
+  ],
+  "templates": ["page"]
+}
+{% endschema %}

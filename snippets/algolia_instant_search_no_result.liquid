@@ -1,0 +1,16 @@
+<script>
+  (function(algolia) {
+    'use strict';
+
+    algolia.instantSearchNoResultTemplate = function instantSearchNoResultTemplate(html) {
+      return html `<div class="ais-hit-empty">
+        <div class="ais-hit-empty--clears">
+          ${algolia.translations.noResultFound}
+          <a class="ais-hit-empty--open-search ais-link">
+            ${algolia.translations.changeInput}
+          </a>
+        </div>
+      </div>`
+    };
+  })(window.algoliaShopify);
+</script>

@@ -1,0 +1,84 @@
+{%- unless product.has_only_default_variant -%}
+
+{{ 'fixed-bar-options.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'product-options.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<product-options class="fb-Options">
+    <variant-selects data-section="{{ section.id }}" data-url="{{ product.url }}" data-product-id="{{ product.id }}">
+      {%- for option in product.options_with_values -%}
+        {%- capture option_buttons_html -%}
+        {%- assign option_has_small_value = false -%}
+        {%- for value in option.values -%}
+          {%- liquid
+            if value.size < 3
+              assign option_has_small_value = true
+            endif
+          -%}
+          <button
+            type="button"
+            class="fb-Options_Button"
+            data-value="{{ value | escape }}"
+            data-title="{{ value | escape }}"
+            data-product-options-el="trigger"
+            data-variant-selects-option
+            data-index="{{- product.id -}}option{{- option.position -}}"
+            {% if option.selected_value == value %}aria-pressed="true"{% endif %}
+          >
+            <span class="fb-Options_Value fz-12_17">
+              {{ value | escape }}
+            </span>
+            <span class="fb-Options_Background"></span>
+
+            {%- unless product.metafields.stock_management.no_restock -%}
+              <span class="fb-Options_Icon">
+                {%- render 'bao-icon-notify' -%}
+                <span class="util-ScreenReaderOnly">
+                  {{- 'products.back_in_stock.notify_me_when_back_in_stock' | t -}}
+                </span>
+              </span>
+            {%- endunless -%}
+          </button>
+        {%- endfor -%}
+        {%- endcapture -%}
+        <div class="fb-Options_Option{% if option_has_small_value %} fb-Options_Option-small{% endif %}">
+          <label
+            class="fb-Options_Label fz-12_20"
+            for="SingleOptionSelector-{{- product.id -}}-{{- forloop.index0 -}}"
+          >
+            <span class="fb-Options_LabelText">{{ option.name }}:</span>
+          </label>
+
+          <div class="fb-Options_Buttons">
+            {{- option_buttons_html -}}
+          </div>
+
+          <select
+            class="fb-Options_Select util-ScreenReaderOnly"
+            id="SingleOptionSelector-{{- product.id -}}-{{- forloop.index0 -}}"
+            data-index="{{- product.id -}}option{{ option.position }}"
+            name="options[{{ option.name | escape }}]"
+            data-product-options-el="select"
+            form="product-form-{{ section.id }}"
+          >
+            {%- for value in option.values -%}
+              <option
+                value="{{ value | escape }}"
+                {% if option.selected_value == value %}selected="selected"{% endif %}
+              >
+                {{ value }}
+              </option>
+            {%- endfor -%}
+          </select>
+        </div>
+      {%- endfor -%}
+
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+</product-options>
+{%- endunless -%}
