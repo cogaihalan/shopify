@@ -57,10 +57,24 @@
         "header_colour": "dark"
       }
     },
+    "5f256f22-73e4-4d8b-8e1e-c6c3689995b0": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "Popular topics",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+      }
+    },
     "feature": {
       "type": "blog-featured",
       "custom_css": [
-        "@media (min-width: 1200px){.blg-FeaturedArticle_Title {font-size: 40px; line-height:44px; }}"
+        "@media (min-width: 1200px) {.blg-FeaturedArticle_Title {font-size: 40px; line-height: 44px; }}"
       ],
       "settings": {
         "desktop_image": "shopify:\/\/shop_images\/Image.png",
@@ -71,23 +85,12 @@
         "button_text": "",
         "button_link": "shopify:\/\/blogs\/news\/jess-hunt-in-resort"
       }
-    },
-    "main": {
-      "type": "main-blog",
-      "settings": {
-      }
-    },
-    "62a7b8c5-0841-4f97-b38a-ab4df15a4559": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": ""
-      }
     }
   },
   "order": [
     "2cbec977-8330-45cf-8a56-2c024dbe1098",
-    "feature",
+    "5f256f22-73e4-4d8b-8e1e-c6c3689995b0",
     "main",
-    "62a7b8c5-0841-4f97-b38a-ab4df15a4559"
+    "feature"
   ]
 }
