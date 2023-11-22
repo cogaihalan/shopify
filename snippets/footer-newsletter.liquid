@@ -1,0 +1,74 @@
+{{ 'footer-newsletter.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'ometria-form.js' | asset_url }}" type="module"></script>
+
+<div class="nws-Newsletter">
+  <div class="nws-Newsletter_Inner">
+    <ometria-form data-success="{{ 'layout.footer.newsletter.confirmation' | t }}">
+      <form
+        class="nws-Newsletter_Form"
+        action="https://api.ometria.com/forms/signup/ajax"
+        method="post"
+        data-ometria-form-el="form"
+      >
+        {%- unless form.posted_successfully? -%}
+          {%- if settings.ometria_footer_form_id != blank -%}
+            <input type="hidden" name="__form_id" value="{{ section.settings.ometria_footer_form_id }}" />
+          {%- endif -%}
+
+          <input type="hidden" name="email" value="" />
+
+          <div style="display:none !important">
+            <input name="__email" type="email" value="" autocomplete="off" />
+          </div>
+
+          {%- if settings.ometria_account_id != blank -%}
+            <input name="@account" type="hidden" value="{{ settings.ometria_account_id }}" />
+          {%- endif -%}
+
+          <input name="@return_url" type="hidden" value="" />
+          <input name="@subscription_status" type="hidden" value="SUBSCRIBED" />
+
+          <input name="properties.signup_source" type="hidden" value="footer" />
+
+          {%- liquid
+            assign country_code = 'UK'
+            if shop.permanent_domain == 'oh-polly-au.myshopify.com'
+              assign country_code = 'AU'
+            elsif shop.permanent_domain == 'oh-polly-us.myshopify.com'
+              assign country_code = 'US'
+            endif
+          -%}
+          <input name="properties.store_signup" type="hidden" value="{{ country_code }}" />
+
+          {%- if section.settings.ometria_footer_list_id != blank -%}
+            <input name="@add_to_lists[]" id="Footer sign up" type="hidden" value="{{ section.settings.ometria_footer_list_id }}" />
+          {%- endif -%}
+
+          <div class="nws-Newsletter_Fields" data-ometria-form-el="fields">
+            <label class="frm-Form_Label util-ScreenReaderOnly" for="email">
+              {{ 'layout.footer.newsletter.email_placeholder' | t }}
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="ue"
+              class="nws-Newsletter_Input frm-Form_Input fz-14_20"
+              value="{% if customer %}{{ customer.email }}{% endif %}"
+              placeholder="{{ 'layout.footer.newsletter.email_placeholder' | t }}"
+              autocapitalize="off"
+              required
+            />
+
+            <button type="submit" class="nws-Newsletter_Button fz-13_22" name="commit" data-ometria-form-el="submit">
+              {{ 'layout.footer.newsletter.subscribe' | t }}
+            </button>
+          </div>
+        {%- endunless -%}
+
+        <div class="nws-Newsletter_Messages rte-RichText" data-ometria-form-el="messages"></div>
+      </form>
+    </ometria-form>
+  </div>
+</div>

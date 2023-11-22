@@ -1,0 +1,94 @@
+{%- if page.content != blank -%}
+  <div class="pg-Content_Text{% unless page.handle == "unidays" %} rte-RichText{% endunless %}">
+    {{ page.content }}
+  </div>
+{%- endif -%}
+
+<style>
+
+p.OPRewardsTitle{
+  text-transform: uppercase;
+  color: black;
+  text-align:center;
+  font-weight: bold;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size:18px;
+  letter-spacing: 0.1em;
+}
+
+
+p.OPRewardsParagraph{
+  text-transform: uppercase;
+  width:90%;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size:18px!important;
+}
+
+
+p.OPRewardsPrivacy{
+  text-transform: uppercase;
+  width:90%;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size:12px;
+}
+
+.OPRewardsContainer {
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom: 50px;
+  padding-top: 160px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.OPKlaviyoForm {
+  margin-left:auto;
+  margin-right:auto;
+  padding: 30px 50px;
+  margin-top: 150px!important;
+  background: rgba(255, 223, 223, 0.7);
+}
+
+body {
+  background-image: url(https://cdn.shopify.com/s/files/1/0594/1506/8881/files/DesktopImage_2_2d7b6ef7-123f-4c02-9535-7bc488c8b480.jpg?v=1675068481);
+  background-repeat: no-repeat;
+  background-position: right 100px;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@media only screen and (max-width:650px) {
+  .OPRewardsContainer {
+    width:95%;
+    padding-top: 50px!important;
+  }
+
+  p.OPRewardsParagraph{
+    width:100%;
+    font-size:13px!important;
+  }
+
+  p.OPRewardsTitle {
+    width:100%;
+  }
+
+  body{
+      background-image: url(https://cdn.shopify.com/s/files/1/0594/1506/8881/files/MobileImage_2_1b6c4538-5f00-4f50-9b8d-7aabc58c089c.jpg?v=1675068471);
+      background-size: auto 70%;
+      background-attachment: fixed;
+      background-position: center 10px;
+  }
+}
+</style>

@@ -1,0 +1,85 @@
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-footer.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-footer-accordion.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<site-drawer class="drw-Drawer drw-Drawer-fromRight drw-Drawer-sizeguide" key="size-guide">
+  <div class="drw-Drawer_Inner">
+    <header class="drw-Drawer_Header drw-Drawer_Header-large">
+
+      <button
+        type="button"
+        class="drw-Drawer_Close"
+        data-drawers-close
+      >
+        <span class="drw-Drawer_Icon drw-Drawer_Icon-close">
+          {%- render 'bao-icon-close' -%}
+        </span>
+        <span class="util-ScreenReaderOnly">
+          {{ 'accessibility.close' | t }}
+        </span>        
+      </button>
+
+      <div class="drw-Drawer_Content">
+        
+        {% if section.settings.title != blank %}
+          <h4 class="drw-Drawer_Title fz-34_37">{{ section.settings.title }}</h4>
+        {% endif %}
+        
+        {% if section.settings.text != blank %}
+          <p class="drw-Drawer_Text fz-14_20">{{ section.settings.text }}</p>
+        {% endif %}
+
+      </div>
+
+    </header>
+
+    {%- if section.blocks.size -%}
+      <div class="drw-Drawer_Body">
+
+        {%- for block in section.blocks -%}
+          <drawer-accordion
+            class="drw-FooterAccordion"
+            aria-expanded="{{- forloop.first -}}"
+          >
+            <button
+              type="button"
+              class="drw-FooterAccordion_Trigger"
+              data-drawer-accordion-el="trigger"
+            >
+              <span class="drw-FooterAccordion_Title fz-18_22">
+                {{- block.settings.title -}}
+              </span>
+
+              <span class="drw-FooterAccordion_Icon">
+                {%- render 'bao-icon-chevron-down' -%}
+              </span>
+            </button>
+
+            <div class="drw-FooterAccordion_Body">
+              <div class="drw-FooterAccordion_Content rte-RichText" data-drawer-accordion-el="body">
+                {%- if block.settings.text != blank -%}
+                  {{- block.settings.text -}}
+                {%- else -%}
+                  {{- block.settings.page.content -}}
+                {%- endif -%}
+              </div>
+            </div>
+          </drawer-accordion>
+        {%- endfor -%}
+
+      </div>
+    {%- endif -%}
+
+  </div>
+
+</site-drawer>

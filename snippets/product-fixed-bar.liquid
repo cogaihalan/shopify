@@ -1,0 +1,41 @@
+<link
+  rel="stylesheet"
+  href="{{ 'product-fixed-bar.css' | asset_url }}"
+>
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
+  assign enable_preorders = false
+  if product.available == true and product.metafields.stock_management.enable_preorder != blank
+    assign enable_preorders = true
+  endif
+-%}
+
+<script src="{{ 'product-fixed-bar.js' | asset_url }}" defer="defer"></script>
+
+<product-fixed-bar class="prd-FixedBar" aria-hidden="true" data-product-card-external-el="fixedBar">
+  <button
+    class="prd-FixedBar_Button prd-FixedBar_Button-addtocart btn-Button btn-Button-primary btn-Button-fullWidth btn-Button-square"
+    type="button"
+    {% unless current_variant.available %}disabled="disabled"{% endunless %}
+    data-product-add-to-cart
+    data-product-fixed-bar-el="fixedButton"
+  >
+    <span class="prd-FixedBar_Icon prd-FixedBar_Icon-addtocart">
+      {%- render 'bao-icon-bag' -%}
+    </span>
+
+    <span class="prd-FixedBar_ButtonText" data-enable-pre-orders="{{- enable_preorders -}}" data-product-add-to-cart-text>
+      {%- if current_variant.available -%}              
+        {%- if enable_preorders -%}
+          {{ 'products.product.pre_order' | t }}
+        {%- else -%}
+          {{ 'products.product.add_to_cart' | t }}
+        {%- endif -%}
+      {%- else -%}
+        {{ 'products.product.sold_out' | t }}
+      {%- endif -%}
+    </span>
+  </button>
+</product-fixed-bar>

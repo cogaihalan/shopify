@@ -1,0 +1,25 @@
+{{ 'quickbuy-options.css' | asset_url | stylesheet_tag }}
+
+<div class="prd-QuickBuy prd-QuickBuy-skeleton" aria-hidden="true">
+  <div class="prd-QuickBuy_Options">
+    <div class="qb-Options">
+      <div class="qb-Option">
+        <div class="qb-Options_Buttons">
+          {%- for index in (1..4) -%}
+            <span class="qb-Options_Button">
+              <span class="qb-Options_Background"></span>
+            </span> 
+          {%- endfor -%}   
+        </div>
+      </div>
+    </div>
+    <div class="prd-QuickBuy_Buttons">
+      <span class="prd-QuickBuy_Button prd-QuickBuy_Button-addtocart btn-Button btn-Button-tertiary btn-Button-fullWidth btn-Button-square">
+        <span class="prd-QuickBuy_ButtonIcon prd-QuickBuy_ButtonIcon-addtocart">
+          {%- render 'bao-icon-bag' -%}
+        </span>
+        <span class="prd-QuickBuy_ButtonText">{{ 'products.product.add_to_cart' | t }}</span>
+      </span>
+    </div>
+  </div>
+</div>

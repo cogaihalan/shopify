@@ -1,0 +1,99 @@
+{%- liquid
+  if product.variants.size > 0
+    for variant in product.variants
+      if variant.sku != blank
+        if sku_list != blank
+          assign sku_list = sku_list | append: ","
+        endif
+        assign sku_list = sku_list | append: variant.sku
+      endif
+    endfor
+  endif
+
+  assign strapline = product.metafields.product_details.strapline
+-%}
+
+<div class="prd-Details">
+  <header class="prd-Details_Header" data-product-fixed-bar-external-el="detailHeader">
+
+    {%- if strapline != blank -%}
+      <p class="prd-Details_Strapline fz-24_29">{{- strapline -}}</p>
+    {%- endif -%}
+
+    <h1 class="prd-Details_Title fz-18_25">
+      {{ product.title }}
+    </h1>
+
+    <div class="prd-Details_PriceReview">
+      <div id="price-{{ section.id }}" class="prd-Details_Price fz-18_22">
+        {%- render 'product-price'
+          , use_variant: true -%}
+      </div>
+
+      {% render 'okendo-reviews-product-rating-summary', product: product %}
+    </div>
+
+    {%- for block in section.blocks -%}
+      {%- if block.type == '@app' and cart.currency.iso_code == shop.currency -%}
+        <div class="prd-Note">
+          <div class="prd-Note_Text prd-Note_Text-klarna">
+            {%- render block -%}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="prd-Note" data-test="{{ request.locale.iso_code }}">
+      {%- if shop.permanent_domain == 'oh-polly-uk.myshopify.com' or shop.permanent_domain == 'oh-polly-development.myshopify.com' -%}
+        {%- assign region = 'en_GB' -%}
+      {%- elsif shop.permanent_domain == 'oh-polly-us.myshopify.com' -%}
+        {%- assign region = 'en_US' -%}
+      {%- endif -%}
+
+     
+    </div>
+  </header>
+
+  {%- capture collections_string -%}
+    {%- for link_title in product.metafields.also_available_item.link_title -%}
+      {%- liquid
+        assign link_product = all_products[product.metafields.also_available_item.product[forloop.index0]]
+        assign all_link_products_exist = true
+
+        if link_product == blank
+          assign all_link_products_exist = false
+        endif
+      -%}
+
+      {% if product.metafields.also_available_item.link_title.size > 1 and forloop.last %}
+        {{ 'products.product.and' | t }}{% endif %}
+      {% if product.metafields.also_available_item.link_title.size > 2 and forloop.first == false and forloop.last == false %},
+      {% endif %}
+
+      {% if link_product != blank %}
+        <a class="btn-Button_Tag" href="{{- link_product.url -}}">{{- link_title -}}</a>
+      {% endif %}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- if product.metafields.also_available.enable == true or product.metafields.also_available.enable == 'true' -%}
+    {%- if all_link_products_exist -%}
+      <p class="prd-Details_OtherCollections fz-14_20">
+        {%- if product.collections.size > 1 -%}
+          {{ 'products.product.also_available_in_collections_html' | t: collections_string: collections_string }}
+        {%- else -%}
+          {{ 'products.product.also_available_in_collection_html' | t: collection_string: collections_string }}
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if product.metafields.colors.available != blank and product.metafields.colors.current != blank -%}
+    <div class="prd-Details_Color">
+      {%- render 'product-colors', product: product -%}
+    </div>
+  {%- endif -%}
+
+  {%- render 'product-form', product: product, section: section -%}
+
+</div>

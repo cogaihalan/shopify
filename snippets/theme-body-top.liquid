@@ -1,0 +1,36 @@
+<a class="util-ScreenReaderOnly" href="#MainContent" id="top">
+  {{ "accessibility.skip_to_text" | t }}
+</a>
+
+<script
+  src="{{ 'dropdown-menu.js' | asset_url }}"
+  type="module"
+></script>
+
+{%- section 'header-announcement-bar' -%}
+{%- section 'header' -%}
+
+{%- capture drawers_html -%}
+{%- liquid
+  section 'drawers-nav'
+
+  render 'back-in-stock-drawer'
+
+  if request.page_type != 'cart'
+    render 'push-cart-drawer'
+  endif
+
+  if request.page_type == 'product'
+    section 'size-guide-drawer'
+  endif
+
+  if request.page_type == 'collection'
+    render 'collection-description-drawer'
+  endif
+-%}
+{%- endcapture -%}
+
+{%- liquid
+  render 'drawers', drawers_html: drawers_html
+  section 'store-selector'
+-%}

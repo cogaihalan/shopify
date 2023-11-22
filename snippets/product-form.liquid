@@ -1,0 +1,162 @@
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+  assign current_variant = product.selected_or_first_available_variant
+
+
+  assign enable_preorders = false
+  if product.available == true and product.metafields.stock_management.enable_preorder != blank
+    assign enable_preorders = true
+  endif
+-%}
+
+<product-form>
+  {%- form 'product',
+    product,
+    id: product_form_id,
+    class: 'prd-Details_Form',
+    data-push-cart-form: '',
+    data-product-form: '',
+    data-product-handle: product.handle,
+    data-product-drawer-external-el: 'main-product-form',
+    data-product-fixed-bar-external-el: 'mainProductForm',
+    data-main-product-form: ''
+  -%}
+    <div class="prd-Details_Options">
+
+      {%- render 'product-options', product: product, section: section -%}
+
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1" data-product-form-el="quantityHiddenInput">
+
+      {%- if template.suffix == 'gift-card' -%}
+        <div class="prd-Options_SelectContainer">
+          <label class="visually-hidden" for="product-quantity-select">{{ 'accessibility.product.quantity_label' | t }}</label>
+          <select class="prd-Options_Select"	name="quantity"	data-product-form-el="quantity" id="product-quantity-select">
+            {%- for i in (1..10) -%}
+              <option	value="{{ i }}"	{% if i == line_item.quantity %}selected{% endif %}>
+                {{ 'products.product.quantity.label' | t }} {{ i }}
+              </option>
+            {%- endfor -%}
+          </select>
+          <span class="prd-Options_SelectIndicator">
+            {%- render 'bao-icon-chevron-down' -%}
+          </span>
+			  </div>
+      {%- endif -%}
+
+      {%- if enable_preorders -%}
+        <input
+          type="hidden"
+          name="properties[_preorder]"
+          value="true">
+      {%- endif -%}
+
+      <div class="prd-Details_Buttons">
+        <div class="prd-Details_ButtonContainer prd-Details_ButtonContainer-cart">
+          <button
+            class="prd-Details_Button prd-Details_Button-addtocart btn-Button btn-Button-primary btn-Button-fullWidth btn-Button-square"
+            type="submit"
+            name="add"
+            aria-hidden="{% if current_variant.available %}false{% else %}true{% endif %}"
+            data-back-in-stock-enabled="true"
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}
+            data-product-add-to-cart>
+
+            <span class="prd-Details_ButtonIcon">
+              {%- render 'bao-icon-bag' -%}
+            </span>
+
+            <span
+              class="prd-Details_ButtonText"
+              data-enable-pre-orders="{{- enable_preorders -}}"
+              data-product-add-to-cart-text>
+              {%- if current_variant.available -%}
+                {%- if enable_preorders -%}
+                  {{ 'products.product.pre_order' | t }}
+                {%- else -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- endif -%}
+              {%- else -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- endif -%}
+            </span>
+          </button>
+
+          {%- liquid
+            assign no_restock = false
+            if product.metafields.stock_management.no_restock
+              assign no_restock = true
+            endif
+          -%}
+
+          <button
+            class="prd-Details_Button prd-Details_Button-backInStock btn-Button btn-Button-primary btn-Button-fullWidth btn-Button-square{% if no_restock %} prd-Details_Button-disabled{% endif %}"
+            type="button"
+            aria-hidden="{% if current_variant.available %}true{% else %}false{% endif %}"
+            data-product-back-in-stock
+            data-product-id="{{- product.id -}}"
+            data-variant-id="{{- current_variant.id -}}"
+            data-back-in-stock-external-el="trigger"
+            data-drawers-trigger="back-in-stock"
+          >
+            {%- if no_restock -%}
+              {{- 'products.back_in_stock.no_restock' | t -}}
+            {%- else -%}
+              {{- 'products.back_in_stock.notify_me' | t -}}
+            {%- endif -%}
+          </button>
+        </div>
+
+        {%- unless no_restock -%}
+          <div class="prd-Details_ButtonContainer">
+            <button
+              type="button"
+              class="prd-Details_Button prd-Details_Button-wishlist btn-Button btn-Button_Wishlist btn-Button-square product_{{ product.id }}"
+              data-product-url="{{- shop.url -}}{{- product.url -}}"
+              data-product-form-wishlist-el
+              data-product-id="{{ product.id | json }}"
+              data-variant-id="{{ product.selected_or_first_available_variant.id | json }}"
+              data-product-wishlist-button>
+              <span class="prd-Details_ButtonIcon prd-Details_ButtonIcon-wishlist">
+                {%- render 'bao-icon-heart' -%}
+                <span class="util-ScreenReaderOnly">
+                  {{ 'products.product.add_to_wishlist' | t }}
+                </span>
+              </span>
+            </button>
+          </div>
+        {%- endunless -%}
+      </div>
+
+      {%- if settings.enable_loyalty_lion -%}
+        <script src="{{ 'loyalty-lion-points.js' | asset_url }}" defer></script>
+        {% if localization.country.currency.iso_code == shop.currency %}
+          {%- render 'loyalty-lion-points' -%}
+        {% else %}
+          {% comment %}
+            async render loyalty lion points relative to the store's base currency.
+            this avoids issues with differences in point calculation between different currency values.
+          {% endcomment %}
+          <section-async data-section-id="loyalty-lion-points" data-url="{{product.url}}?currency={{shop.currency}}"></section-async>
+        {% endif %}
+      {%- endif -%}
+
+      <div class="prd-Details_Notes">
+        {%- unless enable_preorders -%}
+          {%- if template.suffix != 'gift-card' -%}
+            <div class="prd-Details_Note">
+              <div class="prd-Note">
+                <div class="prd-OrderDeadlineApp_Icon">
+                  {%- render 'bao-icon-delivery' -%}
+                </div>
+
+                <div class="prd-OrderDeadlineApp" data-product-form-el="order-deadline"></div>
+              </div>
+            </div>
+          {%- endif -%}
+
+        {%- endunless -%}
+      </div>
+    </div>
+  {%- endform -%}
+</product-form>

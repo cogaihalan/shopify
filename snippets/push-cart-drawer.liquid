@@ -1,0 +1,63 @@
+<script src="{{ 'push-cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'push-cart-item.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'push-cart-upsell.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'push-cart-nosto.js' | asset_url }}" defer="defer"></script>
+
+{{ 'push-cart.css' | asset_url | stylesheet_tag }}
+{{ 'push-cart-items.css' | asset_url | stylesheet_tag }}
+{{ 'push-cart-item.css' | asset_url | stylesheet_tag }}
+{{ 'push-complete-the-set.css' | asset_url | stylesheet_tag }}
+{{ 'push-cart-nosto-carousel.css' | asset_url | stylesheet_tag }}
+
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-footer.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- capture body -%}
+  <push-cart
+    class="psh-Cart"
+    loading-class="psh-Cart-loading"
+    item-loading-class="psh-CartItem-loading"
+  >
+    <div class="psh-Cart_Errors">
+      <push-cart-errors class="psh-CartErrors">
+        {% comment %}TODO{% endcomment %}
+      </push-cart-errors>
+    </div>
+
+    <div class="psh-Cart_Delivery">
+      {%- section 'push-cart-delivery' -%}
+    </div>
+
+    <div class="psh-Cart_Items">
+      {%- section 'push-cart-items' -%}
+    </div>
+
+    <div class="psh-Cart_Upsell">
+      {%- section 'push-cart-upsell' -%}
+    </div>
+
+    <div class="psh-Cart_Nosto">
+      {%- section 'push-cart-nosto' -%}
+    </div>
+
+    <div class="psh-Cart_Usps">
+      {%- section 'push-cart-usps' -%}
+    </div>
+
+    <footer class="psh-Cart_Footer">
+      {%- section 'push-cart-footer' -%}
+    </footer>
+  </push-cart>
+{%- endcapture -%}
+
+{%- assign title = 'drawers.drawer.cart.title' | t -%}
+{%- render 'drawer',
+  key: "cart",
+  title: title,
+  body: body,
+  footer: nil
+-%}

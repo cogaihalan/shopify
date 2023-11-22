@@ -1,0 +1,35 @@
+<!-- -Order Protection Stylesheet- -->
+        <link
+          rel="stylesheet"
+          href="https://op-media-asset.s3.us-west-1.amazonaws.com/assets/v3/shopify/style.css"
+        >
+  <!-- -Order Protection Stylesheet- -->
+
+<script src="https://op-media-asset.s3.us-west-1.amazonaws.com/assets/v3/shopify/orderprotection.js"></script>
+
+<script defer>
+  const widget = OrderProtection.createOrderProtectionWidget({
+      text: { CURRENCY: window.Shopify.currency.active },
+      locations: [{
+        sibling: {
+          position: 'before',
+          selector: '.drw-Footer_Buttons',
+        }
+      }]
+    });
+    widget.addPlugin({beforeAttach: async () => {
+    const cartItems = widget.cart.cart.items
+  if (cartItems.length > 0) {
+    const opProduct = cartItems.find((item) => item.vendor === "Order Protection")
+      if (opProduct) {
+        widget.price = opProduct.final_price
+      } else {
+          await fetch('/products/order-protection.js').then((res) => res.json()).then((data) => {
+            opVariant = data.variants.find((v) => v.id === widget.currentVariantID)
+            widget.price = opVariant.price
+          })
+      }
+    }
+  }})
+    widget.init();
+</script>

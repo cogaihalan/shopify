@@ -1,0 +1,38 @@
+<script>
+  function getCart() {
+    return fetch('/cart.js').then(function(response) {
+      return response.json();
+    })
+  }
+
+  function remove(cart) {
+    const updates = cart.items.reduce(function(acc, item) {
+      item.vendor === 'Order Protection'
+        ? acc[item.variant_id] = 0
+        : acc[item.variant_id] = item.quantity;
+      return acc;
+    }, {});
+
+    return fetch('/cart/update.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({updates})
+    }).then(function() {
+      console.log('removed order protection')
+    })
+  }
+
+  getCart().then(function(cart) {
+    const op = cart.items.find(function(item) {
+      return item.vendor === 'Order Protection';
+    });
+
+    if (!op) {
+      return;
+    }
+
+    remove(cart); 
+  })
+</script>

@@ -1,0 +1,59 @@
+<price-range class="prc-Range">
+  <div class="prc-Range_Column">
+    <div class="prc-Range_Field">
+      <input
+        class="prc-Range_Input"
+        name="{{ filter.min_value.param_name }}"
+        id="{{ id_prefix }}-{{ filter.label | escape }}-GTE"
+        value="{%- if filter.min_value.value != blank -%}{{- min_value -}}{%- endif -%}"
+        type="number"
+        placeholder="0"
+        min="0"
+        max="{{ range_max }}"
+        data-price-range-el="min"
+        data-range-slider-external-el="min"
+        data-collection-filters-external-el="minPrice"
+      />
+
+      <label
+        class="prc-Range_Label"
+        for="Filter-{{ filter.label | escape }}-GTE"
+        data-currency-symbol="{{ cart.currency.symbol }}"
+        data-text="{{ 'sections.collection_template.from' | t }}"
+      >
+        <span class="util-ScreenReaderOnly">
+          {{ 'sections.collection_template.from' | t }}
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="prc-Range_Column">
+    <div class="prc-Range_Field">
+      <input
+        class="prc-Range_Input"
+        name="{{ filter.max_value.param_name }}"
+        id="{{ id_prefix }}-{{ filter.label | escape }}-LTE"
+        value="{%- if filter.max_value.value != blank -%}{{- max_value -}}{%- endif -%}"
+        type="number"
+        min="0"
+        placeholder="{{ range_max }}"
+        max="{{ range_max }}"
+        data-price-range-el="max"
+        data-range-slider-external-el="max"
+        data-collection-filters-external-el="maxPrice"
+      />
+
+      <label
+        class="prc-Range_Label"
+        for="Filter-{{ filter.label | escape }}-LTE"
+        data-currency-symbol="{{ cart.currency.symbol }}"
+        data-text="{{ 'sections.collection_template.to' | t }}"
+      >
+        <span class="util-ScreenReaderOnly">
+          {{ 'sections.collection_template.to' | t }}
+        </span>
+      </label>
+    </div>
+  </div>
+</price-range>

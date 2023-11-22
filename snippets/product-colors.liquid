@@ -1,0 +1,103 @@
+{{ 'product-colors.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign current_colour_field = product.metafields.colors.current
+
+  assign current_color_handle = current_colour_field | split: ':' | last | handleize
+  assign current_colour = current_colour_field | split: ':' | last | strip
+  assign categories = '' | sort
+
+  assign available_color_array = product.metafields.colors.available | split: ","
+
+  for colour in available_color_array
+    if colour contains ':'
+      assign category = colour | split: ':' | first | sort
+      assign categories = categories | concat: category
+    endif
+  endfor
+
+  if categories.size > 1
+    assign categories = categories | uniq
+  else
+    assign categories = 'no_categories' | sort
+  endif
+%}
+
+<div class="prd-Colors">
+  {%- for category in categories -%}
+    {%- assign category = category | strip -%}
+
+    {%- if category != blank -%}
+      <header class="prd-Colors_Header">
+
+        <label class="prd-Colors_Label">
+          {%- if categories.size > 1 -%}
+            <span class="prd-Colors_Name">
+              {{- category -}}:
+            </span>
+
+            {%- assign current_colour_category = current_colour_field | split: ':' | first | strip -%}
+
+
+            {%- if current_colour_category == category -%}
+              <span class="prd-Colors_Value">
+                {{ current_colour }}
+               </span>
+            {%- endif -%}
+          {%- else -%}
+            <span class="prd-Colors_Name">
+              {{ 'products.product.color' | t }}
+            </span>
+            <span class="prd-Colors_Value">
+              {{ product.metafields.colors.current }}
+            </span>
+          {%- endif -%}
+        </label>
+
+      </header>
+
+      {%- if available_color_array.size > 1 -%}
+        <div class="prd-Colors_Colors">
+          {%- for color in available_color_array -%}
+            {%- liquid
+              assign color_variant = color | split: ':' | last | strip
+              assign color_handle = color_variant | handleize
+              assign product_handle = product.handle | replace: current_color_handle, color_handle
+
+              assign show_category_colour = false
+              if categories.size > 1 and color contains category
+                assign show_category_colour = true
+              endif
+
+              assign color_product = product
+              if current_color_handle != color_handle
+                assign color_product = all_products[product_handle]
+              endif
+
+              assign product_url = color_product.url
+              if color_product.handle == blank
+                assign product_url = "#"
+              endif
+            -%}
+
+            {%- if show_category_colour or categories.size == 1 -%}
+              <a href="{{- product_url -}}" aria-label="{{ color_variant }}{% if color_product.handle != blank and color_product.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}{% if color_product.handle == blank %} - {{ 'products.product.unavailable' | t }}{% endif %}"
+                class="
+                  prd-Colors_Color
+                  prd-Colors_Color-{{ color_variant | handleize }}
+                  {% if current_color_handle == color_handle %} prd-Colors_Color-current{% endif %}
+                  {% if color_product.available != true %} prd-Colors_Color-unavailable{% endif %}
+                  col-Color-{{ color_variant | handleize }}
+                ">
+                <span class="prd-Colors_Background"></span>
+                <span class="util-ScreenReaderOnly">
+                  {{ color_variant }}
+                </span>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+</div>

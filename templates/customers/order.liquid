@@ -1,0 +1,216 @@
+{{ 'account-overview.css' | asset_url | stylesheet_tag }}
+{{ 'account-orders.css' | asset_url | stylesheet_tag }}
+{{ 'account-order.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+<div class="acc-Overview">
+
+  <div class="acc-Overview_Inner acc-Overview_Inner-grid acc-Overview_Inner-tight lyt-Container">
+
+    <div class="acc-Overview_Columns">
+
+      <div class="acc-Overview_Column">
+
+        <div class="acc-Overview_Item acc-Overview_Item-order">
+          {%- capture created_at_date -%}{{ order.created_at | date: '%d/%m/%y' }}{%- endcapture -%}
+          {%- assign order_name = 'customer.order.title' | t: name: order.name -%}
+          {%- assign order_date = 'customer.order.date' | t: date: created_at_date -%}
+          {%- assign item_title = order_name | append: " - " | append: order_date -%}
+          {%- capture item_body -%}{%- render 'account-order' -%}{%- endcapture -%}
+
+          {%- render 'account-item',
+            item_title: item_title,
+            item_body: item_body
+          -%}
+        </div>
+
+      </div>
+
+      <div class="acc-Overview_Column">
+        <div class="acc-Overview_Item">
+
+          {%- assign item_title = 'customer.order.order_summary' | t -%}
+          {%- capture item_body -%}
+          <p class="acc-Order_Text">
+            {{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}<br />
+            {{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}<br />
+            {{ 'customer.order.subtotal' | t }}: {{ order.subtotal_price | money_without_trailing_zeros }}<br />
+
+            {%- for discount in order.discounts -%}
+              {{ discount.code }} {{ 'customer.order.discount' | t }}: {{ discount.savings | money_without_trailing_zeros }}<br />
+            {%- endfor -%}
+
+            {%- for shipping_method in order.shipping_methods -%}
+              {{ 'customer.order.shipping' | t }} ({{ shipping_method.title }}): {{ shipping_method.price | money_without_trailing_zeros }}<br />
+            {%- endfor -%}
+
+            {%- for tax_line in order.tax_lines -%}
+              {{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%): {{ tax_line.price | money_without_trailing_zeros }}
+            {%- endfor -%}
+          </p>
+
+          <p class="acc-Order_Text">
+            {{ 'customer.order.total' | t }}: {{ order.total_price | money_without_trailing_zeros }} {{ order.currency }}
+          </p>
+          {%- if order.cancelled -%}
+          <div class="acc-Order_Status">
+            <div class="acc-Order_StatusItem acc-Order_StatusItem-cancelled">
+              {%- assign cancelled_at = order.cancelled_at | date: '%d/%m/%y' -%}
+
+              {{ 'customer.order.cancelled' | t: date: cancelled_at }}<br />
+              {{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason }}
+            </div>
+          </div>
+          {%- endif -%}
+          {%- endcapture -%}
+
+          {%- render 'account-item',
+            item_title: item_title,
+            item_body: item_body
+          -%}
+
+        </div>
+      </div>
+
+      <div class="acc-Overview_Column">
+        <div class="acc-Overview_Item">
+          {%- assign item_title = 'customer.order.delivery_address' | t -%}
+          {%- capture item_body -%}
+          <div class="acc-Item_Text">{{ order.shipping_address | format_address }}</div>
+          {%- endcapture -%}
+
+          {%- render 'account-item',
+            item_title: item_title,
+            item_body: item_body
+          -%}
+        </div>
+      </div>
+
+      <div class="acc-Overview_Column">
+        <div class="acc-Overview_Item">
+        {%- assign item_title = 'customer.order.billing_address' | t -%}
+        {%- capture item_body -%}
+        <div class="acc-Item_Text">{{ order.billing_address | format_address }}</div>
+        {%- endcapture -%}
+
+        {%- render 'account-item',
+          item_title: item_title,
+          item_body: item_body
+        -%}
+        </div>
+      </div>
+
+      <div class="acc-Overview_Column">
+        <div class="acc-Overview_Item">
+          {%- assign item_title = 'customer.order.track_your_order' | t -%}
+          {%- capture item_body -%}
+          <div class="acc-Item_Text">
+            {%- for line_item in order.line_items limit: 1 -%}
+              {%- if line_item.fulfillment.tracking_number -%}
+                {%- liquid
+                  if line_item.fulfillment.tracking_company contains 'DPD'
+                    assign tracking_carrier_moniker = 'dpduk'
+                    assign tracking_service_code = 'E1'
+
+                  elsif line_item.fulfillment.tracking_company contains 'DHL'
+                    assign tracking_carrier_moniker = 'dhl'
+
+                    if order.shipping_method.title contains '3-4'
+                      assign tracking_service_code = 'E4'
+                    elsif order.shipping_method.title contains '2-3'
+                      assign tracking_service_code = 'E3'
+                    else
+                      assign tracking_service_code = 'E2'
+                    endif
+
+                  elsif line_item.fulfillment.tracking_company contains 'Hermes'
+                    assign tracking_carrier_moniker = 'hermes'
+
+                    if order.shipping_method.title contains 'Next Day'
+                      assign tracking_service_code = 'E1'
+                    else
+                      assign tracking_service_code = 'ST'
+                    endif
+
+                  elsif line_item.fulfillment.tracking_company contains 'P2P Fedex'
+                    assign tracking_carrier_moniker = 'p2p'
+                    assign tracking_service_code = 'ST'
+
+                  elsif line_item.fulfillment.tracking_company contains 'Fedex'
+                    assign tracking_carrier_moniker = 'fedex'
+
+                    if order.shipping_method.title contains '4-5'
+                      assign tracking_service_code = 'IE'
+                    elsif order.shipping_method.title contains '3-4'
+                      assign tracking_service_code = 'E4'
+                    else
+                      assign tracking_service_code = 'E3'
+                    endif
+                  endif
+
+                  assign tracking_number = line_item.fulfillment.tracking_number
+                  assign tracking_order_number = order.name | remove: '#'
+                  assign tracking_ship_date = line_item.fulfillment.created_at | date: "%Y-%m-%d"
+                  assign tracking_order_date = order.created_at | date: "%Y-%m-%d"
+                  assign tracking_destination_country = order.shipping_address.country_code
+                -%}
+
+                {%- capture fulfilled_at_date -%}{{ line_item.fulfillment.created_at | date: format: 'month_day_year' }}{%- endcapture -%}
+                <div class="acc-Order_Detail fz-12_20">
+                  <p class="acc-Order_Text">{{ 'customer.order.fulfilled_at' | t: date: fulfilled_at_date }}</p>
+                  <p class="acc-Order_Text">{{ 'customer.order.tracking_company' | t }}: {{ line_item.fulfillment.tracking_company }}</p>
+                  <p class="acc-Order_Text">{{ 'customer.order.tracking_number' | t }}: #{{ line_item.fulfillment.tracking_number }}</p>
+                </div>
+
+                {%- if line_item.fulfillment.tracking_number -%}
+                  <div class="acc-Order_Buttons">
+                    <a class="acc-Order_Button btn-Button btn-Button-secondary btn-Button-border" href="{{ 'customer.order.tracking_narvar' | t: carrier_moniker: tracking_carrier_moniker, tracking_number: tracking_number, service_code: tracking_service_code, order_number: tracking_order_number, ship_date: tracking_ship_date, order_date: tracking_order_date, destination_country: tracking_destination_country }}" target="_blank">
+                      {{ 'customer.order.track_shipment' | t }}
+                    </a>
+                  </div>
+                {%- endif -%}
+
+              {%- else -%}
+                <p class="acc-Order_Text">{{ 'customer.order.no_tracking' | t }}</p>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- endcapture -%}
+
+          {%- render 'account-item',
+            item_title: item_title,
+            item_body: item_body
+          -%}
+        </div>
+      </div>
+
+      {%- comment -%}
+      <div class="acc-Overview_Column">
+        <div class="acc-Overview_Item">
+          {%- capture item_body -%}
+          <a class="acc-Order_BackButton btn-Button btn-Button-basic" href="/account?view=orders">
+            {{ 'customer.order.back' | t }}
+          </a>
+          {%- endcapture -%}
+
+          {%- render 'account-item',
+            item_body: item_body
+          -%}
+        </div>
+      </div>
+      {%- endcomment -%}
+
+    </div>
+
+  </div>
+
+</div>
+{%- endcapture -%}
+
+{%- liquid
+  assign order_name = 'customer.order.title' | t: name: order.name
+-%}
+{%- render 'account-layout',
+  title: order_name,
+  body: body
+-%}

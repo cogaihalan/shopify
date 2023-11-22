@@ -1,0 +1,44 @@
+<link
+  rel="stylesheet"
+  href="{{ 'range-slider.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<script
+  src="{{ 'range-slider.js' | asset_url }}"
+  defer="defer"
+></script>
+
+{%- liquid
+  assign min = min | default: 0
+  assign max = max | default: 100
+  assign min_value = min_value | default: min
+  assign max_value = max_value | default: max
+-%}
+
+<range-slider class="rng-Slider"
+  min="{{- min -}}"
+  max="{{- max -}}"
+  min-value="{{- min_value -}}"
+  max-value="{{- max_value -}}"
+>
+  <button class="rng-Slider_Dot rng-Slider_Dot-left" type="button" data-range-slider-el="touchLeft">
+    <div class="rng-Slider_DotInner">
+      {%- render 'bao-icon-chevron-right' -%}
+      <span class="rng-Slider_DotTotal" data-range-slider-el="minValue"></span>
+    </div>
+  </button>
+
+  <button class="rng-Slider_Dot rng-Slider_Dot-right" type="button" data-range-slider-el="touchRight" style="right: 0%;">
+    <div class="rng-Slider_DotInner">
+      {%- render 'bao-icon-chevron-left' -%}
+      <span class="rng-Slider_DotTotal" data-range-slider-el="maxValue"></span>
+    </div>
+  </button>
+
+  <div class="rng-Slider_Line" data-range-slider-el="line">
+    <span class="rng-Slider_LineInner"></span>
+    <span class="rng-Slider_LineHighlighter" data-range-slider-el="highlighter"></span>
+  </div>
+</range-slider>

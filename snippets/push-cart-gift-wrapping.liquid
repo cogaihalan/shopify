@@ -1,0 +1,82 @@
+<script src="{{ 'gift-wrapping-form.js' | asset_url }}" defer></script>
+
+<script>
+    window.BAO.giftWrapping = {{ settings.push_cart_gift_wrapping_max_amount }}
+</script>
+
+<link
+  rel="stylesheet"
+  href="{{ 'push-cart-gift-wrapping-form.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- liquid
+    assign gift_product = all_products[settings.push_cart_gift_wrapping_product]
+    assign gift_wrapping_max_products = settings.push_cart_gift_wrapping_max_amount | plus: 0
+    assign gift_card_product = all_products[settings.push_cart_gift_card_product]
+
+    if gift_product != blank
+      assign is_in_cart = false
+      assign is_in_cart_index = 0
+      assign other_products_in_the_cart = false
+
+      for cart_item in cart.items
+        if cart_item.product_id == gift_card_product.id
+          assign only_gift_cards_in_the_cart = true
+        else
+          assign other_products_in_the_cart = true
+          assign only_gift_cards_in_the_cart = false
+        endif
+
+        if gift_product.selected_or_first_available_variant.id == cart_item.variant_id
+          assign is_in_cart = true
+          assign cart_item_key = cart_item.key
+          assign is_in_cart_index = forloop.index
+          break
+        endif
+      endfor
+
+      if only_gift_cards_in_the_cart == true and other_products_in_the_cart == false
+        assign show_gift_wrapping = false
+      else
+        assign show_gift_wrapping = true
+      endif
+
+      if is_in_cart
+        assign gift_wrapping_max_products = settings.push_cart_gift_wrapping_max_amount | plus: 1
+      endif
+    endif
+-%}
+
+<div class="psh-GiftWrapping">
+  {%- if cart.item_count != 0 -%}
+    {%- if show_gift_wrapping -%}
+      <div class="psh-GiftWrapping_Inner">
+        {% if cart.item_count <= gift_wrapping_max_products %}
+          <gift-wrapping-form>
+            <form class="psh-GiftWrapping_Form">
+              <input type="hidden" name="id" value="{{ gift_product.selected_or_first_available_variant.id }}" />
+              <input type="hidden" name="quantity" value="{% if is_in_cart %}0{% else %}1{% endif %}" />
+              <input type="hidden" name="_attachToPreorder" value="'_attachToPreorder': true" />
+
+              <button class="psh-PushGiftWrap_Button{% if is_in_cart %} psh-PushGiftWrap_Button-added{% endif %}" data-cart-item-key="{{ cart_item_key }}" type="submit">
+                <span class="psh-PushGiftWrap_ButtonCheckBox"></span>
+                <span class="psh-PushGiftWrap_Text rte-RichText">
+                  {% if is_in_cart %}
+                    {{ settings.push_cart_gift_wrapping_remove_text }}
+                  {% else %}
+                    {{ settings.push_cart_gift_wrapping_add_text }}
+                    <strong>{{ gift_product.price | money }}</strong>
+                  {% endif %}
+                </span>
+              </button>
+            </form>
+          </gift-wrapping-form>
+        {% else %}
+          <span class="fz-14_20">{{ settings.push_cart_gift_wrapping_disabled_text | replace: '[amount]', settings.push_cart_gift_wrapping_max_amount }}</span>
+        {% endif %}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</div>

@@ -1,0 +1,110 @@
+{% layout 'theme' %}
+
+{{ 'account-layout.css' | asset_url | stylesheet_tag }}
+{{ 'swym-wishlist.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'swym-wishlist.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign title = page.title
+  assign welcome_message = blank
+  if customer
+    assign welcome_message = 'customer.account.hi' | t | append: " " | append: customer.first_name
+  endif
+-%}
+
+<section class="acc-Layout">
+
+  <div class="acc-Layout_Nav">
+    {%- section 'account-navigation' -%}
+  </div>
+
+  {%- if title != blank -%}
+  <div class="acc-Layout_Inner lyt-Container">
+
+    <div class="acc-Layout_Header">
+
+      <h1 class="acc-Layout_Title fz-34_37">
+        {{- title | escape -}}
+      </h1>
+
+      {%- unless page.template_suffix == 'wishlist' -%}
+        <span class="acc-Layout_Welcome fz-12_17">
+          {{ welcome_message }}
+        </span>
+      {%- endunless -%}
+    </div>
+
+  </div>
+  {%- endif -%}
+
+  <div class="acc-Layout_Inner">
+
+    <div class="acc-Layout_Body">
+      <div class="acc-Layout_Content">
+        <swym-wishlist class="swym-Wishlist" data-request-path="{{- request.path -}}">
+
+          <div class="swym-Wishlist_Inner lyt-Container">
+
+            <header class="swym-Wishlist_Header">
+
+              <div class="swym-Wishlist_Buttons">
+                <div class="swym-Wishlist_ButtonItem swym-Wishlist_ButtonItem-left">
+                  <a class="swym-Wishlist_Button swym-Wishlist_Button-continue btn-Button btn-Button-basic" href="{{ routes.root_url }}">
+                    {{ 'templates.wishlist.continue_shopping' | t }}
+                  </a>
+                </div>
+              </div>
+
+            </header>
+
+            <div class="swym-Wishlist_Body fz-14_20">
+
+              <div class="swym-Wishlist_State swym-Wishlist_State-empty" data-swym-wishlist-el="empty" aria-hidden="true">
+                {{ 'templates.wishlist.empty' | t }}
+              </div>
+
+              <div class="swym-Wishlist_State swym-Wishlist_State-nomoreitems" data-swym-wishlist-el="nomoreitems" aria-hidden="true">
+                {{ 'templates.wishlist.no_more_items' | t }}
+              </div>
+
+            </div>
+
+            <div class="swym-Wishlist_Items" data-swym-wishlist-el="items">
+              {%- for index in (1..8) -%}
+              <div class="swym-Wishlist_Item">
+                {%- render 'product-card-skeleton' -%}
+              </div>
+              {%- endfor -%}
+            </div>
+
+            <footer class="swym-Wishlist_Footer">
+
+              <div class="swym-Wishlist_Pagination">
+                <div class="swym-Wishlist_PaginationItem swym-Wishlist_PaginationItem-left">
+                  <a class="swym-Wishlist_Button swym-Wishlist_Button-previous btn-Button btn-Button-primary" data-swym-wishlist-el="previous" href="#" aria-hidden="true">
+                    {{ 'accessibility.previous' | t }}
+                  </a>
+                </div>
+                <div class="swym-Wishlist_PaginationItem swym-Wishlist_PaginationItem-right">
+                  <a class="swym-Wishlist_Button swym-Wishlist_Button-next btn-Button btn-Button-primary" data-swym-wishlist-el="next" href="#" aria-hidden="true">
+                    {{ 'accessibility.next' | t }}
+                  </a>
+                </div>
+              </div>
+
+            </footer>
+
+          </div>
+
+        </swym-wishlist>
+      </div>
+    </div>
+
+  </div>
+  {%- unless page.template_suffix == 'wishlist' -%}
+    <div class="acc-Rewards">
+      {%- section 'account-rewards' -%}
+    </div>
+  {%- endunless -%}
+</section>

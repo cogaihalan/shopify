@@ -1,0 +1,18 @@
+{%- if form.posted_successfully? and success_message != blank -%}
+<div class="frm-Form_Row frm-Form_Row-success">
+  <p class="frm-Form_Text frm-Form_Text-success fz-14_20">
+    {{- success_message -}}
+  </p>
+</div>
+{%- endif -%}
+
+{%- if form.errors -%}
+<div class="frm-Form_Row frm-Form_Row-validation">
+  {%- if error_message != blank -%}
+  <p class="frm-Form_Text frm-Form_Text-error fz-14_20">{{ error_message }}</p>
+  {%- endif -%}
+  {%- for field in form.errors -%}
+    <p class="frm-Form_Text frm-Form_Text-error fz-14_20">{{ field }} {{ form.errors.messages[field] }}</p>
+  {%- endfor -%}
+</div>
+{%- endif -%}

@@ -1,0 +1,110 @@
+{% layout none %}<?xml version="1.0"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+{%- paginate collection.products by 1000 -%}
+{%- assign CountryCode = 'US' -%}
+{%- if shop.currency == 'CAD' -%}{%- assign CountryCode = 'CA' -%}{%- endif -%}
+{%- assign PriceAdjustment = 1.0 -%}
+{%- assign PriceAdjustmentEffectiveDate =  '20181226T080000-0500/20190102T235900-0800' -%}
+
+<channel>
+<title>{{ shop.name }} {{ collection.title | replace: '&', '&' }}</title>
+<link>{{ shop.url }}</link>
+<description>{{ collection.description | strip_html }}</description>
+{%- comment %}<locksmith:58fd>{% endcomment -%}
+  {%- assign locksmith_721e_forloop__size = 0 %}{%- for product in collection.products -%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_721e_forloop__size = locksmith_721e_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_721e_forloop__index = nil -%}
+{%- comment %}</locksmith:58fd>{% endcomment -%}
+{%- for product in collection.products -%} 
+  {%- comment %}<locksmith:b85d>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_721e_forloop__index == nil %}{% assign locksmith_721e_forloop__index = 1 %}{% assign locksmith_721e_forloop__index0 = 0 %}{% else %}{% assign locksmith_721e_forloop__index = locksmith_721e_forloop__index | plus: 1 %}{% assign locksmith_721e_forloop__index0 = locksmith_721e_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_721e_forloop__index == 1 %}{% assign locksmith_721e_forloop__first = true %}{% else %}{% assign locksmith_721e_forloop__first = false %}{% endif %}{% if locksmith_721e_forloop__index == locksmith_721e_forloop__size %}{% assign locksmith_721e_forloop__last = true %}{% else %}{% assign locksmith_721e_forloop__last = false %}{% endif %}{% assign locksmith_721e_forloop__rindex = locksmith_721e_forloop__size | minus: locksmith_721e_forloop__index | minus: 1 %}{% assign locksmith_721e_forloop__rindex0 = locksmith_721e_forloop__size | minus: locksmith_721e_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+  {%- comment %}</locksmith:b85d>{% endcomment -%} 
+  {%- assign GoogleProductCategory = product.metafields.mm-google-shopping.google_product_category -%}
+  {%- assign Gender = product.metafields.mm-google-shopping.gender -%}
+  {%- assign AgeGroup = product.metafields.mm-google-shopping.age_group -%}
+  {%- assign Size = "" -%}
+
+  {%- if product.variants.size > 0 -%}
+  {%- for variant in product.variants -%}
+    {%- for option in product.options -%}
+  	  {%- if option == 'UK Size' -%}{% capture Size %}{{ variant.options[forloop.index0] }}{% endcapture %}
+  	  {%- endif -%}
+    {%- endfor -%}
+
+    {% comment %} Calculate Sales vs Base Pricing {% endcomment %} 
+    {%- if variant.compare_at_price == blank -%}
+      {%- assign BasePrice = variant.price -%}
+    {%- else -%}
+      {%- assign BasePrice = variant.compare_at_price -%}
+    {%- endif -%}
+    {%- assign SalePrice = variant.price | times: PriceAdjustment -%}
+
+<item>
+<title>{{ product.title | strip_html | strip_newlines | replace: '&', '&' }}{% unless product.title contains Color %} {{ Color | replace: '&', '&' }}{% endunless %}</title>
+<link>{{ shop.url }}{{ variant.url }}</link>
+<description>{{ product.title | strip_html | strip_newlines | replace: '&', '&' }} {{ variant.title | strip_html | strip_newlines | replace: '&', '&' }} {{ product.description | replace: '</', ' </' | strip_html | strip_newlines | replace: '&', '&' }}</description>
+<g:google_product_category>{{ GoogleProductCategory | replace: '&', '&'  }}</g:google_product_category>
+<g:item_group_id>{{ product.id }}</g:item_group_id>
+<g:id>{{ variant.id }}</g:id>
+<g:condition>new</g:condition>
+<g:price>{{ BasePrice | money_without_currency }} {{ shop.currency }}</g:price>
+{%- if SalePrice < BasePrice -%}<g:sale_price>{{ SalePrice  | money_without_currency }} {{ shop.currency }}</g:sale_price>{%-  endif -%}
+{%- if PriceAdjustment < 1 -%}<g:sale_price_effective_date>{{ PriceAdjustmentEffectiveDate }}</g:sale_price_effective_date>{%- endif -%}
+<g:availability>{% if variant.available %}in stock{% else %}out of stock{% endif %}</g:availability>
+<g:image_link>http:{% if variant.image.src %}{{ variant.image.src | product_img_url: 'grande' }}{% else %}{{ product.featured_image.src | product_img_url: 'grande' }}{% endif %}</g:image_link>
+<g:gtin>{{ variant.barcode }}</g:gtin>
+<g:brand>{{ product.vendor }}</g:brand>
+<g:mpn>{{ variant.sku }}</g:mpn>
+<g:product_type>{{ product.type | replace: '&', '&' }}</g:product_type>
+<g:age_group>{{ AgeGroup }}</g:age_group>
+{% unless product.metafields.colors.current == "" %}<g:color>{{ product.metafields.colors.current }}</g:color>{% endunless %}
+{% unless Size == "" %}<g:size>{{ Size | strip_html | strip_newlines | replace: '&', '&' }}</g:size><g:size_system>US</g:size_system>{% endunless %}
+<g:gender>{{ Gender }}</g:gender>
+<g:custom_label_0>{{ product.metafields.mm-google-shopping.custom_label_0 }}</g:custom_label_0>
+<g:custom_label_1>{{ product.metafields.mm-google-shopping.custom_label_1 }}</g:custom_label_1>
+<g:custom_label_2>{{ product.metafields.mm-google-shopping.custom_label_2 }}</g:custom_label_2>
+<g:custom_label_3>{{ product.metafields.mm-google-shopping.custom_label_3 }}</g:custom_label_3>
+<g:custom_label_4>{{ product.metafields.mm-google-shopping.custom_label_4 }}</g:custom_label_4>
+<g:shipping_weight>{{ variant.weight | weight_with_unit }}</g:shipping_weight>
+</item>
+
+  {% endfor %}
+  {% else %}
+
+  {% comment %} Calculate Sales vs Base Pricing {% endcomment %} 
+  {%- if product.compare_at_price_min == blank -%}
+    {%- assign BasePrice = product.price -%}
+  {%- else -%}
+    {%- assign BasePrice = product.compare_at_price_min -%}
+  {%- endif -%}
+  {%- assign SalePrice = product.price | times: PriceAdjustment -%}
+
+<item>
+<title>{{ product.title | strip_html | strip_newlines | replace: '&', '&' }}</title>
+<link>{{ shop.url }}{{ product.url }}</link>
+<description>{{ product.title | strip_html | strip_newlines | replace: '&', '&' }} {{ product.description | replace: '</', ' </' | strip_html | strip_newlines | replace: '&', '&' }}</description>
+<g:google_product_category>{{ GoogleProductCategory | replace: '&', '&'  }}</g:google_product_category>
+<g:item_group_id>{{ product.id }}</g:item_group_id>
+<g:id>{{ product.id }}</g:id>
+<g:condition>new</g:condition>
+<g:price>{{ BasePrice | money_without_currency }} {{ shop.currency }}</g:price>
+{%- if SalePrice < BasePrice -%}<g:sale_price>{{ SalePrice  | money_without_currency }} {{ shop.currency }}</g:sale_price>{%-  endif -%}
+{%- if PriceAdjustment < 1 -%}<g:sale_price_effective_date>{{ PriceAdjustmentEffectiveDate }}</g:sale_price_effective_date>{%- endif -%}
+<g:availability>{% if product.available %}in stock{% else %}out of stock{% endif %}</g:availability>
+<g:image_link>http:{{ product.featured_image.src | product_img_url: 'grande' }}</g:image_link>
+<g:gtin>{{ product.barcode }}</g:gtin>
+<g:brand>{{ product.vendor }}</g:brand>
+<g:mpn>{{ product.sku }}</g:mpn>
+<g:product_type>{{ product.type }}</g:product_type>
+<g:age_group>{{ AgeGroup }}</g:age_group>
+<g:gender>{{ Gender }}</g:gender>
+<g:custom_label_0>{{ product.metafields.mm-google-shopping.custom_label_0 }}</g:custom_label_0>
+<g:custom_label_1>{{ product.metafields.mm-google-shopping.custom_label_1 }}</g:custom_label_1>
+<g:custom_label_2>{{ product.metafields.mm-google-shopping.custom_label_2 }}</g:custom_label_2>
+<g:custom_label_3>{{ product.metafields.mm-google-shopping.custom_label_3 }}</g:custom_label_3>
+<g:custom_label_4>{{ product.metafields.mm-google-shopping.custom_label_4 }}</g:custom_label_4>
+<g:shipping_weight>{{ variant.weight | weight_with_unit }}</g:shipping_weight>
+</item>
+  {% endif %}
+{% endfor %}
+</channel>
+</rss>
+{% endpaginate %}

@@ -1,0 +1,54 @@
+{%- liquid
+  assign enable_preorders = false
+  if product.available == true and product.metafields.stock_management.enable_preorder != blank
+    assign enable_preorders = true
+  endif
+-%}
+
+<div class="prd-AddToCart">
+
+  <product-form>
+    {%- form 'product',
+      product,
+      id: nil,
+      class: 'prd-AddToCart_Form',
+      data-push-cart-form: '',
+      data-product-form: '',
+      data-product-handle: product.handle,
+      data-product-drawer-external-el: 'addtocart-product-form'
+    -%}
+
+      <div class="prd-AddToCart_Buttons">
+
+        <input type="hidden" name="id" value="{%- if is_wishlist -%}[[swymVariantId]]{%- else -%}{{- product.selected_or_first_available_variant.id -}}{%- endif -%}">
+        <input type="hidden" name="quantity" value="1">
+        {%- if enable_preorders -%}
+          <input type="hidden" name="properties[_preorder]" value="true">
+        {%- endif -%} 
+
+        <button
+          class="prd-AddToCart_Button prd-AddToCart_Button-addtocart btn-Button btn-Button-primary btn-Button-fullWidth btn-Button-square"
+          type="submit"
+          name="add"
+          data-product-quickbuy-el="add"
+        >
+
+          <span class="prd-AddToCart_Icon prd-AddToCart_Icon-bag">
+            {%- render 'bao-icon-bag' -%}
+          </span>
+
+          <span class="prd-AddToCart_ButtonText">
+            {%- if enable_preorders -%}
+              {{ 'products.product.pre_order' | t }}
+            {%- else -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- endif -%}   
+          </span>
+          
+        </button>
+
+      </div>    
+    {%- endform -%}
+  </product-form>
+
+</div>

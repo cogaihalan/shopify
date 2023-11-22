@@ -1,0 +1,43 @@
+{{ 'page-navigation.css' | asset_url | stylesheet_tag }}
+
+<nav class="pg-Navigation">
+  <div class="pg-Navigation_Inner">
+    <ul class="pg-Navigation_Items">
+      {%- for link in page_navigation.links -%}
+        <li class="pg-Navigation_Item">
+          {%- if link.url == '#wishlist' -%}
+            <button
+              class="pg-Navigation_Link fz-13_13"
+              type="button"
+              data-drawers-trigger="wishlist"
+              {% if link.active %} aria-current="page"{% endif %}
+            >
+              {{ link.title }}
+            </button>
+          {%- else -%}
+            {%- liquid
+              assign is_active = link.active
+              assign view_parts = link.url | split: "view="
+              if view_parts.last contains template.suffix
+                assign is_active = true
+              endif
+              if link.active and template.suffix != blank
+                unless view_parts.last contains template.suffix
+                  assign is_active = false
+                endunless
+              endif
+            -%}
+            <a
+              class="pg-Navigation_Link fz-13_13"
+              href="{{ link.url }}"
+              data-page-navigation-el="trigger"
+              {% if is_active %} aria-current="page"{% endif %}
+            >
+              {{ link.title }}
+            </a>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="By Association Only" />
+
+{%- if request.page_type == 'search' -%}
+  <meta name="robots" content="noindex">
+{%- endif -%}
+
+
+  {% render 'hreflang' %}
+
+
+{%- if request.page_type == 'collection' -%}
+  {%- liquid
+    assign active_filters = collection.filters | map: "active_values" | compact
+    assign is_sorted = collection.sort_by
+    assign collection_url = collection.url
+
+    if collection.metafields.nosto != blank
+      assign collection_url = collection.metafields.nosto.sourceHandle | prepend: '/collections/'
+    endif
+  -%}
+  {%- if active_filters.size > 0 or is_sorted != blank -%}
+    <meta name="robots" content="noindex, follow" />
+  {%- endif -%}
+
+  <link rel="canonical" href="{{ shop.url }}{{ collection_url }}" />
+{%- else -%}
+  <link rel="canonical" href="{{ canonical_url }}" />
+{%- endif -%}
+
+<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+{%- unless settings.type_header_font.system? -%}
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+{%- endunless -%}
+
+{%- liquid
+  render 'favicons'
+  render 'head-seo'
+  render 'bao-head'
+  render 'typekit'
+  render 'bao-head-scripts'
+-%}
+
+{%- if settings.lcp_preload_mobile_image != blank and settings.lcp_preload_desktop_image != blank and template.name == 'index' -%}
+  <link rel="preload" href="{{ settings.lcp_preload_mobile_image | image_url: width: 720 }}" as="image" media="(max-width: 768px)" fetchpriority="high" imagesrcset="{{ settings.lcp_preload_mobile_image | image_url: width: 720 }} 2x, {{ settings.lcp_preload_mobile_image | image_url: width: 720 }} 3x">
+  <link rel="preload" href="{{ settings.lcp_preload_desktop_image | image_url: width: 1944 }}" as="image" media="(min-width: 769px) and (max-width: 1024px)" fetchpriority="high"  imagesrcset="{{ settings.lcp_preload_desktop_image | image_url: width: 1944 }} 2x, {{ settings.lcp_preload_desktop_image | image_url: width: 1944 }} 3x">
+  <link rel="preload" href="{{ settings.lcp_preload_desktop_image | image_url: width: 2880 }}" as="image" media="(min-width: 1025px) and (max-width: 1440px)" fetchpriority="high"  imagesrcset="{{ settings.lcp_preload_desktop_image | image_url: width: 2880 }} 2x, {{ settings.lcp_preload_desktop_image | image_url: width: 2880 }} 3x">
+  <link rel="preload" href="{{ settings.lcp_preload_desktop_image | image_url: width: 3840 }}" as="image" media="(min-width: 1441px)" fetchpriority="high"  imagesrcset="{{ settings.lcp_preload_desktop_image | image_url: width: 3840 }} 2x, {{ settings.lcp_preload_desktop_image | image_url: width: 3840 }} 3x">
+{%- endif -%}
+
+<script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'layout-header.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-count.js' | asset_url }}" defer="defer"></script>
+
+{%- render 'bao-head-styles' -%}
+
+{%- if settings.enable_ada -%}
+  {%- render 'script-ada' -%}
+{%- endif -%}
+
+{%- render 'microsoft-clarity' -%}

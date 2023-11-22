@@ -1,0 +1,28 @@
+<modal-element class="mod-Modal mod-Modal-{{ modal_style }}" data-modal="{{ modal_type }}" aria-hidden="true">
+
+  <div class="mod-Modal_Outer">
+
+    <div class="mod-Modal_Inner lyt-Container">
+      <div class="mod-Modal_Wrapper">
+
+        <header class="mod-Modal_Header">
+          <button type="button" class="mod-Modal_Close" data-el="modal-element.close">
+            <span class="mod-Modal_Icon mod-Modal_Icon-close">
+              {%- render 'bao-icon-close' -%}
+            </span>
+            <span class="util-ScreenReaderOnly">
+              {{ 'accessibility.close' | t }}
+            </span>
+          </button>
+        </header>
+
+        <div class="mod-Modal_Body">
+          {{ body }}
+        </div>          
+
+      </div>
+    </div>
+
+  </div>
+  
+</modal-element>

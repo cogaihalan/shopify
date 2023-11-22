@@ -1,0 +1,28 @@
+{% liquid
+  assign button_text = 'collections.list.load_previous' | t
+%}
+
+<link
+  rel="stylesheet"
+  href="{{ 'pagination-load-more.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<!--
+- The load previous page button
+-->
+<div class="pgn-LoadMore">
+
+  <!--
+  - The load previous page anchor
+  - href: the pagination previous page URL
+  -->
+  <a
+    class="pgn-LoadMore_Button btn-Button btn-Button-primary"
+    href="{{ paginate.previous.url }}"
+    aria-label="{{ button_text }}"
+  >
+    {{ button_text }}
+  </a>
+</div>

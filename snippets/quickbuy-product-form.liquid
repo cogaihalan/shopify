@@ -1,0 +1,73 @@
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+  assign current_variant = product.selected_or_first_available_variant
+
+  assign enable_preorders = false
+  if product.available == true and product.metafields.stock_management.enable_preorder != blank
+    assign enable_preorders = true
+  endif
+-%}
+
+<product-form>
+  {%- form 'product',
+    product,
+    id: product_form_id,
+    class: 'prd-QuickBuy_Form',
+    data-push-cart-form: '',
+    data-product-form: '',
+    data-product-handle: product.handle,
+    data-product-drawer-external-el: 'quickbuy-product-form'
+  -%}
+    <div class="prd-QuickBuy_Options">
+
+      {%- render 'quickbuy-options', product: product, section: section -%}
+
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1">
+
+      {%- if enable_preorders -%}
+      <input type="hidden" name="properties[_preorder]" value="true">
+      {%- endif -%}
+
+      <div class="prd-QuickBuy_Buttons">
+        <button
+          class="prd-QuickBuy_Button prd-QuickBuy_Button-addtocart btn-Button btn-Button-tertiary btn-Button-fullWidth btn-Button-square"
+          type="submit"
+          name="add"
+          aria-hidden="{% if current_variant.available %}false{% else %}true{% endif %}"
+          data-back-in-stock-enabled="true"
+          {% unless current_variant.available %}disabled="disabled"{% endunless %}
+          data-product-quick-buy-add-to-cart
+        >
+          <span class="prd-QuickBuy_ButtonIcon prd-QuickBuy_ButtonIcon-addtocart">
+            {%- render 'bao-icon-bag' -%}
+          </span>
+
+          <span class="prd-QuickBuy_ButtonText" data-enable-pre-orders="{{- enable_preorders -}}" data-product-quick-buy-add-to-cart-text>
+            {%- if current_variant.available -%}
+              {%- if enable_preorders -%}
+                {{ 'products.product.pre_order' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- endif -%}
+          </span>
+        </button>
+
+        <button class="prd-QuickBuy_Button prd-QuickBuy_Button-backInStock btn-Button btn-Button-primary btn-Button-fullWidth btn-Button-square"
+          type="button"
+          aria-hidden="{% if current_variant.available %}true{% else %}false{% endif %}"
+          data-product-quick-buy-back-in-stock
+          data-product-id="{{- product.id -}}"
+          data-variant-id="{{- current_variant.id -}}"
+          data-back-in-stock-external-el="trigger"
+          data-drawers-trigger="back-in-stock"
+        >
+          {{- 'products.back_in_stock.notify_me' | t -}}
+        </button>
+      </div>
+    </div>
+  {%- endform -%}
+</product-form>

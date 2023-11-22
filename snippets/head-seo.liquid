@@ -1,0 +1,31 @@
+{%- capture seo_title -%}
+  {%- if request.page_type == 'search' -%}
+    {{ 'templates.search.title_tag' | t: terms: search.terms | strip_html }}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains 'Oh Polly' -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- else -%}
+    {{ page_title }}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+  {%- endif -%}
+  {%- assign escaped_page_title = page_title | escape -%}
+  {%- unless escaped_page_title contains 'Oh Polly' -%}
+    &ndash; {{ shop.name }}
+  {%- endunless -%}
+{%- endcapture -%}
+<title>{{ seo_title | strip }}</title>
+
+{%- if page_description -%}
+  {%- comment %}<locksmith:7342>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description | escape }}">{% endif -%}
+    {%- comment %}original: <meta name="description" content="{{ page_description | escape }}">{%- endcomment %}
+  {%- comment %}</locksmith:7342>{% endcomment -%}
+{%- endif -%}
+
+{%- render 'meta-tags' -%}

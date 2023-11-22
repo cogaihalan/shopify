@@ -1,0 +1,37 @@
+<script
+  id="__ada"
+  data-handle="ohpolly"
+  src="https://static.ada.support/embed2.js"
+  defer="defer"
+></script>
+
+{%- if customer -%}
+  <script type="text/javascript">
+    window.adaSettings = {
+      metaFields: {
+        first_name: "{{ customer.first_name }}",
+        last_name: "{{ customer.last_name }}",
+        email: "{{ customer.email }}",
+        phone_number: "{{ customer.phone }}",
+        sid: "{{ customer.id }}",
+        ll_loyalty_tier: "{{ customer.metafields.loyaltylion.loyalty_tier }}",
+        ll_birthday: "{{ customer.metafields.loyaltylion.birthday }}",
+        ll_points_total: "{{ customer.metafields.loyaltylion.points_total }}",
+        logged_in: "true"
+      }
+    };
+  </script>
+{%- else -%}
+  <script type="text/javascript">
+    window.adaSettings = {
+      metaFields: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        sid: "",
+        logged_in: "false"
+      }
+    };
+  </script>
+{%- endif -%}

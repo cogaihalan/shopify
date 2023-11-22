@@ -1,0 +1,23 @@
+<script
+  src="{{ 'upsell-modal.js' | asset_url }}"
+  type="module"
+></script>
+
+{{ 'upsell-modal.css' | asset_url | stylesheet_tag }}
+
+<upsell-modal data-modal-product-id="{{ product.id }}" class="mod-UpsellModal" aria-hidden="true">
+  <div class="mod-UpsellModal_Outer" data-modal-background>
+    <div class="mod-UpsellModal_Inner">
+      <div class="mod-UpsellModal_Head">
+        <div class="mod-UpsellModal_Title fz-18_22">{{ 'products.product.why_not_add' | t }}</div>
+        <div class="mod-UpsellModal_Close" data-upsell-modal-el="close">
+          <span class="mod-UpsellModal_Icon-close">
+            {%- render 'bao-icon-close' -%}
+          </span>
+        </div>
+      </div>
+
+      <div class="mod-UpsellModal_Body" data-upsell-modal-el="content"></div>
+    </div>
+  </div>
+</upsell-modal>

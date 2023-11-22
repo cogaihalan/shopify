@@ -1,0 +1,69 @@
+{%- assign strapline = complete_the_set_product.metafields.product_details.strapline -%}
+
+<div class="psh-CompleteTheSet">
+  
+  <h4 class="psh-CompleteTheSet_Heading fz-14_20-headings">
+    {{ 'drawers.drawer.cart.complete_the_set' | t }}
+  </h4>
+
+  <div class="psh-CompleteTheSet_Item">
+
+    {%- if complete_the_set_product.featured_image != blank -%}
+    <div class="psh-CompleteTheSet_ImageContainer">
+      {%- render 'responsive-image', image: complete_the_set_product.featured_image, height: 300, width: 200 -%}
+    </div>
+    {%- endif -%}
+
+    <div class="psh-CompleteTheSet_Body fz-14_20">
+
+      {%- if strapline -%}
+      <p class="psh-CompleteTheSet_Strapline fz-18_22">
+        {{ strapline }}
+      </p>
+      {%- endif -%}
+
+      <p class="psh-CompleteTheSet_Title">
+        {{ complete_the_set_product.title }}
+      </p>
+
+      <div class="psh-CompleteTheSet_Price">
+        {%- render 'product-price', product: complete_the_set_product -%}
+      </div>
+
+    </div>
+
+  </div>
+
+  <product-form>
+    {%- assign product_form_id = complete_the_set_product.id | prepend: 'push_cart_complete_the_set_product_form_' -%}
+
+      {%- form 'product',
+      complete_the_set_product,
+        id: product_form_id,
+        class: 'psh-CompleteTheSet_Form',
+        data-push-cart-form: '',
+        data-product-form: '',
+        data-product-handle: complete_the_set_product.handle
+      -%}
+        <input type="hidden" name="quantity" value="1">
+        <input
+          type="hidden"
+          name="id"
+          value="{{ complete_the_set_product.selected_or_first_available_variant.id }}"
+        >
+
+        <button
+          type="submit"
+          class="psh-CompleteTheSet_Button btn-Button btn-Button-quaternary"
+        >
+          <span class="psh-CompleteTheSet_ButtonIcon">
+            {%- render 'bao-icon-bag' -%}
+          </span>
+          <span class="psh-CompleteTheSet_ButtonText">
+            {{ 'products.product.add_to_cart' | t }}
+          </span>
+        </button>
+      {%- endform -%}
+  </product-form>
+
+</div>

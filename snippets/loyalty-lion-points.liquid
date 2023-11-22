@@ -1,0 +1,14 @@
+{%- assign points_html = 'products.loyalty.points_html' | t: product_id: product.id -%}
+<loyalty-lion-points>
+  <div class="prd-Details_Loyalty">
+    <div class="visually-hidden">
+      {%- render 'product-price', loyalty_lion: true -%}
+    </div>
+    <div class="prd-Loyalty_Icon">
+      {%- render 'bao-icon-loyalty' -%}
+    </div>
+
+    <div class="prd-Loyalty_Text fz-14_20">{{- points_html -}}</div>
+  </div>
+</loyalty-lion-points>
+

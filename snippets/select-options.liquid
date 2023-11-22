@@ -1,0 +1,47 @@
+{%- unless product.has_only_default_variant -%}
+
+{{ 'select-options.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'product-options.js' | asset_url }}"
+  defer="defer"
+></script>
+
+<product-options class="sel-Options">
+  <variant-selects data-section="product-bundle-upsell" data-url="{{ product.url }}" data-product-id="{{ product.id }}">
+    {%- for option in product.options_with_values -%}
+      <div class="sel-Options_Option">
+        <label
+          class="sel-Options_Label fz-12_20"
+          for="SingleOptionSelector-{{- product.id -}}-{{- forloop.index0 -}}"
+        >
+          <span class="sel-Options_LabelText">{{ option.name }}:</span>
+        </label>
+
+        <select
+          class="sel-Options_Select"
+          id="SingleOptionSelector-{{- product.id -}}-{{- forloop.index0 -}}"
+          name="options[{{ option.name | escape }}]"
+          data-product-options-el="select"
+          form="product-form-{{ section.id }}"
+        >
+          {%- for value in option.values -%}
+            <option
+              value="{{ value | escape }}"
+              data-variant-selects-option
+              data-index="{{- product.id -}}option{{ option.position }}"
+              {% if option.selected_value == value %}selected="selected"{% endif %}
+            >
+              {{ value }}
+            </option>
+          {%- endfor -%}
+        </select>
+      </div>
+    {%- endfor -%}
+
+    <script type="application/json">
+      {{ product.variants | json }}
+    </script>
+  </variant-selects>
+</product-options>
+{%- endunless -%}

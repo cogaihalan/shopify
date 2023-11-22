@@ -1,0 +1,23 @@
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-drawers.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'drawer-drawer.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<site-drawers class="drw-Drawers util-HideUntilLoaded">
+  <div class="drw-Drawers_Drawer" data-site-drawers-el="drawer">
+    {{- drawers_html -}}
+  </div>
+  <div class="drw-Drawers_Backdrop" data-site-drawers-el="backdrop"></div>
+</site-drawers>
+
+<script src="{{ 'site-drawers.js' | asset_url }}"></script>
+<script src="{{ 'site-drawer.js' | asset_url }}"></script>

@@ -1,0 +1,64 @@
+<script src="{{- 'section-account.js' | asset_url -}}" defer></script>
+
+{%- liquid
+  assign enable_section_account = "false"
+  if request.page_type == 'customers/login'
+    assign enable_section_account = "true"
+  endif
+-%}
+
+{%- if settings.reactivate_enable == true -%}
+  {{ 'account-reactivate.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+<script src="{{- 'toggle-content.js' | asset_url -}}" defer></script>
+
+<section-account class="acc-Account" aria-busy="{{- enable_section_account -}}" data-section-account-enabled="{{- enable_section_account -}}">
+  <toggle-content class="acc-Account_Columns{% if image_desktop == blank %} acc-Account_Columns-single{% endif %}">
+
+    {%- if image_desktop != blank -%}
+      {%- liquid
+        assign actual_image_mobile = image_mobile | default: image_desktop
+
+        if settings.reactivate_enable == true and template.name == 'login'
+          assign mobile_image_height = 900
+        else
+          assign mobile_image_height = 500
+        endif
+      -%}
+      
+      <div class="acc-Account_Column acc-Account_Column-image">
+        <div class="acc-Account_Image acc-Account_Image-mobile">
+          {%- render 'responsive-image', image: actual_image_mobile, height: mobile_image_height, width: 750 -%}
+        </div>
+
+        <div class="acc-Account_Image acc-Account_Image-desktop">        
+          {%- render 'responsive-image', image: image_desktop, height: 1700, width: 1440 -%}
+        </div>
+
+        {%- if settings.reactivate_enable == true and template.name == 'login' -%}
+          <div class="acc-Account_Reactivate">
+            <div class="acc-Reactivate">
+              <h3 class="acc-Reactivate_Title fz-18_22">
+                {{ settings.reactivate_title }}
+              </h3>
+
+              <p class="acc-Reactivate_Text">
+                {{ settings.reactivate_text }}
+              </p>
+
+              <a class="acc-Reactivate_Button btn-Button btn-Button-primary" href="#recover" data-toggle-content-el="trigger">
+                {{ settings.reactivate_button_text }}
+              </a>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="acc-Account_Column acc-Account_Column-login">
+      {{- body -}}
+    </div>
+
+  </toggle-content>
+</section-account>

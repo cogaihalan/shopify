@@ -1,0 +1,59 @@
+{{ 'section.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  if button_type == nil
+    assign button_type = "secondary"
+  endif
+-%}
+
+<section class="
+  sec-Section
+  {% if margin %} sec-Section-{{ margin }}{% endif %}
+  {% if flush %} sec-Section-flush{% endif %}
+  {% if border_top %} sec-Section-withBorderTop{% endif %}
+  "
+  {% if background != blank %}style="background-color: {{ background }};"{% endif %}>
+  <div class="sec-Section_Inner lyt-Container">
+    <div class="sec-Section_Grid">
+
+      {%- if kicker != blank or title != blank -%}
+        <header class="sec-Section_Header{% if headerTextCentre %} sec-Section_Header-textcentre{% endif %}">
+
+          {%- if kicker != blank -%}
+            <p class="sec-Section_Kicker fz-14_20">
+              {{ kicker }}
+            </p>
+          {%- endif -%}
+
+          {%- if title != blank -%}
+            <h2 class="sec-Section_Title fz-34_37">
+              {{ title }}
+            </h2>
+          {%- endif -%}
+
+          {%- if text != blank -%}
+            <p class="sec-Section_Text fz-14_20">
+              {{ text }}
+            </p>
+          {%- endif -%}
+
+        </header>
+      {%- endif -%}
+
+      {%- if body != blank -%}
+        <div class="sec-Section_Body">
+          {{ body }}
+        </div>
+      {%- endif -%}
+
+      {%- if button_link != blank and button_text != blank -%}
+        <footer class="sec-Section_Footer">
+          <a href="{{ button_link }}" class="sec-Section_Link btn-Button btn-Button-{{ button_type }}">
+            {{ button_text }}
+          </a>
+        </footer>
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>

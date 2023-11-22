@@ -1,0 +1,46 @@
+<link
+  rel="stylesheet"
+  href="{{ 'countdown-timer.css' | asset_url }}"
+>
+
+<script
+  src="{{ 'countdown-timer.js' | asset_url }}"
+  type="module"
+></script>
+
+{% if end_date != blank %}
+<countdown-timer class="cd-Timer" data-end-date="{{- end_date -}}" aria-hidden="true">
+
+  {%- if title != blank or expired_text != blank -%}
+  <div class="cd-Timer_Header">
+    {%- if title != blank -%}
+      <p class="cd-Timer_Title fz-16_22" aria-hidden="false" data-countdown-timer-el="title">{{ title | remove: "<p>" | remove: "</p>" }}</p>
+    {%- endif -%}
+    {%- if expired_text != blank -%}
+      <p class="cd-Timer_Title fz-16_22" aria-hidden="true" data-countdown-timer-el="expiredText">{{ expired_text | remove: "<p>" | remove: "</p>" }}</p>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+
+  <div class="cd-Timer_Body fz-24_26" data-countdown-timer-el="body">
+
+    <div class="cd-Timer_Block" data-countdown-timer-el="daysblock" aria-hidden="true">
+      <span class="cd-Timer_Num" data-countdown-timer-el="days">00</span>
+      <span class="cd-Timer_Unit" data-countdown-timer-el="dayText">{{- 'accessibility.countdown.day' | t -}}</span>
+    </div>
+    <div class="cd-Timer_Block" data-countdown-timer-el="hoursblock" aria-hidden="true">
+      <span class="cd-Timer_Num" data-countdown-timer-el="hours">00</span>
+      <span class="cd-Timer_Unit" data-countdown-timer-el="hourText">{{- 'accessibility.countdown.hour' | t -}}</span>
+    </div>
+    <div class="cd-Timer_Block" data-countdown-timer-el="minutesblock" aria-hidden="true">
+      <span class="cd-Timer_Num" data-countdown-timer-el="minutes">00</span>
+      <span class="cd-Timer_Unit" data-countdown-timer-el="minuteText">{{- 'accessibility.countdown.minute' | t -}}</span>
+    </div>
+    <div class="cd-Timer_Block" data-countdown-timer-el="secondsblock" aria-hidden="true">
+      <span class="cd-Timer_Num" data-countdown-timer-el="seconds">00</span>
+      <span class="cd-Timer_Unit" data-countdown-timer-el="secondText">{{- 'accessibility.countdown.second' | t -}}</span>
+    </div>
+
+  </div>
+</countdown-timer>
+{% endif %}

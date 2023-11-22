@@ -1,101 +1,245 @@
-{% comment %}
-    Renders product media
+<link
+  rel="stylesheet"
+  href="{{ 'modal-media.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 
-    Accepts:
-    - media: {Object} Product Media object
-    - loop: {Boolean} Enable video looping (optional)
-    - variant_image: {Boolean} Whether or not media is associated with a variant
+<link
+  rel="stylesheet"
+  href="{{ 'modal-mobile.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 
-    Usage:
-    {% render 'product-media',
-      media: media,
-      loop: section.settings.enable_video_looping,
-      variant_image: true
-    %}
-{% endcomment %}
+<script
+  src="{{ 'media-gallery.js' | asset_url }}"
+  type="module"
+></script>
 
-{%- if media.media_type == 'image' -%}
-  <img
-    class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
-    srcset="{%- if media.preview_image.width >= 550 -%}{{ media.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-            {%- if media.preview_image.width >= 1100 -%}{{ media.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-            {%- if media.preview_image.width >= 1445 -%}{{ media.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-            {%- if media.preview_image.width >= 1680 -%}{{ media.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-            {%- if media.preview_image.width >= 2048 -%}{{ media.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-            {%- if media.preview_image.width >= 2200 -%}{{ media.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-            {%- if media.preview_image.width >= 2890 -%}{{ media.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-            {%- if media.preview_image.width >= 4096 -%}{{ media.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-            {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
-    sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
-    src="{{ media.preview_image | image_url: width: 1445 }}"
-    alt="{{ media.alt | escape }}"
-    loading="lazy"
-    width="1100"
-    height="{{ 1100 | divided_by: media.preview_image.aspect_ratio | ceil }}"
-    data-media-id="{{ media.id }}"
-  >
-{%- else -%}
-  {%- if media.media_type == 'model' -%}
-    <div class="product-media-modal__model" data-media-id="{{ media.id }}">
-      <product-model class="deferred-media media media--transparent global-media-settings global-media-settings--no-shadow" style="padding-top: min(calc(100vh - 12rem), 100%)">
-  {%- else -%}
-    <deferred-media class="deferred-media media global-media-settings global-media-settings--no-shadow" style="padding-top: min(calc(100vh - 12rem), {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%)" data-media-id="{{ media.id }}">
-  {%- endif -%}
+<script
+  src="{{ 'modal-element.js' | asset_url }}"
+  type="module"
+></script>
 
-    <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
-      <span class="deferred-media__poster-button motion-reduce">
-        {%- if media.media_type == 'model' -%}
-          {%- render 'icon-3d-model' -%}
-        {%- else -%}
-          {%- render 'icon-play' -%}
-        {%- endif -%}
-      </span>
-      <img
-        srcset="{% if media.preview_image.width >= 288 %}{{ media.preview_image | image_url: width: 288 }} 288w,{% endif %}
-                {% if media.preview_image.width >= 576 %}{{ media.preview_image | image_url: width: 576 }} 576w,{% endif %}
-                {% if media.preview_image.width >= 550 %}{{ media.preview_image | image_url: width: 550 }} 550w,{% endif %}
-                {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 1100 }} 1100w,{% endif %}
-                {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
-        src="{{ media | image_url: width: 550, height: 550 }}"
-        sizes="(min-width: 1200px) calc((1200px - 10rem) / 2), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
-        loading="lazy"
-        width="576"
-        height="{{ 576 | divided_by: media.preview_image.aspect_ratio }}"
-        alt="{{ media.preview_image.alt | escape }}"
-      >
-    </button>
-    <template>
-      {%- case media.media_type -%}
-      {%- when 'external_video' -%}
-        {%- assign video_class = 'js-' | append: media.host -%}
-        {%- if media.host == 'youtube' -%}
-          {{ media | external_video_url: autoplay: true, loop: loop, playlist: media.external_id | external_video_tag: class: video_class, loading: "lazy" }}
-        {%- else -%}
-          {{ media | external_video_url: autoplay: true, loop: loop | external_video_tag: class: video_class, loading: "lazy" }}
-        {%- endif -%}
-      {%- when 'video' -%}
-        {{ media | media_tag: image_size: "2048x", autoplay: true, loop: loop, controls: true, preload: "none" }}
-      {%- when 'model' -%}
-        {{ media | media_tag: image_size: "2048x", toggleable: true }}
-      {%- endcase -%}
-    </template>
+<script
+  src="{{ 'modal-mobile-element.js' | asset_url }}"
+  type="module"
+></script>
 
-  {%- if media.media_type == 'model' -%}
-      </product-model>
-      <button
-        class="button button--full-width product__xr-button"
-        type="button"
-        aria-label="{{ 'products.product.xr_button_label' | t }}"
-        data-shopify-xr
-        data-shopify-model3d-id="{{ media.id }}"
-        data-shopify-title="title"
-        data-shopify-xr-hidden
-        >
-        {% render 'icon-3d-model' %}
-        {{ 'products.product.xr_button' | t }}
-      </button>
+<media-gallery class="prd-Media" data-initialized="false">
+
+  <div class="prd-Media_Inner">
+  {%- if product.media.size > 1 -%}
+    <div class="prd-Media_Navigation" style="width:155px">
+
+      <div class="prd-Media_Thumbnails" data-el="media-gallery.thumbnails">
+        {%- for media in product.media -%}
+          <button type="button"
+            class="prd-Media_Thumbnail prd-Media_Thumbnail-{{ media.media_type }}"
+            aria-current="{{- forloop.first -}}"
+            data-el="media-gallery.thumbnail"
+            data-slide="{{- forloop.index0 -}}"
+            >
+            {%- case media.media_type -%}
+              {%- when 'image' -%}
+                {%- render 'responsive-image',
+                  image: media,
+                  width: 260,
+                  size_by_width: true
+                -%}
+              {%- when 'video' -%}
+                {%- render 'responsive-image',
+                  image: media.preview_image,
+                  width: 260,
+                  size_by_width: true
+                -%}
+                <span class="prd-Media_PlayIcon">
+                  {%- render 'bao-icon-play' -%}
+                </span>
+            {%- endcase -%}
+          </button>
+        {%- endfor -%}
+      </div>
+
+      <div class="prd-Media_Dots">
+        {%- for media in product.media -%}
+          <button type="button"
+            class="prd-Media_Dot prd-Media_Thumbnail-{{ media.media_type }}"
+            aria-current="{{- forloop.first -}}"
+            data-el="media-gallery.dot"
+            data-slide="{{- forloop.index0 -}}"
+            >
+            <span class="util-ScreenReaderOnly">
+              {{ forloop.index0 }}
+            </span>
+          </button>
+        {%- endfor -%}
+      </div>
+
     </div>
-  {%- else -%}
-    </deferred-media>
-  {%- endif -%}
-{%- endif -%}
+    {%- endif -%}
+
+    <div class="prd-Media_Gallery{% if product.media.size == 1 %} prd-Media_Gallery-single{% endif %}">
+      <div class="prd-Media_Slides" data-el="media-gallery.slides">
+        {%- for media in product.media -%}
+          {%- liquid
+            assign image_width = 1244
+            assign image_height = 1840
+
+            if product.media.size == 1 and media.media_type == "image"
+              assign image_width = media.width
+              assign image_height = media.height
+            endif
+          -%}
+          <div class="prd-Media_Slide prd-Media_Slide-{{ media.media_type }}"
+            data-el="media-gallery.slide"
+            data-slide="{{- forloop.index0 -}}"
+            data-cursor-element="zoom">
+            <div class="prd-Media_SlideTrigger" data-modal-trigger="media-gallery">
+              {%- case media.media_type -%}
+                {%- when 'image' -%}
+                  <div class="prd-Media_SlideImage" data-el="media-gallery.image" data-image="{{ media | image_url }}">
+                    {%- assign preload = false -%}
+                    {%- if forloop.first -%}
+                      {%- assign preload = true -%}
+                    {%- endif -%}
+
+                    {%- render 'responsive-image',
+                      image: media,
+                      width: image_width,
+                      height: image_height,
+                      preload: preload
+                    -%}
+                  </div>
+                {%- when 'video' -%}
+                <div class="prd-Media_SlideVideo">
+                  <video class="prd-Media_VideoPlayer" autoplay loop muted playsinline>
+                    {%- for source in media.sources -%}
+                      <source src="{{- source.url -}}" type="{{- source.mime_type -}}"></source>
+                    {%- endfor -%}
+                  </video>
+                </div>
+              {%- endcase -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if product.media.size > 1 -%}
+      <div class="prd-Media_Arrows">
+        <button
+          class="prd-Media_Arrow prd-Media_Arrow-prev"
+          data-el="media-gallery.controlprevious"
+          data-direction="previous"
+          data-cursor-element="left"
+        >
+          <span class="util-ScreenReaderOnly">
+            {{ 'accessibility.previous' | t }}
+          </span>
+        </button>
+
+        <button
+          class="prd-Media_Arrow prd-Media_Arrow-next"
+          data-el="media-gallery.controlnext"
+          data-direction="next"
+          data-cursor-element="right"
+        >
+          <span class="util-ScreenReaderOnly">
+            {{ 'accessibility.next' | t }}
+          </span>
+        </button>
+      </div>
+
+      {%- endif -%}
+    </div>
+
+    <div class="prd-Media_Zoom">
+      {%- render 'bao-icon-zoom' -%}
+    </div>
+
+    <div class="prd-Media_Pinch" data-el="media-gallery.pinch">
+      {%- render 'bao-icon-pinch' -%}
+      <span class="prd-Media_Pinch-text fz-14_20-headings">{{ 'accessibility.pinch' | t }}</span>
+    </div>
+
+    {% render 'cursor' %}
+  </div>
+
+  {%- capture body -%}
+  <div class="mod-Media">
+    <div class="mod-Media_Gallery">
+
+      <div class="mod-Media_Slides">
+        {%- for media in product.media -%}
+          <div class="mod-Media_Slide mod-Media_Slide-{{ media.media_type }}"
+            data-el="media-gallery.modalSlide"
+            data-slide="{{- forloop.index0 -}}"
+            aria-current="{{- forloop.first -}}">
+            {%- case media.media_type -%}
+              {%- when 'image' -%}
+              {% comment %}
+                <img class="mod-Media_SlideImage" src="{{- media | img_url: 'x1840' -}}" alt="" loading="lazy" width="1000" height="1000" />
+                {% endcomment %}
+                <span
+                  class="mod-Media_SlideImage"
+                  data-el="media-gallery.modalSlideImage"
+                >
+                {%- render 'responsive-image-zoom',
+                  image: media,
+                  width: 1244,
+                  height: 1840
+                -%}
+              </span>
+              {%- when 'video' -%}
+                <video class="mod-Media_SlideVideo" controls>
+                  {%- for source in media.sources -%}
+                  <source src="{{- source.url -}}" type="{{- source.mime_type -}}"></source>
+                  {%- endfor -%}
+                </video>
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="mod-Media_Arrows">
+        <button
+          class="mod-Media_Arrow mod-Media_Arrow-prev"
+          data-el="media-gallery.controlprevious"
+          data-direction="previous"
+        >
+          <span class="util-ScreenReaderOnly">
+            {{ 'accessibility.previous' | t }}
+          </span>
+          <span class="mod-Media_ArrowIcon">
+            {%- render 'bao-icon-chevron-left' -%}
+          </span>
+        </button>
+
+        <button
+          class="mod-Media_Arrow mod-Media_Arrow-next"
+          data-el="media-gallery.controlnext"
+          data-direction="next"
+        >
+          <span class="util-ScreenReaderOnly">
+            {{ 'accessibility.next' | t }}
+          </span>
+          <span class="mod-Media_ArrowIcon">
+            {%- render 'bao-icon-chevron-right' -%}
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  {%- endcapture -%}
+
+  {%- render 'modal',
+    modal_style: 'mediagallery',
+    modal_type: 'media-gallery',
+    body: body
+  -%}
+
+  {%- render 'modal-mobile' -%}
+
+</media-gallery>

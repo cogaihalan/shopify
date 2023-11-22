@@ -1,0 +1,56 @@
+{{ 'social-sharing.css' | asset_url | stylesheet_tag }}
+
+<div class="soc-Sharing">
+  <p class="soc-Sharing_Title fz-13_13">{{ 'general.social.share' | t }}</p>
+
+  <ul class="soc-Sharing_Items">
+    {%- if settings.social_facebook_link != blank -%}
+      <li class="soc-Sharing_Item">
+        <a
+          class="soc-Sharing_Link"
+          href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="util-ScreenReaderOnly">{{ 'general.social.alt_text.share_on_facebook' | t }}</span>
+
+          <span class="soc-Sharing_Icon">{%- render 'bao-icon-facebook' -%}</span>
+        </a>
+      </li>
+    {%- endif -%}
+
+    {%- if settings.social_twitter_link != blank -%}
+      <li class="soc-Sharing_Item">
+        <a
+          class="soc-Sharing_Link"
+          href="//twitter.com/share?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: share_permalink }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="util-ScreenReaderOnly">
+            {{ 'general.social.alt_text.share_on_twitter' | t }}
+          </span>
+
+          <span class="soc-Sharing_Icon">{%- render 'bao-icon-twitter' -%}</span>
+        </a>
+      </li>
+    {%- endif -%}
+
+    {%- if settings.social_pinterest_link != blank -%}
+      <li class="soc-Sharing_Item">
+        <a
+          class="soc-Sharing_Link"
+          href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | url_param_escape }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="util-ScreenReaderOnly">
+            {{ 'general.social.alt_text.share_on_pinterest' | t }}
+          </span>
+
+          <span class="soc-Sharing_Icon">{%- render 'bao-icon-pinterest' -%}</span>
+        </a>
+      </li>
+    {%- endif -%}
+  </ul>
+</div>

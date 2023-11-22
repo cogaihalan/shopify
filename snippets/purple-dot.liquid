@@ -1,0 +1,48 @@
+<style>
+  #pd-dispatch-date {
+    font-size: 14px;
+    padding-top: 10px;
+  }
+  #pd-waitlist-info {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #pd-branding {
+    display: none;
+  }
+
+  .prd-QuickBuy_Buttons #pd-dispatch-date {
+    padding-bottom: 10px;
+  }
+
+  .prd-Card_QuickBuy-mobile #pd-dispatch-date {
+    padding-bottom: 0;
+  }
+
+</style>
+<script>
+  window.PurpleDotConfig = {
+    shopifyCart: {{ cart | json }},
+    pdp: {
+      hide: ['.prd-OrderDeadlineApp'],
+      styles: {
+        preorder: [
+          {
+            selector: '.prd-QuickBuy_Buttons',
+            style: 'flex-flow: row wrap'
+          }
+        ]
+      },
+    },
+    translations: {
+      'en-GB': {
+        addToCart: 'Add to bag'
+      },
+      'en-US': {
+        addToCart: 'Add to bag'
+      }
+    }
+  };
+</script>
+<script src="https://www.purpledotprice.com/api/v1/init.js?apiKey={{settings.purpledot_api_key}}"></script>

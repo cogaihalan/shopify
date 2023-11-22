@@ -1,0 +1,72 @@
+{%- if settings.ometria_enable -%}
+  {%- liquid
+    assign ometria_namespace = 'uk'
+    if shop.permanent_domain == 'oh-polly-us.myshopify.com'
+      assign ometria_namespace = 'us'
+    elsif shop.permanent_domain == 'oh-polly-au.myshopify.com'
+      assign ometria_namespace = 'au'
+    endif
+  -%}
+
+  <script>
+    if (typeof ometria == 'undefined') window.ometria = {};
+
+    {% if checkout %}
+      ometria.raw_data = {
+        template: ((ometria || {}).raw_data || {}).template,
+        order: {{checkout.order_id |json}},
+        cart_total: {{checkout.total_price|json}},
+        cart_count: {{checkout.line_items|size}},
+        cart: [],
+        shop_currency: {{shop.currency|json}},
+        customer_email: {{checkout.email|json}},
+        namespace: "{{ ometria_namespace }}:"
+      };
+    {% else %}
+      ometria.raw_data = {
+        template: {{ template|json }},
+        cart_total: {{ cart.total_price|json }},
+        cart_count: {{ cart.item_count|json }},
+        cart: [],
+        product_id: {{ product.id|json }},
+        search_count: {{ search.results_count|json }},
+        search_terms: {{ search.terms|json }},
+        collection_id: {{ collection.id|json }},
+        collection_handle: {{ collection.handle|json }},
+        page_handle: {{ page.handle|json }},
+        collection_count: {{ collection.products_count|json }},
+        current_page: {{ current_page|json }},
+        shop_currency: {{ shop.currency|json }},
+        customer_email: {{ customer.email|json }},
+        namespace: "{{ ometria_namespace }}:"
+      };
+    {% endif %}
+
+    {%- liquid
+      assign cart_items = cart.items
+      if checkout
+        assign cart_items = checkout.line_items
+      endif
+    -%}
+
+    {% for item in cart_items %}
+      ometria.raw_data.cart.push([
+        {{ item.product.id|json }},
+        {{ item.variant.id|json }},
+        {{ item.quantity|json }},
+        {{ item.line_price|json }}
+      ]);
+    {% endfor %}
+
+    (function() {
+      var url = `${window.location.protocol}//cdn.ometria.com/tags/{{ settings.ometria_account_id }}.js?v=2023040614dsfds`;
+
+      setTimeout(function() {
+        var sc = document.createElement('script');
+        sc.src = url;
+        sc.setAttribute('async','true');
+        document.getElementsByTagName("head")[0].appendChild(sc);
+      }, 15);
+    })();
+  </script>
+{%- endif -%}

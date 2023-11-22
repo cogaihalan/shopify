@@ -1,0 +1,56 @@
+<div
+  class="clc-ProductGridFacet_List"
+  data-collection-filters-form-el="facet"
+  data-index="Filter-{{ index }}"
+>
+  {%- for value in filter.values -%}
+    {%- unless value.count == 0 -%}
+      <div
+        class="clc-ProductGridFacet_Item"
+        data-collection-filters-el="facetItem"
+        {% if filter.label == 'Size' %} data-value="{{ value.label | escape | split: '|' | first }}"{% endif %}
+      >
+        <div class="clc-ProductGridFacet_CheckboxContainer">
+          <input
+            class="clc-ProductGridFacet_Checkbox"
+            data-collection-filters-el="checkbox"
+            type="checkbox"
+            name="{{ value.param_name }}"
+            value="{{ value.value }}"
+            id="{{ id_prefix }}-{{ filter.label | escape }}-{{ forloop.index }}"
+            {% if value.active %}checked{% endif %}
+            {% if value.count == 0 and value.active == false %}disabled{% endif %}
+          >
+
+          <label
+            class="clc-ProductGridFacet_Label fz-14_20"
+            for="{{ id_prefix }}-{{ filter.label | escape }}-{{ forloop.index }}"
+            aria-disabled="{% if value.count == 0 and value.active == false %}true{% else %}false{% endif %}"
+          >
+
+            {%- liquid
+              assign label = value.label | escape | split: '|' | first
+              assign swatchHex = 'var(--Color_Grey-lightest)'
+              for colour in shop.metafields.globals.color_label
+                if colour == label
+                  assign swatchHex = shop.metafields.globals.color_hex[forloop.index0]
+                endif
+              endfor
+            -%}
+
+            <span class="clc-ProductGridFacet_CheckboxIcon" style="--ColourSwatch_BackgroundColour: {{ swatchHex }}"></span>
+
+            <p class="clc-ProductGridFacet_Title">
+              {{ label }}
+              <span
+                data-collection-filters-el="count"
+                data-count="{{ value.count }}"
+                class="clc-ProductGridFacet_Count"
+              >({{ value.count }})</span>
+            </p>
+          </label>
+        </div>
+      </div>
+    {%- endunless -%}
+  {%- endfor -%}
+</div>

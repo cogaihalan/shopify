@@ -1,0 +1,141 @@
+{%- assign strapline = line_item.product.metafields.product_details.strapline -%}
+
+<push-cart-item
+	class="psh-CartItem"
+	key="{{ line_item.key }}"
+	index="{{ line_item.index | plus: 1 }}"
+	data-variant-id="{{ line_item.id }}"
+	{% if is_gift_wrapping %}
+		data-is-gift-wrapping
+	{% endif %}
+  {% if is_gift_card %}
+    data-is-gift-card
+	{% endif %}
+  aria-busy="false"
+>
+	<a class="psh-CartItem_ImageContainer" href="{{ line_item.product.url }}">
+		{%- render 'responsive-image',
+			image: line_item.image,
+			width: 200,
+			size_by_width: true
+    -%}
+	</a>
+
+	<div class="psh-CartItem_Content">
+		<header class="psh-CartItem_Header">
+      <div class="psh-CartItem_HeaderText">
+        {%- if strapline != blank -%}
+          <p class="psh-CartItem_Strapline fz-14_20">
+            {{ strapline }}
+          </p>
+        {%- endif -%}
+
+        <h5 class="psh-CartItem_Title fz-12_17">
+          {{- line_item.product.title -}}
+        </h5>
+			</div>
+
+      <div class="psh-CartItem_HeaderPrice">
+        {%- if line_item.variant.compare_at_price > line_item.variant.price -%}
+          <s class="psh-CartItem_Price psh-CartItem_Price-compare">
+            {{- line_item.variant.compare_at_price | times: line_item.quantity | money -}}
+          </s>
+          <span class="psh-CartItem_Price psh-CartItem_Price-sale">
+            {{- line_item.final_line_price | money -}}
+          </span>
+        {%- else -%}
+          <span class="psh-CartItem_Price">
+            {{- line_item.final_line_price | money -}}
+          </span>
+        {%- endif -%}
+      </div>
+		</header>
+
+		<button
+			class="psh-CartItem_Remove fz-13_13"
+			type="button"
+			name="remove"
+			data-push-cart-item-el="remove"
+		>
+			{{- 'drawers.drawer.cart.remove' | t -}}
+		</button>
+		{%- unless is_gift_wrapping -%}
+			<div class="psh-CartItem_Controls">
+				{%- if line_item.product.has_only_default_variant == true or line_item.product.variants.size > 1 -%}
+					{%- assign number_of_variants_in_stock = 0 -%}
+					{%- capture variant_options -%}
+						{%- for variant in line_item.product.variants -%}
+							{%- if variant.available -%}
+								<option value="{{- variant.id -}}"{% if line_item.variant_id == variant.id %} selected disabled{% endif %}>
+                  {% unless is_gift_card %}Size: {% endunless %}{{ variant.title }}
+                </option>
+								{%- assign number_of_variants_in_stock = number_of_variants_in_stock | plus: 1 -%}
+							{%- endif -%}
+						{%- endfor -%}
+					{%- endcapture -%}
+					{%- if number_of_variants_in_stock > 1 -%}
+						<div class="psh-CartItem_SelectContainer psh-CartItem_SelectContainer-variant">
+							<select class="psh-CartItem_Select psh-CartItem_Select-variant" name="id" data-push-cart-item-el="variant">
+								{{- variant_options -}}
+							</select>
+							<span class="psh-CartItem_SelectIndicator">
+								{%- render 'bao-icon-chevron-down' -%}
+							</span>
+						</div>
+					{%- endif -%}
+				{%- endif -%}
+
+				<div class="psh-CartItem_SelectContainer">
+					<pre>{{ line_item.variant.inventory_quantity }}</pre>
+
+					{%- liquid
+						assign default_maximum_quantity = 10
+						assign maximum_quantity = default_maximum_quantity
+
+						unless is_gift_card
+							if line_item.variant.inventory_quantity < 10
+								assign maximum_quantity = line_item.variant.inventory_quantity
+							endif	
+						endunless
+						
+                        if maximum_quantity == 0
+  							assign maximum_quantity = line_item.quantity
+                        endif
+					-%}
+					<select class="psh-CartItem_Select"	name="quantity"	data-push-cart-item-el="quantity">
+						{%- for i in (1..maximum_quantity) -%}
+							<option	value="{{ i }}"	{% if i == line_item.quantity %}selected{% endif %}>
+								Qty: {{ i }}
+							</option>
+						{%- endfor -%}
+					</select>
+					<span class="psh-CartItem_SelectIndicator">
+						{%- render 'bao-icon-chevron-down' -%}
+					</span>
+				</div>
+			</div>
+		{%- endunless -%}
+
+	</div>
+
+</push-cart-item>
+
+{%- if show_complete_the_set -%}
+  {%- liquid
+    assign complete_the_set_product = line_item.product.metafields.complete_the_set.product.value
+
+    assign item_found = false
+    if complete_the_set_product.handle != blank
+      assign cart_items = cart.items | where: "product_id", complete_the_set_product.id
+      if cart_items.size > 0
+        assign item_found = true
+      endif
+    endif
+  -%}
+
+  {%- if item_found == false and complete_the_set_product.available -%}
+  <div class="psh-CartItem_CompleteTheSet">
+    {%- render 'push-cart-complete-the-set', complete_the_set_product: complete_the_set_product -%}
+  </div>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,36 @@
+{%- liquid
+  unless loyalty_lion
+    assign loyalty_lion = false
+  endunless
+-%}
+<p class="prd-Price">
+  <span class="prd-Price_Price" {% if loyalty_lion %}data-lion-price-for-product-id="{{ product.id }}"{% endif %}>
+    {%- if product.compare_at_price > product.price -%}
+      <span class="util-ScreenReaderOnly">
+        {{ 'products.product.price.sale_price' | t }}
+      </span>
+
+      {{ product.price | money }}
+    {%- else -%}
+      {%- if product.price_varies -%}
+        {%- assign price = product.price | money -%}
+        {{ 'products.product.price.from_price_html' | t: price: price }}
+      {%- else -%}
+        {{ product.price | money }}
+      {%- endif -%}
+    {%- endif -%}
+  </span>
+
+  {%- if product.compare_at_price > product.price -%}
+    <span class="util-ScreenReaderOnly">{{ 'products.product.price.regular_price' | t }}</span>
+    <span class="prd-Price_Previous fz-13_19">{{ product.compare_at_price | money }}</span>
+  {%- endif -%}
+
+  {%- comment -%}
+  {%- unless product.available -%}
+    <span class="prd-Price_SoldOut fz-13_19">
+      {{ 'products.product.sold_out' | t }}
+    </span>
+  {%- endunless -%}
+  {%- endcomment -%}
+</p>

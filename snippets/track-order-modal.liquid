@@ -1,0 +1,63 @@
+{{ 'track-order-form.css' | asset_url | stylesheet_tag }}
+{{ 'modal-media.css' | asset_url | stylesheet_tag }}
+
+<script
+  src="{{ 'track-order-form.js' | asset_url }}"
+  type="module"
+></script>
+
+<script
+  src="{{ 'modal-element.js' | asset_url }}"
+  type="module"
+></script>
+
+{%- capture body -%}
+  {%- liquid
+    assign narvar_moniker = 'ohpolly'
+    if shop.permanent_domain == 'oh-polly-us.myshopify.com'
+      assign narvar_moniker = 'ohpollyus'
+    endif
+  -%}
+    <track-order-form>
+      <form class="frm-Form trk-Form" method="get" action="https://ohpolly.narvar.com/tracking/{{ narvar_moniker }}" accept-charset="utf-8" target="https://ohpolly.narvar.com/tracking/{{ narvar_moniker }}" data-track-order-form-el="form">
+
+        <input type="hidden" name="locale" value="en_{{- settings.order_tracker_local -}}">
+
+        {%- if settings.order_tracker_modal_title != blank -%}
+          <h3>{{- settings.order_tracker_modal_title -}}</h3>
+        {%- endif -%}
+
+        <div class="frm-Form_Row">
+          {%- if settings.order_tracker_modal_order_label != blank -%}
+            <label class="frm-Form_Label" for="order-number-input">{{- settings.order_tracker_modal_order_label -}}</label>
+          {%- endif -%}
+
+          {%- liquid
+            assign placeholder = 'OP123456UK'
+            if settings.order_tracker_local == 'US'
+              assign placeholder = 'OP123456UK' | replace: 'UK', 'US'
+            endif
+          -%}
+
+          <input
+            name="order_number"
+            id="order-number-input"
+            class="trk-Form_Input frm-Form_Input"
+            placeholder="{{ placeholder }}"
+            title="Order number"
+            required
+            pattern="[0-9]+"
+            data-track-order-form-el="order"
+          >
+        </div>
+
+        <button class="trk-Form_Button btn-Button btn-Button-primary" type="submit" data-track-order-form-el="submit">{{ settings.order_tracker_modal_button_copy }}</button>
+      </form>
+    </track-order-form>
+{%- endcapture -%}
+
+{%- render 'modal',
+  modal_style: 'trackorder',
+  modal_type: 'track-order',
+  body: body
+-%}

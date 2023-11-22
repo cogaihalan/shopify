@@ -1,0 +1,16 @@
+<link
+  rel="stylesheet"
+  href="{{ 'pagination-load-more.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<div class="pgn-LoadMore" data-load-more-list-el="pagination">
+  {%- if text -%}
+    <p class="pgn-LoadMore_Text fz-14_20" data-load-more-list-el="text" data-translation="{{- text_translation -}}">{{ text }}</p>
+  {%- endif -%}
+
+  <button class="pgn-LoadMore_Button btn-Button btn-Button-primary" data-load-more-list-el="trigger" type="button">
+    {{ button_text }}
+  </button>
+</div>

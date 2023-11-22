@@ -1,0 +1,103 @@
+<script
+  src="{{ 'mobile-menu.js' | asset_url }}"
+  type="module"
+></script>
+
+{%- liquid
+  assign imageCTAs = blocks | where: 'type', 'image-cta'
+-%}
+<site-drawer class="drw-Drawer drw-Drawer-menu drw-Drawer-fromLeft" key="{{ drawer_handle }}">
+  <header class="drw-Drawer_Header">
+    <h4 class="drw-Drawer_Title fz-24_29">{{ 'drawers.drawer.navigation.title' | t }}</h4>
+
+    <button
+      type="button"
+      class="drw-Drawer_Close"
+      data-drawers-close
+    >
+      <span class="drw-Drawer_Icon drw-Drawer_Icon-close">
+        {%- render 'bao-icon-close' -%}
+      </span>
+      <span class="util-ScreenReaderOnly">
+        {{ 'accessibility.close' | t }}
+      </span>
+    </button>
+  </header>
+
+  <div class="hd-Banner_Search">
+    {%- render 'header-search', search_context: 'mobile-menu' -%}
+  </div>
+
+  <div class="drw-Drawer_Inner">
+    <mobile-menu></mobile-menu>
+    
+    {%- if imageCTAs.size > 0 -%}
+      <div class="drw-Drawer_imageCTA">
+        {%- for block in imageCTAs -%}
+          {%- render 'navigation-promo',
+            image: block.settings.image,
+            title: block.settings.title,
+            url: block.settings.url,
+            url_text: block.settings.url_text,
+            text_color: block.settings.text_color
+          -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <footer class="drw-Drawer_Footer drw-Nav_Footer">
+    <nav class="drw-Nav_FooterNav">
+      <ul class="drw-Nav_Items drw-Nav_Items-customer">
+        <li class="drw-Nav_Item">
+          <a class="drw-Nav_Link fz-12_17" href="{{- routes.account_login_url -}}" aria-label="{{- 'drawers.drawer.navigation.account' | t -}}">
+            <span class="drw-Nav_Icon drw-Nav_Icon-account">
+              <span class="drw-Nav_Svg">
+                {%- render 'bao-icon-account' -%}
+              </span>
+            </span>
+            <span class="drw-Nav_LinkText">
+              {{ 'drawers.drawer.navigation.account' | t }}
+            </span>
+          </a>
+        </li>
+
+        <li class="drw-Nav_Item">
+         <span class="ly-custom-0"></span>
+        </li>
+      </ul>
+
+      <ul class="drw-Nav_Items drw-Nav_Items-footer">
+        {%- for link in footer_linklist.links -%}
+          <li class="drw-Nav_Item">
+            <a class="drw-Nav_Link fz-12_12-navigation" href="{{- link.url -}}">{{ link.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- assign socials = "instagram,facebook,pinterest,twitter,tiktok,youtube" | split: "," -%}
+
+      <ul class="drw-Nav_Socials">
+        {%- for social in socials -%}
+          {%- liquid
+            assign social_key = "social_" | append: social | append: "_link"
+            assign translation_key = "general.social.links." | append: social
+            assign social_link = settings[social_key]
+          -%}
+          {%- if social_link != blank -%}
+            <li class="drw-Nav_Social drw-Nav_Social-{{ social }}">
+              <a href="{{- social_link -}}" aria-label="{{- translation_key | t -}}" target="_blank">
+                <span class="drw-Nav_Icon-social">
+                  {%- render 'bao-icon-social', social: social -%}
+                </span>
+                <span class="util-ScreenReaderOnly">
+                  {{ translation_key | t }}
+                </span>
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </footer>
+</site-drawer>

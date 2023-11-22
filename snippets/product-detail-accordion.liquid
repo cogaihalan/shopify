@@ -1,0 +1,141 @@
+<link
+  rel="stylesheet"
+  href="{{ 'product-accordions.css' | asset_url }}"
+>
+
+<link
+  rel="stylesheet"
+  href="{{ 'product-delivery.css' | asset_url }}"
+>
+
+{%- liquid
+  assign accordions = product.metafields.detail_accordion.title
+  assign content = product.metafields.detail_accordion.content
+-%}
+
+<product-accordions class="prd-Accordion">
+  <div class="prd-Accordion_Items">
+
+    {%- if product.content != blank -%}
+      {%- capture short_description_more -%}{{- 'products.product.more_html' | t -}}{%- endcapture -%}
+
+      <div class="prd-Accordion_Item prd-Accordion_Item-description" aria-expanded="false" data-el="product-accordions.item">
+        <button class="prd-Accordion_Body prd-Accordion_Body-short fz-14_20" data-el="product-accordions.trigger" type="button">
+          {{- product.content | strip_html | truncate: 221, short_description_more -}}
+        </button>
+        <button class="prd-Accordion_Header" data-el="product-accordions.trigger" type="button">
+          <div class="prd-Accordion_Heading">
+            <h3 class="prd-Accordion_Title fz-16_18">
+              {{- 'products.product.product_details' | t -}}
+            </h3>
+          </div>
+
+          <div class="prd-Accordion_Icon">
+            <span class="prd-Accordion_Arrow btn-Button_Arrow-pink">
+              {%- render 'bao-icon-chevron-down' -%}
+            </span>
+          </div>
+        </button>
+
+        <div class="prd-Accordion_Body rte-RichText fz-14_20" data-ab-full>
+          <p>{{- product.content -}}</p>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- for accordion in accordions -%}
+      <div class="prd-Accordion_Item" aria-expanded="false" data-el="product-accordions.item">
+        <button class="prd-Accordion_Header" data-el="product-accordions.trigger" type="button">
+          <div class="prd-Accordion_Heading">
+            <h3 class="prd-Accordion_Title fz-16_18">
+              {{- accordion -}}
+            </h3>
+          </div>
+
+          <div class="prd-Accordion_Icon">
+            <span class="prd-Accordion_Arrow btn-Button_Arrow-pink">
+              {%- render 'bao-icon-chevron-down' -%}
+            </span>
+          </div>
+        </button>
+
+        <div class="prd-Accordion_Body rte-RichText fz-14_20">
+          {{- content[forloop.index0] -}}
+        </div>
+      </div>
+    {%- endfor -%}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'accordion' -%}
+          <div class="prd-Accordion_Item" aria-expanded="false" data-el="product-accordions.item">
+            <button class="prd-Accordion_Header" data-el="product-accordions.trigger" type="button">
+              <div class="prd-Accordion_Heading">
+                <h3 class="prd-Accordion_Title fz-16_18">
+                  {{- block.settings.title -}}
+                </h3>
+              </div>
+
+              <div class="prd-Accordion_Icon">
+                <span class="prd-Accordion_Arrow btn-Button_Arrow-pink">
+                  {%- render 'bao-icon-chevron-down' -%}
+                </span>
+              </div>
+            </button>
+
+            <div class="prd-Accordion_Body rte-RichText fz-14_20">
+              {{- block.settings.content -}}
+            </div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+
+    {%- if shop.metafields.delivery_and_return.enable == true or shop.metafields.delivery_and_return.enable == 'true' -%}
+      {%- if shop.metafields.delivery_and_return.country.size > 1 -%}
+        <script src="{{ 'product-delivery.js' | asset_url }}" defer="defer"></script>
+      {%- endif -%}
+
+      <div class="prd-Accordion_Item" aria-expanded="false" data-el="product-accordions.item">
+        <button class="prd-Accordion_Header" data-el="product-accordions.trigger" type="button">
+          <div class="prd-Accordion_Heading">
+            <h3 class="prd-Accordion_Title fz-16_18">
+              {{- shop.metafields.delivery_and_return.title -}}
+            </h3>
+          </div>
+
+          <div class="prd-Accordion_Icon">
+            <span class="prd-Accordion_Arrow btn-Button_Arrow-pink">
+              {%- render 'bao-icon-chevron-down' -%}
+            </span>
+          </div>
+        </button>
+
+        <div class="prd-Accordion_Body">
+          <product-delivery class="prd-Delivery">
+            {%- if shop.metafields.delivery_and_return.country.size > 1 -%}
+              <div class="frm-Form_SelectField">
+                <select
+                  class="prd-Delivery_Select frm-Form_Select fz-14_20-headings"
+                  data-product-delivery-el="select"
+                >
+                  {%- for country_name in shop.metafields.delivery_and_return.country -%}
+                    <option value="{{ country_name | handleize }}">{{ country_name }}</option>
+                  {%- endfor -%}
+                </select>
+
+                <span class="prd-Delivery_SelectIcon frm-Form_SelectIcon">
+                  {%- render 'bao-icon-chevron-down' -%}
+                </span>
+              </div>
+            {%- endif -%}
+
+            {%- for country_name in shop.metafields.delivery_and_return.country -%}
+              <div class="prd-Delivery_Content rte-RichText fz-14_20" data-product-delivery-el="content" data-country="{{ country_name | handleize }}" aria-expanded="{{ forloop.first }}">
+                {{ shop.metafields.delivery_and_return.content[forloop.index0] }}
+              </div>
+            {%- endfor -%}
+          </product-delivery>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</product-accordions>

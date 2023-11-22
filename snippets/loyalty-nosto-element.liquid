@@ -1,0 +1,26 @@
+{{ 'section-recommendations-carousel.css' | asset_url | stylesheet_tag }}
+{{ 'quickbuy-options.css' | asset_url | stylesheet_tag }}
+
+{%- if customer_state == 'logged_out' -%}
+  {%- unless customer -%}
+    <div class="nosto_element" id="{{ nosto_id }}"></div>
+
+    {%- if button_text != blank and button_link != blank -%}
+      <a class="sec-Nosto_Button btn-Button btn-Button-secondary" href="{{ button_link }}">
+        {{ button_text }}
+      </a>
+    {%- endif -%}
+  {%- endunless -%}
+{%- endif -%}
+
+{%- if customer_state == 'logged_in' -%}
+  {%- if customer -%}
+    <div class="nosto_element" id="{{ nosto_id }}"></div>
+
+    {%- if button_text != blank and button_link != blank -%}
+      <a class="sec-Nosto_Button btn-Button btn-Button-secondary" href="{{ button_link }}">
+        {{ button_text }}
+      </a>
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}

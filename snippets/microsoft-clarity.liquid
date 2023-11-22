@@ -1,0 +1,26 @@
+{%- unless request.design_mode -%}
+  {%- if settings.enable_microsoft_clarity -%}
+    {% liquid
+      if shop.permanent_domain == 'oh-polly-uk.myshopify.com'
+        assign default_id = 'i4d3lud9mf'
+      elsif shop.permanent_domain == 'oh-polly-us.myshopify.com'
+        assign default_id = 'i4d4k11cm4'
+      elsif shop.permanent_domain == 'oh-polly-au.myshopify.com'
+        assign default_id = 'i4d58vytnh'
+      endif
+    %}
+
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () {
+          (c[a].q = c[a].q || []).push(arguments)
+        }
+        t = l.createElement(r)
+        t.async = 1
+        t.src = 'https://www.clarity.ms/tag/' + i
+        y = l.getElementsByTagName(r)[0]
+        y.parentNode.insertBefore(t, y)
+      })(window, document, 'clarity', 'script', '{{ settings.microsoft_clarity_id | default: default_id }}')
+    </script>
+  {%- endif -%}
+{%- endunless -%}

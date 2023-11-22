@@ -1,0 +1,64 @@
+{%- liquid
+  assign field_name_no_spaces = field_name | remove: " "
+  assign field_id = form_type | append: "Form" | append: field_name_no_spaces
+  assign input_field_name = field_name | strip | replace: " ", "_" | downcase
+  assign options = options | split: ","
+
+  if type == nil
+    assign type = "text"
+  endif
+
+  assign value = form[input_field_name]
+-%}
+
+<label
+  class="frm-Form_Label util-ScreenReaderOnly"
+  for="{{- field_id -}}"
+>
+  {{ translation_key | t }}
+</label>
+
+{%- if type == "textarea" -%}
+  <textarea
+    class="frm-Form_Textarea {% if form.errors contains input_field_name %} frm-Form_Input-error{% endif %}"
+    rows="10"
+    name="{{- form_type -}}[{{- input_field_name -}}]"
+    id="{{- field_id -}}"
+    oninput="this.value = this.value.replace(new RegExp('[\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]', 'g'), '')"
+    placeholder="{{- translation_key | t -}}"
+    {% if required %} required{% endif %}
+  >{{- value -}}</textarea>
+{%- elsif type == "select" -%}
+  <div class="frm-Form_SelectField {% if form.errors contains input_field_name %} frm-Form_Input-error{% endif %}">
+    <select
+      class="frm-Form_Select"
+      name="{{- form_type -}}[{{- input_field_name -}}]"
+      id="{{- field_id -}}"
+      {% if required %} required{% endif %}
+      >
+      {%- if options -%}
+      <option value="" disabled{% unless value %} selected{% endunless %}>{{ translation_key | t }}</option>
+      {%- for option in options -%}
+        <option value="{{ option }}"{% if option == value %} selected{% endif %}>{{ option }}</option>
+      {%- endfor -%}
+      {%- endif -%}
+      {% if options_html %}
+        {{- options_html -}}
+      {% endif %}
+    </select>
+    <span class="frm-Form_SelectIcon">
+      {%- render 'bao-icon-chevron-down' -%}
+    </span>
+  </div>
+{%- else -%}
+  <input
+    class="frm-Form_Input{% if form.errors contains input_field_name %} frm-Form_Input-error{% endif %}"
+    type="{{- type -}}"
+    value="{{- value -}}"
+    name="{{- form_type -}}[{{- input_field_name -}}]"
+    id="{{- field_id -}}"
+    oninput="this.value = this.value.replace(new RegExp('[\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]', 'g'), '')"
+    placeholder="{{- translation_key | t -}}"
+    {% if required %} required{% endif %}
+  >
+{%- endif -%}

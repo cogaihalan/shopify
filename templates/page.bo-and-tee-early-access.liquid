@@ -1,0 +1,99 @@
+   {%- if page.content != blank -%}
+          <div class="pg-Content_Text{% unless page.handle == "unidays" %} rte-RichText{% endunless %}">
+            {{ page.content }}
+          </div>
+   {%- endif -%}
+
+
+<style>
+
+
+p.OPRewardsTitle{
+  text-transform: uppercase;
+  color: black;
+  text-align:center;
+  font-weight: bold;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size:18px;
+  letter-spacing: 0.1em;
+}
+
+
+p.OPRewardsParagraph{
+  text-transform: uppercase;
+  width:90%;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size:18px!important;
+}
+
+
+p.OPRewardsPrivacy{
+  text-transform: uppercase;
+  width:90%;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size:12px;
+}
+
+.OPRewardsContainer {
+
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom: 50px;
+  padding-top: 160px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.OPKlaviyoForm {
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 150px!important;
+  background: rgba(255, 223, 223, 0.7);
+}
+
+body {
+  background-image: url("https://cdn.shopify.com/s/files/1/0594/1506/8881/files/Bo_Tee-INVINCIBLE-_DESKTOP.jpg?v=1665503330");
+  background-repeat: no-repeat;
+  background-position: right 100px;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+@media only screen and (max-width:650px) {
+  	.OPRewardsContainer {
+      width:95%;
+      padding-top: 250px!important;
+
+    }
+
+    p.OPRewardsParagraph{
+      width:100%;
+      font-size:13px!important;
+    }
+
+    p.OPRewardsTitle {
+      width:100%;
+    }
+
+  	body{
+
+      background-image: url("https://cdn.shopify.com/s/files/1/0594/1506/8881/files/Bo_Tee-INVINCIBLE-_MOBILE.jpg?v=1665503330");
+      background-position: center 75px;
+    }
+}
+
+
+</style>

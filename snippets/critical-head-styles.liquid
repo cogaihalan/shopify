@@ -1,0 +1,1532 @@
+{%- capture content %}
+
+{% style %}
+
+  /* Document
+  * ========================================================================== */
+
+  /* stylelint-disable */
+
+  /**
+  * Add border box sizing in all browsers (opinionated).
+  */
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  /**
+    * 1. Add text decoration inheritance in all browsers (opinionated).
+    * 2. Add vertical alignment inheritance in all browsers (opinionated).
+    */
+
+  ::before,
+  ::after {
+    text-decoration: inherit; /* 1 */
+    vertical-align: inherit; /* 2 */
+  }
+
+  /**
+    * 1. Use the default cursor in all browsers (opinionated).
+    * 2. Change the line height in all browsers (opinionated).
+    * 3. Breaks words to prevent overflow in all browsers (opinionated).
+    * 4. Use a 4-space tab width in all browsers (opinionated).
+    * 5. Remove the grey highlight on links in iOS (opinionated).
+    * 6. Prevent adjustments of font size after orientation changes in iOS.
+    */
+
+  html {
+    line-height: 1.5; /* 2 */
+
+    cursor: default; /* 1 */
+    overflow-wrap: anywhere; /* 3 */
+    -moz-tab-size: 4; /* 4 */
+    tab-size: 4; /* 4 */
+    -webkit-tap-highlight-color: transparent /* 5 */;
+    -webkit-text-size-adjust: 100%; /* 6 */
+  }
+
+  /* Sections
+    * ========================================================================== */
+
+  /**
+    * Remove the margin in all browsers (opinionated).
+    */
+
+  body {
+    margin: 0;
+  }
+
+  /**
+    * Correct the font size and margin on `h1` elements within `section` and
+    * `article` contexts in Chrome, Edge, Firefox, and Safari.
+    */
+
+  h1 {
+    margin: 0.67em 0;
+
+    font-size: 2em;
+  }
+
+  /* Grouping content
+    * ========================================================================== */
+
+  /**
+    * Remove the margin on nested lists in Chrome, Edge, and Safari.
+    */
+
+  dl dl,
+  dl ol,
+  dl ul,
+  ol dl,
+  ul dl {
+    margin: 0;
+  }
+
+  /**
+    * 1. Correct the inheritance of border color in Firefox.
+    * 2. Add the correct box sizing in Firefox.
+    */
+
+  hr {
+    height: 0; /* 2 */
+
+    color: inherit; /* 1 */
+  }
+
+  /**
+    * Remove the list style on navigation lists in all browsers (opinionated).
+    */
+
+  nav ol,
+  nav ul {
+    padding: 0;
+
+    list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+  }
+
+  /**
+    * Prevent VoiceOver from ignoring list semantics in Safari (opinionated).
+    */
+
+  nav li::before {
+    content: '\200B';
+  }
+
+  /**
+    * 1. Correct the inheritance and scaling of font size in all browsers.
+    * 2. Correct the odd `em` font sizing in all browsers.
+    * 3. Prevent overflow of the container in all browsers (opinionated).
+    */
+
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+
+    overflow: auto; /* 3 */
+  }
+
+  /* Text-level semantics
+    * ========================================================================== */
+
+  /**
+    * Add the correct text decoration in Safari.
+    */
+
+  abbr[title] {
+    text-decoration: underline;
+    text-decoration: underline dotted;
+  }
+
+  /**
+    * Add the correct font weight in Chrome, Edge, and Safari.
+    */
+
+  b,
+  strong {
+    font-weight: bolder;
+  }
+
+  /**
+    * 1. Correct the inheritance and scaling of font size in all browsers.
+    * 2. Correct the odd `em` font sizing in all browsers.
+    */
+
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  /**
+    * Add the correct font size in all browsers.
+    */
+
+  small {
+    font-size: 80%;
+  }
+
+  /* Embedded content
+    * ========================================================================== */
+
+  /*
+    * Change the alignment on media elements in all browsers (opinionated).
+    */
+
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    vertical-align: middle;
+  }
+
+  /**
+    * Add the correct display in iOS 4-7.
+    */
+
+  audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+
+  /**
+    * Remove the border on iframes in all browsers (opinionated).
+    */
+
+  iframe {
+    border-style: none;
+  }
+
+  /**
+    * Change the fill color to match the text color in all browsers (opinionated).
+    */
+
+  svg:not([fill]) {
+    fill: currentColor;
+  }
+
+  /* Tabular data
+    * ========================================================================== */
+
+  /**
+    * 1. Collapse border spacing in all browsers (opinionated).
+    * 2. Correct table border color inheritance in all Chrome, Edge, and Safari.
+    * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
+    */
+
+  table {
+    text-indent: 0; /* 3 */
+
+    border-color: inherit; /* 2 */
+    border-collapse: collapse; /* 1 */
+  }
+
+  /* Forms
+    * ========================================================================== */
+
+  /**
+    * Remove the margin on controls in Safari.
+    */
+
+  button,
+  input,
+  select {
+    margin: 0;
+  }
+
+  /**
+    * Remove the inheritance of text transform in Firefox.
+    */
+
+  button {
+    text-transform: none;
+  }
+
+  /**
+    * Correct the inability to style buttons in iOS and Safari.
+    */
+
+  button,
+  [type='button' i],
+  [type='reset' i],
+  [type='submit' i] {
+    -webkit-appearance: button;
+  }
+
+  /**
+    * 1. Change the inconsistent appearance in all browsers (opinionated).
+    * 2. Correct the padding in Firefox.
+    */
+
+  fieldset {
+    padding: 0.35em 0.75em 0.625em; /* 2 */
+
+    border: 1px solid #a0a0a0; /* 1 */
+  }
+
+  /**
+    * Add the correct vertical alignment in Chrome, Edge, and Firefox.
+    */
+
+  progress {
+    vertical-align: baseline;
+  }
+
+  /**
+    * Remove the inheritance of text transform in Firefox.
+    */
+
+  select {
+    text-transform: none;
+  }
+
+  /**
+    * 1. Remove the margin in Firefox and Safari.
+    * 3. Change the resize direction in all browsers (opinionated).
+    */
+
+  textarea {
+    margin: 0; /* 1 */
+    resize: vertical; /* 3 */
+  }
+
+  /**
+    * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+    * 2. Correct the outline style in Safari.
+    */
+
+  [type='search' i] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+
+  /**
+    * Correct the cursor style of increment and decrement buttons in Safari.
+    */
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  /**
+    * Correct the text style of placeholders in Chrome, Edge, and Safari.
+    */
+
+  ::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+  }
+
+  /**
+    * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+    */
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  /**
+    * 1. Correct the inability to style upload buttons in iOS and Safari.
+    * 2. Change font properties to `inherit` in Safari.
+    */
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+
+  /**
+    * Remove the inner border and padding of focus outlines in Firefox.
+    */
+
+  ::-moz-focus-inner {
+    border-style: none;
+
+    padding: 0;
+  }
+
+  /**
+    * Restore the focus outline styles unset by the previous rule in Firefox.
+    */
+
+  :-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
+  /**
+    * Remove the additional :invalid styles in Firefox.
+    */
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  /* Interactive
+    * ========================================================================== */
+
+  /*
+    * Add the correct styles in Safari.
+    */
+
+  dialog {
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 1em;
+
+    background-color: white;
+    border: solid;
+    color: black;
+  }
+
+  dialog:not([open]) {
+    display: none;
+  }
+
+  /*
+    * Add the correct display in all browsers.
+    */
+
+  summary {
+    display: list-item;
+  }
+
+  /* Accessibility
+    * ========================================================================== */
+
+  /**
+    * Change the cursor on busy elements in all browsers (opinionated).
+    */
+
+  [aria-busy='true' i] {
+    cursor: progress;
+  }
+
+  /*
+    * Change the cursor on control elements in all browsers (opinionated).
+    */
+
+  [aria-controls] {
+    cursor: pointer;
+  }
+
+  /*
+    * Change the cursor on disabled, not-editable, or otherwise
+    * inoperable elements in all browsers (opinionated).
+    */
+
+  [aria-disabled='true' i],
+  [disabled] {
+    cursor: not-allowed;
+  }
+
+  /*
+    * Change the display on visually hidden accessible elements
+    * in all browsers (opinionated).
+    */
+
+  [aria-hidden='false' i][hidden] {
+    display: initial;
+  }
+
+  [aria-hidden='false' i][hidden]:not(:focus) {
+    position: absolute;
+
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* stylelint-disable */
+:root {
+  /*
+  |--------------------------------------------------------------------------
+  | Colours
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Color_Brand: #333;
+
+  --Color_LightPink: #fdf5f5;
+  --Color_CoolCream: #fbf0eb;
+  --Color_Coffee: #dfc9b6;
+  --Color_WarmPink: #e2a9a9;
+  --Color_Russet: #d49595;
+
+  --Color_CoolPink: #fae0df;
+  --Color_CoolPink-r: 250;
+  --Color_CoolPink-g: 224;
+  --Color_CoolPink-b: 223;
+  --Color_CoolPink:
+    rgb(
+      var(--Color_CoolPink-r),
+      var(--Color_CoolPink-g),
+      var(--Color_CoolPink-b)
+    );
+
+  --Color_CoolPink-70:
+    rgba(
+      var(--Color_CoolPink-r),
+      var(--Color_CoolPink-g),
+      var(--Color_CoolPink-b),
+      0.7
+    );
+
+  --Color_Black-r: 0;
+  --Color_Black-g: 0;
+  --Color_Black-b: 0;
+  --Color_Black:
+    rgb(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b)
+    );
+  --Color_Black-10:
+    rgba(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b),
+      0.1
+    );
+  --Color_Black-50:
+    rgba(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b),
+      0.5
+    );
+  --Color_Black-70:
+    rgba(
+      var(--Color_Black-r),
+      var(--Color_Black-g),
+      var(--Color_Black-b),
+      0.7
+    );
+
+  --Color_Grey-r: 51;
+  --Color_Grey-g: 51;
+  --Color_Grey-b: 51;
+  --Color_Grey:
+    rgb(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b)
+    );
+  --Color_Grey-10:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.1
+    );
+  --Color_Grey-15:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.15
+    );
+  --Color_Grey-20:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.2
+    );
+  --Color_Grey-30:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.3
+    );
+  --Color_Grey-50:
+    rgba(
+      var(--Color_Grey-r),
+      var(--Color_Grey-g),
+      var(--Color_Grey-b),
+      0.5
+    );
+  --Color_Grey-overlay: var(--Color_Grey-20);
+
+  --Color_Grey-lightest: #f4f4f4;
+  --Color_Grey-lighter: #e0e0e0;
+  --Color_Grey-light: #bdbdbd;
+  --Color_Grey-medium: #828282;
+
+  --Color_White-r: 255;
+  --Color_White-g: 255;
+  --Color_White-b: 255;
+  --Color_White:
+    rgb(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b)
+    );
+  --Color_White-light:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.5
+    );
+  --Color_White-overlay:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.2
+    );
+  --Color_White-10:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.1
+    );
+  --Color_White-20:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.2
+    );
+  --Color_White-70:
+    rgba(
+      var(--Color_White-r),
+      var(--Color_White-g),
+      var(--Color_White-b),
+      0.7
+    );
+
+  --Color_Red-r: 235;
+  --Color_Red-g: 87;
+  --Color_Red-b: 87;
+
+  --Color_Red: rgb(var(--Color_Red-r), var(--Color_Red-g), var(--Color_Red-b));
+  --Color_Red-70:
+    rgb(
+      var(--Color_Red-r),
+      var(--Color_Red-g),
+      var(--Color_Red-b),
+      0.7
+    );
+
+  --Color_Green: #12d60e;
+  --Color_Yellow: #ffc700;
+
+  --Color_Anchor: #373737;
+  --Color_Body: var(--Color_Brand);
+  --Color_Nav: var(--Color_CoolPink);
+  --Color_Border: var(--Color_Grey-lighter);
+  --Color_Error: var(--Color_Red);
+  --Color_Success: var(--Color_Green);
+
+  /*
+  |--------------------------------------------------------------------------
+  | Families
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Font_Family:
+    -apple-system,
+ BlinkMacSystemFont,
+ 'Segoe UI',
+ Roboto,
+    Helvetica,
+ Arial,
+ sans-serif,
+ 'Apple Color Emoji',
+ 'Segoe UI Emoji',
+    'Segoe UI Symbol',
+ sans-serif;
+
+  --Font_Family-body: 'Work Sans', var(--Font_Family);
+  --Font_Family-headings: 'europa', var(--Font_Family);
+
+  /*
+  |--------------------------------------------------------------------------
+  | Grid
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Grid_Gutter: 5px;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Navigation
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Nav_Height: 60px;
+  --Nav_HeightWhenFixed: var(--Nav_Height);
+  --Announcement_Height: 0px;
+  --Usp_Height: 0px;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Styles
+  |--------------------------------------------------------------------------
+  |
+  */
+  font: 14px / 1.5 var(--Font_Family-body);
+
+  cursor: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --Grid_Gutter: 10px;
+
+    --Nav_Height: 80px;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Define
+|--------------------------------------------------------------------------
+| Global resets to make life easier
+|
+*/
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a,
+area,
+button,
+[role='button'],
+input:not([type='range']),
+label,
+select,
+summary,
+textarea {
+  /* Enable panning and pinch zoom gestures, but disable additional
+  non-standard gestures such as double-tap to zoom. Disabling double-tap to
+  zoom removes the need for browsers to delay the generation of click events
+  when the user taps the screen. This is an alias for "pan-x pan-y pinch-zoom"
+  (which, for compatibility, is itself still valid). */
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+input,
+select,
+textarea {
+  /* Older iOS puts a border radius on inputs by default. */
+  border-radius: 0;
+}
+
+button {
+  padding: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: var(--Color_Body);
+}
+
+body:not(.util-IsTabbing) :is(button, input, select, textarea):focus {
+  outline: none;
+}
+main {
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+|--------------------------------------------------------------------------
+| HTML / Body Resets
+|--------------------------------------------------------------------------
+|
+*/
+html {
+  height: 100%;
+  /* Sets a specific default `font-size` for user with `rem` type scales. */
+  font-size: 16px;
+  /* Changes the default tap highlight to be completely transparent in iOS. */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  height: 100%;
+
+  text-rendering: optimizeLegibility;
+
+  /* By default, `<body>` has no `background-color` so we set one as a best practice. */
+  background-color: var(--Color_White);
+  color: var(--Color_Body);
+  scroll-behavior: smooth;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.template-collection {
+  scroll-behavior: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Define File
+|--------------------------------------------------------------------------
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Headings
+|--------------------------------------------------------------------------
+|
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-family: var(--Font_Family-headings);
+  font-weight: 400;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Keyline
+|--------------------------------------------------------------------------
+|
+*/
+hr {
+  border: 0;
+  border-top: 1px solid var(--Color_Border);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Lists
+|--------------------------------------------------------------------------
+|
+*/
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+li::before,
+li::marker {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Paragraph
+|--------------------------------------------------------------------------
+|
+*/
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography - Anchors
+|--------------------------------------------------------------------------
+| It is more comment that we *don't* want any kind of default styling on
+| <a> elements. We'll unset any browser styling on <a>, then give some
+| defaults for unclassed <a> elements.
+|
+*/
+a {
+  font-weight: inherit;
+  text-decoration: none;
+
+  color: currentColor;
+}
+
+a:not([class]) {
+  font-weight: 500;
+
+  color: var(--Color_Anchor);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+|
+*/
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+input[type='search' i]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+|
+*/
+img {
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Tables
+|--------------------------------------------------------------------------
+|
+*/
+table {
+  width: 100%;
+
+  table-layout: fixed;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Utils
+|--------------------------------------------------------------------------
+| @namespace: util-
+|
+*/
+.util-ScreenReaderOnly {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .util-HideOnMobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .util-HideOnDesktop {
+    display: none;
+  }
+}
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Lazy videos
+|--------------------------------------------------------------------------
+|
+*/
+.util-LazyVideo {
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+.util-LazyVideo-loaded {
+  opacity: 1;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Faux link
+|--------------------------------------------------------------------------
+|
+*/
+.util-FauxLink {
+  position: relative;
+}
+
+.util-FauxLink_Link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@media print {
+  .util-NoPrint {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Hide until loaded
+|--------------------------------------------------------------------------
+|
+*/
+.util-HideUntilLoaded {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Site overflowed
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.util-SiteOverflowed, body[data-search-active='true'].lyt-Site-algoliaReady {
+  overflow: hidden;
+}
+.util-SiteOverflowed.is-iOS, body[data-search-active='true'].is-iOS.lyt-Site-algoliaReady {
+  position: fixed;
+
+  width: 100%;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Overflow hidden
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.overflow-hidden {
+  /* stylelint-disable-next-line declaration-no-important */
+  overflow: hidden !important;
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Hidden
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.hidden {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: none !important;
+}
+/* stylelint-enable */
+
+
+/*
+|--------------------------------------------------------------------------
+| Font sizes
+|--------------------------------------------------------------------------
+|
+*/
+/* stylelint-disable selector-class-pattern */
+.fz-10_12 {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 12px;
+}
+
+.fz-12_12 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 12px;
+}
+
+.fz-12_12-navigation {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 12px;
+}
+
+.fz-12_17 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+}
+
+.fz-12_22 {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 18px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-12_22 {
+    font-size: 12px;
+    line-height: 22px;
+  }
+}
+
+.fz-13_13 {
+  /* styleName: Mobile/Links & Titles; */
+  font-family: var(--Font_Family-headings);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-13_13 {
+    /* styleName: Desktop/Link & Titles; */
+    font-size: 13px;
+    line-height: 13px;
+  }
+}
+
+.fz-13_18 {
+  /* styleName: Desktop/Button Link; */
+  font-family: var(--Font_Family-headings);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.fz-14_15 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 13px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-14_15 {
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+.fz-14_20 {
+  /* styleName: Mobile/Body Copy; */
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-14_20 {
+    /* styleName: Desktop/Body Copy; */
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.fz-14_20-headings {
+  /* styleName: Desktop/Small Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-14_20-headings {
+    /* styleName: Desktop/Body Copy; */
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    line-height: 20px;
+  }
+}
+
+.fz-16_18 {
+  /* styleName: Desktop/Sub Heading; */
+  font-family: var(--Font_Family-headings);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.fz-16_22 {
+  font-family: var(--Font_Family-headings);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.fz-18_22 {
+  /* styleName: Mobile/Menu & Small Headings; */
+  font-family: var(--Font_Family-headings);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-18_22 {
+    /* styleName: Desktop/Menu & Small Headings; */
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.fz-18_25 {
+  /* styleName: Mobile/ Hero Body Copy; */
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-18_25 {
+    /* styleName: Desktop/Hero Body Copy; */
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.fz-24_26 {
+  font-size: 24px;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+}
+
+.fz-24_29 {
+  /* styleName: Mobile/Headings; */
+  font-family: var(--Font_Family-headings);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-24_29 {
+    /* styleName: Desktop/Headings; */
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 29px;
+  }
+}
+
+.fz-34_37 {
+  /* styleName: Mobile/Main Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-34_37 {
+    /* styleName: Desktop/Main Title; */
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 37px;
+  }
+}
+
+.fz-58_64 {
+  /* styleName: Mobile/Hero Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 37px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .fz-58_64 {
+    /* styleName: Desktop/Hero Title; */
+    font-size: 42px;
+    line-height: 48px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .fz-58_64 {
+    /* styleName: Desktop/Hero Title; */
+    font-size: 58px;
+    line-height: 64px;
+  }
+}
+
+.fz-76_84 {
+  /* styleName: Mobile/Hero Title; */
+  font-family: var(--Font_Family-headings);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 37px;
+}
+@media only screen and (min-width: 768px) {
+  .fz-76_84 {
+    /* styleName: Desktop/Display; */
+    font-size: 76px;
+    line-height: 84px;
+  }
+}
+/* stylelint-enable */
+
+/*
+|--------------------------------------------------------------------------
+| Responsive image
+|--------------------------------------------------------------------------
+| @namespace: rsp
+|
+*/
+.rsp-Image {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+}
+.rsp-Image::after {
+  content: '';
+
+  display: block;
+  width: 100%;
+  padding-top: var(--Image_AspectRatio);
+}
+
+.rsp-Image_Image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.rsp-Image_Zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.4s ease;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Site
+|--------------------------------------------------------------------------
+| @namespace: lyt-
+|
+*/
+.lyt-Site {
+  padding-top: calc(var(--Nav_Height) + var(--Announcement_Height));
+
+  overflow-x: hidden;
+}
+
+.lyt-Container {
+  --Padding: calc(var(--Grid_Gutter) * 3);
+
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--Padding);
+  padding-left: var(--Padding);
+}
+
+.lyt-Header {
+  position: fixed;
+  top: var(--Announcement_Height);
+  right: 0;
+  left: 0;
+  z-index: 9;
+
+  display: block;
+}
+
+.lyt-Header,
+.ft-Footer {
+  --Color_MainBackground: var(--Color_Nav);
+
+  background: var(--Color_MainBackground);
+}
+
+.drw-Drawer,
+.lyt-Site {
+  --Color_MainBackground: var(--Color_Main);
+}
+  
+/* stylelint-disable-next-line selector-class-pattern */
+.template-collection .lyt-Main, .template-search .lyt-Main {
+  flex-flow: column;
+
+  display: flex;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.template-collection .lyt-Main .shopify-section, .template-search .lyt-Main .shopify-section {
+  order: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .template-collection .lyt-Main .sec-Usp_Section, .template-search .lyt-Main .sec-Usp_Section {
+    order: 0;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .lyt-Site-uspsAboveHero .lyt-Main .sec-Usp_Section {
+    order: 0;
+  }
+}
+/*
+|--------------------------------------------------------------------------
+| Modal
+|--------------------------------------------------------------------------
+| @namespace: mod-
+|
+*/
+.mod-Modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  background-color: #404040;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: none;
+}
+
+.mod-ModalMobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  display: block;
+
+  background-color: #404040;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Drawers
+|--------------------------------------------------------------------------
+| @namespace: drw-
+|
+*/
+.drw-Drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 11;
+
+  flex-direction: column;
+
+  display: flex;
+  max-width: 480px;
+  width: 100vw;
+
+  background-color: #fff;
+  opacity: 0;
+  overflow-y: auto;
+  visibility: hidden;
+
+  /* prettier-ignore */
+  transition:
+    opacity 0.3s,
+    visibility 0.3s,
+    transform 0.3s;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drw-Drawer-fromRight {
+  right: 0;
+
+  transform: translateX(100%);
+}
+
+.drw-Drawer-fromLeft {
+  left: 0;
+
+  transform: translateX(-100%);
+}
+
+{% endstyle %}
+{%- endcapture -%}
+
+{%- assign before =  content.size -%}
+{%- assign content =  content | strip_newlines | split: " " | join: " " | split: "*/" -%}
+{%- assign new_content = "" -%}
+{%- for word in content -%}
+  {%- assign new_word = word | split: "/*" | first | strip | replace: "; ", ";" | replace: "} ", "}" | replace: "{ ", "{" | replace: " {", "{" -%}
+  {%- assign new_content = new_content | append: new_word -%}
+{%- endfor -%}
+
+{{- new_content  }}

@@ -1,0 +1,66 @@
+<link
+  rel="stylesheet"
+  href="{{ 'product-detail-messaging.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<script
+  src="{{ 'carousel-element.js' | asset_url }}"
+  type="module"
+></script>
+
+<div class="prd-Messaging_Body">
+  <carousel-element
+      class="prd-Messaging car-Carousel"
+      data-initialized="false"
+      data-loop="true"
+      data-autoplay="true"
+      data-slides-per-view-xs="1"
+      data-slides-per-view-sm="1"
+      data-slides-per-view-md="1"
+      data-slides-per-view-lg="1"
+      data-fallback-classes="true"
+    >
+
+      <div class="prd-Messaging_Items car-Carousel_Slides" data-carousel-element-el="slides">
+        {% assign collection_titles = null | sort %}
+
+        {% for collection in product.collections %}
+          {% assign collection_title = collection.title | sort %}
+          {% assign collection_titles = collection_titles | concat: collection_title %}
+        {% endfor %}
+
+        {%- for message in shop.metafields.product_messaging.text -%}
+          {%- assign tag_found = false -%}
+          {%- assign tags = shop.metafields.product_messaging.tags[forloop.index0] | split: '|' -%}
+          {%- for tag in tags -%}
+            {%- if product.tags contains tag or collection_titles contains tag -%}
+              {%- assign tag_found = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if tag_found %}
+            <div class="prd-Messaging_Item car-Carousel_Slide" data-carousel-element-el="slide"
+                 style="background-color: {{ shop.metafields.product_messaging.background_color[forloop.index0] }}">
+              {%- if shop.metafields.product_messaging.icon[forloop.index0].first != blank -%}
+                <div class="prd-Messaging_Icon">
+                  {%- render 'responsive-image-metafield',
+                    image: shop.metafields.product_messaging.icon[forloop.index0].first,
+                    width: 100,
+                    height: 100
+                  -%}
+                </div>
+              {%- endif -%}
+              <div class="prd-Messaging_Text fz-14_20">
+                {{- message -}}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+  </carousel-element>
+
+</div>

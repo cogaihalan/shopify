@@ -1,0 +1,61 @@
+{% liquid
+  assign fullHeightImage = false
+
+  if promo_title == blank and promo_text == blank and promo_price == blank
+    assign fullHeightImage = true
+  endif
+%}
+
+<div class="clc-PromotedCard clc-PromotedCard-{{ promo_text_color }}{% if promo_button_link != blank %} clc-PromotedCard-withLink{% endif%}">
+  {%- if promo_button_link != blank -%}
+    <a href="{{ promo_button_link }}" class="clc-PromotedCard_Fauxlink" aria-label="{{ promo_button_text }}">
+      <span class="util-ScreenReaderOnly">
+        {{- promo_button_text -}}
+      </span>
+    </a>
+  {%- endif -%}
+
+    <div class="clc-PromotedCard_Media{% if fullHeightImage %} clc-PromotedCard_Media-fullHeight{% endif %}">
+      <div class="clc-PromotedCard_ImageContainer">
+        <div class="clc-PromotedCard_Image">
+          {%- render 'responsive-image-metafield',
+            image: promo_image.first,
+            width: 1360,
+            height: 1005
+          -%}
+        </div>
+      </div>
+    </div>
+
+  {%- unless fullHeightImage -%}
+    <div class="clc-PromotedCard_Overlay clc-PromotedCard_Overlay-vertical{{ promo_v_align }} clc-PromotedCard_Overlay-horizontal{{ promo_h_align }}">
+      <div class="clc-PromotedCard_Content">
+        {%- if promo_title != blank -%}
+          <h3 class="clc-PromotedCard_Title fz-34_37">
+            {{- promo_title -}}
+          </h3>
+        {%- endif -%}
+
+        {%- if promo_text != blank -%}
+          <div class="clc-PromotedCard_Text fz-14_20">
+            {{- promo_text -}}
+          </div>
+        {%- endif -%}
+
+        {%- if promo_price != blank -%}
+          <div class="clc-PromotedCard_Price fz-14_20">
+            {{- promo_price -}}
+          </div>
+        {%- endif -%}
+
+        {%- if promo_button_link != blank and promo_button_text != blank -%}
+          <a href="{{ promo_button_link }}" class="clc-PromotedCard_Link fz-13_22 btn-Button btn-Button-secondary btn-Button-borderless">
+            <span class="btn-Button_Text">
+              {{ promo_button_text }}
+            </span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endunless -%}
+</div>

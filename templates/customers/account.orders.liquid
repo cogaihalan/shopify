@@ -1,0 +1,32 @@
+{{ 'account-overview.css' | asset_url | stylesheet_tag }}
+{{ 'account-order.css' | asset_url | stylesheet_tag }}
+
+{%- capture body -%}
+<div class="acc-Overview">
+
+  <div class="acc-Overview_Inner lyt-Container">
+
+    <div class="acc-Overview_Columns acc-Overview_Columns-single">
+      <div class="acc-Overview_Column">
+
+        <div class="acc-Overview_Item acc-Overview_Item-orders">
+
+          {%- render 'account-orders-all' -%}
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{%- endcapture -%}
+
+{%- liquid
+  assign title = 'customer.account.title' | t
+-%}
+{%- render 'account-layout',
+  title: title,
+  body: body
+-%}

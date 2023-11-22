@@ -1,0 +1,34 @@
+{% comment %}
+  /*
+  |--------------------------------------------------------------------------
+  | Navigation Link Text
+  |--------------------------------------------------------------------------
+  | Parameters:
+  | 
+  | link
+  | [Type: LinkDrop]
+  | 
+  */
+{% endcomment %}
+{%- liquid 
+  assign link_text = link.title
+  assign link_image_html = ""
+  
+  assign modifier_string = "drp-Menu_LinkText "
+  assign downcase_link_title = link.title | downcase
+  if downcase_link_title contains "[image:"
+    assign link_text_parts = link.title | split: "["
+    assign link_text = link_text_parts.first
+    assign link_image_url_parts = link_text_parts.last | split: ":"
+    assign link_image_url = link_image_url_parts.last | replace: "]", "" | strip
+
+    capture link_image_html
+      assign modifier_string = modifier_string | append: "drp-Menu_LinkText-image"
+      echo '<span class="drp-Menu_LinkImageContainer"><img class="drp-Menu_LinkImage" src="' | append: link_image_url | append: '" alt="' | append: link_text | strip | append:'" height="86" width="86" loading="lazy" /></span>'
+    endcapture
+
+  endif
+
+  assign link_text = link_image_html | append: '<span class="[modifier_string]">' | replace: "[modifier_string]", modifier_string | append: link_text | strip | append:'</span>'
+-%}
+{{ link_text }}

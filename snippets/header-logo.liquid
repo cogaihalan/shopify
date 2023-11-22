@@ -1,0 +1,25 @@
+{%- if template.name == 'index' -%}
+  <h1 class="hd-Banner_Logo">
+{%- else -%}
+  <div class="hd-Banner_Logo">
+{%- endif -%}
+
+<a
+  class="hd-Logo"
+  href="{{ routes.root_url }}"
+  aria-label="{{ shop.name }}"
+>
+  <span class="hd-Logo_Logo">
+    {%- render 'bao-icon-logo' -%}     
+  </span>
+
+  <span class="util-ScreenReaderOnly">
+    {{ shop.name }}
+  </span>
+</a>
+
+{%- if template.name == 'index' -%}
+  </h1>
+{%- else -%}
+  </div>
+{%- endif -%}

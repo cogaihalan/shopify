@@ -1,0 +1,40 @@
+<link
+  rel="stylesheet"
+  href="{{ 'navigation-promo.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{%- if image != blank -%}
+<div class="nav-Promo util-FauxLink">
+
+  <div class="nav-Promo_Inner">
+
+    {%- if url != blank -%}
+      {%- assign link_title = title | default: url_text -%}
+      <a class="nav-Promo_FauxLink util-FauxLink_Link" href="{{- url -}}" aria-label="{{- link_title | strip_html -}}"></a>
+    {%- endif -%}
+
+    <div class="nav-Promo_ImageContainer">
+      <div class="nav-Promo_Image">
+        {% render 'responsive-image' with image: image, height: 720, width: 1220 %}
+      </div>
+    </div>
+
+    <div class="nav-Promo_Content" style="color:{{- text_color -}};">
+      {%- if title != blank -%}
+      <h4 class="nav-Promo_Title fz-24_29">
+        {{- title -}}
+      </h4>
+      {%- endif -%}
+      {%- if url_text != blank -%}
+      <p class="nav-Promo_Link btn-Button btn-Button-basic fz-13_19">
+        {{- url_text -}}
+      </p>
+      {%- endif -%}
+    </div>
+
+  </div>
+
+</div>
+{%- endif -%}

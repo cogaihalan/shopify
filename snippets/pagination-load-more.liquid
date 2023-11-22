@@ -1,0 +1,64 @@
+<!--
+- The variables setup required for the load more:
+- products_per_page: The number of products per pagination page
+- current_page: The current pagination page
+- last_page: The last page of the pagination
+- current_products: The current number of products displayed on page
+- total_products: The total number of products in this collection
+- current_progress: The % amount which the products are displayed from the total of the collection
+-->
+
+<link
+  rel="stylesheet"
+  href="{{ 'pagination-load-more.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+{% liquid
+  assign products_per_page = section.settings.products_per_page
+  assign current_page = paginate.current_page
+  assign last_page = paginate.pages
+
+  assign initial_product = current_page | minus: 1 | times: products_per_page | plus: 1
+  assign current_products = products_per_page | times: current_page
+  assign total_products = collection.products_count
+  assign current_progress = current_products | times: 1.0 | divided_by: total_products | times: 100.0
+
+  assign text = 'collections.list.showing' | t: initial_product: initial_product, count: current_products, total: paginate.items
+  assign text_translation = 'collections.list.showing' | t: initial_product: "[initial_product]", count: "[count]", total: "[total]"
+  assign button_text = 'collections.list.load_more' | t
+%}
+
+<!--
+- The load more button container
+- This has a "collection-filters-form" module hook as an external element
+-->
+<div class="pgn-LoadMoreContainer" data-collection-filters-form-external-el="pagination">
+
+  <!--
+  - The load more button component
+  - This has a "collection-filters-form" module hook as an external element
+  -->
+  <div class="pgn-LoadMore" data-collection-filters-form-external-el="load-more">
+
+    <!--
+    - The load more button component product count
+    - This has a "collection-filters-form" module hook as an external element
+    -->
+    <p class="pgn-LoadMore_Text fz-14_20" data-collection-filters-form-external-el="count" data-translation="{{- text_translation -}}">
+      {{ text }}
+    </p>
+
+
+    <!--
+    - The load more button
+    -->
+    <div class="pgn-LoadMoreCTA">
+      <a class="pgn-LoadMore_Button btn-Button btn-Button-primary" href="{{ paginate.next.url }}" aria-label="{{ button_text }}">
+        {{ button_text }}
+      </a>
+    </div>
+
+  </div>
+</div>

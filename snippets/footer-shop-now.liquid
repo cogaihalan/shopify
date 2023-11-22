@@ -1,0 +1,47 @@
+<link
+  rel="stylesheet"
+  href="{{ 'footer-shop-now.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<script
+  src="{{ 'marquee-element.js' | asset_url }}"
+  type="module"
+></script>
+
+<div class="ft-ShopNow_Body">
+  <marquee-element
+      class="ft-ShopNow mq-Marquee"
+      style="--Marquee_Gap:{{ marquee_gap }}px;--Marquee_Speed:{{ marquee_speed | default: 10 }}s;"
+    >
+
+      <div class="ft-ShopNow_Items mq-Marquee_Items">
+        {%- for block in section.blocks -%}
+
+          {%- if block.settings.text != blank and block.settings.logo != blank -%}
+
+            <div class="ft-ShopNow_Item mq-Marquee_Item" {{ block.shopify_attributes }}>
+
+              <div class="ft-ShopNow_Text fz-18_22">
+
+                {%- capture logo_html -%}
+                  <span class="ft-ShopNow_Logo ft-ShopNow_Logo-{{ block.settings.logo }}">
+                    {%- render 'bao-icon-payment', logo: block.settings.logo -%}
+                  </span>
+                {%- endcapture -%}
+
+                {{ block.settings.text | replace: "[logo]", logo_html }}
+          
+              </div>
+          
+            </div>
+
+          {%- endif -%}  
+
+        {%- endfor -%}
+      </div>
+
+  </marquee-element>
+
+</div>

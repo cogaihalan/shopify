@@ -1,0 +1,23 @@
+{%- section 'footer' -%}
+
+<ul hidden>
+  <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+</ul>
+
+{%- if request.page_type == 'product' -%}
+  {{ 'override-okendo-reviews-modal.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+<script src="{{ 'carousel-element.js' | asset_url }}" type="module"></script>
+<script src="{{ 'product-card.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-options.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'variants.js' | asset_url }}" defer="defer"></script>
+
+
+<div>
+  <div class="prd-Card_QuickBuy prd-Card_QuickBuy-mobile" data-product-card-external-el="quickBuyContainer"
+    data-product-fixed-bar-external-el="quickBuyContainer" aria-hidden="true">
+    {%- render 'quickbuy-skeleton' -%}
+  </div>
+  <div class="prd-Card_QuickBuyOverlay prd-Card_QuickBuyOverlay-mobile" data-product-card-external-el="quickBuyOverlay"></div>
+</div>

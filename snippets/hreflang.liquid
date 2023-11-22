@@ -1,0 +1,25 @@
+{%- liquid
+  if template == 'list-collections'
+    assign page_url = '/collections'
+  elsif template.name == 'collection'
+    assign page_url = collection.url
+  elsif template.name == 'product'
+    assign page_url = product.url
+  elsif template.name == 'article'
+    assign page_url = article.url
+  elsif template.name == 'blog'
+    assign page_url = blog.url
+  else 
+    assign page_url = page.url
+  endif
+-%}
+
+<link rel="alternate" href="https://www.ohpolly.com{{ page_url }}" hreflang="en-gb" />
+<link rel="alternate" href="https://us.ohpolly.com{{ page_url }}" hreflang="en-us" />
+<link rel="alternate" href="https://au.ohpolly.com{{ page_url }}" hreflang="en-au" />
+<link rel="alternate" href="https://www.ohpolly.ae{{ page_url }}" hreflang="en-ae" />
+<link rel="alternate" href="https://us.ohpolly.com/en-ca{{ page_url }}" hreflang="en-ca" />
+<link rel="alternate" href="https://au.ohpolly.com/en-nz{{ page_url }}" hreflang="en-nz" />
+<link rel="alternate" href="https://www.ohpolly.com{{ page_url }}" hreflang="x-default" />
+
+

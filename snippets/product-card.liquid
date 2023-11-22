@@ -1,0 +1,232 @@
+{%- liquid
+  if show_kicker == nil
+    assign show_kicker = true
+  endif
+
+  assign enable_preorders = false
+  if product.available == true and product.metafields.stock_management.enable_preorder != blank
+    assign enable_preorders = true
+  endif
+
+  assign mobile_viewport = '100vw'
+  if small_image == true
+    assign mobile_viewport = 'calc(100vw / 2)'
+  endif
+
+  assign product_title = product_title | default: product.title
+
+  if preload_image
+   assign preload = true
+  endif
+-%}
+
+<product-card class="prd-Card util-Fauxlink{% unless product.available %} prd-Card-unavailable{% endunless %}" data-product-handle="{{- product.handle -}}">
+  <a class="prd-Card_FauxLink util-FauxLink_Link" href="{{- product.url -}}" data-card-carousel-external-el="hover">
+    <span class="util-ScreenReaderOnly">
+      {{ product.title }}
+    </span>
+  </a>
+  <div class="prd-Card_Actions">
+    <button class="prd-Card_Action prd-Card_Action-wishlist"
+      data-product-card-el="wishlistButton"
+      data-wishlist-button
+      data-product-id="{{- product.id -}}"
+      data-variant-id="{{- product.selected_or_first_available_variant.id -}}"
+      data-product-url="{{- shop.url -}}{{- product.url -}}"
+      {% unless product.has_only_default_variant %}
+      data-wishlist-trigger
+      {% endunless %}
+      type="button">
+      {%- render 'bao-icon-heart' -%}
+
+      <span class="util-ScreenReaderOnly">
+        {{ 'products.product.add_to_wishlist' | t }}
+      </span>
+    </button>
+  </div>
+
+  <div class="prd-Card_OverlayContainer util-FauxLink">
+
+    <div class="prd-Card_Overlay{% unless product.available %} prd-Card_Overlay-unavailable{% endunless %}">
+      <div class="prd-Card_Images">
+        <div class="prd-Card_Image">
+          {%- render 'responsive-image',
+            image: product.featured_image,
+            width: 680,
+            height: 1014,
+            mobile_viewport: mobile_viewport,
+            preload: preload
+          -%}
+        </div>
+
+        {%- liquid
+          assign hover_video = product.metafields.product_card.video
+          assign hover_image = product.images[1]
+        -%}
+
+        {%- if hover_video != blank or hover_image != blank -%}
+          <div class="prd-Card_HoverImage">
+
+          {%- if hover_video != blank -%}
+            <video class="prd-Card_Player util-LazyVideo" autoplay loop muted playsinline data-lazy-video>
+              <source data-src="{{ hover_video.first.src }}" type="video/mp4">
+            </video>
+          {%- elsif hover_image != blank -%}
+            {%- render 'responsive-image',
+              image: hover_image,
+              width: 680,
+              height: 1014,
+              mobile_viewport: mobile_viewport
+            -%}
+          {%- endif -%}
+
+          </div>
+        {%- endif -%}
+
+        {% liquid
+          assign show_overlay = true
+
+          for tag in product.tags
+            assign tag_parts = tag | split: ":"
+            assign tag_prefix = tag_parts.first | downcase
+            assign tag_suffix = blank
+            if tag_prefix == "tag"
+              assign tag_suffix = tag_parts.last | strip
+              break
+            endif
+          endfor
+
+          if tag_suffix != blank
+            assign show_overlay = false
+          endif
+
+          if enable_preorders
+            assign show_overlay = false
+          endif
+
+          if product.metafields.stock_management.enable_last_chance
+            assign show_overlay = false
+          endif
+
+          if product.available and product.compare_at_price != nil and product.compare_at_price_min > product.price_min
+            assign show_overlay = false
+          endif
+        %}
+
+        {%- if product.metafields.product_card.text_overlay != blank and show_overlay -%}
+          <span class="prd-Card_ImageOverlay">
+            <span class="prd-Card_ImageOverlayText fz-14_20">{{ product.metafields.product_card.text_overlay }}</span>
+          </span>
+        {%- endif -%}
+      </div>
+
+      <div class="prd-Card_States">
+        {%- if enable_preorders -%}
+          <div class="prd-Card_State prd-Card_State-preorder">
+            <span class="prd-Card_StateText fz-14_20">
+              {{ 'products.product.pre_order' | t }}
+            </span>
+          </div>
+        {%- else -%}
+          {%- if product.available and tag_suffix != blank and product.compare_at_price == nil -%}
+            <div class="prd-Card_State prd-Card_State-tag">
+              <span class="prd-Card_StateText fz-14_20">
+                {{ tag_suffix }}
+              </span>
+            </div>
+          {%- endif -%}
+
+          {% comment %} Percentage Saving {% endcomment %}
+          {%- if product.available and product.compare_at_price != nil and product.compare_at_price_min > product.price_min -%}
+            {%- liquid
+              assign sale_price = product.price_min | times: 1.0
+              assign price = product.compare_at_price_min | times: 1.0
+              assign saving = price | minus: sale_price
+              assign saving_as_percentage = saving | times: 100 | divided_by: price | floor | append: "%"
+            -%}
+
+            <div class="prd-Card_State prd-Card_State-saving">
+              <span class="prd-Card_StateText fz-14_20">
+                {{ 'products.product.sale_percentage_off' | t: percentage: saving_as_percentage }}
+              </span>
+            </div>
+
+          {%- elsif product.metafields.stock_management.enable_last_chance -%}
+            <div class="prd-Card_State prd-Card_State-saving">
+              <span class="prd-Card_StateText fz-14_20">
+                {{ 'products.product.last_chance' | t }}
+              </span>
+            </div>
+          {%- endif -%}
+
+          {% comment %} Out of Stock {% endcomment %}
+          {%- unless product.available -%}
+            <div class="prd-Card_State prd-Card_State-availability">
+              <span class="prd-Card_StateText fz-14_20">
+                {{ 'products.product.sold_out' | t }}
+              </span>
+            </div>
+          {%- endunless -%}
+        {%- endif -%}
+      </div>
+
+        {% comment %} Quick buy {% endcomment %}
+        <div class="prd-Card_QuickBuyOverlay prd-Card_QuickBuyOverlay-desktop" data-product-card-el="quickBuyOverlay"></div>
+        <div class="prd-Card_QuickBuyContainer">
+          {%- if product.available and product.has_only_default_variant == false -%}
+            <button type="button" class="btn-Button btn-Button-tertiary prd-QuickBuy_Trigger" data-product-card-el="desktopTrigger" data-buy-trigger>
+              {{ 'products.product.quick_buy' | t }}
+            </button>
+          {%- endif -%}
+
+          {%- if product.available and product.has_only_default_variant -%}
+            <div class="prd-Card_AddToCart">
+              {%- render 'product-card-addtocart', product: product -%}
+            </div>
+          {%- endif -%}
+
+          <div class="prd-Card_QuickBuy prd-Card_QuickBuy-desktop" data-product-card-el="quickBuyContainer" aria-hidden="true" aria-busy="false">
+            {%- render 'quickbuy-skeleton' -%}
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="prd-Card_Content">
+    {%- if product.available -%}
+      <button type="button" class="prd-Card_QuickBuyTrigger" data-product-card-el="mobileTrigger">
+        {%- render 'bao-icon-bag' -%}
+
+        <span class="util-ScreenReaderOnly">
+          {{ 'products.product.quick_buy' | t }}
+        </span>
+      </button>
+    {%- endif -%}
+
+    {%- if product.metafields.product_details.kicker != blank and show_kicker -%}
+      <p class="prd-Card_Kicker fz-12_12">{{ product.metafields.product_details.kicker }}</p>
+    {%- endif -%}
+
+    {%- if product.metafields.product_details.strapline != blank -%}
+      <p class="prd-Card_Strapline fz-18_22">{{ product.metafields.product_details.strapline }}</p>
+    {%- endif -%}
+
+    <h3 class="prd-Card_Title fz-14_20">{{ product_title }}</h3>
+  </div>
+
+  <footer class="prd-Card_Footer">
+    <div class="prd-Card_Price fz-14_20">
+      {%- render 'product-price', product: product -%}
+    </div>
+
+    {%- if product.metafields.colors.available != blank -%}
+      {%- assign available_color_array = product.metafields.colors.available | split: "," -%}
+
+      <div class="prd-Card_Colors">
+        {%- for color in available_color_array limit: 6 -%}
+          <span class="prd-Card_Color prd-Card_Color-{{ color | handleize }} col-Color-{{ color | handleize }}"></span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </footer>
+</product-card>
