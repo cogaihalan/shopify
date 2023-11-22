@@ -60,11 +60,12 @@
     "feature": {
       "type": "blog-featured",
       "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/Image.png",
         "section_style": "light",
         "kicker": "Fashion",
-        "title": "Resort",
-        "text": "Velit ut tortor pretium viverra suspendisse potenti nullam ac tortor. Venenatis tellus in metus vulputate eu.",
-        "button_text": "Read article",
+        "title": "Upcycle Your Old Appliances Into a TV Terrarium",
+        "text": "Progressively incentivize cooperative systems through technically sound functionalities. The credibly productivate seamless data.",
+        "button_text": "",
         "button_link": "shopify:\/\/blogs\/news\/jess-hunt-in-resort"
       }
     },
