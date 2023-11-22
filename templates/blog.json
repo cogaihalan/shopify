@@ -59,6 +59,9 @@
     },
     "feature": {
       "type": "blog-featured",
+      "custom_css": [
+        "@media (min-width: 1200px){.blg-FeaturedArticle_Title {font-size: 40px; line-height:44px; }}"
+      ],
       "settings": {
         "desktop_image": "shopify:\/\/shop_images\/Image.png",
         "section_style": "light",
