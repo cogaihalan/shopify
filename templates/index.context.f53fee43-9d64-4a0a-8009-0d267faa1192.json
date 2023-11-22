@@ -50,37 +50,6 @@
         "870fd717-c645-4f3d-b489-926029351f0b"
       ]
     },
-    "1633424177fbc56d57": {
-      "disabled": false,
-      "settings": {
-      },
-      "blocks": {
-        "2c21f655-dfd1-4f48-96a0-dcf9a0cefaa8": {
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Web-Button-Besteller_1.webp",
-            "title": "MAXI DRESSES",
-            "link": "shopify:\/\/collections\/maxi-dresses"
-          }
-        },
-        "a43044c8-1a12-4ba3-af95-7852e8860514": {
-          "settings": {
-            "image": "shopify:\/\/shop_images\/OP-Web-Button_Desktop-Fall-Essentials.jpg"
-          }
-        },
-        "45be5437-ac70-417b-a8eb-2e2731957986": {
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Home-Page-Button-1.webp"
-          }
-        },
-        "890b9aaa-81ef-43c3-aa14-6c7d4c0b19b4": {
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Tulle-Button.webp",
-            "title": "BLACK DRESSES",
-            "link": "shopify:\/\/collections\/little-black-dresses"
-          }
-        }
-      }
-    },
     "16547893506d591649": {
       "disabled": true,
       "settings": {
@@ -195,7 +164,6 @@
     "16590922793855b7bf",
     "163342417312dd33df",
     "1633424312ee020144",
-    "1633424177fbc56d57",
     "9885d871-bc8f-4013-a0d9-a88d63d182e9",
     "03d2552a-6354-4a58-ab1f-fddd089b0dcc",
     "16547893506d591649",

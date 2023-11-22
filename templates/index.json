@@ -41,6 +41,49 @@
         "mobile_vertical": "mobileMiddle"
       }
     },
+    "1633424312ee020144": {
+      "type": "section-usps",
+      "blocks": {
+        "3dae1dbc-0d0a-483f-89ea-708259043307": {
+          "type": "usp",
+          "settings": {
+            "title": "free shipping & return",
+            "text": "Free shipping on all orders over $99",
+            "link_url": "",
+            "background_colour": "{{ shop.brand.colors.primary[0].background }}",
+            "text_colour": "#333333"
+          }
+        },
+        "0f307fdf-dbfd-4ebf-a52f-1d51f931bd08": {
+          "type": "usp",
+          "settings": {
+            "title": "Money back guarantee",
+            "text": "100% money back guarantee",
+            "link_url": "",
+            "background_colour": "{{ shop.brand.colors.primary[0].background }}",
+            "text_colour": "#333333"
+          }
+        },
+        "b817f045-1e94-4915-b8ec-568971948443": {
+          "type": "usp",
+          "settings": {
+            "title": "Online support 24\/7",
+            "text": "Everytime you need",
+            "link_url": "",
+            "background_colour": "#ffffff",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "3dae1dbc-0d0a-483f-89ea-708259043307",
+        "0f307fdf-dbfd-4ebf-a52f-1d51f931bd08",
+        "b817f045-1e94-4915-b8ec-568971948443"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
     "163342417312dd33df": {
       "type": "section-hero",
       "blocks": {
@@ -51,10 +94,7 @@
             "desktop_video_ar": "",
             "mobile_video": "",
             "mobile_video_ar": "",
-            "desktop_image": "shopify:\/\/shop_images\/OP-Fall-Signtature-Staples-Launch_DESKTOP_2326e1c5-d1a3-4167-8422-f88754340780.jpg",
-            "desktop_image_ar": "shopify:\/\/shop_images\/AR-OP-Fall-Signtature-Staples-Launch_DESKTOP_12862c42-17e5-48e0-ba04-2b88a418d2f1.png",
-            "mobile_image": "shopify:\/\/shop_images\/OP-Fall-Signtature-Staples_MOBILE_ab376e42-1eba-4df5-b964-cf43ab82cb6c.png",
-            "mobile_image_ar": "shopify:\/\/shop_images\/AR-OP-Fall-Signtature-Staples_MOBILE_a84dd5a2-1653-457e-90c1-14d51452cf92.png",
+            "desktop_image": "shopify:\/\/shop_images\/Optirious-2_d5cc97ce-ac71-4052-9144-d789c5433b88.png",
             "title": "",
             "text": "",
             "button_text": "",
@@ -92,8 +132,7 @@
             "desktop_video_ar": "",
             "mobile_video": "",
             "mobile_video_ar": "",
-            "desktop_image": "shopify:\/\/shop_images\/OP-Halloween-Launch_DESKTOP_876912fb-03a8-49bb-82cc-39240b9d1445.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/OP-Halloween-Launch_MOBILE_5f8ab461-a1ad-4ee5-a3c5-b8bb49b1a746.jpg",
+            "desktop_image": "shopify:\/\/shop_images\/Optirious-2_d5cc97ce-ac71-4052-9144-d789c5433b88.png",
             "title": "",
             "text": "",
             "button_text": "",
@@ -132,7 +171,7 @@
             "desktop_video_ar": "",
             "mobile_video": "",
             "mobile_video_ar": "",
-            "desktop_image": "shopify:\/\/shop_images\/ATHLEISURESETS-UK_MOBILE.jpg",
+            "desktop_image": "shopify:\/\/shop_images\/Optirious-2_d5cc97ce-ac71-4052-9144-d789c5433b88.png",
             "title": "",
             "text": "",
             "button_text": "",
@@ -181,116 +220,6 @@
         "header_colour": "dark"
       }
     },
-    "1633424312ee020144": {
-      "type": "section-usps",
-      "blocks": {
-        "3dae1dbc-0d0a-483f-89ea-708259043307": {
-          "type": "usp",
-          "settings": {
-            "title": "STUDENTS GET 15% OFF",
-            "text": "CONTACT WHATSAPP SUPPORT FOR DISCOUNT",
-            "link_url": "",
-            "background_colour": "#e48d89",
-            "text_colour": "#333333"
-          }
-        },
-        "0f307fdf-dbfd-4ebf-a52f-1d51f931bd08": {
-          "type": "usp",
-          "settings": {
-            "title": "DOWNLOAD OUR APP",
-            "text": "FOR EXCLUSIVE DISCOUNTS AND EARLY ACCESS",
-            "link_url": "",
-            "background_colour": "#f7d7d0",
-            "text_colour": "#333333"
-          }
-        },
-        "b817f045-1e94-4915-b8ec-568971948443": {
-          "type": "usp",
-          "settings": {
-            "title": "EXPRESS DELIVERY",
-            "text": "2 DAYS DELIVERY ACROSS GCC",
-            "link_url": "",
-            "background_colour": "#e2a9a9",
-            "text_colour": "#333333"
-          }
-        }
-      },
-      "block_order": [
-        "3dae1dbc-0d0a-483f-89ea-708259043307",
-        "0f307fdf-dbfd-4ebf-a52f-1d51f931bd08",
-        "b817f045-1e94-4915-b8ec-568971948443"
-      ],
-      "settings": {
-        "section_margin": "spacingNone"
-      }
-    },
-    "1633424177fbc56d57": {
-      "type": "section-ctas",
-      "blocks": {
-        "2c21f655-dfd1-4f48-96a0-dcf9a0cefaa8": {
-          "type": "cta",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Web-Button_17.webp",
-            "title": "MAXI DRESSES",
-            "text": "SHOP NOW",
-            "link": "shopify:\/\/collections\/maxi-dresses",
-            "link_text": "Shop Now",
-            "link_title": ""
-          }
-        },
-        "a43044c8-1a12-4ba3-af95-7852e8860514": {
-          "type": "cta",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/OP-Web-Button_Desktop.jpg",
-            "title": "BO+TEE",
-            "text": "SHOP NOW",
-            "link": "shopify:\/\/collections\/bo-tee",
-            "link_text": "Shop Now",
-            "link_title": ""
-          }
-        },
-        "45be5437-ac70-417b-a8eb-2e2731957986": {
-          "type": "cta",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/BIS-WebButton.jpg",
-            "title": "BACK IN STOCK",
-            "text": "SHOP NOW",
-            "link": "shopify:\/\/collections\/back-in-stock",
-            "link_text": "Shop Now",
-            "link_title": ""
-          }
-        },
-        "890b9aaa-81ef-43c3-aa14-6c7d4c0b19b4": {
-          "type": "cta",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Halloween-WEBBUTTON-_Desktop_red.jpg",
-            "title": "BLACK DRESSES",
-            "text": "SHOP NOW",
-            "link": "shopify:\/\/collections\/halloween",
-            "link_text": "Shop Now",
-            "link_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "2c21f655-dfd1-4f48-96a0-dcf9a0cefaa8",
-        "a43044c8-1a12-4ba3-af95-7852e8860514",
-        "45be5437-ac70-417b-a8eb-2e2731957986",
-        "890b9aaa-81ef-43c3-aa14-6c7d4c0b19b4"
-      ],
-      "settings": {
-        "border_top": false,
-        "kicker": "",
-        "title": "",
-        "text": "",
-        "button_text": "",
-        "button_link": "",
-        "overlay_mobile": false,
-        "background_colour_mobile": "dark",
-        "text_colour_mobile": "light",
-        "column_count_mobile": "two"
-      }
-    },
     "9885d871-bc8f-4013-a0d9-a88d63d182e9": {
       "type": "section-hero",
       "blocks": {
@@ -336,6 +265,7 @@
       "block_order": [
         "cbf4c6b1-0b8f-4f42-9ad5-2df8625dab74"
       ],
+      "disabled": true,
       "settings": {
         "lazy_media": true,
         "autoplay_enable": false,
@@ -370,6 +300,7 @@
     },
     "16547893506d591649": {
       "type": "section-image-text",
+      "disabled": true,
       "settings": {
         "section_margin": "spacingSmall",
         "order": "contentLeft",
@@ -377,11 +308,7 @@
         "text_colour": "dark",
         "button_style": "light",
         "desktop_video": "",
-        "desktop_image": "shopify:\/\/shop_images\/homepage-1500x1500_Academic.jpg",
         "mobile_video": "",
-        "mobile_image": "shopify:\/\/shop_images\/homepage-800x800_Academic.jpg",
-        "desktop_content_image": "shopify:\/\/shop_images\/homepage-1200x750_Academic.jpg",
-        "mobile_content_image": "shopify:\/\/shop_images\/homepage-600x600_Academic.jpg",
         "title": "OLD MONEY SWIM",
         "text": "<p>Understated elegance. Our latest capsule, Old Money Swim, blends minimal designs with timeless shapes that transcend the seasons. Undeniably luxe and effortlessly sexy, embody endless glamour under the glittering sun, in underwired bikini tops and versatile plunge swimsuits.<\/p>",
         "desktop_horizontal_align": "desktopContentCenter-x",
@@ -500,8 +427,6 @@
             "desktop_video_ar": "",
             "mobile_video": "",
             "mobile_video_ar": "",
-            "desktop_image": "shopify:\/\/shop_images\/Outerwear-Launch_DESKTOP_copy_f6044bdf-d9fb-47a8-a078-041af45d30c6.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/Outerwear-Launch_MOBILE_cdfd571b-61b3-4103-bf5c-456ce3356998.jpg",
             "title": "",
             "text": "",
             "button_text": "",
@@ -539,10 +464,6 @@
             "desktop_video_ar": "",
             "mobile_video": "",
             "mobile_video_ar": "",
-            "desktop_image": "shopify:\/\/shop_images\/UAE-DesktopBanner-FallSigStaples_aab97965-484e-4a3f-81d9-11456c7a1d72.jpg",
-            "desktop_image_ar": "shopify:\/\/shop_images\/UAE-AR-DesktopBanner-FallSigStaples_84aa7c98-6e7a-46c6-9aab-b8f8041dc012.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/UAE-MobileBanner-FallSigStaples_7d7359fb-6342-4abd-834f-2333bc1ee945.jpg",
-            "mobile_image_ar": "shopify:\/\/shop_images\/UAE-AR-MobileBanner-FallSigStaples_ca648586-41f9-4df3-b9d0-52909e8897b4.jpg",
             "title": "",
             "text": "",
             "button_text": "",
@@ -578,6 +499,7 @@
         "fb661adc-982a-48b2-b9dd-72ab00ef3fd4",
         "cae042e2-57e8-449e-89b3-ac7c567f7676"
       ],
+      "disabled": true,
       "settings": {
         "lazy_media": true,
         "autoplay_enable": true,
@@ -636,30 +558,35 @@
     },
     "frontpage-nosto-1": {
       "type": "nosto-placement",
+      "disabled": true,
       "settings": {
         "placement": "frontpage-nosto-1"
       }
     },
     "frontpage-nosto-2": {
       "type": "nosto-placement",
+      "disabled": true,
       "settings": {
         "placement": "frontpage-nosto-2"
       }
     },
     "frontpage-nosto-3": {
       "type": "nosto-placement",
+      "disabled": true,
       "settings": {
         "placement": "frontpage-nosto-3"
       }
     },
     "frontpage-nosto-4": {
       "type": "nosto-placement",
+      "disabled": true,
       "settings": {
         "placement": "frontpage-nosto-4"
       }
     },
     "test-placement": {
       "type": "nosto-placement",
+      "disabled": true,
       "settings": {
         "placement": "test-placement"
       }
@@ -668,9 +595,8 @@
   "order": [
     "index",
     "16590922793855b7bf",
-    "163342417312dd33df",
     "1633424312ee020144",
-    "1633424177fbc56d57",
+    "163342417312dd33df",
     "9885d871-bc8f-4013-a0d9-a88d63d182e9",
     "03d2552a-6354-4a58-ab1f-fddd089b0dcc",
     "16547893506d591649",
