@@ -280,7 +280,6 @@
     },
     "03d2552a-6354-4a58-ab1f-fddd089b0dcc": {
       "type": "section-image-text",
-      "disabled": true,
       "settings": {
         "section_margin": "spacingStandard",
         "order": "contentLeft",

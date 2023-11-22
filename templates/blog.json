@@ -1,10 +1,65 @@
 {
   "sections": {
+    "2cbec977-8330-45cf-8a56-2c024dbe1098": {
+      "type": "section-hero",
+      "blocks": {
+        "659252be-a0ee-431c-856b-1edb31c993bc": {
+          "type": "hero_item",
+          "settings": {
+            "desktop_video": "",
+            "desktop_video_ar": "",
+            "mobile_video": "",
+            "mobile_video_ar": "",
+            "desktop_image": "shopify:\/\/shop_images\/Optigreen_40c9c6bd-2c8d-4e9f-b035-04706770932a.png",
+            "title": "Insights about our community",
+            "text": "<p>upcycling products<\/p><p>In Optigreet, we create a strong community  for the circular economy, for a green future!<\/p>",
+            "button_text": "Join With Us",
+            "button_url": "",
+            "mobile_button_url": "",
+            "overlay_desktop": false,
+            "background_colour_desktop": "light",
+            "text_colour_desktop": "light",
+            "button_style": "light",
+            "desktop_text_align": "desktopTextLeft",
+            "desktop_horizontal": "left",
+            "desktop_vertical": "bottom",
+            "overlay_mobile": false,
+            "background_colour_mobile": "light",
+            "text_colour_mobile": "light",
+            "button_style_mobile": "mobileLight",
+            "mobile_text_align": "mobileTextLeft",
+            "mobile_horizontal": "mobileLeft",
+            "mobile_vertical": "mobileBottom",
+            "countdown_text": "<p>New styles coming soon<\/p>",
+            "countdown_text_mobile": "<p>Coming soon<\/p>",
+            "countdown_date": "",
+            "countdown_text_expired": "<p>Available Now!<\/p>",
+            "countdown_desktop_column": 1,
+            "countdown_desktop_row": 1,
+            "countdown_tablet_column": 4,
+            "countdown_tablet_row": 4,
+            "countdown_mobile_row": 4
+          }
+        }
+      },
+      "block_order": [
+        "659252be-a0ee-431c-856b-1edb31c993bc"
+      ],
+      "settings": {
+        "lazy_media": true,
+        "autoplay_enable": false,
+        "autoplay_duration": "2000",
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark"
+      }
+    },
     "feature": {
       "type": "blog-featured",
       "settings": {
-        "desktop_image": "shopify:\/\/shop_images\/featured-blog.jpg",
-        "mobile_image": "shopify:\/\/shop_images\/featured-blog-mobile.jpg",
         "section_style": "light",
         "kicker": "Fashion",
         "title": "Resort",
@@ -17,10 +72,18 @@
       "type": "main-blog",
       "settings": {
       }
+    },
+    "62a7b8c5-0841-4f97-b38a-ab4df15a4559": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": ""
+      }
     }
   },
   "order": [
+    "2cbec977-8330-45cf-8a56-2c024dbe1098",
     "feature",
-    "main"
+    "main",
+    "62a7b8c5-0841-4f97-b38a-ab4df15a4559"
   ]
 }

@@ -115,28 +115,21 @@
           "47cf27f8-be96-4cf4-8aaf-00ad1e17f42c": {
             "type": "accouncement",
             "settings": {
-              "title": "STUDENTS GET 15% OFF",
+              "title": "free shipping & return",
               "link": ""
             }
           },
           "cf014998-4e66-4b58-87b7-a505fa667cb9": {
             "type": "accouncement",
             "settings": {
-              "title": "DOWNLOAD OUR APP NOW",
+              "title": "Money back guarantee",
               "link": ""
             }
           },
           "f257cc86-87aa-49f6-b4cb-11f37301e33c": {
             "type": "accouncement",
             "settings": {
-              "title": "EXPRESS DELIVERY AVAILABLE",
-              "link": ""
-            }
-          },
-          "6623642f-2380-40cf-897d-4e11a8117783": {
-            "type": "accouncement",
-            "settings": {
-              "title": "SHIPPING ACROSS GCC",
+              "title": "Online support 24\/7",
               "link": ""
             }
           }
@@ -144,8 +137,7 @@
         "block_order": [
           "47cf27f8-be96-4cf4-8aaf-00ad1e17f42c",
           "cf014998-4e66-4b58-87b7-a505fa667cb9",
-          "f257cc86-87aa-49f6-b4cb-11f37301e33c",
-          "6623642f-2380-40cf-897d-4e11a8117783"
+          "f257cc86-87aa-49f6-b4cb-11f37301e33c"
         ],
         "settings": {
           "enable": true,
@@ -270,8 +262,8 @@
           "bbcd64eb-41a3-4f55-b696-f5787e4fe7bb"
         ],
         "settings": {
-          "main_linklist": "mobile-menu",
-          "footer_linklist": "mobile-footer-menu"
+          "main_linklist": "",
+          "footer_linklist": ""
         }
       },
       "cart-summary": {
@@ -998,105 +990,6 @@
       "header": {
         "type": "header",
         "blocks": {
-          "f3a2facb-9346-43ac-befc-7a8bcdb50334": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: newin]",
-              "image": "shopify:\/\/shop_images\/Mega_Menu_SigStaples4.jpg",
-              "title": "New In",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/new-in",
-              "text_color": "#ffffff"
-            }
-          },
-          "a96cf384-1f94-478f-90f7-7f328019c8da": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: shopby]",
-              "image": "shopify:\/\/shop_images\/Outerwear-Mega-Menu-GoingOut.webp",
-              "title": "Going Out Dresses",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/birthday-dresses-outfits",
-              "text_color": "#ffffff"
-            }
-          },
-          "cd2f12dc-8078-469d-ab03-5c3b106c10a7": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: dresses]",
-              "image": "shopify:\/\/shop_images\/Outerwear-Mega-Menu-Dresses.webp",
-              "title": "Dresses",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/dresses",
-              "text_color": "#ffffff"
-            }
-          },
-          "68eb0f42-b0bf-4436-9fa8-4ee4c642de1f": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: tops]",
-              "image": "shopify:\/\/shop_images\/Outerwear-Mega-Menu-Tops.webp",
-              "title": "Tops",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/tops",
-              "text_color": "#ffffff"
-            }
-          },
-          "ac1896c7-c7b0-4f88-824c-416f11ca4b8a": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: clothing]",
-              "image": "shopify:\/\/shop_images\/MegaMenu-Tops_3f673782-f37c-42ee-83e9-f5e7e41a492e.webp",
-              "title": "Co-ords",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/view-all-clothing-co-ords",
-              "text_color": "#ffffff"
-            }
-          },
-          "f7e7168f-0cb5-469e-9502-79195559f051": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: swimwear]",
-              "image": "shopify:\/\/shop_images\/OP-MegaMenu.jpg",
-              "title": "Swimwear",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/swim",
-              "text_color": "#ffffff"
-            }
-          },
-          "6138bb6e-0f3e-42fa-ac80-71b1ef3e0cf3": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: bo+tee]",
-              "image": "shopify:\/\/shop_images\/MegaMenu.jpg",
-              "title": "Bo+Tee",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/bo-tee",
-              "text_color": "#ffffff"
-            }
-          },
-          "08d0f70e-9f76-4bdc-8259-8df60e7a8a9f": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: halloween]",
-              "image": "shopify:\/\/shop_images\/MegaMenu-Halloween.webp",
-              "title": "Halloween",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/halloween",
-              "text_color": "#ffffff"
-            }
-          },
-          "eb713655-f4e7-4d38-bc0a-b696ea9b0d10": {
-            "type": "menu-cta",
-            "settings": {
-              "promo_tag": "[promo: sale]",
-              "image": "shopify:\/\/shop_images\/MegaMenu-BF-OP_0d6f7aed-5030-4ae9-ac17-f6174338d620.webp",
-              "title": "Black Friday",
-              "url_text": "Shop Now",
-              "url": "shopify:\/\/collections\/black-friday",
-              "text_color": "#ffffff"
-            }
-          },
           "8bce2e19-1865-4398-a0ca-d8b4be19af26": {
             "type": "menu-cta",
             "disabled": true,
@@ -1139,15 +1032,6 @@
           }
         },
         "block_order": [
-          "f3a2facb-9346-43ac-befc-7a8bcdb50334",
-          "a96cf384-1f94-478f-90f7-7f328019c8da",
-          "cd2f12dc-8078-469d-ab03-5c3b106c10a7",
-          "68eb0f42-b0bf-4436-9fa8-4ee4c642de1f",
-          "ac1896c7-c7b0-4f88-824c-416f11ca4b8a",
-          "f7e7168f-0cb5-469e-9502-79195559f051",
-          "6138bb6e-0f3e-42fa-ac80-71b1ef3e0cf3",
-          "08d0f70e-9f76-4bdc-8259-8df60e7a8a9f",
-          "eb713655-f4e7-4d38-bc0a-b696ea9b0d10",
           "8bce2e19-1865-4398-a0ca-d8b4be19af26",
           "04dea05c-ef4b-428f-b710-51f02663a350",
           "aee9174f-a4ad-47c2-a767-162c162dadc4",
