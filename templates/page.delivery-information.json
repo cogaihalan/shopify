@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16558514987d5289ee": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16450183158120bfd7": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "DELIVERY INFORMATION",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16450183524a37b010": {
+      "type": "ancillary-accordion-multiple-levels",
+      "settings": {
+        "text": "<p>Delivery Costs for the GCC region.<\/p>",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "1645543487b32b1e75": {
+      "type": "ancillary-delivery",
+      "settings": {
+      }
+    },
+    "165584326427a11bf3": {
+      "type": "ancillary-accordion",
+      "settings": {
+        "layout_container": false,
+        "text": "<p>Timeframes for Standard and Express delivery options are in business days (Mon-Fri)<\/p><p><\/p><p>*Delivery costs may differ due to order weight<br\/><strong>**Delivery costs and delivery times may vary during busy periods<\/strong><\/p>",
+        "title_font_size": "fz-14_20",
+        "question_font_size": "fz-18_22",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16558514987d5289ee",
+    "16450183158120bfd7",
+    "16450183524a37b010",
+    "1645543487b32b1e75",
+    "165584326427a11bf3"
+  ]
+}

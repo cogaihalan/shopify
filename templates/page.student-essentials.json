@@ -1,0 +1,184 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1662044198815a6816": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Student-essentials_header_web_banner.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/App_1.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "16620442179ad6a4d7": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "collection": "",
+        "collection_max": "4"
+      }
+    },
+    "16620442450c32ff80": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "BUILDING OUT YOUR STUDENT WARDROBE? DO IT IN STYLE WITH OH POLLY.",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Here at Oh Polly we've got all the styles you need in your wardrobe to make a splash this semester. From casual but sophisticated looks for lectures and seminars, to activewear that will support you through your workouts in the campus gym, there's a look for everyone and every activity. And don't forget about our iconic selection of dresses and co-ords that are perfect for freshers and beyond.<\/p>",
+        "button_text": "SHOP ALL STUDENT ESSENTIALS",
+        "button_url": "shopify:\/\/collections\/student-essentials"
+      }
+    },
+    "16624750930c9a220d": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "c0046e00-6999-4c64-8396-2934b4b606e1": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/homepage_button_lecture.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/going-to-lectures",
+            "link_text": "SHOP NOW",
+            "link_title": "Going to Lectures"
+          }
+        },
+        "9d1bf7d4-e4bc-47d7-b08a-37d50be621ab": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/homepage_button_gym.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/going-to-the-gym",
+            "link_text": "SHOP NOW",
+            "link_title": "Going to the gym"
+          }
+        },
+        "041210f1-d90c-4086-88e1-1f7060e2271e": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/homepage_button_going-out.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/going-out",
+            "link_text": "SHOP NOW",
+            "link_title": ""
+          }
+        },
+        "cd5a958a-4cba-4a14-8026-6736d6a9f38e": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/homepage_button_student_essentials_dab9eeae-9723-4f37-8cb3-4eac896a35dc.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/student-essentials",
+            "link_text": "SHOP NOW",
+            "link_title": "SHOP STUDENT ESSENTIALS"
+          }
+        }
+      },
+      "block_order": [
+        "c0046e00-6999-4c64-8396-2934b4b606e1",
+        "9d1bf7d4-e4bc-47d7-b08a-37d50be621ab",
+        "041210f1-d90c-4086-88e1-1f7060e2271e",
+        "cd5a958a-4cba-4a14-8026-6736d6a9f38e"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    },
+    "166256058784e9fe26": {
+      "type": "section-ctas",
+      "blocks": {
+        "dde4f7e9-5260-4a8e-b1b0-1ec43cc05ee5": {
+          "type": "cta",
+          "settings": {
+            "title": "SHOP ALL STUDENT ESSENTIALS",
+            "text": "BUILD YOUR DREAM STUDENT WARDROBE",
+            "link": "shopify:\/\/collections\/student-essentials",
+            "link_text": "SHOP NOW",
+            "link_title": ""
+          }
+        },
+        "e5dc45cf-6950-4a7f-859c-6c67fffe8b23": {
+          "type": "cta",
+          "settings": {
+            "title": "BECOME A STUDENT AMBASSADOR",
+            "text": "APPLY NOW TO JOIN THE TEAM",
+            "link": "shopify:\/\/pages\/student-sign-up",
+            "link_text": "APPLY NOW",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "dde4f7e9-5260-4a8e-b1b0-1ec43cc05ee5",
+        "e5dc45cf-6950-4a7f-859c-6c67fffe8b23"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662044198815a6816",
+    "16620442179ad6a4d7",
+    "16620442450c32ff80",
+    "16624750930c9a220d",
+    "166256058784e9fe26"
+  ]
+}

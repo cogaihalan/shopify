@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16454402568c5d1ec1": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script data-iframe=\"https:\/\/connect.studentbeans.com\/v4\/oh-polly\/uk\/\" data-load=\"connect\" id=\"stb_root\" src=\"https:\/\/cdn.studentbeans.com\/third-party\/all.js\"><\/script>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16454402568c5d1ec1"
+  ]
+}

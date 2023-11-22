@@ -1,0 +1,36 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "uae"
+  },
+  "sections": {
+    "163342417312dd33df": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "9246a9b2-c369-4e39-a39d-68d6c6502cc8": {
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/Modal-Launch_DESKTOP_085a11b8-b2d4-425d-b9eb-67fe4a65bf60.jpg",
+            "desktop_image_ar": "shopify:\/\/shop_images\/OP-UK_Twist-ComingSoon_DESKTOP_copy_e97c1b06-72e0-4875-97db-8cd350a90098.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Modal-Launch_MOBILE_3b4d3d56-0209-44ae-a894-ff25b97fb3c4.jpg",
+            "mobile_image_ar": "shopify:\/\/shop_images\/OP-UK_Twist-ComingSoon_MOBILE_copy_71e16e5b-1658-42da-b6a4-a6efb5c9aab2.jpg",
+            "button_url": "shopify:\/\/collections\/bo-tee",
+            "mobile_button_url": "shopify:\/\/collections\/bo-tee"
+          }
+        },
+        "bbb6bf1f-6b0d-4866-a92d-4984676bdcf6": {
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/Modal-Launch_DESKTOP_7a8f9dfe-3447-40e0-9968-9439865585ce.jpg",
+            "desktop_image_ar": "shopify:\/\/shop_images\/OP-UK_Twist-ComingSoon_DESKTOP_copy_592c99ab-cc1c-422b-b72e-c411d9f3d735.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Modal-Launch_MOBILE_f8404f04-3fad-4041-af4f-848ac5852af5.jpg",
+            "mobile_image_ar": "shopify:\/\/shop_images\/OP-UK_Twist-ComingSoon_MOBILE_copy_ba12cfeb-11db-4ea2-bb64-96e19f794f71.jpg",
+            "mobile_button_url": "shopify:\/\/collections\/bo-tee"
+          }
+        }
+      }
+    }
+  }
+}

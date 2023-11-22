@@ -1,0 +1,273 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1664806540bbbe28b4": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/1-HalloweenHub-LandingPage-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/1-HalloweenHub-LandingPage-Mobile.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "16648118977c579fe8": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "GET READY FOR A HOT GHOUL HALLOWEEN",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Our Halloween styles are here and it’s time for you to grab a treat not a trick. We know every angel has a devilish side and we’ve got the costumes to match! Spook and seduce in our Halloween dresses and sexy Halloween outfits, because as far as we’re concerned, if you’ve got it, haunt it!<\/p><p>Our Halloween collection has officially landed and we're so excited to see your spooky looks this October. Prepare to look drop dead gorgeous in luxurious vinyl, satin and mesh. No matter your plans this year, stand out and show out in our unmissable Witching Hour collection.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1664806894d680eb28": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "WITCHING HOUR COLLECTION",
+        "button_text": "",
+        "button_link": "",
+        "collection": "halloween",
+        "collection_max": "8"
+      }
+    },
+    "166481166593b30c95": {
+      "type": "section-ctas",
+      "blocks": {
+        "65ff72f9-8134-40af-af8a-9f915bd53615": {
+          "type": "cta",
+          "settings": {
+            "title": "SHOP ALL HALLOWEEN STYLES",
+            "text": "GET READY FOR OCTOBER 31ST WITH OUR MUST HAVE LOOKS",
+            "link": "shopify:\/\/collections\/halloween",
+            "link_text": "SHOP NOW",
+            "link_title": ""
+          }
+        },
+        "77b336f7-7e86-4f10-bfed-9b8832f5636a": {
+          "type": "cta",
+          "disabled": true,
+          "settings": {
+            "title": "SIGN UP TO GET EXCLUSIVE ACCESS",
+            "text": "BE THE FIRST TO SHOP THE WITCHING HOUR COLLECTION",
+            "link": "shopify:\/\/pages\/witching-hour-early-access",
+            "link_text": "SIGN UP NOW",
+            "link_title": ""
+          }
+        },
+        "56bf335e-c250-4226-b069-0043d625afdc": {
+          "type": "cta",
+          "settings": {
+            "title": "SHOP RED AND BLACK DRESSES",
+            "text": "ADD SOME SPICE TO YOUR WARDROBE WITH STYLES FOR OCTOBER AND BEYOND",
+            "link": "shopify:\/\/collections\/red-and-black-dresses",
+            "link_text": "SHOP NOW",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "65ff72f9-8134-40af-af8a-9f915bd53615",
+        "77b336f7-7e86-4f10-bfed-9b8832f5636a",
+        "56bf335e-c250-4226-b069-0043d625afdc"
+      ],
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    },
+    "16648066210aff464c": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/3-HalloweenHub-LandingPage-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/2-HalloweenHub-LandingPage-Mobile.gif",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "2835ed39-9a90-48ce-af0e-a6cf10c82560": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "HALLOWEEN FAVOURITES",
+        "button_text": "",
+        "button_link": "",
+        "collection": "halloween-1",
+        "collection_max": "4"
+      }
+    },
+    "166480664689ae025f": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/4-HalloweenHub-LandingPage-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/3-HalloweenHub-LandingPage-Mobile.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "166480667975f75f76": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/5-HalloweenHub-LandingPage-Desktop.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "f537cb09-b5af-4be1-a6df-8f8441442428": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "RED AND BLACK DRESSES",
+        "button_text": "",
+        "button_link": "",
+        "collection": "red-and-black-dresses",
+        "collection_max": "8"
+      }
+    },
+    "1664810717bd938871": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1664806540bbbe28b4",
+    "16648118977c579fe8",
+    "1664806894d680eb28",
+    "166481166593b30c95",
+    "16648066210aff464c",
+    "2835ed39-9a90-48ce-af0e-a6cf10c82560",
+    "166480664689ae025f",
+    "166480667975f75f76",
+    "f537cb09-b5af-4be1-a6df-8f8441442428",
+    "1664810717bd938871"
+  ]
+}

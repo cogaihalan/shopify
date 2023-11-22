@@ -1,0 +1,210 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "8980b8fb-3a8e-4f21-8eb2-bbd5931dd627": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/OurSupplyChain-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/OurSupplyChain-Mobile.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "8666fde0-b95a-404b-b006-6214d815986a": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "how we manufacture",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Our product development and manufacturing process is unique to most. At Oh Polly, we like to be different and always with you in mind! An environment that is safe and beneficial for our staff is our top priority here at Oh Polly. Here are some examples of how we take care of our workforce.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "32c31b6e-e9ea-45b9-81dc-eefc5a0c744a": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop-5_e53bc0fe-2930-4929-beec-b4d5ff612ec7.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile-5_4c6c9cb7-6522-42df-97a3-76106a7d8ba1.jpg",
+        "title": "we are more than just dreamy fits",
+        "text": "<p>The majority of our stock is produced in our in-house factories, meaning that our production is tightly managed by us.<\/p><p>For external factories we choose our supplier carefully. We prefer to form a direct association with manufacturers so we can have full visibility on working standards and quality control. This means, we also have a presence in all our manufacturing units to ensure worker welfare at every stage. We follow a strict code of conduct in our own factory and make sure these are implemented with our manufacturing partners.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "8fb5fa1e-1ebb-4111-9baa-fc6b42f1984d": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "2aa4c179-d4f1-4947-8e32-8f813e218c68": {
+          "type": "item",
+          "settings": {
+            "title": "corporate social responsibility",
+            "answer": "<p><strong>Healthcare <\/strong><\/p><p>A doctor and nurse visit the factory for consultations free of charge.<br\/><br\/><strong>Life pension<\/strong><\/p><p>We provide a life pension for the low-income family of a worker who has passed away in hospital from a health-related issue.<br\/><br\/><strong>Paid time off<\/strong><\/p><p>For short-term sickness.<br\/><br\/><strong>Wage advances and interest-free micro plans<\/strong><\/p><p>We do this to help ease the pressure on employees when unexpected expenses occur.<br\/><br\/><strong>Profit share<\/strong><\/p><p>We’ve issued our Bangladesh factory with a 2% profit share, each year for the past five years.<\/p>",
+            "page": ""
+          }
+        },
+        "b0f547e9-1879-40e1-a418-cf79c9022b56": {
+          "type": "item",
+          "settings": {
+            "title": "OUR CODE OF CONDUCT: A ZERO TOLERANCE POLICY",
+            "answer": "<p><strong>Child exploitation<\/strong><\/p><p>Everyone who works in our factories must be of legal working age in that country. This is usually 17 or 18 years old. For an apprentice, they must be older than 16.<br\/><br\/><strong>Bribery and corruption<\/strong><\/p><p>All our staff choose to work there. We do not allow people to be coerced or forced into labour.<br\/><br\/><strong>Slave labour<\/strong><\/p><p>Everyone in our factories is paid for the work they do.<br\/><br\/><strong>No unpaid overtime<\/strong><\/p><p>Anything less than the minimum wage. We personally make sure that all workers are paid for the hours they do, and this must be above the legal minimum wage in their country.<br\/><br\/><strong>Excessive overtime<\/strong><\/p><p>When overtime is required for certain projects, it’s always proportional and paid at the correct rate, for example time and a half.<br\/><br\/><strong>Unsafe workingpractices<\/strong><\/p><p>Employees are given the necessary equipment to do their jobs, provided with training on how to use the machinery and are made aware of the health and safety regulations.<\/p>",
+            "page": ""
+          }
+        },
+        "4c74b606-c378-4f63-8a82-6211b19ce8c9": {
+          "type": "item",
+          "settings": {
+            "title": "modern slavery statement",
+            "answer": "<p>You can read our statements by clicking this <a href=\"https:\/\/www.ohpolly.com\/pages\/modern-slavery-statement\"><span style=\"text-decoration:underline\">link<\/span><\/a><\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "2aa4c179-d4f1-4947-8e32-8f813e218c68",
+        "b0f547e9-1879-40e1-a418-cf79c9022b56",
+        "4c74b606-c378-4f63-8a82-6211b19ce8c9"
+      ],
+      "settings": {
+        "layout_container": false,
+        "text": "",
+        "title_font_size": "fz-14_20",
+        "question_font_size": "fz-18_22",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "bcf09fb6-b825-4b4e-bf09-722083f57b7a": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "united nations sustainability goals",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "our current initiatives support the following goals",
+        "text": "<ul><li>Goal 5 - Gender Equality<\/li><li>Goal 8 - Decent Work and Economic Growth<\/li><li>Goal 10 - Reduced Inequalities<\/li><li>Goal 16 - Peace, Justice and Strong Institutions<\/li><li>Goal 17 - Partnerships for the Goals<\/li><\/ul><p>Find out more about the goals <a href=\"https:\/\/sdgs.un.org\/goals\" title=\"https:\/\/sdgs.un.org\/goals\">here<\/a>.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "80dc7ac5-aa68-44eb-90a4-944901d68f94": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "82cd43d3-22cd-4bdd-979e-a207035607af": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-1.jpg",
+            "title": "our planet",
+            "text": "",
+            "link": "",
+            "link_text": "Shop the collection",
+            "link_title": ""
+          }
+        },
+        "d3b0da3a-f4ec-48f0-8092-865028325b00": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-2.jpg",
+            "title": "our products and circularity",
+            "text": "",
+            "link": "shopify:\/\/pages\/products-and-circularity",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "28253b20-c325-4e15-a77d-d720759d980a": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-3.jpg",
+            "title": "our packaging",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-packaging",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "4f5898d6-a8ff-498f-8b94-48df29e9be5f": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-5.jpg",
+            "title": "our people",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-people",
+            "link_text": "",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "82cd43d3-22cd-4bdd-979e-a207035607af",
+        "d3b0da3a-f4ec-48f0-8092-865028325b00",
+        "28253b20-c325-4e15-a77d-d720759d980a",
+        "4f5898d6-a8ff-498f-8b94-48df29e9be5f"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8980b8fb-3a8e-4f21-8eb2-bbd5931dd627",
+    "8666fde0-b95a-404b-b006-6214d815986a",
+    "32c31b6e-e9ea-45b9-81dc-eefc5a0c744a",
+    "8fb5fa1e-1ebb-4111-9baa-fc6b42f1984d",
+    "bcf09fb6-b825-4b4e-bf09-722083f57b7a",
+    "80dc7ac5-aa68-44eb-90a4-944901d68f94"
+  ]
+}

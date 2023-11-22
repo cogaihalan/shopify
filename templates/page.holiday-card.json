@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "20c9c196-25a5-4dfa-ac90-6c675c046d2b": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/HolidayGiftCard-LandingPage_DESKTOP_-1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/HolidayGiftCard-LandingPage_MOBILE_-1.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "526c3186-8170-4b39-9ac0-eff262944690": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "CELEBRATE THE HOLIDAYS WITH OH POLLY",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Get set for party season with our most loved festive outfits. Take 25% off our glistening edit with code HOLIDAYGIFT25 and add some glamour to every holiday event this season. <\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "c695ddc4-e101-4a6b-8296-18956e4af674": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP EMBELLISHED DRESSES NOW",
+        "button_link": "shopify:\/\/collections\/dresses-embellished-dresses",
+        "collection": "dresses-embellished-dresses",
+        "collection_max": "4"
+      }
+    },
+    "4c3d9304-23ff-40e1-b56b-c7276f0cc8fc": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP ALL ST. GERMAIN STYLES NOW",
+        "button_link": "shopify:\/\/collections\/st-germain-dresses",
+        "collection": "st-germain-dresses",
+        "collection_max": "4"
+      }
+    },
+    "079470f3-fc87-4da0-b144-d093808c54c6": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP OUR CHRISTMAS PARTY EDIT NOW",
+        "button_link": "shopify:\/\/collections\/christmas",
+        "collection": "christmas",
+        "collection_max": "4"
+      }
+    },
+    "ca0743d2-72a6-49c3-9244-ee63ccc1678d": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP THE FOUNDATIONS COLLECTION NOW",
+        "button_link": "shopify:\/\/collections\/foundations",
+        "collection": "foundations",
+        "collection_max": "4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "20c9c196-25a5-4dfa-ac90-6c675c046d2b",
+    "526c3186-8170-4b39-9ac0-eff262944690",
+    "c695ddc4-e101-4a6b-8296-18956e4af674",
+    "4c3d9304-23ff-40e1-b56b-c7276f0cc8fc",
+    "079470f3-fc87-4da0-b144-d093808c54c6",
+    "ca0743d2-72a6-49c3-9244-ee63ccc1678d"
+  ]
+}

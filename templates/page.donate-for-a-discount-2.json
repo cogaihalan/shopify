@@ -1,0 +1,300 @@
+{
+  "layout": "theme-ancillary",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1645018064e739ab4c": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/OnlineClothingBank_DESKTOP.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/OnlineClothingBank_MOBILE.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "d9054bdb-73ac-42ba-b9a4-517ccf63313e": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "Enjoy a 15% Oh POlly discount code",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>In 2021, we were the first retailer to launch an Online Clothing Bank, allowing our UK customers to donate for a discount. We know that updating your wardrobe tends to leave those older styles unworn. So, we’ve come up with a charitable and sustainable solution where our UK customers can donate via our Online Clothing Bank, in partnership with The Salvation Army.<\/p>",
+        "button_text": "DONATE FOR A DISCOUNT",
+        "button_url": "https:\/\/ohpollytakeback.intelligentreturns.net\/main\/landing"
+      }
+    },
+    "a73bdb12-7152-4065-8ec2-e937d0af74fb": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentRight",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP_Donate-for-a-discount---step-by-step-_1.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/MOBILE_Donate-for-a-discount---step-by-step-_1.jpg",
+        "title": "How can I donate?",
+        "text": "<p>1. Click the link below and get started.<br\/><br\/>2. Enter your details. <\/p><p>3. Pick which delivery method is best for you. <\/p><p>You can choose between, DPD (printer needed) or Collect+ and InPost (no printer needed).<\/p><p>4. Download the QR code\/label and take your parcel to the local drop off.<br\/><br\/>5. Check your emails for a <strong>special Oh Polly discount<\/strong> code once you’ve dropped off your donation.<em><br\/><br\/><\/em>For more information, read our FAQ at the bottom of the page.<br\/><br\/><em>This is for UK customers only<\/em><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "CLick here to get started",
+        "button_url": "https:\/\/ohpollytakeback.intelligentreturns.net\/main\/landing"
+      }
+    },
+    "7b648cf4-e89c-4acc-aea8-4292e1afaac6": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "So far, we've raised £3,000 through your donations",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "373f543d-a812-4dec-905a-e51b1614f00e": {
+      "type": "ancillary-text",
+      "disabled": true,
+      "settings": {
+        "text": "<p><strong>What is an online clothing bank?<\/strong><\/p><p>Instead of physically going to a charity shop, you can click the link below, generate a free returns label and send your donations straight to The Salvation Army at your local DPD, Collect+ and InPost drop off point. Fuss free, helping charity and a much more sustainable way of clearing out your wardrobe!<\/p><p><strong>Why is it important? <\/strong><\/p><p>The COVID-19 pandemic has had a devastating impact on many sectors but particularly charities, with 28% of people cutting their donations to charity since the start of the crisis. By launching this initiative, we’re aiming to make a change and support this important charity. We’re also pushing to increase our ongoing sustainability project. By joining this initiative we’re doing our bit to combat the throwaway fashion crisis that sees more than 336,000 tonnes of clothing end up in landfill each year.<\/p><p><strong>Why The Salvation Army?<\/strong><\/p><p>These generous donations will change lives as the profits received from the resale will be donated to The Salvation Army to continue to fund the vital charity work they do throughout the U.K. The Salvation Army provides specialist support for survivors and potential victims of modern slavery, shelter for those experiencing homelessness and so much more. As the largest charity-owned textiles collector in the U.K. The Salvation Army’s trading arm (SATCoL)repurpose over 60,000 tonnes of second-hand textiles. SATCoL deliver a message of hope through sustainable efforts and develop strategies to help protect the planet, one donation at a time. Your donations can be a part of continuing to create change, so far we've raised £3,000+<\/p>"
+      }
+    },
+    "49cecde1-5ede-40c8-8447-b517c9732c5d": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentRight",
+        "background_colour": "{{ shop.brand.colors.primary[1].background }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DesktopImage-LP_0e19cecc-1b85-4d66-8495-8557f661e9db.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/DesktopImage-LP_0e19cecc-1b85-4d66-8495-8557f661e9db.jpg",
+        "title": "",
+        "text": "<p><strong>What is an online clothing bank?<\/strong><\/p><p>Instead of physically going to a charity shop, you can click the link below, generate a free returns label and send your donations straight to The Salvation Army at your local DPD, Collect+ and InPost drop off point. Fuss free, helping charity and a much more sustainable way of clearing out your wardrobe!<\/p><p><strong>Why is it important? <\/strong><\/p><p>The COVID-19 pandemic has had a devastating impact on many sectors but particularly charities, with 28% of people cutting their donations to charity since the start of the crisis. By launching this initiative, we’re aiming to make a change and support this important charity. We’re also pushing to increase our ongoing sustainability project. By joining this initiative we’re doing our bit to combat the throwaway fashion crisis that sees more than 336,000 tonnes of clothing end up in landfill each year.<\/p><p><strong>Why The Salvation Army?<\/strong><\/p><p>These generous donations will change lives as the profits received from the resale will be donated to The Salvation Army to continue to fund the vital charity work they do throughout the U.K. The Salvation Army provides specialist support for survivors and potential victims of modern slavery, shelter for those experiencing homelessness and so much more. As the largest charity-owned textiles collector in the U.K. The Salvation Army’s trading arm (SATCoL)repurpose over 60,000 tonnes of second-hand textiles. SATCoL deliver a message of hope through sustainable efforts and develop strategies to help protect the planet, one donation at a time. Your donations can be a part of continuing to create change, so far we've raised £3,000+<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "12624a78-d0db-4019-aa92-ad60fbaf6c91": {
+      "type": "section-content",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "Why the salvation army?",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>These generous donations will change lives as the profits received from the resale will be donated to The Salvation Army to continue to fund the vital charity work they do throughout the U.K. The Salvation Army provides specialist support for survivors and potential victims of modern slavery, shelter for those experiencing homelessness and so much more. As the largest charity-owned textiles collector in the U.K. The Salvation Army’s trading arm (SATCoL)repurpose over 60,000 tonnes of second-hand textiles. SATCoL deliver a message of hope through sustainable efforts and develop strategies to help protect the planet, one donation at a time. Your donations can be a part of continuing to create change, so far we've raised £3,000+<\/p><p>Take a look at their Instagram account to see what they get up to.<\/p>",
+        "button_text": "@ reuse2repurpose",
+        "button_url": "https:\/\/www.instagram.com\/reuse2repurpose\/?hl=en"
+      }
+    },
+    "a104174b-3943-48e3-b46a-0f65a581ca69": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "b3e006b5-70da-426e-a256-6314c80b2494": {
+          "type": "item",
+          "settings": {
+            "title": "what can I donate?",
+            "answer": "<p>Clothing, shoes and accessories from any brand can be donated in return for an Oh Polly discount code, as a charitable and sustainable solution to rehoming your pre-loved pieces. <\/p><p>They can be in any condition! Your donations can be used for all kinds of purposes, from complete pieces of clothing to recycling the materials into new products or downcycling into fillers for sound proofing or insulation, there is so much that they can be used for. So, don’t worry if something isn’t in great condition, as it can be rehomed. As long as your parcel is secure, no heavier than 20kg and with no 2 sides longer than 120cm, send anything that you have. Then, wait for your Oh Polly discount code to come through to your email!<\/p>",
+            "page": ""
+          }
+        },
+        "653e8bf0-77b7-468c-9931-000bac284d23": {
+          "type": "item",
+          "settings": {
+            "title": "What type of packaging can I send the items back in?",
+            "answer": "<p>Anthing, re-use your Oh Polly packaging or another brands. You can even use a bin bag if you'd like! Please ensure your parcel is secure and no heavier than 20kg with no 2 sides longer than 120cm.<\/p>",
+            "page": ""
+          }
+        },
+        "ff343d1f-cf55-47b5-9002-7c902bd4971e": {
+          "type": "item",
+          "settings": {
+            "title": "I've lost my QR code, how do I find it?",
+            "answer": "<p>Search 'Oh Polly donations' in your email search bar. The QR codes don't expire. so you won't need to create a new one. <\/p>",
+            "page": ""
+          }
+        },
+        "97131fc9-c52a-4166-bcaf-9cb13c7f2981": {
+          "type": "item",
+          "settings": {
+            "title": "How to: dpd",
+            "answer": "<p>1. Download the label that we sent to your email.<\/p><p>2. Print the label and stick it to your parcel.<\/p><p>3. Head to your local DPD drop off location and return it.<\/p><p>4. Keep hold of the receipt for reference.<\/p><p>5. Wait for your Oh Polly discount code!<\/p><p>To find your local drop off, please <a href=\"https:\/\/www.dpd.co.uk\/apps\/shopfinder\/index.jsp\" target=\"_blank\" title=\"https:\/\/www.dpd.co.uk\/apps\/shopfinder\/index.jsp\">click here<\/a>. <\/p>",
+            "page": ""
+          }
+        },
+        "ba769a9d-a74c-4278-84fd-6d199117fd7f": {
+          "type": "item",
+          "settings": {
+            "title": "how to: InPost",
+            "answer": "<p>1. Download the label that we sent to your email.<\/p><p>2. Head to your local InPost Locker drop off.<\/p><p>3. Use the touchscreen to click 'Send a parcel', you then need to follow the on-screen instructions.<\/p><p>4. Scan the QR code and select which size box you think is most appropriate. You can choose from small, medium or large.<\/p><p>5. A locker will open, please follow the instructions and put the parcel inside. Then close the door.<\/p><p>6. Scan the QR code to retrieve your receipt. Keep hold of the receipt for reference.<\/p><p>7. Wait for your Oh Polly discount code!<\/p><p>Please note, you do not need a label for this service. When the courier comes to pick up the parcel, then they'll do this for you. <\/p><p><\/p><p>To find your local drop off, please <a href=\"https:\/\/inpost.co.uk\/lockers\/\" target=\"_blank\" title=\"https:\/\/inpost.co.uk\/lockers\/\">click here<\/a>. <\/p><p><\/p><p>To see locker capacity, please <a href=\"https:\/\/ https:\/\/inpost.co.uk\/lockers\/index.html\" title=\"https:\/\/ https:\/\/inpost.co.uk\/lockers\/index.html\">click here<\/a>. <\/p>",
+            "page": ""
+          }
+        },
+        "2a8874b3-174f-4856-b7db-171dca5c519d": {
+          "type": "item",
+          "settings": {
+            "title": "how to: Collect+",
+            "answer": "<p>1. Download the label that we sent to your email.<\/p><p>2. Head to your local Collect+ drop off.<\/p><p>3. Scan the QR code in store and they'll generate a label and send it on for you.<\/p><p>4. Keep hold of the receipt for reference.<\/p><p>5. Wait for your Oh Polly discount code!<\/p><p>To find your local drop off, please <a href=\"https:\/\/www.collectplus.co.uk\/find-a-store\" target=\"_blank\" title=\"https:\/\/www.collectplus.co.uk\/find-a-store\">click here<\/a>. <\/p>",
+            "page": ""
+          }
+        },
+        "460e7a9c-9936-4b6e-b62f-5fc01d970cb8": {
+          "type": "item",
+          "settings": {
+            "title": "How much is the discount?",
+            "answer": "<p>You'll receive a 15% Oh Polly discount code to your email in return for donating your clothes, shoes and accessories!<\/p>",
+            "page": ""
+          }
+        },
+        "c96d1a93-50b6-4072-a7a0-cc10eea455e8": {
+          "type": "item",
+          "settings": {
+            "title": "when will I receive my discount code?",
+            "answer": "<p>You'll receive your 15% Oh Polly discount code to your email within 24 hours of the parcel being scanned in successfully by the courier.<\/p><p>If you haven't received an email from us and your tracking confirms it's been delivered to The Salvation Army, please contact our friendly Customer Service team <a href=\"https:\/\/www.ohpolly.com\/pages\/contact\" target=\"_blank\" title=\"https:\/\/www.ohpolly.com\/pages\/contact\">here<\/a>.<\/p>",
+            "page": ""
+          }
+        },
+        "7b673517-2032-4100-a254-383516d6b7be": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Where can I read more about the annual impact statement?",
+            "answer": "<p>You can find out more about the SATCoL Annual Impact Statement and what they're doing <a href=\"https:\/\/www.salvationarmytrading.org.uk\/sites\/salvationarmytrading\/files\/Annual%20Impact%20Statement%20-%20Salvation%20Army%20Trading%20Company%20FINAL.pdf?_ga=2.175224674.1533195118.1617042841-2010975228.1617042841\" title=\"https:\/\/www.salvationarmytrading.org.uk\/sites\/salvationarmytrading\/files\/Annual%20Impact%20Statement%20-%20Salvation%20Army%20Trading%20Company%20FINAL.pdf?_ga=2.175224674.1533195118.1617042841-2010975228.1617042841\">here<\/a>.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "b3e006b5-70da-426e-a256-6314c80b2494",
+        "653e8bf0-77b7-468c-9931-000bac284d23",
+        "ff343d1f-cf55-47b5-9002-7c902bd4971e",
+        "97131fc9-c52a-4166-bcaf-9cb13c7f2981",
+        "ba769a9d-a74c-4278-84fd-6d199117fd7f",
+        "2a8874b3-174f-4856-b7db-171dca5c519d",
+        "460e7a9c-9936-4b6e-b62f-5fc01d970cb8",
+        "c96d1a93-50b6-4072-a7a0-cc10eea455e8",
+        "7b673517-2032-4100-a254-383516d6b7be"
+      ],
+      "settings": {
+        "layout_container": false,
+        "text": "<p>Frequently asked questions<\/p>",
+        "title_font_size": "fz-34_37",
+        "question_font_size": "fz-14_20 anc-AccordionItem_Title-europa",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "164501896619d7f6ea": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/OnlineClothingBank_DESKTOP_-2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/OnlineClothingBank_MOBILE_-2.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "97ba9bb0-f030-4978-aa4f-14fdbc6d9a83": {
+      "type": "section-content",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Last updated 9th March 2023<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "3194d279-e330-46e9-81bb-071e3e79d04c": {
+      "type": "ancillary-text",
+      "settings": {
+        "text": "<p>All information and statistics are accurate as of 12th May 2023.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1645018064e739ab4c",
+    "d9054bdb-73ac-42ba-b9a4-517ccf63313e",
+    "a73bdb12-7152-4065-8ec2-e937d0af74fb",
+    "7b648cf4-e89c-4acc-aea8-4292e1afaac6",
+    "373f543d-a812-4dec-905a-e51b1614f00e",
+    "49cecde1-5ede-40c8-8447-b517c9732c5d",
+    "12624a78-d0db-4019-aa92-ad60fbaf6c91",
+    "a104174b-3943-48e3-b46a-0f65a581ca69",
+    "164501896619d7f6ea",
+    "97ba9bb0-f030-4978-aa4f-14fdbc6d9a83",
+    "3194d279-e330-46e9-81bb-071e3e79d04c"
+  ]
+}

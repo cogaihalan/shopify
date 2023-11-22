@@ -1,0 +1,269 @@
+{
+  "layout": "theme-ancillary",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "163697222061623497": {
+      "type": "ancillary-accordion-multiple-levels",
+      "blocks": {
+        "b893b55b-04d3-4d93-af9f-9ef2768cc317": {
+          "type": "item",
+          "settings": {
+            "title": "Order issues",
+            "question_1": "Can I choose for  my parcel to be left in a safe place?",
+            "answer_1": "<p>Some of our couriers give you the option to select a safe place for your parcel to be delivered in case you're not in. If you choose this option, make sure you're aware of the potential risks:<br\/><br\/>When opting for a parcel to be left in a safe place, this authorises the courier to leave your parcel at your property without a member of the household accepting \/ signing for it directly<br\/>Couriers cannot be held liable for any losses experienced. This means that you're taking liability for any issues that may arise after delivery has taken place by deciding what is deemed a 'safe place' for delivery<br\/>As you're taking liability, Oh Polly won't be liable for any issues that may arise after delivery has taken place and will be unable to provide a refund or a replacement<br\/>The courier may save any previous delivery preferences you have set and use these preferences for future deliveries<br\/><br\/>If you select a safe place but can't find your parcel, make sure that you check with the residents within your household as well as with neighbours to see if they accepted the parcel on your behalf.<br\/>If you believe that your order has been stolen, we recommend contacting your local authorities as soon as possible. <\/p>",
+            "question_2": "Why didn't I  receive a box?",
+            "answer_2": "<p>We have recently stopped manufacturing these boxes in our constant effort towards sustainability, amongst other changes.<br\/>By reducing the amount of packaging we're sending to customers, means we're producing less waste and using less resources! <br\/>Our Oh Polly mailing bags are made of 30% LDPE (post consumer plastic) and they're recyclable. These can be recycled anywhere you see the LDPE4 logo, i.e. supermarket and travel hubs.<br\/>All this information can be found on our Environmental Manifesto, under \"Reducing Waste\". Click the link for more information here.<\/p>",
+            "question_3": "What do I do if  my parcel is damaged?",
+            "answer_3": "<p>We are<br\/>  so sorry if your parcel has arrived in poor condition.<br\/>    Our boxes are currently limited so we are unfortunately unable to replace<br\/>  this.<br\/>    However, if you come across any damage to your items, simply click the<br\/>  💬 icon which can be located at the bottom corner of the page.<br\/>    Polly the bot will be more than happy to assist you with your query, big or<br\/>  small.<br\/>    Please explain in your first message that you have received a damaged item<br\/>  and you will then be asked for the following information, so make sure to<br\/>  have it to hand:<br\/>    Your order number<br\/>    Your full name<br\/>    Your shipping address<br\/>    A photo of the damaged area<br\/>    If you decide to send back any items, please don't worry about including<br\/>  the box.<br\/>    If the packaging is damaged, please recycle this and send the items back in<br\/>  a secure packaging. <br\/>    Simply package the items yourself and send them back to us using one of the<br\/>  return methods offered through our returns portal here. <\/p>",
+            "question_4": "How do I track  my order?",
+            "answer_4": "<p>As<br\/>  soon as you have completed your order, you’ll receive a confirmation email<br\/>  with your order details. Our team will then be working extremely quickly to<br\/>  get this order picked and packed and sent out to you.<br\/>    Once this has been dispatched, you’ll receive an email notifying you of<br\/>  this (within 24 hours) with a 'VIEW AND TRACK YOUR ORDER' button<br\/>  included.<br\/>    If you click this link, you'll be taken to a page where you'll find your<br\/>  tracking number and courier. You can then use this tracking number on the<br\/>  courier's website for accurate updates! <br\/>    Your tracking will continue to update as your parcel makes its way to<br\/>  you.<br\/>    If you are unable to locate this email, you can enter your order number at<br\/>  the bottom of our website.<br\/>    Simply click on 'Track My Order' under the 'Information' section at the<br\/>  bottom of our website to view your latest delivery updates. You'll just need<br\/>  your order number.<br\/>    You can also track your order by following this link here<br\/>    Please note it can take 24-48 hours for tracking information to become<br\/>  available after purchase.<br\/>    Having some trouble tracking your order? Please get in touch by simply<br\/>  clicking theicon which can be located<br\/>  at the bottom left corner of the page. Make sure to have your details at the<br\/>  ready!<br\/>    Polly the bot will be more than happy to assist you!<br\/>    🚛 EVRi delivering your parcel? 🚛<br\/>    Evri My Places will allow you to manage your delivery and set delivery<br\/>  preferences. You can:<br\/>    Set home address<br\/>    Set safe place<br\/>    Set preferred \/ non preferred neighbour<br\/>    Set map pin<br\/>    Sign up to Evri My Places here and don't forget to download their app to<br\/>  receive tracking updates through your notifications! Please note this is only<br\/>  available for UK customers.<\/p>",
+            "question_5": "I haven’t  received an order confirmation \/ Has my order gone through?",
+            "answer_5": "<p>Once<br\/>  you have completed your order, you will receive a confirmation email with<br\/>  your order details within 24 hours. If you have not received an order<br\/>  confirmation email, please check your junk folder.<br\/>    If you are still unable to locate this email, please get in touch by simply<br\/>  clicking the 💬 icon which can be located at the bottom corner of the<br\/>  page.<br\/>    Polly the bot will be more than happy to assist you with your query, big or<br\/>  small. Please have the following information to hand before contacting:<br\/>    Your order details: full name and email address<br\/>    Your shipping address<br\/>    A screenshot of the transaction on your Bank account<br\/>    The last 4 digits of the card used to place your order<br\/>    Our team will then be able to investigate this further. It may have been a<br\/>  simple spelling mistake in the email - so please don't worry! <\/p>",
+            "question_6": "How long does  delivery take?",
+            "answer_6": "<p>You<br\/>  can find a list of delivery timescales and prices per country here.<br\/>    Additionally, once you reach checkout and enter your delivery address, the<br\/>  page will refresh and available shipping options will appear.<br\/>    Once you click your preferred option, you'll also see an estimated delivery<br\/>  date at the bottom of the page. Please note this date is an estimate.<br\/>    Need help? Please get in touch by simply clicking the  icon which<br\/>  can be located at the bottom left corner of the page. Make sure to have your<br\/>  details at the ready!<br\/>    Polly the bot will be more than happy to assist you with your order.<\/p>",
+            "question_7": "Can I amend my  address once I've placed my order?",
+            "answer_7": "<p>If you<br\/>  have already received a shipping confirmation, unfortunately this means that<br\/>  Oh Polly will be unable to make any changes at this point.<br\/>    We dispatch orders as quickly as possible to ensure our customers receive<br\/>  the best possible service.<br\/>    What to do if you haven't received a shipping confirmation yet, please get<br\/>  in touch by simply clicking the 💬 icon which can be located at the<br\/>  bottom corner of the page.<br\/>    In your first message please explain you wish to change your address and<br\/>  you will be asked to provide us with some security information and the new<br\/>  address, and we will do our best to amend this before dispatch. Please note<br\/>  that this can't be guaranteed as we may not catch your request before<br\/>  dispatch. <br\/>    If your parcel has already been dispatched, we can contact the courier on<br\/>  your behalf to see if they can assist.<br\/>    Please note this could cause a delivery delay of up to 72 hours, and<br\/>  there's no guarantee that the courier will be able to edit your address at<br\/>  this point.<br\/>    ...You can also do this yourself too!<br\/>    🚛 EVRi <br\/>    Use EVRi My Places to set your delivery preferences!<br\/>    Evri My places will allow your to manage your delivery and set delivery<br\/>  preferences. You can:<br\/>    Set home address<br\/>    Set safe place<br\/>    Set preferred \/ non preferred neighbour<br\/>    Set map pin<br\/>    Sign up to Evri My Places here and don't forget to download their app to<br\/>  receive tracking updates through your notifications! <br\/>    🚚 DHL<br\/>    On Demand Delivery allows you to:<br\/>    Change the delivery address<br\/>    Change the delivery date<br\/>    Request a safe place<br\/>    Request a preferred neighbour<br\/>    Divert to DHL service point or locker<br\/>    Hold your parcel if you're on vacation<br\/>    Simply follow this link to get started: https:\/\/www.ondemand.dhl.com\/. Make<br\/>  sure to have your DHL waybill number available!<br\/>    Here are our Delivery Terms & Conditions that are available on our<br\/>  website, which each customer agrees to when placing an order with us:<br\/>    Deliveries are made to the delivery address given at time of order.<br\/>  Customer accepts full responsibility for ensuring accuracy of information<br\/>  provided.<br\/>    Please head to https:\/\/www.ohpolly.com\/terms-and-conditions and the<br\/>  Delivery drop down for more information. <\/p>",
+            "question_8": "Why has my order  been cancelled?",
+            "answer_8": "<p>We're<br\/>  really sorry if your purchase has been cancelled - we will have sent you an<br\/>  email explaining the reason for this. Cancellations can be for two<br\/>  reasons:<br\/>    If the item(s) purchased is unexpectedly out of stock and we are unable to<br\/>  fulfil your purchase<br\/>    If there is an issue with your payment (e.g. the billing address does not<br\/>  match the address the card is registered to, some of the payment information<br\/>  is incorrect, you have tried to make a high volume of transactions in a short<br\/>  space of time etc).<br\/>    If none of the above payment issues apply to you, then please try to<br\/>  checkout using PayPal as this is usually verified. If you have already<br\/>  attempted to make several transactions then we'd recommend waiting a few days<br\/>  before trying again otherwise it's highly likely that your purchase will be<br\/>  flagged again.<br\/>    Need help? Please get in touch by simply clicking the  icon which can<br\/>  be located at the bottom left corner of the page. Make sure to have your<br\/>  details at the ready!<br\/>    Polly the bot will be more than happy to assist you with your order.<\/p>",
+            "question_9": "How do I find my  order number?",
+            "answer_9": "<p>Once you have completed your order, you’ll receive a confirmation email with your<br\/>  order details. This email will contain your order number number which will<br\/>  start with OP.<br\/>    If you have not received an order confirmation email, please check your junk<br\/>  folder. If you are still unable to locate this email, you can reach out by<br\/>  simply clicking the 💬 icon which can be located at the bottom corner<br\/>  of the page.<br\/>    Polly the bot will be more than happy to assist you with your query.<br\/>    In your message, please include that you don't know how to find your order<br\/>  number and you will then be asked the following info:<br\/>    Full name and email address on the order 😊<br\/>    Your shipping address 🚚<br\/>    The last 4 digits of the card used to place your order 💳<br\/>    A screenshot of the transaction on your bank account 📷<br\/>    Thank you!<\/p>",
+            "question_10": "How do I cancel  my order?",
+            "answer_10": "<p>If you have received a shipping confirmation email from us, unfortunately this means that we will be unable to cancel your purchase at this point.<br\/>    We can still sort this for you as we offer a 45 days to return<br\/>  for store credit and 30 days to return for a refund or exchange. <br\/>    Once you've received your parcel, you can refuse it upon delivery or post it back for a refund.<br\/>    If you are yet to receive a shipping confirmation email from us, you can get in touch by simply clicking the 💬 icon which can be located at the bottom corner of the page and stating 'cancel order' in your first message.<br\/>    Polly the bot will be more than happy to assist you with your query.<br\/>    Alternatively, you have the option to request a cancellation within 10 minutes of placing your order. You can do this on the order confirmation email. <br\/>    Our team will do their best to fix this for you before your order leaves our warehouse. We may not be able to make changes if your order is already being processed by the warehouse or is awaiting collection. However, it is  worth asking as we'll see what we can do but please be aware we can't guarantee this. <\/p>"
+          }
+        },
+        "869b43c5-9c70-46bf-a7ad-da3e509704b5": {
+          "type": "item",
+          "settings": {
+            "title": "product & Sizing",
+            "question_1": "Do you have a size guide?",
+            "answer_1": "<p>Yes!<br\/>  You can view our size guide here<br\/>    We offer the following size guides:<br\/>    UK size guide<br\/>    AU size guide<br\/>    US size guide<br\/>    EU size guide<br\/>    Conversion chart<br\/>    Dual sizes (S \/ M \/ L)<br\/>    Lingerie size guide<br\/>    Shoe size guide<br\/>    Bo+Tee size guide<br\/>    How to measure yourself guide<br\/>    If you need any help with finding the perfect size, please get in touch, to do this simply click the 💬 icon which can be located at the bottom corner of the page.<br\/>    Polly the bot will be more than happy to assist you with your query, big or small.<\/p>",
+            "question_2": "",
+            "answer_2": "",
+            "question_3": "Which size should I purchase?",
+            "answer_3": "<p>We use standard UK\/AU sizingunless otherwise specified in the item description.<br\/>    Our size guide can be found at the very bottom of our site and on every product page. <br\/>    Need help? Please get in touch by simply clicking the  icon which can be located at the bottom left corner of the page. Make sure to have your measurements at the ready!<br\/>    Polly the bot will be more than happy to assist you with sizing. <\/p>",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "9363fe56-0db4-4c95-8540-70f11b15aa1d": {
+          "type": "item",
+          "settings": {
+            "title": "Delivery info",
+            "question_1": "Can I choose for my parcel to be left in a safe place?",
+            "answer_1": "<p>Some of our couriers give you the option to select a safe place for your parcel to be delivered in case you're not in. If you choose this option, make sure you're aware of the potential risks:<br\/>    When opting for a parcel to be left in a safe place, this au<\/p>",
+            "question_2": "How do I track my order?",
+            "answer_2": "<p>As soon as you have completed your order, you’ll receive a confirmation email with your order details. Our team will then be working extremely quickly to get this order picked and packed and sent out to you.<br\/>    Once this has been dispatched, you’ll receive an email notifying you of this (within 24 hours) with a 'VIEW AND TRACK YOUR ORDER' button included.<br\/>    If you click this link, you'll be taken to a page where you'll find your tracking number and courier. You can then use this tracking number on the courier's website for accurate updates! <br\/>    Your tracking will continue to update as your parcel makes its way to you.<br\/>    If you are unable to locate this email, you can enter your order number at the bottom of our website.<br\/>    Simply click on 'Track My Order' under the 'Information' section at the bottom of our website to view your latest delivery updates. You'll just need your order number.<br\/>    You can also track your order by following this link here<br\/>    Please note it can take 24-48 hours for tracking information to become available after purchase.<br\/>    Having some trouble tracking your order? Please get in touch by simply clicking theicon which can be located at the bottom left corner of the page. Make sure to have your details at the ready!<br\/>    Polly the bot will be more than happy to assist you!<br\/>    🚛 EVRi delivering your parcel? 🚛<br\/>    Evri My Places will allow you to manage your delivery and set delivery<br\/>  preferences. You can:<br\/>    Set home address<br\/>    Set safe place<br\/>    Set preferred \/ non preferred neighbour<br\/>    Set map pin<br\/>    Sign up to Evri My Places here and don't forget to download their app to<br\/>  receive tracking updates through your notifications! Please note this is only<br\/>  available for UK customers.<\/p>",
+            "question_3": "How long does delivery take?",
+            "answer_3": "<p>You can find a list of delivery timescales and prices per country here.<br\/>    Additionally, once you reach checkout and enter your delivery address, the page will refresh and available shipping options will appear.<br\/>    Once you click your preferred option, you'll also see an estimated delivery date at the bottom of the page. Please note this date is an estimate.<br\/>    Need help? Please get in touch by simply clicking the  icon which<br\/>  can be located at the bottom left corner of the page. Make sure to have your details at the ready!<br\/>    Polly the bot will be more than happy to assist you with your order.<\/p>",
+            "question_4": "Can I amend my address once I've placed my order?",
+            "answer_4": "<p>If you have already received a shipping confirmation, unfortunately this means<br\/>  that Oh Polly will be unable to make any changes at this point.<br\/>    We dispatch orders as quickly as possible to ensure our customers receive  the best possible service.<br\/>    What to do if you haven't received a shipping confirmation yet, please get  in touch by simply clicking the 💬 icon which can be located at the<br\/>  bottom corner of the page.<br\/>    In your first message please explain you wish to change your address and you will be asked to provide us with some security information and the new address, and we will do our best to amend this before dispatch. Please note<br\/>  that this can't be guaranteed as we may not catch your request before dispatch. <br\/>    If your parcel has already been dispatched, we can contact the courier on your behalf to see if they can assist.<br\/>    Please note this could cause a delivery delay of up to 72 hours, and there's no guarantee that the courier will be able to edit your address at this point.<br\/>    ...You can also do this yourself too!<br\/>    🚛 EVRi <br\/>    Use EVRi My Places to set your delivery preferences!<br\/>    Evri My places will allow your to manage your delivery and set delivery preferences. You can:<br\/>    Set home address<br\/>    Set safe place<br\/>    Set preferred \/ non preferred neighbour<br\/>    Set map pin<br\/>    Sign up to Evri My Places here and don't forget to download their app to<br\/>  receive tracking updates through your notifications! <br\/>    🚚 DHL<br\/>    On Demand Delivery allows you to:<br\/>    Change the delivery address<br\/>    Change the delivery date<br\/>    Request a safe place<br\/>    Request a preferred neighbour<br\/>    Divert to DHL service point or locker<br\/>    Hold your parcel if you're on vacation<br\/>    Simply follow this link to get started: https:\/\/www.ondemand.dhl.com\/. Make sure to have your DHL waybill number available!<br\/>    Here are our Delivery Terms & Conditions that are available on our website, which each customer agrees to when placing an order with us:<br\/>    Deliveries are made to the delivery address given at time of order.<br\/>  Customer accepts full responsibility for ensuring accuracy of information provided.<br\/>    Please head to https:\/\/www.ohpolly.com\/terms-and-conditions and the Delivery drop down for more information. <\/p>",
+            "question_5": "Can I upgrade the shipping?",
+            "answer_5": "<p>If your items are already in transit, unfortunately we will be unable to upgrade your shipping option.<br\/>    If your items are no longer needed by the time of arrival, you are more than welcome to refuse your parcel upon delivery, or return it to us for a full refund. <br\/>    You can register your return here. <br\/>    However, you may be able to upgrade your shipping method for an additional fee if your parcel is yet to be dispatched. Simply click the 💬 icon which can be located at the bottom corner of the page.<br\/>    Polly the bot will be more than happy to assist you.<\/p>",
+            "question_6": "Why has the Express Delivery option been removed?",
+            "answer_6": "<p>We may temporarily remove some shipping options such as Express Delivery if the courier cannot fulfil these time frames.<br\/>    This may occur due to a sudden influx of orders, or force majeure events such as weather disruption.<br\/>    As soon as a faster shipping option is feasible again, this will be made available on the checkout page. We apologise for any convenience this may cause. <\/p>",
+            "question_7": "When will my order be shipped?",
+            "answer_7": "<p>Once you have completed your transaction, you’ll receive a confirmation email within 24 hours. <br\/>    Our team then work extremely quickly to get this purchase picked and packed and sent out to you.<br\/>    Once this has been dispatched, you’ll receive a dispatch email with a tracking link included, and this is usually sent within 24 hours of your transaction being placed.<br\/>    Please note during sales or collection launches, this may take slightly longer however we will always aim to deliver your items before your estimated delivery date, even if this means upgrading your shipping option to Express<br\/>  or Next Day.<br\/>    Your tracking shall continue to update as your parcel makes its way to you and until it is delivered.<br\/>    You can track your delivery by heading to the tracking link at the bottom of the website.<\/p>",
+            "question_8": "Is my delivery estimate guaranteed?",
+            "answer_8": "<p>Unfortunately our delivery times are only estimates and cannot be guaranteed, but we have found them to be accurate in the majority of orders.<br\/>    This is due to a variety of factors including Covid-19 delays, Brexit, and force majeure events such as weather disruption.<br\/>    If your order has still not arrived on or before the expected delivery date provided at checkout, and in your order confirmation email, then please track your order using the link provided in your shipping confirmation email.<br\/>    If tracking has not updated for 5+ days, please get in touch - simply click the 💬 icon which can be located at the bottom corner of the page.<br\/>    Polly the bot will be more than happy to assist you with your query, big or small.<\/p>",
+            "question_9": "How does COVID-19 affect my order?",
+            "answer_9": "<p>Please  trust that during this unprecedented time, we are doing our best to operate as normally but safely as possible.<br\/>    Once a parcel leaves our warehouse, we are highly reliant on the courier to make a safe and efficient delivery.<br\/>    Unfortunately, due to COVID-19 restrictions, we are experiencing a slight delay with some of our couriers.<br\/>    Our couriers are complying with the government guidelines and taking extra measures to ensure all drivers remain safe and healthy.<br\/>    These factors contribute to an overall slightly slower service and we trust that our customers will hopefully understand how important health & safety is especially at a time like this.<br\/>    You can click the 'VIEW AND TRACK YOUR ORDER' button within your shipment email, where you'll find your tracking number and the courier. You can then use this tracking number on the courier's website for accurate<br\/>  updates! <br\/>    Need help? Please get in touch by simply clicking the 💬 icon which<br\/>  can be located at the bottom left corner of the page. Make sure to have your details at the ready!<br\/>    Polly the bot will be more than happy to assist you with your order.<\/p>",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "25b4197e-b0ab-42dd-8eed-e4cf5885c021": {
+          "type": "item",
+          "settings": {
+            "title": "Account related",
+            "question_1": "How do I create an account?",
+            "answer_1": "<p>To create an Oh Polly account you just need to click 'Log In \/ Sign Up' in the top right hand side of our website.<br\/>    Sign up now to move through the checkout process faster, view\/track your orders, create a Wishlist and more!<\/p>",
+            "question_2": "I forgot my password \/ What do I do if I can’t sign into my account?",
+            "answer_2": "<p>If you  have forgotten your password, please simply click here<br\/>    Once you are on the 'My Account' page you can click 'forgotten password' and you will be asked to input your email address to change your password.<\/p>",
+            "question_3": "How do I unsubscribe from emails?",
+            "answer_3": "<p>We’re sorry to hear you want to leave the fun!<br\/>    Remember, we send exclusive access to our latest collections and promo codes through this email subscription.<br\/>    If you really want to unsubscribe from our emails, you can do so by clicking “unsubscribe” at the bottom of any of our marketing emails. <\/p>",
+            "question_4": "Can I delete my account?",
+            "answer_4": "<p>We're sorry to see you go!<br\/>    If you wish to deactivate your Oh Polly account, we are on hand 24\/7 and would love to help you with anything you need - simply click the 💬 icon which can be located at the bottom corner of the page.<br\/>    Polly the bot will be more than happy to assist you with your query, big or small.<\/p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "2f65e985-ecf0-4603-9ff3-533a02e828fa": {
+          "type": "item",
+          "settings": {
+            "title": "pricing & VAT",
+            "question_1": "",
+            "answer_1": "",
+            "question_2": "",
+            "answer_2": "",
+            "question_3": "",
+            "answer_3": "",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "0b4e4635-9765-451e-a26c-601ff2cffd2e": {
+          "type": "item",
+          "settings": {
+            "title": "Warranty",
+            "question_1": "",
+            "answer_1": "",
+            "question_2": "",
+            "answer_2": "",
+            "question_3": "",
+            "answer_3": "",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "f24cb553-91ca-48db-9b47-e00a3706a194": {
+          "type": "item",
+          "settings": {
+            "title": "sale items",
+            "question_1": "Do you offer wholesale?",
+            "answer_1": "<p>We are very sorry but unfortunately we do not offer wholesale.    <\/p>",
+            "question_2": "How often do you run sales?",
+            "answer_2": "<p>We regularly advertise our latest promotions and offers through our social media pages, so be sure to follow us for the latest deals.  You can find us on Instagram, Facebook, Twitter and TikTok.<br\/>    Additionally, we have a Sale section on our website where some products have been discounted by up to 50%. You can shop our Sale section here.<br\/>    Lastly, if you sign up to our newsletter at the very bottom of our site, we'll treat you to promo codes sporadically throughout the year.<\/p>",
+            "question_3": "Can I return sale items?",
+            "answer_3": "<p>GCC CUSTOMERS: <br\/>    GCC customers are able to return sale items for store credit only. You have 45 days from the date it was shipped to return. <br\/>    You can now return your parcel here.<br\/>    *If you're returning part exchange, part refund then your return will only be free if your exchange item value outweighs your refund item value.<br\/>    We’re unable to match the sale price on your next order if the price has changed. If the price has changed on your sale item, you won’t be able to return it for exchange. Instead, you can opt for store credit or a refund.<\/p>",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "140d83c8-a020-40b4-9d47-7df2f50d42c1": {
+          "type": "item",
+          "settings": {
+            "title": "Order related",
+            "question_1": "What do I do if  I haven't received my order but it's showing as delivered?",
+            "answer_1": "<p>We are so sorry to hear you have not received your order and tracking indicates it has been delivered.<br\/>    We will need to initiate an investigation with the courier so the depot can be searched and the driver can be interviewed.<br\/>    We are able to investigate the delivery within 28 days of your delivery time\/when you receive your delivery confirmation email.<br\/>    Please can you therefore contact us with your order details and a short sentence to explain you have not received your order so we can get started with this - simply click the 💬 icon which can be located at the bottom corner of the page.<br\/>    Make sure you've got your order details at the ready! <br\/>    ADA the bot will be more than happy to assist you.<\/p>",
+            "question_2": "Why has the  Express Delivery option been removed?",
+            "answer_2": "<p>We may temporarily remove some shipping options such as Express Delivery if the courier cannot fulfil these time frames.<br\/>    This may occur due to a sudden influx of orders, or force majeure events such as weather disruption.<br\/>    As soon as a faster shipping option is feasible again, this will be made available on the checkout page. We apologise for any inconvenience this may<br\/>  cause. <\/p>",
+            "question_3": "Is my delivery  estimate guaranteed?",
+            "answer_3": "<p>Unfortunately our delivery times are only estimates and cannot be guaranteed, but we have found them to be accurate in the majority of orders.<br\/>    This is due to a variety of factors including Covid-19 delays, Brexit, and force majeure events such as weather disruption.<br\/>    If your order has still not arrived on or before the expected delivery date provided at checkout, and in your order confirmation email, then please track your order using the link provided in your shipping confirmation email.<br\/>    If tracking has not updated for 5+ days, please get in touch - simply click the 💬 icon which can be located at the bottom corner of the page.<br\/>    Polly the bot will be more than happy to assist you with your query, big or small.<\/p>",
+            "question_4": "How does BREXIT  affect my order?",
+            "answer_4": "<p>We've been made aware that our delivery providers are adapting to new and revised procedures due to Brexit. Usually, items sent to the EU slide through customs automatically however they are now being stopped and checked.<br\/>    These changes may contribute to a slightly slower service, and we trust that our customers will hopefully understand the reasons for this. <br\/>    We're so sorry for any delay you may experience due to Brexit and we hope you can understand that it is just as disappointing for us when our customers are inconvenienced.<\/p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "2b1e8c5d-045c-411a-b2e5-fcd10d876bb7": {
+          "type": "item",
+          "settings": {
+            "title": "general",
+            "question_1": "How to keep your clothes out of landfill",
+            "answer_1": "<p>Did you know that 92 million tonnes of garments end up in landfill every year? <br\/>    Make sure to get the most out of your items, because our clothing is built to last. Made from high-quality, durable materials, our styles were designed to be worn time and time again.<br\/>    If something happens to your item, or you feel like your clothing has served its time, and you’re on the hunt for a refresh, it shouldn't go in the bin! Here are some ways you can divert clothing from landfill:<br\/>    Make sure you follow the washing instructions and take care for your items.<br\/>  You can read more about how to care for your items here<br\/>    Repair the item yourself or take it to a seamstress. By extending a<br\/>  garment’s life by just nine months can reduce its carbon, waste, and water footprints by between 20 to 30 per cent?!<br\/>    Upcycle them into something new<br\/>    Donate your clothes to a charity.<br\/>    Give them to your friends and family<br\/>    Resell the item<br\/>    As a last resort, send your items off for recycling. Find your local<br\/>  textile recycling centre here by searching \"textile recycling near<br\/>  me\" <\/p>",
+            "question_2": "Where do I register my return? Have you changed  return portal?",
+            "answer_2": "<p>We’ve recently changed our return portal, to offer you store credit and exchanges as additional return methods! <br\/>    GCC CUSTOMERS: <br\/>    You can now return your parcel here.<br\/>    If you’re unable to track your return, or if you have any other concerns, please feel free to get in touch by simply clicking the 💬 icon which can be found at the bottom corner of the page. Polly the bot will be more than happy to assist you or direct you to an agent.<\/p>",
+            "question_3": "How do I return my parcel? (International)",
+            "answer_3": "<p>Returning<br\/>  from GCC:<br\/>    Fees may vary for the returns. You have 30 days to return your<br\/>  order for a refund or exchange and 45 days to return your order for store credit, from the date your order was shipped.<br\/>    You can return your parcel in a few easy steps here<br\/>    Enter your order number and email or post code<br\/>    Select the item(s) you’d like to return and the reason why<br\/>    Choose if you’d like to exchange or return your item(s)<br\/>    If you’ve opted for a return on any of your items, decide if you’d prefer store credit or a refund<br\/>    Submit your return<br\/>    Print your label or use your QR code, unless you are returning<br\/>  self-post<br\/>    We’ll send you an email once your refund has been processed.<br\/>    US CUSTOMERS:<br\/>    You can now return your parcel here.<br\/>    AUSTRALIAN & NEW ZEALAND CUSTOMERS: <br\/>    You can now return your parcel here.<br\/>    If for whatever reason you’re unable to access the portal, please get in<br\/>  touch by simply clicking the 💬 icon which can be found at the bottom<br\/>  left corner of the page. Make sure to have your details at the ready!<br\/>    Polly the bot will be more than happy to assist you with your return.<\/p>",
+            "question_4": "What payment options I can use while placing the  order?",
+            "answer_4": "<p>We<br\/>  offer a variety of payment methods for your convenience, which are available<br\/>  at the payment step during checkout. At present, we support Credit and Debit<br\/>  cards, Apple Pay, and Cash on Delivery. We're excited to announce that 'Buy<br\/>  Now Pay Later' options are on their way.<br\/>    Do keep in mind that for every Cash on Delivery order, an additional AED 20<br\/>  is applied to cover the extra costs associated with cash handling for these<br\/>  transactions.<\/p>",
+            "question_5": "Can I place an order using Cash on Delivery payment method?",
+            "answer_5": "<p>We're pleased to provide a Cash on Delivery option throughout the GCC.<br\/>    It's important to note that every Cash on Delivery order includes a<br\/>  non-refundable convenience fee of AED 20. This fee addresses the extra costs associated with cash handling for these types of orders.<br\/>    For any return request of a Cash on Delivery order, we'll issue the refund as store credit, which can be utilized for subsequent orders, rather than returning cash<\/p>",
+            "question_6": "Can I place a Cash on Delivery order for any order value or is there a limit?",
+            "answer_6": "<p>At present, we limit Cash on Delivery orders to a maximum value of AED 1,000<\/p>",
+            "question_7": "Can I used Cash on Delivery payment option for express delivery service?",
+            "answer_7": "<p>Regrettably, only one of our carrier partners, Starlinks, provides the Cash on Delivery service. As a result, you'll need to select the Standard Delivery option if<br\/>  you're opting for Cash on Delivery.<br\/>    For any additional questions, feel free to communicate with us via our bot, Polly. Alternatively, you can also initiate a Live Chat with our Customer Service team by clicking on the Whatsapp widget located at the bottom of your screen.<\/p>",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        }
+      },
+      "block_order": [
+        "b893b55b-04d3-4d93-af9f-9ef2768cc317",
+        "869b43c5-9c70-46bf-a7ad-da3e509704b5",
+        "9363fe56-0db4-4c95-8540-70f11b15aa1d",
+        "25b4197e-b0ab-42dd-8eed-e4cf5885c021",
+        "2f65e985-ecf0-4603-9ff3-533a02e828fa",
+        "0b4e4635-9765-451e-a26c-601ff2cffd2e",
+        "f24cb553-91ca-48db-9b47-e00a3706a194",
+        "140d83c8-a020-40b4-9d47-7df2f50d42c1",
+        "2b1e8c5d-045c-411a-b2e5-fcd10d876bb7"
+      ],
+      "settings": {
+        "text": "<p>Got a question? We’re here to help! Take a look at our most common queries or you can search our answers.<\/p>",
+        "enable_search": true,
+        "search_placeholder": "Search frequently asked questions"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "163697222061623497"
+  ]
+}

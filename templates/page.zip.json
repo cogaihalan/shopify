@@ -1,0 +1,126 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1644869973bd232d15": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "ZIP",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "1644877307ac803bd9": {
+      "type": "ancillary-accordion",
+      "settings": {
+        "text": "<p>A new way to pay that’s available online and lets you own it now and pay for it later!<\/p><p><strong>AM I ELIGIBLE TO PAY USING ZIP?<\/strong><\/p><p><strong>-To be over the age of 18<\/strong><\/p><p><strong>-To have a UK issued debit card<\/strong><\/p><p><strong>-To be living in the UK<\/strong><\/p><p><strong>-To have a good credit history<\/strong><\/p>",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "1644877300b5f8abc3": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "FAQ'S",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "164486812086b28c45": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "366ee280-7ed1-4d70-baa1-d4efa6ae3661": {
+          "type": "item",
+          "settings": {
+            "title": "WILL ZIP AFFECT MY CREDIT SCORE?",
+            "answer": "<p>Zip performs a soft credit check with credit reference agencies to determine if you are eligible. This does not impact your credit score.<\/p>",
+            "page": ""
+          }
+        },
+        "a385bf1f-e2be-4886-82c7-b260190838b6": {
+          "type": "item",
+          "settings": {
+            "title": "HOW DO I PAY WITH ZIP?",
+            "answer": "<p>When you get to the payment page, select Zip as a payment method.<\/p><p>If it’s your first-time shopping with Zip, you’ll need to enter some personal details such as name, date of birth, mobile phone number and home address. Take care when entering your personal details as errors may prevent Zip from being able to verify your account or send you payment notifications.<\/p><p>Once approved, and you are happy with the instalment schedule, Zip will take the first instalment from the UK card you supplied when signing up.<\/p><p>Once accepted, your goods will be sent to you as they would with any other payment method.<\/p>",
+            "page": ""
+          }
+        },
+        "b63876d6-1997-431c-b254-29cabe599364": {
+          "type": "item",
+          "settings": {
+            "title": "IS MY PAYMENT INFORMATION SAFE?",
+            "answer": "<p>Payment information is processed securely by our payment gateway provider. All transactions take place via secured connections that adhere to the latest industry standards and security protocols.<\/p>",
+            "page": ""
+          }
+        },
+        "c951646e-ce16-40f0-8c4b-d0e8ecddad44": {
+          "type": "item",
+          "settings": {
+            "title": "WHAT HAPPENS IF I CANCEL OR RETURN MY ORDER?",
+            "answer": "<p>Once the merchant has notified us of the cancellation\/return and we've accepted it, Zip will cancel any future scheduled payments as well as refund any amounts due.<\/p><p>As soon as we have registered your cancellation or return, Zip will process your refund within 10-15 business days.<\/p><p>Any partial refunds will be applied to outstanding instalments first.<\/p>",
+            "page": ""
+          }
+        },
+        "e0e2ec8b-c2d7-4011-80c1-6cf7fbd919d4": {
+          "type": "item",
+          "settings": {
+            "title": "WHAT HAPPENS IF I DON’T PAY FOR MY ORDER?",
+            "answer": "<p>Zip will automatically attempt to collect payment for your Pay In 4 purchase from the card you entered when you signed up to Zip.<\/p><p>If you miss a scheduled payment, Zip will give you 2 full days to process the payment yourself. On the third day after the payment was missed we will retry this payment again, if this retry is unsuccessful we will apply a £6 late fee to the instalment. A payment can be made by you at any time by logging into your Zip customer portal.<\/p><p>Please make sure you have money in your account in advance of your payments coming out.<\/p><p>Zip will contact you directly by email and SMS in advance every time as a reminder.<\/p>",
+            "page": ""
+          }
+        },
+        "843b3dd9-60a9-4e9b-986c-02d3b10a7c5c": {
+          "type": "item",
+          "settings": {
+            "title": "I HAVE ASKED FOR A REFUND. HOW WILL I BE REFUNDED?",
+            "answer": "<p>Refunds from Zip will be issued back to the card supplied to Zip.<\/p><p>Is there really no interest applied and no extra fees when payments are made on time?<\/p><p>Nope, Zip are not like some traditional finance companies. As long as you pay your scheduled payments on time you will only pay the price advertised.<\/p>",
+            "page": ""
+          }
+        },
+        "2360e927-339b-47e9-972b-9b1752ccfe9b": {
+          "type": "item",
+          "settings": {
+            "title": "WHEN WILL MY PAYMENTS BE DUE?",
+            "answer": "<p>Payments are automatically scheduled to be taken every 2 weeks.<\/p><p>You’ll pay 25% of your full purchase upfront, then 25% every 2 weeks for the next 6 weeks.<\/p><p>Zip will try to take payment during the day and again if unsuccessful. If this fails, or if you'd like to make a payment earlier, you can log into your Zip customer portal and manually make a payment.<\/p><p><\/p>",
+            "page": ""
+          }
+        },
+        "6eacaded-cd7c-4808-97bf-a1c3b4f556de": {
+          "type": "item",
+          "settings": {
+            "title": "I'VE RECEIVED A STATEMENT FROM ZIP, BUT I'VE NOT YET RECEIVED MY GOODS.",
+            "answer": "<p>Zip is the finance provider and will not have information regarding your order status. Please always contact the retailer directly about your purchases.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "366ee280-7ed1-4d70-baa1-d4efa6ae3661",
+        "a385bf1f-e2be-4886-82c7-b260190838b6",
+        "b63876d6-1997-431c-b254-29cabe599364",
+        "c951646e-ce16-40f0-8c4b-d0e8ecddad44",
+        "e0e2ec8b-c2d7-4011-80c1-6cf7fbd919d4",
+        "843b3dd9-60a9-4e9b-986c-02d3b10a7c5c",
+        "2360e927-339b-47e9-972b-9b1752ccfe9b",
+        "6eacaded-cd7c-4808-97bf-a1c3b4f556de"
+      ],
+      "settings": {
+        "text": "",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1644869973bd232d15",
+    "1644877307ac803bd9",
+    "1644877300b5f8abc3",
+    "164486812086b28c45"
+  ]
+}

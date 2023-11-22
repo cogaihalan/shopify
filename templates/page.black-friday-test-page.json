@@ -1,0 +1,309 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "47b2aa51-5c77-4fee-aa3d-bd2913a18ce4": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Header_2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/MOB-Block-1_1.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "",
+        "countdown_text_mobile": "",
+        "countdown_date": "Nov 18, 2022",
+        "countdown_text_expired": "",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextCenter",
+        "desktop_horizontal": "center",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextCenter",
+        "mobile_horizontal": "mobileCenter",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "db70c8f3-91d5-4d72-bf05-daa8556d9072": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "BLACK FRIDAY",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<h3>Black Friday 2023 is fast approaching and you’re invited.<\/h3><p>This year we’re going even bigger and better than the last. You’ll be able to shop your faves for a fraction of the price, from he dreamiest dresses to wardrobe essentials. Be the first to hear about all things Black Friday and shop the hottest discounts and deals by signing up to our exclusive waitlist.<\/p><p><strong>SIGN UP NOW TO BE FIRST TO SHOP BLACK FRIDAY 2023<\/strong><\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "c865b529-e7d8-4b6b-8f3d-dcc8285273d8": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "166627821973bc0f56": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "8e2cc1f7-4a16-4cbe-9b3a-208fbe1b2eb6": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Block-1_6.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/MOB-Block-2_1.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "f7e70262-5379-4b2a-8065-8505505a309d": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "e62d7ef3-0eaa-44ca-86e1-8aa44ccc4641": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "917f6923-f072-4f9c-98e9-e7dda586ed67": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/pages\/rewards",
+            "link_text": "JOIN OH POLLY REWARDS",
+            "link_title": ""
+          }
+        },
+        "cc7e0294-9055-4695-9b90-c5060dc2665b": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "https:\/\/apps.apple.com\/gb\/app\/oh-polly\/id1446565964?_kx=18Ui-b6stupn2_0xOnjSusPV9mXsNXXRI_pLXzBHtXPAIeoLEzBN5PSEiWSJAlzu.PXvg59&utm_campaign=lcwh_oct22_ukonly&utm_medium=email&utm_source=newsletter",
+            "link_text": "DOWNLOAD the oh polly app",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "917f6923-f072-4f9c-98e9-e7dda586ed67",
+        "cc7e0294-9055-4695-9b90-c5060dc2665b"
+      ],
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    },
+    "56a1d01a-e98b-4912-9705-5dbc4903b8d6": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "4a9da19e-b329-496c-83da-beda68b09e54": {
+          "type": "cta",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/outlet-sale-dresses",
+            "link_text": "SHOP SALE DRESSES",
+            "link_title": ""
+          }
+        },
+        "30de84f8-5440-4c46-a748-1bb231dbe624": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_11.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/outlet",
+            "link_text": "SHOP ALL SALE",
+            "link_title": ""
+          }
+        },
+        "389ba973-a065-4733-a49c-ef84292a73fc": {
+          "type": "cta",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_11.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/outlet",
+            "link_text": "SHOP ALL SALE STYLES",
+            "link_title": ""
+          }
+        },
+        "0144b1bf-fc64-4fc8-9290-9727cd3ad909": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_10.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/last-chance-to-buy",
+            "link_text": "SHOP LAST CHANCE TO BUY",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "4a9da19e-b329-496c-83da-beda68b09e54",
+        "30de84f8-5440-4c46-a748-1bb231dbe624",
+        "389ba973-a065-4733-a49c-ef84292a73fc",
+        "0144b1bf-fc64-4fc8-9290-9727cd3ad909"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "WHAT NEXT?",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    },
+    "30cd5c4b-f92c-462f-b488-541060f65650": {
+      "type": "section-ctas",
+      "settings": {
+        "border_top": false,
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "47b2aa51-5c77-4fee-aa3d-bd2913a18ce4",
+    "db70c8f3-91d5-4d72-bf05-daa8556d9072",
+    "c865b529-e7d8-4b6b-8f3d-dcc8285273d8",
+    "166627821973bc0f56",
+    "8e2cc1f7-4a16-4cbe-9b3a-208fbe1b2eb6",
+    "f7e70262-5379-4b2a-8065-8505505a309d",
+    "e62d7ef3-0eaa-44ca-86e1-8aa44ccc4641",
+    "56a1d01a-e98b-4912-9705-5dbc4903b8d6",
+    "30cd5c4b-f92c-462f-b488-541060f65650"
+  ]
+}

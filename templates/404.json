@@ -1,12 +1,65 @@
 {
   "sections": {
-    "main": {
-      "type": "main-404",
+    "1633086755a27d3e2e": {
+      "type": "section-full-width",
       "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/404Image-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/404Image-Mobile.jpg",
+        "title": "404",
+        "text": "<p>Page Not Found<\/p>",
+        "button_text": "Continue Shopping",
+        "button_url": "\/",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "dark",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextRight",
+        "desktop_horizontal": "right",
+        "desktop_vertical": "middle",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "notfound-nosto-1": {
+      "type": "nosto-placement",
+      "settings": {
+        "placement": "notfound-nosto-1"
+      }
+    },
+    "notfound-nosto-2": {
+      "type": "nosto-placement",
+      "settings": {
+        "placement": "notfound-nosto-2"
+      }
+    },
+    "notfound-nosto-3": {
+      "type": "nosto-placement",
+      "settings": {
+        "placement": "notfound-nosto-3"
       }
     }
   },
   "order": [
-    "main"
+    "1633086755a27d3e2e",
+    "notfound-nosto-1",
+    "notfound-nosto-2",
+    "notfound-nosto-3"
   ]
 }

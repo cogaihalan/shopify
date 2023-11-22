@@ -1,19 +1,26 @@
 {
   "sections": {
+    "feature": {
+      "type": "blog-featured",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/featured-blog.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/featured-blog-mobile.jpg",
+        "section_style": "light",
+        "kicker": "Fashion",
+        "title": "Resort",
+        "text": "Velit ut tortor pretium viverra suspendisse potenti nullam ac tortor. Venenatis tellus in metus vulputate eu.",
+        "button_text": "Read article",
+        "button_link": "shopify:\/\/blogs\/news\/jess-hunt-in-resort"
+      }
+    },
     "main": {
       "type": "main-blog",
       "settings": {
-        "layout": "collage",
-        "show_image": true,
-        "image_height": "medium",
-        "show_date": true,
-        "show_author": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
+    "feature",
     "main"
   ]
 }

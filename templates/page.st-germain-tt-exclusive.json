@@ -1,0 +1,245 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1662369843fca4411b": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "ST. GERMAIN",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16575371074cb2318b": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/StGermain-LandingPage-Desktop-1_76adec6a-bd3d-4643-8596-2b840aa6c2b0.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/StGermain-LandingPage-Mobile-1-2_2.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "shopify:\/\/collections\/atelier-exclusive",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1658402430e344f768": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "shopify:\/\/collections\/st-germain-dresses",
+        "collection": "st-germain-dresses",
+        "collection_max": "12"
+      }
+    },
+    "1657625986c420aee1": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Our viral St Germain launching in two new highly anticipated festive shades. These show stopping silhouettes feature flared sleeves with luxurious all-over embellishments completed with an underwired bust and tie detailing. This social media sensation is one not to be missed. Turn heads this party season in St Germain.<\/p>",
+        "button_text": "SHOP THE COLLECTION",
+        "button_url": ""
+      }
+    },
+    "16577123834c1d9e44": {
+      "type": "section-ctas",
+      "blocks": {
+        "a6f5be62-6d73-491d-9f6d-077f9388352f": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "https:\/\/www.tiktok.com\/@ohpolly?lang=en",
+            "link_text": "Visit TikTok",
+            "link_title": ""
+          }
+        },
+        "178a284d-3f4e-4562-a965-c632941e0285": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/pages\/early-access-sign-up",
+            "link_text": "Sign Up",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "a6f5be62-6d73-491d-9f6d-077f9388352f",
+        "178a284d-3f4e-4562-a965-c632941e0285"
+      ],
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    },
+    "1657541839817dae23": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/StGermain-LandingPage-Desktop-2_9033769c-a294-4964-8f82-8cbf9d230220.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/StGermain-LandingPage-Mobile-2.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "shopify:\/\/collections\/atelier-exclusive",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1657541844b0ab55d1": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/StGermain-LandingPage-Desktop-3_1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/StGermain-LandingPage-Mobile-3_003ce23f-3d66-416e-a976-2fe4e312f5f4.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "shopify:\/\/collections\/st-germain-dresses",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1657537330eb3a940b": {
+      "type": "section-ctas",
+      "blocks": {
+        "30740343-c4a0-4ece-977d-084bf75a5775": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "https:\/\/www.tiktok.com\/@ohpolly?lang=en",
+            "link_text": "Visit TikTok",
+            "link_title": ""
+          }
+        },
+        "b7860690-e7fb-42b9-beb4-ead359d2e348": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/pages\/early-access-sign-up",
+            "link_text": "sign up",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "30740343-c4a0-4ece-977d-084bf75a5775",
+        "b7860690-e7fb-42b9-beb4-ead359d2e348"
+      ],
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662369843fca4411b",
+    "16575371074cb2318b",
+    "1658402430e344f768",
+    "1657625986c420aee1",
+    "16577123834c1d9e44",
+    "1657541839817dae23",
+    "1657541844b0ab55d1",
+    "1657537330eb3a940b"
+  ]
+}

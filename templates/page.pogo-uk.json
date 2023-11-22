@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "260c0963-1fe2-4ea1-bc4c-9912ff61f2f3": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{{ page.content }}"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "260c0963-1fe2-4ea1-bc4c-9912ff61f2f3"
+  ]
+}

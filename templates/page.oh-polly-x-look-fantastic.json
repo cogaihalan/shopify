@@ -1,0 +1,340 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Header_7b4af612-1475-46e6-af16-6c0c59e60da4.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/MOB-Header_92013545-6fb0-4a53-8259-82af4c9f9168.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "7fe9e3eb-4a76-44f7-b513-f4017b5afec4": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p><strong>Destination: Palm Springs<\/strong><br\/>We’re excited to announce our partnership with LOOKFANTASTIC as we host the ultimate beauty and styling event during weekend 1 of Coachella Music Festival.<\/p><p>The invite-only event will take place within a private estate in the heart of the breathtaking Palm Springs. Guests will receive the ultimate pre-festival experience with hair and beauty teams on-site to provide full glam and the opportunity to build their festival look from the Oh Polly gifting suite. <\/p><p>Highlights include carefree festival silhouettes and captivating pieces from the Iridescence collection. Guests will enjoy this exclusive experience with a complimentary bar service, entertainment and content opportunities. Want exclusive  access? Come behind the scenes with us in Palm Springs by following our Instagram and TikTok.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "42a1c16e-187f-4c82-a325-137961013e44": {
+      "type": "section-usps",
+      "blocks": {
+        "2c66963a-9928-4530-9857-da8474bcce11": {
+          "type": "usp",
+          "settings": {
+            "title": "",
+            "text": "FOLLOW OH POLLY ON TIKTOK",
+            "link_url": "https:\/\/www.tiktok.com\/@ohpolly?lang=en",
+            "background_colour": "#e48d89",
+            "text_colour": "#333333"
+          }
+        },
+        "18b67c8f-a902-498c-88f9-d0b6b1e3672a": {
+          "type": "usp",
+          "settings": {
+            "title": "",
+            "text": "FOLLOW OH POLLY ON INSTAGRAM",
+            "link_url": "https:\/\/www.instagram.com\/ohpolly\/",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "2c66963a-9928-4530-9857-da8474bcce11",
+        "18b67c8f-a902-498c-88f9-d0b6b1e3672a"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "49fd3c73-42d5-4074-8d1c-cdf08b0b8848": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Block-1_2a79cf49-8be1-48ae-a328-588a5bd6c8f5.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/MOB-Block-1_c2f75735-25ce-4267-9114-271f0e188b4a.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "476e586a-5246-4074-aedf-53e1f8c58d09": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP IRIDESCENCE LOOKS",
+        "button_text": "SHOP THE COLLECTION NOW",
+        "button_link": "shopify:\/\/collections\/iridescence",
+        "collection": "iridescence",
+        "collection_max": "4"
+      }
+    },
+    "1c588d87-f846-4723-a85d-1d6ef89f194a": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/OPxLF_DESKTOP.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/OPxLF_MOBILE.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "c7c2fac0-a4ff-46c1-9fcf-80ece765c40c": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "shopify:\/\/collections\/festival-outfits",
+        "collection": "festival-outfits",
+        "collection_max": "4"
+      }
+    },
+    "d4bc788d-e312-419b-a606-65d5dfcc513c": {
+      "type": "section-video",
+      "disabled": true,
+      "settings": {
+        "background_colour": "#fae0df",
+        "text_colour": "dark",
+        "autoplay_video": false,
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_youtube_video": "https:\/\/www.youtube.com\/watch?v=OWJnDyH8Ey8",
+        "mobile_youtube_video": "https:\/\/www.youtube.com\/watch?v=OWJnDyH8Ey8",
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "e7a0460b-aa06-4bc0-a0a1-b8efd1b3290a": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Block-3_51622051-faae-498c-bf03-35e557f2b1fd.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "ed4a69d2-d91e-4813-867a-5253880b2642": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "shopify:\/\/collections\/johona",
+        "collection": "johona",
+        "collection_max": "4"
+      }
+    },
+    "199b0649-04ff-45de-833d-52eba4159b99": {
+      "type": "section-usps",
+      "blocks": {
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f": {
+          "type": "usp",
+          "settings": {
+            "title": "DOWNLOAD OUR IOS APP",
+            "text": "",
+            "link_url": "https:\/\/itunes.apple.com\/gb\/app\/oh-polly\/id1446565964?mt=8",
+            "background_colour": "#e48d89",
+            "text_colour": "#333333"
+          }
+        },
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896": {
+          "type": "usp",
+          "settings": {
+            "title": "DOWNLOAD OUR ANDROID APP",
+            "text": "",
+            "link_url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ohpolly.ohpolly&hl=en_GB&gl=US&pli=1",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f",
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "1676374738734d9a28": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "cb206e63-0330-4267-9bb8-779afe679152": {
+      "type": "section-ctas",
+      "blocks": {
+        "39cc343b-9866-473b-9737-834f7181da69": {
+          "type": "cta",
+          "settings": {
+            "title": "FOLLOW US ON TIKTOK FOR EXCLUSIVE COACHELLA CONTENT",
+            "text": "",
+            "link": "",
+            "link_text": "Shop the collection",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "39cc343b-9866-473b-9737-834f7181da69"
+      ],
+      "disabled": true,
+      "settings": {
+        "border_top": false,
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29",
+    "7fe9e3eb-4a76-44f7-b513-f4017b5afec4",
+    "42a1c16e-187f-4c82-a325-137961013e44",
+    "49fd3c73-42d5-4074-8d1c-cdf08b0b8848",
+    "476e586a-5246-4074-aedf-53e1f8c58d09",
+    "1c588d87-f846-4723-a85d-1d6ef89f194a",
+    "c7c2fac0-a4ff-46c1-9fcf-80ece765c40c",
+    "d4bc788d-e312-419b-a606-65d5dfcc513c",
+    "e7a0460b-aa06-4bc0-a0a1-b8efd1b3290a",
+    "ed4a69d2-d91e-4813-867a-5253880b2642",
+    "199b0649-04ff-45de-833d-52eba4159b99",
+    "1676374738734d9a28",
+    "cb206e63-0330-4267-9bb8-779afe679152"
+  ]
+}

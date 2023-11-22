@@ -1,0 +1,25 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "eu"
+  },
+  "sections": {
+    "163342417312dd33df": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "9246a9b2-c369-4e39-a39d-68d6c6502cc8": {
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "bbb6bf1f-6b0d-4866-a92d-4984676bdcf6": {
+          "disabled": true,
+          "settings": {
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/TopBanner_03ee110d-ede0-446a-9a38-efceecfa3c7c.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Top-Banner-7.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "476e586a-5246-4074-aedf-53e1f8c58d09": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP FULLER BUST STYLES",
+        "button_text": "SHOP THE EDIT NOW",
+        "button_link": "shopify:\/\/collections\/bigger-cup-size-clothing",
+        "collection": "bigger-cup-size-clothing",
+        "collection_max": "4"
+      }
+    },
+    "34a6e0d0-9cce-4f22-a0ca-d0c72bcce646": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "SHOP FULLER BUST TOPS",
+        "button_text": "",
+        "button_link": "shopify:\/\/collections\/fuller-bust-tops",
+        "collection": "fuller-bust-tops",
+        "collection_max": "4"
+      }
+    },
+    "18e73e23-4e40-4203-9cf8-fcd42daae61d": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP UNDERWEAR SOLUTIONS",
+        "button_text": "SHOP THE EDIT NOW",
+        "button_link": "shopify:\/\/collections\/bra-solutions",
+        "collection": "bra-solutions",
+        "collection_max": "4"
+      }
+    },
+    "199b0649-04ff-45de-833d-52eba4159b99": {
+      "type": "section-usps",
+      "blocks": {
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f": {
+          "type": "usp",
+          "settings": {
+            "title": "",
+            "text": "DOWNLOAD OUR IOS APP",
+            "link_url": "https:\/\/itunes.apple.com\/gb\/app\/oh-polly\/id1446565964?mt=8",
+            "background_colour": "#e48d89",
+            "text_colour": "#333333"
+          }
+        },
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896": {
+          "type": "usp",
+          "settings": {
+            "title": "",
+            "text": "DOWNLOAD OUR ANDROID APP",
+            "link_url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ohpolly.ohpolly&hl=en_GB&gl=US&pli=1",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "7e1e4ae8-f41d-4f03-8a2d-47c160e5e68f",
+        "c0e4b1eb-4c5d-4ab1-8eca-127e24b95896"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "1676374738734d9a28": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "cb206e63-0330-4267-9bb8-779afe679152": {
+      "type": "section-ctas",
+      "blocks": {
+        "39cc343b-9866-473b-9737-834f7181da69": {
+          "type": "cta",
+          "settings": {
+            "title": "FOLLOW US ON TIKTOK FOR EXCLUSIVE COACHELLA CONTENT",
+            "text": "",
+            "link": "",
+            "link_text": "Shop the collection",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "39cc343b-9866-473b-9737-834f7181da69"
+      ],
+      "disabled": true,
+      "settings": {
+        "border_top": false,
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    },
+    "5fb587d7-a9c0-4f0a-a744-eea15550dedf": {
+      "type": "section-usps",
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b1c8cfdc-36f3-4f99-b1b3-81406599fd29",
+    "476e586a-5246-4074-aedf-53e1f8c58d09",
+    "34a6e0d0-9cce-4f22-a0ca-d0c72bcce646",
+    "18e73e23-4e40-4203-9cf8-fcd42daae61d",
+    "199b0649-04ff-45de-833d-52eba4159b99",
+    "1676374738734d9a28",
+    "cb206e63-0330-4267-9bb8-779afe679152",
+    "5fb587d7-a9c0-4f0a-a744-eea15550dedf"
+  ]
+}

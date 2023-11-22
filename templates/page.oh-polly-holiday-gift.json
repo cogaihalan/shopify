@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16575371074cb2318b": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "shopify:\/\/collections\/ekin-su-x-oh-polly",
+        "countdown_text": "",
+        "countdown_text_mobile": "",
+        "countdown_date": "",
+        "countdown_text_expired": "",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1658402430e344f768": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "EKIN-SU X OH POLLY COLLECTION II",
+        "title": "",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/ekin-su-x-oh-polly-collection-two",
+        "collection": "ekin-su-x-oh-polly-collection-two",
+        "collection_max": "4"
+      }
+    },
+    "9e263b2f-53a5-401e-a756-2beca40eaf25": {
+      "type": "section-ctas",
+      "blocks": {
+        "e410780e-5495-41dd-a003-73a62c5de008": {
+          "type": "cta",
+          "settings": {
+            "title": "USE CODE: OPHOLIDAY20",
+            "text": "",
+            "link": "shopify:\/\/collections\/view-all-clothing-partydresses",
+            "link_text": "Shop the collection",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "e410780e-5495-41dd-a003-73a62c5de008"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16575371074cb2318b",
+    "1658402430e344f768",
+    "9e263b2f-53a5-401e-a756-2beca40eaf25"
+  ]
+}

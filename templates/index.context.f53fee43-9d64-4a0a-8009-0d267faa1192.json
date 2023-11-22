@@ -1,0 +1,211 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "f53fee43-9d64-4a0a-8009-0d267faa1192"
+  },
+  "sections": {
+    "163342417312dd33df": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "bbb6bf1f-6b0d-4866-a92d-4984676bdcf6": {
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/OP-SS4-Launch_DESKTOP.png",
+            "desktop_image_ar": "shopify:\/\/shop_images\/AR-OP-SS4-Launch_DESKTOP.png",
+            "mobile_image": "shopify:\/\/shop_images\/OP-SS4-Launch_MOBILE.png",
+            "mobile_image_ar": "shopify:\/\/shop_images\/AR-OP-SS4-Launch_MOBILE.png",
+            "title": "",
+            "text": "<p> <\/p>",
+            "button_url": "shopify:\/\/collections\/signature-staples",
+            "mobile_button_url": "shopify:\/\/collections\/signature-staples"
+          }
+        },
+        "9246a9b2-c369-4e39-a39d-68d6c6502cc8": {
+          "settings": {
+            "desktop_video": "",
+            "desktop_video_ar": "",
+            "mobile_video": "",
+            "mobile_video_ar": "",
+            "desktop_image": "shopify:\/\/shop_images\/OP-3FOR_60-Launch_DESKTOP_14693172-13ef-4043-9800-6481ae539c93.png",
+            "desktop_image_ar": "shopify:\/\/shop_images\/AR-OP-3FOR_60-Launch_DESKTOP_114a51c0-24ad-4f5e-89f6-0873b1c6a9c9.png",
+            "mobile_image": "shopify:\/\/shop_images\/OP-3FOR_60-Launch_MOBILE_1d12db4f-439d-4084-a300-ad3e8541d313.png",
+            "mobile_image_ar": "shopify:\/\/shop_images\/AR-OP-3FOR_60-Launch_MOBILE_93d610ab-cf03-4819-8380-ed2e557da853.png",
+            "title": "",
+            "text": "",
+            "button_url": "shopify:\/\/collections\/3-for-295-aed",
+            "mobile_button_url": "shopify:\/\/collections\/3-for-295-aed"
+          }
+        },
+        "870fd717-c645-4f3d-b489-926029351f0b": {
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "bbb6bf1f-6b0d-4866-a92d-4984676bdcf6",
+        "9246a9b2-c369-4e39-a39d-68d6c6502cc8",
+        "870fd717-c645-4f3d-b489-926029351f0b"
+      ]
+    },
+    "1633424177fbc56d57": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "2c21f655-dfd1-4f48-96a0-dcf9a0cefaa8": {
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Web-Button-Besteller_1.webp",
+            "title": "MAXI DRESSES",
+            "link": "shopify:\/\/collections\/maxi-dresses"
+          }
+        },
+        "a43044c8-1a12-4ba3-af95-7852e8860514": {
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OP-Web-Button_Desktop-Fall-Essentials.jpg"
+          }
+        },
+        "45be5437-ac70-417b-a8eb-2e2731957986": {
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Home-Page-Button-1.webp"
+          }
+        },
+        "890b9aaa-81ef-43c3-aa14-6c7d4c0b19b4": {
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tulle-Button.webp",
+            "title": "BLACK DRESSES",
+            "link": "shopify:\/\/collections\/little-black-dresses"
+          }
+        }
+      }
+    },
+    "16547893506d591649": {
+      "disabled": true,
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/homepage-1500x1500_47e2e0e3-96b1-4c96-bed0-aaf4593af057.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/homepage-800x800_165c96ad-0294-425d-9f91-8b675ff9cc4b.jpg",
+        "desktop_content_image": "shopify:\/\/shop_images\/homepage-1200x750_4d9c999f-4f38-4e00-bb24-26d1ff9f2fc0.jpg",
+        "mobile_content_image": "shopify:\/\/shop_images\/homepage-600x600_a1ca1d9b-69ef-461c-9bdc-853faa27c408.jpg",
+        "title": "OLD MONEY SWIM",
+        "text": "<p>Understated elegance. Our latest capsule, Old Money Swim, blends minimal designs with timeless shapes that transcend the seasons. Undeniably luxe and effortlessly sexy, embody endless glamour under the glittering sun, in underwired bikini tops and versatile plunge swimsuits.<\/p>",
+        "button_url": "shopify:\/\/collections\/old-money-swim"
+      },
+      "blocks": {
+      }
+    },
+    "1659523400cd1f1f18": {
+      "disabled": true,
+      "settings": {
+      },
+      "blocks": {
+      }
+    },
+    "1649173246c3fda5fd": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "858055da-9a60-4a3c-9535-e7440d95f234": {
+          "type": "hero_item",
+          "disabled": false,
+          "settings": {
+            "header-9395448def18a6b7e1def73cc2629e62": null,
+            "desktop_video": "",
+            "desktop_video_ar": "",
+            "mobile_video": "",
+            "mobile_video_ar": "",
+            "header-fe128cd21a867166b99c6a8931078a7c": null,
+            "desktop_image": "shopify:\/\/shop_images\/NEENA-_20BIKINISETS-Launch_DESKTOP_edited_3922347e-d0fa-4581-80b1-29982247692c.png",
+            "desktop_image_ar": "shopify:\/\/shop_images\/AR-NEENA-_20BIKINISETS-Launch_DESKTOP_331aa5b2-e026-4814-8b4d-653a8c7169cc.png",
+            "mobile_image": "shopify:\/\/shop_images\/NEENA-_20BIKINISETS-Launch_MOBILE_25af2ff1-7ee2-4c70-9e3c-087d2d153b37.png",
+            "mobile_image_ar": "shopify:\/\/shop_images\/AR-NEENA-_20BIKINISETS-Launch_MOBILE_55cdf2e9-47ce-4618-9d56-f5f56b55c796.png",
+            "header-aa59ee8a6c6a18945b1b364eb9d99a25": null,
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "shopify:\/\/collections\/99-aed-swimwear-sets",
+            "mobile_button_url": "shopify:\/\/collections\/99-aed-swimwear-sets",
+            "header-58582a6e5aedb777bc911365fafbbe85": null,
+            "overlay_desktop": false,
+            "background_colour_desktop": "light",
+            "text_colour_desktop": "light",
+            "button_style": "light",
+            "desktop_text_align": "desktopTextLeft",
+            "desktop_horizontal": "left",
+            "desktop_vertical": "bottom",
+            "header-515a90e792fa710a03b6803edc7da39d": null,
+            "overlay_mobile": false,
+            "background_colour_mobile": "light",
+            "text_colour_mobile": "light",
+            "button_style_mobile": "mobileLight",
+            "mobile_text_align": "mobileTextLeft",
+            "mobile_horizontal": "mobileLeft",
+            "mobile_vertical": "mobileBottom",
+            "header-df6ad3abf41a037e2e3c69725ffd6b42": null,
+            "countdown_text": "<p>New styles coming soon<\/p>",
+            "countdown_text_mobile": "<p>Coming soon<\/p>",
+            "countdown_date": "",
+            "countdown_text_expired": "<p>Available Now!<\/p>",
+            "countdown_desktop_column": 1,
+            "countdown_desktop_row": 1,
+            "countdown_tablet_column": 4,
+            "countdown_tablet_row": 4,
+            "countdown_mobile_row": 4
+          }
+        },
+        "fb661adc-982a-48b2-b9dd-72ab00ef3fd4": {
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/OP-FALL-Launch_DESKTOP_2a2edc8f-1161-46fd-b114-fa1d5d3bebbe.png",
+            "desktop_image_ar": "shopify:\/\/shop_images\/AR-OP-FALL-Launch_DESKTOP_1c1d9bae-226b-4491-a3e5-06039dc22d11.png",
+            "mobile_image": "shopify:\/\/shop_images\/OP-FALL_MOBILE_b1654aa2-ab25-476c-bfc1-a1c35d611ae2.png",
+            "mobile_image_ar": "shopify:\/\/shop_images\/AR-OP-FALL_MOBILE_1928e614-03c5-40b8-87d3-e5d0e14c87bd.png",
+            "button_url": "shopify:\/\/collections\/fall",
+            "mobile_button_url": "shopify:\/\/collections\/fall"
+          }
+        }
+      },
+      "block_order": [
+        "858055da-9a60-4a3c-9535-e7440d95f234",
+        "fb661adc-982a-48b2-b9dd-72ab00ef3fd4"
+      ]
+    },
+    "9885d871-bc8f-4013-a0d9-a88d63d182e9": {
+      "settings": {
+      },
+      "blocks": {
+        "cbf4c6b1-0b8f-4f42-9ad5-2df8625dab74": {
+          "disabled": false,
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/OP-B_T60_-Launch_DESKTOP_f79c3340-4ccb-4570-afc2-da3f3ac40e58.png",
+            "desktop_image_ar": "shopify:\/\/shop_images\/AR-OP-B_T60_-Launch_DESKTOP_e2b1099c-abfc-4fb9-98e5-8f1939aa76a4.png",
+            "mobile_image": "shopify:\/\/shop_images\/OP-B_T60_-Launch_MOBILE_7b13d1ab-4a1d-47c6-8be4-b302bd1b751e.png",
+            "mobile_image_ar": "shopify:\/\/shop_images\/AR-OP-B_T60_-Launch_MOBILE_26391bd0-227e-4862-b7d7-e3a4cb7cc411.png",
+            "button_url": "shopify:\/\/collections\/bo-tee-up-to-60-off",
+            "mobile_button_url": "shopify:\/\/collections\/bo-tee-up-to-60-off"
+          }
+        }
+      }
+    }
+  },
+  "order": [
+    "index",
+    "16590922793855b7bf",
+    "163342417312dd33df",
+    "1633424312ee020144",
+    "1633424177fbc56d57",
+    "9885d871-bc8f-4013-a0d9-a88d63d182e9",
+    "03d2552a-6354-4a58-ab1f-fddd089b0dcc",
+    "16547893506d591649",
+    "1659523400cd1f1f18",
+    "74181232-6453-40ef-8931-9a5e88097ce5",
+    "087fc004-fd61-495e-816c-5078b5c01a19",
+    "1649173246c3fda5fd",
+    "1648035992c91ec130",
+    "16361276714fb85918",
+    "1641490502d51e31a4",
+    "16492568325291c874"
+  ]
+}

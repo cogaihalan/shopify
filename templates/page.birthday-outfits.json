@@ -1,0 +1,78 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "70d590d6-47ac-4c54-8cc7-c107299bee4e": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "BIRTHDAY DRESSES & OUTFITS",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "Hey birthday girl, we all know you need to have THE best outfit on your big day, so we've created the ultimate edit of styles perfect for bday celebrations and beyond.",
+        "text": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "af270862-aa26-42a9-886a-ae166fe7697c": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "Shop our full edit now",
+        "button_link": "shopify:\/\/collections\/birthday-outfits",
+        "collection": "birthday-outfits",
+        "collection_max": "12"
+      }
+    },
+    "6cb457a9-e931-46b6-b4b6-0ef25eb9ee60": {
+      "type": "section-usps",
+      "blocks": {
+        "b0803a87-cc71-4520-8892-ad32979612d5": {
+          "type": "usp",
+          "settings": {
+            "title": "DOWNLOAD OUR IOS APP",
+            "text": "",
+            "link_url": "https:\/\/apps.apple.com\/gb\/app\/oh-polly-clothing-fashion\/id1446565964",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        },
+        "94912377-e046-4ae9-9290-b31887e46c72": {
+          "type": "usp",
+          "settings": {
+            "title": "DOWNLOAD OUR ANDROID APP",
+            "text": "",
+            "link_url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ohpolly.ohpolly&hl=en_GB&gl=US",
+            "background_colour": "#e48d89",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "b0803a87-cc71-4520-8892-ad32979612d5",
+        "94912377-e046-4ae9-9290-b31887e46c72"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "167896923166198773": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "70d590d6-47ac-4c54-8cc7-c107299bee4e",
+    "af270862-aa26-42a9-886a-ae166fe7697c",
+    "6cb457a9-e931-46b6-b4b6-0ef25eb9ee60",
+    "167896923166198773"
+  ]
+}

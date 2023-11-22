@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16558872795806dae2": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP OUR INSTA",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "165588715209b38b96": {
+      "type": "section-heading",
+      "disabled": true,
+      "settings": {
+        "kicker": "Shop your favourite looks straight from the @ohpolly feed right here, plus tag us for a chance to be featured!",
+        "title": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16454402568c5d1ec1": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<script src=\"\/\/foursixty.com\/media\/scripts\/fs.embed.v2.5.js\" data-feed-id=\"oh-polly_1\" data-theme=\"sizes_v2_5\" data-open-links-in-same-page=\"true\" data-connector-filter=\"50368,50369\" data-page-size=\"22\"><\/script>\n<style>.fs-has-links::after { padding:5px 7.5px;background-color:#ffffff;color:rgba(0, 0, 0, 0.8);content:\"SHOP NOW\"; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:13px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:bold;font-size:12px; } .fs-wrapper div.fs-text-container * { color:#ffffff; } <\/style>"
+      }
+    },
+    "16559219555b8f4f22": {
+      "type": "foursixty-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16558872795806dae2",
+    "165588715209b38b96",
+    "16454402568c5d1ec1",
+    "16559219555b8f4f22"
+  ]
+}

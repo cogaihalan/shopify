@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "164501748658477e35": {
+      "type": "ancillary-accordion",
+      "settings": {
+        "text": "",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164501748658477e35"
+  ]
+}

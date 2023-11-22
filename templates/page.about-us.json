@@ -1,0 +1,258 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16371441646ef16e2c": {
+      "type": "section-hero",
+      "blocks": {
+        "67cd40af-13fb-4424-a139-c69ca7672392": {
+          "type": "hero_item",
+          "disabled": true,
+          "settings": {
+            "desktop_video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/OUR-STORY_DESKTOP.mp4?v=1645540597",
+            "mobile_video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/OUR-STORY-MOBILE.mp4?v=1645540597",
+            "desktop_image": "shopify:\/\/shop_images\/OURSTORY2-DT.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/OURSTORY-MOB.jpg",
+            "title": "OUR STORY",
+            "text": "",
+            "button_text": "",
+            "button_url": "",
+            "mobile_button_url": "",
+            "overlay_desktop": false,
+            "background_colour_desktop": "light",
+            "text_colour_desktop": "light",
+            "button_style": "light",
+            "desktop_text_align": "desktopTextCenter",
+            "desktop_horizontal": "center",
+            "desktop_vertical": "middle",
+            "overlay_mobile": false,
+            "background_colour_mobile": "light",
+            "text_colour_mobile": "light",
+            "button_style_mobile": "mobileLight",
+            "mobile_text_align": "mobileTextCenter",
+            "mobile_horizontal": "mobileCenter",
+            "mobile_vertical": "mobileMiddle",
+            "countdown_text": "<p>New styles coming soon<\/p>",
+            "countdown_text_mobile": "<p>Coming soon<\/p>",
+            "countdown_date": "",
+            "countdown_text_expired": "<p>Available Now!<\/p>",
+            "countdown_desktop_column": 1,
+            "countdown_desktop_row": 1,
+            "countdown_tablet_column": 4,
+            "countdown_tablet_row": 4,
+            "countdown_mobile_row": 4
+          }
+        },
+        "4ac79084-877b-47e5-863a-5b1a8b21ed18": {
+          "type": "hero_item",
+          "settings": {
+            "desktop_video": "",
+            "mobile_video": "",
+            "desktop_image": "shopify:\/\/shop_images\/OURSTORY2-DT.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/OURSTORY-MOB.jpg",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "",
+            "mobile_button_url": "",
+            "overlay_desktop": false,
+            "background_colour_desktop": "light",
+            "text_colour_desktop": "light",
+            "button_style": "light",
+            "desktop_text_align": "desktopTextLeft",
+            "desktop_horizontal": "left",
+            "desktop_vertical": "bottom",
+            "overlay_mobile": false,
+            "background_colour_mobile": "light",
+            "text_colour_mobile": "light",
+            "button_style_mobile": "mobileLight",
+            "mobile_text_align": "mobileTextLeft",
+            "mobile_horizontal": "mobileLeft",
+            "mobile_vertical": "mobileBottom",
+            "countdown_text": "<p>New styles coming soon<\/p>",
+            "countdown_text_mobile": "<p>Coming soon<\/p>",
+            "countdown_date": "",
+            "countdown_text_expired": "<p>Available Now!<\/p>",
+            "countdown_desktop_column": 1,
+            "countdown_desktop_row": 1,
+            "countdown_tablet_column": 4,
+            "countdown_tablet_row": 4,
+            "countdown_mobile_row": 4
+          }
+        }
+      },
+      "block_order": [
+        "67cd40af-13fb-4424-a139-c69ca7672392",
+        "4ac79084-877b-47e5-863a-5b1a8b21ed18"
+      ],
+      "settings": {
+        "lazy_media": true,
+        "autoplay_enable": false,
+        "autoplay_duration": "2000",
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark"
+      }
+    },
+    "1637144226898c3c48": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>We thought it’s about time we officially introduced ourselves and let you all know a little scoop into who we are, what we’ve been up to and how we function day-to-day. We’re sure you’ll already be keeping up to date with us on socials but if you’re interested in how we started and other interesting activities we’ve been doing along the way, such as our charity work, then keep reading below...<\/p><p>You probably already know that Oh Polly is a rapidly growing pureplay fashion brand selling women's clothing internationally. But did you know that one of the sole reasons for the company existing is to support The Brannerson Foundation, our Cambodia based charity? Stay tuned to find out more about the amazing charity work we do a little later in the post.<\/p><p>We have offices in Glasgow, Liverpool, Los Angeles, Dhaka, and Guangzhou with over 250 employees in the UK, and 1500 directly employed worldwide. Our business model is social-first and centred around industry leading Instagram and Facebook accounts. In 2019, Oh Polly was ranked as the 5th most engaged UK clothing retail social media brand and by July 2021 we had a combined following of over 4.5 million people. This puts us among the fastest growing fashion brands within the UK - wow!<\/p><p>It’s definitely well known worldwide that wearing Oh Polly is sure to get you noticed. We pride ourselves on being the place that everyone turns to when buying something that's a ‘little bit extra.’<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "16372457268bf320bc": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingNone",
+        "order": "contentLeft",
+        "background_colour": "#fdf5f5",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/about-heartofthebrand.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/about-heartofthebrand_1.jpg",
+        "title": "Where it all began",
+        "text": "<p>Initially, Claire Henderson and Mike Branney, the owners of Oh Polly, started selling on eBay. They were looking for ways to fund their charity in Cambodia, known as The BrannersonFoundation. Their sales on eBay really took off so from there they set up a social media account and soon after, a website.<\/p><p>The company grew at a fast pace but it wasn’t all smooth sailing. One of the first suppliers that Claire and Mike trusted stole £30,000 of their money, which at that time was all of their money! However, in their own words, “the key is not to quit, every successful person hasn’t quit.”<\/p><p>If you want to find out more, and listen to Claire and Mike answering your questions about Oh Polly, starting a business and general tips and tricks then head over to our Youtube video.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "WATCH NOW",
+        "button_url": "https:\/\/www.youtube.com\/watch?v=8AyBw79jjN0"
+      }
+    },
+    "1637144446450cb215": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingSmall",
+        "title": "SO... whats our mission statement?",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>We exist to provide trend driven high quality products from ethical supply chains that will turn heads and get you noticed.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1645013182c33387b9": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingSmall",
+        "title": "AND OUR UNIQUE SELLING POINT?",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Oh Polly is one of the few UK brands which designs and produces its own garments. As a result we combine both exceptional quality (which we carefully control) with unique trend driven fashion. In our customer's words “you get what you pay for”.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1637251523b88187ba": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentRight",
+        "background_colour": "#333333",
+        "text_colour": "light",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Brannerson-Desktop.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Brannerson-Desktop.jpg",
+        "title": "THE BRANNERSON FOUNDATION",
+        "text": "<p>We are a brand with a purpose, giving a percentage of our profits every month to The Brannerson Foundation, a charity based in Cambodia. The charity was founded by Mike Branney and Claire Henderson, the Managing Director and CEO of Oh Polly. Every purchase made at Oh Polly helps to support a number of children in one of the poorest regions in the world. As the brand continues to grow, all thanks to the community who love wearing our clothes, so does the level of support The Brannerson Foundation is able to offer. <\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "16450179551ee5da3b": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingSmall",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p><strong>OUR MANUFACTURING AND PRODUCT PROCESS<\/strong><br\/>Our product development and manufacturing process is unique to most. At Oh Polly, we like to be different and always with you in mind, as we love our customers!<br\/><br\/>Our buyers do not purchase wholesale products, which allows us to keep our designs super unique - and of course that little bit extra! All our products are designed in house by a small, incredibly talented design team. All our collections are curated by a small buying team led by our Creative Director.<br\/><br\/>We also pride ourselves on being incredibly involved with the people and production behind every Oh Polly 'fit. Our founders, Mike Branney and Claire Henderson, set up our two main factories when Oh Polly started. This means we have control over our workers' safety, the wages they are paid, and the quality of the product at every stage of manufacturing in those factories.<br\/><br\/><br\/><strong>WHAT THE FUTURE HOLDS<\/strong><br\/>If you shop at Oh Polly and you know your stuff then it’s unlikely you need us to remind you of the harmful effects this industry has on our planet. Here at Oh Polly, we’re taking positive steps each and every day to improve the sustainability of the brand. If you want to find out more about our actions then you should check out our <a href=\"\/pages\/environmental-manifesto\" target=\"_blank\" title=\"Environmental Manifesto\">Sustainability page<\/a><\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "164501428925004091": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "#fdf5f5",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Brannerson2-Desktop.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Brannerson2-Desktop.jpg",
+        "title": "Heart Of The Brand",
+        "text": "<p><strong>The Brannerson Foundation<\/strong> which supports philanthropic initiatives in Cambodia.<br\/><br\/>We are a brand with a purpose, giving a percentage of our profits every month to the charity.<\/p><p>The Brannerson Foundation runs a free English language school and contributes to the funding of scholarships and support programmes for children growing up in families with disabled, disadvantaged or widowed adults in Cambodia’s Siem Reap region.<\/p><p>With more than £400,000 donated since setting up, the Foundation has gone from strength to strength, helping more than 400 children and families in Cambodia’s Siem Reap region.<\/p><p>Every purchase made at Oh Polly helps to support a number of children in one of the poorest regions in the world. As the brand continues to grow, all thanks to the community of women who love wearing our clothes, so does the level of support the Brannerson Foundation is able to offer.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "WATCH MORE HERE",
+        "button_url": "https:\/\/www.youtube.com\/watch?v=KvvTp1tw8C8&feature=emb_title"
+      }
+    },
+    "16450138327a281463": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingSmall",
+        "title": "Careers at oh polly",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Our culture is diverse, creative and collaborative. Our teams are committed, ambitious and hard working. We offer an environment to flourish, develop and take your career to the next level. If you’re looking to join our fantastic team then head over to our <a href=\"https:\/\/careers.ohpolly.com\/\" target=\"_blank\" title=\"https:\/\/careers.ohpolly.com\/\">Careers Page<\/a> more info.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1645018466ca701a39": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingSmall",
+        "title": "CONTACT US",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>If you need to get in touch then please don’t hesitate to drop us a message via our <a href=\"https:\/\/www.ohpolly.com\/pages\/contact\" target=\"_blank\" title=\"https:\/\/www.ohpolly.com\/pages\/contact\">Contact Page<\/a>. The relevant team will respond to your enquiry as soon as possible.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16371441646ef16e2c",
+    "1637144226898c3c48",
+    "16372457268bf320bc",
+    "1637144446450cb215",
+    "1645013182c33387b9",
+    "1637251523b88187ba",
+    "16450179551ee5da3b",
+    "164501428925004091",
+    "16450138327a281463",
+    "1645018466ca701a39"
+  ]
+}

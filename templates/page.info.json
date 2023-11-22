@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "165710946364a76b08": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "info",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16571094830b7eb9fd": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "582aa750-af7b-492e-84d5-aedacd81f4d4": {
+          "type": "item",
+          "settings": {
+            "title": "where  is my order",
+            "answer": "",
+            "page": ""
+          }
+        },
+        "2d078fec-d92d-4702-8f25-9be0ee6b899f": {
+          "type": "item",
+          "settings": {
+            "title": "how do i earn points",
+            "answer": "<p>go to <\/p>",
+            "page": ""
+          }
+        },
+        "ac17b1ad-6130-4f87-a42e-0961a6cd3e48": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "answer": "",
+            "page": ""
+          }
+        },
+        "bb895ecb-59ea-426e-afb9-a04ebe86c0b4": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "answer": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "582aa750-af7b-492e-84d5-aedacd81f4d4",
+        "2d078fec-d92d-4702-8f25-9be0ee6b899f",
+        "ac17b1ad-6130-4f87-a42e-0961a6cd3e48",
+        "bb895ecb-59ea-426e-afb9-a04ebe86c0b4"
+      ],
+      "settings": {
+        "text": "",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "1657109745f471a49e": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "",
+        "subtitle": "",
+        "text": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165710946364a76b08",
+    "16571094830b7eb9fd",
+    "1657109745f471a49e"
+  ]
+}

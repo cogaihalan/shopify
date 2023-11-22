@@ -1,25 +1,51 @@
 {
+  "layout": "theme-ancillary",
   "sections": {
     "main": {
       "type": "main-page",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+      }
+    },
+    "1636718934efb89dbf": {
+      "type": "section-live-chat",
+      "settings": {
+        "intro_text": "",
+        "title": "FOR INSTANT HELP, CHAT TO POLLY.",
+        "text": "<p>She can track orders, check your refund and much more! Please click the speech bubble in the corner to try her out.  <\/p><p>Alternatively,  check our Help articles <a href=\"https:\/\/ohpolly.ae\/pages\/faqs\" title=\"https:\/\/ohpolly.ae\/pages\/faqs\">here.<\/a><\/p><p><\/p>",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "32b5fb5f-474d-4c7c-bea4-6bb27ae4bc5b": {
+      "type": "whats-app",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1027447d-59d8-41e7-a7de-541609d50fcd": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "Company details",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Oh Polly is a registered trademark, owned by <\/p><p>OH POLLY LTD <br\/>Scotland, G2 2LB <\/p><p>OH POLLY LTD will be the merchant of record for all products sold on <a href=\"http:\/\/ohpolly.ae\/\" target=\"_blank\">ohpolly.ae<\/a><br\/><br\/>Oh Polly AE website is managed and operated by,<br\/>Web House Portal LLC<br\/>103, Offices 3<br\/>One Central<br\/>Dubai, UAE.<br\/>Contact: <a href=\"tel:+971522790548\" target=\"_blank\">+971 522790548<br\/><\/a>Email: <a href=\"mailto:hello@ohpolly.ae\" target=\"_blank\">hello@ohpolly.ae<\/a><\/p>",
+        "button_text": "",
+        "button_url": ""
       }
     },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
+    "1636718934efb89dbf",
+    "32b5fb5f-474d-4c7c-bea4-6bb27ae4bc5b",
+    "1027447d-59d8-41e7-a7de-541609d50fcd",
     "form"
   ]
 }

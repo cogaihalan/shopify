@@ -1,0 +1,443 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1662544667b147ebcc": {
+      "type": "loyalty-navigation",
+      "settings": {
+        "navigation": "account-navigation"
+      }
+    },
+    "1660905943883e5ddd": {
+      "type": "loyalty-logged-in",
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/Group_9251.png",
+        "points_left": "Total Points Left:",
+        "points_used": "Total Points Used:",
+        "points_earned": "Total Points Earned:"
+      }
+    },
+    "1662543626b992ba95": {
+      "type": "loyalty-tiers",
+      "settings": {
+        "section_margin": "spacingNone",
+        "customer_state": "logged_in",
+        "bg_img_tier_1": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg",
+        "bg_img_tier_2": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg",
+        "bg_img_tier_3": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg",
+        "bg_img_tier_4": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg"
+      }
+    },
+    "16608397665962a8d6": {
+      "type": "loyalty-register",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/Rewards-Banner.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Rewards-Banner-Mobile.jpg",
+        "logo": "shopify:\/\/shop_images\/Group_9251.png"
+      }
+    },
+    "1662541158aaa7d8a2": {
+      "type": "loyalty-tiers",
+      "settings": {
+        "section_margin": "spacingNone",
+        "customer_state": "logged_out",
+        "bg_img_tier_1": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg",
+        "bg_img_tier_2": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg",
+        "bg_img_tier_3": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg",
+        "bg_img_tier_4": "shopify:\/\/shop_images\/SWATCHES-fabric1_96b4dfb6-d6b6-412b-b426-6188eb919b21.jpg"
+      }
+    },
+    "16608396595b65211f": {
+      "type": "loyalty-rules-list",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "Ways to earn points",
+        "text": "With our exclusive rewards programme, you don't just earn points through making a purchase. We'll give you 250 points just for joining, as well as more for following us on social media and joining our mailing list."
+      }
+    },
+    "1662546007d3177b1f": {
+      "type": "loyalty-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "customer_state": "logged_in",
+        "order": "contentLeft",
+        "image_size": "normal",
+        "background_colour": "#333333",
+        "text_colour": "light",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Rewards-Banner-Mobile.jpg",
+        "mobile_video": "",
+        "strapline": "",
+        "title": "REFER A FRIEND",
+        "text": "<p>Want to share the love? Refer a friend to become an Oh Polly customer and both of you will receive £5 to spend!<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentTop",
+        "button_text": "Refer a friend",
+        "enable_refer_button": true,
+        "button_url": ""
+      }
+    },
+    "166089866786ac5959": {
+      "type": "loyalty-how-does-it-work",
+      "blocks": {
+        "3aa99031-28a6-40c6-b7cd-211bc502138a": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HowToRedeemPoints-x3blocks-4.jpg",
+            "title": "JOIN",
+            "text": "Sign up and receive 250 points instantly. Climb tiers to unlock even more benefits, like early access, free delivery and exclusive offers.",
+            "button_text": "Button Text",
+            "button_link": ""
+          }
+        },
+        "a2f8a266-e04b-45eb-b7d1-e1cbf49ac7d8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HowToRedeemPoints-x3blocks-5.jpg",
+            "title": "EARN",
+            "text": "Members get more. Earn points each time you shop, on your birthday, and endless other ways.",
+            "button_text": "Button Text",
+            "button_link": ""
+          }
+        },
+        "dddb711c-9b75-489e-9fed-b02b4dba03d9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HowToRedeemPoints-x3blocks-6.jpg",
+            "title": "ENJOY",
+            "text": "Enjoy your tier benefits and redeem your points at checkout for money off your order.",
+            "button_text": "Button Text",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "3aa99031-28a6-40c6-b7cd-211bc502138a",
+        "a2f8a266-e04b-45eb-b7d1-e1cbf49ac7d8",
+        "dddb711c-9b75-489e-9fed-b02b4dba03d9"
+      ],
+      "settings": {
+        "section_margin": "spacingNone",
+        "customer_state": "logged_in",
+        "strapline": "Oh Polly Rewards",
+        "title": "HOW DOES IT WORK?"
+      }
+    },
+    "166254534819ad99d7": {
+      "type": "loyalty-section-content",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingStandard",
+        "customer_state": "logged_out",
+        "title": "Nulla pellentesque lacus sem, sed iaculis sem semper euismod.",
+        "title_size": "fz-58_64",
+        "title_alignment": "left",
+        "subtitle": "",
+        "text": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1662551383b5c1229a": {
+      "type": "loyalty-nosto-recommendations",
+      "settings": {
+        "customer_state": "logged_in",
+        "nosto_id": "productpage-nosto-3",
+        "button_text": "Shop All New Arrivals",
+        "button_url": "shopify:\/\/collections"
+      }
+    },
+    "16625466520ee9a65a": {
+      "type": "loyalty-image-text",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingStandard",
+        "customer_state": "logged_in",
+        "order": "contentRight",
+        "image_size": "moreWidth",
+        "background_colour": "#f4f4f4",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/atelier-homepage-1500x1500_bf4aa1c4-5203-40fa-a897-8c6e1c652c81.jpg",
+        "mobile_video": "",
+        "strapline": "",
+        "title": "",
+        "text": "",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "Leave a Review",
+        "enable_refer_button": false,
+        "button_url": ""
+      }
+    },
+    "166083970271904deb": {
+      "type": "loyalty-history-table",
+      "settings": {
+        "title": "Recent Activity"
+      }
+    },
+    "16608393415e276bf4": {
+      "type": "loyalty-how-does-it-work",
+      "blocks": {
+        "f54a247d-245e-4781-9ac2-c72da0b0e060": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Campaign_Image4_ed9ebc00-81c1-48ae-9975-8c89cc603385.jpg",
+            "title": "Create an account",
+            "text": "Join today and you'll be instantly credited with 250 points, just for signing up!",
+            "button_text": "Button Text",
+            "button_link": ""
+          }
+        },
+        "983d248a-3913-474d-ace1-194620efd40b": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CategoryImage_AtelierIII_8.jpg",
+            "title": "Start earning points",
+            "text": "Join our exclusive mailing list, follow us on socials and make a purchase to start building up those points",
+            "button_text": "Button Text",
+            "button_link": ""
+          }
+        },
+        "29ba304c-1b1b-4ba9-97e3-00aed470ad65": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/atelier-homepage-1500x1500.jpg",
+            "title": "Enjoy the rewards",
+            "text": "Hit the checkout and spend your rewards points on brand new items from your favourite collections",
+            "button_text": "Button Text",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "f54a247d-245e-4781-9ac2-c72da0b0e060",
+        "983d248a-3913-474d-ace1-194620efd40b",
+        "29ba304c-1b1b-4ba9-97e3-00aed470ad65"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingSmall",
+        "customer_state": "logged_out",
+        "strapline": "Oh Polly rewards",
+        "title": "How does it work?"
+      }
+    },
+    "16583112079275a0c3": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "3f1d6540-eef7-4ef9-8689-2c56bfa245be": {
+          "type": "item",
+          "settings": {
+            "title": "Do returns affect my points?",
+            "answer": "<p>If you return anything from your order, the points you earned will be deducted for those item(s). This is why we have ‘Pending’ points, so that any returns made don’t affect your live (redeemable) points.<\/p><p><\/p><p>Any points \/ money you redeemed on the order will be lost.<\/p>",
+            "page": ""
+          }
+        },
+        "98ce6d49-969c-4c75-94e0-997d262498f1": {
+          "type": "item",
+          "settings": {
+            "title": "How long does Oh Polly rewards run for?",
+            "answer": "<p>Your Oh Polly Rewards subscription will renew after 12 months from the date you entered a tier. After 12 months of being in your current tier, you're points will reset. Don’t worry though – we’ll let you know when it's due to renew, so you can spend any points you have left. You can also track this on your account. <\/p><p><\/p><p>If you've earned enough points, when your subscription is due to renew, you'll stay in the same tier. If you've not earned enough points, you'll drop down to the tier below. If you've not earned any points, you'll reset to Bronze. <\/p>",
+            "page": ""
+          }
+        },
+        "5a9cc30c-a19b-4349-af10-3b70f497c67d": {
+          "type": "item",
+          "settings": {
+            "title": "How do I enter the next tier?",
+            "answer": "<p>The more you spend and the more actions you complete, the closer you’ll get to the next tier. Tier thresholds are based on annual points, not lifetime points.<\/p>",
+            "page": ""
+          }
+        },
+        "63c6ca6a-bd2a-4684-bb67-d3a780ccb2a1": {
+          "type": "item",
+          "settings": {
+            "title": "How do birthday points work?",
+            "answer": "<p>Once you've entered SILVER tier and above, birthday points will be automatically added to your account on your birthday if you’ve entered your date of birth on your rewards account.<\/p>",
+            "page": ""
+          }
+        },
+        "8c551311-ba6c-419b-8af6-07d9bdf2cfa3": {
+          "type": "item",
+          "settings": {
+            "title": "How does refer a friend work?",
+            "answer": "<p>Referral codes only work for new customers. If you refer a friend who hasn’t shopped with us before, they’ll receive a £5 voucher via email to use on a min. spend of £50. If your friend places an order with your referral code, you’ll also receive a £5 voucher to use on a min. spend of £50. <\/p><p>Your friend’s £5 voucher can be redeemed straight away. Your £5 voucher will be available to redeem after 14 days from the date your friend has placed their order.<\/p>",
+            "page": ""
+          }
+        },
+        "ef5b4c29-1a45-4519-812f-a4d7e8fca4f7": {
+          "type": "item",
+          "settings": {
+            "title": "How do I get my free unlimited next day delivery on Oh Polly Rewards?",
+            "answer": "<p>Gold and Platinum UK customers will receive free unlimited next day delivery for being in these tiers. This will be added to your account automatically and will be valid for 1 year from the date it’s added. If you already have unlimited next day delivery on your account, this won’t be affected.<\/p><p>Unlimited Next Day delivery only applies to UK customers. It does not apply to Northern Ireland, Channel Islands or other international countries. <\/p><p>During peak and busy times, unlimited next day delivery might change to a priority 1-3 day delivery.<\/p>",
+            "page": ""
+          }
+        },
+        "fba838fb-ac6a-4266-876b-93f3cd9bee27": {
+          "type": "item",
+          "settings": {
+            "title": "What are pending points?",
+            "answer": "<p>Points earned through orders or referrals will be ‘Pending’ on your account and will be available to redeem after 14 days from the date of purchase \/ referral. <\/p><p>Points earned from any other activities will be available to redeem immediately.<\/p><p>We hold your points pending in case you decide to make a return, so that your live (redeemable) points aren’t affected. If you return anything from your order, points will be deducted for those item(s). <\/p>",
+            "page": ""
+          }
+        },
+        "5e33ad9c-5328-4297-bd2c-906ecef5ec74": {
+          "type": "item",
+          "settings": {
+            "title": "My points haven’t been added to my account",
+            "answer": "<p>First, double check your ‘Pending’ points to see if they’re here. They’ll stay here for 14 days from the date of your purchase.<\/p><p>If you've redeemed points at checkout, then changed your mind, make sure you remove the points from checkout, so they go back into your account.<\/p><p>If your points aren’t pending and aren’t live on your account, please <a href=\"https:\/\/www.ohpolly.com\/pages\/contact\" title=\"https:\/\/www.ohpolly.com\/pages\/contact\">get in touch<\/a> with your recent order number(s) or which actions you’ve completed to earn points and we’ll be happy to help!<\/p>",
+            "page": ""
+          }
+        },
+        "02c39fa2-cb1e-4711-a28d-0d2b50b95ad6": {
+          "type": "item",
+          "settings": {
+            "title": "Why have I moved down a tier?",
+            "answer": "<p>Oh Polly Rewards renews after you've been in your current tier for 12 months. If after this time, you haven't earned enough points over the year to stay in your tier, you'll move down into the tier below. <\/p>",
+            "page": ""
+          }
+        },
+        "5394cf64-ac56-4278-9267-e07a7d986b04": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "answer": "",
+            "page": ""
+          }
+        },
+        "1f7bfa0b-3b84-4036-b1ad-6eb2266f478b": {
+          "type": "item",
+          "settings": {
+            "title": "how many points can i redeem at checkout?",
+            "answer": "<p>The minimum you can redeem per order is £5 (500 points). The maximum you can redeem per order is £50 (5,000 points).<\/p>",
+            "page": ""
+          }
+        },
+        "4083b168-f3d0-4e08-8a1c-63ecba943296": {
+          "type": "item",
+          "settings": {
+            "title": "Can I redeem points and use a voucher\/discount at the same time?",
+            "answer": "<p>No, you can only use one or the other. Applying a discount code on top of redeemed points will overwrite your points at checkout. <\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "3f1d6540-eef7-4ef9-8689-2c56bfa245be",
+        "98ce6d49-969c-4c75-94e0-997d262498f1",
+        "5a9cc30c-a19b-4349-af10-3b70f497c67d",
+        "63c6ca6a-bd2a-4684-bb67-d3a780ccb2a1",
+        "8c551311-ba6c-419b-8af6-07d9bdf2cfa3",
+        "ef5b4c29-1a45-4519-812f-a4d7e8fca4f7",
+        "fba838fb-ac6a-4266-876b-93f3cd9bee27",
+        "5e33ad9c-5328-4297-bd2c-906ecef5ec74",
+        "02c39fa2-cb1e-4711-a28d-0d2b50b95ad6",
+        "5394cf64-ac56-4278-9267-e07a7d986b04",
+        "1f7bfa0b-3b84-4036-b1ad-6eb2266f478b",
+        "4083b168-f3d0-4e08-8a1c-63ecba943296"
+      ],
+      "settings": {
+        "layout_container": true,
+        "text": "<p>FAQS<\/p>",
+        "title_font_size": "fz-14_20",
+        "question_font_size": "fz-18_22",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "1660838971d9c01f28": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "d19d79ad-bb8a-4f47-a82a-02e6e7f1d4b9": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WebButton-EkinSu.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/dresses-going-out-dresses",
+            "link_text": "GOING OUT DRESSES",
+            "link_title": "SHOP GOING OUT DRESSES"
+          }
+        },
+        "105ac2e9-6c3f-4898-9740-352aa2c85269": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/web-button-unitard.jpg",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/bo-and-tee-unitards",
+            "link_text": "UNITARDS",
+            "link_title": "SHOP UNITARDS"
+          }
+        },
+        "cd79f2a8-17b6-4bfd-962a-c8571bf4e1cf": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2022-09-07_at_17.26.30.png",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/view-all-clothing-co-ords",
+            "link_text": "CO-ORDS",
+            "link_title": "SHOP CO-ORDS"
+          }
+        },
+        "9b7976fd-87e6-4e6a-81e8-f450d010bd3b": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2022-09-07_at_17.26.37.png",
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/collections\/swim",
+            "link_text": "SWIMWEAR",
+            "link_title": "SHOP SWIMWEAR"
+          }
+        }
+      },
+      "block_order": [
+        "d19d79ad-bb8a-4f47-a82a-02e6e7f1d4b9",
+        "105ac2e9-6c3f-4898-9740-352aa2c85269",
+        "cd79f2a8-17b6-4bfd-962a-c8571bf4e1cf",
+        "9b7976fd-87e6-4e6a-81e8-f450d010bd3b"
+      ],
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "SHOP THE LATEST",
+        "button_text": "Shop All Collections",
+        "button_link": "shopify:\/\/collections",
+        "overlay": true,
+        "background_colour": "light",
+        "text_colour": "light",
+        "grid_gap_increase": true,
+        "mobile_text_underneath": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662544667b147ebcc",
+    "1660905943883e5ddd",
+    "1662543626b992ba95",
+    "16608397665962a8d6",
+    "1662541158aaa7d8a2",
+    "16608396595b65211f",
+    "1662546007d3177b1f",
+    "166089866786ac5959",
+    "166254534819ad99d7",
+    "1662551383b5c1229a",
+    "16625466520ee9a65a",
+    "166083970271904deb",
+    "16608393415e276bf4",
+    "16583112079275a0c3",
+    "1660838971d9c01f28"
+  ]
+}

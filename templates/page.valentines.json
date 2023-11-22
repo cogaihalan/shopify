@@ -1,0 +1,221 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16575371074cb2318b": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Valentines-Hub-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Valentines-Hub-Mobile.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "",
+        "countdown_text_mobile": "",
+        "countdown_date": "",
+        "countdown_text_expired": "",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "a242a338-bdf5-4f51-95a3-f24cd18dda4c": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP DOLCE AMORE",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/dolce-amore",
+        "collection": "dolce-amore",
+        "collection_max": "4"
+      }
+    },
+    "2cf46040-5093-4684-861a-bbb37216e6a8": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP THE FIORELLA COLLECTION",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/fiorella",
+        "collection": "fiorella",
+        "collection_max": "4"
+      }
+    },
+    "1661961331c29dd2e0": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop_03-2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile_03-2.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "dark",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1675159640b8267627": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "c0323040-ac9b-44f0-9179-188fde94a732": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop_04-2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile_04-2.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "27eb0f63-3843-4307-90e4-c7e80fe99f63": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP VERONA",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/verona",
+        "collection": "verona",
+        "collection_max": "4"
+      }
+    },
+    "0dd1ca0b-f875-426a-8e75-5152abcdc7ff": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP BELLA NOTTE",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/bella-notte",
+        "collection": "bella-notte",
+        "collection_max": "4"
+      }
+    },
+    "1fc2de3b-fe50-4857-8808-a9f18d5833c4": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP THE FULL VALENTINE'S COLLECTION",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/collections-valentines",
+        "collection": "collections-valentines",
+        "collection_max": "4"
+      }
+    },
+    "1658402430e344f768": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP OUR PINK AND RED DRESSES",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/red-pink-dresses",
+        "collection": "red-pink-dresses",
+        "collection_max": "4"
+      }
+    },
+    "bbb4dd32-ee17-4d09-89a1-6f72ef1f33e0": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "SHOP DARING DESIRE",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/daring-desire",
+        "collection": "daring-desire",
+        "collection_max": "4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16575371074cb2318b",
+    "a242a338-bdf5-4f51-95a3-f24cd18dda4c",
+    "2cf46040-5093-4684-861a-bbb37216e6a8",
+    "1661961331c29dd2e0",
+    "1675159640b8267627",
+    "c0323040-ac9b-44f0-9179-188fde94a732",
+    "27eb0f63-3843-4307-90e4-c7e80fe99f63",
+    "0dd1ca0b-f875-426a-8e75-5152abcdc7ff",
+    "1fc2de3b-fe50-4857-8808-a9f18d5833c4",
+    "1658402430e344f768",
+    "bbb4dd32-ee17-4d09-89a1-6f72ef1f33e0"
+  ]
+}

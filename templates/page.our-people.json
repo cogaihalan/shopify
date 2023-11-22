@@ -1,0 +1,233 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "7f4c38e5-5804-45cf-9bef-c98775aaf94e": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/OurPeople-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/OurPeople-Mobile.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "424cdf41-fb24-407b-87ab-c617350e6dd0": {
+      "type": "section-usps",
+      "blocks": {
+        "cf081667-306b-446b-8a90-49102555a39c": {
+          "type": "usp",
+          "settings": {
+            "title": "READ OUR GENDER PAY GAP REPORT",
+            "text": "",
+            "link_url": "shopify:\/\/pages\/our-reports",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        },
+        "648cc2d7-93b9-4675-9b60-1fce20464f6a": {
+          "type": "usp",
+          "settings": {
+            "title": "CAREERS AT OH POLLY",
+            "text": "",
+            "link_url": "https:\/\/careers.ohpolly.com\/",
+            "background_colour": "#e2a9a9",
+            "text_colour": "#333333"
+          }
+        },
+        "2f0edefe-19d9-407a-ad43-c2942549dd7b": {
+          "type": "usp",
+          "settings": {
+            "title": "CHECK OUT OUR LINKEDIN",
+            "text": "",
+            "link_url": "https:\/\/www.linkedin.com\/company\/oh-polly\/mycompany\/",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "cf081667-306b-446b-8a90-49102555a39c",
+        "648cc2d7-93b9-4675-9b60-1fce20464f6a",
+        "2f0edefe-19d9-407a-ad43-c2942549dd7b"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "17b852b8-76d4-4229-904c-11de6e11b224": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "POLLY CARES",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Our culture is diverse, creative and collaborative. Our teams are committed, ambitious and hard working. We offer an environment to flourish and develop.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "aa4d9c29-5646-42e0-b42c-4fa889a77fac": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/1500X1500-2.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/800X800-4_1.jpg",
+        "title": "",
+        "text": "<p><strong>Corporate social responsibility<\/strong><br\/>We are following our Code of Conduct across the whole value chain, especially within production and manufacturing. You can find more information about how we manufacture below.<\/p><p><strong>Gender split<\/strong><br\/>71% of our senior roles are held by women. 70% of our employees within the company are women.<\/p><p><strong>Zero tolerance: Discrimination<\/strong><br\/>We have a zero-tolerance policy for any form of discrimination or harassment based on someone’s sexual orientation, gender, civil status, family status, religion, race, age, or disability. 30 of our managers have received a Level 2 Equality, Diversity, and Inclusion. All members of our team complete a training module about Equality and Diversity and Bullying and Harassment within their first 2 weeks at Oh Polly.<\/p><p><strong>Mental wellbeing<\/strong><br\/>We are a Suicide Safer Organisation. We have 18 Mental Health First Aiders, 12 Suicide Prevention First Aiders and 12 Sucide Alert Helpers on site. The courses are delivered by the Martin Gallier Project through their Applied Suicide Intervention Skills Training (ASIST).<br\/><br\/><strong>Employee assistance program<\/strong><br\/>Colleagues can access a confidential helpline, 24 hours a day, 365 days a year. Alongside other mental wellbeing resources.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "2e0065b1-a7a6-42e6-b5e3-f353cb19b4c1": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/800x800-Graph-CharityDonations.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/800x800-Graph-CharityDonations.jpg",
+        "title": "cHARITY DONATIONS",
+        "text": "<p>As well as our own charity, The Brannerson Foundation, we also regularly donate a portion of our profits to different charities throughout the year. Each charity helps to combat different environmental or social issues across the globe. Our employee of the month also picks a charity to donate £250! They are always personal charities that we love to help.<br\/><br\/><strong>Since 2016 we've donated £837,395.27.<\/strong><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "a2bdf432-9a8e-4cb4-9af4-8aec1a0a2664": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "UNITED NATIONS SUSTAINABLE DEVELOPMENT GOALS",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "Our current initiatives support the following goals:",
+        "text": "<ul><li>Goal 1 - No Poverty<\/li><li>Goal 3 - Good Health and Wellbeing<\/li><li>Goal 4 - Quality Education<\/li><li>Goal 5 - Gender Equality<\/li><li>Goal 8 - Decent Work and Economic Growth<\/li><li>Goal 10 - Reduced Inequalities<\/li><li>Goal 16 - Peace, Justice and Strong Institutions.<\/li><li>Goal 17 - Partnerships for the Goals<\/li><\/ul><p>Find out more about the goals <a href=\"https:\/\/sdgs.un.org\/goals\" title=\"https:\/\/sdgs.un.org\/goals\">here<\/a>.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "7574de10-74d4-470a-b043-797abd01e967": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "8a046b31-3e17-46dd-a65e-0e83a62391d8": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-1.jpg",
+            "title": "OUR PLANET",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-planet",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "f3922000-d43e-4b5e-9933-d2ece6e21379": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-2.jpg",
+            "title": "OUR PROUCTS AND CIRCULARITY",
+            "text": "",
+            "link": "shopify:\/\/pages\/products-and-circularity",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "a2b33d4e-ed1f-43c3-9a48-9b071c6e258e": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-4.jpg",
+            "title": "OUR SUPPLY CHAIN",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-supply-chain",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "c1922aaa-f1ff-4416-911c-79c64c3132df": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-5.jpg",
+            "title": "OUR PACKAGING",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-packaging",
+            "link_text": "",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "8a046b31-3e17-46dd-a65e-0e83a62391d8",
+        "f3922000-d43e-4b5e-9933-d2ece6e21379",
+        "a2b33d4e-ed1f-43c3-9a48-9b071c6e258e",
+        "c1922aaa-f1ff-4416-911c-79c64c3132df"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7f4c38e5-5804-45cf-9bef-c98775aaf94e",
+    "424cdf41-fb24-407b-87ab-c617350e6dd0",
+    "17b852b8-76d4-4229-904c-11de6e11b224",
+    "aa4d9c29-5646-42e0-b42c-4fa889a77fac",
+    "2e0065b1-a7a6-42e6-b5e3-f353cb19b4c1",
+    "a2bdf432-9a8e-4cb4-9af4-8aec1a0a2664",
+    "7574de10-74d4-470a-b043-797abd01e967"
+  ]
+}

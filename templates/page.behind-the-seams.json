@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "4e68dd8e-76d7-43e1-a4ee-890c55da1a2c": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Header-Image.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "ade48782-3ec8-4922-a0cf-f9fd974c3bb2": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "BEHIND THE SEAMS",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>We’re committed to more sustainable practices and have been using TENCEL™ Modal in our collections since 2021. To give you greater transparency of your product journey, we’re in the process of having all our old and new products certified, so you can be sure it's made from TENCEL™ Modal fibres.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "0d75aa40-533a-48f8-b6a7-3941801d8b27": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentRight",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/KeyBenefits.jpg",
+        "mobile_video": "",
+        "title": "WHAT IS TENCEL™ MODAL?",
+        "text": "<p>TENCEL™ Modal fibres are made from renewable beech wood, sourced from sustainable forests, making it compostable and biodegradable.<\/p><p>The STANDARD 100 by OEKO-TEX™ certification confirms that TENCEL™ Modal fibres have been tested for numerous regulated and non-regulated harmful substances and are harmless to human health.<br\/><br\/>TENCEL™ is a trademark of Lenzing AG. <a href=\"https:\/\/www.tencel.com\/fiber-story\" target=\"_blank\" title=\"https:\/\/www.tencel.com\/fiber-story\">Read more about their fibre story here<\/a>.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "shop the edit",
+        "button_url": "shopify:\/\/collections\/base-layers"
+      }
+    },
+    "7b32e422-ec0a-43d4-87c7-54a3c84edab3": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "2225ac2c-637e-4a59-9ed2-40297bae731a": {
+          "type": "item",
+          "settings": {
+            "title": "botanic origin",
+            "answer": "<p>TENCEL™ Modal fibres are mainly manufactured from the renewable raw material beech wood, sourced from sustainable forests in Austria and neighbouring countries.<\/p>",
+            "page": ""
+          }
+        },
+        "c041e612-4319-408d-b218-726e8ecd78f9": {
+          "type": "item",
+          "settings": {
+            "title": "BIODEGRADABLE AND COMPOSTABLE",
+            "answer": "<p>TENCEL™ standard Modal fibres are biodegradable and compostable under industrial, home, soil, freshwater and marine conditions, thus they can fully revert back to nature.<\/p>",
+            "page": ""
+          }
+        },
+        "e93ddac0-7254-483b-ae0d-9f87a64a2f41": {
+          "type": "item",
+          "settings": {
+            "title": "LONG LASTING SOFTNESS",
+            "answer": "<p>Exhibiting high flexibility, TENCEL™ Modal wood based fibres offer textiles a long-lasting quality of exquisite softness. Owing to the fibres sleek cross section, TENCEL™ Modal fibres enhance the soft touch of fabrics even after repeated washing.<\/p><p>Measurements and hand evaluations of softness show that TENCEL™ Modal fibres feel twice as soft as cotton. The softness of  TENCEL™ Modal fibres last longer and is able to withstand repeated wash and dry cycles compared to cotton.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "2225ac2c-637e-4a59-9ed2-40297bae731a",
+        "c041e612-4319-408d-b218-726e8ecd78f9",
+        "e93ddac0-7254-483b-ae0d-9f87a64a2f41"
+      ],
+      "settings": {
+        "layout_container": false,
+        "text": "<p>learn more about the key benefits<\/p>",
+        "title_font_size": "fz-34_37",
+        "question_font_size": "fz-18_22",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "4d0c86ed-6fb8-4cde-b0d2-73121fde57c0": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "shop the range",
+        "button_text": "load more",
+        "button_link": "shopify:\/\/collections\/base-layers",
+        "collection": "base-layers",
+        "collection_max": "4"
+      }
+    },
+    "bb819d6c-8fb6-4348-9a28-d7d817355f95": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "All the content on this page has been reviewed and approved by Lenzing AG.",
+        "title": "explore our sustainability hub",
+        "button_text": "find out more",
+        "button_link": "shopify:\/\/pages\/environmental-manifesto"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "4e68dd8e-76d7-43e1-a4ee-890c55da1a2c",
+    "ade48782-3ec8-4922-a0cf-f9fd974c3bb2",
+    "0d75aa40-533a-48f8-b6a7-3941801d8b27",
+    "7b32e422-ec0a-43d4-87c7-54a3c84edab3",
+    "4d0c86ed-6fb8-4cde-b0d2-73121fde57c0",
+    "bb819d6c-8fb6-4348-9a28-d7d817355f95"
+  ]
+}

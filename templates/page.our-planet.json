@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "4d52fe11-2498-45a7-a63c-45ccd932a7d7": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/OurPlanet-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/OurPlanet-Mobile.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "e307277b-a435-4601-8a28-09354cbf23e9": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "COMMITTED TO A HEALTHIER, HAPPIER PLANET",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>We are committed to delivering high quality, innovative designs to meet our customers' needs in an ever-evolving market without compromising on our global responsibility and ethical values.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1c5ebe50-1c4b-4fe1-98a5-fde6a6a5edeb": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop-1_ac129248-7681-4be7-b9e3-435314a007f9.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile-1_642433c9-fd16-493a-b622-62bc621e6a8d.jpg",
+        "title": "",
+        "text": "<p><strong>Measuring our emissions<\/strong><br\/>In collaboration with Carbon Footprint Limited we've calculated and verified our FY22 Scope 1 and Scope 2 emissions. We produced 20.52 tCO2e (market-based). We're in the process of measuring our Scope 3 emissions for the same time period.<\/p><p><strong>Low impact deliveries<\/strong><br\/>UK customers can take advantage of the following impact delivery options:<\/p><ul><li>Click & Collect store or InPost lockers, see the data to back it up <a href=\"https:\/\/help.ohpolly.com\/hc\/en-gb\/articles\/10249412185745-How-is-EVRi-Click-Collect-eco-friendly-\"><span style=\"text-decoration:underline\">here<\/span><\/a>.<\/li><li>DPD offset all delivery emissions so whenever you select them at checkout, you're opting for a carbon neutral service.<\/li><li>Our London customers can take advantage of a new low-impact delivery solution, with Packfleet. They use renewable energy to charge their electric vehicles. <em>Within M25 postcodes only.<\/em><\/li><\/ul><p><\/p><p><strong>Recycling and general waste<\/strong><br\/>B&M Waste Management, a carbon neutral company, takes all the waste from our office and distribution centre, in Bromborough, UK. This is separated and diverted to the correct waste streams in the depo. They'll either recycle our waste or turn it into energy. From their most recent report (01\/09\/2021-31\/08\/2022), 100% of our waste from the site has been diverted from landfill. You can find out more <a href=\"https:\/\/www.bandmwaste.com\/about-us\/energy-recovery-and-recycling-processes\/\" title=\"https:\/\/www.bandmwaste.com\/about-us\/energy-recovery-and-recycling-processes\/\">here<\/a>.<br\/><br\/><strong>Our packaging<\/strong><br\/>We completed a review of our main packaging products and gave them a revamp! <\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "3e3f8d60-2761-4d1a-b897-c91711c41c42": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop-8.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile-8.jpg",
+        "title": "",
+        "text": "<p><strong>Solar panels<\/strong><br\/>We have partnered with Engenera who have installed ground-breaking combined heat and power units (CHP) on site. <em>But why is this important?<\/em> This specially designed system offers a clean and renewable heat source for the entire warehouse and office space at our Bromborough site.<\/p><p><strong>Cycle to work scheme<br\/><\/strong>We have introduced a new incentive scheme for our staff, to opt for a bike instead of a car, when travelling to work.<\/p><p><strong>Carpooling<\/strong><br\/>Where possible, our staff love to carpool! If there are up to four of you in a car, that's up to three cars off the road making the same journey. This is great for reducing energy consumption and CO2 emissions, mitigating traffic and reducing the demand for parking infrastructure. You can do this too!<br\/><br\/><strong>Motion activated<\/strong><br\/>The lighting in our distribution centre is motion activated so that we minimise energy use. All lights are LED.<br\/><br\/><strong>ReCover IT<\/strong><br\/>We work with ReCover IT who are a local IT disposal company in Liverpool, UK. They securely destroy all data on our end-of-life devices. The remaining hardware is repaired or recycled! They donate a portion of their sales to charity.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "09944029-962b-4c06-ab9e-cfb35c4430fe": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "UNITED NATIONS SUSTAINABLE DEVELOPMENT GOALS",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "Our current initiatives support the following goals:",
+        "text": "<ul><li>Goal 7 - Affordable and Clean Energy<\/li><li>Goal 13 - Climate Action<\/li><li>Goal 15 - Life on Land<\/li><\/ul><p>Find out more about the goals <a href=\"https:\/\/sdgs.un.org\/goals\" title=\"https:\/\/sdgs.un.org\/goals\">here<\/a>.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "8ad3246f-2b37-47ca-9f63-62703ae69b55": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "85b86f86-0546-4e7c-83c3-2ffbadd38ce7": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-2.jpg",
+            "title": "OUR PRODUCTS AND CIRCULARITY",
+            "text": "",
+            "link": "shopify:\/\/pages\/products-and-circularity",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "04f422f5-63af-441e-a31c-7a301f791939": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-5.jpg",
+            "title": "OUR PEOPLE",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-people",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "b0bb9a81-b4fc-4db6-82f1-dc323c85d280": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-4.jpg",
+            "title": "OUR SUPPLY CHAIN",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-supply-chain",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "9dad5a34-619a-4075-b53d-665e867bcc08": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-3.jpg",
+            "title": "OUR PACKAGING",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-packaging",
+            "link_text": "",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "85b86f86-0546-4e7c-83c3-2ffbadd38ce7",
+        "04f422f5-63af-441e-a31c-7a301f791939",
+        "b0bb9a81-b4fc-4db6-82f1-dc323c85d280",
+        "9dad5a34-619a-4075-b53d-665e867bcc08"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "4d52fe11-2498-45a7-a63c-45ccd932a7d7",
+    "e307277b-a435-4601-8a28-09354cbf23e9",
+    "1c5ebe50-1c4b-4fe1-98a5-fde6a6a5edeb",
+    "3e3f8d60-2761-4d1a-b897-c91711c41c42",
+    "09944029-962b-4c06-ab9e-cfb35c4430fe",
+    "8ad3246f-2b37-47ca-9f63-62703ae69b55"
+  ]
+}

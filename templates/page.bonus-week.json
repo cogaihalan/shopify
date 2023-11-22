@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "20c9c196-25a5-4dfa-ac90-6c675c046d2b": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/BW-LandingPage_Desktop_-1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/BW-LandingPage_Mobile_-1.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1e5d5e04-db75-4b43-9e3b-1b48293d9087": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "USE CODE BONUSWEEK20 TO SAVE 20% OFF* ALMOST ALL ACTIVEWEAR ON SITE",
+        "button_text": "TAP TO  SHOP SELECTED STYLES NOW",
+        "button_link": "shopify:\/\/collections\/bt2030discount",
+        "collection": "bt2030discount",
+        "collection_max": "4"
+      }
+    },
+    "4c3d9304-23ff-40e1-b56b-c7276f0cc8fc": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP UP TO 70% OFF* BO+TEE NOW",
+        "button_text": "TAP TO SHOP ALL STYLES",
+        "button_link": "shopify:\/\/collections\/bonus-week-up-to-70-off-selected-styles-shop-all",
+        "collection": "bonus-week-up-to-70-off-selected-styles-shop-all",
+        "collection_max": "4"
+      }
+    },
+    "c695ddc4-e101-4a6b-8296-18956e4af674": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP BO+TEE NOW",
+        "button_text": "TAP TO SHOP ALL STYLES",
+        "button_link": "shopify:\/\/collections\/outlet-sale-activewear",
+        "collection": "outlet-sale-activewear",
+        "collection_max": "4"
+      }
+    },
+    "31c75a1b-c13e-4631-af1f-a752ab41ee57": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/BW-LandingPage_Desktop_-2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/BW-LandingPage_Mobile_-2.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "shopify:\/\/collections\/bo-and-tee",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "20c9c196-25a5-4dfa-ac90-6c675c046d2b",
+    "1e5d5e04-db75-4b43-9e3b-1b48293d9087",
+    "4c3d9304-23ff-40e1-b56b-c7276f0cc8fc",
+    "c695ddc4-e101-4a6b-8296-18956e4af674",
+    "31c75a1b-c13e-4631-af1f-a752ab41ee57"
+  ]
+}

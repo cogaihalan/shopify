@@ -2,16 +2,163 @@
   "sections": {
     "main": {
       "type": "main-list-collections",
+      "blocks": {
+        "44dbf028-c916-43a9-a7c1-0424b4a95539": {
+          "type": "intro",
+          "settings": {
+            "title": "<p>Shop<br\/><strong>Oh Polly<\/strong> by<br\/>style<\/p>",
+            "text": "Time to get glam, honey. Solve those ‘nothing to wear’ dilemmas in one of our signature Oh Polly dresses, designed to flatter your figure and ensure all eyes are on you. Going-out? Our range of delicately embellished dresses will add some sparkle and wow factor to your look. Our sleek bodycon dresses come in lengths to suit all, so what are you choosing - mini, midi or maxi?"
+          }
+        },
+        "d61cd6a4-fba5-4493-a3f0-c250ca1b1448": {
+          "type": "single-feature",
+          "settings": {
+            "collection": "dresses",
+            "title": "",
+            "subtitle": "Wardrobe staples for the new season",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/hp-cta-2-min.jpg"
+          }
+        },
+        "90b44f6a-2f65-4bb0-9848-420ea3cc9019": {
+          "type": "single-feature",
+          "settings": {
+            "collection": "trousers",
+            "title": "Trousers",
+            "subtitle": "Wardrobe staples for the new season",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/trousers.jpg"
+          }
+        },
+        "9354f77e-ef11-43e0-9743-c899c0b663d3": {
+          "type": "double-feature",
+          "settings": {
+            "collection": "summer-tops",
+            "title": "",
+            "subtitle": "",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/summer-tops-double.jpg"
+          }
+        },
+        "6fe6fe42-b4f9-41a8-bafc-569e5fc2e739": {
+          "type": "single-feature",
+          "settings": {
+            "collection": "bo-tee",
+            "title": "",
+            "subtitle": "",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/hp-cta-4-min.jpg"
+          }
+        },
+        "820d335c-2b91-4d26-a3bd-e448861e7a3c": {
+          "type": "single-feature",
+          "settings": {
+            "collection": "beachwear",
+            "title": "",
+            "subtitle": "",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/hp-cta-1-min.jpg"
+          }
+        },
+        "f379667a-ccbe-475e-be3e-5cef40542472": {
+          "type": "single-feature",
+          "settings": {
+            "collection": "shoes",
+            "title": "",
+            "subtitle": "",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/shoes.jpg"
+          }
+        },
+        "d8e6826b-78fe-4ed5-aaed-79534417e1df": {
+          "type": "single-feature",
+          "settings": {
+            "collection": "jumpsuits",
+            "title": "",
+            "subtitle": "",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/jumpsuits.jpg"
+          }
+        },
+        "2fa7146e-f732-41a0-9a1a-4319705bb3ed": {
+          "type": "single-feature",
+          "settings": {
+            "collection": "accessories",
+            "title": "",
+            "subtitle": "",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/accessories.jpg"
+          }
+        },
+        "0d418ff4-dbb4-464b-9a06-401e9d02c0a0": {
+          "type": "double-feature",
+          "settings": {
+            "collection": "corset-tops",
+            "title": "",
+            "subtitle": "",
+            "content_style": "light",
+            "content_alignment": "middle",
+            "button_text": "",
+            "button_style": "quaternary",
+            "image": "shopify:\/\/shop_images\/corset-tops-double.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "44dbf028-c916-43a9-a7c1-0424b4a95539",
+        "d61cd6a4-fba5-4493-a3f0-c250ca1b1448",
+        "90b44f6a-2f65-4bb0-9848-420ea3cc9019",
+        "9354f77e-ef11-43e0-9743-c899c0b663d3",
+        "6fe6fe42-b4f9-41a8-bafc-569e5fc2e739",
+        "820d335c-2b91-4d26-a3bd-e448861e7a3c",
+        "f379667a-ccbe-475e-be3e-5cef40542472",
+        "d8e6826b-78fe-4ed5-aaed-79534417e1df",
+        "2fa7146e-f732-41a0-9a1a-4319705bb3ed",
+        "0d418ff4-dbb4-464b-9a06-401e9d02c0a0"
+      ],
       "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "columns_mobile": "2"
+        "section_margin": "spacingNone"
+      }
+    },
+    "1641551249c9aa93cd": {
+      "type": "section-instagram",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "show_icon": true,
+        "title": "By girls for girls!",
+        "text": "<p>Be a part of our story. Tag us <a href=\"https:\/\/www.instagram.com\/ohpolly\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/ohpolly\">@ohpolly<\/a> for a chance to be featured on our Insta!<\/p>",
+        "button_text": "Shop our insta",
+        "button_link": "shopify:\/\/collections",
+        "foursixty": "<script src=\"\/\/foursixty.com\/media\/scripts\/fs.embed.v2.5.js\" data-feed-id=\"oh-polly_1\" data-theme=\"showcase_v2_5\" data-open-links-in-same-page=\"true\" data-page-size=\"8\"><\/script>\n<style>.fs-has-links::after { padding:10px 15px;background-color:#ffffff;color:rgba(0, 0, 0, 0.8);content:\"SHOP IT\"; } .fs-showcase_v2_5.fs-desktop .fs-entry-container { width:25% !important;padding-top:25% !important; } .fs-showcase_v2_5.fs-mobile .fs-entry-container { width:50% !important;padding-top:50% !important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:14px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:14px; } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(0, 0, 0, 0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-showcase_v2_5.fs-wrapper div.fs-timeline-entry { margin:0px; } <\/style>"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1641551249c9aa93cd"
   ]
 }

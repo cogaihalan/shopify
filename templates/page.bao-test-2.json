@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1662970686bd08382b": {
+      "type": "section-video",
+      "settings": {
+        "background_colour": "#FAE0DF",
+        "text_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662970686bd08382b"
+  ]
+}

@@ -1,35 +1,162 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "categorypage-nosto-1": {
+      "type": "nosto-placement",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "placement": "categorypage-nosto-1"
+      }
+    },
+    "hero": {
+      "type": "collection-hero",
+      "settings": {
+      }
+    },
+    "16354183441db681b2": {
+      "type": "section-usps",
+      "blocks": {
+        "6428b80a-b1e5-4ab8-855d-0eb17b2ae261": {
+          "type": "usp",
+          "settings": {
+            "title": "STUDENTS GET 15% OFF",
+            "text": "CONTACT WHATSAPP SUPPORT FOR DISCOUNT",
+            "link_url": "",
+            "background_colour": "#e48d89",
+            "text_colour": "#333333"
+          }
+        },
+        "b0a7779e-2d57-45ed-af84-4911ba75559c": {
+          "type": "usp",
+          "settings": {
+            "title": "DOWNLOAD OUR APP",
+            "text": "FOR EXCLUSIVE DISCOUNTS AND EARLY ACCESS",
+            "link_url": "",
+            "background_colour": "#f7d7d0",
+            "text_colour": "#333333"
+          }
+        },
+        "3c2b7f7a-0641-472e-b7f7-8c075673b148": {
+          "type": "usp",
+          "settings": {
+            "title": "EXPRESS DELIVERY",
+            "text": "2 DAYS DELIVERY ACROSS GCC",
+            "link_url": "",
+            "background_colour": "#e2a9a9",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "6428b80a-b1e5-4ab8-855d-0eb17b2ae261",
+        "b0a7779e-2d57-45ed-af84-4911ba75559c",
+        "3c2b7f7a-0641-472e-b7f7-8c075673b148"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "sub-collections": {
+      "type": "collection-sub-collections",
+      "settings": {
       }
     },
     "product-grid": {
-      "type": "main-collection-product-grid",
+      "type": "main-collection-product-grid-new",
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "horizontal",
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "products_per_page": 48
+      }
+    },
+    "164693360927d664aa": {
+      "type": "nosto-recommendations",
+      "disabled": true,
+      "settings": {
+        "nosto_id": "categorypage-nosto-2",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "16596058365e24de5d": {
+      "type": "product-nosto-tabs",
+      "blocks": {
+        "b4bb90de-3299-45c5-866b-b0130b53cfa9": {
+          "type": "nosto_template",
+          "settings": {
+            "title": "Most Popular In This Category",
+            "nosto_id": "categorypage-nosto-1"
+          }
+        },
+        "63d5950b-5f2e-49de-a58a-6e24d46bf5e2": {
+          "type": "nosto_template",
+          "settings": {
+            "title": "Recently Viewed",
+            "nosto_id": "categorypage-nosto-2"
+          }
+        }
+      },
+      "block_order": [
+        "b4bb90de-3299-45c5-866b-b0130b53cfa9",
+        "63d5950b-5f2e-49de-a58a-6e24d46bf5e2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": ""
+      }
+    },
+    "16415512018b04d7d7": {
+      "type": "section-instagram",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingStandard",
+        "border_top": false,
+        "show_icon": true,
+        "title": "AS STYLED BY YOU",
+        "text": "<p>Shop your favourite looks straight from the <a href=\"https:\/\/www.instagram.com\/ohpolly\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/ohpolly\">@ohpolly<\/a> feed right here, plus tag us for a chance to be featured!<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "foursixty": "<script src=\"\/\/foursixty.com\/media\/scripts\/fs.embed.v2.5.js\" data-feed-id=\"oh-polly_1\" data-theme=\"showcase_v2_5\" data-open-links-in-same-page=\"true\" data-page-size=\"8\"><\/script>\n<style>.fs-has-links::after { padding:10px 15px;background-color:#ffffff;color:rgba(0, 0, 0, 0.8);content:\"SHOP THE LOOK\"; } .fs-showcase_v2_5.fs-desktop .fs-entry-container { width:25% !important;padding-top:25% !important; } .fs-showcase_v2_5.fs-mobile .fs-entry-container { width:50% !important;padding-top:50% !important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:10px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:10px; } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(0, 0, 0, 0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-showcase_v2_5.fs-wrapper div.fs-timeline-entry { margin:0px; } <\/style>"
+      }
+    },
+    "aa7a46ed-5efc-4cc9-92f6-cb71485dffd6": {
+      "type": "section-hero",
+      "settings": {
+        "lazy_media": true,
+        "autoplay_enable": false,
+        "autoplay_duration": "2000",
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark"
+      }
+    },
+    "fe43de85-a426-443a-9226-b28d1547c2c5": {
+      "type": "section-heading",
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "categorypage-nosto-2": {
+      "type": "nosto-placement",
+      "settings": {
+        "placement": "categorypage-nosto-2"
       }
     }
   },
   "order": [
-    "banner",
-    "product-grid"
+    "categorypage-nosto-1",
+    "hero",
+    "16354183441db681b2",
+    "sub-collections",
+    "product-grid",
+    "164693360927d664aa",
+    "16596058365e24de5d",
+    "16415512018b04d7d7",
+    "aa7a46ed-5efc-4cc9-92f6-cb71485dffd6",
+    "fe43de85-a426-443a-9226-b28d1547c2c5",
+    "categorypage-nosto-2"
   ]
 }

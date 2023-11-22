@@ -1,0 +1,360 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "5419fbf2-182a-44d9-a735-b882a2f858fa": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP_01.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/MOBILE_01.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "f7594a45-96d1-4dca-8de8-c046e510366d": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "CHANGES TODAY FOR A BETTER TOMORROW",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>We've been reviewing our packaging and we're excited to share our updates and new designs, made from lower-impact materials.<br\/><br\/>The goal is for our packaging to be made from lower-impact or recycled materials, that are responsibly sourced and can be recycled, continuing its journey.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "44d950b6-0ba7-42de-a46f-4ef6e9990e4a": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP-2.jpg",
+        "mobile_video": "",
+        "title": "mailing bags",
+        "text": "<p>Our orders are shipped in our signature pink Oh Polly bags, now made from 50% recycled materials and 50% virgin materials.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "4872f855-efd6-4eb3-b6f9-b12cfbd2f833": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/MOBILE-3.jpg",
+        "mobile_video": "",
+        "title": "garment bags",
+        "text": "<p>As we ship worldwide, we want to protect our products. Our garments bags are made from Global Recycled Standard (GRS) certified, 100% recycled plastic.*  <\/p><p><em>*Please note this percentage specifically refers to the material of the bag and doesn't include add-ons such as the ink, glue and release tape.<\/em> <\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "ca978af2-74ea-4082-a258-0e55a548ba13": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP-STEPS.webp",
+        "mobile_video": "",
+        "title": "",
+        "text": "<p>You can usually recycle both bags at your local supermarket. Some local recycling facilities will accept these in your home bins, however we'd suggest checking first! Here are some pointers:<\/p><p>1. Remove the shipping label and product label. Either tear them off or cut around them.<\/p><p>2. Check whether your local authority recycles soft plastics. Not every region will let you recycle them at home. Here are some quick access links:<\/p><ul><li><a href=\"https:\/\/www.recyclenow.com\/recycling-locator\" title=\"https:\/\/www.recyclenow.com\/recycling-locator\">UK<\/a><\/li><li><a href=\"https:\/\/search.earth911.com\/?utm_source=earth911-header&_gl=1*1fh964m*_ga*MzczNDYyMTA5LjE2OTQ2MTgyOTI.*_ga_YVHP1E5FJQ*MTY5NDYxODI5MS4xLjAuMTY5NDYxODMzMC42MC4wLjA.&_ga=2.74676050.1557597071.1694618293-373462109.1694618292\" title=\"https:\/\/search.earth911.com\/?utm_source=earth911-header&_gl=1*1fh964m*_ga*MzczNDYyMTA5LjE2OTQ2MTgyOTI.*_ga_YVHP1E5FJQ*MTY5NDYxODI5MS4xLjAuMTY5NDYxODMzMC42MC4wLjA.&_ga=2.74676050.1557597071.1694618293-373462109.1694618292\">USA<\/a><\/li><li><a href=\"https:\/\/recyclingnearyou.com.au\/\" title=\"https:\/\/recyclingnearyou.com.au\/\">Australia<\/a><\/li><li>Rest of world, please search \"where can I recycle soft plastics near me\"<\/li><\/ul><p>3. Send them off for recycling!<br\/><br\/>We'd recommend collecting all your soft plastics and visit your local recycling facility or supermarket to properly recycle them.<br\/><br\/><em>*Same steps apply for hang tags<\/em><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "2cffd6c9-9fc9-4199-9a01-d53a98a5c5fe": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP-1.jpg",
+        "mobile_video": "",
+        "title": "boxes",
+        "text": "<p>Some items may arrive in our boxes, responsibly sourced and made from Forest Stewardship Council (FSC) card. These can be easily recycled or reused at home.<br\/><br\/><strong>REUSE YOUR BOX<\/strong><\/p><p>Use the box as storage, to hold your accessories or your favourite Oh Polly pieces, to keep them cared for for years to come.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "5f5db54b-03a2-4cbb-a63a-8a75fe21258b": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP-5.jpg",
+        "mobile_video": "",
+        "title": "hang tags",
+        "text": "<p>You'll spot a pink hang tag on all our products. These are responsibly sourced and made from FSC card with a recycled polyester cord and recycled plastic seal.<\/p><p>The best way to recycle our hang tags are to detach the seal & cord from the hang tag.<\/p><ul><li>The hangtag can be put in the recycling paper waste.<\/li><li>The seal and cord can also be recycled but this will vary from region to region. Follow the above steps for recycling your bags.<\/li><\/ul>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "480109c2-50f3-4bb8-980d-5922c749f8a9": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "keeping your order?",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Reuse our bags to donate your pre-loved clothing, or when you resell your Oh Polly pieces. Otherwise, follow the steps above to recycle properly.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "ae886c3b-c2ef-4d99-853f-245592806a6f": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "returning your order?",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Make sure to return your item(s) in the same packaging! We’ll ensure the packaging is kept out of landfill. <\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "32d793b6-07c7-4290-b754-a1ce653f4b3d": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP-4.jpg",
+        "mobile_video": "",
+        "title": "our future plans",
+        "text": "<p>Next up, we're looking at our PR and smaller packaging collections, gift wrapping and trims. We're continuously reviewing the best low-impact materials on the market.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "fb36366c-d22e-4bb4-add8-7653515f0709": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "received a different design?",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>We’re phasing out our old packaging to ensure we’re not wasting any stock—this means from time to time, you may receive different designs and materials. For full transparency, these may be:<\/p><ul><li>Outer mailing bags made from 30% recycled materials<\/li><li>Garment bags made from a minimum of 30% recycled materials<\/li><li>Swing tags not made with FSC paper or recycled materials<\/li><\/ul>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "73ce3e70-dcd9-4b0c-9c5d-66de4153ee15": {
+      "type": "ancillary-accordion",
+      "blocks": {
+        "760a4180-9425-455a-a753-a498a359ac7f": {
+          "type": "item",
+          "settings": {
+            "title": "WHAT IS FOREST STEWARDSHIP CERTIFIED PAPER\/CARD?",
+            "answer": "<p>The Forest Stewardship Council (FSC) is an international, non-governmental organisation dedicated to promoting responsible management of the world’s forests. <a href=\"https:\/\/uk.fsc.org\/what-is-fsc\" title=\"https:\/\/uk.fsc.org\/what-is-fsc\">Find out more<\/a>.<\/p>",
+            "page": ""
+          }
+        },
+        "aab3a106-894d-444a-9400-1ce2f82704e5": {
+          "type": "item",
+          "settings": {
+            "title": "WHAT IS GLOBAL RECYCLED STANDARD?",
+            "answer": "<p>The Global Recycled Standard (GRS) is a voluntary product standard for tracking and verifying the content of recycled materials in a final product. The standard applies to the full supply chain and addresses traceability, environmental principles, social requirements, chemical content and labelling.<\/p>",
+            "page": ""
+          }
+        },
+        "2cbb6006-9c46-4f7f-974a-acc9bbf1ac98": {
+          "type": "item",
+          "settings": {
+            "title": "WHAT ARE RECYCLED MATERIALS \/ POLYESTER \/ PLASTIC?",
+            "answer": "<p>Recycled material are materials and by products that have been recovered or diverted from landfill, and have been utilised in place of raw or virgin material in manufacturing a product. The two most common types are:<\/p><ul><li>Pre consumer plastic<\/li><li>Post consumer plastic<\/li><\/ul>",
+            "page": ""
+          }
+        },
+        "e5686c33-8d58-4b1f-9c0b-4d6b6f18943a": {
+          "type": "item",
+          "settings": {
+            "title": "WHAT ARE LOWER IMPACT MATERIALS?",
+            "answer": "<p>We use this term for materials that have a lower environmental impact than their conventional and virgin\/raw counterpart.<\/p>",
+            "page": ""
+          }
+        },
+        "f593a1dd-5eb2-4109-828d-03786766a89f": {
+          "type": "item",
+          "settings": {
+            "title": "WHERE IS YOUR PACKAGING MANUFACTURED?",
+            "answer": "<p>For all our main packaging products listed on this page, are all made in the country they're needed for.<\/p><ul><li>Our hang tags and garment bags are manufactured in our respective production countries as we need to add them before they are shipped to our UK warehouse.<\/li><li>Our mailing bags and boxes are manufactured in the UK as they're required for dispatch from our UK distribution centre.<\/li><\/ul>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "760a4180-9425-455a-a753-a498a359ac7f",
+        "aab3a106-894d-444a-9400-1ce2f82704e5",
+        "2cbb6006-9c46-4f7f-974a-acc9bbf1ac98",
+        "e5686c33-8d58-4b1f-9c0b-4d6b6f18943a",
+        "f593a1dd-5eb2-4109-828d-03786766a89f"
+      ],
+      "settings": {
+        "layout_container": false,
+        "text": "<p>FAQ<\/p>",
+        "title_font_size": "fz-34_37",
+        "question_font_size": "fz-14_20 anc-AccordionItem_Title-europa",
+        "enable_search": false,
+        "search_placeholder": ""
+      }
+    },
+    "b330c84c-1ca9-4507-a030-5f7f1fcffc8b": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "e66b60df-42a2-4386-8dd4-1f109e0b697c": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-1.jpg",
+            "title": "our planet",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-planet",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "4983750f-d033-428b-838e-5cc8e64e4c56": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-2.jpg",
+            "title": "our products and circularity",
+            "text": "",
+            "link": "shopify:\/\/pages\/products-and-circularity",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "93106963-d27c-443a-9add-1f3225abb31a": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-5.jpg",
+            "title": "our people",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-people",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "81433e06-1e0e-467d-9d0e-428cb831f237": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-4.jpg",
+            "title": "our supply chain",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-supply-chain",
+            "link_text": "",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "e66b60df-42a2-4386-8dd4-1f109e0b697c",
+        "4983750f-d033-428b-838e-5cc8e64e4c56",
+        "93106963-d27c-443a-9add-1f3225abb31a",
+        "81433e06-1e0e-467d-9d0e-428cb831f237"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5419fbf2-182a-44d9-a735-b882a2f858fa",
+    "f7594a45-96d1-4dca-8de8-c046e510366d",
+    "44d950b6-0ba7-42de-a46f-4ef6e9990e4a",
+    "4872f855-efd6-4eb3-b6f9-b12cfbd2f833",
+    "ca978af2-74ea-4082-a258-0e55a548ba13",
+    "2cffd6c9-9fc9-4199-9a01-d53a98a5c5fe",
+    "5f5db54b-03a2-4cbb-a63a-8a75fe21258b",
+    "480109c2-50f3-4bb8-980d-5922c749f8a9",
+    "ae886c3b-c2ef-4d99-853f-245592806a6f",
+    "32d793b6-07c7-4290-b754-a1ce653f4b3d",
+    "fb36366c-d22e-4bb4-add8-7653515f0709",
+    "73ce3e70-dcd9-4b0c-9c5d-66de4153ee15",
+    "b330c84c-1ca9-4507-a030-5f7f1fcffc8b"
+  ]
+}

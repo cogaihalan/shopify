@@ -1,0 +1,438 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16575371074cb2318b": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/EKINSU-LANDINGPAGE_Desktop__01.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/EKINSU-LANDINGPAGE_Mobile__01_9e6e666d-2c65-47b3-8826-54860e73053b.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "shopify:\/\/collections\/ekin-su-x-oh-polly",
+        "countdown_text": "",
+        "countdown_text_mobile": "",
+        "countdown_date": "",
+        "countdown_text_expired": "",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1658402430e344f768": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "EKIN-SU X OH POLLY COLLECTION II",
+        "title": "",
+        "button_text": "SHOP THE FULL COLLECTION",
+        "button_link": "shopify:\/\/collections\/ekin-su-x-oh-polly-collection-two",
+        "collection": "ekin-su-x-oh-polly-collection-two",
+        "collection_max": "4"
+      }
+    },
+    "16624794037f209b23": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Image-2_4134931d-0bae-4a13-9f53-600bd8fc4c9a.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1661961331c29dd2e0": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/EKINSU-LANDINGPAGE_Desktop__03.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/EKINSU-LANDINGPAGE_Mobile__02.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "dark",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "16577123834c1d9e44": {
+      "type": "section-ctas",
+      "blocks": {
+        "a6f5be62-6d73-491d-9f6d-077f9388352f": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "https:\/\/www.tiktok.com\/@ohpolly?lang=en",
+            "link_text": "Visit TikTok",
+            "link_title": ""
+          }
+        },
+        "178a284d-3f4e-4562-a965-c632941e0285": {
+          "type": "cta",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link": "shopify:\/\/pages\/early-access-sign-up",
+            "link_text": "Sign Up",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "a6f5be62-6d73-491d-9f6d-077f9388352f",
+        "178a284d-3f4e-4562-a965-c632941e0285"
+      ],
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    },
+    "166177033991d27c32": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "1663010773fbf32422": {
+      "type": "section-video",
+      "settings": {
+        "background_colour": "#fae0df",
+        "text_colour": "dark",
+        "autoplay_video": false,
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_youtube_video": "https:\/\/www.youtube.com\/watch?v=ZT1hc4aQG1U",
+        "mobile_youtube_video": "https:\/\/www.youtube.com\/watch?v=sD-JiuLZI6g",
+        "kicker": "",
+        "title": "EKIN-SU X OH POLLY EPISODE 2",
+        "text": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "1657625986c420aee1": {
+      "type": "section-content",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p><strong>We’re so excited to reveal our biggest partnership yet with none other than 2022 Love Island winner, Ekin-Su Cülcüloğlu. We caught up with Ekin-Su to give you all an inside scoop on all things Love Island, fashion and much more. Ready to go behind-the-scenes? Keep scrolling below… <\/strong><\/p><p><strong>What surprised you the most about your Love Island experience? <\/strong><\/p><p>Aside from winning and finding my soulmate, best friend and lover all wrapped up in one, I’d have to say the friendships. Being a bombshell in the Love Island villa was never going to be easy but I’ve definitely left with some really close friends and memories to last a lifetime.<\/p><p><\/p><p><strong>How did you choose your outfits in the villa? <\/strong><\/p><p>We were allowed to take in a small selection of our own clothing and of course we could mix and match with the other girls in the villa. Aside from that, items of clothing were delivered to the villa every week and we were allowed to choose whatever we wanted. Of course, 9 times out of 10 you probably spotted me in an Oh Polly look.<\/p><p><strong>What was your favourite outfit that you wore in the villa?<\/strong><\/p><p>If I had to pick just one then my favourite outfit would have to be the <a href=\"https:\/\/www.ohpolly.com\/products\/tierra-ruffle-mini-dress-pink\"><span style=\"text-decoration:underline\">Tierra off shoulder dress in pink<\/span><\/a>. I wore this during the baby episode on Love Island and immediately fell in love. The fit, the fabric and the overall look is to die for - I loved it so much I wore it in white a few days after leaving the villa! <\/p><p><\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1657537330eb3a940b": {
+      "type": "section-ctas",
+      "blocks": {
+        "30740343-c4a0-4ece-977d-084bf75a5775": {
+          "type": "cta",
+          "settings": {
+            "title": "LOVE HER STYLE?",
+            "text": "SHOP EKIN'S LOOKS",
+            "link": "shopify:\/\/collections\/ekin-su",
+            "link_text": "SHOP NOW",
+            "link_title": ""
+          }
+        },
+        "1fc6c1cb-1131-48de-af9a-57a91102cf9e": {
+          "type": "cta",
+          "settings": {
+            "title": "WANT TO KNOW MORE?",
+            "text": "WATCH EPISODE 1 NOW ON YOUTUBE",
+            "link": "https:\/\/www.youtube.com\/watch?v=1ajrZIhcFiI",
+            "link_text": "WATCH NOW",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "30740343-c4a0-4ece-977d-084bf75a5775",
+        "1fc6c1cb-1131-48de-af9a-57a91102cf9e"
+      ],
+      "disabled": true,
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    },
+    "16619612182740e352": {
+      "type": "section-content",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p><strong>Why did you choose to partner with Oh Polly?<\/strong><\/p><p>Oh Polly are a brand I’ve been a fan of for many years and which I’ve worn countless times within the Love Island villa. Oh Polly has always been a fashion label I’d turn to for all occasions so this partnership really is a dream come true for me. The quality of their fabrics and overall brand ethos is something I truly love and I’m over the moon to be working alongside them.<\/p><p><strong>What are your ultimate date night plans?<\/strong><\/p><p>Personally, I love a glam evening of dinner and drinks. There’s no better feeling than getting all dressed up in an outfit you love and feel your best in. I feel like at dinner you can spend quality time with each other without any distractions which is something I think is really important in a relationship.<\/p><p><strong>If you were to give 3 tips for being confident, what would they be?<\/strong><\/p><p>Tip 1: Always be yourself. There’s only 1 of you in the world, how amazing is that?<\/p><p>Tip 2: Wear clothing that makes you feel like your best self<\/p><p>Tip 3: Surround yourself with people who love and support you <\/p><p>Make sure you come back for more on all things Ekin-Su, including her upcoming personally curated fashion collections, behind-the-scenes of her creative photoshoots and lots more! Tap below to hear a special message from Ekin-Su!<\/p>",
+        "button_text": "WATCH EKIN-SU'S VIDEO NOW",
+        "button_url": "https:\/\/www.youtube.com\/shorts\/ivzGTPyin_4"
+      }
+    },
+    "1657541839817dae23": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/EKINSU-LANDINGPAGE_Desktop__04.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/EKINSU-LANDINGPAGE_Mobile__03.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "JOIN THE EKIN-SU WAIT LIST",
+        "button_url": "shopify:\/\/pages\/ekin-su-wait-list",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1662479439068721a9": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/EKINSU-LANDINGPAGE_Desktop__05.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1662479460553a8e55": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Image-5.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1662479486216adc59": {
+      "type": "section-full-width",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Image-6_1_f4fe06f7-a30a-4bc8-9deb-090c574553e3.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "1fc2de3b-fe50-4857-8808-a9f18d5833c4": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP ALL STYLES WORN BY EKIN-SU",
+        "button_text": "",
+        "button_link": "",
+        "collection": "as-seen-on-ekin-su",
+        "collection_max": "4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16575371074cb2318b",
+    "1658402430e344f768",
+    "16624794037f209b23",
+    "1661961331c29dd2e0",
+    "16577123834c1d9e44",
+    "166177033991d27c32",
+    "1663010773fbf32422",
+    "1657625986c420aee1",
+    "1657537330eb3a940b",
+    "16619612182740e352",
+    "1657541839817dae23",
+    "1662479439068721a9",
+    "1662479460553a8e55",
+    "1662479486216adc59",
+    "1fc2de3b-fe50-4857-8808-a9f18d5833c4"
+  ]
+}

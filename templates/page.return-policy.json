@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "a1896543-a077-4b9a-9068-1087c94ad525": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "Return Policy",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "3a90cc41-0e5b-4111-945a-d79db8ac2813": {
+      "type": "ancillary-text",
+      "settings": {
+        "text": "<h4>RETURN TIMEFRAME<\/h4><p>You’re more than welcome to return your unwanted item(s) back to us, following our terms and conditions below. Please take a look to ensure your return is accepted and processed within our returns policy.<\/p><p>You have <strong>30 <\/strong>days to return for an exchange or refund, extended to <strong>45 <\/strong>days for store credit.<\/p><p>These timeframes are from the date your order is placed. We don’t accept returns for unwanted items after our relevant returns period. <\/p><h4>ORIGINAL CONDITION<\/h4><p>Hygiene and customer safety is really important to us, therefore please do your best to try on, handle and repackage items with care. In line with our sustainability strategy, items must be returned back to us in their original condition - unworn, undamaged, free of makeup, pet hairs, deodorant, perfume and must have all original tags and\/or ribbons attached. All items will be inspected upon arrival back to our warehouse and failure to be returned in their original condition may lead to cleaning charges or refusal.<\/p><h4>NON-RETURNABLE ITEMS<\/h4><p>Whilst returns are an important part of the retail process, not all items can be returned back to us. Our non-returnable items include face masks, thongs, socks and some lingerie. Swimwear is returnable however we do require the hygiene stickers to remain intact and failure to do this will result in the item being non-returnable.<\/p><h4>RETURN OUTCOMES<\/h4><p>Returned items are eligible for a refund, store credit or exchange*<\/p><p><em>*<\/em><em><strong>Cash on delivery orders are only eligible to return for store credit. <\/strong><\/em><em>Exchanges are dependant on stock availability. Non-returnable items won't be available for return. Items must be returned within the relevant return timeframes specific to store credit, exchange and refunds.<\/em><\/p><h4>PROCESSING TIME<\/h4><p>We aim to process all returns within 5 working days of delivery to us, providing there are no issues with the return. Refunds will be processed back to your original method of payment. Store credit will be issued via gift card. Exchanges will be automatically processed as a new order and shipped out to you on standard delivery.<\/p><p>We'll email you once we've received and processed your return.<\/p><h4><strong>UNREASONABLE CLAIMS \/ FAIR USE POLICY<\/strong><\/h4><p>Our team closely monitors unusual return patterns and activity, therefore if we suspect fraudulent activity within your account, we may have to withhold issuing a refund or block your account and any associated accounts entirely.<\/p><p>Fraudulent activity includes but is not exhaustive to: claims relating to orders not being received, items missing, ordering and returning higher than the average return rate, unusual patterns of returns activity; where we suspect someone isn't just trying their items on, but wearing them for longer periods or returning items worn\/used and not matching what was originally ordered. <\/p><p>If you return items that do not match what you originally ordered, we reserve the right to take legal action against you. This includes returning items that are significantly different from what you purchased or attempting to return items that do not belong to the company. <\/p><p><\/p><h4>RESPONSIBILITY<\/h4><p>Returned items are your responsibility until they reach us, so make sure they're packed up securely and can't get damaged on the way!<\/p><p>As the parcel remains your responsibility until it arrives back with us, ensure that you retain your proof of postage in case you need to contact us about your return.<br\/><br\/>We're not responsible for any items that are returned to us by mistake. If we're able to locate them (which is not always possible) and you'd like these returned to you, we may ask you to cover the delivery cost.<\/p><p>Please return each individual order separately. We are unable to process your return if two or more orders are returned within the same parcel.<\/p><p><\/p><h4>RETURN FEES<\/h4><p>You will need to pay for your return at the point of posting your parcel. Postage fees may vary.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a1896543-a077-4b9a-9068-1087c94ad525",
+    "3a90cc41-0e5b-4111-945a-d79db8ac2813"
+  ]
+}

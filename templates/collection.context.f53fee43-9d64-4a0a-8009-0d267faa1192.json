@@ -1,0 +1,32 @@
+{
+  "parent": "collection.json",
+  "context": {
+    "market": "f53fee43-9d64-4a0a-8009-0d267faa1192"
+  },
+  "sections": {
+    "16354183441db681b2": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "6428b80a-b1e5-4ab8-855d-0eb17b2ae261": {
+          "settings": {
+            "title": "STUDENTS GET 15% OFF",
+            "text": "CONTACT WHATSAPP SUPPORT FOR DISCOUNT"
+          }
+        },
+        "b0a7779e-2d57-45ed-af84-4911ba75559c": {
+          "settings": {
+            "title": "DOWNLOAD OUR APP"
+          }
+        },
+        "3c2b7f7a-0641-472e-b7f7-8c075673b148": {
+          "settings": {
+            "title": "EXPRESS DELIVERY",
+            "text": "2 DAYS DELIVERY ACROSS GCC"
+          }
+        }
+      }
+    }
+  }
+}

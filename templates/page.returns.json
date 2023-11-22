@@ -1,0 +1,118 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1644858732de2b6496": {
+      "type": "section-heading",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "RETURNS",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16510702956877ad21": {
+      "type": "section-video",
+      "disabled": true,
+      "settings": {
+        "background_colour": "#fae0df",
+        "text_colour": "dark",
+        "autoplay_video": false,
+        "desktop_video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/OhPolly_RETURNS_-_DESKTOP_1.mp4?v=1651073414",
+        "mobile_video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0594\/1506\/8881\/files\/OhPolly_RETURNS_-_MOBILE.mp4?v=1651070415",
+        "desktop_youtube_video": "",
+        "mobile_youtube_video": "",
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "1644859036a4c701dc": {
+      "type": "section-content",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>1. Click Create Return then Get Started and enter your order details. You can find these details on your order confirmation email or on your account.<\/p><p>2. Choose which items you’d like to return and the reason why.<\/p><p>3. Confirm your contact details and select your most convenient return method. We offer drop-off and collection.<\/p><p>4. Print your return label OR download your QR code to scan at your nearest InPost Locker, Asda or Hermes.<\/p><p>5. Once your parcel has been dropped off or collected, click our <a href=\"https:\/\/ohpolly.intelligentreturns.net\/tracking\" target=\"_blank\">Track Return button<\/a> to check its progress.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1644859456d5900069": {
+      "type": "ancillary-text",
+      "disabled": true,
+      "settings": {
+        "text": "<p><strong>1. HOW LONG DO I HAVE TO RETURN?<\/strong> UK customers have 30 days & International customers have 40 days to return any unwanted items, from the date your items are delivered.<\/p><p><strong>2.<\/strong> <strong>ARE RETURNS FREE? <\/strong>UK, Ireland and US: Returns are now FREE!  International: Depending on your country, returns may be free\/subsidised\/consumer paid. This information will be available when you register your return.<\/p><p><strong>3.<\/strong> <strong>DROP-OFF OR COLLECTION <\/strong>We offer drop-off and collection services, so you can return your parcel with your preferred method. We also have printer-less options for those who can’t print at home. Some return methods may only be available for certain countries, so please check your available options via our online portal.<\/p><p><strong>4.<\/strong> <strong>CANCEL OR CHANGE MY RETURN <\/strong>Made a mistake with your return? Need to choose a different return method? No problem! You can contact our Customer Service team using our Contact page and we’ll be happy to cancel your return. Once your return has been cancelled, you can process it again using our online portal.<\/p><p><strong>5.<\/strong> <strong>CAN I RETURN MY ITEM FOR A REFUND OR EXCHANGE? <\/strong>We are no longer offering exchanges however we will happily accept a return for a full item refund. For hygiene reasons, some items are non-returnable. If this is applicable it will be stated on the product page.<\/p><p><strong>6. HOW LONG DOES A REFUND TAKE?<\/strong> We aim to process all returns within 10-14 working days of delivery to us, at which time we will issue a full refund and will follow up with a return confirmation e-mail. The refund will be processed back to your original method of payment. Please note we do not contact you when an item arrives back to us, but only once your refund has been issued 10-14 working days later.<\/p><p><strong>7<\/strong>. <strong>CAN I GET MY SHIPPING FEES BACK? <\/strong>We currently offer free UK returns. Returns from any other country will either be subsidised or fully chargeable. We regret to inform you that any original shipping fees or return shipping charges are non-refundable unless the error was made on our part. In the rare event that you do receive an imperfect item, please do contact us at your earliest convenience. In such an event, we prefer to remedy on a case-to-case basis to ensure the best customer service and overall satisfaction.<\/p><p><strong>8<\/strong>. <strong>I RETURNED AN ITEM AND IT WAS INCORRECTLY REFUNDED OR REPLACED. <\/strong>We're really sorry if we've made a mistake with your refund. Please send us a message so we can fix this for you right away.<\/p><p><strong>9. AM I STILL ABLE TO RETURN MY ITEM IF THERE IS MAKE-UP OR FAKE TAN AROUND THE NECKLINE? <\/strong>Unfortunately we're only able to accept returns back in the immaculate condition they were received in.<\/p><p><strong>10. I HAVE RECEIVED A FAULTY ITEM<\/strong>. We are truly sorry if you have received a damaged item from us. We can only assume this occurred during the manufacturing process and has somehow slipped through the net. Please send us an image so we can look into this & organise for another one to be sent to you!<\/p><p><strong>11<\/strong>. <strong>I HAVE RECEIVED AN INCORRECT ITEM IN MY ORDER. <\/strong>We're really sorry if we've made a mistake with your order. Please send us a message so we can fix this for you right away.<\/p><p><strong>12.<\/strong> <strong>HAVE YOU RECEIVED MY RETURN? <\/strong>You can track the progress of your return here: <a href=\"https:\/\/ohpolly.intelligentreturns.net\/tracking\">https:\/\/ohpolly.intelligentreturns.net\/tracking<\/a>. We'll email you once we've received your return and processed your refund<\/p><p><strong>13.<\/strong> <strong>CAN I RETURN MORE THAN ONE ORDER TOGETHER? <\/strong>We kindly ask customers to return orders separately as in the rare event your returned parcel becomes lost in transit, we will only be able to refund the order that is trackable.<\/p><p>14. <strong>CAN I RETURN A SALE ITEM? <\/strong>You’re more than welcome to return a sale item providing it’s unworn, undamaged and in line with our T&C’s. Unfortunately, we no longer offer exchanges, so any sale items returned will be refunded at sale price.<\/p>"
+      }
+    },
+    "164485956159dac04d": {
+      "type": "section-content",
+      "disabled": true,
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "a86d68ee-4b33-4a86-bf46-7c9e0967035c": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "It's important that you read our return policy before submitting your return.",
+        "text": "",
+        "button_text": "RETURN POLICY",
+        "button_url": "shopify:\/\/pages\/return-policy"
+      }
+    },
+    "120cc41b-2e50-45d5-968c-a172a98cc637": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingNone",
+        "order": "contentRight",
+        "background_colour": "#FBEDDF",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/homepage-1500x1500_2_c7941600-ea3f-4bf5-bd34-e00fcc0ee901.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/homepage-800x800_2_590a9db4-14aa-494d-b478-1707dbfa48a9.jpg",
+        "title": "",
+        "text": "<p>You have <strong>30 <\/strong>days to return for an exchange or refund, extended to <strong>45 <\/strong>days for store credit*<\/p><p>Return timeframes are from the date your order was placed.<\/p><p>Return fees are to be paid upon posting your return.<\/p><p><em>*Cash on delivery orders can be returned for store credit only. <\/em><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "REGISTER RETURN",
+        "button_url": "https:\/\/returns.ohpolly.ae\/#\/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1644858732de2b6496",
+    "16510702956877ad21",
+    "1644859036a4c701dc",
+    "1644859456d5900069",
+    "164485956159dac04d",
+    "a86d68ee-4b33-4a86-bf46-7c9e0967035c",
+    "120cc41b-2e50-45d5-968c-a172a98cc637"
+  ]
+}

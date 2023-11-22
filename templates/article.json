@@ -2,43 +2,41 @@
   "sections": {
     "main": {
       "type": "main-article",
-      "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "adapt"
-          }
-        },
-        "title": {
-          "type": "title",
-          "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
-        "content": {
-          "type": "content",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "featured_image",
-        "title",
-        "share",
-        "content"
-      ],
       "settings": {
+      }
+    },
+    "article-comments": {
+      "type": "article-comments",
+      "settings": {
+      }
+    },
+    "1641480243ff0ea289": {
+      "type": "section-metafield-article-carousel",
+      "settings": {
+        "background_colour": "#fdf5f5",
+        "kicker": "",
+        "title": "More like this",
+        "button_text": "View all articles",
+        "button_link": "shopify:\/\/blogs\/news"
+      }
+    },
+    "1641551433ad1db6c7": {
+      "type": "section-instagram",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "show_icon": true,
+        "title": "By girls for girls!",
+        "text": "<p>Be a part of our story. Tag us <a href=\"https:\/\/www.instagram.com\/ohpolly\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/ohpolly\">@ohpolly<\/a> for a chance to be featured on our Insta!<\/p>",
+        "button_text": "Shop our insta",
+        "button_link": "shopify:\/\/collections",
+        "foursixty": "<script src=\"\/\/foursixty.com\/media\/scripts\/fs.embed.v2.5.js\" data-feed-id=\"oh-polly_1\" data-theme=\"showcase_v2_5\" data-open-links-in-same-page=\"true\" data-page-size=\"8\"><\/script>\n<style>.fs-has-links::after { padding:10px 15px;background-color:#ffffff;color:rgba(0, 0, 0, 0.8);content:\"SHOP IT\"; } .fs-showcase_v2_5.fs-desktop .fs-entry-container { width:25% !important;padding-top:25% !important; } .fs-showcase_v2_5.fs-mobile .fs-entry-container { width:50% !important;padding-top:50% !important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:14px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:14px; } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(0, 0, 0, 0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-showcase_v2_5.fs-wrapper div.fs-timeline-entry { margin:0px; } <\/style>"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "article-comments",
+    "1641480243ff0ea289",
+    "1641551433ad1db6c7"
   ]
 }

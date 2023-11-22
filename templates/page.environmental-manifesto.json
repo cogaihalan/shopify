@@ -1,0 +1,235 @@
+{
+  "layout": "theme-ancillary",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16618515780fc2fefd": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "Last updated: 3rd October 2023",
+        "text": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1645018064e739ab4c": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Sustainability-2880x1570_36d6812b-324f-4c6f-9eec-48ee12cf8011.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Sustainability-750x1200_b6e22dc8-1f3b-4edf-aa97-30f43672b849.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "f5e23652-bc4b-426c-9a31-9584fb47ee14": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "we're just getting started",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>This is the start of our journey and we're excited to bring you along with us. We want to be transparent with our customers, open the conversation and share our commitment to working on our environmental and social impact.<br\/><br\/>Explore our sustainability hub to find out more about projects we're already working on and our plans for the future.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "0cbc54e0-d629-4336-8e24-d077df0360b1": {
+      "type": "section-ctas",
+      "blocks": {
+        "12c57b0c-6dd8-4e3f-a4a4-026a696c759d": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-4.jpg",
+            "title": "our supply chain",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-supply-chain",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "b53fb451-d760-4b08-ba92-54d7fa1c6ed5": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-3.jpg",
+            "title": "our packaging",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-packaging",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "e3da92b7-5a8e-41ea-a98c-c4f6817b422a": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-1.jpg",
+            "title": "our planet",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-planet",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "028d7b99-7216-4b70-9ad9-1c1102773241": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-2.jpg",
+            "title": "our products and circularity",
+            "text": "",
+            "link": "shopify:\/\/pages\/products-and-circularity",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "35a82f36-4842-4b56-aed1-718618f8c386": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-5.jpg",
+            "title": "our people",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-people",
+            "link_text": "",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "12c57b0c-6dd8-4e3f-a4a4-026a696c759d",
+        "b53fb451-d760-4b08-ba92-54d7fa1c6ed5",
+        "e3da92b7-5a8e-41ea-a98c-c4f6817b422a",
+        "028d7b99-7216-4b70-9ad9-1c1102773241",
+        "35a82f36-4842-4b56-aed1-718618f8c386"
+      ],
+      "settings": {
+        "border_top": false,
+        "kicker": "",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay_mobile": false,
+        "background_colour_mobile": "dark",
+        "text_colour_mobile": "light",
+        "column_count_mobile": "two"
+      }
+    },
+    "166367117758c3acea": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.primary[1].background }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop-ImageText.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/MOBILE-ImageText.jpg",
+        "title": "We are sticking to our values",
+        "text": "<p>Oh Polly is a brand with purpose. On seeing the awful poverty that many children were living in across southeast Asia, our founders Claire Henderson and Mike Branney started selling clothes on eBay and donating the profits to charity. After gaining huge success on eBay, Claire and Mike created their own website, but the value and purpose behind the brand was never lost.<\/p><p>Our brand is built on ethical values, and we believe we have a responsibility to help the planet, just as we're helping communities in southeast Asia. We’re performance driven and we’re committed to giving our customers unique, high-quality designs without compromising the principles that Oh Polly was built on.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "heart of the brand",
+        "button_url": "https:\/\/youtu.be\/KvvTp1tw8C8?si=d2irhCAjY_qqYM12"
+      }
+    },
+    "1663673807c71efc0a": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.primary[1].background }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop-9.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile-9.jpg",
+        "title": "POLLY SHARES - MONTHLY SPOTLIGHT",
+        "text": "<p>We're excited to announce our 2024 Polly Placements across our London and Bromborough sites! Roles will include:<\/p><ul><li>Customer Experience<\/li><li>IT<\/li><li>Creative Pattern Cutting<\/li><li>Technical Design<\/li><\/ul><p>Here's what one of our current Industry Placements had to say about her time at Oh Polly so far:<\/p><p>\"I’ve learnt so much on my placement so far, it feels so fulfilling to be working on projects that are integral to Oh Polly’s development within the sustainability fashion space at such a critical time! Everyone has been so welcoming, and my manager has ensured I am getting the most out of my experience, I’ve had the opportunity to be involved in projects with multiple departments across the company! I am really enjoying my time at Oh Polly so far and can’t wait to see what the next year will bring!\"<br\/><strong>- India Sutherland, Sustainability Industry Placement.<\/strong><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "find out more",
+        "button_url": "https:\/\/careers.ohpolly.com\/pages\/polly-placements"
+      }
+    },
+    "1663673984e050b046": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.primary[1].background }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/MobileImage-LP_0e1a7c96-9772-4e4e-b5f9-9611cbf4d6ca_1.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/MobileImage-LP_0e1a7c96-9772-4e4e-b5f9-9611cbf4d6ca_1.jpg",
+        "title": "what's next for oh polly",
+        "text": "<p>We know that there’s still a lot more to be done! Every year we keep getting bigger and better, which means we need to take even more responsibility for the impact of our brand. Over the next few years, we’re looking to:<\/p><ul><li>Review our packaging<\/li><li>Invest in low impact materials<\/li><li>Offer additional low impact delivery options with efficient couriers<\/li><li>Provide further information about how we produce and manufacture<\/li><li>Outline official targets for the upcoming years, with a main focus for 2030<\/li><li>Work with partners, who align with our values, to ensure we’re on track to hitting our goals<\/li><\/ul><p>We’re working hard on our official sustainability strategy and carbon reduction plan. Once we’ve completed this, we’ll update our progression, promises and targets for 2025-2050. <\/p><p>There are plenty of other exciting projects happening behind the scenes. We’ll make sure to keep everyone updated.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "do you have any suggestions",
+        "button_url": "https:\/\/ohpolly.qualtrics.com\/jfe\/form\/SV_1XFkJTjxG21rO1U"
+      }
+    },
+    "16636818915d6d09ee": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "What do you think?",
+        "button_text": "WE WANT TO HEAR FROM YOU",
+        "button_link": "https:\/\/ohpolly.qualtrics.com\/jfe\/form\/SV_9tRj4luzaixKyKq"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16618515780fc2fefd",
+    "1645018064e739ab4c",
+    "f5e23652-bc4b-426c-9a31-9584fb47ee14",
+    "0cbc54e0-d629-4336-8e24-d077df0360b1",
+    "166367117758c3acea",
+    "1663673807c71efc0a",
+    "1663673984e050b046",
+    "16636818915d6d09ee"
+  ]
+}

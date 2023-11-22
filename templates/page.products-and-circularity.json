@@ -1,0 +1,246 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "ae93ba92-eab1-46ba-80d1-e9d487fb9d9e": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/OurProducts-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/OurProducts-Mobile.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "417bd90c-3516-4507-9762-0280645233d4": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "BEHIND THE SEAMS",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Oh Polly creates iconic stand out pieces that are sure to get you noticed. From new season trends you don’t want to miss to wardrobe essentials that can be dressed up or down, we have got shapes and styles for all. Made from high-quality, durable materials, our styles were designed to be worn time and time again.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "f116b2a7-95bd-4c78-a1f3-7ef24d5c48a4": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/KeyBenefits.jpg",
+        "mobile_video": "",
+        "title": "TENCEL™ MODAL",
+        "text": "<p>We’re committed to more sustainable practices and have been using Modal in our collections since 2021. To give you greater transparency of your product journey, we’re in the process of having all our old and new products certified, so you can be sure it's made with TENCEL™ Modal fibres.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "FIND OUR MORE",
+        "button_url": ""
+      }
+    },
+    "661c1e4d-ecb5-4a93-9cbf-cd91ca56b764": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/Desktop-10.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/Mobile-10.jpg",
+        "title": "",
+        "text": "<p><strong>Product recovery scheme: Repair and Rewear<\/strong><br\/>If something happens to your item, we may be able to help you! We'll refund 20% of the item value, which allows you to take the item to your local tailor or fix it yourself. Did you know that extending a garment’s life by just nine months can reduce its carbon, waste, and water footprints by between 20 to 30 per cent?!*<\/p><p><em>Please note that all cases are reviewed individually.<br\/><br\/><\/em><strong>Spot wash machine<\/strong><br\/>93% of our returns are re-sellable. Wonder what we do with the rest? We have an inhouse spot wash machine that we use on 4% of returns. This means that they can be cleaned and re-packaged in perfect condition to be sent back out.<br\/><br\/><strong>Remaining stock<\/strong><br\/>Parker Lane help us to re-distribute end of season, slow selling stock and damaged items to areas that we don't have as much footfall. This helps to prolong the end-use of our products. They also take the remaining 3% of returns! Find out more <a href=\"https:\/\/www.parkerlanegroup.com\/company\/\"><span style=\"text-decoration:underline\">here<\/span><\/a>.<br\/><\/p><p><strong>Look after your Oh Polly pieces<br\/><\/strong>If you’re a fashion fanatic who knows their stuff, then we’re sure you don’t need us to remind you of the harmful effects the industry currently has on the planet. Look after your Oh Polly products.<\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "TAKE CARE TIPS",
+        "button_url": "https:\/\/help.ohpolly.com\/hc\/en-gb"
+      }
+    },
+    "859aa17a-6f0f-4f0b-9199-8fde0670619b": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "YOUR TURN",
+        "title_size": "fz-58_64",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Once you feel like you have reached your max amount of wear then why don't you find your clothes a new home, or upcycle them? These pieces were built to last.<\/p><p>So, if your clothing has served its time, and you’re on the hunt for a refresh, make sure to list it up, donate them, or give them a new lease of life! By doing this, you’re saving your item from going to landfills that release masses of harmful carbon dioxide into the air.<br\/><br\/>Don't throw your clothes away! Read more below to find alternative solutions to landfill or keep scrolling to learn how to donate for a discount.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "08fb3bca-3567-49af-9590-d5c8ef7c7f52": {
+      "type": "section-usps",
+      "blocks": {
+        "db214793-99c5-4efb-a398-a9f73c88ec0d": {
+          "type": "usp",
+          "settings": {
+            "title": "SO FAR, WE'VE RAISED £3,488 AND DIVERTED 1872 KG OF CLOTHING FROM LANDFILL THROUGH RESALE",
+            "text": "",
+            "link_url": "",
+            "background_colour": "#e2a9a9",
+            "text_colour": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "db214793-99c5-4efb-a398-a9f73c88ec0d"
+      ],
+      "settings": {
+        "section_margin": "spacingNone"
+      }
+    },
+    "01fd69af-f327-4214-8f97-b0ae4d617e10": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "order": "contentLeft",
+        "background_colour": "{{ shop.brand.colors.secondary[0].foreground }}",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/DESKTOP_Donate-for-a-discount---step-by-step-_1.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/MOBILE_Donate-for-a-discount---step-by-step-_1.jpg",
+        "title": "DONATE FOR A DISCOUNT",
+        "text": "<p>You can donate your preloved items to charity for free through us with our new scheme, in partnership with The Salvation Army - they don’t have to be Oh Polly items, it can be any brand! To find out more about this, please follow this <a href=\"https:\/\/www.ohpolly.com\/pages\/donate-for-a-discount\"><span style=\"text-decoration:underline\">link.<\/span><\/a><\/p><p><strong>This is only for UK customers.<\/strong><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "85129b71-6a0e-4812-973e-cdf7603cda45": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingStandard",
+        "title": "UNITED NATIONS SUSTAINABLE DEVELOPMENT GOALS",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "Our current initiatives support the following goals:",
+        "text": "<ul><li>Goal 12 - Responsible Consumption and Production<\/li><li>Goal 13 - Climate Action<\/li><li>Goal 15 - Life on Land<\/li><\/ul><p>Find out more about the goals <a href=\"https:\/\/sdgs.un.org\/goals\" title=\"https:\/\/sdgs.un.org\/goals\">here<\/a>.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "014ca84c-7a46-41e1-8525-7cf16b0b6bb2": {
+      "type": "section-cta-grid",
+      "blocks": {
+        "e15d8170-f622-4614-b12b-c204ef80cb68": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-1.jpg",
+            "title": "our planet",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-planet",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "90c98dfc-82cb-4614-84f4-e0380394daac": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-4.jpg",
+            "title": "our supply chain",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-supply-chain",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "6bb44a7c-4a91-466c-a58a-68860239d4f4": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-3.jpg",
+            "title": "our packaging",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-packaging",
+            "link_text": "",
+            "link_title": ""
+          }
+        },
+        "7b2a79a5-3f7e-4d3e-9443-1732fef408ae": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/680pxx1000-5.jpg",
+            "title": "our people",
+            "text": "",
+            "link": "shopify:\/\/pages\/our-people",
+            "link_text": "",
+            "link_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "e15d8170-f622-4614-b12b-c204ef80cb68",
+        "90c98dfc-82cb-4614-84f4-e0380394daac",
+        "6bb44a7c-4a91-466c-a58a-68860239d4f4",
+        "7b2a79a5-3f7e-4d3e-9443-1732fef408ae"
+      ],
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": "",
+        "overlay": false,
+        "background_colour": "dark",
+        "text_colour": "light",
+        "grid_gap_increase": false,
+        "mobile_text_underneath": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ae93ba92-eab1-46ba-80d1-e9d487fb9d9e",
+    "417bd90c-3516-4507-9762-0280645233d4",
+    "f116b2a7-95bd-4c78-a1f3-7ef24d5c48a4",
+    "661c1e4d-ecb5-4a93-9cbf-cd91ca56b764",
+    "859aa17a-6f0f-4f0b-9199-8fde0670619b",
+    "08fb3bca-3567-49af-9590-d5c8ef7c7f52",
+    "01fd69af-f327-4214-8f97-b0ae4d617e10",
+    "85129b71-6a0e-4812-973e-cdf7603cda45",
+    "014ca84c-7a46-41e1-8525-7cf16b0b6bb2"
+  ]
+}

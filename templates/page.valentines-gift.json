@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "20c9c196-25a5-4dfa-ac90-6c675c046d2b": {
+      "type": "section-full-width",
+      "settings": {
+        "section_margin": "spacingNone",
+        "desktop_full_screen": false,
+        "mobile_full_screen": false,
+        "header_transparent": false,
+        "header_overlay": false,
+        "header_colour": "dark",
+        "desktop_video": "",
+        "mobile_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/VDay-LP-Banner-Desktop_e9857225-7aa1-460e-b195-ca11e06de470.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/VDay-LP-Banner-Mobile_d3c7f49d-f51d-4355-8f45-82b7d4eafb2c.jpg",
+        "title": "",
+        "text": "",
+        "button_text": "",
+        "button_url": "",
+        "countdown_text": "<p>New styles coming soon<\/p>",
+        "countdown_text_mobile": "<p>Coming soon<\/p>",
+        "countdown_date": "",
+        "countdown_text_expired": "<p>Available Now!<\/p>",
+        "overlay_desktop": false,
+        "background_colour_desktop": "light",
+        "text_colour_desktop": "#ffffff",
+        "button_style": "light",
+        "desktop_text_align": "desktopTextLeft",
+        "desktop_horizontal": "left",
+        "desktop_vertical": "bottom",
+        "overlay_mobile": false,
+        "background_colour_mobile": "light",
+        "text_colour_mobile": "#ffffff",
+        "button_style_mobile": "mobileLight",
+        "mobile_text_align": "mobileTextLeft",
+        "mobile_horizontal": "mobileLeft",
+        "mobile_vertical": "mobileBottom"
+      }
+    },
+    "526c3186-8170-4b39-9ac0-eff262944690": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "Happy Valentine's Day",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "<p>Get ready to fall in love this Valentine's Day with our selection of unmissable styles. Embrace the saint of love with looks designed with sensuality in mind. As a special Valentine's Day treat you can now take 15% off* almost everything on site using the code VDAY15 at checkout. This code will be live until 17th March but don't wait, secure your favourite styles now. <\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "c695ddc4-e101-4a6b-8296-18956e4af674": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "SHOP DATE NIGHT DRESSES",
+        "button_text": "SHOP",
+        "button_link": "shopify:\/\/collections\/date-outfits",
+        "collection": "date-outfits",
+        "collection_max": "4"
+      }
+    },
+    "4c3d9304-23ff-40e1-b56b-c7276f0cc8fc": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP ALL EMBELLISHED STYLES",
+        "button_link": "shopify:\/\/collections\/dresses-embellished-dresses",
+        "collection": "dresses-embellished-dresses",
+        "collection_max": "4"
+      }
+    },
+    "079470f3-fc87-4da0-b144-d093808c54c6": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP ALL SATIN STYLES",
+        "button_link": "shopify:\/\/collections\/dresses-satin-dresses",
+        "collection": "dresses-satin-dresses",
+        "collection_max": "4"
+      }
+    },
+    "ca0743d2-72a6-49c3-9244-ee63ccc1678d": {
+      "type": "section-featured-collection",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "SHOP THE FOUNDATIONS COLLECTION NOW",
+        "button_link": "shopify:\/\/collections\/foundations",
+        "collection": "foundations",
+        "collection_max": "4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "20c9c196-25a5-4dfa-ac90-6c675c046d2b",
+    "526c3186-8170-4b39-9ac0-eff262944690",
+    "c695ddc4-e101-4a6b-8296-18956e4af674",
+    "4c3d9304-23ff-40e1-b56b-c7276f0cc8fc",
+    "079470f3-fc87-4da0-b144-d093808c54c6",
+    "ca0743d2-72a6-49c3-9244-ee63ccc1678d"
+  ]
+}

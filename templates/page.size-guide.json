@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1645806124d35b044f": {
+      "type": "section-heading",
+      "settings": {
+        "kicker": "",
+        "title": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "16466739803aea0e17": {
+      "type": "section-image-text",
+      "settings": {
+        "section_margin": "spacingNone",
+        "order": "contentLeft",
+        "background_colour": "#ffdfdf",
+        "text_colour": "dark",
+        "button_style": "light",
+        "desktop_video": "",
+        "desktop_image": "shopify:\/\/shop_images\/body-measurements.jpg",
+        "mobile_video": "",
+        "mobile_image": "shopify:\/\/shop_images\/body-measurements.jpg",
+        "title": "SIZE GUIDE",
+        "text": "<p>Please note this is for reference only. Please refer to product description for more accurate size guide.<\/p><p><\/p><p><strong>Please select below which size chart to view<\/strong><\/p>",
+        "desktop_horizontal_align": "desktopContentLeft",
+        "mobile_horizontal_align": "mobileContentLeft",
+        "desktop_vertical_align": "desktopContentCenter-y",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "16458061580f5eb5b3": {
+      "type": "section-content",
+      "settings": {
+        "section_margin": "spacingNone",
+        "title": "",
+        "title_size": "fz-24_29",
+        "title_alignment": "center",
+        "subtitle": "",
+        "text": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "1646133333a70efbb8": {
+      "type": "ancillary-size-guide",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1645806124d35b044f",
+    "16466739803aea0e17",
+    "16458061580f5eb5b3",
+    "1646133333a70efbb8"
+  ]
+}
